@@ -1,6 +1,6 @@
 ## Javascript and CSS Resource Management
 
-**DotVVM** has a built-in mechanism for managing reasources. It supports javascript files, inline javascript snippets and CSS files.
+**DotVVM** has a built-in mechanism for managing reasources. It supports javascript files, inline javascript snippets and CSS files by default and is extensible.
 
 The resources are named and stored in a global repository in [DotVVM configuration](/docs/tutorials/basics-configuration/{branch}). 
 
@@ -11,7 +11,7 @@ Each resource can also specify its dependencies. Thanks to this, DotVVM can incl
 
 All resources are registered in resource respository found in the `DotvvmConfiguration.Resources` collection. 
 You can register a new resource with the `Register` method, or you can replace existing resource with your own one. Typically, you want to
-do this in the `DotvvmStartup.cs` file.
+do this in the `DotvvmStartup.cs` file, but you can do it anytime as the DotvvmResourceRepository is thread-safe.
 
 ```CSHARP
 config.Resources.Register("bootstrap-css", new StylesheetResource()
@@ -58,34 +58,29 @@ In the page, you can use the RequiredResource control to manually link a resourc
 <dot:RequiredResource Name="bootstrap" />
 ```
 
-By default, the `StyleResource`s are placed in the `head` section, the `ScriptResource`s are placed at the end of the `body` element.
+By default, the `StyleResource`s are placed in the `head` section, the `ScriptResource`s are placed at the end of the `body` element, but you can change it by setting `RenderPosition` property on the resource instance.
 
 Also, each control in the page can request any resources, so it can work properly. For example, if you add the [FileUpload](/docs/controls/builtin/FileUpload/{branch}) control in the page,
-the control will call `DotvvmRequestContext.AddRequiredResource` method to tell the DotVVM resource manager, that it needs some specific resource.
+the control will call `DotvvmRequestContext.AddRequiredResource` method to tell the DotVVM resource manager, that it needs some specific resource or when you apply set `FormatString` property on `TextBox` it will load globalization resource.
 
-When the page is about to be rendered, DotVVM resource manager will get all required resources, sort them to satisfy the dependency constraints, 
-and render them into the HTML.
+When the page is about to be rendered, DotVVM resource manager will get all required resources, sort them to satisfy the dependency constraints, and render them into the HTML.
 
 
 ### Resource Options
 
-All resources have the `Url` property and a collection `Dependencies` where dependent resource names are specified.
+Typical resources have a `Location` property of type `IResourceLocation` which determines where the resource file can be located. You can use on of the following, or write your own implementation if you want:
+* `RemoteResourceLocation` - specifies a url where the resource can be found. It can be any link - either to CDN, relative link to your server or even a data uri.
+* `LocalFileResourceLocation` - resource file is located in a file on filesystem. Remember that you are specifying file path not url and `/` on the start means root of filesystem.
+* `EmbeddedResourceLocation` - resource file is included in the assembly as embedded resource. This one is very useful for delivering a control library as a single dll and all dotvvm internal (dotvvm.js, knockout.js, ...) resource are of this type.
 
-Sometimes, it may be helpful to embed the resource in some assembly. First, you have to add the file to the assembly and set its Build Action as Embedded Resource.
-Then, the resource class has a property `EmbeddedResourceAssembly` - you need to put the assembly name there.
-In that case, the `Url` property will not contain the resource URL, but the embedded resource name (e.g. MyAssembly.Folder.SubFolder.FileName.js).
+If you want to use CDN for script files, it is often a good idea to have a local fallback for the case that CDN is down or you are debugging the app without internet connection. There is an property called `LocationFallback`. If it is set, the framework will try to load the script from the primary location (the CDN) first and will use the `ResourceLocationFallback.JavasciptCondition` to check if resource has succesfully loaded. If not, it will fall back succesively to the `AlternativeLocations`.
 
-If you want to use CDN for script files, there are also properties `CdnUrl` and `GlobalObjectName`. If they are set, the framework will try to load the 
-script from the CDN first and will use the GlobalObjectName to check whether the script was loaded successfully. If not, it will fall back to the `Url` property.
-
-You can of course implement custom resource types. There is also an `InlineScriptResource` which renders the inline javascript.
+You can of course implement custom resource types and resource location, check out source codes of the existing ones to see how to do that. There is also an `InlineScriptResource` which renders the inline javascript.
 
 
 ### Resource Processing
 
-You can register `IResourceProcessor` in the resource repository which can perform additional action with the collection of resources before it's rendered. 
-It can be used e.g. for bundling - if you find, that the client request 5 resources and there is a bundle which contain all of them, you can modify 
-the collection and make the client to download the bundle.
+You can register `IResourceProcessor` in the resource repository which can perform additional action with the collection of resources before it's rendered. It can be used e.g. for bundling - if you find, that the client request 5 resources and there is a bundle which contain all of them, you can modify the collection and make the client to download the bundle. We have a BundlingResourceProcessor implementation:
 
 ```CSHARP
 var bundling = new BundlingResourceProcessor();
