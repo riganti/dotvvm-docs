@@ -3,12 +3,12 @@
 Dependency Injection is used widely in many large applications. **DotVVM** allows you to have your services injected in the viewmodel constructor or properties.
 
 ```CSHARP
-public class CustomersViewModel 
+public class CustomersViewModel
 {
     // the parameters will be injected automatically by the DI container
-    public CustomersViewModel(CustomerService customerService, ILogging log) 
+    public CustomersViewModel(CustomerService customerService, ILogging log)
     {
-        ...        
+        ...
     }
 
     // this service can be injected too
@@ -19,7 +19,7 @@ public class CustomersViewModel
 
 Basically, if you need any services in your viewmodel, you can request them in the constructor as parameters, or you can declare a public property in the viewmodel. In that case, don't forget to use the `[Bind(Direction.None)]` attribute to tell the serializer that it should not care about this property.
 
-> The way of handling dependency injection has been changed in DotVVM 1.1. 
+> The way of handling dependency injection has been changed in DotVVM 1.1.
 
 DotVVM 1.1 uses the `Microsoft.Extensions.DependencyInjection` library to configure and resolve services.
 
@@ -36,9 +36,9 @@ app.UseDotVVM<DotvvmStartup>(applicationPhysicalPath, options: options =>
 
 The lambda method `options => ...` can be used to configure additional services. The `options` parameter exposes the property called `Services` of type `IServiceCollection` which can be used to register services.
 
-You can register custom services using `options.Services.AddTransient`, `options.Services.AddSingleton` or `options.Services.AddScoped`. 
+You can register custom services using `options.Services.AddTransient`, `options.Services.AddSingleton` or `options.Services.AddScoped`.
 
-One of the services that is already present in the collection, is the viewmodel loader represented by the `IViewModelLoader` interface. This class is responsible for locating of the class specified by the `@viewModel` directive in the page and creating an instance of the viewmodel. 
+One of the services that is already present in the collection, is the viewmodel loader represented by the `IViewModelLoader` interface. This class is responsible for locating of the class specified by the `@viewModel` directive in the page and creating an instance of the viewmodel.
 
 DotVVM uses the `DefaultViewModelLoader` class which locates the class and calls its default constructor. If you need to plug a dependency injection container in, you can create a class that inherits `DefaultViewModelLoader` and override the `CreateViewModelInstance`.
 
@@ -97,7 +97,7 @@ app.UseDotVVM<DotvvmStartup>(applicationPhysicalPath, options: options =>
 
 ASP.NET Core contains a built-in dependency injection mechanism. In the `Startup.cs` file, there is a method called `ConfigureServices` which registers all application services in the `IServiceCollection` parameter. The collection is managed by the `Microsoft.Extensions.DependencyInjection` library.
 
-When you call `app.UseDotVVM<DotvvmStartup>(...)`, it registers several internal services which DotVVM uses the `IServiceCollection`, for example the view compiler, viewmodel serializer and so on.  
+When you call `app.UseDotVVM<DotvvmStartup>(...)`, it registers several internal services which DotVVM uses the `IServiceCollection`, for example the view compiler, viewmodel serializer and so on.
 
 #### Registering Services
 
@@ -117,7 +117,7 @@ DotVVM will be able to inject these services if they are specified as parameters
 
 #### Using Alternative Container
 
-Optionally, the `ConfigureServices` method can return its own `IServiceProvider` which will be used instead of the default one. This is useful if you want to use an alternative IoC/DI container. 
+Optionally, the `ConfigureServices` method can return its own `IServiceProvider` which will be used instead of the default one. This is useful if you want to use an alternative IoC/DI container.
 
 For example, the default `Microsoft.Extensions.DependencyInjection` library doesn't support advanced scenarios like registering services by conventions or working with open generic types. This can be a reason to use an alternative dependency injection container.
 
@@ -142,3 +142,42 @@ public IServiceProvider ConfigureServices(IServiceCollection services)
     return new AutofacServiceProvider(applicationContainer);
 }
 ```
+
+#### Custom Controls
+
+You can then use the dependency injection in custom controls - simply put the dependencies into contructor:
+
+```CSHARP
+public class MyControl: HtmlGenericControl {
+    private readonly IMyService service;
+    public MyControl(IMyService service) {
+        this.service = service;
+    }
+
+    ... use the service somehow ...
+}
+```
+
+Note that you can use to inject your own services, but also services of the DotVVM framework.
+* `ResourceManager` - you can simply register a dotvvm resource for that request in control contructor
+* `IDotvvmRequestContext` - although in controls you get the request context in every lifecycle event, you can use constuctor injection in DotvvmBindableObjects that are not `DotvvmControl`, for example postback handlers or grid view columns.
+
+#### Dothtml views
+
+You can even inject the services into dothtml views using a `@service` directive.
+
+```DOTHTML
+@service myService = IMyService<string>
+
+{{resource: myService.SomeProperty}}
+
+{{command: myService.DoSomething()}}
+
+{{staticCommand: myService.DoSomething()}}
+
+```
+
+You can use the injected service from
+* resource bindings - may be useful for Asp.Net Core `ILocalizer`s.
+* command bindings - so you may invoke the command on a service instead of your viewModel. You can of course pass some properties or entire viewmodel using function parameters.
+* staticCommand bindings - you may call the method on a service instead of a static class. Again, you can use parameters for passing viewmodel properties.
