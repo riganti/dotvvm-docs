@@ -7,7 +7,7 @@ This will find the appropriate RESX file and use the value with the specified ke
 
 For example, if you have a project named *MyWebApp* and you have a *Resources\Web\Strings.resx* file in the project, the resource class will 
 be *MyWebApp.Resources.Web.Strings* (provided you haven't change the default namespace in the project properties). To retrieve the resource, you need
-to use `{resource: MyWebApp.Resources.Web.Strings.SomeResourceKey}`
+to use `{resource: MyWebApp.Resources.Web.Strings.SomeResourceKey}`.
 
 ### The @import Directive
 
