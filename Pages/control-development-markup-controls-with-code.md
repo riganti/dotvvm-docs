@@ -1,4 +1,4 @@
-## Markup Controls with Code
+# Markup Controls with Code
 
 Sometimes you need to pass some parameters in the markup control.
 
@@ -17,7 +17,7 @@ public class AddressEditor : DotvvmMarkupControl
 }
 ```
 
-### Declaring Control Properties
+## Declaring Control Properties
 
 Now we want to add two properties into the control. The first one is `Title`, which will appear inside the `legend` tag.
 The second is `DisplayPhoneNumber` property which will show or hide the Phone field. 
@@ -54,7 +54,7 @@ public static readonly DotvvmProperty DisplayPhoneNumberProperty
         = DotvvmProperty.Register<bool, AddressEditor>(c => c.DisplayPhoneNumber, true);
 ```
 
-### ControlProperty Binding
+## ControlProperty Binding
 
 Now, you can access the value of these properties using the `{controlProperty: Title}` binding in the markup. 
 
@@ -94,7 +94,7 @@ In the page, we can now use the control like this:
 
 Note that you can also put a data-binding as a value of the `Title` and `DisplayPhoneNumber` properties.
 
-### Important fact about control properties
+## Important fact about control properties
 
 The properties of markup controls do not store the value. They are only references to the value or the data-binding specified on the place where the control is used.
 
@@ -114,7 +114,7 @@ Only in this case the value will be persisted. If you set the `Title` property f
 
 > If you need to persist any state information in the markup control, it must be done by data-binding to some viewmodel property.
 
-### ControlCommand Binding
+## ControlCommand Binding
 
 If you need to add custom logic in the markup control, you can declare a method (e.g. `ClearAddress`) in the code behind file and invoke it using `controlCommand: ClearAddress()` binding.
 
@@ -143,7 +143,7 @@ public void ClearAddress()
 Notice that you can access the binding context using the `DataContext` property. We can safely cast it to `IAddress` because the `@viewModel` directive of the control specifies that the binding context must implement this interface. 
 
 
-### Updating the ViewModel Properties
+## Updating the ViewModel Properties
 
 Data-binding in **DotVVM** can do one more thing - update the source property. 
 

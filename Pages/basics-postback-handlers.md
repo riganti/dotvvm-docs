@@ -1,4 +1,4 @@
-## Postback Handlers
+# Postback Handlers
 
 Imagine you have a button in your page which removes some data. In many cases, you need to display a confirmation dialog before the data are deleted.
 This is a situation when you shall use a feature called **postback handler**.

@@ -1,4 +1,4 @@
-### Sample 2: Tree Item CheckBoxes
+## Sample 2: Tree Item CheckBoxes
 
 Using the `CheckBoxMode` property, you can display the checkboxes. The property has the following values:
 

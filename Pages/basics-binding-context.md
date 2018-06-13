@@ -1,4 +1,4 @@
-﻿## Binding Context
+# Binding Context
 
 In **DotVVM**, each HTML element or DotVVM control has the `DataContext` property. Using this property, you can change the context in which data bindings are evaluated.
 
@@ -46,7 +46,7 @@ The `DataContext` property will make all bindings on the `<div>` element and all
 
 If the `DataContext` binding is not present, the binding inside the `<div>` would have to be `{{value: Customer.Name}}`.
 
-### Null DataContext
+## Null DataContext
 
 There is also one helpful feature. If the `DataContext` of any element is `null`, the element is removed from the DOM and the bindings inside this element
 are not evaluated at all. 
@@ -57,7 +57,7 @@ If you don't want the `<div>` element to hide, the `DataContext` property must p
 
 <br>
 
-### Binding Context Variables
+## Binding Context Variables
  
 Inside elements that change the `DataContext` property, you can use the following binding context variables to navigate the viewmodel hierarchy.
 

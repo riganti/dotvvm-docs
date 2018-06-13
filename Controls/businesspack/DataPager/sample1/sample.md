@@ -1,4 +1,4 @@
-### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 The `Customers` is a property of `IGridViewDataSet` in the viewmodel.
 

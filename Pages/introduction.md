@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 
 As a .NET developer, you have several options on how to build a web application in ASP.NET. Every option has its advantages and is suitable for different kind of projects. 
 
@@ -24,7 +24,7 @@ DotVVM is built on top of ASP.NET platform. It is an alternative to ASP.NET Web 
 
 DotVVM can be used to build new web applications, or to modernize legacy ASP.NET Web Forms sites. It can be used together with other ASP.NET-based technology in the same application with single sign-on and consistent look and feel, so the Web Forms application can be rewritten in DotVVM page by page and possibly ported to .NET Core in the future.
 
-### Examples
+## Examples
 
 The ideal projects for DotVVM are various admin dashboards, intranet portals, CRM or ERP web applications. These applicatios typically contain data grids, forms with many field, complex validation and business logic, pages with wizards or modal dialogs. 
 
@@ -35,7 +35,7 @@ Of course, it is possible to make public facing applications in DotVVM, but it m
 If you are not sure whether DotVVM is a good choice for your project, just ask us on our  [Gitter chat](https://gitter.im/riganti/dotvvm). We will be happy to help you.
 
 
-### How DotVVM Works
+## How DotVVM Works
 
 DotVVM leverages the MVVM pattern. Every DotVVM page consists of two files.
 

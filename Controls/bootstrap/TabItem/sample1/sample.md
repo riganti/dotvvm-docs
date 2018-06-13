@@ -1,4 +1,4 @@
-### Sample 1: TabItem Control
+## Sample 1: TabItem Control
 
 Use the `<bs:TabItem>` controls inside the [TabControl](/docs/controls/bootstrap/TabControl/{branch}) control.
 

@@ -1,4 +1,4 @@
-### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 The `SelectedStartValue` and `SelectedEndValue` properties represent the values selected by the user.
 

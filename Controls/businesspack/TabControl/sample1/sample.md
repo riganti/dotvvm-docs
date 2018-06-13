@@ -1,4 +1,4 @@
-### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 The tabs can be defined inside the `<bp:TabControl>` individually. Each tab can have a different content in this case.
 

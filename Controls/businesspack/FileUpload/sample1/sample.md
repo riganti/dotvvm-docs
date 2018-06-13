@@ -1,4 +1,4 @@
-### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 The *FileUpload* control has the `Data` property (of type **UploadData**). Each file will get a unique ID which is stored in this collection.
 

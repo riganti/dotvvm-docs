@@ -1,4 +1,4 @@
-﻿### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 The `DateTimePickerGroup` control has the `SelectedDate` property for storing the datetime the user has selected.
 It needs to be binded to a property in the viewmodel.

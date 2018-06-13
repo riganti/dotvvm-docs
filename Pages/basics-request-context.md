@@ -1,4 +1,4 @@
-## Request Context
+# Request Context
 
 The `DotvvmViewModelBase` class contains the `Context` property which provides access to various DotVVM and ASP.NET resources, like OWIN or ASP.NET Core context etc.  
 It can also perform redirects, return files to be downloaded, and other things.

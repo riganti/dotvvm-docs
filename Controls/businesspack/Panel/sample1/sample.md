@@ -1,4 +1,4 @@
-### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 The content inside the `<bp:Panel>` element is treated as a `ContentTemplate` property which specifies the main content of the panel.
 

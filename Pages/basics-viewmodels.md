@@ -1,4 +1,4 @@
-## ViewModels
+# ViewModels
 
 In **DotVVM**, the **viewmodel** can be any JSON-serializable class. The viewmodel does two important things:
 
@@ -29,7 +29,7 @@ public class CalculatorViewModel
 }
 ```
 
-### ViewModel Limitations
+## ViewModel Limitations
 
 The state part of the viewmodel is done using public properties. Please note that the **viewmodel must be JSON-serializable**. 
 
@@ -45,7 +45,7 @@ Therefore, a "DotVVM-friendly" viewmodel can contain properties of these types:
 
 > Please note that the `TimeSpan` and `DateTimeOffset` are not supported in the current version. 
 
-### Recommendations for ViewModels
+## Recommendations for ViewModels
 
 + The properties in viewmodel and all child objects should have plain `{ get; set; }`. There should be no logic in getters, setters or the constructor of the class. The getters and setters are called by the serialization mechanism and you never know the order in which setters are invoked.
 
@@ -61,7 +61,7 @@ In general, the viewmodel methods should only gather data from the viewmodel, ca
 > If you are using Entity Framework, create [Data Transfer Objects](https://en.wikipedia.org/wiki/Data_transfer_object) and use them in your viewmodel instead. You can use libraries like [AutoMapper](http://automapper.org/) to make the mapping between entities and DTOs really easy.
 
 
-### DotvvmViewModelBase
+## DotvvmViewModelBase
 
 We recommend to inherit all viewmodels from `DotvvmViewModelBase`. It is not required - any class can be the viewmodel. 
 

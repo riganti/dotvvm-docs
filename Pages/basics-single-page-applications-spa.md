@@ -1,4 +1,4 @@
-## Single Page Applications (SPA)
+# Single Page Applications (SPA)
 
 DotVVM supports single page applications (SPA) with minimum effort. The SPAs integrate with the [master pages](/docs/tutorials/basics-master-pages/{branch}) mechanism pretty well.
 
@@ -10,7 +10,7 @@ The content pages will then load asynchronously and the URL of the current page 
 To navigate between the pages in the SPA, we recommend to use the [RouteLink](/docs/controls/builtin/RouteLink/{branch}) control. It composes the correct URLs
 with support of route parameters. Actually, we recommend to use the [RouteLink](/docs/controls/builtin/RouteLink/{branch})s everywhere, even if you are not using SPAs. You can always change the URLs for individual routes without the need to modify dozens of pages in your application. 
 
-### Using RouteLinks
+## Using RouteLinks
 
 Let's have the following route registrations in the `DotvvmStartup.cs` file:
 
@@ -34,7 +34,7 @@ In order to redirect to another page from the viewmodel command, you can call `C
 
 It will generate a correct URL, no matter whether you run inside SPA or not.
 
-### Restrictions
+## Restrictions
 
 There can be only one [SpaContentPlaceHolder](/docs/controls/builtin/SpaContentPlaceHolder/{branch}) in the page. Otherwise, the framework wouldn't be able to remember
 the URL of currently loaded page in the URL fragment.

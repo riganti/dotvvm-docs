@@ -1,4 +1,4 @@
-### Sample 1: Basic Progress Bar
+## Sample 1: Basic Progress Bar
 
 The `ProgressBar` control has `Value` property that sets value of current progress.
 Contextual color of `ProgressBar` can be set with `Color` property.

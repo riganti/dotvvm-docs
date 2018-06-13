@@ -1,11 +1,11 @@
-## Electron integration
+# Electron integration
 [Electron](https://electron.atom.io/) is a cross platform framework for creating native application with web technologies like JavaScript, HTML and CSS. Electron is powered by **Chromium** and **Node.js**.
 
 **DotVVM** provides integration with Electron. You can write cross platform application with C#. It uses WebSockets to communicate with Electron backend.
 Integration with Electron is open source on **[Github](https://github.com/riganti/dotvvm-electron)**.
 
 Integration with Electron is still in **beta**. The API may and probably will be changed.
-### Getting Started
+## Getting Started
 ___
 
 Required : **Node.js**, **ASP<nolink>.NET Core**
@@ -57,12 +57,12 @@ dotvvmElectron.run(__dirname, {
     * ```browserWindow``` [Object](https://electron.atom.io/docs/api/browser-window/)
   
 
-### Sample
+## Sample
 ___
 
 First, you have to resolve object **ElectronService** in ViewModel. ElectronService contains all available modules. Modules names corresponds with modules in [Electron API](https://electron.atom.io/docs/api/).
 
-#### Open MessageBox
+### Open MessageBox
 
 We create method called **ShowMessageBox** in the ViewModel. In this method we are calling method **ShowMessageBox** on **Dialog** module. This call instruct Electron to show MessageBox with given options. 
 
@@ -86,7 +86,7 @@ View.dotvvm
 ```
 
 
-### Next steps
+## Next steps
 ___
 
 For more information, see the following resources:

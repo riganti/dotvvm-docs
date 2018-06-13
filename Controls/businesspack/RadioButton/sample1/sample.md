@@ -1,4 +1,4 @@
-### Sample 1: Basic RadioButtons
+## Sample 1: Basic RadioButtons
 
 The RadioButton control has the `Checked` property of *boolean* which indicates whether the control is checked or not.
 

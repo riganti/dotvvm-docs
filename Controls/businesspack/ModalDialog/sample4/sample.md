@@ -1,4 +1,4 @@
-### Sample 4: Dialog Size
+## Sample 4: Dialog Size
 
 The `Width` and `Height` properties can be used to specify fixed dimensions of the dialog. You can use any CSS units here - e.g. `400px`, `50%` etc.
 

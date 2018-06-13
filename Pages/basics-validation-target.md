@@ -1,4 +1,4 @@
-## Validation Target
+# Validation Target
 
 You often need to validate only a part of the viewmodel. In DotVVM, there is the `Validation.Target` property. Using this property you can specify the validation target (the object which gets validated) for a specific part of the page:
 
@@ -22,7 +22,7 @@ If you don't set the `Validation.Target`, entire viewmodel is validated. The def
 
 > The `Validation.Target` must always point to a non-array object. Collections or primitive types (strings, numbers, dates etc.) are not allowed as validation targets.  
 
-### Disabling Validation
+## Disabling Validation
 
 You can also disable validation on a part of the page or on a specific control, by using `Validation.Enabled="false"`. You often need to do this e.g. for delete 
 and cancel buttons where the values in the form don't need to be valid. Also, you might need this e.g. on the `Changed` event of `TextBox` when you need to pre-fill some values for the user, but the form may not be completed yet and thus it is not valid at that time.

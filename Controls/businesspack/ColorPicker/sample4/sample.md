@@ -1,4 +1,4 @@
-### Sample 4: Changed Event
+## Sample 4: Changed Event
 
 The `Changed` event can be used to trigger a command in the viewmodel whenever the control value changes.
 

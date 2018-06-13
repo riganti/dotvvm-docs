@@ -1,4 +1,4 @@
-## DotVVM Command Line
+# DotVVM Command Line
 
 When you create DotVVM project (ASP.NET Core) using [DotVVM for Visual Studio](https://www.dotvvm.com/landing/dotvvm-for-visual-studio-extension) or using [dotnet new](/docs/tutorials/how-to-start-command-line/{branch}), the **DotVVM Command Line** tool should be already registered in the project file:
 
@@ -17,7 +17,7 @@ When you create DotVVM project (ASP.NET Core) using [DotVVM for Visual Studio](h
 This will allow to run commands starting with `dotnet dotvvm ...` in the project directory to perform various actions with the DotVVM project.
 
 
-### Creating Pages, Master Pages and Markup Controls
+## Creating Pages, Master Pages and Markup Controls
 
 **DotVVM Command Line** can create new pages, master pages and markup controls in ASP.NET Core projects.
 
@@ -62,7 +62,7 @@ This will allow to run commands starting with `dotnet dotvvm ...` in the project
     </tr>
 </table>
 
-#### Examples
+### Examples
 
 1. Create the `Views/Site.dotmaster` master page:
 

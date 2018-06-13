@@ -1,4 +1,4 @@
-### Sample 2: Striped and Animated Progress Bars
+## Sample 2: Striped and Animated Progress Bars
 
 You can set `ProgressBar` to have striped design with `IsStriped` property.
 

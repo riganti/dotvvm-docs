@@ -1,4 +1,4 @@
-### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 The Button control has a `Text` property that holds the text displayed in the button.
 

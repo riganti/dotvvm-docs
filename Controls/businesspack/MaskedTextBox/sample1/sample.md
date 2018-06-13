@@ -1,4 +1,4 @@
-### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 The `Text` property is binding value of input.
 
@@ -6,7 +6,7 @@ The `Mask` property expects some string input, which defines the data for the co
 
 The `Placeholder` property works as placeholder on input element.
 
-#### Default Patterns
+### Default Patterns
 
 If you do not set the `Patterns` property, like in this example, MaskedTextBox uses the default patterns:
 

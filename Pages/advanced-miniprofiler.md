@@ -1,4 +1,4 @@
-## MiniProfiler
+# MiniProfiler
 
 > This feature is available in DotVVM 1.1.5 and higher.
 
@@ -19,7 +19,7 @@ It is also possible to view the data traced in previous HTTP requests:
 
 > MiniProfiler is capable of profiling other 3rd party services, e.g. Entity Framework, Entity Framework Core and Redis.
 
-### Getting Started
+## Getting Started
 
 MiniProfiler installation and configuration differs for [ASP.NET Core](#AspNetCore) and [OWIN](#Owin). You can find the details for extended configuration 
 in the **[MiniProfiler documentation](http://miniprofiler.com/dotnet/)**.
@@ -40,7 +40,7 @@ using (MiniProfiler.Current.Step("GetOrder"))
 
 <br />
 
-#### <a name="AspNetCore"></a>ASP.NET Core
+### <a name="AspNetCore"></a>ASP.NET Core
 
 > Be aware that MiniProfiler for ASP.NET Core is currently in alpha pre-release version.
 
@@ -87,7 +87,7 @@ To see it in action, you can simply navigate to `~/profiler/results-index` and v
 
 <br />
 
-#### <a name="Owin"></a>OWIN
+### <a name="Owin"></a>OWIN
 
 1. Either use the NuGet UI to install `DotVVM.Tracing.MiniProfiler.Owin`, or use the following commands in the _Package Manager Console_ window:
 

@@ -1,4 +1,4 @@
-### Sample 1: ButtonGroup Size
+## Sample 1: ButtonGroup Size
 
 The `Size` property specifies how big the buttons will be. The available sizes are: `Large`, `Default`, `Small` and `ExtraSmall`.
 

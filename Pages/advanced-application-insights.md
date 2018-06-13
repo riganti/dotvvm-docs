@@ -1,4 +1,4 @@
-## Application Insights
+# Application Insights
 
 > This feature is available in DotVVM 1.1.5 and higher.
 
@@ -20,7 +20,7 @@ Additionally, you can analyze exceptions that were thrown in your web applicatio
 
 <br />
 
-### Getting started
+## Getting started
 
 In order to view telemetry data in Microsoft Azure portal you need to create a Microsoft Azure resource. This can be done either through
 IDE or manually.
@@ -36,7 +36,7 @@ OWIN version additionally contains the `EnableAuthSnippet` property. In ASP.NET 
 
 <br />
 
-#### ASP.NET Core
+### ASP.NET Core
 
 You can add *Application Insights* to an ASP.NET Core project using the Visual Studio Solution Explorer window, or manually.
 
@@ -64,7 +64,7 @@ services.AddDotVVM(options =>
 
 <br />
 
-#### OWIN
+### OWIN
 
 First, you need to add Application Insights into your ASP.NET project. You can do this in the Visual Studio Solution Explorer.
 

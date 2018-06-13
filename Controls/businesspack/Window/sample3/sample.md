@@ -1,4 +1,4 @@
-### Sample 3: Closing Window
+## Sample 3: Closing Window
 
 By default, the window remains open until the user closes it.
 

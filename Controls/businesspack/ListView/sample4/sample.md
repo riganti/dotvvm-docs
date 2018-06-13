@@ -1,4 +1,4 @@
-### Sample 4: Display Modes
+## Sample 4: Display Modes
 
 The `DisplayMode` property defines whether the list is vertical (`Row`) or horizontal (`Tile`).
 

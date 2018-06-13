@@ -1,10 +1,10 @@
-## Adding DotVVM in Existing Web App
+# Adding DotVVM in Existing Web App
 
 **DotVVM** can be easily combined with other ASP.NET frameworks, like ASP.NET Web Forms, SignalR, ASP.NET Web API or ASP.NET MVC.
 
 DotVVM is yet another OWIN / ASP.NET Core middleware that can be added in the request processing pipeline.
 
-### Sample Integration Projects
+## Sample Integration Projects
 
 We have prepared the following sample projects that combine DotVVM with other frameworks in one application:
 
@@ -13,7 +13,7 @@ We have prepared the following sample projects that combine DotVVM with other fr
 * [DotVVM with Nancy Fx](https://github.com/riganti/dotvvm-samples-combo-with-nancy)
 
 
-### Installing the Nuget Package (OWIN)
+## Installing the Nuget Package (OWIN)
 
 To add **DotVVM** in an existing ASP.NET project, simply install **DotVVM** Nuget package using Package Manager Console:
 
@@ -21,7 +21,7 @@ To add **DotVVM** in an existing ASP.NET project, simply install **DotVVM** Nuge
 
 The package will add a reference to **DotVVM.Framework** and **DotVVM.Core** libraries to the project.
 
-#### Initialization
+### Initialization
 
 The next thing you have to do, is to register the DotVVM middleware to the OWIN pipeline. In your OWIN startup class, you have to register the DotVVM middleware. 
 
@@ -51,7 +51,7 @@ namespace DotvvmDemo
 
 <br />
 
-### Installing the Nuget Package (ASP.NET Core)
+## Installing the Nuget Package (ASP.NET Core)
 
 If you use the new ASP.NET Core stack, you need the ASP.NET Core version of DotVVM.
 
@@ -62,7 +62,7 @@ To add **DotVVM** in an existing ASP.NET Core project, simply install `DotVVM.As
 The package will reference **DotVVM.Framework** and **DotVVM.Framework.Hosting.AspNetCore** libraries in the project.
 
 
-#### Initialization
+### Initialization
 
 You have to do two things in the `Startup` class:
 
@@ -85,7 +85,7 @@ Second, add the following code snippet in the `Configure` method. If you are usi
 var config = app.UseDotVVM<DotvvmStartup>();
 ```
 
-### DotvvmStartup class (both OWIN and ASP.NET Core)
+## DotvvmStartup class (both OWIN and ASP.NET Core)
 
 Notice that the code references the `DotvvmStartup` class. It is a class you have to add in your project too. 
 This class contains the configuration of DotVVM itself, e.g. the registration of routes in your app.

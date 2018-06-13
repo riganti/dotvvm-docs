@@ -1,4 +1,4 @@
-### Sample 2: Multiple CheckBoxes
+## Sample 2: Multiple CheckBoxes
 
 The CheckBox has also a property `CheckedItems` which can hold any collection. This is an alternative to the `Checked` property - they cannot be combined.
 The collection holds values of all checkboxes which are checked. The value of the checkbox which should be inserted in the collection, is defined in the

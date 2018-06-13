@@ -1,4 +1,4 @@
-## ASP.NET Core Authentication
+# ASP.NET Core Authentication
 
 > This section is applicable if your application uses OWIN and classic .NET Framework. 
 > For OWIN stack, visit the [Using OWIN Security for Authentication](/docs/tutorials/advanced-owin-security/{branch}).
@@ -58,7 +58,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 
 > The `DotvvmAuthenticationHelper.ApplyRedirectResponse` method is used to perform the redirect because DotVVM uses a different way to handle redirects. Because the HTTP requests invoked by the command bindings are done using AJAX, DotVVM cannot return the HTTP 302 code. Instead, it returns HTTP 200 with a JSON object which instructs DotVVM to load the new URL.
 
-### Login Page with ASP.NET Core Cookie Authentication
+## Login Page with ASP.NET Core Cookie Authentication
 
 In the login page, you need to verify the user credentials and create the `ClaimsIdentity` object that represents the logged user's identity. Then, you need to pass the identity to the `Context.GetAuthentication().SignInAsync` method:
 

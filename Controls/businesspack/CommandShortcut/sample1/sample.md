@@ -1,4 +1,4 @@
-### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 Use the `Ctrl`, `Shift` and `Alt` properties to specify modifiers for the shortcut, and use the `Key` property to specify the shortcut key.
 

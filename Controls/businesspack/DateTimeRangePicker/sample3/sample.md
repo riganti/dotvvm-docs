@@ -1,4 +1,4 @@
-### Sample 3: Modes
+## Sample 3: Modes
 
 You can use the `Mode` property to determine whether you want to select `Date`, `Time` or `DateTime` (a combination of date and time).
 

@@ -1,4 +1,4 @@
-### Sample 7: Inline Inserting
+## Sample 7: Inline Inserting
 
 The `InlineInserting` property can enable the inline insert feature on the grid which adds an extra row on the top or the bottom of the table.
 

@@ -1,4 +1,4 @@
-﻿### Sample 2: Enabled, Visible and EmptyItemText
+## Sample 2: Enabled, Visible and EmptyItemText
 
 The `EmptyItemText` property is used to set text of an empty item. The empty item has a value of *null*.
 

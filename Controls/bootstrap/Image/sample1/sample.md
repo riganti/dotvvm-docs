@@ -1,4 +1,4 @@
-### Sample 1: Basic Image
+## Sample 1: Basic Image
 
 The most important property is the `ImageUrl` which sets the _src_ attribute of the rendered image.
 

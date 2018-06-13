@@ -1,4 +1,4 @@
-## Upgrading to DotVVM 1.1
+# Upgrading to DotVVM 1.1
 
 Because **DotVVM 1.1** brought support for ASP.NET Core, we had to do many fundamental changes inside the framework, and there are several breaking changes.
 
@@ -6,7 +6,7 @@ If your app is built on **DotVVM 1.0**, you need to take the following steps to 
 
 
 
-### 1. Install the DotVVM.Owin NuGet Package
+## 1. Install the DotVVM.Owin NuGet Package
 
 In the 1.0 version, the **DotVVM** NuGet package included the framework and the hosting infrastructure together in one library.
 
@@ -14,7 +14,7 @@ In the 1.1 version, we have moved the OWIN hosting infrastructure to a separate 
 
 
 
-### 2. Change OwinContext to GetOwinContext() or to HttpContext
+## 2. Change OwinContext to GetOwinContext() or to HttpContext
 
 The `Context` object which is available in the viewmodel, had the `OwinContext` property which could access the information about the current HTTP request
 and manipulate with the response.
@@ -27,20 +27,20 @@ in the `Dotvvm.Framework.Hosting` namespace.
 
 
 
-### 3. Change OwinContext.Authentication to GetAuthentication()
+## 3. Change OwinContext.Authentication to GetAuthentication()
 
 The same thing applies to `OwinContext.Authentication` property. You can use the `GetAuthentication()` extension method to get this API quickly.
 
 
 
-### 4. Change DotvvmRequestContext to IDotvvmRequestContext in Custom Presenters
+## 4. Change DotvvmRequestContext to IDotvvmRequestContext in Custom Presenters
 
 In the 1.0 version, the `IDotvvmRequestContext` declared the `ProcessRequest` method with an argument of type `DotvvmRequestContext`, which was wrong.
 
 In the 1.1 version, we fixed this, so the argument is `IDotvvmRequestContext`, which allows to mock the context easily when testing the presenter.
 
 
-### 5. DefaultViewModelLoader requires IServiceProvider
+## 5. DefaultViewModelLoader requires IServiceProvider
 
 If you derived from the `DefaultViewModelLoader` class to do the dependency injection in the viewmodels, you need to request the `IServiceProvider` argument
 in the constructor of your class, and pass it to the constructor of `DefaultViewModelLoader`. 
@@ -60,7 +60,7 @@ public class WindsorViewModelLoader : DefaultViewModelLoader
 ```
 
 
-### 6. ServiceLocator changes to IServiceProvider
+## 6. ServiceLocator changes to IServiceProvider
 
 Since Microsoft has brought their own dependency injection mechanisms in the ASP.NET Core, to make the things unified, we have used this infrastructure 
 in DotVVM too.
@@ -82,7 +82,7 @@ If you try to add services in the `IServiceProvider` later, it may fail because 
 
 
 
-### 7. Make ActionFilter and ExceptionFilter Methods Async
+## 7. Make ActionFilter and ExceptionFilter Methods Async
 
 We needed to change all methods on the `ActionFilterAttribute` and `ExceptionFilterAttribute` to async versions. 
 
@@ -103,12 +103,12 @@ following interfaces:
 * `IViewModelActionFilter` contains viewmodel-related events - `OnViewModelCreatedAsync` and `OnViewModelDeserializedAsync` and `OnViewModelSerializingAsync` (which replaces the `OnResponseRendering`).
 
 
-### 8. Rename the HideNonAuthenticatedUsers to HideForAnonymousUsers on RoleView
+## 8. Rename the HideNonAuthenticatedUsers to HideForAnonymousUsers on RoleView
 
 If you are using the `<dot:RoleView>` control, please rename the `HideNonAuthenticatedUsers` to `HideForAnonymousUsers` property which makes better sense.
 
 
-### 9. Resource Registrations Changed
+## 9. Resource Registrations Changed
 
 To support advanced scenarios, we had to change the way how resources are registered.
 

@@ -1,4 +1,4 @@
-## Using Resources
+# Using Resources
 
 You can use the `RequiredResource` control to indicate that you need to include the specific resource in the page.
 
@@ -16,7 +16,7 @@ If you set the `FormatString` property on a `TextBox`, it will request the globa
 
 When a page is about to be rendered, the resource manager will put all required resources together, sort them to satisfy all dependency constraints, and render them in the page in correct order.
 
-### Built-in Resources
+## Built-in Resources
 
 DotVVM already includes the following built-in resources:
 

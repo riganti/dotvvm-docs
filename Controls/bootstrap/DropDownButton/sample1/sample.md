@@ -1,4 +1,4 @@
-### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 The `Text` property specified the text on the button. Alternatively, you can use the `ButtonTemplate` property.
 

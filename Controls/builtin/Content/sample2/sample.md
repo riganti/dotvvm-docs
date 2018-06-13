@@ -1,4 +1,4 @@
-### Sample 2: Viewmodel Inheritance
+## Sample 2: Viewmodel Inheritance
 
 Typically, the viewmodel of the content page derives the viewmodel of the master page. Note that the viewmodel of the master page can be an interface.
 

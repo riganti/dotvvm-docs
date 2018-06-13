@@ -1,4 +1,4 @@
-### Sample 6: Inline Editing
+## Sample 6: Inline Editing
 
 The `InlineEditing` property can be use to enable the user edit rows directly in the grid.
 

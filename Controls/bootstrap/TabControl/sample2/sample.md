@@ -1,4 +1,4 @@
-### Sample 2: ActiveTabIndex Property
+## Sample 2: ActiveTabIndex Property
 
 The `ActiveTabIndex` property specifies a zero-base index of the tab which is currently selected.
 

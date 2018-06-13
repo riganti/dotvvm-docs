@@ -1,4 +1,4 @@
-### Sample 2: ListGroupItem - Item Types, Bindings & Other Properties
+## Sample 2: ListGroupItem - Item Types, Bindings & Other Properties
 
 Similarly to Bootstrap each `ListGroupItem` can have different type. `ItemType` property specify what type of item will be generated.
 Expected values are `Link` which generates "a" element, `Button` which generates "button" element. Default generated element is "li". 

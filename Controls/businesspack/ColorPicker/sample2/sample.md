@@ -1,4 +1,4 @@
-### Sample 2: Predefined Colors
+## Sample 2: Predefined Colors
 
 The `PredefinedColors` property can be bound to a collection of colors that display under the color scale and can be easily selected by the user.
 

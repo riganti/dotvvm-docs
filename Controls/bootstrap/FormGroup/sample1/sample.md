@@ -1,4 +1,4 @@
-### Sample 1: FormGroup Usage
+## Sample 1: FormGroup Usage
 
 Place any content inside the `FormGroup` control. 
 

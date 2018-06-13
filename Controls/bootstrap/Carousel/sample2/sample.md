@@ -1,4 +1,4 @@
-### Sample 2: Carousel Settings
+## Sample 2: Carousel Settings
 
 The `Carousel` control has the following properties:
 

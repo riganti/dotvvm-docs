@@ -1,4 +1,4 @@
-### Sample 1: Basic Literal
+## Sample 1: Basic Literal
 
 Use the `Text` property to supply the value to be rendered.
 

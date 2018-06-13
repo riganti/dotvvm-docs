@@ -1,4 +1,4 @@
-### Sample 1: Form Controls
+## Sample 1: Form Controls
 
 The `Form` is an easy to use control which uses the Bootstrap styles to render a form.
 

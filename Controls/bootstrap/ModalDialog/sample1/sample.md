@@ -1,4 +1,4 @@
-### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 The `ModalDialog` control has the `HeaderText` property which sets the title of the popup. 
 

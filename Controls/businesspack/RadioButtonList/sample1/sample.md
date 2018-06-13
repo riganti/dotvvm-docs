@@ -1,4 +1,4 @@
-### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 The `DataSource` property specifies a collection of `string`s. For each item in the collection, a radio button is created.
 

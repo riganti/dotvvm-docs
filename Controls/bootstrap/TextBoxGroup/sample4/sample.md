@@ -1,4 +1,4 @@
-### Sample 4: Text Box Group - Type and ValueType
+## Sample 4: Text Box Group - Type and ValueType
 
 The `Type` property is used to change the mode of the text field. Possible values are:
 

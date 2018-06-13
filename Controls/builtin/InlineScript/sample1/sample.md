@@ -1,4 +1,4 @@
-### Sample 1: Basic InlineScript
+## Sample 1: Basic InlineScript
 
 The content of the InlineScript control is rendered as javascript in the page.
 

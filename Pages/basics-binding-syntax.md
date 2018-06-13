@@ -1,4 +1,4 @@
-## Binding Syntax
+# Binding Syntax
 
 One of the most useful things in **DotVVM** is the **data binding**. The magic of writing "rich client-side apps" without using JavaScript
 is the ability of DotVVM to translate binding expressions to JavaScript. 
@@ -20,7 +20,7 @@ You can find more about them in the [Markup Controls](/docs/tutorials/control-de
 > The commercial version of [DotVVM for Visual Studio](/landing/dotvvm-for-visual-studio-extension) shows the IntelliSense for expressions in all types 
 of bindings. 
 
-### Usage
+## Usage
 
 We can use a data binding expression almost everywhere in DOTHTML. 
 

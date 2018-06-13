@@ -1,4 +1,4 @@
-### Sample 4: Customizing Icons
+## Sample 4: Customizing Icons
 
 The icons used by the control can be customized using the following properties:
 

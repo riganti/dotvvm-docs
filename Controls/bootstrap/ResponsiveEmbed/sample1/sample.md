@@ -1,4 +1,4 @@
-### Sample 1: Basic ResponsiveEmbed
+## Sample 1: Basic ResponsiveEmbed
 
 The `ResponsiveEmbed` control has the `Type` property for specifying the embed type. The options are:
 

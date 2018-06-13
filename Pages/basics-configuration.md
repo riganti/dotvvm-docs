@@ -1,4 +1,4 @@
-## Configuration
+# Configuration
 
 DotVVM uses C# code to configure its features and settings. 
 
@@ -17,7 +17,7 @@ In the default project template, there are 2 files - `Startup.cs` and `DotvvmSta
 In `Startup.cs`, we configure DotVVM services and register DotVVM middlewares. In `DotvvmStartup.cs`, we configure routes, resources and controls.
 
 
-### Startup.cs in OWIN
+## Startup.cs in OWIN
 
 In OWIN, the `Startup.cs` contains the OWIN startup class. DotVVM is just an OWIN middleware and you can easily combine it with ASP.NET MVC or any other OWIN middlewares in one application. 
 
@@ -33,7 +33,7 @@ var config = app.UseDotVVM<DotvvmStartup>(ApplicationPhysicalPath, options => {
 
 This extension method initializes the middlewares required by DotVVM. The `DotvvmStartup` type parameter of the `UseDotVVM` represents the class which contains DotVVM configuration.
 
-### Startup.cs in ASP.NET Core
+## Startup.cs in ASP.NET Core
 
 In ASP.NET Core, the registration of frameworks is splitted to the registration of services and middlewares. 
 
@@ -56,7 +56,7 @@ var config = app.UseDotVVM<DotvvmStartup>();
 
 This extension method initializes the middlewares required by DotVVM. The `DotvvmStartup` type parameter of the `UseDotVVM` represents the class which contains DotVVM configuration.
 
-### DotvvmStartup.cs
+## DotvvmStartup.cs
 
 The `DotvvmStartup` class must implement the `IDotvvmStartup` interface and contains the `Configure` method. There should be only one class implementing the `IDotvvmStartup` interface in the assembly.
 
@@ -106,7 +106,7 @@ Please note that the [Visual Studio Extension](/landing/dotvvm-for-visual-studio
 
 If you need to register or initialize anything else (e.g. initialize the database, create default users), do it in the `Startup.cs`, or anywhere else.
 
-### Debug Mode
+## Debug Mode
 
 The `DotvvmConfiguration` object contains the `Debug` property which should be turned in the development environment, and turned off in production.
 
@@ -122,6 +122,6 @@ config.Debug = false;
 #endif
 ```
 
-### Static Files
+## Static Files
 
 In the default project template, the `Startup` class also registers a static files middleware. DotVVM doesn't need it itself, however in 99% cases you want to use it to serve static files like images to the user.

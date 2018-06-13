@@ -1,4 +1,4 @@
-## Control Properties and Attributes
+# Control Properties and Attributes
 
 All DotVVM controls have some properties in common because they all derive from the `DotvvmControl` class. 
 You can use most of these properties on HTML elements too.
@@ -7,14 +7,14 @@ You can use most of these properties on HTML elements too.
 + `Visible` - hides the control / element in the page (using CSS `display: none`).
 + `ID` - specifies an ID of the control. 
 
-#### Control IDs
+## Control IDs
 
 Because the control can appear in the page multiple times (e.g. when it is inside the `Repeater` control), the real `id` of the HTML element might be different. Typically, DotVVM will add some prefix to it to make sure it is unique in the page.
 Sometimes, the ID is even calculated on the client side dynamically. 
 
 You can enforce the ID of the control / element to be the same as you specified in the markup by setting the `ClientIDMode` property to `Static`. In that case, you are responsible to make sure that the ID is unique. 
 
-### HTML Attributes And DotVVM Controls
+## HTML Attributes And DotVVM Controls
 
 You can also add any HTML attributes to (almost) all controls. You can use binding in the HTML attributes.
 All additional attributes used on the DotVVM control will be added to the main HTML element rendered by the control.

@@ -1,4 +1,4 @@
-### Sample 2: GridView with Color Decorator
+## Sample 2: GridView with Color Decorator
 
 Sometimes, you need to apply some color to specific row.
 

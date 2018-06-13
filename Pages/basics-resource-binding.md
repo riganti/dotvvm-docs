@@ -1,4 +1,4 @@
-﻿## Resource Binding
+# Resource Binding
 
 > In DotVVM 1.1, the resource bindings have changed. The `@resourceType` and `@resourceNamespace` directives are no longer supported. The `@import` directive is used instead.
 
@@ -9,7 +9,7 @@ For example, if you have a project named *MyWebApp* and you have a *Resources\We
 be *MyWebApp.Resources.Web.Strings* (provided you haven't change the default namespace in the project properties). To retrieve the resource, you need
 to use `{resource: MyWebApp.Resources.Web.Strings.SomeResourceKey}`.
 
-### The @import Directive
+## The @import Directive
 
 The syntax with full namespace is long, so you can use the `@import` directive to import namespaces.
 

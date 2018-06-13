@@ -1,4 +1,4 @@
-### Sample 5: Async commands
+## Sample 5: Async commands
 
 All DotVVM controls support async methods in [command bindings](/docs/tutorials/basics-command-binding/{branch}).
 

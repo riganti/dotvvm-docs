@@ -1,4 +1,4 @@
-﻿### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 Use the `SelectedDate` property to get or set the selected date.
 

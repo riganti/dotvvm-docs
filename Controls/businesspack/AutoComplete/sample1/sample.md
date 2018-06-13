@@ -1,4 +1,4 @@
-### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 Bind the `DataSource` property to a collection of `string`s. 
 

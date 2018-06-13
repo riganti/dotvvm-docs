@@ -1,4 +1,4 @@
-## IoC/DI Containers
+# IoC/DI Containers
 
 Dependency Injection is used widely in many large applications. **DotVVM** allows you to have your services injected in the viewmodel constructor or properties.
 
@@ -23,7 +23,7 @@ Basically, if you need any services in your viewmodel, you can request them in t
 
 DotVVM 1.1 uses the `Microsoft.Extensions.DependencyInjection` library to configure and resolve services.
 
-### OWIN
+## OWIN
 
 In the `Startup.cs` file, every DotVVM application calls the following method:
 
@@ -42,7 +42,7 @@ One of the services that is already present in the collection, is the viewmodel 
 
 DotVVM uses the `DefaultViewModelLoader` class which locates the class and calls its default constructor. If you need to plug a dependency injection container in, you can create a class that inherits `DefaultViewModelLoader` and override the `CreateViewModelInstance`.
 
-#### Custom ViewModelLoader for Castle Windsor
+### Custom ViewModelLoader for Castle Windsor
 
 **Castle Windsor** is one of the favorite IoC/DI containers in .NET. Here is how to create the viewmodel loader using this container. Notice that we call `container.Resolve` in the `CreateViewModelInstance` and `container.Release` in the `DisposeViewModel`.
 
@@ -80,7 +80,7 @@ If you use another container, the implementation will be very similar. Don't for
 
 Some containers do this by initiating a "scope" in the `CreateViewModelInstance` method and disposing the scope in the `DisposeViewModel` method.
 
-#### Registering Custom ViewModelLoader
+### Registering Custom ViewModelLoader
 
 The last thing is to replace the default viewmodel loader with the one you have just created.
 We should do this in the `Startup.cs` class:
@@ -93,13 +93,13 @@ app.UseDotVVM<DotvvmStartup>(applicationPhysicalPath, options: options =>
 ```
 
 
-### ASP.NET Core
+## ASP.NET Core
 
 ASP.NET Core contains a built-in dependency injection mechanism. In the `Startup.cs` file, there is a method called `ConfigureServices` which registers all application services in the `IServiceCollection` parameter. The collection is managed by the `Microsoft.Extensions.DependencyInjection` library.
 
 When you call `app.UseDotVVM<DotvvmStartup>(...)`, it registers several internal services which DotVVM uses the `IServiceCollection`, for example the view compiler, viewmodel serializer and so on.  
 
-#### Registering Services
+### Registering Services
 
 To register services, you can just call one of the following methods:
 
@@ -115,7 +115,7 @@ public void ConfigureServices(IServiceCollection services)
 
 DotVVM will be able to inject these services if they are specified as parameters of the viewmodel constructor.
 
-#### Using Alternative Container
+### Using Alternative Container
 
 Optionally, the `ConfigureServices` method can return its own `IServiceProvider` which will be used instead of the default one. This is useful if you want to use an alternative IoC/DI container. 
 

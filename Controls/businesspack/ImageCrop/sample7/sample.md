@@ -1,4 +1,4 @@
-### Sample 7: Custom Icons
+## Sample 7: Custom Icons
 
 To customize the look of toolbar icons in the control, you can use the following properties:
 

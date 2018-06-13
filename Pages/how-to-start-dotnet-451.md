@@ -1,4 +1,4 @@
-## Create a new project (ASP.NET 4.5.1)
+# Create a new project (ASP.NET 4.5.1)
 
 Creating a new **DotVVM** project is really simple. First, download and install the [DotVVM for Visual Studio](https://www.dotvvm.com/landing/dotvvm-for-visual-studio-extension) extension.
 

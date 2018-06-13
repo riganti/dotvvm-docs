@@ -1,4 +1,4 @@
-### Sample 2: Working with Objects
+## Sample 2: Working with Objects
 
 When the `DataSource` collection is bound to a collection of objects, you may use the `ItemTextBinding` to specify from which property to extract text when an object is selected from the list of suggestions.
 

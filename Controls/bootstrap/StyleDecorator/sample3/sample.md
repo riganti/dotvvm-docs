@@ -1,4 +1,4 @@
-### Sample 3: StyleDecorator - Visibility
+## Sample 3: StyleDecorator - Visibility
 
 The `StyleDecorator` control has the `Visibility` property for setting inner element visible or hidden option for specific screen sizes.
 

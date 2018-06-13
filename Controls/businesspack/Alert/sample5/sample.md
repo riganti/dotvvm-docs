@@ -1,4 +1,4 @@
-### Sample 5: Common Usage
+## Sample 5: Common Usage
 
 The typical use of the `Alert` control is to have 2 properties in the viewmodel (`AlertText` and `AlertType`) which are bound to the properties of the `Alert` control.
 

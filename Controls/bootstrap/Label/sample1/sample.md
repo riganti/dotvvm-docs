@@ -1,4 +1,4 @@
-### Sample 1: Label Types
+## Sample 1: Label Types
 
 The `Type` property affects which color will be used on the label.
 

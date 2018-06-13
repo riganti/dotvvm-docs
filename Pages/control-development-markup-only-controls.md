@@ -1,4 +1,4 @@
-## Markup-Only Controls
+# Markup-Only Controls
 
 It is very easy to create a markup control. First, you need to create a file with the `.dotcontrol` extension.
 
@@ -9,7 +9,7 @@ The markup control files must specify the `@viewModel` directive which tells Dot
 If your markup control doesn't contain any data-bindings and doesn't depend on a specific viewmodel, use `@viewModel System.Object, mscorlib`. It means that the binding context in which the control is used, can be anything.
 
 
-### How to create Markup Controls
+## How to create Markup Controls
 
 Simple markup controls don't need any C# code. In Visual Studio, right click on a project or folder in the *Solution Explorer* window, and select *Add > New Item*.
 

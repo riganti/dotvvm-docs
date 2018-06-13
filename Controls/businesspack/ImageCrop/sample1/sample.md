@@ -1,4 +1,4 @@
-### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 The `ImageUrl` property specifies the URL of the image that is being edited.
 

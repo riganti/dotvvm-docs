@@ -1,4 +1,4 @@
-### Sample 1: Accordion Control
+## Sample 1: Accordion Control
 
 To use this control, just place several `CollapsiblePanel`s inside the `Accordion` control.
   

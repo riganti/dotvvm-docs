@@ -1,4 +1,4 @@
-### Sample 8: Advanced Column Types
+## Sample 8: Advanced Column Types
 
 There are several columns which use various *Business Pack* controls in the insert and edit mode:
 

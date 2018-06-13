@@ -1,4 +1,4 @@
-### Sample 1: Basic TabControl
+## Sample 1: Basic TabControl
 
 Each tab is represented by the [TabItem](/docs/controls/bootstrap/TabItem/{branch}) control.
 

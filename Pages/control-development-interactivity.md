@@ -1,4 +1,4 @@
-## Adding interactivity using custom Knockout binding handlers
+# Adding interactivity using custom Knockout binding handlers
 
 In the previous tutorial, we have written a simple [TextBox](/docs/controls/builtin/TextBox/{branch}) control. But today, we have many controls that include a javascript part.
 Let's write a DatePicker control using [this Bootstrap DatePicker plugin](http://www.eyecon.ro/bootstrap-datepicker).
@@ -14,7 +14,7 @@ To use the plugin, you need to do several things:
 4. Watch the "changeDate" event and update the viewmodel. The plugin doesn't trigger the change event on the input so we have to help Knockout to notice the value has changed.
 
 
-### The First Rule: Avoid Javascript in the Page
+## The First Rule: Avoid Javascript in the Page
 
 If you don't know Knockout JS well, read [their documentation](http://knockoutjs.com/documentation/introduction.html). You'll get better understanding how *DotVVM* 
 works inside - remember that DotVVM wraps Knockout JS.
@@ -36,7 +36,7 @@ The good news is that we can do it almost always. The server part of the control
 
 
 
-### Making the binding
+## Making the binding
 
 The Knockout binding handler has two phases - `init` and `update`. Basically, these are two functions.
 
@@ -95,7 +95,7 @@ ko.bindingHandlers["myDatePicker"] = {
 };
 ```
 
-### Resources
+## Resources
 
 The last thing we have to do is to bundle the script so it is included with the control.
 

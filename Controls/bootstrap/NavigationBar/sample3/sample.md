@@ -1,4 +1,4 @@
-### Sample 3: Data Binding Navigation Items
+## Sample 3: Data Binding Navigation Items
 
 The `NavigationBar` control can also generate the items from a collection in the viewmodel.
 

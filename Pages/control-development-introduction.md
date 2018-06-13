@@ -1,10 +1,10 @@
-## Introduction to Control Development
+# Introduction to Control Development
 
 Building custom controls is not only for advanced developers and scenarios. We really encourage you to learn how to write your own **DotVVM** controls because it will help you even in very small apps. It will also boost your productivity because you'll be able to reuse significant amount of code across multiple pages or even across multiple projects.
 
 In DotVVM, there are two types of controls - **markup controls** and **code-only controls**. 
 
-### Markup Controls
+## Markup Controls
 
 **Markup controls** are just a piece of DOTHTML markup which you can put in its own file and use it from anywhere.
 
@@ -18,7 +18,7 @@ Moreover, you can take this ready-made control and use it in another project bec
 
 The control can maintain its own state and have its own internal logic, e.g. guess the city name from the ZIP code.
 
-### Code-only Controls
+## Code-only Controls
 
 **Code-only controls** are used whenever you need to render a precise piece of HTML and incorporate bindings with it.
 

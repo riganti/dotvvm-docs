@@ -1,4 +1,4 @@
-### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 Each menu item in the `ResponsiveNavigation` control is represented by the [NavigationItem](/docs/controls/bootstrap/NavigationItem/{branch}) control. 
 

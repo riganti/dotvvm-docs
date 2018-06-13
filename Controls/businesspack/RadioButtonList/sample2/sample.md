@@ -1,4 +1,4 @@
-### Sample 2: Working with Objects
+## Sample 2: Working with Objects
 
 When the `DataSource` collection is bound to a collection of objects, you may use the `ItemTextBinding` to specify, which property of the object in the collection will be displayed as a text of a particular radio button.
 

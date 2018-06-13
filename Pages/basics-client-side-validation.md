@@ -1,4 +1,4 @@
-## Client Side vs Server Side Validation
+# Client Side vs Server Side Validation
 
 In all cases, the validation takes place _on the server_, because the user might tamper with the HTTP communication and post a viewmodel which violates some of the validation rules.
 

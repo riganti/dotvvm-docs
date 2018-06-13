@@ -1,4 +1,4 @@
-### Sample 11: Server Rendering
+## Sample 11: Server Rendering
 
 The control supports also the server-side rendering. In this mode, many functions cannot work since the control is rendered directly in the HTML output.
 

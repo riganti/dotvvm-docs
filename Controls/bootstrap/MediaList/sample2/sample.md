@@ -1,4 +1,4 @@
-### Sample 2: Media List with Data Source
+## Sample 2: Media List with Data Source
 
 Items inside the `MediaList` control can be also generated from a collection binded to the `DataSource` property.
 

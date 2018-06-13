@@ -1,4 +1,4 @@
-### Sample 2: Server Rendering
+## Sample 2: Server Rendering
 
 To render the HTML directly in the page without the need to transfer it in the viewmodel, you can use the `RenderSettings.Mode` to turn on the server rendering.
 

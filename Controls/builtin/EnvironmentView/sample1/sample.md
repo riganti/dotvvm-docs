@@ -1,4 +1,4 @@
-### Sample 1: EnvironmentView
+## Sample 1: EnvironmentView
 
 The `Environments` property contains a comma-separated list of environment names. 
 

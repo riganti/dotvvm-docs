@@ -1,4 +1,4 @@
-### Sample 2: Grid Headers
+## Sample 2: Grid Headers
 
 When the `DataSource` is empty, the grid will not appear at all by default. The `ShowHeaderWhenNoData` property can be used to make the grid header visible even if there are no data.
 

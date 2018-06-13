@@ -1,4 +1,4 @@
-### Sample 3: Animations
+## Sample 3: Animations
 
 When the alert appears or disappears, the fade in and fade out animation is used.
 

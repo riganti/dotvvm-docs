@@ -1,10 +1,10 @@
-## Using Session or HttpContext cookies
+# Using Session or HttpContext cookies
 
 > This topic is related to the OWIN version of DotVVM only. It is relevant for you only if the application needs to interact with ASP.NET Session, or with cookies using `System.Web.HttpContext`.
 
 > We recommend to avoid using session completely as it causes a wide variety of problems, especially when the user has multiple tabs or browser windows open.
 
-### OWIN vs ASP.NET Cookies
+## OWIN vs ASP.NET Cookies
 
 OWIN offers its own extensible way of working with cookies. By default, the `ChunkingCookieManager` class is used. When the application interact with cookies using through `System.Web.HttpContext` (the classic ASP.NET way), there is a conflict and the changes made by the `ChunkingCookieManager` will be lost.
 
@@ -16,7 +16,7 @@ System.Security.SecurityException: SessionID cookie is missing, so can't verify 
 
 The preferred solution to this problem would be using a different way to store session-related data, or replace the default `ChunkingCookieManager` class by another implementation which will use `HttpContext` to interact with cookies.
 
-### Using Session in DotVVM applications
+## Using Session in DotVVM applications
 
 To be able to use session in OWIN, the following code should be placed in `Startup.cs` before any middleware is registered. Otherwise, `HttpContext.Current.Session` would be null.
 

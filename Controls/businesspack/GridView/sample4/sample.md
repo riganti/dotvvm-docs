@@ -1,4 +1,4 @@
-### Sample 4: Sorting
+## Sample 4: Sorting
 
 By default, the sorting is not enabled on any column. You can use the `AllowSorting` property to enable it.
 

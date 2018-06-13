@@ -1,4 +1,4 @@
-### Sample 4: Display State
+## Sample 4: Display State
 
 You can use the `IsDisplayed` property to determine or specify, whether the alert is displayed.
 

@@ -1,4 +1,4 @@
-### Sample 4: Restrictions
+## Sample 4: Restrictions
 
 If you require more granular control over what dates can be selected, you can use the `Restrictions` property. We currently support the following types of restrictions:
 

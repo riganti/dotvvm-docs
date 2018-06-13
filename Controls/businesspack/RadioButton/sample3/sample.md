@@ -1,4 +1,4 @@
-### Sample 3: RadioButton's Changed Event
+## Sample 3: RadioButton's Changed Event
 
 The RadioButton has the `Changed` event which is fired whenever the radio button is checked or unchecked.
 

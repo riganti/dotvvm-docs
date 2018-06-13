@@ -1,4 +1,4 @@
-### Sample 1: HelpText Usage
+## Sample 1: HelpText Usage
 
 Use the `AssociatedControlID` property to specify the ID of the control which the help text is applied to.
 

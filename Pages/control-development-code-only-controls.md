@@ -1,4 +1,4 @@
-## Code-only Controls
+# Code-only Controls
 
 This kind of controls is useful when you need to render a piece of HTML and/or you need to support data-binding and manipulate with the viewmodel.
 
@@ -6,7 +6,7 @@ Building code-only controls is more difficult, but they can do much more things.
 
 If you want to learn about how to write controls in DotVVM, we encourage you to look in the [GitHub](https://github.com/riganti/dotvvm) repository how the built-in controls are implemented.
 
-### Control Registration
+## Control Registration
 
 First, you need to register the code-only control in the `DotvvmStartup.cs` file. 
 
@@ -23,14 +23,14 @@ Using this code snippet, if you use the `<cc:` tag prefix, DotVVM will search fo
 
 > If you register a markup control with code behind like this, it won't work. If the control has a markup, it must be registered using the `AddMarkupControl` method.
 
-### Basics
+## Basics
 
 All controls in `DotVVM` derive from `DotvvmControl` class. This base class provides only 
 basic functionality and _it is not a good base class to inherit directly_ for most purposes. 
 
 The most useful class to be derived from is `HtmlGenericControl`. It is prepared to render one HTML element (which can contain child elements of course). Most built-in controls in **DotVVM** derive from `HtmlGenericControl` class. 
 
-### Creating Code-only Control
+## Creating Code-only Control
 
 The best example to learn how to write controls in **DotVVM** is to look how the built-in controls are implemented.
 Let's begin with the [TextBox](/docs/controls/builtin/TextBox/{branch}).
@@ -57,7 +57,7 @@ public class TextBox : HtmlGenericControl
 
 This would render just `<input></input>` in the page. Also, if you add any custom attributes (e.g. `style`, `class`) on the `TextBox` control, it would append them in the page. The `HtmlGenericControl` takes care about all this stuff for you.
 
-### Rendering Pipeline
+## Rendering Pipeline
 
 Now, the `HtmlGenericControl` has 4 methods which we can override to modify the rendered HTML. They are called in this order:
 
@@ -69,7 +69,7 @@ Now, the `HtmlGenericControl` has 4 methods which we can override to modify the 
 
 + `RenderEndTag` - by default, this method renders the end tag.
 
-### HtmlWriter
+## HtmlWriter
 
 Now, let's see how to render the HTML element. In **DotVVM**, we use the `HtmlWriter` to generate HTML. To render the `<input type="text" />` we need to call something like this:
 
@@ -84,7 +84,7 @@ The `AddAttribute` method is called before rendering the tag and it also has a t
 
 The `HtmlWriter` knows that values in the `class` HTML attribute are separated by spaces, values in the `style` attribute by semicolons etc. You can also specify your own separator character as the fourth argument.
 
-### Rendering HTML
+## Rendering HTML
 
 Let's continue with the **TextBox** class. We don't want to render begin and end tags `<input></input>`, but the self closing one `<input />`. 
 
@@ -110,7 +110,7 @@ protected override void RenderEndTag(IHtmlWriter writer, IDotvvmRequestContext c
 }
 ```
 
-### Rendering HTML attributes
+## Rendering HTML attributes
 
 The most interesting is the `AddAttributesToRender` method. 
 
@@ -190,7 +190,7 @@ protected override void AddAttributesToRender(IHtmlWriter writer, IDotvvmRequest
 
 Thanks to this, the syntax is much shorter.
 
-### Building Control Tree
+## Building Control Tree
 
 Rendering HTML using the `HtmlWriter` class is good for simple controls. If the control is more complicated or can contain controls which invoke postbacks, you need to build a control tree inside the control.
 
@@ -200,7 +200,7 @@ This approach often results in a cleaner code, but rendering the HTML using the 
 
 You need to decide if rendering raw HTML is OK for your case, or if the control is more complex and you need to build a tree of child controls and manipulate with them somehow.  
 
-### Composite Control
+## Composite Control
 
 Let's create a control that is composed of two existing controls (`TextBox` and `Literal`) placed inside a `div` element.
 
@@ -239,7 +239,7 @@ public static readonly DotvvmProperty LabelTextProperty
     = DotvvmProperty.Register<string, TextBoxWithLabel>(c => c.LabelText, null);
 ```
 
-### Child Controls
+## Child Controls
 
 Similarly to the viewmodels, every control has lifecycle events `OnInit`, `OnLoad` and `OnPreRender` which follow the logic of the viewmodel `Init`, `Load` and `PreRender` events.
 

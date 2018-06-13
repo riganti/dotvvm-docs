@@ -1,4 +1,4 @@
-## Class Attribute
+# Class Attribute
 
 The `class` attribute in HTML can reference multiple CSS classes separated by a space (e.g. `<a class="btn btn-default">`).
 
@@ -13,7 +13,7 @@ The expression would look like this:
 </div>
 ```
 
-### Class Property Group
+## Class Property Group
 
 In DotVVM, you may see a mechanism called _property group_. Basically, it is a group of properties with a common prefix (e.g. `MyGroup-`).
 

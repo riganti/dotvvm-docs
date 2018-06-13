@@ -1,4 +1,4 @@
-## Testing ViewModels
+# Testing ViewModels
 
 One of the benefits of using the MVVM patterns is that the viewmodels are testable. Because the viewmodel doesn't have any dependencies on the user interface components, it is very easy to test.
 
@@ -21,7 +21,7 @@ public void NormalTest()
 }
 ```
 
-### Mocking the Context
+## Mocking the Context
 
 **DotVVM** injects the `IDotvvmRequestContext` object in the viewmodels. If your viewmodel uses some features of this object, you need to mock this object to provide all services to the tested method.
 

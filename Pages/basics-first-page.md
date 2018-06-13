@@ -1,4 +1,4 @@
-## Creating the First Page
+# Creating the First Page
 
 Every page in **DotVVM** consists of a **view** and a **viewmodel**. 
 
@@ -18,7 +18,7 @@ the window will automatically place your viewmodel in the **ViewModels** folder.
 You don't have to follow this convention however. You can always create your own conventions, e.g. to have the views together with viewmodels in the same folder.
 
 
-### View
+## View
 
 The **view** is a file with `.dothtml` extension. The views in DotVVM use standard HTML syntax with three flavors:
 
@@ -61,7 +61,7 @@ If you want to apply any other HTML attribute to a control, you can do it on mos
 
 <br />
 
-### ViewModel
+## ViewModel
 
 The **viewmodel** is a plain C# class which is referenced in the `.dothtml` file using the `@viewModel` directive. Any .NET class can be the viewmodel, however there is one thing to remember:
 
@@ -69,7 +69,7 @@ The **viewmodel** is a plain C# class which is referenced in the `.dothtml` file
 
 Don't launch rockets in the space in your getters, setters and constructor(s) because they can be executed several times during the JSON serialization. If possible, don't put any logic in your getters and setters. You don't know in which order the serializer will set the values in the properties! 
 
-#### DotvvmViewModelBase
+### DotvvmViewModelBase
 
 We recommend you to make your viewmodels derive from the `DotVVM.Framework.ViewModel.DotvvmViewModelBase` class. This class contains the `Context` property which will allow you to interact with the HTTP request, e.g. do a redirect to another page or route, access the configuration and much more. 
 

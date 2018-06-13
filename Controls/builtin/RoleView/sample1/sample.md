@@ -1,4 +1,4 @@
-### Sample 1: RoleView
+## Sample 1: RoleView
 
 The `Roles` property contains a comma-separated list of roles. 
 

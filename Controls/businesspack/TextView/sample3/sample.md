@@ -1,4 +1,4 @@
-### Sample 3: Link Target
+## Sample 3: Link Target
 
 The URLs and e-mail addresses in the text are detected automatically. 
 

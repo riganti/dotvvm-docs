@@ -1,4 +1,4 @@
-### Sample 3: Format Strings
+## Sample 3: Format Strings
 
 The `FormatString` property specifies the format that will be used to display the number. Use [standard](https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.110).aspx) or 
 [custom](https://msdn.microsoft.com/en-us/library/0c899ak8(v=vs.110).aspx) .NET number format strings.

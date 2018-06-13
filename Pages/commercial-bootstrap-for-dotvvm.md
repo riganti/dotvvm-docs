@@ -1,4 +1,4 @@
-## Installing Bootstrap for DotVVM
+# Installing Bootstrap for DotVVM
 
 To use the [Bootstrap for DotVVM](/landing/bootstrap-for-dotvvm) controls, you have use the [DotVVM Private Nuget Feed](/docs/tutorials/commercial-dotvvm-private-nuget-feed).
 
@@ -20,7 +20,7 @@ This will register all Bootstrap controls under the `<bs:*` tag prefix, and it a
 
 <br />
 
-### Configuration
+## Configuration
 
 The [Bootstrap for DotVVM](/landing/bootstrap-for-dotvvm) package doesn't include the bootstrap CSS and javascript libraries as they are too large and you might have 
 your own compilation of Bootstrap (e.g. if you use some Bootstrap template).   
@@ -34,15 +34,15 @@ Use this option if you don't reference the bootstrap CSS and JS files using the 
 Bootstrap scripts or styles in the page. If you turn the resource management off, DotVVM will assume that Bootstrap is already correctly included in the page.   
 
 
-#### Option 1: Let DotVVM Include the Bootstrap Files in the Page
+### Option 1: Let DotVVM Include the Bootstrap Files in the Page
 **Step 1**: If you don't have Bootstrap scripts and styles in your project,
 
-##### for .NET Framework
+#### for .NET Framework
 install the `Bootstrap` version 3 package from the official Nuget feed.
 ```
 Install-Package Bootstrap -Version 3.3.7 
 ```
-##### for .NET Core
+#### for .NET Core
 install the `Bootstrap` package from the Bower.
 ```
 bower install bootstrap
@@ -76,7 +76,7 @@ config.AddBootstrapConfiguration(new DotvvmBootstrapOptions()
  
 <br />
 
-#### Option 2: Include the Bootstrap Files in the Page Yourself
+### Option 2: Include the Bootstrap Files in the Page Yourself
 
 If you have already included the bootstrap script and styles using the `<script>` and `<style>` elements in the page header (e.g. in the master page), you can tell 
 DotVVM that it should not render the default bootstrap resources. Add this in the master page:
@@ -99,7 +99,7 @@ config.AddBootstrapConfiguration(new DotvvmBootstrapOptions()
 
 <br />
 
-#### Is It OK?
+### Is It OK?
 
 To verify that Bootstrap resources are included correctly, press F12 in your web browser. Verify that bootstrap.css or bootstrap.js is not loaded twice, and there are 
 no errors in the developer console, especially some messages which say that some Bootstrap-related resource could not be found.
@@ -108,6 +108,6 @@ no errors in the developer console, especially some messages which say that some
 
 <br />
 
-### Limitations
+## Limitations
 
 The current version of [Bootstrap for DotVVM](/landing/bootstrap-for-dotvvm) supports **Bootstrap 3**. For more information about Bootstrap, navigate into its [documentation](https://getbootstrap.com).

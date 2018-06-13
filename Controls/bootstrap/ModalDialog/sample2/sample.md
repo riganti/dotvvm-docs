@@ -1,4 +1,4 @@
-### Sample 2: ModalDialog Sizing and Static Commands
+## Sample 2: ModalDialog Sizing and Static Commands
 
 You can use the [static commands](/docs/tutorials/basics-static-command-binding/{branch}) to control the `IsDisplayed` property.
 

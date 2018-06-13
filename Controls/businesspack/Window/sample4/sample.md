@@ -1,4 +1,4 @@
-### Sample 4: Window Size
+## Sample 4: Window Size
 
 The `Width` and `Height` properties can be used to specify fixed dimensions of the window. You can use any CSS units here - e.g. `400px`, `50%` etc.
 

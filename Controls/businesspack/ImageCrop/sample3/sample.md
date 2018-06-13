@@ -1,4 +1,4 @@
-### Sample 3: Forced Crop Radius
+## Sample 3: Forced Crop Radius
 
 To make the border radius fixed, the `ForcedCropRadius` property can be used. It expects a value between `0` and `50`. 
 

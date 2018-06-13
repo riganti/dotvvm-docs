@@ -1,4 +1,4 @@
-### Sample 4: working With Objects
+## Sample 4: working With Objects
 
 To make the `SelectedValues` property contain only some values from the `DataSource` objects (like the `Id` property of the object), you may use the `ItemValueBinding` property.
 

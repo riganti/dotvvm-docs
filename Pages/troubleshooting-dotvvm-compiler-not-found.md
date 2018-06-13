@@ -1,4 +1,4 @@
-## Troubleshooting "DotVVM.Compiler.exe not found in the project" Error
+# Troubleshooting "DotVVM.Compiler.exe not found in the project" Error
 
 If you open a DotVVM project in Visual Studio, sometimes you can see the yellow bar with the following error message:
 
@@ -10,7 +10,7 @@ Also, IntelliSense in DOTHTML files is broken, the directives are being underlin
 
 Visual Studio uses the DotVVM Compiler to read the settings in the `DotvvmStartup` file, or to precompile the DOTVVM views.
 
-### How To Resolve the Issue
+## How To Resolve the Issue
 
 The most common reason for this behavior is that Visual Studio cannot find the `DotVVM` binaries, because they are not
 present in the `packages` folder. 

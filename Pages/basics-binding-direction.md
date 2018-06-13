@@ -1,4 +1,4 @@
-## Binding Directions
+# Binding Directions
 
 You may need to customize which properties are transferred from the server to client or from client to the server when using the [command bindings](/docs/tutorials/basics-command-binding/{branch}). In many cases, there is no need to transfer the whole viewmodel in both directions. 
 
@@ -9,7 +9,7 @@ You can use the `[Bind(...)]` attribute to define which properties are transferr
 public string FirstName { get; set; }
 ```
 
-### Bind Attribute
+## Bind Attribute
 
 The `Direction` is an enumeration with the following options:
 

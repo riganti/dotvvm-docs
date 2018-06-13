@@ -1,4 +1,4 @@
-### Sample 2: Multiple RadioButtons
+## Sample 2: Multiple RadioButtons
 
 The RadioButton has also a property `CheckedItem` which point to a property in the viewmodel. This is an alternative to the `Checked` property - 
 they cannot be combined.

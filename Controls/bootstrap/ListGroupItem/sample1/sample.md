@@ -1,4 +1,4 @@
-### Sample 1: Basic ListGroupItem
+## Sample 1: Basic ListGroupItem
 
 The `ListGroupItem` control contains `Text` property which displays text in the generated item. 
 

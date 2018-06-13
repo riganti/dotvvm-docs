@@ -1,4 +1,4 @@
-### Sample 2: Dismissible Alert
+## Sample 2: Dismissible Alert
 
 If you want to allow the user to hide the alert, use the `IsDismissible` property.
 When `IsDismissible` property is set to true the close button will be rendered.

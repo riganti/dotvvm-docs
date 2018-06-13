@@ -1,4 +1,4 @@
-### Sample 2: Configuration
+## Sample 2: Configuration
 
 The `AllowHalfPoints` allows to select 1/2 of a star to be able to get more precise rating. By default, the user can select only the entire star.
 

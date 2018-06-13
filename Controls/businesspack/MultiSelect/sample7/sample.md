@@ -1,4 +1,4 @@
-### Sample 7: Server Search
+## Sample 7: Server Search
 
 The `LoadItems` property can specify a command in the viewmodel which will return new items based on what the user types in the control.
 Typically, this method is used with the [Static Command](/docs/tutorials/basics-static-command-binding/{branch}) and the method should return a list of items,

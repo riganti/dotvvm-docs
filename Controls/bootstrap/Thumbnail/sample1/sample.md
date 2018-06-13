@@ -1,4 +1,4 @@
-### Sample 1: Thumbnail
+## Sample 1: Thumbnail
 
 The `Thumbnail` control has the same properties of the displayed image as the [Image](/docs/controls/bootstrap/Image/{branch}) control.  
 

@@ -1,4 +1,4 @@
-### Sample 6: ResponsiveNavigation Data-Binding
+## Sample 6: ResponsiveNavigation Data-Binding
 
 The `ResponsiveNavigation` can be also used with the `DataSource` property to generate the menu items from the collection.
 

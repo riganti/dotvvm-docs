@@ -1,4 +1,4 @@
-### Sample 3: Closing Dialog
+## Sample 3: Closing Dialog
 
 By default, the dialog can be closed when the user clicks outside it.
 
