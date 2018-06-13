@@ -55,3 +55,5 @@ However, you can use expressions inside the binding, so you can combine the valu
 <!-- This works - the whole attribute is a data binding! -->
 <a class="{value: "tab " + AdditionalLinkClass}">...</a>
 ```
+
+> DotVVM offers a special feature that allows to bind multiple CSS classes based on various expressions. See [Class Attribute](/docs/tutorials/basics-class-attribute/{branch}) page for more information.

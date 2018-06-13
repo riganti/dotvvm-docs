@@ -8,4 +8,6 @@
 
 <img src="{imageDir}how-to-start-dnx_img1.png" alt="Creating a new DotVVM app with ASP.NET Core" />
 
+<br />
+
 After you confirm the selection, **Visual Studio** will create the project and install all required NuGet packages.

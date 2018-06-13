@@ -27,3 +27,5 @@ The default `ConfirmPostBackHandler` provides the basic confirmation functionali
 nice user experience.
 
 However, the postback handler mechanism is extensible and it is not difficult to write your own confirmation dialog logic. You can find more information about that in the [Custom Postback Handlers](/docs/tutorials/control-development-creating-custom-postback-handlers/{branch}) chapter.
+
+> There were some breaking changes in the implementation of postback handlers in DotVVM 2.0. If you have implemented your own postback handlers, they may require some updates. See [Upgrading to DotVVM 2.0](/docs/tutorials/how-to-start-upgrade-to-2-0/2-0#postback-handlers).

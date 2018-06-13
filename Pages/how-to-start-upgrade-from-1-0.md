@@ -1,4 +1,4 @@
-## Upgrading from DotVVM 1.0
+## Upgrading to DotVVM 1.1
 
 Because **DotVVM 1.1** brought support for ASP.NET Core, we had to do many fundamental changes inside the framework, and there are several breaking changes.
 

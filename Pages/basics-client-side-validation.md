@@ -13,10 +13,10 @@ DotVVM can do client validation for the following attributes on the client side:
 
 > The client side validation is only an addition to the server side validation. Even if the rule can be translated to JavaScript and executed on the client side, it is also always executed on the server side.
 
-You can turn the client validation off in the [configuration](/docs/tutorials/basics-configuration/{branch}). In that case, everything will be validated only on the server.
+You can turn the client validation off in the [Configuration](/docs/tutorials/basics-configuration/{branch}). In that case, everything will be validated only on the server.
 
 ```CSHARP
 config.ClientSideValidation = false;
 ```
 
-If you write your own validation attributes, they will be evaluated on the server side. Currently, DotVVM doesn't support client validation in custom validation attributes. This is planned for DotVVM 1.2.
+If you write your own validation attributes, they will be evaluated on the server side. Currently, DotVVM doesn't support extending client validation in custom validation attributes. 
