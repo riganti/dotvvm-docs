@@ -1,4 +1,4 @@
-## Filters
+# Filters
 
 > The API of action filters has been changed in DotVVM 1.1. See the [Upgrading from DotVVM 1.0](/docs/tutorials/how-to-start-upgrade-from-1-0/1-1) page for more information.
 
@@ -12,7 +12,7 @@ In **DotVVM**, we have a concept of filters for this purpose. If you know Action
 in ASP.NET MVC or ASP.NET Web API, it is the same concept.
 
 
-### Action Filters
+## Action Filters
 
 If you want to apply a common logic to one or more viewmodels, viewmodel commands or 
 a whole application, you have to create a class that derives from `ActionFilterAttribute`.
@@ -33,7 +33,7 @@ and the response is rendered.
 
 
 
-### Model Validation using Filters
+## Model Validation using Filters
 
 If you want to perform the model validation before every command, it is not difficult. Actually, **DotVVM** already include 
 such filter and registers it for all requests by default. 

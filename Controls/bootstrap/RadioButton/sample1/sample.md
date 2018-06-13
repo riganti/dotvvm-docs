@@ -1,4 +1,4 @@
-### Sample 1: Inline RadioButtons
+## Sample 1: Inline RadioButtons
 
 The `IsInline` property allows to render checkboxes on one row.
 

@@ -1,4 +1,4 @@
-### Sample 6: Inline Editing
+## Sample 6: Inline Editing
 
 The `InlineEditing` property enables the row editing mode in the `GridView` control.
 

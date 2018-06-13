@@ -1,4 +1,4 @@
-### Sample 2: Panel Templates
+## Sample 2: Panel Templates
 
 The Header part of the `Panel` can be customized using the `HeaderTemplate` property.
 

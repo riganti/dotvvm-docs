@@ -1,4 +1,4 @@
-### Sample 1: AuthenticatedView
+## Sample 1: AuthenticatedView
 
 The `AuthenticatedTemplate` property defines the content for users who are authenticated. The `NotAuthenticatedTemplate` property defines the content for users who are not authenticated. 
 

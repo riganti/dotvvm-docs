@@ -1,4 +1,4 @@
-### Sample 5: Text Box Group - UpdateTextAfterKeydown and Changed
+## Sample 5: Text Box Group - UpdateTextAfterKeydown and Changed
 
 If you need property binded to `Text` property to update after every pressed key just set the `UpdateTextAfterKeydown` property to *true*.
 

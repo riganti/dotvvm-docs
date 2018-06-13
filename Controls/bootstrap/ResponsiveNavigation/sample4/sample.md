@@ -1,4 +1,4 @@
-### Sample 4: DropDownButton and Form Controls in ResponsiveNavigation
+## Sample 4: DropDownButton and Form Controls in ResponsiveNavigation
 
 You can also use other control inside the `ResponsiveNavigation` control.
 You have to place them in the  `LeftAlignedItemsTemplate` or `RightAlignedItemsTemplate` elements.

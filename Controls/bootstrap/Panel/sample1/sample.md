@@ -1,4 +1,4 @@
-### Sample 1: Basic Panel
+## Sample 1: Basic Panel
 
 The contents of the panel can be defined using the `ContentTemplate` property, or by specifying the content just inside the `<bs:Panel>` control.
 

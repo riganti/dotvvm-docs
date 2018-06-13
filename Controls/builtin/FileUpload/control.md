@@ -1,8 +1,7 @@
 Allows the user to upload one or multiple files asynchronously.
 
-&nbsp;
 
-#### Upload Configuration
+### Upload Configuration
 
 The upload works on the background and starts immediately when the user selects the files. To make file uploading work, 
 you have to specify where the temporary files will be uploaded.
@@ -17,9 +16,8 @@ config.ServiceLocator.RegisterSingleton<IUploadedFileStorage>(
 );
 ```
 
-&nbsp;
 
-#### Using the Control
+### Using the Control
 
 Then, you need to bind the **FileUpload** control to an **UploadedFilesCollection**. It is a collection which will hold references to the files 
 the user has selected and uploaded.
@@ -27,9 +25,8 @@ the user has selected and uploaded.
 This collection has a handy property `IsBusy` of **boolean** which indicated whether the file upload is still in progress. You can use it e.g. on
 the button's `Enabled` property to disallow the user to continue until the upload is finished.
 
-&nbsp;
 
-#### Retrieving the Stored Files
+### Retrieving the Stored Files
 
 The **UploadedFilesCollection** holds only unique IDs of uploaded files. To get the file, you have to retrieve it using the **UploadedFileStorage** object.
 
@@ -56,3 +53,5 @@ foreach (var file in myUploadedFilesCollection.Files)
 
 A file is not allowed when it's type does not match the `AllowedFileTypes` definition or when it's size exceeds the `MaxFileSize`. See also
 the `IsFileTypeAllowed` and `IsMaxSizeExceeded` properties. You can use them to find out why the file is not allowed.
+
+&nbsp;

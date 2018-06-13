@@ -1,4 +1,4 @@
-﻿## Static Command Binding
+# Static Command Binding
 
 If you use the [Command Binding](/docs/tutorials/basics-command-binding/{branch}), the viewmodel is serialized and sent to the server where the 
 method is executed. 
@@ -11,7 +11,7 @@ transferred from the client to the server and back (see the `Bind` attribute in 
 However, in complicated pages with modal dialogs and complex viewmodel, it may not be a wise solution to send the whole viewmodel to the server over and over.
 That's why DotVVM contains the **static command binding**.
 
-### Calling a Static Method
+## Calling a Static Method
 
 A **static command** allows to call a static method on the server and use its result to update a property of the viewmodel. 
 You can pass any arguments to the method and the method can return a result. You can assign the result to any property in the viewmodel.
@@ -35,7 +35,7 @@ The method must be marked with the `AllowStaticCommand` attribute. Otherwise, an
 > Be careful. There is no way for DotVVM to determine whether the arguments passed to the command weren't tampered with. 
 Always validate that the values are correct and that the user has appropriate permissions to perform the operation. 
 
-### Using the Static Commands
+## Using the Static Commands
 
 The binding in the page looks like this:
 
@@ -49,7 +49,7 @@ Also, you may want to use the method result to update some viewmodel property.
 <dot:Button Text="Something" Click="{staticCommand: SomeProperty = MyClass.MyMethod(Name)}" />
 ```
 
-### Client-only Expressions
+## Client-only Expressions
 
 You may also execute simple operations on the viewmodel without making any communication with the server.
 It is useful e.g. when you need to switch some property to `false` or something like that. 

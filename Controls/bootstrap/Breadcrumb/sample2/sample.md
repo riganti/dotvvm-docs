@@ -1,4 +1,4 @@
-### Sample 2: Data-bound Breadcrumbs
+## Sample 2: Data-bound Breadcrumbs
 
 If you want to data-bind the items inside the `Breadcrumbs` control, use the `DataSource` property. This property expects `IEnumerable`. 
 

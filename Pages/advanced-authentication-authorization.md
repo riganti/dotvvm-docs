@@ -1,4 +1,4 @@
-## Authentication and Authorization
+# Authentication and Authorization
 
 There are some special things you need to be aware of before you start working 
 with the authentication.
@@ -9,7 +9,7 @@ the user is authenticated and in which role he is, is determined by the
 `OwinContext.User` property. It's the same as in other ASP.NET technologies.
 
 
-### Restricting Access to ViewModels and ViewModel Methods
+## Restricting Access to ViewModels and ViewModel Methods
 
 In **DotVVM**, you can use the `[Authorize]` attribute from the `DotVVM.Framework.Runtime.Filters` namespace. You can use it to decorate the viewmodel class, or a specific viewmodel method referenced by a command binding.
 

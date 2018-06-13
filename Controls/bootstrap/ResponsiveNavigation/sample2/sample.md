@@ -1,4 +1,4 @@
-### Sample 2: Advanced ResponsiveNavigation
+## Sample 2: Advanced ResponsiveNavigation
 
 If the `HeaderImageUrl` is set, the header section will render the image and the value of the `HeaderText` property will be used for the alternate text of the image.
 

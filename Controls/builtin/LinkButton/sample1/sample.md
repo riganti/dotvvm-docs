@@ -1,4 +1,4 @@
-### Sample 1: Basic LinkButton
+## Sample 1: Basic LinkButton
 
 The *LinkButton* control can use the `Text` property or the inner content to specify what's inside.
 

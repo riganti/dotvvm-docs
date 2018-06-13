@@ -1,4 +1,4 @@
-### Sample 3: Fixed ResponsiveNavigation and Alignment
+## Sample 3: Fixed ResponsiveNavigation and Alignment
 
 The `ResponsiveNavigation` has also the `FixedTo` property which controls whether the navbar is fixed to *Top* or *Bottom* of the screen, or fixed to *Nothing* (which is the default value).
 

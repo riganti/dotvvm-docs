@@ -1,4 +1,4 @@
-### Sample 1: Basic Repeater
+## Sample 1: Basic Repeater
 
 The `DataSource` points to an *IEnumerable* or a *GridViewDataSet* object.
 

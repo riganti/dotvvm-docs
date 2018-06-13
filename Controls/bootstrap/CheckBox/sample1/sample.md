@@ -1,4 +1,4 @@
-### Sample 1: Inline CheckBoxes
+## Sample 1: Inline CheckBoxes
 
 The `IsInline` property allows to render checkboxes on one row.
 

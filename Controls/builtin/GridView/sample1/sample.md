@@ -1,4 +1,4 @@
-### Sample 1: Basic GridView
+## Sample 1: Basic GridView
 
 The GridView has the `DataSource` property which expects either `IEnumerable` or `GridViewDataSet` objects.
 

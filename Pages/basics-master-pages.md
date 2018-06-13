@@ -1,4 +1,4 @@
-## Master Pages
+# Master Pages
 
 In most web apps, you need all pages to share the header, menu and footer. **DotVVM** supports a mechanism called **Master Pages**. 
 If you are familiar with _ASP.NET Web Forms_, the concept of master pages is exactly the same.
@@ -63,13 +63,13 @@ The content page uses the `@masterPage` directive at the top. This directive spe
 
 The path in the `@masterPage` must be a relative path to the `.dotmaster` file from the root directory of the website.
 
-### Routing
+## Routing
 
 The master pages should NOT be registered in the route table in the `DotvvmStartup.cs` file. They work only as templates for the content pages. 
 
 The route always points to the `.dothtml` file. If the `@masterPage` directive is found, the contents are embedded in the placeholders from the specified master page.
 
-### ViewModels of the Master Page
+## ViewModels of the Master Page
 
 Even the master page must specify the `@viewmodel` directive. This is required because all bindings are compiled and DotVVM needs to know the viewmodel type.
 
@@ -81,11 +81,11 @@ The viewmodel of the content page must be assignable to the viewmodel type of th
 
 + If the viewmodel of the master page is a class, the content page viewmodel must inherit from this viewmodel (or be the same as the master page viewmodel).
 
-### Master Page Nesting
+## Master Page Nesting
 
 You can also nest a master page in another master page and so on. Just use the `@masterPage` directive in the master page to specify parent master page.
 
-### Default PlaceHolder Content
+## Default PlaceHolder Content
 
 The `<dot:ContentPlaceHolder>` doesn't have to be empty. If the content page has no corresponding `<dot:Content>` for any placeholder,
 the content of the `ContentPlaceHolder` will be used as a default value.
@@ -96,7 +96,7 @@ the content of the `ContentPlaceHolder` will be used as a default value.
     </dot:ContentPlaceHolder>
 ```
 
-### How to Create the Master Page
+## How to Create the Master Page
 
 All you have to do is to choose **DotVVM Master Page** template in the **New Item** dialog.
 
@@ -126,7 +126,7 @@ property and much more.
 
 <br />
 
-### How to Create the Content Page
+## How to Create the Content Page
 
 Creating the content page is very similar. Just add a new **DotVVM Page** and in the dialog window, and don't forget to click on the **Embed in Master Page** checkbox.
 

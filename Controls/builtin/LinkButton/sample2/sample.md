@@ -1,4 +1,4 @@
-### Sample 2: Disable or Hide the LinkButton
+## Sample 2: Disable or Hide the LinkButton
 
 To disable or enable the button, use the `Enabled` property. It supports the data-binding.
 

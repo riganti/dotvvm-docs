@@ -1,4 +1,4 @@
-### Sample 1: Simple Collapsible Panel
+## Sample 1: Simple Collapsible Panel
 
 Use the `HeaderTemplate` and `ContentTemplate` properties to specify the header and the main content of the panel.
 

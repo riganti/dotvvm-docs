@@ -1,4 +1,4 @@
-### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 The `NavigationItem` control has the `NavigateUrl` property which specifies target URL, or the `Click` property which invokes a command on the viewmodel.
 

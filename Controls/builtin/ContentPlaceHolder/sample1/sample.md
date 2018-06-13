@@ -1,4 +1,4 @@
-### Sample 1 : Example on Master Page
+## Sample 1 : Example on Master Page
 
 The *ContentPlaceHolder* has the `ID` property which identifies the corresponding *Content* in the content page.
 

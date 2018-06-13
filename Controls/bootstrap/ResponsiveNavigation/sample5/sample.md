@@ -1,4 +1,4 @@
-### Sample 5: Responsiveness
+## Sample 5: Responsiveness
 
 It's possible to collapse the `ResponsiveNavigation` into a single button when the content cannot fit the screen. 
 

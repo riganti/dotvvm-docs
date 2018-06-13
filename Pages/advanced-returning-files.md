@@ -1,4 +1,4 @@
-## Returning Files
+# Returning Files
 
 Sometimes you want to generate a file and let the user download it, e.g. export data in GridView in an Excel file. Normally, you just redirect user to some URL
 and if the Content-Type and Content-Disposition headers indicate that it is a file for downloading, the browser will start downloading the file.  
@@ -11,7 +11,7 @@ The process described above is not much convenient. That's why DotVVM implements
 deliver it to the client using the `Context.ReturnFile` method.
 
 
-### Registering the IReturnedFileStorage
+## Registering the IReturnedFileStorage
 
 Because you generate the file in the viewmodel and browser needs to do an additional request to retrieve the file, you need some kind of a storage for temporary files.
 In DotVVM, there is the `IReturnedFileStorage` interface which handles files returned from the viewmodel.
@@ -28,7 +28,7 @@ in the `App_Data\temp` folder and there is 30 minutes timeout in which the file 
 
 Of course you can implement your own mechanism of returned file storage. 
 
-### Using context.ReturnFile
+## Using context.ReturnFile
 
 The usage is pretty easy then. You just call `Context.ReturnFile` in your viewmodel method. The file is saved in the temporary storage and the user is redirected to 
 a special URL that returns the file to him. The ID of the file is a random Guid so it's not possible to retrieve a file that was generated for someone else.

@@ -1,4 +1,4 @@
-### Sample 4: StyleDecorator - Other properties
+## Sample 4: StyleDecorator - Other properties
 
 `StyleDecorator` control has `Center` property of *bool* for centering text in wrapping element and `ClearFix` property of *bool* for using clearfix.
 

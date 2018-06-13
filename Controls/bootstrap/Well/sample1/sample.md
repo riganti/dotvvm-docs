@@ -1,4 +1,4 @@
-### Sample 1: Well Usage
+## Sample 1: Well Usage
 
 Place the contents inside the `<bs:Well>` control.
 

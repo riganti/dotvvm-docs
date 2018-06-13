@@ -1,4 +1,4 @@
-## Auto-Discovery of Routes
+# Auto-Discovery of Routes
 
 If your app is large, you don't want to register your routes one by one. Also, the names and hierarchy of pages in your app typically correspond 
 with the URLs you want to use. In this case, you can use the auto-discovery mechanism.

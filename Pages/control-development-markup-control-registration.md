@@ -1,4 +1,4 @@
-## Markup Control Registration
+# Markup Control Registration
 
 To be able to use custom markup controls, you need to register them in the `DotvvmStartup.cs` file. 
 
@@ -12,7 +12,7 @@ We have registered the `Controls/AddressEditor.dotcontrol` control under a tag n
 
 > If you use [DotVVM for Visual Studio](https://www.dotvvm.com/landing/dotvvm-for-visual-studio), you need to rebuild the project after registering the control, otherwise the IntelliSense won't display the control in the suggestion list.  
 
-### Using the Markup Control
+## Using the Markup Control
 
 We have registered our control with the `cc` tag prefix and `AddressEditor` name, so we can just write this:
 

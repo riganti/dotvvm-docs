@@ -1,4 +1,4 @@
-### Sample 2: Text Box Group - Enabled and Visible
+## Sample 2: Text Box Group - Enabled and Visible
 
 The `Enabled` property is used to enable / disable the `TextBoxGroup` control.
 

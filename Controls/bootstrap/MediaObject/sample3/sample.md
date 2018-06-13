@@ -1,4 +1,4 @@
-### Sample 3: MediaList and Nested MediaObjects
+## Sample 3: MediaList and Nested MediaObjects
 
 By default, the `MediaObject` renders the `<div>` element, so you can use it independently.
 

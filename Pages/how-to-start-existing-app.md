@@ -1,10 +1,10 @@
-## Adding DotVVM in Existing Web App
+# Adding DotVVM in Existing Web App
 
 **DotVVM** can be easily combined with other ASP.NET frameworks, like SignalR, Web API or MVC. 
 DotVVM is yet another **OWIN middleware** that can be added in the request processing pipeline.
 
 
-### Installing the Nuget Package (OWIN)
+## Installing the Nuget Package (OWIN)
 
 To add **DotVVM** in an existing ASP.NET project, simply install **DotVVM** Nuget package using Package Manager Console:
 
@@ -12,7 +12,7 @@ To add **DotVVM** in an existing ASP.NET project, simply install **DotVVM** Nuge
 
 The package will add a reference to **DotVVM.Framework** and **DotVVM.Core** libraries to the project.
 
-#### Initialization
+### Initialization
 
 The next thing you have to do, is to register the DotVVM middleware to the OWIN pipeline. In your OWIN startup class, you have to register the DotVVM middleware. 
 

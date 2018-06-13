@@ -1,4 +1,4 @@
-### Sample 1: Fluid Container
+## Sample 1: Fluid Container
 
 The Container has the `Type` property which specifies the behavior of the Container for large page sizes.
 

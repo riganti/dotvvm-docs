@@ -1,4 +1,4 @@
-### Sample 1: ClaimView
+## Sample 1: ClaimView
 
 The `Claim` property specifies the type of claim the user must have.
 

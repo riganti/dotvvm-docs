@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 
 As a .NET developer, you have several ways to build a web app. The official way is to use **ASP.NET MVC**, 
 or **ASP.NET Web API** in combination with some client-side framework, like _React_, _Angular_ or _Knockout_.  
@@ -18,7 +18,7 @@ Also, there is no need to learn many javascript libraries, frameworks and tools.
 
 
 
-### How Does It Work?
+## How Does It Work?
 
 First, you have to define the **view**. We use HTML syntax, but there are some flavors added. That's why we call it _DOTHTML_.
 

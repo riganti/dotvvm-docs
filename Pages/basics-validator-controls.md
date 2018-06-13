@@ -1,6 +1,6 @@
-## Validator Controls
+# Validator Controls
 
-### ValidationSummary
+## ValidationSummary
 
 To show all errors in the viewmodel, you can use the [ValidationSummary](/docs/controls/builtin/ValidationSummary/{branch}) control.
  
@@ -11,7 +11,7 @@ To show all errors in the viewmodel, you can use the [ValidationSummary](/docs/c
 Because of performance reasons, the `ValidationSummary` control displays only the errors from the current viewmodel and doesn't browse the child objects.
 If you want to include the errors from child objects, you can set its `IncludeErrorsFromChildren` to `true`.
 
-### Validator Control
+## Validator Control
 
 The second options is to use the [Validator](/docs/controls/builtin/Validator/{branch}) to display errors for an individual field.
 
@@ -32,7 +32,7 @@ The `Validator` control has several properties that let you set how the error is
 
 * `SetToolTipText` - the text of the error message will be set as the `title` attribute of the control.
 
-### Validator Attached Properties
+## Validator Attached Properties
 
 In many cases, you may need to apply the `Validator` properties on any other element, for example the `<div>`.
 If the property is not valid and you need to apply a CSS class to a `div`, you can use the followin syntax:

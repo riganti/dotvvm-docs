@@ -1,4 +1,4 @@
-### Sample 2: Advanced Dropdown
+## Sample 2: Advanced Dropdown
 
 The `DropDownButtonItem` control has the `IsDisabled` property which you can use to disable the menu item.
 

@@ -1,4 +1,4 @@
-﻿## Command Binding
+# Command Binding
 
 The **command binding** allows to call a method in the viewmodel on the server.
  
@@ -35,7 +35,7 @@ When it arrives to the server, the server loads it and invokes the method specif
 After that, the viewmodel is serialized back to JSON and sent to the client's browser as a response. The changes made to the viewmodel 
 on the server are applied and displayed in the page.
 
-### Method Signature
+## Method Signature
 
 If the method called from the command binding has some arguments, you have to specify them in the command binding. 
 You can use any expressions that are supported in the [Value Bindings](/docs/tutorials/basics-value-binding/{branch}).
@@ -43,7 +43,7 @@ You can use any expressions that are supported in the [Value Bindings](/docs/tut
 The method must be `public` and should be `void`, or return `Task` if you plan to make it asynchronous.
 In some cases, this can significantly improve the performance of the app because the web server can reuse waiting threads to process other HTTP requests.
 
-### Supported Expressions
+## Supported Expressions
 
 The following items are examples of what can be used in the **command** binding.
 

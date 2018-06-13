@@ -1,4 +1,4 @@
-## IoC/DI Containers
+# IoC/DI Containers
 
 Dependency Injection is used widely in many large applications. **DotVVM** allows you to have your services injected in the viewmodel constructor or properties.
 
@@ -19,7 +19,7 @@ public class CustomersViewModel
 
 Basically, if you need any services in your viewmodel, you can request them in the constructor as parameters, or you can declare a public property in the viewmodel. In that case, don't forget to use the `[Bind(Direction.None)]` attribute to tell the serializer that it should not care about this property.
 
-### Enabling the Dependency Injection
+## Enabling the Dependency Injection
 
 > The way of handling dependency injection has been changed in DotVVM 1.1 and the dependency injection is based on the `Microsoft.Extensions.DependencyInjection` library. 
 
@@ -31,7 +31,7 @@ One of the internal services is the viewmodel loader represented by the `IViewMo
 
 DotVVM uses the `DefaultViewModelLoader` class which locates the class and calls its default constructor. If you need to plug a dependency injection container in, you can create a class that inherits `DefaultViewModelLoader` and override the `CreateViewModelInstance`.
 
-### Custom ViewModelLoader for Castle Windsor
+## Custom ViewModelLoader for Castle Windsor
 
 **Castle Windsor** is one of the favorite IoC/DI containers in .NET. Here is how to create the viewmodel loader using this container. Notice that we call `container.Resolve` in the `CreateViewModelInstance` and `container.Release` in the `DisposeViewModel`.
 
@@ -69,7 +69,7 @@ If you use another container, the implementation will be very similar. Don't for
 
 Some containers do this by initiating a "scope" in the `CreateViewModelInstance` method and disposing the scope in the `DisposeViewModel` method.
 
-### Registering Custom ViewModelLoader
+## Registering Custom ViewModelLoader
 
 The last thing is to replace the default viewmodel loader with the one you have just created.
 We should do this in the `Startup.cs` class:

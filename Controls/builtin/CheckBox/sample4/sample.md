@@ -1,4 +1,4 @@
-### Real World Sample
+## Real World Sample
 
 The total price is calculated by summing of all `CheckedValues` and is updated after any change by `Changed` event.
 

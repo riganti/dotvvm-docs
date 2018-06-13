@@ -1,4 +1,4 @@
-## DotVVM Private NuGet Feed
+# DotVVM Private NuGet Feed
 
 The [Bootstrap for DotVVM](/landing/bootstrap-for-dotvvm) controls are not available on the official NuGet feed.
 
@@ -10,7 +10,7 @@ the *DotVVM Private Nuget Feed* for you.
 
 <br />
 
-### Adding the Feed Manually
+## Adding the Feed Manually
 
 If you don't see the **DotVVM Private NuGet Feed**, you can also use these manual steps to install it.
 
@@ -24,7 +24,7 @@ nuget sources Add -Name "Dotvvm Feed" -Source "https://www.dotvvm.com/nuget/v3/i
 
 <br />
 
-### Troubleshooting
+## Troubleshooting
 
 1. If the **DotVVM for Visual Studio** fails to install the NuGet feed, make sure that you have the latest version of **NuGet Package Manager** extension
 installed. You can update it in the **Tools > Extensions and Updates** menu in Visual Studio.

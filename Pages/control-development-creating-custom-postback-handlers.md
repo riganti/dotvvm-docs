@@ -1,4 +1,4 @@
-﻿## Creating Custom Postback Handlers
+# Creating Custom Postback Handlers
 
 If you want to create a custom [Postback Handler](/docs/tutorials/basics-postback-handlers/{branch}), you need to do three things:
 
@@ -10,7 +10,7 @@ If you want to create a custom [Postback Handler](/docs/tutorials/basics-postbac
 
 <br/>
 
-### Step 1: Creating the Postback Handler Definition
+## Step 1: Creating the Postback Handler Definition
 
 First, you need to create a class that inherits from the `PostBackHandler` class.
 
@@ -49,7 +49,7 @@ either with the static value, or with the `{value: Something}` binding. If you e
 
 <br/>
 
-### Step 2: Implementing the Postback Handler Logic in Javascript
+## Step 2: Implementing the Postback Handler Logic in Javascript
 
 A postback handler on the client side is just a function which returns an object with one function `execute(callback, sender)`. 
 The `callback` is a function without parameters which you can call to make the postback.
@@ -97,14 +97,14 @@ dotvvm.events.init.subscribe(function () {
 
 <br/>
 
-### Step 3: Register the PostBack Handler
+## Step 3: Register the PostBack Handler
 
 The postback handler is registered in the same way as any other user control. You can find more information about the custom 
 control registration in the [Code-only Controls](/docs/tutorials/control-development-code-only-controls/{branch}) tutorial.
 
 <br/>
 
-### Other Usages
+## Other Usages
 
 Using the postback handler mechanism you can implement many useful things, not only the confirmations.
 In some cases you may want to delay the postback for a little while. This may be useful when the user types into the `TextBox` and you need to

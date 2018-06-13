@@ -1,4 +1,4 @@
-## Validation
+# Validation
 
 DotVVM supports the _Model Validation_ mechanism known from other ASP.NET technologies, like MVC, Web API or Web Forms. 
 
@@ -6,7 +6,7 @@ You can validate either the whole viewmodel, or specific child object. By defaul
 
 You can use the default validation attributes, write your own ones, and add your own validation logic by implementing the `IValidatableObject` interface.
 
-### Validation Attributes
+## Validation Attributes
 
 You can validate the viewmodel properties by applying the validation attributes on them, e.g. the `Required` attribute.
 
@@ -25,7 +25,7 @@ public string Password { get; set; }
 
 You can use custom validation attributes (they implement the `IValidationAttribute` interface).
 
-### Complex Validation Logic
+## Complex Validation Logic
 
 In order to support complex scenarios, the viewmodel can implement the `IValidatableObject` interface and use the `Validate` method to return a list of validation errors:
 
@@ -52,7 +52,7 @@ public class AppointmentData : IValidatableObject
 }
 ```
 
-### Working With ModelState
+## Working With ModelState
 
 By default, the validation is triggered automatically on all postbacks. When all validation attributes and `IValidatableObject` rules pass, the [command binding](/docs/tutorials/basics-command-binding/{branch}) is executed.
 

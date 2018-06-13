@@ -1,4 +1,4 @@
-## Configuration
+# Configuration
 
 DotVVM uses C# code to configure its features and settings. 
 
@@ -17,7 +17,7 @@ In the default project template, there are 2 files - `Startup.cs` and `DotvvmSta
 In `Startup.cs`, we configure DotVVM services and register DotVVM middlewares. In `DotvvmStartup.cs`, we configure routes, resources and controls.
 
 
-### Startup.cs
+## Startup.cs
 
 The `Startup.cs` contains the OWIN startup class. DotVVM is just an OWIN middleware and you can easily combine it with ASP.NET MVC or any other OWIN middlewares in one application. All you have to do is to register the DotVVM middleware in the `IAppBuilder` object.
 
@@ -32,7 +32,7 @@ This extension method initializes the middlewares required by DotVVM. The `Dotvv
 
 > In DotVVM 1.1, the registration of services has changed and DotVVM uses the `IServiceCollection` interface instead of DotVVM `ServiceLocator` object.
 
-### DotvvmStartup.cs
+## DotvvmStartup.cs
 
 The `DotvvmStartup` class must implement the `IDotvvmStartup` interface and contains the `Configure` method. There should be only one class implementing the `IDotvvmStartup` interface in the assembly.
 
@@ -82,7 +82,7 @@ Please note that the [Visual Studio Extension](/landing/dotvvm-for-visual-studio
 
 If you need to register or initialize anything else (e.g. initialize the database, create default users), do it in the `Startup.cs`, or anywhere else.
 
-### Debug Mode
+## Debug Mode
 
 The `DotvvmConfiguration` object contains the `Debug` property which should be turned in the development environment, and turned off in production.
 
@@ -96,6 +96,6 @@ dotvvmConfiguration.Debug = false;
 #endif
 ```
 
-### Static Files
+## Static Files
 
 In the default project template, the `Startup` class also registers a static files middleware. DotVVM doesn't need it itself, however in 99% cases you want to use it to serve static files like images to the user.

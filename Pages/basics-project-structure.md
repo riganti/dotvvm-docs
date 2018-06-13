@@ -1,4 +1,4 @@
-﻿## DotVVM Project Contents
+# DotVVM Project Contents
 
 After you [create a new DotVVM project](/docs/tutorials/how-to-start-dotnet-451/{branch}), there will be several files in your project:
 
@@ -16,7 +16,7 @@ After you [create a new DotVVM project](/docs/tutorials/how-to-start-dotnet-451/
 
 <br />
 
-## Views and ViewModels Folders
+# Views and ViewModels Folders
 
 Most people prefer to separate views and viewmodels in the **Views** and **ViewModels** folders. 
 Also, there is a naming convention, that the file **default.dothtml** corresponds to the **DefaultViewModel** class.

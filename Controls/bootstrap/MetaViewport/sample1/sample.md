@@ -1,4 +1,4 @@
-### Sample 1: MetaViewport
+## Sample 1: MetaViewport
 
 Place the control inside the `head` element. It uses bootstrap api to control zooming and presentation on mobile devices.
 

@@ -1,4 +1,4 @@
-### Sample 3: TabControl Data-Binding
+## Sample 3: TabControl Data-Binding
 
 To create tab items from a collection in the viewmodel, use the `DataSource` property bound to any `IEnumerable` collection in the viewmodel.
 

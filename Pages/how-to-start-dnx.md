@@ -1,4 +1,4 @@
-## Create a New Project (ASP.NET Core)
+# Create a New Project (ASP.NET Core)
 
 **DotVVM 1.0** doesn't support ASP.NET Core platform.
 

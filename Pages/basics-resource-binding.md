@@ -1,4 +1,4 @@
-﻿## Resource Binding
+# Resource Binding
 
 > In DotVVM 1.1, the resource bindings have changed. The `@resourceType` and `@resourceNamespace` directives are no longer supported. The `@import` directive is used instead.
 
@@ -11,7 +11,7 @@ to use `{resource: MyWebApp.Resources.Web.String.SomeResourceKey}`
 
 Because this syntax is quite long, there are two ways on how to make it shorter.
 
-### The @resourceType Directive
+## The @resourceType Directive
 
 Using the `@resourceType` directive in the page, you can specify the default resource class. Then you can only use the resource key in the binding.
 
@@ -23,7 +23,7 @@ Using the `@resourceType` directive in the page, you can specify the default res
 
 Of course you can still use the full specification to retrieve the value, which is handy when you need to get a resource from a different RESX file.
 
-### The @resourceNamespace Directive
+## The @resourceNamespace Directive
 
 If you have multiple resource files that you need in the page, a better way is to use the **@resourceNamespace** directive.
 You can specify the namespace in which the resource classes reside.

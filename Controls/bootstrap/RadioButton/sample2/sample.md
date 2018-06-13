@@ -1,4 +1,4 @@
-### Sample 2: RadioButton in ButtonGroup
+## Sample 2: RadioButton in ButtonGroup
 
 You can change the color of the `RadioButton` using the `Type` property.
 

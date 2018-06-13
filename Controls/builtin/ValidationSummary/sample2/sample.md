@@ -1,4 +1,4 @@
-### Sample 2: Validation erros from child objects
+## Sample 2: Validation erros from child objects
 
 By default, the `ValidationSummary` control displays errors that comes directly from the `Validation.Target` object's properties. 
 If the validation target contains another child objects, the validation errors from those objects are not displayed.

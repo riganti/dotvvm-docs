@@ -1,4 +1,4 @@
-### Sample 4: Binding to a Collection
+## Sample 4: Binding to a Collection
 
 You don't have to use *GridViewDataSet*s if you don't want. Use a normal .NET collection as the `DataSource`. 
 

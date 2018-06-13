@@ -1,4 +1,4 @@
-### Sample 2: Media Object Templates
+## Sample 2: Media Object Templates
 
 The `MediaObject` control supports templating for media content and body. 
 

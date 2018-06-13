@@ -1,4 +1,4 @@
-## Create a New Project (ASP.NET 4.5)
+# Create a New Project (ASP.NET 4.5)
 
 Creating a new **DotVVM** project is really simple. 
 

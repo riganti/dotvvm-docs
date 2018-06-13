@@ -1,4 +1,4 @@
-### Sample 1: Basic Usage
+## Sample 1: Basic Usage
 
 * The `InputGroup` control has the `ContentTemplate` property which must contain a [TextBox](/docs/controls/builtin/TextBox/{branch}) control.
 

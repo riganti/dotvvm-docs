@@ -1,4 +1,4 @@
-### Sample 2: Disabling the SPAN element
+## Sample 2: Disabling the SPAN element
 
 Sometimes you just need to render the text itself without any wrapper element. You can use the `RenderSpanElement` property
 to disable rendering the `<span>` element around the text.

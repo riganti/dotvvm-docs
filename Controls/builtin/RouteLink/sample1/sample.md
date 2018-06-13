@@ -1,4 +1,4 @@
-### Sample 1: Simple Route Links
+## Sample 1: Simple Route Links
 
 The `RouteName` property is the name of the route in the route table. Routes are registered in the `DotvvmStartup.cs` file. 
 

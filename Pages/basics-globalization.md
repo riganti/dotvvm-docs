@@ -1,4 +1,4 @@
-﻿## Globalization And Cultures
+# Globalization And Cultures
 
 When DotVVM serializes the viewmodel, it includes an information about the current thread culture which was used to process the request.
 
