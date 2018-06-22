@@ -19,7 +19,7 @@ You have to do the following things to make the inline editing work:
     mode and the [TextBox](/docs/controls/builtin/TextBox/{branch}) in the edit mode, use the `GridViewTemplateColumn` and use its `EditTemplate` 
     to specify how the cell will look like when in the edit mode.
 
-<br />
+
 
 If you use the `RowDecorators` property (see Sample 5), they are applied only to normal rows. If you need to apply a decorator to edit-mode rows,
 use the `EditRowDecorators` property. 

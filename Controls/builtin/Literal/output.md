@@ -10,7 +10,7 @@ If you set the `RenderSpanElement` to *false*, the span won't be rendered. In th
 <!-- ko text: expression --><!-- /ko -->
 ```
 
-<br />
+
 
 In the [Server rendering mode](/docs/tutorials/basics-server-side-html-generation/{branch}), the text is rendered directly to the response.
 This helps the search engines to understand the page content.

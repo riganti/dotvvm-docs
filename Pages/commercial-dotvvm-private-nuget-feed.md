@@ -8,7 +8,7 @@ This feed requires authentication and it will give you only the packages you hav
 When you install the [DotVVM for Visual Studio 2015](/landing/dotvvm-for-visual-studio-extension) and sign in, the extension will offer to install 
 the *DotVVM Private Nuget Feed* for you. 
 
-<br />
+
 
 ## Adding the Feed Manually
 
@@ -22,7 +22,7 @@ If you don't see the **DotVVM Private NuGet Feed**, you can also use these manua
 nuget sources Add -Name "Dotvvm Feed" -Source "https://www.dotvvm.com/nuget/v3/index.json" -UserName "YOUR EMAIL ADDRESS" -Password "YOUR PASSWORD"
 ```
 
-<br />
+
 
 ## Troubleshooting
 

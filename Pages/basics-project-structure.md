@@ -14,7 +14,7 @@ After you [create a new DotVVM project](/docs/tutorials/how-to-start-dotnet-451/
 
 <img src="{imageDir}basics-project-structure-img1.png" alt="DotVVM Project Structure" />
 
-<br />
+
 
 # Views and ViewModels Folders
 

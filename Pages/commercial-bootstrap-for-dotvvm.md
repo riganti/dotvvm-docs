@@ -18,7 +18,7 @@ using DotVVM.Framework.Controls.Bootstrap;
 
 This will register all Bootstrap controls under the `<bs:*` tag prefix, and it also registers several Bootstrap resources. 
 
-<br />
+
 
 ## Configuration
 
@@ -67,7 +67,7 @@ config.AddBootstrapConfiguration(new DotvvmBootstrapOptions()
 });
 ```
  
-<br />
+
 
 ### Option 2: Include the Bootstrap Files in the Page Yourself
 
@@ -90,7 +90,7 @@ config.AddBootstrapConfiguration(new DotvvmBootstrapOptions()
 });
 ```
 
-<br />
+
 
 ### Is It OK?
 
@@ -99,7 +99,7 @@ no errors in the developer console, especially some messages which say that some
 
 
 
-<br />
+
 
 ## Limitations
 

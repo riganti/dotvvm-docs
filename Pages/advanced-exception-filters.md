@@ -36,7 +36,7 @@ namespace DotvvmDemo
 }
 ```
 
-<br />
+
 
 ## Command Exception Handling
 
@@ -75,7 +75,7 @@ namespace DotvvmDemo
 The `AppViewModelBase` is a base class for all viewmodels in the application and has the `ErrorMessage` property. If the request execution should 
 continue like there was no error, we need to set `context.IsCommandExceptionHandled` to `true`.
 
-<br />
+
 
 ## Custom Error Pages
 
