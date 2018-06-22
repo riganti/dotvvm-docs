@@ -31,7 +31,7 @@ After you [create a new DotVVM project](/docs/tutorials/how-to-start-dotnet-451/
     </tr>
 </table>
 
-<br />
+
 
 ## Views and ViewModels Folders
 

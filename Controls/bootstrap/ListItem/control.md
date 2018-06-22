@@ -4,7 +4,7 @@ This control is used inside several Bootstrap controls - e.g. the [Breadcrumb](/
 
 _In the `ListGroup` control, you have to use the [ListGroupItem](/docs/controls/bootstrap/ListGroupItem/{branch}) control._
 
-<br />
+
 
 If you set the `NavigateUrl` property or you use the `RouteName` and `Param-*` properties,
 the item behaves like a hyperlink. For more information about `RouteName` properties see the

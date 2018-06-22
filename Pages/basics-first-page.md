@@ -59,7 +59,7 @@ and it will tell you which controls and properties are available.
 If you want to apply any other HTML attribute to a control, you can do it on most of the controls. Notice the `style` attribute applied to the 
 `Repeater` control in our example. The most common use case for this is to add a `class` attribute to a DotVVM control.
 
-<br />
+
 
 ## ViewModel
 

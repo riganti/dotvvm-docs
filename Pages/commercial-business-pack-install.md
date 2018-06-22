@@ -12,7 +12,7 @@ config.AddBusinessPackConfiguration();
 
 This will register all Business Pack controls under the `<bp:*` tag prefix, and it also registers several Business Pack resources. 
 
-<br />
+
 
 ## Theme Editor
 
@@ -20,7 +20,7 @@ This will register all Business Pack controls under the `<bp:*` tag prefix, and 
 
 You can get more themes, or craft your own, in the [Business Pack Theme Editor](/docs/tutorials/commercial-business-pack-theme-editor/{branch}). 
 
-<br />
+
 
 ## Limitations
 

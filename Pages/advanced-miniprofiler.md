@@ -38,7 +38,7 @@ using (MiniProfiler.Current.Step("GetOrder"))
 }
 ```
 
-<br />
+
 
 ### <a name="AspNetCore"></a>ASP.NET Core
 
@@ -85,7 +85,7 @@ To see it in action, you can simply navigate to `~/profiler/results-index` and v
 
 > We have a [sample application](https://github.com/riganti/dotvvm-tracing/tree/master/samples/DotVVM.Samples.MiniProfiler.AspNetCore) to show how MiniProfiler can be used with **ASP.NET Core**.
 
-<br />
+
 
 ### <a name="Owin"></a>OWIN
 

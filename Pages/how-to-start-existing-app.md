@@ -49,7 +49,7 @@ namespace DotvvmDemo
 }
 ```
 
-<br />
+
 
 ## Installing the Nuget Package (ASP.NET Core)
 

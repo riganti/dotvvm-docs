@@ -124,7 +124,7 @@ Most master pages need only one or two placeholders. You can use as many `Conten
 > The commercial version of [DotVVM for Visual Studio](/landing/dotvvm-for-visual-studio-extension) can show the IntelliSense for the `ContentPlaceHolderId` 
 property and much more. 
 
-<br />
+
 
 ## How to Create the Content Page
 

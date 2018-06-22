@@ -8,7 +8,7 @@ If you want to create a custom [Postback Handler](/docs/tutorials/basics-postbac
 
 3. Register the postback handler to be used from the markup.
 
-<br/>
+
 
 ## Step 1: Creating the Postback Handler Definition
 
@@ -47,7 +47,7 @@ either with the static value, or with the `{value: Something}` binding. If you e
 
 * The `Message` property is a postback handler parameter which you can use in the DOTHTML markup to pass a value to the handler.
 
-<br/>
+
 
 ## Step 2: Implementing the Postback Handler Logic in Javascript
 
@@ -95,14 +95,14 @@ dotvvm.events.init.subscribe(function () {
 });
 ```
 
-<br/>
+
 
 ## Step 3: Register the PostBack Handler
 
 The postback handler is registered in the same way as any other user control. You can find more information about the custom 
 control registration in the [Code-only Controls](/docs/tutorials/control-development-code-only-controls/{branch}) tutorial.
 
-<br/>
+
 
 ## Other Usages
 

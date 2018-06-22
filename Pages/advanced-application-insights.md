@@ -18,7 +18,7 @@ Additionally, you can analyze exceptions that were thrown in your web applicatio
 
 <img src="{imageDir}advanced-application-insights_img3.png" alt="Exceptions in Microsoft Azure portal" class="img-responsive" />
 
-<br />
+
 
 ## Getting started
 
@@ -34,7 +34,7 @@ In both ASP.NET Core and OWIN, you can use the `ApplicationInsightJavascript` co
 ```
 OWIN version additionally contains the `EnableAuthSnippet` property. In ASP.NET Core web apps, this value is taken from `ApplicationInsightsServiceOptions`.
 
-<br />
+
 
 ### ASP.NET Core
 
@@ -62,7 +62,7 @@ services.AddDotVVM(options =>
 });
 ```
 
-<br />
+
 
 ### OWIN
 

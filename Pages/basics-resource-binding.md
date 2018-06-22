@@ -22,7 +22,7 @@ For example, in a project with the *Resources\Web\Strings1.resx* and *Resources\
 {{resource: Strings2.SomeResource}}
 ```
 
-<br />
+
 
  The resource bindings are always evaluated on the server. When evaluating, the `CurrentUICulture` of the thread that handles the HTTP request will be used. 
  

@@ -7,6 +7,6 @@ You should see the **DotVVM Web Application (OWIN on .NET Framework)** in the **
 
 <img src="{imageDir}how-to-start-dotnet-451_img1.png" alt="Creating a new ASP.NET DotVVM Project" />
 
-<br />
+
 
 After you confirm the selection, Visual Studio will create the project and install all NuGet packages required by DotVVM.
