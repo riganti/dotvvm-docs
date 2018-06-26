@@ -23,7 +23,7 @@ public void ConfigureServices(IServiceCollection services)
             OnRedirectToLogin = c => DotvvmAuthenticationHelper.ApplyRedirectResponse(c.HttpContext, c.RedirectUri),
             OnRedirectToLogout = c => DotvvmAuthenticationHelper.ApplyRedirectResponse(c.HttpContext, c.RedirectUri)
         };
-        options.LoginPath = new PathString("/login");
+        options.LoginPath = "/login";
     });
 	// ...
 }
@@ -41,7 +41,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 {
     app.UseCookieAuthentication(new CookieAuthenticationOptions 
     {
-        LoginPath = new PathString("/login"),
+        LoginPath = "/login",
         AuthenticationScheme = CookieAuthenticationDefaults.AuthenticationScheme,
         Events = new CookieAuthenticationEvents {
             OnRedirectToReturnUrl = c => DotvvmAuthenticationHelper.ApplyRedirectResponse(c.HttpContext, c.RedirectUri),
@@ -94,7 +94,7 @@ public class LoginViewModel : DotvvmViewModelBase
                 // add claims for each user role
                 new Claim(ClaimTypes.Role, "administrator"),
             },
-            "Cookie");
+            CookieAuthenticationDefaults.AuthenticationScheme);
         return identity;
     }
 }
