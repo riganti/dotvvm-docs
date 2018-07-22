@@ -99,3 +99,9 @@ public class LoginViewModel : DotvvmViewModelBase
     }
 }
 ```
+
+## Using Azure Active Directory
+
+In order to use Azure Active Directory as the identity provider, you can use the Open ID Connect middleware using the `Microsoft.AspNetCore.Authentication.OpenIdConnect` package.
+
+For the details, visit the [DotVVM with Azure AD Authentication Sample](https://github.com/riganti/dotvvm-samples-azuread-auth).
