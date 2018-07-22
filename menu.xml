@@ -59,6 +59,7 @@
     <DocPageMenuItem RouteName="returning-files" PageName="Returning Files from ViewModels" />
     <DocPageMenuItem RouteName="using-session-or-http-context-cookies" PageName="Using Session or HttpContext Cookies" />
     <DocPageMenuItem RouteName="dotvvm-command-line" PageName="DotVVM Command Line" />
+    <DocPageMenuItem RouteName="javascript-events-and-client-side-viewmodel" PageName="JavaScript Events and Client-side ViewModel" />
   </DocPageMenuItem>
   <DocPageMenuItem RouteName="control-development" PageName="Control Development">
     <DocPageMenuItem RouteName="introduction" PageName="Introduction" />
