@@ -14,10 +14,14 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.GridView.sample2
 
         public override Task Init()
         {
-            Customers = new BusinessPackDataSet<Customer> {
-                OnLoadingData = GetData
+            Customers = new BusinessPackDataSet<Customer> 
+            {
+                OnLoadingData = GetData,
+                SortingOptions =
+                {
+                    SortExpression = nameof(Customer.Id)
+                }
             };
-            Customers.SetSortExpression(nameof(Customer.Id));
 
             return base.Init();
         }

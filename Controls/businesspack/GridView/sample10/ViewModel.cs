@@ -17,9 +17,12 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.GridView.sample10
         public override Task Init()
         {
             Customers = new BusinessPackDataSet<Customer> {
-                OnLoadingData = GetData
+                OnLoadingData = GetData,
+                SortingOptions =
+                {
+                    SortExpression = nameof(Customer.Id)
+                }
             };
-            Customers.SetSortExpression(nameof(Customer.Id));
 
             UserSettings = new GridViewUserSettings {
                 EnableUserSettings = true,

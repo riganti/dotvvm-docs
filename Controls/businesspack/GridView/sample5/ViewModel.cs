@@ -10,16 +10,22 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.GridView.sample5
 {
     public class ViewModel : DotvvmViewModelBase
     {
-        public int PageSize { get; set; } = 5;
         public BusinessPackDataSet<Customer> Customers { get; set; }
 
         public override Task Init()
         {
-            Customers = new BusinessPackDataSet<Customer> {
-                OnLoadingData = GetData
-            };
-            Customers.SetSortExpression(nameof(Customer.Id));
-            Customers.PagingOptions.PageSize = PageSize;
+            Customers = new BusinessPackDataSet<Customer> 
+            {
+                OnLoadingData = GetData,
+                PagingOptions =
+                {
+                    PageSize = 5
+                },
+                SortingOptions =
+                {
+                    SortExpression = nameof(Customer.Id)
+                }
+            };            
 
             return base.Init();
         }

@@ -20,9 +20,12 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.GridView.sample8
                 RowEditOptions = new RowEditOptions {
                     PrimaryKeyPropertyName = nameof(Customer.Id),
                     EditRowId = -1
+                },
+                SortingOptions =
+                {
+                    SortExpression = nameof(Customer.Id)
                 }
             };
-            Orders.SetSortExpression(nameof(Order.Id));
 
             return base.Init();
         }

@@ -8,5 +8,4 @@
     </Columns>
 </bp:GridView>
 
-<bp:DataPager DataSet="{value: Customers}"
-              PageSize="{value: PageSize}" />
+<bp:DataPager DataSet="{value: Customers}" />
