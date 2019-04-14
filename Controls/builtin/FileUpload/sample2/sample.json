@@ -1,6 +1,9 @@
 {
   "files": [
-    { "name": "page.dothtml" },
+    { 
+      "name": "page.dothtml",
+      "appendContent": "<p><small>Note: For the purpose of the sample, the size of upload is restricted to 500 kB. The files are deleted immediately after upload.</small></p>" 
+    },   
     { "name": "ViewModel.cs" }
   ]
 }
