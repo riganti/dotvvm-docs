@@ -1,4 +1,4 @@
-<dot:RoleView Roles="admin,moderator,tester">
+<dot:RoleView Roles="admin,moderator,tester" HideNonAuthenticatedUsers="false">
   <IsMemberTemplate>
     I am a member.
   </IsMemberTemplate>

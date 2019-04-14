@@ -1,5 +1,5 @@
-<dot:LinkButton Click="{command: Switch()}" Text="Enabled Link Button"/>
+<dot:LinkButton Click="{command: Switch()}" Text="Switch"/>
 
-<dot:LinkButton Click="{command: DoSomething()}" Text="Enabled Link Button" Enabled="{value: Enabled}"/>
+<dot:LinkButton Click="{command: DoSomething()}" Text="Link Button with Enabled binding" Enabled="{value: Enabled}"/>
 
-<dot:LinkButton Click="{command: DoSomething()}" Text="Hidden Link Button" Visible="{value: Enabled}"/>
+<dot:LinkButton Click="{command: DoSomething()}" Text="Link Button with Visible binding" Visible="{value: Enabled}"/>

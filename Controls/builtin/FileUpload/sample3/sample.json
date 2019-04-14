@@ -1,6 +1,15 @@
 {
   "files": [
     { "name": "page.dothtml" },    
-    { "name": "ViewModel.cs" }
+    { 
+      "name": "ViewModel.cs",
+      "replacements": [
+        {
+          "pattern": "(storage\\.SaveAs)",
+          "replacement": "//storage.SaveAs",
+          "singleLine": true
+        }
+      ]
+     }
   ]
 }
