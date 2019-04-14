@@ -8,7 +8,7 @@ namespace DotvvmWeb.Views.Docs.Controls.bootstrap.ComboBoxGroup.sample1
 {
     public class ViewModel : DotvvmViewModelBase
     {
-        public int SelectedAnimal { get; set; }
+        public string SelectedAnimal { get; set; }
         public string[] Animals { get; set; } = { "Cat", "Dog", "Pig", "Mouse", "Rabbit" };
     }
 }

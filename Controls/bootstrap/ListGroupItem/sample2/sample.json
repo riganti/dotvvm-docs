@@ -1,6 +1,22 @@
 ﻿{
   "files": [
-    { "name": "page.dothtml" },
-    { "name": "ViewModel.cs" }
+    { 
+      "name": "page.dothtml",
+      "replacements": [
+        {
+          "pattern": "(https?://)",
+          "replacement": "../../?url=\\1"
+        }
+      ]
+    },
+    { 
+      "name": "ViewModel.cs",
+      "replacements": [
+        {
+          "pattern": "(https?://)",
+          "replacement": "../../?url=\\1"
+        }
+      ]
+    }
   ]
 }

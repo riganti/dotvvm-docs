@@ -5,19 +5,19 @@
     <!-- the "form-group" CSS class is added automatically to the TextBox control -->
   </bs:FormGroup>
   
-  <bs:FormGroup LabelText="TextBox">
+  <bs:FormGroup LabelText="ComboBox">
     <dot:ComboBox DataSource="{value: Items}" SelectedValue="{value: Item}" />
     <!-- the "form-group" CSS class is added automatically to the ComboBox control -->
   </bs:FormGroup>
     
   <bs:FormGroup LabelText="CheckBox">
-    <bs:CheckBox Checked="{value: IsChecked}" />
+    <bs:CheckBox Checked="{value: IsChecked}" Text="Is checked?" />
     <!-- the IsInline property is set to true automatically inside the Form -->
   </bs:FormGroup>
   
-  <bs:FormGroup LabelText="CheckBox3">
-    <bs:RadioButton Checked="{value: Radio}" CheckedValue="{value: true}" />
-    <bs:RadioButton Checked="{value: Radio}" CheckedValue="{value: false}" />
+  <bs:FormGroup LabelText="RadioButton">
+    <bs:RadioButton Checked="{value: Radio}" CheckedValue="{value: true}" Text="Option 1" />
+    <bs:RadioButton Checked="{value: Radio}" CheckedValue="{value: false}" Text="Option 2" />
     <!-- the IsInline property is set to true automatically inside the Form -->
   </bs:FormGroup>
 

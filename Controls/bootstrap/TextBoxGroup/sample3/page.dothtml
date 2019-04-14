@@ -1,1 +1,3 @@
-﻿<bs:TextBoxGroup LabelText="Formating string" Text="{value: NumberValue}" FormatString="#0.00" />
+﻿<bs:Form>
+    <bs:TextBoxGroup LabelText="Formating string" Text="{value: NumberValue}" FormatString="#0.00" />
+</bs:Form>

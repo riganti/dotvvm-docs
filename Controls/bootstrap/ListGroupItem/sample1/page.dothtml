@@ -1,5 +1,5 @@
 ﻿<bs:ListGroup>
-  <bs:ListGroupItem Text="Item 1" Color="Info" NavigateUrl="www.dotvvm.com"/>
+  <bs:ListGroupItem Text="Item 1" Color="Info" NavigateUrl="https://www.dotvvm.com"/>
   <bs:ListGroupItem Text="Item 2" Color="Success" Badge="This is success ListGroupItem" />
   <bs:ListGroupItem Text="Item 3" Color="Warning" />
   <bs:ListGroupItem Text="Item 4" Color="Danger" />

@@ -1,5 +1,5 @@
 ﻿<bs:StyleDecorator Centered="true">
-  <p>Centered text</p>
+  <p style="max-width: 200px">Centered text</p>
 </bs:StyleDecorator>
 
 <bs:StyleDecorator ClearFix="true">

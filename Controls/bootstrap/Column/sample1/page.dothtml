@@ -1,2 +1,6 @@
-﻿<bs:Column SizeXS="4" SizeLG="10" style="background-color: red">XS = 4/12 | LG = 10/12</bs:Column>
-<bs:Column SizeXS="8" SizeLG="2" style="background-color: blue">XS = 8/12 | LG = 2/12</bs:Column>
+﻿<bs:Column SizeXS="4" SizeLG="10" style="background-color: red; color: white">
+    XS = 4/12 | LG = 10/12
+</bs:Column>
+<bs:Column SizeXS="8" SizeLG="2" style="background-color: blue; color: white">
+    XS = 8/12 | LG = 2/12
+</bs:Column>

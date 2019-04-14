@@ -1,9 +1,11 @@
-﻿<bs:DateTimePickerGroup SelectedDate="{value: Date}" FormatString="d" LabelText="Pick a date" />
+﻿<bs:Form>
+    <bs:DateTimePickerGroup SelectedDate="{value: Date}" FormatString="d" LabelText="Pick a date" />
 
-<bs:DateTimePickerGroup SelectedDate="{value: Date}" FormatString="g" LabelText="Pick a date" />
+    <bs:DateTimePickerGroup SelectedDate="{value: Date}" FormatString="g" LabelText="Pick a date" />
 
-<bs:DateTimePickerGroup SelectedDate="{value: Date}" FormatString="H:mm:ss" LabelText="Pick a date" />
+    <bs:DateTimePickerGroup SelectedDate="{value: Date}" FormatString="H:mm:ss" LabelText="Pick a date" />
 
-<bs:DateTimePickerGroup SelectedDate="{value: Date}" LabelText="Pick a date" Visible="{value: True}" />
+    <bs:DateTimePickerGroup SelectedDate="{value: Date}" LabelText="Pick a date" Visible="{value: True}" />
 
-<bs:DateTimePickerGroup SelectedDate="{value: Date}" LabelText="Pick a date" Visible="{value: False}" />
+    <bs:DateTimePickerGroup SelectedDate="{value: Date}" LabelText="Pick a date" Visible="{value: False}" />
+</bs:Form>

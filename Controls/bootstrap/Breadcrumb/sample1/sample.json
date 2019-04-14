@@ -9,6 +9,10 @@
         {
           "pattern": "RouteName=\"(MyRoute)\"",
           "replacement": "%SampleUniqueName%_MyRoute"
+        },
+        {
+          "pattern": "(https?://)",
+          "replacement": "../../?url=\\1"
         }
       ]
     },

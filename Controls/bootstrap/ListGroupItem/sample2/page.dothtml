@@ -7,7 +7,7 @@
 
 <bs:ListGroup ItemType="Link">
   <bs:ListGroupItem Text="Google Link" NavigateUrl="https://www.google.com/" Color="Success"/>
-  <bs:ListGroupItem Text="DotVVM" NavigateUrl="{value: BindedUrl}" />
+  <bs:ListGroupItem Text="DotVVM" NavigateUrl="{value: NavigateUrl}" />
 </bs:ListGroup>
 
 <bs:ListGroup>

@@ -1,24 +1,24 @@
-﻿<bs:Form Type="Inline">
-  
-  <bs:FormGroup LabelText="TextBox">
-    <dot:TextBox Text="{value: Text}" />
-    <!-- the "form-group" CSS class is added automatically to the TextBox control -->
-  </bs:FormGroup>
-  
-  <bs:FormGroup LabelText="TextBox">
-    <dot:ComboBox DataSource="{value: Items}" SelectedValue="{value: Item}" />
-    <!-- the "form-group" CSS class is added automatically to the ComboBox control -->
-  </bs:FormGroup>
-    
-  <bs:FormGroup LabelText="CheckBox">
-    <bs:CheckBox Checked="{value: Boolean1}" />
-    <!-- the IsInline property is set to true automatically inside the Form -->
-  </bs:FormGroup>
-  
-  <bs:FormGroup LabelText="CheckBox3">
-    <bs:RadioButton Checked="{value: Boolean2}" CheckedValue="{value: true}" />
-    <bs:RadioButton Checked="{value: Boolean2}" CheckedValue="{value: false}" />
-    <!-- the IsInline property is set to true automatically inside the Form -->
-  </bs:FormGroup>
+﻿<bs:Form>
+
+    <bs:FormGroup LabelText="TextBox">
+        <dot:TextBox Text="{value: Text}" />
+        <!-- the "form-group" CSS class is added automatically to the TextBox control -->
+    </bs:FormGroup>
+
+    <bs:FormGroup LabelText="ComboBox">
+        <dot:ComboBox DataSource="{value: Items}" SelectedValue="{value: Item}" />
+        <!-- the "form-group" CSS class is added automatically to the ComboBox control -->
+    </bs:FormGroup>
+
+    <bs:FormGroup LabelText="CheckBox">
+        <bs:CheckBox Checked="{value: Boolean1}" Text="Is Checked" />
+        <!-- the IsInline property is set to true automatically inside the Form -->
+    </bs:FormGroup>
+
+    <bs:FormGroup LabelText="RadioButton">
+        <bs:RadioButton Checked="{value: Boolean2}" CheckedValue="{value: true}" Text="Option 1" />
+        <bs:RadioButton Checked="{value: Boolean2}" CheckedValue="{value: false}" Text="Option 2" />
+        <!-- the IsInline property is set to true automatically inside the Form -->
+    </bs:FormGroup>
 
 </bs:Form>

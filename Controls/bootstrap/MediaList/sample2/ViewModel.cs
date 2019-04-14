@@ -10,14 +10,36 @@ namespace DotvvmWeb.Views.Docs.Controls.bootstrap.MediaList.sample2
     {
         public List<MediaItem> Medias { get; set; } = new List<MediaItem>()
         {
-            new MediaItem() { ImageUrl = "/Content/Images/img12.jpg", AltText = "google alt", NavigateUrl = "https://www.google.cz/",
-                Header = "Google", Description = "This is description for Google", Width = "100", Height = "200" },
-            new MediaItem() { ImageUrl = "/Content/Images/img12.jpg", AltText = "w3schools alt", NavigateUrl = "http://www.w3schools.com/",
-                Header = "W3Schools", Description = "This is description for W3Schools", Width = "300", Height = "200" },
-            new MediaItem() { ImageUrl = "/Content/Images/img12.jpg", AltText = "bootstrap alt", NavigateUrl = "http://getbootstrap.com/",
-                Header = "Bootstrap", Description = "This is description for Bootstrap", Width = "200", Height = "100" },
-            new MediaItem() { ImageUrl = "/Content/Images/img12.jpg", AltText = "dotvvm alt", NavigateUrl = "https://www.dotvvm.com/",
-                Header = "DotVVM", Description = "This is description for DotVVM", Width = "50", Height = "50" }
+            new MediaItem()
+            {
+                ImageUrl = "../../Images/1.png",
+                AltText = "google alt",
+                NavigateUrl = "https://www.google.cz/",
+                Header = "Google",
+                Description = "This is description for Google",
+                Width = "100",
+                Height = "200"
+            },
+            new MediaItem()
+            {
+                ImageUrl = "../../Images/2.png",
+                AltText = "w3schools alt",
+                NavigateUrl = "http://www.w3schools.com/",
+                Header = "W3Schools",
+                Description = "This is description for W3Schools",
+                Width = "300",
+                Height = "200"
+            },
+            new MediaItem()
+            {
+                ImageUrl = "../../Images/3.png",
+                AltText = "bootstrap alt",
+                NavigateUrl = "http://getbootstrap.com/",
+                Header = "Bootstrap",
+                Description = "This is description for Bootstrap",
+                Width = "200",
+                Height = "100"
+            }
         };
     }
 

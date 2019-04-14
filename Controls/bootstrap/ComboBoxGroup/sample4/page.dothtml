@@ -1,4 +1,9 @@
-﻿<bs:ComboBoxGroup EmptyItemText="Select..." LabelText="Select prime number" DataSource="{value: Numbers}" 
-                  SelectedValue="{value: SelectedNumber}" SelectionChanged="{command: SelectionChanged()}" />
+﻿<bs:Form>
+    <bs:ComboBoxGroup EmptyItemText="Select..." 
+                    LabelText="Select prime number" 
+                    DataSource="{value: Numbers}" 
+                    SelectedValue="{value: SelectedNumber}" 
+                    SelectionChanged="{command: SelectionChanged()}" />
+</bs:Form>
 
 <span>{{value: Result}}</span>

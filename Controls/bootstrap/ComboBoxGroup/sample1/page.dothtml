@@ -1,2 +1,5 @@
-﻿<bs:ComboBoxGroup LabelText="Animals" DataSource="{value: Animals}" SelectedValue="{value: SelectedAnimal}" />
+﻿<bs:Form>
+    <bs:ComboBoxGroup LabelText="Animals" DataSource="{value: Animals}" SelectedValue="{value: SelectedAnimal}" />
+</bs:Form>
+
 <span>Selected: {{value: SelectedAnimal}}</span>
