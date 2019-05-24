@@ -1,1 +1,5 @@
-﻿<bs:DateTimePicker SelectedDate="{value: Date}" FormatString="d" Mode="DateTime" style="width: 250px" />
+﻿<bs:DateTimePicker SelectedDate="{value: Date}" FormatString="g" Mode="DateTime" style="width: 250px" />
+
+<bs:DateTimePicker SelectedDate="{value: Date}" FormatString="d" Mode="Date" style="width: 250px" />
+
+<bs:DateTimePicker SelectedDate="{value: Date}" FormatString="t" Mode="Time" style="width: 250px" />
