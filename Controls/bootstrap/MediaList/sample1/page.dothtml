@@ -1,12 +1,12 @@
 ﻿<bs:MediaList>
 
-    <bs:MediaObject ImageUrl="http://i3.ytimg.com/vi/m0gjBDswmsA/maxresdefault.jpg"
+    <bs:MediaObject ImageUrl="https://i3.ytimg.com/vi/m0gjBDswmsA/maxresdefault.jpg"
                     AlternateText="TEST" 
                     HeaderText="DotVVM Minutes #1: Using Bootstrap 4 in a DotVVM app" 
                     Description="Simple Description" 
                     Width="240px" />
 
-    <bs:MediaObject ImageUrl="http://i3.ytimg.com/vi/anXu-v6-roE/maxresdefault.jpg"
+    <bs:MediaObject ImageUrl="https://i3.ytimg.com/vi/anXu-v6-roE/maxresdefault.jpg"
                     AlternateText="TEST" 
                     HeaderText="DotVVM Minutes #2: Calling Azure Functions from DotVVM" 
                     Description="Simple Description" 

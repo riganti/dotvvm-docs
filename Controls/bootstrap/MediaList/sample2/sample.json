@@ -7,6 +7,10 @@
         {
           "pattern": "(https?://)",
           "replacement": "/bootstrap-1.1/?url=\\1"
+        },
+        {
+          "pattern": "(/Images)",
+          "replacement": "/bootstrap-1.1/Images"
         }
       ]
     }
