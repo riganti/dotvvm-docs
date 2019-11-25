@@ -99,6 +99,7 @@
     </DocPageMenuItem>
     <DocPageMenuItem RouteName="bootstrap4" PageName="Bootstrap 4">
       <DocPageMenuItem RouteName="for-dotvvm" PageName="Installing Bootstrap 4 For DotVVM" />
+      <DocPageMenuItem RouteName="commercial-bootstrap4-for-customcss" PageName="Bootstrap4 Custom CSS" />
       <DocPageMenuItem RouteName="release-notes" PageName="Release Notes" />
     </DocPageMenuItem>
     <DocPageMenuItem RouteName="business-pack" PageName="BusinessPack">
