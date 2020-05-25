@@ -1211,6 +1211,16 @@
             Gets or sets the height of the image.
             </summary>
         </member>
+        <member name="T:DotVVM.Framework.Controls.Bootstrap4.Icon">
+            <summary>
+            Renders a Bootstrap icon component.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Controls.Bootstrap4.Icon.Type">
+            <summary>
+             Gets or sets the used icon.
+            </summary>
+        </member>
         <member name="T:DotVVM.Framework.Controls.Bootstrap4.InputGroup">
             <summary>
             Renders a Bootstrap input group widget.
