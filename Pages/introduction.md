@@ -92,6 +92,6 @@ The `{command: Function()}` is translated to a JavaScript call of a `dotvvm.post
 
 The viewmodel lives on the client side for as long as the page is loaded. When the page needs to call a method on the server (for example to get some data from the database), the viewmodel is serialized and sent to the server where the method can be invoked. The changes are then sent back to the client. The server doesn't have to store the viewmodel instance in session or in memory. The viewmodel instance exists on the server only for a lifetime of the particular HTTP request, which allows the application to be hosted on a web farm. 
 
-Notice that we didn't need to write a single line of JavaScript code. DotVVM is easy to use for all .NET developer, even those who don't have much experience with web development. 
+Notice that we didn't need to write a single line of JavaScript code. DotVVM is easy to use for all .NET developers, even those who don't have much experience with web development. 
 
 > Sending the entire viewmodel to the server and back may be inefficient in many real-world scenarios. DotVVM offers different ways of calling methods on the server which don't require presence of the viewmodel. See [Optimizing PostBacks](/docs/tutorials/basics-optimizing-postbacks/{branch}) page for more info.
