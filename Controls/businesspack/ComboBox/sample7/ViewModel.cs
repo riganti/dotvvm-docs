@@ -15,7 +15,7 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.ComboBox.sample7
         {
             yield return new Country
             {
-                Name = searchText
+                Name = text
             };
         }
     }
