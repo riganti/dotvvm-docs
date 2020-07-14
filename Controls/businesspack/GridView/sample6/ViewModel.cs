@@ -18,13 +18,13 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.GridView.sample6
             RowEditOptions = { PrimaryKeyPropertyName = nameof(Customer.Id), EditRowId = -1 }
         };
 
-        public override Task Init()
+        public override Task PreRender()
         {
             if(Customers.IsRefreshRequired)
             {
                 Customers.LoadFromQueryable(GetQueryable(15));
             }
-            return base.Init();
+            return base.PreRender();
         }
 
         public void EditCustomer(Customer customer)

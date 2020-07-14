@@ -10,12 +10,7 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.GridView.sample8
 {
     public class ViewModel : DotvvmViewModelBase
     {
-        public BusinessPackDataSet<Order> Orders { get; set; }
-        public List<string> DeliveryTypes { get; set; } = new List<string> { "Post office", "Home" };
-
-        public override Task Init()
-        {
-            Orders = new BusinessPackDataSet<Order> {
+        public BusinessPackDataSet<Order> Orders { get; set; } = new BusinessPackDataSet<Order> {
                 PagingOptions = {
                     PageSize = 10
                 },
@@ -24,18 +19,16 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.GridView.sample8
                     EditRowId = -1
                 }
             };
+        public List<string> DeliveryTypes { get; set; } = new List<string> { "Post office", "Home" };
 
-            return base.Init();
-        }
-
-        public override Task Load()
+        public override Task PreRender()
         {
             if (Orders.IsRefreshRequired)
             {
                 Orders.LoadFromQueryable(GetQueryable(15));
             }
 
-            return base.Load();
+            return base.PreRender();
         }
 
         private IQueryable<Order> GetQueryable(int size)

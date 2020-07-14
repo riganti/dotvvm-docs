@@ -13,36 +13,32 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.GridView.sample7
         public string NewCustomerName { get; set; }
         public DateTime NewCustomerBirthday { get; set; } = DateTime.Now;
         public bool IsInserting { get; set; }
-        public BusinessPackDataSet<Customer> Customers { get; set; }
-
-        public override Task Init()
+        public BusinessPackDataSet<Customer> Customers { get; set; } = new BusinessPackDataSet<Customer>
         {
-            Customers = new BusinessPackDataSet<Customer> {
-                PagingOptions = {
+            PagingOptions = {
                     PageSize = 10
                 },
-                RowEditOptions = new RowEditOptions {
-                    PrimaryKeyPropertyName = nameof(Customer.Id),
-                    EditRowId = -1
-                }
-            };
+            RowEditOptions = new RowEditOptions
+            {
+                PrimaryKeyPropertyName = nameof(Customer.Id),
+                EditRowId = -1
+            }
+        };
 
-            return base.Init();
-        }
-
-        public override Task Load()
+        public override Task PreRender()
         {
             if (Customers.IsRefreshRequired)
             {
                 Customers.LoadFromQueryable(GetQueryable(15));
             }
 
-            return base.Load();
+            return base.PreRender();
         }
 
         public void InsertNewCustomer()
         {
-            Customers.RowInsertOptions.InsertedRow = new Customer {
+            Customers.RowInsertOptions.InsertedRow = new Customer
+            {
                 Id = Customers.Items.Max(c => c.Id) + 1,
                 Name = NewCustomerName,
                 BirthDate = NewCustomerBirthday,

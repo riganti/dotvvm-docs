@@ -13,17 +13,17 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.GridView.sample9
     {
         public BusinessPackDataSet<Customer> Customers { get; set; } = new BusinessPackDataSet<Customer>()
         {
-            SortingOptions = { SortExpression = nameof(Customer.Id) }, 
+            SortingOptions = { SortExpression = nameof(Customer.Id) },
             RowEditOptions = { PrimaryKeyPropertyName = nameof(Customer.Id), EditRowId = -1 }
         };
 
-        public override Task Init()
+        public override Task PreRender()
         {
-        if(Customers.IsRefreshRequired)
+            if (Customers.IsRefreshRequired)
             {
                 Customers.LoadFromQueryable(GetQueryable(15));
             }
-            return base.Init();
+            return base.PreRender();
         }
 
         private IQueryable<Customer> GetQueryable(int size)

@@ -10,18 +10,7 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.GridView.sample10
 {
     public class ViewModel : DotvvmViewModelBase
     {
-        public GridViewUserSettings UserSettings { get; set; }
-        public BusinessPackDataSet<Customer> Customers { get; set; }
-
-        public override Task Init()
-        {
-            Customers = new BusinessPackDataSet<Customer> {
-                PagingOptions = {
-                    PageSize = 10
-                }
-            };
-
-            UserSettings = new GridViewUserSettings {
+        public GridViewUserSettings UserSettings { get; set; } = new GridViewUserSettings {
                 ColumnsSettings = new List<GridViewColumnSettings> {
                     new GridViewColumnSettings {
                         ColumnName = "CustomerId",
@@ -43,18 +32,20 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.GridView.sample10
                     }
                 }
             };
+        public BusinessPackDataSet<Customer> Customers { get; set; } = new BusinessPackDataSet<Customer> {
+                PagingOptions = {
+                    PageSize = 10
+                }
+            };
 
-            return base.Init();
-        }
-
-        public override Task Load()
+        public override Task PreRender()
         {
             if (Customers.IsRefreshRequired)
             {
                 Customers.LoadFromQueryable(GetQueryable(15));
             }
 
-            return base.Load();
+            return base.PreRender();
         }
 
         private IQueryable<Customer> GetQueryable(int size)

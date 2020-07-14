@@ -19,13 +19,13 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.GridView.sample5
             SortingOptions =  {SortExpression = nameof(Customer.Id) }
         };
 
-        public override Task Init()
+        public override Task PreRender()
         {
             if(Customers.IsRefreshRequired)
             {
                 Customers.LoadFromQueryable(GetQueryable(15));
             }
-            return base.Init();
+            return base.PreRender();
         }
 
         private IQueryable<Customer> GetQueryable(int size)
