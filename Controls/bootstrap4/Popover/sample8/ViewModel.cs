@@ -1,4 +1,5 @@
 ﻿using DotVVM.Framework.ViewModel;
+using System.Collections.Generic;
 
 namespace DotvvmWeb.Views.Docs.Controls.bootstrap.Tooltip.sample6
 {
