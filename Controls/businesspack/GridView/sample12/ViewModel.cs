@@ -1,4 +1,5 @@
-public class ViewModel
+using DotVVM.BusinessPack.Controls;
+public class ViewModel : DotvvmViewModelBase
 {
     public BusinessPackDataSet<Customer> Customers { get; set; } = new BusinessPackDataSet<Customer>
         {
