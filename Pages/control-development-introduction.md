@@ -30,4 +30,4 @@ Also, you want the data-binding to work with this control. When the user selects
 
 You can also pack such control in a NuGet package and reuse it in many projects.
 
-> You don't need to write all controls yourself. We have created several packs of commercial controls: [Bootstrap for DotVVM](https://www.dotvvm.com/landing/bootstrap-for-dotvvm) and [DotVVM Business Pack](https://www.dotvvm.com/landing/business-pack).
+> You don't need to write all controls yourself. We have created several packs of commercial controls: [Bootstrap for DotVVM](https://www.dotvvm.com/products/bootstrap-for-dotvvm) and [DotVVM Business Pack](https://www.dotvvm.com/products/dotvvm-business-pack).
