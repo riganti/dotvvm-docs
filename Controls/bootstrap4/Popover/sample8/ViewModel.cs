@@ -5,26 +5,29 @@ namespace DotvvmWeb.Views.Docs.Controls.bootstrap.Tooltip.sample6
 {
     public class ViewModel : DotvvmViewModelBase
     {
-        public List<Tooltip> Tooltips { get; set; } = new List<Tooltip>
+        public List<Popover> Popovers { get; set; } = new List<Popover>
                 {
-                    new Tooltip()
+                    new Popover()
                     {
-                        Title = "Tooltip 1"
+                        Title = "Tooltip 1",
+                        Content = "Content 1"
                     },
-                    new Tooltip()
+                    new Popover()
                     {
-                        Title = "Tooltip 2"
+                        Title = "Tooltip 2",
+                        Content = "Content 2"
                     }
                 };
         
         
         public void DeleteItems()
         {
-            Tooltips.Clear();
+            Popovers.Clear();
         }
     }    
-    public class Tooltip
+    public class Popover
     {
         public string Title { get; set; }
+        public string Content { get; set; }
     }
 }

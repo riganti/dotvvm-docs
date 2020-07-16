@@ -5,7 +5,9 @@ public class ViewModel : DotvvmViewModelBase
         {
             PagingOptions = { PageSize = 10 }
         };
-
+    
+    
+    public string OrderFilter { get; set; }
 
     public override Task PreRender()
     {
@@ -20,6 +22,7 @@ public class ViewModel : DotvvmViewModelBase
     public void OnOrderFilterChanged()
     {
         // do your logic
+        Customers.RequestRefresh();
     }
 
     private IQueryable<Customer> GetQueryable(int size)

@@ -4,7 +4,7 @@
     <ItemTemplate>
         <div>
             <div>
-                <bs:Popover AutoCloseMonitoringDepth="3" Title="{value: Title}" IsDisplayed="{value: true}" Content="{value: Content}">
+                <bs:Popover AutoCloseMonitoringDepth="3" Title="{value: Title}" Content="{value: Content}" IsDisplayed="{value: true}">
                     <bs:Button Text="Open tooltip">
                 </bs:Popover>
             </div>
