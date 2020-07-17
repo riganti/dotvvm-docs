@@ -6,21 +6,31 @@ If you decide to build the REST API using **ASP.NET Web API** or **ASP.NET MVC C
 
 These NuGet packages work with **Swashbuckle**, a popular library that exposes Swagger JSON metadata. 
 
-## Installing Swashbuckle extensions for DotVVM
+## Installing Swashbuckle extensions for DotVVM (OWIN)
 
 First, make sure you have Swashbuckle installed and configured in your project. 
 
 * [Swashbuckle - ASP.NET Core](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
-* [Swashbuckle - classic ASP.NET](https://github.com/domaindrivendev/Swashbuckle) 
 
-Then, install the following NuGet packages to the REST API project:
+Then, install the following NuGet package to the REST API project:
 
 ```
-# ASP.NET Core
+Install-Package DotVVM.Api.Swashbuckle.Owin
+```
+
+## Installing Swashbuckle extensions for DotVVM (ASP.NET Core)
+
+First, make sure you have Swashbuckle installed and configured in your project.
+
+* [Swashbuckle - classic ASP.NET](https://github.com/domaindrivendev/Swashbuckle) 
+
+Then install the following NuGet package(s) to the REST API project:
+
+```
 Install-Package DotVVM.Api.Swashbuckle.AspNetCore
 
-# OWIN
-Install-Package DotVVM.Api.Swashbuckle.Owin
+# The following package should be added for DotVVM 2.5+ projects that target ASP.NET Core < 3.0
+Install-Package Swashbuckle.AspNetCore.Newtonsoft
 ```
 
 ## Configure Swashbuckle extensions for DotVVM
@@ -42,7 +52,8 @@ config.EnableSwagger(c =>
     .EnableSwaggerUi(c => { ... });
 ```
 
-In ASP.NET Core, this is configured in `Startup.cs`:
+In ASP.NET Core, this is configured in `Startup.cs` file.
+Additionally from DotVVM 2.5, it is also necessary to override default schema naming strategy using the call to `CustomSchemaIds`.
 
 ```CSHARP
 // ASP.NET Core
@@ -51,8 +62,20 @@ services.Configure<DotvvmApiOptions>(opt =>
     // TODO: configure DotVVM Swashbuckle options
 });
 
+string GetCustomSchemaId(Type modelType)
+{
+    if (!modelType.IsConstructedGenericType) return modelType.Name.Replace("[]", "Array");
+
+    var generics = modelType.GetGenericArguments()
+        .Select(genericArg => CustomSchemaId(genericArg))
+        .Aggregate((previous, current) => previous + current);
+
+    return $"{modelType.Name.Split('`').First()}[{generics}]";
+}
+
 services.AddSwaggerGen(options => {
     ...
+    options.CustomSchemaIds(type => GetCustomSchemaId(type))
     options.EnableDotvvmIntegration();
 });
 ```
