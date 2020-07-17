@@ -1,8 +1,0 @@
-<bp:Calendar ActiveDate="{value: ActiveDate}"
-             View="Month" />
-
-<bp:Calendar ActiveDate="{value: ActiveDate}"
-             View="Year" />
-
-<bp:Calendar ActiveDate="{value: ActiveDate}"
-             View="Decade" />
