@@ -1,3 +1,0 @@
-<bp:Calendar ActiveDate="{value: ActiveDate}"/>
-
-<p>Active date: <dot:Literal Text="{value: ActiveDate}" FormatString="g" /></p>

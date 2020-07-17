@@ -1,9 +1,0 @@
-<bp:Calendar ActiveDate="{value: ActiveDate}" >
-    <HeaderTemplate>
-        <p>Custom calendar</p>
-    </HeaderTemplate>
-    <FooterTemplate>
-        <bp:Button Text="Select next day from today" 
-                   Click="{staticCommand: ActiveDate = NextDay}"/>
-    </FooterTemplate>
-</bp:Calendar>
