@@ -1,5 +1,13 @@
 # Release notes
 
+## v2.4.203.0
+*Compatible with VS 2019 v16.6.4+*
+* Improved DotVVM configuration loading
+* DotHTML Editor - Quick Info fixed
+* DotHTML Editor - Suggested Actions improvements 
+* Improved performance of loading dothtml files 
+* Stability improvements - Updated Visual Studio APIs to latest versions 
+* Updated DotVVM Templates - new design of welcome page
 
 ## v2.4.180.0
 *Compatible with VS 2019 v16.5.4+*
