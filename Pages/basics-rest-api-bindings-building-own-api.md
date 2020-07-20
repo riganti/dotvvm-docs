@@ -33,14 +33,13 @@ Install-Package DotVVM.Api.Swashbuckle.AspNetCore
 Install-Package Swashbuckle.AspNetCore.Newtonsoft
 ```
 
-## Configure Swashbuckle extensions for DotVVM
+## Configure Swashbuckle extensions for DotVVM (OWIN)
 
 To enable DotVVM integration, call the `EnableDotvvmIntegration` extension method in the Swashbuckle configuration.
 
 In OWIN, this is typically done in `SwaggerConfig.cs` file
 
 ```CSHARP
-// OWIN
 config.EnableSwagger(c =>
     {
         ...
@@ -52,11 +51,27 @@ config.EnableSwagger(c =>
     .EnableSwaggerUi(c => { ... });
 ```
 
+## Configure Swashbuckle extensions for DotVVM (ASP.NET Core)
+
+To enable DotVVM integration, call the `EnableDotvvmIntegration` extension method in the Swashbuckle configuration.
+
 In ASP.NET Core, this is configured in `Startup.cs` file.
+
+```CSHARP
+services.Configure<DotvvmApiOptions>(opt => 
+{
+    // TODO: configure DotVVM Swashbuckle options
+});
+
+services.AddSwaggerGen(options => {
+    ...
+    options.EnableDotvvmIntegration();
+});
+```
+
 Additionally from DotVVM 2.5, it is also necessary to override default schema naming strategy using the call to `CustomSchemaIds`.
 
 ```CSHARP
-// ASP.NET Core
 services.Configure<DotvvmApiOptions>(opt => 
 {
     // TODO: configure DotVVM Swashbuckle options
@@ -78,6 +93,12 @@ services.AddSwaggerGen(options => {
     options.CustomSchemaIds(type => GetCustomSchemaId(type))
     options.EnableDotvvmIntegration();
 });
+```
+
+Furthermore, if you plan to use DotVVM 2.5+ with ASP.NET Core < 3.0, you additionally need to call `AddSwaggerGenNewtonsoftSupport`.
+
+```CSHARP
+services.AddSwaggerGenNewtonsoftSupport();
 ```
 
 ### Registering known types
