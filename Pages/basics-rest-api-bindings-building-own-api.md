@@ -29,7 +29,7 @@ Then install the following NuGet package(s) to the REST API project:
 ```
 Install-Package DotVVM.Api.Swashbuckle.AspNetCore
 
-# The following package should be added for DotVVM 2.5+ projects that target ASP.NET Core < 3.0
+# The following package is necessary for DotVVM 2.5+ projects that target ASP.NET Core < 3.0
 Install-Package Swashbuckle.AspNetCore.Newtonsoft
 ```
 
@@ -37,7 +37,7 @@ Install-Package Swashbuckle.AspNetCore.Newtonsoft
 
 To enable DotVVM integration, call the `EnableDotvvmIntegration` extension method in the Swashbuckle configuration.
 
-In OWIN, this is typically done in `SwaggerConfig.cs` file
+In OWIN, this is typically done in `SwaggerConfig.cs` file.
 
 ```CSHARP
 config.EnableSwagger(c =>
@@ -69,7 +69,7 @@ services.AddSwaggerGen(options => {
 });
 ```
 
-Additionally from DotVVM 2.5, it is also necessary to override default schema naming strategy using the call to `CustomSchemaIds`.
+Additionally from DotVVM 2.5, it is also necessary to override the default schema-naming strategy using the call to `CustomSchemaIds`.
 
 ```CSHARP
 services.Configure<DotvvmApiOptions>(opt => 
