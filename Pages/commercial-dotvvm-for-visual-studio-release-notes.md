@@ -8,6 +8,7 @@
 * Improved performance of loading dothtml files 
 * Stability improvements - Updated Visual Studio APIs to latest versions 
 * Updated DotVVM Templates - new design of welcome page
+* Improved dialogs for actions "Extract Hard-Coded Texts in RESX Files" and "Extract User Control Feature"
 
 ## v2.4.180.0
 *Compatible with VS 2019 v16.5.4+*
