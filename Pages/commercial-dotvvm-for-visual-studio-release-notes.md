@@ -2,6 +2,11 @@
 
 ## v2.4.203.0
 *Compatible with VS 2019 v16.6.4+*
+* Fixed configuration loading issue
+* Fixed Master Page template issue
+
+## v2.4.203.0
+*Compatible with VS 2019 v16.6.4+*
 * Improved DotVVM configuration loading
 * DotHTML Editor - Quick Info fixed
 * DotHTML Editor - Suggested Actions improvements 
