@@ -10,7 +10,7 @@ These NuGet packages work with **Swashbuckle**, a popular library that exposes S
 
 First, make sure you have Swashbuckle installed and configured in your project. 
 
-* [Swashbuckle - ASP.NET Core](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
+* [Swashbuckle - classic ASP.NET](https://github.com/domaindrivendev/Swashbuckle) 
 
 Then, install the following NuGet package to the REST API project:
 
@@ -22,15 +22,13 @@ Install-Package DotVVM.Api.Swashbuckle.Owin
 
 First, make sure you have Swashbuckle installed and configured in your project.
 
-* [Swashbuckle - classic ASP.NET](https://github.com/domaindrivendev/Swashbuckle) 
+* [Swashbuckle - ASP.NET Core](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
+* [Swashbuckle - ASP.NET Core - Newtonsoft](https://www.nuget.org/packages/Swashbuckle.AspNetCore.Newtonsoft/) (This package is necessary only for DotVVM 2.5+ projects that target ASP.NET Core < 3.0)
 
-Then install the following NuGet package(s) to the REST API project:
+Then install the following NuGet package to the REST API project:
 
 ```
 Install-Package DotVVM.Api.Swashbuckle.AspNetCore
-
-# The following package is necessary for DotVVM 2.5+ projects that target ASP.NET Core < 3.0
-Install-Package Swashbuckle.AspNetCore.Newtonsoft
 ```
 
 ## Configure Swashbuckle extensions for DotVVM (OWIN)
@@ -69,33 +67,7 @@ services.AddSwaggerGen(options => {
 });
 ```
 
-Additionally from DotVVM 2.5, it is also necessary to override the default schema-naming strategy using the call to `CustomSchemaIds`.
-
-```CSHARP
-services.Configure<DotvvmApiOptions>(opt => 
-{
-    // TODO: configure DotVVM Swashbuckle options
-});
-
-string GetCustomSchemaId(Type modelType)
-{
-    if (!modelType.IsConstructedGenericType) return modelType.Name.Replace("[]", "Array");
-
-    var generics = modelType.GetGenericArguments()
-        .Select(genericArg => CustomSchemaId(genericArg))
-        .Aggregate((previous, current) => previous + current);
-
-    return $"{modelType.Name.Split('`').First()}[{generics}]";
-}
-
-services.AddSwaggerGen(options => {
-    ...
-    options.CustomSchemaIds(type => GetCustomSchemaId(type))
-    options.EnableDotvvmIntegration();
-});
-```
-
-Furthermore, if you plan to use DotVVM 2.5+ with ASP.NET Core < 3.0, you additionally need to call `AddSwaggerGenNewtonsoftSupport`.
+Additionally, if you plan to use DotVVM 2.5+ with ASP.NET Core < 3.0, you also need to call `AddSwaggerGenNewtonsoftSupport`.
 
 ```CSHARP
 services.AddSwaggerGenNewtonsoftSupport();
