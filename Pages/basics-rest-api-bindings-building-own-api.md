@@ -6,31 +6,38 @@ If you decide to build the REST API using **ASP.NET Web API** or **ASP.NET MVC C
 
 These NuGet packages work with **Swashbuckle**, a popular library that exposes Swagger JSON metadata. 
 
-## Installing Swashbuckle extensions for DotVVM
+## Installing Swashbuckle extensions for DotVVM (OWIN)
 
 First, make sure you have Swashbuckle installed and configured in your project. 
 
-* [Swashbuckle - ASP.NET Core](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
 * [Swashbuckle - classic ASP.NET](https://github.com/domaindrivendev/Swashbuckle) 
 
-Then, install the following NuGet packages to the REST API project:
+Then, install the following NuGet package to the REST API project:
 
 ```
-# ASP.NET Core
-Install-Package DotVVM.Api.Swashbuckle.AspNetCore
-
-# OWIN
 Install-Package DotVVM.Api.Swashbuckle.Owin
 ```
 
-## Configure Swashbuckle extensions for DotVVM
+## Installing Swashbuckle extensions for DotVVM (ASP.NET Core)
+
+First, make sure you have Swashbuckle installed and configured in your project.
+
+* [Swashbuckle - ASP.NET Core](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
+* [Swashbuckle - ASP.NET Core - Newtonsoft](https://www.nuget.org/packages/Swashbuckle.AspNetCore.Newtonsoft/) (This package is necessary only for DotVVM 2.5+ projects that target ASP.NET Core 2.x, or that are using Newtonsoft.Json serializer with ASP.NET Core 3.x)
+
+Then install the following NuGet package to the REST API project:
+
+```
+Install-Package DotVVM.Api.Swashbuckle.AspNetCore
+```
+
+## Configure Swashbuckle extensions for DotVVM (OWIN)
 
 To enable DotVVM integration, call the `EnableDotvvmIntegration` extension method in the Swashbuckle configuration.
 
-In OWIN, this is typically done in `SwaggerConfig.cs` file
+In OWIN, this is typically done in `SwaggerConfig.cs` file.
 
 ```CSHARP
-// OWIN
 config.EnableSwagger(c =>
     {
         ...
@@ -42,10 +49,13 @@ config.EnableSwagger(c =>
     .EnableSwaggerUi(c => { ... });
 ```
 
-In ASP.NET Core, this is configured in `Startup.cs`:
+## Configure Swashbuckle extensions for DotVVM (ASP.NET Core)
+
+To enable DotVVM integration, call the `EnableDotvvmIntegration` extension method in the Swashbuckle configuration.
+
+In ASP.NET Core, this is configured in `Startup.cs` file.
 
 ```CSHARP
-// ASP.NET Core
 services.Configure<DotvvmApiOptions>(opt => 
 {
     // TODO: configure DotVVM Swashbuckle options
@@ -55,6 +65,12 @@ services.AddSwaggerGen(options => {
     ...
     options.EnableDotvvmIntegration();
 });
+```
+
+Additionally, in case of DotVVM 2.5 or newer with ASP.NET Core 2.x or ASP.NET Core 3.x with Newtonsoft.Json serializer, you also need to call `AddSwaggerGenNewtonsoftSupport`.
+
+```CSHARP
+services.AddSwaggerGenNewtonsoftSupport();
 ```
 
 ### Registering known types
