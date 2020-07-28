@@ -23,7 +23,7 @@ Install-Package DotVVM.Api.Swashbuckle.Owin
 First, make sure you have Swashbuckle installed and configured in your project.
 
 * [Swashbuckle - ASP.NET Core](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
-* [Swashbuckle - ASP.NET Core - Newtonsoft](https://www.nuget.org/packages/Swashbuckle.AspNetCore.Newtonsoft/) (This package is necessary only for DotVVM 2.5+ projects that target ASP.NET Core < 3.0)
+* [Swashbuckle - ASP.NET Core - Newtonsoft](https://www.nuget.org/packages/Swashbuckle.AspNetCore.Newtonsoft/) (This package is necessary only for DotVVM 2.5+ projects that target ASP.NET Core 2.x, or that are using Newtonsoft.Json serializer with ASP.NET Core 3.x)
 
 Then install the following NuGet package to the REST API project:
 
@@ -67,7 +67,7 @@ services.AddSwaggerGen(options => {
 });
 ```
 
-Additionally, if you plan to use DotVVM 2.5+ with ASP.NET Core < 3.0, you also need to call `AddSwaggerGenNewtonsoftSupport`.
+Additionally, in case of DotVVM 2.5 or newer with ASP.NET Core 2.x or ASP.NET Core 3.x with Newtonsoft.Json serializer, you also need to call `AddSwaggerGenNewtonsoftSupport`.
 
 ```CSHARP
 services.AddSwaggerGenNewtonsoftSupport();
