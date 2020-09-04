@@ -19,6 +19,9 @@ For example, if you have a project named *MyWebApp* and you have a *Resources\We
 be *MyWebApp.Resources.Web.Strings* (provided you haven't change the default namespace in the project properties). To retrieve the resource, you need
 to use `{resource: MyWebApp.Resources.Web.Strings.SomeResourceKey}`.
 
+In order to be able to access the RESX file entries, their C# representation must exist. Make sure that you have set the __Access Modifier__ field to **Public**: 
+![Enable code generation for RESX files](basics-resource-binding-img1.png)
+
 ## The @import Directive
 
 The syntax with full namespace is long, so you can use the `@import` directive to import namespaces.
