@@ -1,4 +1,9 @@
 # Release notes
+## v2.4.213.0
+*Compatible with VS 2019 v16.7.+*
+* Fixed changed Visual Studio API compatibility issues
+* Fixed performance issues during writing in bindings
+* Fixed Quick Info in bindings
 
 ## v2.4.205.0
 *Compatible with VS 2019 v16.6.4+*
