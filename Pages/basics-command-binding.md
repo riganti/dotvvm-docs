@@ -20,7 +20,7 @@ In the DOTHTML markup, we can use the [Button](/docs/controls/builtin/Button/{br
 <dot:Button Click="{command: Submit()}" Text="Submit Form" />
 ```
 
-If you run the page and view the page source code, you'll see that **DotVVM** translates the binding to a snipped of JavaScript code.
+If you run the page and view the page source code, you'll see that **DotVVM** translates the binding to a snippet of JavaScript code.
 
 This code uses the `dotvvm.postBack` function defined in the `DotVVM.js` file, which is referenced in the page automatically by DotVVM.
 
