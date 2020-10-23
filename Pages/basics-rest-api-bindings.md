@@ -58,6 +58,8 @@ This will refresh all registered APIs. If you want to update only a specific API
 
 The REST APIs can be used in [Value Binding](/docs/tutorials/basics-value-binding/{branch}) and in [Static Command Binding](/docs/tutorials/basics-static-command-binding/{branch}). 
 
+You must not change the default `Newtonsoft.Json` settings for serialization/deserialization. This is due to the fact that the same settings are currently used within the generated API bindings. If you require changes to the settings, you can achieve this by using a different overload of `JsonConvert.SerializeObject` or `JsonConvert.DeserializeObject` and pass your settings as an additional parameter.
+
 ## Loading data from API
 
 You can use the variable registered in `DotvvmStartup.cs` in value bindings to load data into [GridView](/docs/controls/builtin/GridView/{branch}), [Repeater](/docs/controls/builtin/Repeater/{branch}), [ComboBox](/docs/controls/builtin/ComboBox/{branch}) or other controls. The collection doesn't need to be declared in the viewmodel and it is not transferred on postbacks, which significantly reduces the amount of data being sent to the server.
