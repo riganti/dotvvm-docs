@@ -27,5 +27,5 @@ To use query string parameter, use the following registration:
 config.RouteTable.Add("Default", "", "Views/Default.dothtml", presenterFactory: LocalizablePresenter.BasedOnQuery("lang"));
 ```
 
-If the language is not specified, the default culture from [DotVVM Confuiguration](/docs/tutorials/basics-globalization/{branch}) is used for the specific request.
+If the language is not specified, the default culture from [DotVVM Configuration](/docs/tutorials/basics-globalization/{branch}) is used for the specific request.
 The `LocalizablePresenter` factory methods have also the second optional argument which tells the presenter to automatically redirect to default culture if no culture is specified.
