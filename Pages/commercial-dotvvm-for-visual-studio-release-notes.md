@@ -1,4 +1,18 @@
 # Release notes
+
+## v2.5.236.0
+*Compatible with VS 2019 v16.8.+*
+* Minor performance enhancements
+* .NET 5.0 templates support
+* Redesign About DotVVM Dialog
+* New feature - Navigate to markup control code-behind on Shift + F7     
+
+## v2.5.231.0
+*Compatible with VS 2019 v16.8.+*
+* Fixed Visual Studio API compatibility issues
+* Minor performance enhancements
+* Updated templates to DotVVM 2.5
+
 ## v2.4.213.0
 *Compatible with VS 2019 v16.7.+*
 * Fixed changed Visual Studio API compatibility issues
