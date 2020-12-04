@@ -1,27 +1,27 @@
-# View compilation modes
+# View Compilation Modes
 
-DotHTML needs to be compiled before serving it to the client. This process is not done durning project compilation but in runtime. Due to this behavior first load of page can take slightly longer than subsequent page loads.
+Because of the performance reasons, DotHTML files need to be compiled before their first use. This process is not done durning project compilation, but at runtime. Due to this behavior, the first load of page can take slightly longer than subsequent page loads.
 
-In different environments we may want to modify when the compilation will occur. During development we want our application to startup as fast as possible, and we may not need to compile all the pages. But in production environment we usually want all the views to be compiled before first user visits our page.
+In different environments, we may want to modify when the compilation occurs. During the development, we want our application to start as quickly as possible as we compile and run it over and over. Thus, we may not need to compile all the pages. In the production environment, we usually want all the views to be compiled before the first user visits our site.
 
-Due to this reasons the view compilation behavior can be modified using compilation modes. 
-We have 3 basic modes whose behavior can be further modified by additional options contained in `ViewCompilationConfiguration`.
+Due to this differences, the view compilation behavior can be modified using the view compilation mode settings. 
 
-- Lazy
+We have three modes whose behavior can be further modified by additional options contained in the `ViewCompilationConfiguration` object.
+
+- `Lazy`
   - Default mode.
   - Views are compiled only when first user accesses the page associated with given view.
   - **This mode should be used for development.**
-- DuringApplicationStart
-  - Views are compiled before application startup is done.  
+- `AfterApplicationStart`
+  - View are compiled on the background after the application startup routine.  
+  - The application will start responding to incoming requests, and start a background task that compiles all the views. If the user enters a page that hasn't been compiled yet, the compilation will be done "on-demand" as in the `Lazy` model
+  - **This mode should be used for production environments without deployment slots.**
+- `DuringApplicationStart`
+  - The views are compiled as part of the application startup routine. This means that the startup takes significanly longer.
     **The application will start to respond to incoming requests after all views are compiled.**
-  - *This mode should be used for production environments where we are using slot swapping. Slots wont be swapped until the application is ready and starts to respond to incoming requests.*
-- AfterApplicationStart
-  - View are compiled after application startup.  
-    The application will start to respond to incoming requests and than will start view compilation.
-  - **This mode should be used for production environments.**
+  - *This mode should be used for production environments where slot swapping is used. Slots won't be swapped until the application is ready and starts responding to incoming requests.*
 
-The view compilation modes are being set in `Configure` method in `Startup.cs` as part of `UseDotVVM` method call.
-
+The view compilation modes can be set in the `Configure` method in `Startup.cs` as part of the `UseDotVVM` method call.
 
 ```CSHARP
 var dotvvmConfiguration = app.UseDotVVM<DotvvmStartup>(env.ContentRootPath,modifyConfiguration:
@@ -32,11 +32,11 @@ var dotvvmConfiguration = app.UseDotVVM<DotvvmStartup>(env.ContentRootPath,modif
                 });
 ```
 
-In addition to view compilation modes the view can be further modified by other settings in  `ViewCompilationConfiguration`.
+In addition to specifying the compilation mode, the view compilation can be further modified by other settings in  `ViewCompilationConfiguration`.
 
-When using `DuringApplicationStart` and `AfterApplicationStart` mode than set whether the compilation will be done in parallel or not using the `CompileInParallel` option. Setting this to *false* can be helpful when running on machine with low number of cores.
+When using `DuringApplicationStart` and `AfterApplicationStart` mode, you can set whether the compilation will be done in parallel using the `CompileInParallel` option.  Setting this property to `false` can be helpful when running on machine with low number of cores.
 
-When using `AfterApplicationStart` than by setting the `BackgroundCompilationDelay` option you can defer the compilation. This setting is helpful when there are other more important things done during application startup.
+When using `AfterApplicationStart`, you can use the `BackgroundCompilationDelay` option to defer the compilation. This setting is helpful when there are other more important things done after the application startup (populate caches and more).
 
 ```CSHARP
             var dotvvmConfiguration = app.UseDotVVM<DotvvmStartup>(env.ContentRootPath,modifyConfiguration:
