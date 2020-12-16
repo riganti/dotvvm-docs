@@ -1,5 +1,9 @@
 # Release notes
 
+## v2.5.239.0
+*Compatible with VS 2019 v16.8.+*
+* Fixed About Dialog - incorrect indication of license information
+
 ## v2.5.236.0
 *Compatible with VS 2019 v16.8.+*
 * Minor performance enhancements
