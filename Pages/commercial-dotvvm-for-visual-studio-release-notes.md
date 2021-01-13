@@ -1,11 +1,21 @@
 # Release notes
 
+## v2.5.245.0
+*Compatible with VS 2019 v16.8.4+*
+* Fixed Visual Studio API changes
+
+### Assets
+Version for Visual Studio 2019: [download link](https://storage.dotvvm.com/public/DotVVM.Integration.VisualStudio.VS2019-Preview.2.5.245.0.vsix) <br/>
+Version for Visual Studio 2019 Preview (16.9.0 Preview 2.0+): [download link](https://storage.dotvvm.com/public/DotVVM.Integration.VisualStudio.VS2019-Preview.2.5.245.0.vsix) 
+
 ## v2.5.239.0
-*Compatible with VS 2019 v16.8.+*
+*Compatible with VS 2019 v16.8.0 -&gt; v16.8.3*
 * Fixed About Dialog - incorrect indication of license information
+### Assets
+Version for Visual Studio 2019 RTM: [download link](https://storage.dotvvm.com/public/DotVVM.Integration.VisualStudio.VS2019.RTM.2.5.239.0.vsix) <br/>
 
 ## v2.5.236.0
-*Compatible with VS 2019 v16.8.+*
+*Compatible with VS 2019 v16.8.0 -&gt; v16.8.3*
 * Minor performance enhancements
 * .NET 5.0 templates support
 * Redesign About DotVVM Dialog
