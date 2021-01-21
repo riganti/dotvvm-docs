@@ -1,4 +1,14 @@
 # Release notes
+
+## 2.5.1
+* **Package updates**
+    * Dotvvm upgraded to **2.5.1**
+* **Changes to existing controls**
+    * **TabControl**
+        * Added support for setting *Visible* property on *TabItem*
+    * **ResponsiveNavigation**
+        * Added property  *HeaderImageAltText* for setting alt text of image.
+        * Added property *HeaderImageTooltip* for setting title property of image*
 ## 2.4.0.10
 * **New controls**
     * [```Icon```](https://www.dotvvm.com/docs/controls/bootstrap4/Icon)
