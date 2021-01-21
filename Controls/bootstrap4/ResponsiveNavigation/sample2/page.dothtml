@@ -1,6 +1,7 @@
 ﻿<bs:ResponsiveNavigation 
         HeaderImageUrl="~/Images/person.png" 
-        HeaderText="Alt text for image" 
+        HeaderImageAltText="Alt text for image" 
+        HeaderImageTooltip="tooltip text for image" 
         HeaderLinkUrl="http://www.dotvvm.com" 
         Theme="Dark" 
         ScrollBehavior="StickyTop">
