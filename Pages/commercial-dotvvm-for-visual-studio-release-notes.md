@@ -1,17 +1,45 @@
 # Release notes
+
+## v2.5.245.0
+***Compatible with VS 2019 v16.8.4+***
+* Fixed Visual Studio API changes
+
+### Assets
+Version for Visual Studio 2019: [download link](https://storage.dotvvm.com/public/DotVVM.Integration.VisualStudio.VS2019.RTM.2.5.245.0.vsix) <br/>
+Version for Visual Studio 2019 Preview (16.9.0 Preview 2.0+): [download link](https://storage.dotvvm.com/public/DotVVM.Integration.VisualStudio.VS2019-Preview.2.5.245.0.vsix) 
+
+## v2.5.239.0
+***Compatible with VS 2019 v16.8.0 -&gt; v16.8.3***
+* Fixed About Dialog - incorrect indication of license information
+### Assets
+Version for Visual Studio 2019: [download link](https://storage.dotvvm.com/public/DotVVM.Integration.VisualStudio.VS2019.RTM.2.5.239.0.vsix) <br/>
+
+## v2.5.236.0
+***Compatible with VS 2019 v16.8.0 -&gt; v16.8.3***
+* Minor performance enhancements
+* .NET 5.0 templates support
+* Redesign About DotVVM Dialog
+* New feature - Navigate to markup control code-behind on Shift + F7     
+
+## v2.5.231.0
+***Compatible with VS 2019 v16.8.+***
+* Fixed Visual Studio API compatibility issues
+* Minor performance enhancements
+* Updated templates to DotVVM 2.5
+
 ## v2.4.213.0
-*Compatible with VS 2019 v16.7.+*
+***Compatible with VS 2019 v16.7.+***
 * Fixed changed Visual Studio API compatibility issues
 * Fixed performance issues during writing in bindings
 * Fixed Quick Info in bindings
 
 ## v2.4.205.0
-*Compatible with VS 2019 v16.6.4+*
+***Compatible with VS 2019 v16.6.4+***
 * Fixed configuration loading issue
 * Fixed Master Page template issue
 
 ## v2.4.203.0
-*Compatible with VS 2019 v16.6.4+*
+***Compatible with VS 2019 v16.6.4+***
 * Improved DotVVM configuration loading
 * DotHTML Editor - Quick Info fixed
 * DotHTML Editor - Suggested Actions improvements 
@@ -21,7 +49,7 @@
 * Improved dialogs for actions "Extract Hard-Coded Texts in RESX Files" and "Extract User Control Feature"
 
 ## v2.4.180.0
-*Compatible with VS 2019 v16.5.4+*
+***Compatible with VS 2019 v16.5.4+***
 * IntelliSense for Bindings fixes
 * DotHTML Editor - fixed formating issues
 * Stability improvements - Updated Visual Studio APIs to latest versions
@@ -29,12 +57,12 @@
 * Updated DotVVM Templates
 
 ## v2.4.172.0
-*Compatible with VS 2019 v16.4.2+*
+***Compatible with VS 2019 v16.4.2+***
 * Fixed IntelliSense for DotVVM 2.4.0
 * Stability improvements 
 
 ## v2.0.117.0
-*Compatible with VS 2017 v15.8.0+*
+***Compatible with VS 2017 v15.8.0+***
 * Fixed DotVVM configuration deserialization problems
 
 
