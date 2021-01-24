@@ -1,14 +1,29 @@
 # Release notes
 
+## 2.5.2
+* **Changes to existing controls**
+    * **Tooltip**
+        * *Placement* now supports option *auto*.
+        * **BREAKING CHANGE** : Default value for placement is now *auto*.
+    * **ResponsiveNavigation** : 
+      * Header can be now set using *HeaderTemplate*. Content of this template gets inserted into header link.
+    *  **GridView** :
+       *  Added new *TableTheme* enum options (such as danger,warning,...)
+    *  **DateTimePicker** :
+       *  Fixed popup positioning on longer pages.
+       *  Modified algorithm which decides whether popup displays above or bellow input.
+    * **Icon** :
+      * Optimized icon serving when using binging. 
+
 ## 2.5.1
 * **Package updates**
-    * Dotvvm upgraded to **2.5.1**
+    * DotVVM upgraded to **2.5.1**
 * **Changes to existing controls**
     * **TabControl**
         * Added support for setting *Visible* property on *TabItem*
     * **ResponsiveNavigation**
         * Added property  *HeaderImageAltText* for setting alt text of image.
-        * Added property *HeaderImageTooltip* for setting title property of image*
+        * Added property *HeaderImageTooltip* for setting title property of image.
 ## 2.4.0.10
 * **New controls**
     * [```Icon```](https://www.dotvvm.com/docs/controls/bootstrap4/Icon)

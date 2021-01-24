@@ -1,0 +1,5 @@
+﻿<bs:ResponsiveNavigation HeaderLinkUrl="https://www.google.com">
+    <HeaderTemplate>
+        Text inside header link.
+    </HeaderTemplate>
+</bs:ResponsiveNavigation>
