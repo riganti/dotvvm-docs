@@ -11,6 +11,23 @@ public class ViewModel : DotvvmViewModelBase
 
     public override Task PreRender()
     {
+        // you can initialize default filters
+        if (!Context.IsPostBack) 
+        {
+            Customers.FilteringOptions =
+            {
+                FilterGroup = new FilterGroup()
+                {
+                    Filters = new List<FilterBase>()
+                    {                        
+                        new FilterCondition() { FieldName = "Name", Operator = FilterOperatorType.Contains, Value = "1" }
+                    },
+                    Logic = FilterLogicType.And
+                }
+            }
+        }
+        
+        // refresh data
         if (Customers.IsRefreshRequired)
         {
             Customers.LoadFromQueryable(GetQueryable(15));
