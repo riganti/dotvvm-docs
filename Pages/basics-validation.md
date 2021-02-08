@@ -45,7 +45,7 @@ public class AppointmentData : IValidatableObject
     {
         if (BeginDate >= EndDate)
         {
-            yield return validationContext.CreateValidationResult<AppointmentData>("The begin date of the appointment must be lower than the end date.", t => t.BeginDate, t => t.EndDate);
+            yield return this.CreateValidationResult<AppointmentData>("The begin date of the appointment must be lower than the end date.", t => t.BeginDate, t => t.EndDate);
         }
     }
 }
