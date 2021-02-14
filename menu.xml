@@ -1,122 +1,231 @@
-<DocMenu>
+<DocMenu Version="2.0">
   <DocStaticMenuItem RouteName="Docs" PageName="Home" />
   <DocPageMenuItem RouteName="introduction" PageName="Introduction" />
-  <DocPageMenuItem RouteName="how-to-start" PageName="How To Start">
-    <DocPageMenuItem RouteName="dotnet-451" PageName="Create a new project (ASP.NET 4.5.1)" />
-    <DocPageMenuItem RouteName="dnx" PageName="Create a new project (ASP.NET Core)" />
-    <DocPageMenuItem RouteName="command-line" PageName="Create a new project (Command Line)" />
-    <DocPageMenuItem RouteName="existing-app" PageName="Add DotVVM to existing project" />
-    <DocPageMenuItem RouteName="existing-app-owin" PageName="Add DotVVM to existing project (OWIN)" />
-    <DocPageMenuItem RouteName="existing-app-aspnetcore" PageName="Add DotVVM to existing project (ASP.NET Core)" />
-    <DocPageMenuItem RouteName="upgrade-from-1-0" PageName="Upgrading to DotVVM 1.1" />
-    <DocPageMenuItem RouteName="upgrade-to-2-0" PageName="Upgrading to DotVVM 2.0" />
+  
+  <DocPageMenuItem RouteName="quick-starts" PageName="Quick Starts">
+  
+	<DocPageMenuItem RouteName="build" PageName="Build a new app">
+	  <DocPageMenuItem RouteName="create-new-project" PageName="Create a new project" LegacyPaths="how-to-start-dnx,how-to-start-dotnet-451,how-to-start-command-line" />
+	  <DocPageMenuItem RouteName="first-page" PageName="The first page" LegacyPaths="basics-first-page" />
+	  <DocPageMenuItem RouteName="build-to-do-list-app" PageName="Build a To-do list app"  />
+	</DocPageMenuItem>
+	
+    <DocPageMenuItem RouteName="modernize" PageName="Modernize legacy apps">
+	  <DocPageMenuItem RouteName="add-dotvvm-to-existing-app" PageName="Add DotVVM to existing project" LegacyPaths="how-to-start-existing-app,how-to-start-existing-app-owin,how-to-start-existing-app-aspnetcore" />
+	  <DocPageMenuItem RouteName="differences-between-dotvvm-and-aspnet-web-forms" PageName="Differences between DotVVM and ASP.NET Web Forms" />
+	  <DocPageMenuItem RouteName="plan-the-modernization" PageName="Plan the modernization" />
+	  <DocPageMenuItem RouteName="interop" PageName="Interop with ASP.NET">
+	    <DocPageMenuItem RouteName="session-and-cookies" PageName="Session and cookies" LegacyPaths="advanced-using-session-or-http-context-cookies" />
+		<DocPageMenuItem RouteName="authentication" PageName="Authentication" />
+	  </DocPageMenuItem>
+	  <DocPageMenuItem RouteName="sample-projects" PageName="Sample projects" />
+	</DocPageMenuItem>	
+	
   </DocPageMenuItem>
-  <DocPageMenuItem RouteName="basics" PageName="Basics">
-    <DocPageMenuItem RouteName="project-structure" PageName="DotVVM Project Contents" />
-    <DocPageMenuItem RouteName="first-page" PageName="Creating the First Page" />
-    <DocPageMenuItem RouteName="routing" PageName="Routing" />
-    <DocPageMenuItem RouteName="master-pages" PageName="Master Pages" />
-    <DocPageMenuItem RouteName="comments" PageName="Comments" />
-    <DocPageMenuItem RouteName="binding-syntax" PageName="Binding Syntax" />
-    <DocPageMenuItem RouteName="value-binding" PageName="Value Binding" />
-    <DocPageMenuItem RouteName="command-binding" PageName="Command Binding" />
-    <DocPageMenuItem RouteName="static-command-binding" PageName="Static Command Binding" />
-    <DocPageMenuItem RouteName="resource-binding" PageName="Resource Binding" />
-    <DocPageMenuItem RouteName="binding-context" PageName="Binding Context" />
-    <DocPageMenuItem RouteName="viewmodels" PageName="ViewModels" />
-    <DocPageMenuItem RouteName="binding-direction" PageName="Binding Direction" />
-    <DocPageMenuItem RouteName="request-context" PageName="Request Context" />
-    <DocPageMenuItem RouteName="viewmodel-protection" PageName="ViewModel Protection" />
-    <DocPageMenuItem RouteName="built-in-controls" PageName="Built-in Controls" />
-    <DocPageMenuItem RouteName="control-properties-and-attributes" PageName="Control Properties and Attributes" />
-    <DocPageMenuItem RouteName="class-and-style-attribute" PageName="Class and Styles Attribute" />
-    <DocPageMenuItem RouteName="configuration" PageName="Configuration" />
-    <DocPageMenuItem RouteName="validation" PageName="Validation" />
-    <DocPageMenuItem RouteName="validator-controls" PageName="Validator Controls" />
-    <DocPageMenuItem RouteName="validation-target" PageName="Validation Target" />
-    <DocPageMenuItem RouteName="client-side-validation" PageName="Client-Side Validation" />
-    <DocPageMenuItem RouteName="globalization" PageName="Globalization" />
-    <DocPageMenuItem RouteName="formatting-dates-and-numbers" PageName="Formatting Dates and Numbers" />
-    <DocPageMenuItem RouteName="javascript-and-css" PageName="Javascript and CSS Resources" />
-    <DocPageMenuItem RouteName="using-resources" PageName="Using Resources" />
-    <DocPageMenuItem RouteName="server-side-html-generation" PageName="SEO and server-side HTML generation" />
-    <DocPageMenuItem RouteName="single-page-applications-spa" PageName="Single Page Applications (SPA)" />
-    <DocPageMenuItem RouteName="postback-handlers" PageName="Postback Handlers" />
-    <DocPageMenuItem RouteName="optimizing-postbacks" PageName="Optimizing PostBacks" />
-    <DocPageMenuItem RouteName="static-command-services" PageName="Static Command Services" />
-    <DocPageMenuItem RouteName="rest-api-bindings" PageName="REST API Bindings" />
-    <DocPageMenuItem RouteName="rest-api-bindings-building-own-api" PageName="REST API Bindings: Building own API" />
-    <DocPageMenuItem RouteName="postback-concurrency-mode" PageName="PostBack Concurrency Mode" />
-    <DocPageMenuItem RouteName="server-side-styles" PageName="Server-side Styles" />
-    <!-- <DocPageMenuItem RouteName="dotvvm-contrib-controls" PageName="DotVVM Contrib Controls" /> -->
-    <!-- <DocPageMenuItem RouteName="dotvvm-dynamic-data" PageName="DotVVM Dynamic Data" /> -->
-  </DocPageMenuItem>
-  <DocPageMenuItem RouteName="advanced" PageName="Advanced Topics">
-    <DocPageMenuItem RouteName="authentication-authorization" PageName="Authentication and Authorization" />
-    <DocPageMenuItem RouteName="owin-security" PageName="OWIN Security Authentication" />
-    <DocPageMenuItem RouteName="aspnetcore-authentication" PageName="ASP.NET Core Authentication" />
-    <DocPageMenuItem RouteName="action-filters" PageName="Action Filters" />
-    <DocPageMenuItem RouteName="view-compilation-modes" PageName="View Compilation Modes" />
-    <DocPageMenuItem RouteName="exception-filters" PageName="Exception Filters" />
-    <DocPageMenuItem RouteName="filter-registration" PageName="Filter Registration" />
-    <DocPageMenuItem RouteName="application-insights" PageName="Using Application Insights" />
-    <DocPageMenuItem RouteName="electron" PageName="Electron integration" />
-    <DocPageMenuItem RouteName="miniprofiler" PageName="Using MiniProfiler" />
-    <DocPageMenuItem RouteName="custom-tracing" PageName="Custom tracing" />
-    <DocPageMenuItem RouteName="ioc-di-container" PageName="IoC/DI Containers" />
-    <DocPageMenuItem RouteName="ioc-di-container-owin" PageName="IoC/DI Containers (OWIN)" />
-    <DocPageMenuItem RouteName="ioc-di-container-aspnetcore" PageName="IoC/DI Containers (ASP.NET Core)" />
-    <DocPageMenuItem RouteName="bundling-minification" PageName="Bundling and Minification" />
-    <DocPageMenuItem RouteName="testing-viewmodels" PageName="Testing ViewModels" />
-    <DocPageMenuItem RouteName="custom-presenters" PageName="Custom Presenters" />
-    <DocPageMenuItem RouteName="localization-presenter" PageName="Localization Presenter" />
-    <DocPageMenuItem RouteName="route-autodiscovery" PageName="Auto-Discovering Routes" />
-    <DocPageMenuItem RouteName="returning-files" PageName="Returning Files from ViewModels" />
-    <DocPageMenuItem RouteName="using-session-or-http-context-cookies" PageName="Using Session or HttpContext Cookies" />
-    <DocPageMenuItem RouteName="dotvvm-command-line" PageName="DotVVM Command Line" />
-    <DocPageMenuItem RouteName="javascript-events-and-client-side-viewmodel" PageName="JavaScript Events and Client-side ViewModel" />
-    <!-- <DocPageMenuItem RouteName="using-external-javascript-components" PageName="Using external JavaScript components" /> -->
-    <!-- <DocPageMenuItem RouteName="server-side-styles" PageName="Server-side Styles" /> -->
-  </DocPageMenuItem>
-  <DocPageMenuItem RouteName="control-development" PageName="Control Development">
-    <DocPageMenuItem RouteName="introduction" PageName="Introduction" />
-    <DocPageMenuItem RouteName="markup-only-controls" PageName="Markup-only Controls" />
-    <DocPageMenuItem RouteName="markup-control-registration" PageName="Markup Control Registration" />
-    <DocPageMenuItem RouteName="markup-controls-with-code" PageName="Markup Controls With Code" />
-    <DocPageMenuItem RouteName="code-only-controls" PageName="Code-only Controls" />
-    <DocPageMenuItem RouteName="interactivity" PageName="Adding Interactivity Using Custom Knockout Binding Handlers" />
-    <DocPageMenuItem RouteName="creating-custom-postback-handlers" PageName="Creating Custom Postback Handlers" />
-    <DocPageMenuItem RouteName="binding-extensibility" PageName="Binding System Extensibility" />
-    <DocPageMenuItem RouteName="binding-extension-parameters" PageName="Custom Binding Extension Parameters" />
-  </DocPageMenuItem>
-  <DocControlCategory RouteName="builtin-controls" Category="builtin" />
-  <DocPageMenuItem RouteName="commercial" PageName="Commercial Products">
-    <DocPageMenuItem RouteName="" PageName="DotVVM for Visual Studio">
-      <DocPageMenuItem RouteName="dotvvm-private-nuget-feed" PageName="DotVVM Private NuGet Feed" />
-      <DocPageMenuItem RouteName="troubleshooting-dotvvm-for-visual-studio" PageName="Troubleshooting DotVVM for Visual Studio" />
-      <DocPageMenuItem RouteName="dotvvm-for-visual-studio-release-notes" PageName="Release Notes" />
+  
+  <DocPageMenuItem RouteName="concepts" PageName="Concepts">
+  
+    <DocPageMenuItem RouteName="project-structure" PageName="Project structure" LegacyPaths="basics-project-structure" />
+	
+    <DocPageMenuItem RouteName="dothtml-markup" PageName="DotHTML markup">
+	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-built-in-controls" />
+	  <DocPageMenuItem RouteName="common-control-properties" PageName="Common control properties" LegacyPaths="basics-control-properties-and-attributes" />
+	  <DocPageMenuItem RouteName="combine-css-classes-and-styles" PageName="Combine CSS classes and styles" LegacyPaths="basics-class-and-style-attribute" />
+	  <DocPageMenuItem RouteName="comments" PageName="Comments" LegacyPaths="basics-comments" />
+	  <DocPageMenuItem RouteName="server-side-styles" PageName="Server-side styles" LegacyPaths="basics-server-side-styles" />
+	</DocPageMenuItem>
+	
+	<DocPageMenuItem RouteName="routing" PageName="Routing">
+	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-routing" />
+	  <DocPageMenuItem RouteName="parameters" PageName="Route parameters" />
+	  <DocPageMenuItem RouteName="auto-discover-routes" PageName="Auto-discover routes" LegacyPaths="advanced-route-autodiscovery" />
+	  <DocPageMenuItem RouteName="custom-presenters" PageName="Custom presenters" LegacyPaths="advanced-custom-presenters" />
+	</DocPageMenuItem>
+	
+	<DocPageMenuItem RouteName="layout" PageName="Layout">
+	  <DocPageMenuItem RouteName="master-pages" PageName="Master pages" LegacyPaths="basics-master-pages" />
+	  <DocPageMenuItem RouteName="single-page-applications-spa" PageName="SPA (Single-page Apps)" LegacyPaths="basics-single-page-applications-spa" />
+	</DocPageMenuItem>
+	
+	<DocPageMenuItem RouteName="data-binding" PageName="Data-binding">
+	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-binding-syntax" />
+	  <DocPageMenuItem RouteName="value-binding" PageName="Value binding" LegacyPaths="basics-value-binding" />
+	  <DocPageMenuItem RouteName="resource-binding" PageName="Resource binding" LegacyPaths="basics-resource-binding" />
+	  <DocPageMenuItem RouteName="binding-context" PageName="Binding context" LegacyPaths="basics-binding-context" />
+	</DocPageMenuItem>
+	
+	<DocPageMenuItem RouteName="respond-to-user-actions" PageName="Respond to user actions">
+	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-optimizing-postbacks" />
+	  <DocPageMenuItem RouteName="commands" PageName="Commands" LegacyPaths="basics-command-binding" />
+	  <DocPageMenuItem RouteName="static-commands" PageName="Static commands" LegacyPaths="basics-static-command-binding" />
+	  <DocPageMenuItem RouteName="static-command-services" PageName="Static command services" LegacyPaths="basics-static-command-services" />
+	  <DocPageMenuItem RouteName="postback-handlers" PageName="Postback handlers" LegacyPaths="basics-postback-handlers" />
+	  <DocPageMenuItem RouteName="concurrency-mode" PageName="Concurrency mode" LegacyPaths="basics-postback-concurrency-mode" />
+	  <DocPageMenuItem RouteName="rest-api-bindings" PageName="REST API bindings">
+	    <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-rest-api-bindings" />
+	    <DocPageMenuItem RouteName="provide-api-metadata" PageName="Provide API metadata" LegacyPaths="basics-rest-api-bindings-building-own-api" />
+	  </DocPageMenuItem>
+	</DocPageMenuItem>	
+	
+	<DocPageMenuItem RouteName="viewmodels" PageName="Viewmodels">
+	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-viewmodels" />
+	  <DocPageMenuItem RouteName="work-with-data" PageName="Work with data">
+	    <DocPageMenuItem RouteName="gridview-data-sets" PageName="GridView data sets" />
+	    <DocPageMenuItem RouteName="best-practises" PageName="Best practises" />
+	  </DocPageMenuItem>
+      <DocPageMenuItem RouteName="request-context" PageName="Request Context" LegacyPaths="basics-request-context" />
+	  <DocPageMenuItem RouteName="binding-direction" PageName="Binding direction" LegacyPaths="basics-binding-direction" />
+	  <DocPageMenuItem RouteName="viewmodel-protection" PageName="Viewmodel protection" LegacyPaths="basics-viewmodel-protection" />
+	  <DocPageMenuItem RouteName="filters" PageName="Filters">
+	    <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="advanced-filter-registration" />
+	    <DocPageMenuItem RouteName="action-filters" PageName="Action filters" LegacyPaths="advanced-action-filters" />
+	    <DocPageMenuItem RouteName="exception-filters" PageName="Exception filters" LegacyPaths="advanced-exception-filters" />
+	  </DocPageMenuItem>
+	  <DocPageMenuItem RouteName="testing-viewmodels" PageName="Testing viewmodels" LegacyPaths="advanced-testing-viewmodels" />
+	  <DocPageMenuItem RouteName="server-side-viewmodel-cache" PageName="Server-side viewmodel cache" />
+	</DocPageMenuItem>
+	
+	<DocPageMenuItem RouteName="configuration" PageName="Configuration">
+	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-configuration" />
+	  <DocPageMenuItem RouteName="dependency-injection" PageName="Dependency injection">
+	    <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="advanced-ioc-di-container" />
+        <DocPageMenuItem RouteName="aspnet-core" PageName="ASP.NET Core" LegacyPaths="advanced-ioc-di-container-aspnetcore" />
+        <DocPageMenuItem RouteName="owin" PageName="OWIN" LegacyPaths="advanced-ioc-di-container-owin" />
+	  </DocPageMenuItem>
+	  <DocPageMenuItem RouteName="view-compilation-modes" PageName="View compilation mode" LegacyPaths="advanced-view-compilation-modes" />
+	  <DocPageMenuItem RouteName="explicit-assembly-loading" PageName="Explicit assembly loading" />
+	</DocPageMenuItem>
+	
+	<DocPageMenuItem RouteName="validation" PageName="Validation">
+	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-validation" />	  
+	  <DocPageMenuItem RouteName="controls" PageName="Validation controls" LegacyPaths="basics-validator-controls" />
+	  <DocPageMenuItem RouteName="target" PageName="Validation target" LegacyPaths="basics-validation-target" />
+      <DocPageMenuItem RouteName="client-side" PageName="Client-side validation" LegacyPaths="basics-client-side-validation" />
+	  <DocPageMenuItem RouteName="extensibility" PageName="Extensibility" />
+	</DocPageMenuItem>
+	
+	<DocPageMenuItem RouteName="localization-and-cultures" PageName="Localization &amp; cultures">
+	  <DocPageMenuItem RouteName="multi-language-applications" PageName="Multi-language applications" LegacyPaths="basics-globalization" />	  
+	  <DocPageMenuItem RouteName="resx-files" PageName="RESX files" />
+	  <DocPageMenuItem RouteName="formatting-dates-and-numbers" PageName="Formatting dates and numbers" LegacyPaths="basics-formatting-dates-and-numbers" />
+	  <DocPageMenuItem RouteName="localizable-presenter" PageName="Localizable presenter" LegacyPaths="advanced-localization-presenter" />
+	</DocPageMenuItem>
+	
+	<DocPageMenuItem RouteName="script-and-style-resources" PageName="Script &amp; style resources">
+	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-javascript-and-css" />
+	  <DocPageMenuItem RouteName="use-resources-in-the-page" PageName="Use resources in the page" LegacyPaths="basics-using-resources" />
+      <DocPageMenuItem RouteName="bundling-minification" PageName="Bundling and minification" LegacyPaths="advanced-bundling-minification" />
+	</DocPageMenuItem>
+	
+	<DocPageMenuItem RouteName="upload-and-download-files" PageName="Upload &amp; download files">
+	  <DocPageMenuItem RouteName="upload-files" PageName="Upload files" />
+	  <DocPageMenuItem RouteName="return-file-from-viewmodel" PageName="Return a file from viewmodel" LegacyPaths="advanced-returning-files" />
+	</DocPageMenuItem>
+	
+	<DocPageMenuItem RouteName="client-side-development" PageName="Client-side development">
+	  <DocPageMenuItem RouteName="js-directive" PageName="JS directive">
+	    <DocPageMenuItem RouteName="overview" PageName="Overview" />
+		<DocPageMenuItem RouteName="call-js-from-dotvvm" PageName="Call JS from DotVVM" />
+		<DocPageMenuItem RouteName="call-dotvvm-from-js" PageName="Call DotVVM from JS" />
+		<DocPageMenuItem RouteName="use-typescript-to-declare-modules" PageName="Use TypeScript to declare modules" />
+	  </DocPageMenuItem>
+	  <DocPageMenuItem RouteName="dotvvm-javascript-events" PageName="DotVVM JavaScript events" LegacyPaths="advanced-javascript-events-and-client-side-viewmodel" />
+	  <DocPageMenuItem RouteName="read-and-modify-viewmodel-from-js" PageName="Read &amp; modify viewmodel from JS" />
+	  <DocPageMenuItem RouteName="access-validation-errors-from-js" PageName="Access validation errors from JS" />
+	</DocPageMenuItem>
+	
+	<DocPageMenuItem RouteName="server-side-rendering" PageName="Server-side rendering" LegacyPaths="basics-server-side-html-generation" />  
+	<DocPageMenuItem RouteName="security" PageName="Security">
+	  <DocPageMenuItem RouteName="authentication-authorization" PageName="Authentication &amp; authorization">
+	    <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="advanced-authentication-authorization" />
+        <DocPageMenuItem RouteName="aspnet-core" PageName="ASP.NET Core" LegacyPaths="advanced-aspnetcore-authentication" />
+        <DocPageMenuItem RouteName="owin" PageName="OWIN" LegacyPaths="advanced-owin-security" />
+	  </DocPageMenuItem>
+	  <DocPageMenuItem RouteName="recommendations-for-viewmodels" PageName="Recommendations for viewmodels" />
+	  <DocPageMenuItem RouteName="html-encoding" PageName="HTML encoding" />
+	</DocPageMenuItem>
+	
+	<DocPageMenuItem RouteName="diagnostics-and-profiling" PageName="Diagnostics &amp; profiling">
+	  <DocPageMenuItem RouteName="application-insights" PageName="Application Insights" LegacyPaths="advanced-application-insights" />
+	  <DocPageMenuItem RouteName="miniprofiler" PageName="MiniProfiler" LegacyPaths="advanced-miniprofiler" />
+	  <DocPageMenuItem RouteName="custom-tracing" PageName="Custom tracing" LegacyPaths="advanced-custom-tracing" />
+	</DocPageMenuItem>
+	
+	<DocPageMenuItem RouteName="cli" PageName="DotVVM CLI">
+	  <DocPageMenuItem RouteName="install" PageName="Install the CLI" LegacyPaths="advanced-dotvvm-command-line" />
+	  <DocPageMenuItem RouteName="create-pages-and-controls" PageName="Create pages and controls" />
+	</DocPageMenuItem>
+	
+	<DocPageMenuItem RouteName="control-development" PageName="Control Development">
+      <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="control-development-introduction" />
+      <DocPageMenuItem RouteName="markup-only-controls" PageName="Markup controls" LegacyPaths="control-development-markup-only-controls" />
+      <DocPageMenuItem RouteName="markup-control-registration" PageName="Markup control registration" LegacyPaths="control-development-markup-control-registration" />
+      <DocPageMenuItem RouteName="markup-controls-with-code" PageName="Markup controls with code-behind" LegacyPaths="control-development-markup-controls-with-code" />
+      <DocPageMenuItem RouteName="code-only-controls" PageName="Code-only controls" LegacyPaths="control-development-code-only-controls" />
+      <DocPageMenuItem RouteName="interactivity" PageName="Adding interactivity using Knockout binding handlers" LegacyPaths="control-development-interactivity" />
+      <DocPageMenuItem RouteName="creating-custom-postback-handlers" PageName="Creating custom postback handlers" LegacyPaths="control-development-creating-custom-postback-handlers" />
+      <DocPageMenuItem RouteName="binding-extensibility" PageName="Binding system extensibility" LegacyPaths="control-development-binding-extensibility" />
+      <DocPageMenuItem RouteName="binding-extension-parameters" PageName="Custom binding extension parameters" LegacyPaths="control-development-binding-extension-parameters" />
     </DocPageMenuItem>
-    <DocPageMenuItem RouteName="bootstrap" PageName="Bootstrap 3">
-      <DocPageMenuItem RouteName="for-dotvvm" PageName="Installing Bootstrap For DotVVM" />
-      <DocControlCategory RouteName="controls" Category="bootstrap" />
-      <DocPageMenuItem RouteName="release-notes" PageName="Release Notes" />
-    </DocPageMenuItem>
-    <DocPageMenuItem RouteName="bootstrap4" PageName="Bootstrap 4">
-      <DocPageMenuItem RouteName="for-dotvvm" PageName="Installing Bootstrap 4 For DotVVM" />
-      <DocPageMenuItem RouteName="for-customcss" PageName="Bootstrap4 Custom CSS" />
-      <DocControlCategory RouteName="controls" Category="bootstrap4" />
-      <DocPageMenuItem RouteName="release-notes" PageName="Release Notes" />
-    </DocPageMenuItem>
-    <DocPageMenuItem RouteName="business-pack" PageName="BusinessPack">
-      <DocPageMenuItem RouteName="install" PageName="Installing DotVVM Business Pack" />
-      <DocPageMenuItem RouteName="theme-editor" PageName="DotVVM Business Pack Theme Editor" />
-      <DocControlCategory RouteName="controls" Category="businesspack" />
-      <DocPageMenuItem RouteName="release-notes" PageName="Release Notes" />
-    </DocPageMenuItem>
+	
   </DocPageMenuItem>
-  <DocPageMenuItem RouteName="troubleshooting" PageName="Troubleshooting">
-    <DocPageMenuItem RouteName="dotvvm-compiler-not-found" PageName="DotVVM Compiler Not Found" />
+    
+  <DocControlCategory Category="builtin" />
+    
+  <DocPageMenuItem RouteName="business-pack" PageName="DotVVM Business Pack">
+    <DocPageMenuItem RouteName="getting-started" PageName="Getting started" LegacyPaths="commercial-business-pack-install" />
+    <DocControlCategory RouteName="controls" Category="businesspack" />
+    <DocPageMenuItem RouteName="themes" PageName="Themes">
+	  <DocPageMenuItem RouteName="overview" PageName="Overview" />
+	  <DocPageMenuItem RouteName="customize" PageName="Customize control styles" />
+	</DocPageMenuItem>
+	<DocPageMenuItem RouteName="exporting-data" PageName="Exporting data" />
+    <DocPageMenuItem RouteName="release-notes" PageName="Release notes" LegacyPaths="commecial-business-pack-release-notes" />
   </DocPageMenuItem>
-  <DocStaticMenuItem RouteName="DocSamples" PageName="Samples" />
-  <DocStaticMenuItem RouteName="DocVideos" PageName="Videos" />
+    
+  <DocPageMenuItem RouteName="bootstrap-for-dotvvm" PageName="Bootstrap for DotVVM">
+  
+    <DocPageMenuItem RouteName="v4" PageName="Bootstrap 4">
+      <DocPageMenuItem RouteName="getting-started" PageName="Getting started" LegacyPaths="commercial-bootstrap4-for-dotvvm-install" />
+      <DocPageMenuItem RouteName="custom-css-classes" PageName="Custom CSS classes" LegacyPaths="commercial-bootstrap4-for-customcss" />
+      <DocControlCategory Category="bootstrap4" />
+      <DocPageMenuItem RouteName="release-notes" PageName="Release notes" LegacyPaths="commercial-bootstrap4-release-notes" />
+    </DocPageMenuItem>
+	
+	<DocPageMenuItem RouteName="v3" PageName="Bootstrap 3">
+      <DocPageMenuItem RouteName="getting-started" PageName="Getting started" LegacyPaths="commercial-bootstrap-for-dotvvm-install" />
+      <DocControlCategory Category="bootstrap" />
+      <DocPageMenuItem RouteName="release-notes" PageName="Release notes" LegacyPaths="commercial-bootstrap-release-notes" />
+    </DocPageMenuItem>
+	
+  </DocPageMenuItem>
+  
+  <DocPageMenuItem RouteName="dotvvm-for-visual-studio" PageName="DotVVM for Visual Studio">
+    <DocPageMenuItem RouteName="overview" PageName="Overview" />
+    <DocPageMenuItem RouteName="dotvvm-private-nuget-feed" PageName="Using DotVVM private NuGet feed" LegacyPaths="commercial-dotvvm-private-nuget-feed" />
+    <DocPageMenuItem RouteName="troubleshooting" PageName="Troubleshooting" LegacyPaths="commercial-troubleshooting-dotvvm-for-visual-studio,troubleshooting-dotvvm-compiler-not-found" />
+    <DocPageMenuItem RouteName="release-notes" PageName="Release notes" LegacyPaths="commercial-dotvvm-for-visual-studio-release-notes" />
+  </DocPageMenuItem>
+  
+  <DocPageMenuItem RouteName="upgrading-from-older-versions" PageName="Upgrading from older versions">
+    <DocPageMenuItem RouteName="from-1.0-to-1.1" PageName="From 1.0 to 1.1" LegacyPaths="how-to-start-upgrade-from-1-0" />
+    <DocPageMenuItem RouteName="from-1.1-to-2.0" PageName="From 1.1 to 2.0" LegacyPaths="how-to-start-upgrade-to-2-0" />
+	<DocPageMenuItem RouteName="from-2.0-to-2.1" PageName="From 2.0 to 2.1" />
+	<DocPageMenuItem RouteName="from-2.1-to-2.2" PageName="From 2.1 to 2.2" />
+	<DocPageMenuItem RouteName="from-2.2-to-2.3" PageName="From 2.2 to 2.3" />
+	<DocPageMenuItem RouteName="from-2.3-to-2.4" PageName="From 2.3 to 2.4" />
+	<DocPageMenuItem RouteName="from-2.4-to-2.5" PageName="From 2.4 to 2.5" />
+	<DocPageMenuItem RouteName="from-2.5-to-3.0" PageName="From 2.5 to 3.0" />
+  </DocPageMenuItem>
+
+  <DocPageMenuItem RouteName="samples-videos" PageName="Samples &amp; videos" />
+  
+  <DocPageMenuItem RouteName="community-add-ons" PageName="Community add-ons">
+    <DocPageMenuItem RouteName="dotvvm-dynamic-data" PageName="DotVVM Dynamic Data" />
+    <DocPageMenuItem RouteName="dotvvm-contrib-controls" PageName="DotVVM Contrib Controls" />
+	<DocPageMenuItem RouteName="dotvvm-amp" PageName="DotVVM AMP" />
+	<DocPageMenuItem RouteName="dotvvm-pwa" PageName="DotVVM PWA" />
+	<DocPageMenuItem RouteName="dotvvm-electron" PageName="DotVVM Electron" LegacyPaths="advanced-electron" />
+  </DocPageMenuItem>
+
 </DocMenu>
