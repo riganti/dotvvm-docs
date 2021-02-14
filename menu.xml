@@ -71,7 +71,7 @@
 	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-viewmodels" />
 	  <DocPageMenuItem RouteName="work-with-data" PageName="Work with data">
 	    <DocPageMenuItem RouteName="gridview-data-sets" PageName="GridView data sets" />
-	    <DocPageMenuItem RouteName="best-practises" PageName="Best practises" />
+	    <DocPageMenuItem RouteName="best-practices" PageName="Best practises" />
 	  </DocPageMenuItem>
       <DocPageMenuItem RouteName="request-context" PageName="Request Context" LegacyPaths="basics-request-context" />
 	  <DocPageMenuItem RouteName="binding-direction" PageName="Binding direction" LegacyPaths="basics-binding-direction" />
@@ -113,7 +113,7 @@
 	
 	<DocPageMenuItem RouteName="script-and-style-resources" PageName="Script &amp; style resources">
 	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-javascript-and-css" />
-	  <DocPageMenuItem RouteName="use-resources-in-the-page" PageName="Use resources in the page" LegacyPaths="basics-using-resources" />
+	  <DocPageMenuItem RouteName="use-resources-in-pages" PageName="Use resources in pages" LegacyPaths="basics-using-resources" />
       <DocPageMenuItem RouteName="bundling-minification" PageName="Bundling and minification" LegacyPaths="advanced-bundling-minification" />
 	</DocPageMenuItem>
 	
@@ -136,7 +136,7 @@
 	
 	<DocPageMenuItem RouteName="server-side-rendering" PageName="Server-side rendering" LegacyPaths="basics-server-side-html-generation" />  
 	<DocPageMenuItem RouteName="security" PageName="Security">
-	  <DocPageMenuItem RouteName="authentication-authorization" PageName="Authentication &amp; authorization">
+	  <DocPageMenuItem RouteName="authentication-and-authorization" PageName="Authentication &amp; authorization">
 	    <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="advanced-authentication-authorization" />
         <DocPageMenuItem RouteName="aspnet-core" PageName="ASP.NET Core" LegacyPaths="advanced-aspnetcore-authentication" />
         <DocPageMenuItem RouteName="owin" PageName="OWIN" LegacyPaths="advanced-owin-security" />
@@ -158,7 +158,7 @@
 	
 	<DocPageMenuItem RouteName="control-development" PageName="Control Development">
       <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="control-development-introduction" />
-      <DocPageMenuItem RouteName="markup-only-controls" PageName="Markup controls" LegacyPaths="control-development-markup-only-controls" />
+      <DocPageMenuItem RouteName="markup-controls" PageName="Markup controls" LegacyPaths="control-development-markup-only-controls" />
       <DocPageMenuItem RouteName="markup-control-registration" PageName="Markup control registration" LegacyPaths="control-development-markup-control-registration" />
       <DocPageMenuItem RouteName="markup-controls-with-code" PageName="Markup controls with code-behind" LegacyPaths="control-development-markup-controls-with-code" />
       <DocPageMenuItem RouteName="code-only-controls" PageName="Code-only controls" LegacyPaths="control-development-code-only-controls" />
@@ -176,7 +176,7 @@
     <DocPageMenuItem RouteName="getting-started" PageName="Getting started" LegacyPaths="commercial-business-pack-install" />
     <DocControlCategory RouteName="controls" Category="businesspack" />
     <DocPageMenuItem RouteName="themes" PageName="Themes">
-	  <DocPageMenuItem RouteName="overview" PageName="Overview" />
+	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="commercial-business-pack-theme-editor" />
 	  <DocPageMenuItem RouteName="customize" PageName="Customize control styles" />
 	</DocPageMenuItem>
 	<DocPageMenuItem RouteName="exporting-data" PageName="Exporting data" />
@@ -216,6 +216,7 @@
 	<DocPageMenuItem RouteName="from-2.3-to-2.4" PageName="From 2.3 to 2.4" />
 	<DocPageMenuItem RouteName="from-2.4-to-2.5" PageName="From 2.4 to 2.5" />
 	<DocPageMenuItem RouteName="from-2.5-to-3.0" PageName="From 2.5 to 3.0" />
+	<DocPageMenuItem RouteName="compilation-status-page" PageName="Compilation Status Page" />
   </DocPageMenuItem>
 
   <DocPageMenuItem RouteName="samples-videos" PageName="Samples &amp; videos" />
