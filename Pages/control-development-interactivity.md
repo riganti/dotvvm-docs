@@ -138,10 +138,10 @@ You'll see the names of embedded resources in the assembly.
 The last thing is to tell our DatePicker control that it requires the "myDatePicker" resource. Add this line to the OnPreRenderComplete method:
 
 ```CSHARP
-protected override void OnPreRenderComplete(IDotvvmRequestContext context)
+public override void OnPreRender(IDotvvmRequestContext context)
 {
     context.ResourceManager.AddRequiredResource("myDatePicker");
-    base.OnPreRenderComplete(context);
+    base.OnPreRender(context);
 }
 ```
 
