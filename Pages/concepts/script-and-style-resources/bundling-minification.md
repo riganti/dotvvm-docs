@@ -1,4 +1,4 @@
-# Bundling and Minification
+# Bundling and minification
 
 In DotVVM, each control in the page can request some resources (scripts and stylesheets) to be added in the `head` or `body` elements. When the page HTML is rendered, DotVVM takes all such resources, sorts them so all their dependencies are met, and then adds the `script` and `link` elements in the page. 
 

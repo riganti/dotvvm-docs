@@ -1,4 +1,4 @@
-# Value Binding
+# Value binding
 
 The **value binding** is the most frequently used binding in DotVVM.
 

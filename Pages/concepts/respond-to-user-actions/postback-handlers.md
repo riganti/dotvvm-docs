@@ -1,4 +1,4 @@
-# Postback Handlers
+# Postback handlers
 
 Imagine you have a button in your page which removes some data. In many cases, you need to display a confirmation dialog before the data are deleted.
 This is a situation when you shall use a feature called **postback handler**.
@@ -28,4 +28,3 @@ nice user experience.
 
 However, the postback handler mechanism is extensible and it is not difficult to write your own confirmation dialog logic. You can find more information about that in the [Custom Postback Handlers](/docs/tutorials/control-development-creating-custom-postback-handlers/{branch}) chapter.
 
-> There were some breaking changes in the implementation of postback handlers in DotVVM 2.0. If you have implemented your own postback handlers, they may require some updates. See [Upgrading to DotVVM 2.0](/docs/tutorials/how-to-start-upgrade-to-2-0/{branch}#postback-handlers).

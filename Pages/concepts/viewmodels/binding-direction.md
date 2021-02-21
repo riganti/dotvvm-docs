@@ -1,4 +1,4 @@
-# Binding Directions
+# Binding direction
 
 You may need to customize which properties are transferred from the server to client or from client to the server when using the [command bindings](/docs/tutorials/basics-command-binding/{branch}). In many cases, there is no need to transfer the whole viewmodel in both directions. 
 

@@ -1,4 +1,4 @@
-# Request Context
+# Request context
 
 The `DotvvmViewModelBase` class contains the `Context` property which provides access to various DotVVM and ASP.NET resources, like OWIN or ASP.NET Core context etc.  
 It can also perform redirects, return files to be downloaded, and other things.
@@ -17,11 +17,10 @@ UI using this object's `AddModelError` method, or you can use the `IsValid` prop
 + `Query` property is a dictionary which contains parameters from the URL query string.
 
 + `HttpContext` property gives you access to the OWIN or ASP.NET context of the current request. It's useful when you need to work with cookies, authentication etc. This property exposes a common interface over `OwinContext` and `HttpContext` from ASP.NET Core. Not all features are available in this abstraction because of the differences of the platforms.
-This property is available in **DotVVM 1.1** and newer. In the previous version, there was the `OwinContext` property instead.
 
-+ `GetOwinContext()` is an extension method which you can use in the OWIN version. It returns the real `OwinContext`. This method is available in **DotVVM 1.1** and newer.
++ `GetOwinContext()` is an extension method which you can use in the OWIN version. It returns the real `OwinContext`.
 
-+ `GetAspNetCoreContext()` is an extension method which you can use in the ASP.NET Core version to access the ASP.NET Core  `HttpContext`. This method is available in **DotVVM 1.1** and newer.
++ `GetAspNetCoreContext()` is an extension method which you can use in the ASP.NET Core version to access the ASP.NET Core  `HttpContext`.
 
 + `RedirectToUrl` and `RedirectToUrlPermanent` methods redirect the user to the specified URL. 
 The request execution is interrupted by this call.
@@ -33,6 +32,3 @@ The request execution is interrupted by this call.
 
 + `ReturnFile` function is used when you need to [return a file](/docs/tutorials/advanced-returning-files/{branch}) which will be downloaded by the user.
 
-> In **DotVVM 2.0**, the methods from `DotvvmRequestContext` were changed to extension methods. The usage and their meaning remains the same.
-
-> In **DotVVM 2.0**, the methods which return and change current culture were made obsolete as they don't work correctly in asynchronous calls. See [Globalization](/docs/tutorials/basics-globalization/{branch}) for more information.

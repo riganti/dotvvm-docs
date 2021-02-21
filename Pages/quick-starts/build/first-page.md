@@ -1,4 +1,4 @@
-# Creating the First Page
+# The first page
 
 Every page in **DotVVM** consists of a **view** and a **viewmodel**. 
 

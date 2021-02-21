@@ -1,4 +1,4 @@
-# Binding Context
+# Binding context
 
 In **DotVVM**, each HTML element or DotVVM control has the `DataContext` property. Using this property, you can change the context in which data bindings are evaluated.
 

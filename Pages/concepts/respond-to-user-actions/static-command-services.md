@@ -1,10 +1,8 @@
 # Static Command Services
 
-> This feature is new in **DotVVM 2.0**. 
-
 **Static Command Services** is a feature which allows injecting of a C# class in the page using `@service` directive and calling its methods using [Static Command Binding](/docs/tutorials/basics-static-command-binding/{branch}). This allows to use static command binding on instance methods and using dependency injection.
 
-## Service Registration
+## Register the service
 
 First, make sure that the service is registered in `IServiceCollection`. This can be done in `DotvvmStartup.cs`:
 
@@ -33,7 +31,7 @@ options.Services.AddScoped<ICalculationService, CalculationService>();
 
 You can use any lifetime policy supported by `IServiceProvider`: `Singleton`, `Scoped` and `Transient`.
 
-## Using Static Command Services
+## Use static command service
 
 You can call any method marked with `[AllowStaticCommand]` attribute using static command binding. Optionally, you can assign the return value to any property in the viewmodel:
 

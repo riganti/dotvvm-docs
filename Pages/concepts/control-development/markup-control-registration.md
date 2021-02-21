@@ -1,4 +1,4 @@
-# Markup Control Registration
+# Markup control registration
 
 To be able to use custom markup controls, you need to register them in the `DotvvmStartup.cs` file. 
 
@@ -12,7 +12,7 @@ We have registered the `Controls/AddressEditor.dotcontrol` control under a tag n
 
 > If you use [DotVVM for Visual Studio](https://www.dotvvm.com/landing/dotvvm-for-visual-studio), you need to run the project after registering the control, otherwise the IntelliSense won't display the control in the suggestion list.  
 
-## Using the Markup Control
+## Use the control
 
 We have registered our control with the `cc` tag prefix and `AddressEditor` name, so we can just write this:
 
@@ -29,7 +29,7 @@ We have registered our control with the `cc` tag prefix and `AddressEditor` name
 
 Note that both objects `BillingAddress` and `DeliveryAddress` must implement the `IAddress` interface. If they don't, DotVVM will show an error page.
 
-## Embedding Markup Controls in Class Libraries
+## Embed markup control in a class library
 
 If you need to share the control in multiple DotVVM projects, you can place the `.dothtml` file in a class library project (DLL) and reference it from the web application.
 

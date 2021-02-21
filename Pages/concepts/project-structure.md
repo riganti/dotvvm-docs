@@ -1,4 +1,4 @@
-# DotVVM Project Contents
+# Project structure    
 
 After you [create a new DotVVM project](/docs/tutorials/how-to-start-dotnet-451/{branch}), there will be several files in your project:
 

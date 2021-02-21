@@ -1,4 +1,4 @@
-# Markup-Only Controls
+# Markup controls
 
 It is very easy to create a markup control. First, you need to create a file with the `.dotcontrol` extension.
 
@@ -9,7 +9,7 @@ The markup control files must specify the `@viewModel` directive which tells Dot
 If your markup control doesn't contain any data-bindings and doesn't depend on a specific viewmodel, use `@viewModel System.Object, mscorlib`. It means that the binding context in which the control is used, can be anything.
 
 
-## How to create Markup Controls
+## Create a markup control
 
 Simple markup controls don't need any C# code. In Visual Studio, right click on a project or folder in the *Solution Explorer* window, and select *Add > New Item*.
 
@@ -44,7 +44,7 @@ The `.dotcontrol` file can look like this:
 
 You can see that the control requires a binding context of type `IAddress`. It can be used on any place where the `DataContext` implements this interface.
 
-## Markup Controls WrapperTag
+## Configure control wrapper tag
 
 Markup controls are wrapped inside a `div` tag by default. You can specify the tag you want to use by adding `@wrapperTag` directive. Additionally if you don't want to use any wrapper tag you can add the `@noWrapperTag` directive.
 

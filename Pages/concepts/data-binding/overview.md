@@ -1,4 +1,4 @@
-# Binding Syntax
+# Data-binding overview
 
 One of the most useful things in **DotVVM** is the **data binding**. The magic of writing "rich client-side apps" without using JavaScript
 is the ability of DotVVM to translate binding expressions to JavaScript. 

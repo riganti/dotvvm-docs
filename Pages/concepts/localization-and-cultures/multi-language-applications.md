@@ -1,11 +1,11 @@
-# Globalization And Cultures
+# Multi-language applications
 
 When DotVVM serializes the viewmodel, it includes an information about the current thread culture which was used to process the request.
 
 If you use any control which works with numeric or date values (e.g. [Literal](/docs/controls/builtin/Literal/{branch}) with its `FormatString` property), 
 the page needs to know which culture should be used in order to apply the correct format.
 
-## Default Culture
+## Default application culture
 
 In the [DotVVM configuration](/docs/tutorials/basics-configuration/{branch}), you can specify the default culture which is used for all requests. The best way 
 is to set this value in the `DotvvmStartup.cs` file using the following code:
@@ -14,9 +14,7 @@ is to set this value in the `DotvvmStartup.cs` file using the following code:
 config.DefaultCulture = "en-US";
 ```
 
-## Switching Cultures
-
-> The way how cultures are switched was different in [DotVVM 1.1](/docs/tutorials/basics-globalization/1-1) and didn't handle asynchronous methods correctly in some cases. 
+## Switching cultures
 
 If your website supports multiple languages and cultures, you need to store the language the user has selected somewhere. 
 Whichever method you use (cookies, URL, database...), you need to tell DotVVM at the beginning of the request processing, which culture is used for the particular

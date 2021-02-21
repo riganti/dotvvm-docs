@@ -1,0 +1,1 @@
+# Call JS from DotVVM

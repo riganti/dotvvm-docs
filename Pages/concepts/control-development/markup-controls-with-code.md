@@ -1,4 +1,4 @@
-# Markup Controls with Code
+# Markup controls with code-behind
 
 Sometimes you need to pass some parameters in the markup control.
 

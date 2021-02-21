@@ -1,8 +1,6 @@
-# Binding System Extensibility
+# Binding system extensibility
 
-As of version 2.0, the binding system is pretty powerful, so let's have a look how to exploit that.
-
-## Binding Properties
+## Binding properties
 
 Each binding is, in fact, a `Dictionary` of its properties - things like the executable delegate, javascript translation, the original string and so on. The property can be looked up by its type using `GetProperty(Type)` method on the `IBinding` instance or you can also use generic extension method `binding.GetProperty<MyBindingProperty>()`. These properties cannot be added manually, they are fixed when the binding is created by the dothtml page compiler, but there is a concept of "property resolver" which can compute a property from the properties that are already present in the binding - in fact almost all properties are resolved using one of these resolved from the base ones:
 * The `KnockoutJsExpressionBindingProperty` (that contain Javascript Syntax Tree of the binding) is computed from `ParsedExpressionBindingProperty` and `DataContextStack`
@@ -60,7 +58,7 @@ services.Configure<BindingCompilationOptions>(o => {
 });
 ```
 
-## Derived Bindings
+## Derived bindings
 
 The binding properties allow you to create almost anything from other binding properties - including other bindings. Derived binding can, for example, contain a negated expression:
 
@@ -85,7 +83,7 @@ Note the usage of `DeriveBinding` extension method on the `IBinding` instance - 
 
 This binding property is present by default in the DotVVM Framework, but you can define your own in the same way.
 
-## Post-processing Existing Properties
+## Post-processing existing properties
 
 You can register a resolver with signature like:
 
@@ -97,7 +95,7 @@ public ParsedExpressionBindingProperty WrapExpression(ParsedExpressionBindingPro
 
 It will be executed always after the property is resolved, which means that all bindings will be incremented by one. Incrementing all bindings does not seem to be much useful, but I'm sure post-processing expressions or tweaking generated Javscript is really powerfull metaprogramming technique. Just please, use it wisely, all bindings incremented by one may be pretty tricky to debug for your teammates.
 
-### Custom Binding Type
+## Custom binding type
 
 You can even create your own binding, you just need to inherit from `BindingExpression` and register the name at `ControlResolverBase.BindingTypes` with its `BindingParserOptions`. You can have a look how `ResourceBindingExpression` is defined in the framework:
 

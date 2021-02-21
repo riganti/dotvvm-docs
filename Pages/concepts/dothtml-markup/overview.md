@@ -1,4 +1,4 @@
-# Built-in Controls
+# DotHTML markup overview
 
 **DotVVM** contains about 25 built-in controls for various purposes.
 For more information, read the [Built-in Control Reference](/docs/controls/builtin/Button/{branch}).

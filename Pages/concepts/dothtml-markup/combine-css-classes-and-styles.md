@@ -1,4 +1,4 @@
-# Class and Style Attribute
+# Combine CSS classes and styles
 
 The `class` attribute in HTML can reference multiple CSS classes separated by a space (e.g. `<a class="btn btn-default">`).
 
@@ -13,7 +13,7 @@ The expression would look like this:
 </div>
 ```
 
-## Class Property Group
+## Class-* property group
 
 In DotVVM, you may see a mechanism called _property group_. Basically, it is a group of properties with a common prefix (e.g. `MyGroup-`).
 
@@ -43,9 +43,7 @@ You can even combine the `Class-something` properties with the `class` attribute
 </div>
 ```
 
-> This feature is available in DotVVM 1.1 and newer.
-
-## Style Property Group
+## Style-* property group
 
 DotVVM includes a built-in property group with prefix `Style-`. It can be used to combine multiple CSS properties.
 
@@ -61,5 +59,3 @@ However, when the `Style` property is being set dynamically using JavaScript usa
 ```
 
 The `div` element will get all CSS attributes combined in single `style` attribute.
-
-> This feature is available in DotVVM 2.0 and newer.

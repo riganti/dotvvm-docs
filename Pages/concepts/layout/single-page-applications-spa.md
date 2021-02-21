@@ -1,4 +1,4 @@
-# Single Page Applications (SPA)
+# SPA (Single-page Apps)
 
 DotVVM supports single page applications (SPA) with minimum effort. The SPAs integrate with the [master pages](/docs/tutorials/basics-master-pages/{branch}) mechanism pretty well.
 

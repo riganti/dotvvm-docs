@@ -1,6 +1,4 @@
-# REST API Bindings
-
-> This feature is new in **DotVVM 2.0**.
+# Overview
 
 DotVVM allows interacting with REST APIs directly from the DOTHTML views. You can fill [GridView](/docs/controls/builtin/GridView/{branch}), [Repeater](/docs/controls/builtin/Repeater/{branch}) and other controls with data from the REST API, and use [Button](/docs/controls/builtin/Button/{branch}) or other controls to call REST API methods as a response to user action. It is also possible to refresh data that have already been loaded (in the `GridView` for example) based on a change of a particular viewmodel property, or explicitly.
 

@@ -1,4 +1,4 @@
-# REST API Bindings: Building own API
+# Provide API metadata
 
 > This feature is new in **DotVVM 2.0**. See [REST API Bindings](/docs/tutorials/basics-rest-api-bindings/{branch}) for more details about configuration.
 

@@ -1,4 +1,4 @@
-# Installing Bootstrap for DotVVM
+# Getting started with Bootstrap for DotVVM (version 3)
 
 To use the [Bootstrap for DotVVM](/landing/bootstrap-for-dotvvm) controls, you have use the [DotVVM Private Nuget Feed](/docs/tutorials/commercial-dotvvm-private-nuget-feed).
 

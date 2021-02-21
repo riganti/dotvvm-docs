@@ -1,4 +1,4 @@
-# Using Resources
+# Use resources in pages
 
 You can use the `RequiredResource` control to indicate that you need to include the specific resource in the page.
 
@@ -27,8 +27,6 @@ DotVVM already includes the following built-in resources:
 * `dotvvm.fileUpload-css` - a CSS styles for the [FileUpload](/docs/controls/builtin/FileUpload/{branch}) control.
 
 * `knockout` - Knockout JS 3.5.0 (with a few tweaks).
-
-* `jquery` - jQuery 2.1.1. It is used only in `dotvvm.debug`, the core DotVVM doesn't depend on jQuery at all.
 
 * `globalize` - a modified version of the globalize.js library.
 

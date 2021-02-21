@@ -1,7 +1,5 @@
 # MiniProfiler
 
-> This feature is available in DotVVM 1.1.5 and higher.
-
 [MiniProfiler](http://miniprofiler.com/dotnet/) is a library and UI for profiling your application. By letting you see where your time is spent, which queries are run, 
 and any other custom timings you want to add. It helps you debug issues and optimize performance.
 
@@ -40,7 +38,7 @@ using (MiniProfiler.Current.Step("GetOrder"))
 
 
 
-### <a name="AspNetCore"></a>ASP.NET Core
+### ASP.NET Core
 
 1. Run the following commands in the _Package Manager Console_ window:
 
@@ -93,7 +91,7 @@ To see it in action, you can simply navigate to `~/profiler/results-index` and v
 
 
 
-### <a name="Owin"></a>OWIN
+### OWIN
 
 1. Either use the NuGet UI to install `DotVVM.Tracing.MiniProfiler.Owin`, or use the following commands in the _Package Manager Console_ window:
 

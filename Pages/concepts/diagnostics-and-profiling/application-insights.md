@@ -1,7 +1,5 @@
 # Application Insights
 
-> This feature is available in DotVVM 1.1.5 and higher.
-
 [Application Insights](https://azure.microsoft.com/en-us/services/application-insights/) is a service for web developers which helps to monitor a live web application. It automatically collects issues and telemetry of the application and sends them to the Microsoft Azure portal where the information can be analyzed.
 
 **DotVVM** supports this service and tracks some additional telemetry which it collects during the processing of a HTTP request.

@@ -1,6 +1,4 @@
-# PostBack Concurrency Mode
-
-> This feature is new in **DotVVM 2.0**. 
+# Concurrency mode
 
 Any control in DotVVM may specify the `PostBack.Concurrency` property. This property changes behavior for concurrent postbacks for the control and all its descendants.
 
@@ -44,7 +42,7 @@ This setting will add postbacks in a queue and dispatch them immediately after t
 
 This is a good setting for low-priority postbacks, long running operations or periodic tasks (refreshing every 15 seconds) which might otherwise interfere with actions made by the user at the same time.
 
-## Concurrency Queues
+## Concurrency queues
 
 You may need several independent groups of controls which may be used simultaneously. For example, you may need two separate postback queues for some kinds of actions.
 

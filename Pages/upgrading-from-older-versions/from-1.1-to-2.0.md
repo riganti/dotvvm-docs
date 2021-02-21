@@ -1,4 +1,4 @@
-# Upgrading to DotVVM 2.0
+# Upgrading from 1.1 to 2.0
 
 DotVVM 2.0 brings several new features including:
 

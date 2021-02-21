@@ -1,4 +1,4 @@
-# Validator Controls
+# Validation controls
 
 ## ValidationSummary
 
@@ -13,7 +13,7 @@ If you want the `ValidationSummary` to show all the errors from its `Validation.
 
 And if your desire is to show the errors attached to the `Validation.Target` object itself, set `IncludeErrorsFromTarget` to `true`;
 
-## Validator Control
+## Validator control
 
 The second options is to use the [Validator](/docs/controls/builtin/Validator/{branch}) to display errors for an individual field.
 
@@ -34,7 +34,7 @@ The `Validator` control has several properties that let you set how the error is
 
 * `SetToolTipText` - the text of the error message will be set as the `title` attribute of the control.
 
-## Validator Attached Properties
+## Validator attached properties
 
 In many cases, you may need to apply the `Validator` properties on any other element, for example the `<div>`.
 If the property is not valid and you need to apply a CSS class to a `div`, you can use the following syntax:

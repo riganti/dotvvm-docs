@@ -1,6 +1,6 @@
-# Server-side Styles
+# Server-side styles
 
-**DotVVM** supports Server-side styles which enable changing the style or attributes of specified controls across the whole application.
+Server-side styles lets you set properties or attributes of particular controls across the entire application.
 
 To use them you can register a `Style` in the `StyleRepository` which is a property of `DotvvmConfiguration`. You have to specify the type of the control which has to derive from `DotvvmBindableObject` or use a parameter with tag name of HTML element:
 
@@ -12,7 +12,7 @@ config.Styles.Register<ButtonBase>();
 config.Styles.Register("input");
 ```
 
->If you register the style by specifying the tag name **DotVVM** controls will not be modified
+> If you register the style by specifying the tag name, the behavior of DotVVM controls which use such elements internally will not be modified.
 
 It is also possible to set a condition under which the styles will be applied. To do that use `Register(Func<StyleMatchContext, bool>)`. If this function returns `true` the styles are going to be applied, otherwise nothing happens.
 

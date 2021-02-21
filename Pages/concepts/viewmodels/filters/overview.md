@@ -1,8 +1,8 @@
-# Filter Registration
+# Overview
 
-DotVVM can apply action filters on individual methods, on specific viewmodel classes, or globally for all viewmodels in your application. 
+DotVVM can apply [action](action-filters) or [exception filters](exception-filters) on individual methods, on specific viewmodel classes, or globally for all viewmodels in your application. 
 
-## Method and ViewModel Filters
+## Usage of filters
 
 Because the base classes of the filters inherit from the `Attribute` class, you can apply those filters on a viewmodel or a method as an attribute.
 
@@ -29,8 +29,7 @@ If you call the `{command: Command1()}` from a button in the page, `MyValidation
 Like with the `Authorize` attribute (which is an action filter too by the way), the filter is executed if the command binding in the page references the method. If you 
 call `Command1()` from the `Command2()` method and the binding in the page references the `Command2` method, the `MyCustomFilter` will not be applied.
 
-
-## Global Filters
+## Register filter globally
 
 If you need to apply a filter globally, navigate in the `DotvvmStartup.cs` class and register the filter in the `config.Runtime.GlobalFilters` collection in the `DotvvmConfiguration` object.
 
@@ -38,7 +37,7 @@ If you need to apply a filter globally, navigate in the `DotvvmStartup.cs` class
 config.Runtime.GlobalFilters.Add(new ErrorHandlingActionFilter());
 ```
 
-## Multiple Filters
+## Combine filters
 
 You can apply multiple filters on a viewmodel or a method. The filters are called in the order you have added them to the `GlobalFilters` collection, or in the order of the attributes on the class or a method.
 

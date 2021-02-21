@@ -1,4 +1,4 @@
-# Introduction to Control Development
+# Control development overview
 
 Building custom controls is not only for advanced developers and scenarios. We really encourage you to learn how to write your own **DotVVM** controls because it will help you even in very small apps. It will also boost your productivity because you'll be able to reuse significant amount of code across multiple pages or even across multiple projects.
 

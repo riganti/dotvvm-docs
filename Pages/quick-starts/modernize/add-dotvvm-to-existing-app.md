@@ -1,4 +1,4 @@
-# Adding DotVVM in Existing Web App (ASP.NET Core)
+# Add DotVVM to existing project
 
 If you use the new ASP.NET Core stack, you need the ASP.NET Core version of DotVVM.
 

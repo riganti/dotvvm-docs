@@ -1,4 +1,4 @@
-# Installing DotVVM Business Pack
+# Getting started with DotVVM Business Pack
 
 To use the [Business Pack](/landing/business-pack) controls, you have use the [DotVVM Private Nuget Feed](/docs/tutorials/commercial-dotvvm-private-nuget-feed/{branch}).
 
@@ -14,15 +14,3 @@ To use the [Business Pack](/landing/business-pack) controls, you have use the [D
 ``` 
 
 This will register all Business Pack controls under the `<bp:*` tag prefix, and it also registers several Business Pack resources. 
-
-
-
-## Theme Editor
-
-The Theme editor is currently not supported for Business Pack 2.x.
-
-
-
-## Limitations
-
-The current version of [DotVVM Business Pack](/landing/business-pack) uses **jQuery 2.1.1** or newer. 

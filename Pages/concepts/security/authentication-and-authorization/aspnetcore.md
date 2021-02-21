@@ -1,4 +1,4 @@
-# ASP.NET Core Authentication
+# ASP.NET Core authentication
 
 > This section is applicable if your application uses ASP.NET Core. 
 > For OWIN stack, visit the [Using OWIN Security for Authentication](/docs/tutorials/advanced-owin-security/{branch}).

@@ -1,4 +1,4 @@
-# Static Command Binding
+# Static commands
 
 If you use the [Command Binding](/docs/tutorials/basics-command-binding/{branch}), the viewmodel must be serialized and sent to the server where the 
 method is executed. 

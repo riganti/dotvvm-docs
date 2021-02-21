@@ -1,4 +1,4 @@
-# IoC/DI Containers (ASP.NET Core)
+# Dependency injection in ASP.NET Core
 
 ASP.NET Core contains a built-in dependency injection mechanism. In the `Startup.cs` file, there is a method called `ConfigureServices` which registers all application services in the `IServiceCollection` parameter. 
 

@@ -1,4 +1,4 @@
-# Custom Presenters
+# Custom presenters
 
 In most applications, there is several situations where you need to generate some XML, JSON or other type of a content (RSS feed etc.), or just compose the HTTP response yourself. 
 
@@ -50,6 +50,8 @@ The main advantage of custom presenter over the middleware is that you can use D
 }
 ```
 
+## Register presenters in route table
+
 Finally, you have to register the presenter in the `DotvvmStartup.cs` file:
 
 ```CSHARP
@@ -64,6 +66,6 @@ Alternatively, you can register your own factory method that will be used to cre
 config.RouteTable.Add("t", "u", serviceProvider => new RssPresenter());
 ```
 
-## Action Filters
+## Action filters on presenters
 
 You can apply [Action Filters](/docs/tutorials/advanced-action-filters/{branch}) or the [Authorize attribute](/docs/tutorials/advanced-authentication-authorization/{branch}) on the presenter class.

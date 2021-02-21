@@ -1,4 +1,4 @@
-# IoC/DI Containers (OWIN)
+# Dependency injection in OWIN
 
 The `DotvvmStartup` class implements `IDotvvmServiceConfigurator` interface with the following method:
 

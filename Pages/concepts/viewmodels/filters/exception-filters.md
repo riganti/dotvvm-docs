@@ -1,6 +1,4 @@
-# Exception Filters
-
-> The API of action filters has been changed in DotVVM 2.0. See the [Upgrading to DotVVM 2.0](/docs/tutorials/how-to-start-upgrade-to-2-0/2-0#action-filters) page for more information.  
+# Exception filters
 
 If you want to handle exceptions, there is a class called `ExceptionFilterAttribute`.
 It derives from the `ActionFilterAttribute` and it adds the `OnCommandExceptionAsync` method. 
@@ -48,9 +46,7 @@ namespace DotvvmDemo
 }
 ```
 
-
-
-## Command Exception Handling
+## Handle exceptions from all commands
 
 In many apps, the commands sometimes end with an exception. However, you don't always want to show the error page to the user. You want to log the exception and display an error message to the user.
 
@@ -90,8 +86,7 @@ The `AppViewModelBase` is a base class for all viewmodels in the application and
 continue like there was no error, we need to set `context.IsCommandExceptionHandled` to `true`.
 
 
-
-## Custom Error Pages
+## Create a custom error page
 
 If the exception occurs during the `Init`, `Load` and `PreRender` phase, you often need to redirect the user to an error page. 
 

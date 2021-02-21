@@ -1,4 +1,4 @@
-# Control Properties and Attributes
+# Common control properties
 
 All DotVVM controls have some properties in common because they all derive from the `DotvvmControl` class. 
 You can use most of these properties on HTML elements too.
@@ -15,7 +15,7 @@ Sometimes, the ID is even calculated on the client side dynamically.
 
 You can enforce the ID of the control / element to be the same as you specified in the markup by setting the `ClientIDMode` property to `Static`. In that case, you are responsible to make sure that the ID is unique. 
 
-## HTML Attributes And DotVVM Controls
+## HTML attributes on controls
 
 You can also add any HTML attributes to (almost) all controls. You can use binding in the HTML attributes.
 All additional attributes used on the DotVVM control will be added to the main HTML element rendered by the control.
@@ -32,9 +32,9 @@ This produces the following HTML:
 
 You can see that the `class` attribute has been added to the output, and the `placeholder` attribute was translated to Knockout JS `attr` binding.
 
-> DotVVM allows to compose multiple CSS classes or inline styles on one element. See [Class Attribute](/docs/tutorials/basics-class-attribute/{branch}) for more information.
+> DotVVM allows to compose multiple CSS classes or inline styles on one element. See [Combine CSS classes and styles](combine-css-classes-and-styles) for more information.
 
-## Form Controls
+## Enable or disable form controls
 
 DotVVM also adds a property `FormControls.Enabled` which can enabled or disable all form controls in the element. The controls may override this property by setting their own `Enabled` property. 
 

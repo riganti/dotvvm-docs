@@ -1,6 +1,6 @@
-# IoC/DI Containers
+# Dependency injection overview
 
-Dependency Injection is used widely in many large applications. **DotVVM** allows you to have your services injected in the viewmodel constructor or properties.
+Dependency injection is used widely in many large applications. **DotVVM** allows you to have your services injected in the viewmodel constructor or properties.
 
 ```CSHARP
 public class CustomersViewModel 
@@ -25,14 +25,14 @@ DotVVM uses the `Microsoft.Extensions.DependencyInjection` library to configure 
 * [IoC/DI Containers (ASP.NET Core)](/docs/tutorials/advanced-ioc-di-container-aspnetcore/{branch})
 
 
-## Static Command Services
+## Static command services
 
-DotVVM 2.0 added the [Static Command Services](/docs/tutorials/basics-static-command-services/{branch}). 
+[Static Command Services](/docs/tutorials/basics-static-command-services/{branch}) referenced in the page can use dependency injection.
 
 You can inject a service using the `@service` directive in the view and use it in binding expressions. 
 
 
-## Dependency Injection in Controls
+## Dependency injection in Controls
 
 You can also use the dependency injection in custom controls - simply put the dependencies into contructor:
 

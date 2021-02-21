@@ -1,4 +1,4 @@
-# ViewModel Protection
+# Viewmodel protection
 
 Sometimes, you may need to persist some value between postbacks, but you don't want to show it to the client
 or allow him to change it.
@@ -9,7 +9,7 @@ If you put the value in some viewmodel property, it can be read and modified by 
 
 In order to protect data in the viewmodel from being read or modified, you can use the `Protect` attribute.
 
-## Encrypt ViewModel Property
+## Encrypt properties
 
 ```CSHARP
 [Protect(ProtectMode.EncryptData)]
@@ -21,7 +21,7 @@ If you use the setting above, the value will not appear in the viewmodel directl
 
 > Properties marked with the encryption turned on cannot be used in the `value` bindings.   
 
-## Sign ViewModel Property
+## Sign properties
 
 Sometimes, you need to display the value to the client, but you don't want the client to be able to modify it.
 You can sign the property value.

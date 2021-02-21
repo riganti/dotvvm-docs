@@ -1,4 +1,4 @@
-# View Compilation Modes
+# View compilation mode
 
 Because of the performance reasons, DotHTML files need to be compiled before their first use. This process is not done durning project compilation, but at runtime. Due to this behavior, the first load of page can take slightly longer than subsequent page loads.
 

@@ -1,4 +1,4 @@
-# Redefining Bootstrap CSS classes
+# Custom CSS classes
 
 If you are using [Bootstrap for DotVVM](/landing/bootstrap-for-dotvvm) and you need to modify which css classes (classes on outer control element or classes on inner control structure) are used on Bootstrap 4 controls, than you can use bootstrap Custom CSS API to do so.
 

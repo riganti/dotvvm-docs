@@ -1,4 +1,4 @@
-# Custom Tracing of DotVVM Events
+# Custom tracing
 
 This guide describes how to achieve something similar like the [MiniProfiler widget](./advanced-miniprofiler.md), but for any tracing technology you like.
 

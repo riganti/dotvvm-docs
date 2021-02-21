@@ -1,9 +1,9 @@
-# Formatting Dates and Numbers
+# Formatting dates and numbers
 
 If you need the user to enter dates or numeric values, you may need to use the user-friendly formatting for these values.
 The formatting uses the culture in which the HTTP request was processed. See the [Globalization](/docs/tutorials/basics-globalization/{branch}).
 
-## Formatting Values
+## Formatting values
 
 The [Literal](/docs/controls/builtin/Literal/{branch}) can apply a format string to viewmodel values. If you need to output a date or number value in the page, you can use the following syntax:
 
@@ -22,18 +22,16 @@ DotVVM uses the same format string syntax you know from C# with the following li
 
 * [Custom Date and Time Format Strings](https://msdn.microsoft.com/en-us/library/8kb3ddd4.aspx): DotVVM supports everything except the `K`, `:`, `\` and `%` tokens.
 
-## Editing Formatted Values
+## Editing formatted values
 
 You can enforce the date or number format in the [TextBox](/docs/controls/builtin/TextBox/{branch}) control using the `FormatString` property. 
-
-> In **DotVVM 1.1**, you had to specify either `ValueType="Number"` or `ValueType="DateTime"` to make the formatting work. In **DotVVM 2.0**, this property was made obsolete and is not needed. 
 
 ```DOTHTML
 <dot:TextBox Text="{value: BirthDate}" FormatString="d" />
 <dot:TextBox Text="{value: TotalPrice}" FormatString="n2" />
 ```
 
-## Validation Numeric and Date Values
+## Validate numeric and date values
 
 If the user enters a value that cannot be parsed, the `null` value will be stored in the viewmodel property. 
 If the property is of a non-nullable type, it will get the default value on the server (e.g. `0` for `int` type).

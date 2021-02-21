@@ -1,4 +1,4 @@
-# Configuration
+# Configuration overview
 
 DotVVM uses C# code to configure its features and settings. 
 
@@ -6,9 +6,9 @@ The typical DotVVM app needs to configure the following things:
 
 + **Routes** (see more information in the [Routing](/docs/tutorials/basics-routing/{branch}) chapter)
 
-+ **Custom Resources** (see more in the [Javascript and CSS Resource Management](/docs/tutorials/basics-javascript-and-css/{branch}) chapter)
++ **Custom resources** (see more in the [Javascript and CSS Resource Management](/docs/tutorials/basics-javascript-and-css/{branch}) chapter)
 
-+ **Custom Controls** (see more in the [Control Development](/docs/tutorials/control-development-introduction/{branch}) chapter)
++ **Custom controls** (see more in the [Control Development](/docs/tutorials/control-development-introduction/{branch}) chapter)
 
 + **Services** that handle [File Uploads](/docs/controls/builtin/FileUpload/{branch}), [Returned Files](/docs/tutorials/advanced-returning-files/{branch}) or [Dependency Injection](/docs/tutorials/advanced-ioc-di-container/{branch})
 

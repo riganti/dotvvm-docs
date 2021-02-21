@@ -73,7 +73,7 @@
 	    <DocPageMenuItem RouteName="gridview-data-sets" PageName="GridView data sets" />
 	    <DocPageMenuItem RouteName="best-practices" PageName="Best practises" />
 	  </DocPageMenuItem>
-      <DocPageMenuItem RouteName="request-context" PageName="Request Context" LegacyPaths="basics-request-context" />
+      <DocPageMenuItem RouteName="request-context" PageName="Request context" LegacyPaths="basics-request-context" />
 	  <DocPageMenuItem RouteName="binding-direction" PageName="Binding direction" LegacyPaths="basics-binding-direction" />
 	  <DocPageMenuItem RouteName="viewmodel-protection" PageName="Viewmodel protection" LegacyPaths="basics-viewmodel-protection" />
 	  <DocPageMenuItem RouteName="filters" PageName="Filters">
@@ -154,6 +154,7 @@
 	<DocPageMenuItem RouteName="cli" PageName="DotVVM CLI">
 	  <DocPageMenuItem RouteName="install" PageName="Install the CLI" LegacyPaths="advanced-dotvvm-command-line" />
 	  <DocPageMenuItem RouteName="create-pages-and-controls" PageName="Create pages and controls" />
+	  <DocPageMenuItem RouteName="generate-rest-api-clients" PageName="Generate REST API clients" />
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="control-development" PageName="Control Development">
@@ -216,7 +217,7 @@
 	<DocPageMenuItem RouteName="from-2.3-to-2.4" PageName="From 2.3 to 2.4" />
 	<DocPageMenuItem RouteName="from-2.4-to-2.5" PageName="From 2.4 to 2.5" />
 	<DocPageMenuItem RouteName="from-2.5-to-3.0" PageName="From 2.5 to 3.0" />
-	<DocPageMenuItem RouteName="compilation-status-page" PageName="Compilation Status Page" />
+	<DocPageMenuItem RouteName="compilation-status-page" PageName="Compilation status page" />
   </DocPageMenuItem>
 
   <DocPageMenuItem RouteName="samples-videos" PageName="Samples &amp; videos" />

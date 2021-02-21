@@ -1,4 +1,4 @@
-# Optimizing PostBacks
+# Responding to user actions overview
 
 Most DotVVM applications have been using [Command Binding](/docs/tutorials/basics-command-binding/{branch}) for all actions the user can invoke from the page. This type of binding causes a postback and by default, the entire viewmodel is transferred from the client to the server so the command can be processed. All changes made to the viewmodel on the server are serialized and sent back to the client.
 

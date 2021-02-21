@@ -1,24 +1,24 @@
-# Using Session or HttpContext cookies
+# Session and cookies
 
-> This topic is related to the OWIN version of DotVVM only. It is relevant for you only if the application needs to interact with ASP.NET Session, or with cookies using `System.Web.HttpContext`.
+> This topic is related to the OWIN version of DotVVM only. It is relevant only if the application needs to interact with ASP.NET session, or if you have some code that modifies cookies through `System.Web.HttpContext`.
 
-> We recommend to avoid using session completely as it causes a wide variety of problems, especially when the user has multiple tabs or browser windows open.
+## Synchronization OWIN and ASP.NET cookies
 
-## OWIN vs ASP.NET Cookies
+OWIN offers its own extensible way of working with cookies. By default, the `ChunkingCookieManager` class is used. 
 
-OWIN offers its own extensible way of working with cookies. By default, the `ChunkingCookieManager` class is used. When the application interact with cookies using through `System.Web.HttpContext` (the classic ASP.NET way), there is a conflict and the changes made by the `ChunkingCookieManager` will be lost.
+However, when the application interacts with cookies using through `System.Web.HttpContext` (the classic ASP.NET way), a conflict occurs and the changes made by the `ChunkingCookieManager` will be lost.
 
-DotVVM needs to store [CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) token in a cookie to provide a secure way of executing postbacks. When the browser makes the first request to a DotVVM web application, it stores the CSRF token in the cookie. If ASP.NET session is used at that request, or `HttpContext.Current.Response.Cookies` collection is changed, the changes to the cookie made by DotVVM are overwritten by the `HttpContext` and the CSRF token will be lost. When a postback occurs, DotVVM will throw the following exception: 
+DotVVM needs to store [CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) token in a cookie to provide a secure way of executing postbacks. When the browser makes the first request to a DotVVM web application, it stores the CSRF token in the cookie. If some code uses the ASP.NET session in the request, or the `HttpContext.Current.Response.Cookies` collection is changed, the changes to the cookie made from DotVVM are overwritten by the `HttpContext`, and thus the CSRF token will be lost. When a postback occurs, DotVVM will throw the following exception: 
 
 ```
-System.Security.SecurityException: SessionID cookie is missing, so can't verify CSRF token
+System.Security.SecurityException: SessionID cookie is missing, so can't verify CSRF token.
 ```
 
 The preferred solution to this problem would be using a different way to store session-related data, or replace the default `ChunkingCookieManager` class by another implementation which will use `HttpContext` to interact with cookies.
 
-## Using Session in DotVVM applications
+## Enabling session in OWIN
 
-To be able to use session in OWIN, the following code should be placed in `Startup.cs` before any middleware is registered. Otherwise, `HttpContext.Current.Session` would be null.
+In order to use session in OWIN, the following code should be placed in `Startup.cs` before any middleware is registered. Otherwise, `HttpContext.Current.Session` would be null.
 
 ```CSHARP
 app.Use((context, next) =>
@@ -30,7 +30,9 @@ app.Use((context, next) =>
 app.UseStageMarker(PipelineStage.MapHandler);
 ```
 
-Then, you need to replace the default cookie manager with the following implementation:
+## Replacing the default cookie manager
+
+To prevent conflicts between OWIN and ASP.NET cookies, replace the default cookie manager with the following implementation:
 
 ```CSHARP
 public class SystemWebCookieManager : ICookieManager

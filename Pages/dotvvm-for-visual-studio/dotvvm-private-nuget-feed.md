@@ -1,4 +1,4 @@
-# DotVVM Private NuGet Feed
+# Using DotVVM private NuGet feed
 
 The [Bootstrap for DotVVM](/landing/bootstrap-for-dotvvm) controls are not available on the official NuGet feed.
 

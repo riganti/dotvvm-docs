@@ -1,4 +1,4 @@
-# Returning Files
+# Return a file from viewmodel
 
 Sometimes you want to generate a file and let the user download it, e.g. export data in GridView in an Excel file. Normally, you just redirect user to some URL
 and if the `Content-Type` and `Content-Disposition` headers indicate that it is a file for downloading, the browser will offer the user to download the file.  
@@ -10,8 +10,7 @@ that generates the file and writes it to the response stream. Then you'll redire
 The process described above is not much convenient. That's why DotVVM implements a mechanism which lets you just generate the file in your viewmodel command and 
 deliver it to the client using the `Context.ReturnFile` method.
 
-
-## Registering the IReturnedFileStorage
+## IReturnedFileStorage
 
 Because you generate the file in the viewmodel and the browser needs to do an additional HTTP request to retrieve the file, you need some kind of a storage for temporary files.
 In DotVVM, there is the `IReturnedFileStorage` interface which handles files returned from the viewmodel.
@@ -24,8 +23,6 @@ app.UseDotVVM<DotvvmStartup>(applicationPath, options =>
 );
 ``` 
 
-> Please note that the configuration of DotVVM services has changed in DotVVM 1.1. 
-
 This registers storages for uploaded and returned files that store the files in local filesystem. You can find more information about uploading files in the [FileUpload](/docs/controls/builtin/FileUpload/{branch}) documentation.
 
 If you want to register only the returned file storage, you can use `options.AddReturnedFileStorage`.
@@ -36,7 +33,7 @@ If you decide to write your own storage (e.g. use Azure blob storage, in-memory 
 options.Services.AddSingleton<IReturnedFileStorage, MyCustomReturnedFileStorage>();
 ```
 
-## Using context.ReturnFile
+## context.ReturnFile
 
 The usage is pretty easy then. You just call `Context.ReturnFile` in your viewmodel method. The file is saved in the temporary storage and the user is redirected to 
 a special URL that returns the file to him. The ID of the file is a random Guid so it's not possible to retrieve a file that was generated for someone else.

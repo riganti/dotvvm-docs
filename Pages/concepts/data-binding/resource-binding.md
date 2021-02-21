@@ -1,4 +1,4 @@
-# Resource Binding
+# Resource binding
 
 The **resource binding** is used to access resources and constants, or to evaluate any expression on the server. 
 

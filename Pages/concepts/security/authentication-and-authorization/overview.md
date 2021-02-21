@@ -1,4 +1,4 @@
-# Authentication and Authorization
+# Authentication and authorization overview
 
 There are some special things you need to be aware of before you start working 
 with the authentication.

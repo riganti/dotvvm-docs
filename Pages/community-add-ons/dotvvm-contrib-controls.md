@@ -1,4 +1,4 @@
-# Contrib controls
+# DotVVM Contrib controls
 
 Currently we have 8 contrib controls from the DotVVM community. If you like, you can use them easily, just add a proper package from our official nuget feed. Next add contrib configuration to `DotvvmStartup.cs`.
 

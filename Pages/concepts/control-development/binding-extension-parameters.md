@@ -1,4 +1,4 @@
-## Binding Extension Parameters
+# Binding extension parameters
 
 Any DotVVM binding is an expression that may use certain identifiers and there are a few types of them:
 
@@ -9,7 +9,7 @@ Any DotVVM binding is an expression that may use certain identifiers and there a
 * Extension Parameters - For example, `_index`, `_api`. This is also an identifier with a value and these parameters can be user-defined. The value is usually computed from some properties on the invoking control and can be used arbitrarily in the binding. The point of this document is to have a look in depth how do they work.
 
 
-### Extension Parameter API
+## Extension parameter API
 
 The new ExtensionParameter is defined by the `BindingExtensionParameter` abstract class. In order to be recognized by the binding compiler, it has to be registered globally in `DotvvmConfiguration.Markup.DefaultExtensionParameters` or locally in `DataContextStack.ExtensionParameters`. In order to make it useful, we will have to define some methods and values:
 

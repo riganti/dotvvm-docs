@@ -1,4 +1,4 @@
-# Master Pages
+# Master pages
 
 In most web apps, you need all pages to share the header, menu and footer. **DotVVM** supports a mechanism called **Master Pages**. 
 If you are familiar with _ASP.NET Web Forms_, the concept of master pages is exactly the same.

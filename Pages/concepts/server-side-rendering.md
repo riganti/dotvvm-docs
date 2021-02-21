@@ -1,8 +1,8 @@
-# Server-Side HTML Generation and SEO
+# Server-side rendering
 
 DotVVM uses Knockout JS to create the MVVM experience, but that doesn't have to make your site SEO-unfriendly. The important DotVVM controls support server-side rendering which can make the data in the page indexable even if the search engine doesn't evaluate scripts.
 
-## Server-Side Rendering
+## RenderSettings.Mode property
 
 You can use the `RenderSettings.Mode` property on HTML elements and most of the DotVVM controls.
 
