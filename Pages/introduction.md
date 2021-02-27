@@ -1,48 +1,51 @@
 # Introduction
 
-As a .NET developer, you have several options on how to build a web application in ASP.NET. Every option has its advantages and is suitable for different kind of projects. 
+**DotVVM** is a UI framework that enables you to build ASP.NET Core (or old ASP.NET) web sites and applications using the [Model-view-viewmodel](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) pattern. 
 
-The oldest way is to use **ASP.NET Web Forms**, a technology that enabled developers to quickly build desktop-like experiences for web. Web Forms was a good choice for line of business or intranet web applications recently, but today it is not recommended for new projects. Web Forms is not supported in ASP.NET Core and there are not many new features coming to it in the future.
+DotVVM consists of a **server-side part** (which integrates in the ASP.NET infrastructure) and a **client-side part** based on [Knockout JS](https://knockoutjs.com/) which creates the MVVM experience in the web browser. 
 
-The most preferred way today is to use **ASP.NET MVC** or **ASP.NET MVC Core**. These technologies are great for public facing sites or for smaller admin applications. However, to build more complex user interface with large, complicated forms, wizards, modal dialogs and data grids can be challenging in comparison with other methods.
+The framework includes a **set of built-in components** (also called _controls_), and offers an [extension for Visual Studio 2019 and 2017](https://www.dotvvm.com/get-dotvvm) that brings IntelliSense.
 
-Another way of building a web app is to build a REST API using **ASP.NET Web API** or **ASP.NET MVC Core** and then create the user interface with some client-side framework -  _React_, _Angular_ or _Knockout JS_ for example. This approach allows to create highly interactive user interface, but it requires a good knowledge of C# as well as JavaScript. 
+## Use-cases for DotVVM
 
-**DotVVM** simplifies building of web applications with interactive and complicated user interface. DotVVM provides a rich set of tools and features required to build line of business or intranet sites. 
+### Building apps with MVVM pattern
 
-DotVVM provides a MVVM rendering engine with dozens of ready-made components, and handles the communication between server and client; there is no need to build your own REST API.
+DotVVM **simplifies building enterprise applications**, admin dashboards, company portals, CRMs, ERPs or other applications commonly referred as [line of business applications](https://en.wikipedia.org/wiki/Line_of_business).
 
-DotVVM can handle validation and supports SPAs (single page applications), page localization, date and number formatting and much more. 
+In general, DotVVM helps in applications which contain data grids, heavy forms with many form field, complex validation and business logic, pages with multi-step wizards, modal dialogs, or other "desktop-like" UI components.
 
-DotVVM is easy to learn and doesn't require any JavaScript skills at the beginning - knowing **C#, HTML and CSS** is enough to start. 
+Thanks to the **Model-view-viewmodel approach**, it is **easy and convenient** to build these kinds of experiences. 
 
-The **Dot** represents **.NET Framework** and **VVM** stands for the design pattern that is used: **MVVM - Model View ViewModel**.
+DotVVM also helps with **delivering the data from the server to the browser** without the need to build and maintain REST APIs - the data loaded in the viewmodel are be transferred to the browser transparently.
 
-DotVVM is built on top of ASP.NET platform. It is an alternative to ASP.NET Web Forms or ASP.NET MVC. It supports the new **ASP.NET Core platform** as well as the **original ASP.NET stack** present in .NET Framework.
+There is also a community extension called [DotVVM AMP](community-add-ons/dotvvm-amp) which can generate [AMP](https://en.wikipedia.org/wiki/Accelerated_Mobile_Pages) version of pages automatically, which can increase the site visibility in search engines and decrease the page load times.
 
-DotVVM can be used to build new web applications, or to modernize legacy ASP.NET Web Forms sites. It can be used together with other ASP.NET-based technology in the same application with single sign-on and consistent look and feel, so the Web Forms application can be rewritten in DotVVM page by page and possibly ported to .NET Core in the future.
+See the [Quick start: Create a new project](quick-starts/build/create-new-project) chapter for more info.
 
-## Examples
+> If you are not sure whether DotVVM is a good choice for your project, ask us on our [Gitter chat](https://gitter.im/riganti/dotvvm). We will be happy to help you with the decision.
 
-The ideal projects for DotVVM are various admin dashboards, intranet portals, CRM or ERP web applications. These applications typically contain data grids, forms with many field, complex validation and business logic, pages with wizards or modal dialogs. 
+### Modernizing legacy ASP.NET applications
 
-DotVVM can also help in e-commerce sites, especially in the back-office part. Since DotVVM can be used together with other ASP.NET frameworks in the same application, the public facing part of the website may be implemented in ASP.NET MVC while the admin portal is made in DotVVM. 
+DotVVM can also be used to incrementally [modernize old ASP.NET-based applications](quick-starts/modernize/add-dotvvm-to-existing-app) and migrate them to the latest versions of .NET.
 
-Of course, it is possible to make public facing applications in DotVVM, but it might not be as helpful as in the previous types of applications. If you are building a company website with several static pages and one form, it will be easy to do in any web technology or framework and DotVVM cannot make it easier.
+DotVVM supports both ASP.NET Core and old ASP.NET (.NET 4.5.1 and newer) and **can run in the same process side-by-side with other frameworks** such as ASP.NET Web Forms. 
 
-If you are not sure whether DotVVM is a good choice for your project, just ask us on our  [Gitter chat](https://gitter.im/riganti/dotvvm). We will be happy to help you.
+DotVVM can be installed in an existing ASP.NET Web Forms application and used to **replace ASPX pages** with their DotVVM equivalents **one by one**. During the process, the application will still work so the developers can fix bugs, implement new features and modernize the code base at the same time. 
 
+Most of the code (business logic, data access, integrations ot other systems and so on) **won't need significant changes**, and after all dependencies on ASP.NET Web Forms and `System.Web` are replaced with DotVVM, the **project can be switched to the newest version** of .NET and ASP.NET Core.
 
-## How DotVVM Works
+See the [Quick start: Add DotVVM to existing app](quick-starts/modernize/add-dotvvm-to-existing-app) chapter for more info.
 
-DotVVM leverages the MVVM pattern. Every DotVVM page consists of two files.
+## Anatomy of a DotVVM page
 
-First, you have to define the **view**. DotVVM views use normal HTML syntax, but there are several enhancements. That's why we call it _DOTHTML_.
+Every DotVVM page consists of two files - the _view_ and the _viewmodel_. The view describes the content and structure of the page while the viewmodel maintains the page state and responds to actions made by users. 
 
-Notice the `{value: Property}` and `{command: Method}` __data-binding expression__ and the custom `dot:Something` elements - the __DotVVM controls__.
+### View
+
+DotVVM uses an [extended HTML syntax](concepts/dothtml-markup/overview) called _DotHTML_ to define views. 
 
 ```DOTHTML
-@viewModel DotvvmDemo.CalculatorViewModel, Dotvvm
+@viewModel DotvvmDemo.CalculatorViewModel, DotvvmDemo
     
 <p>
     Enter the first number: 
@@ -60,7 +63,23 @@ Notice the `{value: Property}` and `{command: Method}` __data-binding expression
 </p>
 ```
 
-Next, you need to write the **viewmodel**. In DotVVM, the viewmodel is a plain C# class. In comparison to other MVVM frameworks, there is no need to implement `INotifyPropertyChanged` in DotVVM. You can declare just normal C# properties with default getters and setters.
+DotHTML extends classic HTML syntax with the following constructs:
+
+* _Directives_ - e. g. `@viewModel DotvvmDemo.CalculatorViewModel, DotvvmDemo`
+* _Data-binding expressions_ - e. g. `{value: Number1}` or `{command: Calculate()}` in the sample above
+* _DotVVM controls_ - e. g. `<dot:Button Text="Calculate" />`
+
+When users of the web application navigate to the page, DotVVM translates the DotHTML markup to plain HTML syntax which can be displayed by the browser.
+
+DotHTML files usually have the `.dothtml` extension. There are special kinds of views - [Master pages](concepts/layout/master-pages) or [Markup controls](concepts/control-development/markup-controls) - which are using different file extensions, but they are still using DotHTML syntax.
+
+See the [DotHTML markup](concepts/dothtml-markup/overview) chapter for more info.
+
+## Viewmodel
+
+The viewmodel is a C# class with **public properties** representing the state of the page, and **public methods** handling actions triggered by users.
+
+In contrast to other MVVM frameworks, viewmodel properties don't have to implement `INotifyPropertyChanged` - they can have just default getters and setters.
 
 ```CSHARP
 using System;
@@ -84,14 +103,60 @@ namespace DotvvmDemo
 }
 ```
 
-**DotVVM** translates `<dot:TextBox>` control into `<input type="text">` and `<dot:Button>` into `<input type="button">`.
+In the example above, when a user clicks a button in the page, the `Calculate` method is called. It can read or modify the state of the page via viewmodel properties. 
 
-The `{value: Number1}` binding is translated to Knockout JS expressions `<input data-bind="value: Number1">`. Also, DotVVM will translate the viewmodel into JavaScript and include it in the page HTML.
+See the [Viewmodels](concepts/viewmodels/overview) chapter for more info.
 
-The `{command: Function()}` is translated to a JavaScript call of a `dotvvm.postBack` function which is defined in DotVVM client-side library. This function calls the  `Calculate` method in the viewmodel, and applies all changes made to the viewmodel to the page. The page is not reloaded completely like in ASP.NET Web Forms. DotVVM uses AJAX and Knockout JS to update only the parts of the page which needs to be changed. 
+## Data-binding
 
-The viewmodel lives on the client side for as long as the page is loaded. When the page needs to call a method on the server (for example to get some data from the database), the viewmodel is serialized and sent to the server where the method can be invoked. The changes are then sent back to the client. The server doesn't have to store the viewmodel instance in session or in memory. The viewmodel instance exists on the server only for a lifetime of the particular HTTP request, which allows the application to be hosted on a web farm. 
+The viewmodel properties are bound to controls in the view using the data-binding expressions:
 
-Notice that we didn't need to write a single line of JavaScript code. DotVVM is easy to use for all .NET developers, even those who don't have much experience with web development. 
+```DOTHTML
+<dot:TextBox Text="{value: Number1}" />
+```
 
-> Sending the entire viewmodel to the server and back may be inefficient in many real-world scenarios. DotVVM offers different ways of calling methods on the server which don't require presence of the viewmodel. See [Optimizing PostBacks](/docs/tutorials/basics-optimizing-postbacks/{branch}) page for more info.
+The **data-binding works in both ways** by default:
+
+* Whenever the value of the property changes, the control will be updated accordingly.
+* Whenever the user changes the value in the control, the viewmodel property will be updated accordingly.
+
+See the [Data-binding](concepts/data-binding/overview) chapter for more info.
+
+## Page lifecycle
+
+When a user visits the page, DotVVM will translate the DotHTML syntax in plain HTML with Knockout JS `data-bind` expressions.
+
+```DOTHTML
+<!-- DotHTML markup -->
+<dot:TextBox Text="{value: Number1}" />
+
+<!-- rendered output -->
+<input type=text data-bind="value: Number1" />
+```
+
+DotVVM also **serializes the viewmodel in JSON** and embeds it in the page, together with scripts required for DotVVM to work. 
+
+Thanks to this, the page will have all the state information it needs without the need to build any API. The HTML and data the page needs will are delivered to the client in one HTTP request.
+
+### User interactions
+
+When the user interacts with controls in the page, all changes are written into the viewmodel representation in the browser (stored in Knockout observable objects).
+
+For example, if the user enters some value in the `TextBox` control, a corresponding property in the viewmodel is updated.
+
+If the user clicks on a button, a method in the viewmodel needs to be called to handle such action. DotVVM takes the viewmodel and posts it to the server (serialized as JSON, using an [AJAX call](https://cs.wikipedia.org/wiki/AJAX)). 
+
+DotVVM runtime on the server creates a viewmodel instance, populates it with the data sent by the client, and invoke the desired method. All changes made to the viewmodel state are serialized and sent back to the browser which applies them to the viewmodel (the controls are updated through Knockout JS data-bindings without the need to reload the page).
+
+> Since sending the entire viewmodel to the server can be inefficient, DotVVM also offers different ways of calling methods on the server  and updating parts of the viewmodel. 
+
+See the [Respond to user actions](concepts/respond-to-user-actions/overview) chapter for more info.
+
+## See also
+
+* [Quick start: Create a new project](quick-starts/build/create-new-project)
+* [Quick start: Modernize legacy applications using DotVVM](quick-starts/modernize/add-dotvvm-to-existing-app)
+* [DotVVM project structure](concepts/project-structure)
+* [DotHTML markup](concepts/dothtml-markup/overview)
+* [Data-binding](concepts/data-binding/overview)
+* [Viewmodels](concepts/viewmodels/overview)
