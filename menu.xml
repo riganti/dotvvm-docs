@@ -12,8 +12,8 @@
 	
     <DocPageMenuItem RouteName="modernize" PageName="Modernize legacy apps">
 	  <DocPageMenuItem RouteName="add-dotvvm-to-existing-app" PageName="Add DotVVM to existing project" LegacyPaths="how-to-start-existing-app,how-to-start-existing-app-owin,how-to-start-existing-app-aspnetcore" />
-	  <DocPageMenuItem RouteName="differences-between-dotvvm-and-aspnet-web-forms" PageName="Differences between DotVVM and ASP.NET Web Forms" />
 	  <DocPageMenuItem RouteName="plan-the-modernization" PageName="Plan the modernization" />
+	  <DocPageMenuItem RouteName="differences-between-dotvvm-and-aspnet-web-forms" PageName="Differences between DotVVM and ASP.NET Web Forms" />
 	  <DocPageMenuItem RouteName="interop" PageName="Interop with ASP.NET">
 	    <DocPageMenuItem RouteName="session-and-cookies" PageName="Session and cookies" LegacyPaths="advanced-using-session-or-http-context-cookies" />
 		<DocPageMenuItem RouteName="authentication" PageName="Authentication" />
