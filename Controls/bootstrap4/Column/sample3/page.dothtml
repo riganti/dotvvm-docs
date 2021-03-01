@@ -1,6 +1,8 @@
-﻿<bs:Column SizeXS="7" SizeLG="2" style="background-color: blue; color: white">
-    no offset
-</bs:Column>
-<bs:Column SizeXS="5" OffsetLG="4" SizeLG="6" style="background-color: red; color: white">
-    offset = 4 for the large screen
-</bs:Column>
+﻿<bs:Row>
+  <bs:Column AlignSelf="Start" style="background-color: blue; color: white">
+    Column 1
+  </bs:Column>
+  <bs:Column AlignSelf="Center" style="background-color: red; color: white">
+    Column 2
+  </bs:Column>
+</bs:Row>

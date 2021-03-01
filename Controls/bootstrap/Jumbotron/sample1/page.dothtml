@@ -1,5 +1,7 @@
-﻿<bs:Jumbotron>
-  <h3>Important text</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum at lorem et tristique. Ut tempor mattis pretium.</p>
-  <p>Aenean sit amet enim urna. Donec id massa eu nulla bibendum ultricies non vitae augue. Etiam consequat venenatis urna, viverra egestas est congue ut. Cras dapibus, magna eget ultricies egestas, ipsum massa euismod lectus, quis luctus felis dui sodales sem. Donec quam lectus, tempor id dictum eu, placerat eleifend mi.</p>
-</bs:Jumbotron>
+﻿<bs:Container>
+    <bs:Jumbotron>
+        <h3>Important text</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum at lorem et tristique. Ut tempor mattis pretium.</p>
+        <p>Aenean sit amet enim urna. Donec id massa eu nulla bibendum ultricies non vitae augue. Etiam consequat venenatis urna, viverra egestas est congue ut. Cras dapibus, magna eget ultricies egestas, ipsum massa euismod lectus, quis luctus felis dui sodales sem. Donec quam lectus, tempor id dictum eu, placerat eleifend mi.</p>
+    </bs:Jumbotron>
+</bs:Container>

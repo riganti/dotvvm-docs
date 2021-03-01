@@ -1,3 +1,0 @@
-<bp:ImageCrop ImageUrl="{value: ImagePath}"
-              Operations="{value: ImageOperations}"
-              ForcedCropRadius="50" />

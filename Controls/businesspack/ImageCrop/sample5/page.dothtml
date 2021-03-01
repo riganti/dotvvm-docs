@@ -1,5 +1,0 @@
-<bp:ImageCrop ImageUrl="{value: ImagePath}"
-              Operations="{value: ImageOperations}"
-              Changed="{command: Changed()}" />
-
-<p>Change count: {{value: ChangeCount}}</p>

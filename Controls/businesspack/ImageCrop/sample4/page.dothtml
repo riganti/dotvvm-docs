@@ -1,4 +1,0 @@
-<bp:ImageCrop ImageUrl="{value: ImagePath}"
-              Operations="{value: ImageOperations}"
-              ForcedCropWidth="150"
-              ForcedCropHeight="150" />

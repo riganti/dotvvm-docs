@@ -1,2 +1,0 @@
-<bp:ImageCrop ImageUrl="{value: ImagePath}"
-              Operations="{value: ImageOperations}" />
