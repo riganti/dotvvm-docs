@@ -21,22 +21,28 @@ namespace DotvvmWeb.Views.Docs.Controls.builtin.DataPager.sample1
             }.AsQueryable();
         }
 
-        // NOTE: Method for load data from IQueryable
-        private GridViewDataSetLoadedData<Customer> GetData(IGridViewDataSetLoadOptions gridViewDataSetLoadOptions)
-        {
-            var queryable = FakeDb();
-            // NOTE: Apply Paging and Sorting options.
-            return queryable.GetDataFromQueryable(gridViewDataSetLoadOptions);
-        }
-
         public GridViewDataSet<Customer> Customers { get; set; }
 
         public override Task Init()
         {
-            // NOTE: You can also create the DataSet with factory.
-            // Just call static Create with delegate and pagesize.
-            Customers = GridViewDataSet.Create(gridViewDataSetLoadDelegate: GetData, pageSize: 4);
+            if (!Context.IsPostBack)
+            {
+                Customers = new GridViewDataSet<Customer>()
+                {
+                    PagingOptions = new PagingOptions()
+                    {
+                        PageSize = 4
+                    }
+                };
+            }
             return base.Init();
+        }
+
+        public override Task PreRender()
+        {
+            Customers.LoadFromQueryable(FakeDb());
+
+            return base.PreRender();
         }
 
     }
