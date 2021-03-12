@@ -69,7 +69,7 @@ public void ConfigureServices(IDotvvmServiceCollection services)
 
 ## Static Command Services
 
-Since registering all components in `IServiceCollection` on DotVVM startup can be problemmatic, you might use a custom `IStaticCommandServiceLoader` to have your service instances resolved directly from your container.
+Since registering all components in `IServiceCollection` on DotVVM startup can be problematic, you might use a custom `IStaticCommandServiceLoader` to have your service instances resolved directly from your container.
 
 ```CSHARP
 using System;

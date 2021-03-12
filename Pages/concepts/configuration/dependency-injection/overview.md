@@ -34,7 +34,7 @@ You can inject a service using the `@service` directive in the view and use it i
 
 ## Dependency injection in Controls
 
-You can also use the dependency injection in custom controls - simply put the dependencies into contructor:
+You can also use the dependency injection in custom controls - simply put the dependencies into constructor:
 
 ```CSHARP
 public class MyControl : HtmlGenericControl 
@@ -52,7 +52,7 @@ public class MyControl : HtmlGenericControl
 
 Note that you can use to inject your own services, but also services of the DotVVM framework.
 
-* `ResourceManager` - you can simply register a DotVVM resource for that request in control contructor
-* `IDotvvmRequestContext` - although in controls you get the request context in every lifecycle event, you can use constuctor injection in `DotvvmBindableObjects` that are not `DotvvmControl`, for example postback handlers or grid view columns.
+* `ResourceManager` - you can simply register a DotVVM resource for that request in control constructor
+* `IDotvvmRequestContext` - although in controls you get the request context in every lifecycle event, you can use constructor injection in `DotvvmBindableObjects` that are not `DotvvmControl`, for example postback handlers or grid view columns.
 
 All services injected using `@service` directive must be registered in the `IServiceCollection`.

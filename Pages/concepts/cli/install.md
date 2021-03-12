@@ -14,5 +14,5 @@ When you create DotVVM project (ASP.NET Core) using [DotVVM for Visual Studio](h
 </Project>
 ```
 
-This will allow to run commands starting with `dotnet dotvvm ...` in the project directory to perform various actions with the DotVVM project.
+This will allow you to run commands starting with `dotnet dotvvm ...` in the project directory to perform various actions with the DotVVM project.
 
