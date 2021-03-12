@@ -46,11 +46,38 @@ The most important ones are:
 
 While the titles of books are proper nouns, in these docs we treat the titles of pages as sentences.
 
+
+### List of DotVVM proper nouns
+
+* DotVVM
+* DotHTML
+* DotVVM Command Line
+* DotVVM Visual Studio Extension
+
+### List of other related proper nouns
+
+* JavaScript
+* IntelliSense
+* TypeScript
+* OWIN
+* LINQ
+
+## Typography
+
+**Use the better-looking Unicode characters.**
+
+| Kind                  | Character | Unicode code point | Alt Code | HTML     |
+|-----------------------|-----------|--------------------|----------|----------|
+| left quotation mark   | “         | U+201C             | 0147     | &ldquo\; |
+| right quotation mark  | ”         | U+201D             | 0148     | &rdquo\; |
+| m-dash                | —         | U+2015             | 0151     | &#8213\; |
+
 ## Tools
 
 **[LTeX](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex)**
 * A buffed-up VS Code spellchecker that understands Markdown syntax.
 * Can even spot errors in common phrases with its [n-gram support](https://dev.languagetool.org/finding-errors-using-n-gram-data.html).
+* Take advantage of the DotVVM-specific `.vscode\ltex.dictionary.en-US.txt` dictionary.
 
 **[Lexico](https://www.lexico.com)**
 * A dictionary that explicitly states whether a word belongs to British English or American English.
