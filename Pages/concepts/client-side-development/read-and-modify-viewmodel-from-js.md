@@ -24,7 +24,7 @@ dotvvm.viewModels.root.viewModel.EventAttendees()[2]().FirstName("test");
 
 ### Working with dates
 
-DotVVM uses special handling for `Date` values in JavaScript. To prevent automatic conversions to local time on the client side, DotVVM stores date & time values as strings in the following format: `yyyy-MM-ddTHH:mm:ss.fffffff`
+DotVVM uses special handling for `Date` values in JavaScript. To prevent automatic conversions to local time on the client side, DotVVM stores date & time values as strings in the following format: `yyyy-MM-ddTHH:mm:ss.fffffff`.
 
 To convert JavaScript `Date` into DotVVM representation, use the following function:
 

@@ -33,7 +33,7 @@ This extension method initializes the middlewares required by DotVVM. The `Dotvv
 
 ## Startup.cs in ASP.NET Core
 
-In ASP.NET Core, the registration of frameworks is splitted to the registration of services and middlewares. 
+In ASP.NET Core, the registration of frameworks is split to the registration of services and middlewares. 
 
 In the `ConfigureServices` method, we should register DotVVM services:
 
@@ -49,7 +49,7 @@ var config = app.UseDotVVM<DotvvmStartup>();
 
 This extension method initializes the middlewares required by DotVVM. The `DotvvmStartup` type parameter of the `UseDotVVM` represents the class which contains DotVVM configuration.
 
-> The configuration of DotVVM services has been changed in **DotVVM 2.0** - it was moved to `DotvvmStartup.cs` file. 
+> The configuration of DotVVM services has been changed in **DotVVM 2.0** — it was moved to `DotvvmStartup.cs` file. 
 
 ## DotvvmStartup.cs
 

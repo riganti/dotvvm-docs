@@ -36,4 +36,4 @@ dotvvm.events.beforePostback.subscribe(handler);
 dotvvm.events.beforePostback.unsubscribe(handler);
 ```
 
-The `init` event has a special behavior - when you subscribe to it after the event occured, the handler will be invoked immediately.
+The `init` event has a special behavior — when you subscribe to it after the event occurred, the handler will be invoked immediately.
