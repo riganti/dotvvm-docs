@@ -79,6 +79,11 @@ While the titles of books are proper nouns, in these docs we treat the titles of
 * Can even spot errors in common phrases with its [n-gram support](https://dev.languagetool.org/finding-errors-using-n-gram-data.html).
 * Take advantage of the DotVVM-specific `.vscode\ltex.dictionary.en-US.txt` dictionary.
 
+**[Grammarly](https://www.grammarly.com/)**
+* A smart spellchecker that even checks the tone of your text.
+* However, it doesn't understand Markdown, so working with the docs can be tedious.
+* At the very least Grammarly also provides nice [overviews of English grammar](https://www.grammarly.com/blog/).
+
 **[Lexico](https://www.lexico.com)**
 * A dictionary that explicitly states whether a word belongs to British English or American English.
 
