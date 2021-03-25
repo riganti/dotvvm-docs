@@ -40,6 +40,7 @@
 	  <DocPageMenuItem RouteName="parameters" PageName="Route parameters" />
 	  <DocPageMenuItem RouteName="auto-discover-routes" PageName="Auto-discover routes" LegacyPaths="advanced-route-autodiscovery" />
 	  <DocPageMenuItem RouteName="custom-presenters" PageName="Custom presenters" LegacyPaths="advanced-custom-presenters" />
+	  <DocPageMenuItem RouteName="redirections" PageName="Redirections" />
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="layout" PageName="Layout">
