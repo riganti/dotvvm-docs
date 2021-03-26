@@ -33,10 +33,9 @@ In order to redirect to another page from the viewmodel command, you can call `C
 
 It will generate a correct URL, no matter whether you run inside SPA or not.
 
-## Restrictions
+## Using multiple SPAs on a page
 
-There can be only one [SpaContentPlaceHolder][2] in the page. Otherwise, the framework wouldn't be able to remember
-the URL of currently loaded page in the URL.
+Previously, there was a restriction that users could define only a single [SpaContentPlaceHolder][2] per page. Since version 3.0 this restriction has been lifted and it is now possible to use multiple SPAs per page.
 
 ## Migrating from version 1.x
 
