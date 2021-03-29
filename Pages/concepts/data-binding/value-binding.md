@@ -38,29 +38,61 @@ You cannot, for example, call methods from the value bindings.
 
 ## Expressions Supported in Value Bindings
 
-* `SomeProperty`
-* `SomeProperty.OtherProperty`
-* `SomeCollection[6]`
-* `SomeCollection[6].OtherProperty`
-* `SomeProperty >= 0`
-* `SomeProperty + 1`
-* `SomeProperty ? "some string" : "other string"`
-* `SomeProperty != OtherProperty`
+* Member access
+   * `SomeProperty`
+   * `SomeProperty.OtherProperty`
+* Collections and array elements access
+   * `SomeCollection[6]`
+   * `SomeCollection[6].OtherProperty`
+* Binary operation
+   * `SomeProperty >= 0`
+   * `SomeProperty + 1`
+   * `SomeProperty != OtherProperty`
+* Ternary conditional operator
+   * `SomeProperty ? "some string" : "other string"`
+* Method invocation
+   * `SomeMethod(argument)`
+* Block expression
+   * `(expression1; expression2; expression3)`
+   * *Note*: This is a composition of supported expressions within one data-binding. DotVVM uses parentheses `( ... )` to enclose expressions as compared to C#, which uses curly braces `{ ... }`. Result type of any composite expression is determined by the last child expression.
+* Lambda function (**new in version 3.0**)
+   * `(int intArg, string strArg) => SomeMethod(intArg, strArg)`
+   * *Note*: Type-inference for lambda parameters is not available in version 3.0, therefore type information needs to be explicitly supplied together with lambda parameters definition. Type-inference is an upcomming feature in DotVVM 3.1.
+* Local variable (**new in version 3.0**)
+   * `(var myVariable = SomeFunction(arg1, arg2); SomeMethod(myVariable))`
+   * *Note*: Variables are by design single-assignable (immutable). Variables may shadow property names and previous variables.
 
 ## .NET Methods Supported in Value Bindings
 
 DotVVM can translate several .NET methods on basic types or collections to JavaScript, so you can safely use them in value bindings.  
 
-* `ICollection.Count` and `Array.Length`
-* `String.Length`
-* `Object.ToString()` and `Convert.ToString()`
-* `Enums.GetNames<TEnum>()`
-* `Nullable<T>.HasValue` and `Nullable<T>.Value`
-* `String.Format(format, arg1 [, arg2, [ arg3]])` and `String.Format(format, argumentArray)`
+### String Methods and ToString Overrides
+* `String.Format(format, arg1 [, arg2, [ arg3]])`
+* `String.Format(format, argumentArray)`
+* `Object.ToString()`
+* `Convert.ToString()`
 * `DateTime.ToString()` and `DateTime.ToString(format)`
 * <code><em>numericType</em>.ToString()</code> and <code><em>numericType</em>.ToString(format)</code>
+
+### Nullable Methods
+* `Nullable<T>.HasValue`
+* `Nullable<T>.Value`
+
+### Enumerable Methods
+* `Enumerable.Select<T,U>(IEnumerable<T> collection, Func<T,U> selector)` (**new in version 3.0**)
+* `Enumerable.Where<T>(IEnumerable<T> collection, Func<T,bool> predicate)` (**new in version 3.0**)
+
+### REST API Bindings Methods
+* `Api.RefreshOnChange`
+* `Api.RefreshOnEvent`
+* `Api.PushEvent` 
+* *Note*: for more information about REST API bindings visit this [link](/docs/tutorials/basics-rest-api-bindings/{branch}).
+
+### Other Methods
+* `ICollection.Count` and `Array.Length`
+* `String.Length`
+* `Enums.GetNames<TEnum>()`
 * `Task<T>.Result`
-* `Api.RefreshOnChange`, `Api.RefreshOnEvent`, `Api.PushEvent` (see [REST API bindings](/docs/tutorials/basics-rest-api-bindings/{branch}) for more information)
 
 > It is possible to register custom translators for any .NET API. See [Providing Custom JavaScript Translators](/docs/tutorials/control-development-providing-custom-javascript-translators/{branch}) for more information.  
 
