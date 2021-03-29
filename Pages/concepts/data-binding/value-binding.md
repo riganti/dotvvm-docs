@@ -104,17 +104,17 @@ DotVVM can translate several .NET methods on basic types or collections to JavaS
 * `Enumerable.Any<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
 * `Enumerable.Concat<T>(IEnumerable<T> first, IEnumerable<T> second)`
 * `Enumerable.Distinct<T>(IEnumerable<T> collection)`
-   * *Note*: this method is restricted to collections of primitive types.
+   * *Note*: this method is restricted to primitive types.
 * `Enumerable.FirstOrDefault<T>(IEnumerable<T> collection)` and `Enumerable.FirstOrDefault<T>(IEnumerable<T> collections, Func<T,bool> predicate)`
 * `Enumerable.LastOrDefault<T>(IEnumerable<T> collection)` and `Enumerable.LastOrDefault<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
 * `Enumerable.Max<T>(IEnumerable<T> collection)` and `Enumerable.Max<T,U>(IEnumerable<T> collection, Func<T,U> selector)`
-   * *Note*: these methods are restricted to collections of primitive types
+   * *Note*: these methods are restricted to numeric types
 * `Enumerable.Min<T>(IEnumerable<T> collection)` and `Enumerable.Min<T,U>(IEnumerable<T> collection, Func<T,U> selector)`
-   * *Note*: these methods are restricted to collections of primitive types
+   * *Note*: these methods are restricted to numeric types
 * `Enumerable.OrderBy<T,U>(IEnumerable<T> collection, Func<T,U> selector)`
-   * *Note*: this method is restricted to collections of primitive types
+   * *Note*: this method is restricted to primitive types
 * `Enumerable.OrderByDescending<T,U>(IEnumerable<T> collection, Func<T,U> selector)`
-   * *Note*: this method is restricted to collections of primitive types
+   * *Note*: this method is restricted to primitive types
 * `Enumerable.Skip<T>(IEnumerable<T> collection, int count)`
 * `Enumerable.Take<T>(IEnumerable<T> collection, int count)`
 * `Enumerable.ToArray<T>(IEnumerable<T> collection)`
