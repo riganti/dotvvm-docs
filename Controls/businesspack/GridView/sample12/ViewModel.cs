@@ -14,17 +14,18 @@ public class ViewModel : DotvvmViewModelBase
         // you can initialize default filters
         if (!Context.IsPostBack) 
         {
-            Customers.FilteringOptions =
-            {
-                FilterGroup = new FilterGroup()
+            Customers.FilteringOptions = new FilteringOptions()
                 {
-                    Filters = new List<FilterBase>()
-                    {                        
-                        new FilterCondition() { FieldName = "Name", Operator = FilterOperatorType.Contains, Value = "1" }
-                    },
-                    Logic = FilterLogicType.And
-                }
-            }
+                    FilterGroup = new FilterGroup()
+                    {
+                        Filters = new List<FilterBase>()
+                        {
+                            new FilterCondition()
+                                {FieldName = "Name", Operator = FilterOperatorType.Contains, Value = "1"}
+                        },
+                        Logic = FilterLogicType.And
+                    }
+                };
         }
         
         // refresh data

@@ -1,8 +1,10 @@
-## Sample 3: Column Ordering
+## Sample 4: Vertical Alignment
 
-To specify explicit column order, use the `Order` property.
+You can use the `AlignSelf` property to align the column vertically within the row.
 
-To override the value for a particular screen size, use `OrderSM`, `OrderMD`, `OrderLG` and `OrderXL` properties.
+* `Start` aligns the columns to the top.
+* `Center` aligns the columns to the middle.
+* `End` aligns the columns to the bottom.
 
 <!-- TODO: sample -->
 

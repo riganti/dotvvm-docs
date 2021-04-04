@@ -1,3 +1,0 @@
-<bp:ImageCrop ImageUrl="{value: ImagePath}"
-              Operations="{value: ImageOperations}"
-              AspectRatio="1:1" />

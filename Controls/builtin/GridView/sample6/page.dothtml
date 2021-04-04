@@ -13,7 +13,7 @@
       </ContentTemplate>
       <EditTemplate>
         <dot:Button Text="Save" Click="{command: _parent.Update(_this)}" />
-        <dot:Button Text="Cancel" Click="{command: _parent.CancelEdit()}" />
+        <dot:Button Text="Cancel & Reset" Click="{command: _parent.CancelEdit()}" />
       </EditTemplate>
     </dot:GridViewTemplateColumn>
   
