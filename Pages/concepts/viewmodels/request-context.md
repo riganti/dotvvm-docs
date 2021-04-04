@@ -28,6 +28,8 @@ The request execution is interrupted by this call.
 + `RedirectToRoute` and `RedirectToRoutePermanent` methods redirect the user to the specified route and allows to supply route parameters. 
 The request execution is interrupted by this call. 
 
++ `GetCancellationToken` is an extension method that returns cancellation token for the current request.
+
 + `InterruptExecution` interrupts the execution of the HTTP request by DotVVM and pass it to the next OWIN middleware.  
 
 + `ReturnFile` function is used when you need to [return a file](/docs/tutorials/advanced-returning-files/{branch}) which will be downloaded by the user.
