@@ -27,7 +27,7 @@ A step-by-step guide from a .NET Conf 2019 session:
 
 ## See also
 
-* [Add DotVVM to an existing app](add-dotvv-to-existing-app)
-* [Plan the modernization](plan-the-modernization)
+* [Add DotVVM to an existing app](~/pages/quick-starts/modernize/add-dotvvm-to-existing-app)
+* [Plan the modernization](~/pages/quick-starts/modernize/plan-the-modernization)
 * [Cheat-sheet for Web Forms developers](https://www.dotvvm.com/webforms)
 * [ASPX to DotHTML converter](https://www.dotvvm.com/webforms/convert)
