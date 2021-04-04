@@ -14,7 +14,7 @@ First, **make sure you have the [DotVVM for Visual Studio](https://www.dotvvm.co
 * Click on the **Install** button. 
 * Restart Visual Studio so the extension can be installed.
 
-> If you cannot find the extension, make sure you have the latest updates of Visual Studio installed. The extension always supports the latest version. If you want to use the preview versions of Visual Studio, refer to the [Release notes](../../dotvvm-for-visual-studio/release-notes) page to download a specific version of extension.
+> If you cannot find the extension, make sure you have the latest updates of Visual Studio installed. The extension always supports the latest version. If you want to use the preview versions of Visual Studio, refer to the [Release notes](~/pages/dotvvm-for-visual-studio/release-notes) page to download a specific version of extension.
 
 ### Create a new project
 
@@ -32,7 +32,7 @@ In the next screen, configure which libraries, component packs or sample pages y
 
 After you confirm the selection, Visual Studio will create the project. **Press F5 to run the application.**
 
-See the [Project structure](../../concepts/project-structure) chapter for more info about the files in the project.
+See the [Project structure](~/pages/concepts/project-structure) chapter for more info about the files in the project.
 
 ## Create a DotVVM project from a command line
 
@@ -65,6 +65,6 @@ dotnet run
 
 ## See also
 
-* [Tutorial: The first page](first-page)
-* [Project structure](../../concepts/project-structure)
-* [Add DotVVM to an existing project](../modernize/add-dotvvm-to-existing-app)
+* [Tutorial: The first page](~/pages/quick-starts/build/first-page)
+* [Project structure](~/pages/concepts/project-structure)
+* [Add DotVVM to an existing project](~/pages/quick-starts/modernize/add-dotvvm-to-existing-app)
