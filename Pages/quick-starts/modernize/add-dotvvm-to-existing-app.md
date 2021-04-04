@@ -12,7 +12,7 @@ First, **make sure you have the [DotVVM for Visual Studio](https://www.dotvvm.co
 * Click on the **Install** button. 
 * Restart Visual Studio so the extension can be installed.
 
-> If you cannot find the extension, make sure you have the latest updates of Visual Studio installed. The extension always supports the latest version. If you want to use the preview versions of Visual Studio, refer to the [Release notes](../../dotvvm-for-visual-studio/release-notes) page to download a specific version of extension.
+> If you cannot find the extension, make sure you have the latest updates of Visual Studio installed. The extension always supports the latest version. If you want to use the preview versions of Visual Studio, refer to the [Release notes](~/pages/dotvvm-for-visual-studio/release-notes) page to download a specific version of extension.
 
 ### ASP.NET Web Application Project or ASP.NET Core App
 
@@ -26,9 +26,9 @@ Once the project is buildable and running on .NET 4.5.1 or newer, you can **righ
 
 ![Add DotVVM to existing ASP.NET app](add-dotvvm-to-existing-app_img1.png)
 
-After the process finishes, you should be able to run the application without any changes. You can [add new DotVVM pages](../build/first-page) in the project and make sure DotVVM runtime loads correctly.
+After the process finishes, you should be able to run the application without any changes. You can [add new DotVVM pages](~/pages/quick-starts/build/first-page) in the project and make sure DotVVM runtime loads correctly.
 
-See the [Plan the modernization](plan-the-modernization) chapter for more information on how to plan the migration.
+See the [Plan the modernization](~/pages/quick-starts/modernize/plan-the-modernization) chapter for more information on how to plan the migration.
 
 ### ASP.NET Web Site Project
 
@@ -110,6 +110,7 @@ namespace DotvvmDemo
 
 ## See also
 
-* [Plan the modernization](plan-the-modernization)
+* [Plan the modernization](~/pages/quick-starts/modernize/plan-the-modernization)
+* [Create the first page](~/pages/quick-starts/build/first-page)
 * [Web Forms modernization sample using DotVVM - C# version](https://github.com/riganti/dotvvm-samples-webforms-migration)
 * [Web Forms modernization sample using DotVVM - VB.NET version](https://github.com/riganti/dotvvm-samples-webforms-migration)
