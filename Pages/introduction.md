@@ -1,40 +1,47 @@
 # Introduction
 
-**DotVVM** is a UI framework that enables you to build ASP.NET Core (or old ASP.NET) websites and applications using the [Model-view-viewmodel](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) pattern. 
+**DotVVM** is a UI framework that lets you to build ASP.NET Core (or old ASP.NET) websites and applications using the [Model-view-viewmodel](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) pattern. 
 
 DotVVM consists of a **server-side part** (which integrates in the ASP.NET infrastructure) and a **client-side part** based on [Knockout JS](https://knockoutjs.com/) which creates the MVVM experience in the web browser. 
 
-The framework includes a **set of built-in components** (also called _controls_), and offers an [extension for Visual Studio 2019 and 2017](https://www.dotvvm.com/get-dotvvm) that brings IntelliSense.
+The framework includes a **set of built-in components** (also called _controls_), and offers an [extension for Visual Studio 2019 and 2017](https://www.dotvvm.com/get-dotvvm) that gives syntax highlighting, IntelliSense, refactorings and code fixes, error checking, and other functions.
 
 ## Use-cases for DotVVM
 
+There are many frameworks for web UI that work with ASP.NET Core. What are the top use-cases for DotVVM?
+
 ### Building apps with MVVM pattern
 
-DotVVM **simplifies building enterprise applications**, admin dashboards, company portals, CRMs, ERPs or other applications commonly referred as [line of business applications](https://en.wikipedia.org/wiki/Line_of_business).
+DotVVM **simplifies building enterprise applications**, admin dashboards, Intranet portals, CRMs, ERPs, and other applications commonly referred as [line of business applications](https://en.wikipedia.org/wiki/Line_of_business).
 
-In general, DotVVM helps in applications which contain data grids, heavy forms with many form field, complex validation and business logic, pages with multi-step wizards, modal dialogs, or other “desktop-like” UI components.
+In general, DotVVM helps the most in applications which contain:
+* data grids
+* forms with many fields, complex validation and business logic
+* pages with multi-step wizards, modal dialogs, or other “desktop-like” UI components.
 
 Thanks to the **Model-view-viewmodel approach**, it is **easy and convenient** to build these kinds of experiences. 
 
-DotVVM also helps with **delivering the data from the server to the browser** without the need to build and maintain REST APIs — the data loaded in the viewmodel are transferred to the browser transparently.
+DotVVM also helps with **delivering the data from the server to the browser** without the need to build and maintain REST or gRPC APIs — the data loaded in the viewmodel are transferred to the browser transparently.
 
-There is also a community extension called [DotVVM AMP](community-add-ons/dotvvm-amp) which can generate [AMP](https://en.wikipedia.org/wiki/Accelerated_Mobile_Pages) version of pages automatically, which can increase the site visibility in search engines and decrease the page load times.
+There is also a community extension called [DotVVM AMP](~/pages/community-add-ons/dotvvm-amp) which can generate [AMP](https://en.wikipedia.org/wiki/Accelerated_Mobile_Pages) version of pages automatically, which can increase the site visibility in search engines and decrease the page load times.
 
-See the [Quick start: Create a new project](quick-starts/build/create-new-project) chapter for more info.
+See the [Quick start: Create a new project](~/pages/quick-starts/build/create-new-project) chapter for more info.
 
 > If you are not sure whether DotVVM is a good choice for your project, ask us on our [Gitter chat](https://gitter.im/riganti/dotvvm). We will be happy to help you with the decision.
 
 ### Modernizing legacy ASP.NET applications
 
-DotVVM can also be used to incrementally [modernize old ASP.NET-based applications](quick-starts/modernize/add-dotvvm-to-existing-app) and migrate them to the latest versions of .NET.
+DotVVM can also be used to incrementally [modernize old ASP.NET-based applications](~/pages/quick-starts/modernize/add-dotvvm-to-existing-app) and migrate them to the latest versions of .NET.
 
-DotVVM supports both ASP.NET Core and old ASP.NET (.NET 4.5.1 and newer) and **can run in the same process side-by-side with other frameworks** such as ASP.NET Web Forms. 
+DotVVM supports both ASP.NET Core and old ASP.NET (.NET 4.5.1 and newer). It **can run in the same process side-by-side with other frameworks** such as ASP.NET Web Forms. 
 
-DotVVM can be installed in an existing ASP.NET Web Forms application and used to **replace ASPX pages** with their DotVVM equivalents **one by one**. During the process, the application will still work, so the developers can fix bugs, implement new features and modernize the code base at the same time. 
+DotVVM can be installed into an existing ASP.NET Web Forms application and used to **replace ASPX pages** with their DotVVM equivalents **one by one**. During the process (which can take weeks or even months), the application will still work so the developers can fix bugs and implement new features while modernizing the code base at the same time. 
 
 Most of the code (business logic, data access, integrations of other systems and so on) **won't need significant changes**, and after all dependencies on ASP.NET Web Forms and `System.Web` are replaced with DotVVM, the **project can be switched to the newest version** of .NET and ASP.NET Core.
 
-See the [Quick start: Add DotVVM to existing app](quick-starts/modernize/add-dotvvm-to-existing-app) chapter for more info.
+The migrated project will use DotVVM, but will be able to run on Linux or in containers, and take all the advantages from the features of the new .NET platform. When compared to frameworks that ships with ASP.NET Core (Blazor, ASP.NET Core MVC or Razor Pages), DotVVM is on par in most of the areas, and offers a similar speed of the development. 
+
+See the [Quick start: Add DotVVM to existing app](~/pages/quick-starts/modernize/add-dotvvm-to-existing-app) chapter for more info.
 
 ## Anatomy of a DotVVM page
 
@@ -42,7 +49,7 @@ Every DotVVM page consists of two files — the _view_ and the _viewmodel_. The 
 
 ### View
 
-DotVVM uses an [extended HTML syntax](concepts/dothtml-markup/overview) called _DotHTML_ to define views. 
+DotVVM uses an [extended HTML syntax](~/pages/concepts/dothtml-markup/overview) called _DotHTML_ to define views. 
 
 ```DOTHTML
 @viewModel DotvvmDemo.CalculatorViewModel, DotvvmDemo
@@ -71,9 +78,9 @@ DotHTML extends classic HTML syntax with the following constructs:
 
 When users of the web application navigate to the page, DotVVM translates the DotHTML markup to plain HTML syntax which can be displayed by the browser.
 
-DotHTML files usually have the `.dothtml` extension. There are special kinds of views — [Master pages](concepts/layout/master-pages) or [Markup controls](concepts/control-development/markup-controls) — which are using different file extensions, but they are still using DotHTML syntax.
+DotHTML files usually have the `.dothtml` extension. There are special kinds of views — [Master pages](~/pages/concepts/layout/master-pages) or [Markup controls](~/pages/concepts/control-development/markup-controls) — which are using different file extensions, but they are still using DotHTML syntax.
 
-See the [DotHTML markup](concepts/dothtml-markup/overview) chapter for more info.
+See the [DotHTML markup](~/pages/concepts/dothtml-markup/overview) chapter for more info.
 
 ## Viewmodel
 
@@ -105,7 +112,7 @@ namespace DotvvmDemo
 
 In the example above, when a user clicks a button in the page, the `Calculate` method is called. It can read or modify the state of the page via viewmodel properties. 
 
-See the [Viewmodels](concepts/viewmodels/overview) chapter for more info.
+See the [Viewmodels](~/pages/concepts/viewmodels/overview) chapter for more info.
 
 ## Data-binding
 
@@ -120,7 +127,7 @@ The **data-binding works in both ways** by default:
 * Whenever the value of the property changes, the control will be updated accordingly.
 * Whenever the user changes the value in the control, the viewmodel property will be updated accordingly.
 
-See the [Data-binding](concepts/data-binding/overview) chapter for more info.
+See the [Data-binding](~/pages/concepts/data-binding/overview) chapter for more info.
 
 ## Page lifecycle
 
@@ -150,13 +157,13 @@ DotVVM runtime on the server creates a viewmodel instance, populates it with the
 
 > Since sending the entire viewmodel to the server can be inefficient, DotVVM also offers different ways of calling methods on the server and updating parts of the viewmodel. 
 
-See the [Respond to user actions](concepts/respond-to-user-actions/overview) chapter for more info.
+See the [Respond to user actions](~/pages/concepts/respond-to-user-actions/overview) chapter for more info.
 
 ## See also
 
-* [Quick start: Create a new project](quick-starts/build/create-new-project)
-* [Quick start: Modernize legacy applications using DotVVM](quick-starts/modernize/add-dotvvm-to-existing-app)
-* [DotVVM project structure](concepts/project-structure)
-* [DotHTML markup](concepts/dothtml-markup/overview)
-* [Data-binding](concepts/data-binding/overview)
-* [Viewmodels](concepts/viewmodels/overview)
+* [Quick start: Create a new project](~/pages/quick-starts/build/create-new-project)
+* [Quick start: Modernize legacy applications using DotVVM](~/pages/quick-starts/modernize/add-dotvvm-to-existing-app)
+* [DotVVM project structure](~/pages/concepts/project-structure)
+* [DotHTML markup](~/pages/concepts/dothtml-markup/overview)
+* [Data-binding](~/pages/concepts/data-binding/overview)
+* [Viewmodels](~/pages/concepts/viewmodels/overview)
