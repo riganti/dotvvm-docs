@@ -1,5 +1,13 @@
 # Release notes
 
+## v2.5.251.0
+***Compatible with VS 2019 v16.9.3+***
+* Fixed Visual Studio API changes
+
+### Assets
+Version for Visual Studio 2019: [download link](https://storage.dotvvm.com/public/DotVVM.Integration.VisualStudio.VS2019.RTM.2.5.251.0.vsix) <br/>
+Version for Visual Studio 2019 Preview (16.10.0 Preview 1.0+): [download link](https://storage.dotvvm.com/public/DotVVM.Integration.VisualStudio.VS2019-Preview.2.5.251.0.vsix) 
+
 ## v2.5.249.0
 * Fixed Visual Studio API changes
 
