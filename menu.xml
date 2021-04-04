@@ -45,7 +45,7 @@
 	
 	<DocPageMenuItem RouteName="layout" PageName="Layout">
 	  <DocPageMenuItem RouteName="master-pages" PageName="Master pages" LegacyPaths="basics-master-pages" />
-	  <DocPageMenuItem RouteName="single-page-applications-spa" PageName="SPA (Single-page Apps)" LegacyPaths="basics-single-page-applications-spa" />
+	  <DocPageMenuItem RouteName="single-page-applications-spa" PageName="SPA (Single-page applications)" LegacyPaths="basics-single-page-applications-spa" />
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="data-binding" PageName="Data-binding">
