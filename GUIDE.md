@@ -46,13 +46,13 @@ The most important ones are:
 
 While the titles of books are proper nouns, in these docs we treat the titles of pages as sentences.
 
-
 ### List of DotVVM proper nouns
 
 * DotVVM
 * DotHTML
 * DotVVM Command Line
-* DotVVM Visual Studio Extension
+* DotVVM for Visual Studio
+* Bootstrap for DotVVM
 
 ### List of other related proper nouns
 
@@ -71,6 +71,62 @@ While the titles of books are proper nouns, in these docs we treat the titles of
 | left quotation mark   | “         | U+201C             | 0147     | &ldquo\; |
 | right quotation mark  | ”         | U+201D             | 0148     | &rdquo\; |
 | m-dash                | —         | U+2015             | 0151     | &#8213\; |
+
+## Headings and page structure
+
+* Each page must have exactly one first-level heading (`h1`). It must be equal to the title of the page in `menu.xml`.
+* Each page should have a correct hierarchy of headings (no skipping of levels). The table of contents on the right side is generated from headings of the second and third level. Please make sure that the hierarchy of headings in the page makes sense and is easy to navigate - some users will not read the entire page but look in the TOC to find the section they need. 
+* Prefer imperative form of verbs over the "-ing" form in headings to express what the user will achieve in the section: _"Register a markup control"_ looks better than _"Registering a markup control"_.
+* Each page must end with a last second-level section called _"See also"_ with an unordered list of links to other relevant pages or controls.
+
+## Links within the docs
+
+We assume that most links between the pages will want to link to the same version of the framework. Therefore, we can use `~` which stands for the documentation repository root (and is replaced with `/docs/{current-version}/` when the page is rendered).
+
+* To link to a docs, use the following format:
+
+```
+[Master pages](~/pages/concepts/layout/master-pages)
+``` 
+
+* To link to a control, use the following format:
+
+```
+[Button](~/controls/builtin/Button)
+```
+
+* If you need to link to a specific version of the documentation, use the slash-rooted URL in the following format:
+
+```
+[RouteLink](/docs/2.0/controls/builtin/RouteLink)
+```
+
+## Images
+
+* To use image in the page, place the image file in the same folder as the page (ideally with the same name and suffix `_img1`, and so on). Make sure the image title express what's shown on the image.
+
+```
+![Click on Create a new project on the launch screen](create-new-project_img1.png)
+```
+
+## Terms
+
+If you use a term (like viewmodel, postback etc.) on a page **for the first time**, it should:
+
+* link to a page where the term is explained, if such a page exists (both externally, or internally),
+* it should be typed **in bold**.
+
+The subsequent occurences of the term should not be a link and should not be typed in bold.
+
+It is a good idea to repeat the link in the "See also" section at the end of the page.
+
+## Names which appear in code
+
+If you use a name that appears in the code (class, property, method, and so on), it should be always typed in `monospaced font`. We do not use the monospaced font only if the name is a link to another page. 
+
+The subsequent occurences of such name should not be links, but they should be typed in `monospaced font`.
+
+It is a good idea to repeat the link in the "See also" section at the end of the page.
 
 ## Tools
 
