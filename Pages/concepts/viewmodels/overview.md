@@ -58,3 +58,4 @@ In the following diagram, you can see the lifecycle of the HTTP request. The lef
 <p><img src="{imageDir}basics-viewmodels-img1.png" alt="DotVVM Page Lifecycle" /></p>
 
 > Sending the entire viewmodel to the server and back may be inefficient in many real-world scenarios. DotVVM offers different ways of calling methods on the server which don't require presence of the viewmodel. See the [Optimizing PostBacks](/docs/tutorials/basics-optimizing-postbacks/{branch}) page for more info.
+
