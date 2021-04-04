@@ -1,8 +1,8 @@
-# Redirections
+# Route redirection
 
 Over time, websites change and it might be necessary to alter some URLs as well. However, in many cases it is important to maintain compatibility with the old system. This can be achieved using redirections.
 
-## Registering route redirections
+## Redirect to another route
 
 During configuration, you can define redirections using the following code-snippets:
 
@@ -13,7 +13,8 @@ config.RouteTable.AddRouteRedirection(
     targetRouteNameProvider: context => "TargetPage",
     defaultValues: null,
     permanent: false,
-    parametersProvider: null);
+    parametersProvider: null,
+    urlSuffixProvider: null);
 ```
 
 In the example above, we can see an addition of a new redirection record to the route table. This record is named *Redirection1* and specifies that any access to a page that matches the *my/page/url{Id}* pattern will be redirected to the route named *TargetPage*. This redirection is temporary (i.e. non-permanent).
@@ -38,7 +39,9 @@ In the example above, we can see an addition of a new redirection record to the 
     });
 ```
 
-## Registering URL redirections
++ The last argument (optional) is a **provider for URL suffix** (which consists of query string and fragment). The default value is `null` which means that the query string will be kept as is. If you want to transform it, specify your own function.
+
+## Redirect to another URL
 
 In case your website is split into multiple applications, or you need to redirect to a custom URL, you might find URL redirections quite useful. These redirections can be defined in the following way:
 
@@ -62,4 +65,3 @@ In the example above, we can see a new redirection addition to the route table. 
 + The fourth argument (optional) specifies **default values for [route parameters](parameters)**.
 
 + The fifth argument (optional) specifies whether this redirection is **permanent**. The default value is `false`, which means non-permanent.
-
