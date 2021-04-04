@@ -1,6 +1,6 @@
-# DotVVM Documentation Guide
+# DotVVM documentation guide
 
-Hello and welcome to the DotVVM Documentation Guide. This document describes the conventions we strive to follow when
+Hello and welcome to the DotVVM documentation guide. This document describes the conventions we strive to follow when
 writing documentation for DotVVM. Since they are still a work-in-progress, some section may be incomplete.
 
 As with any set of conventions, consistency is more important than individual preference. In DotVVM docs, we stick to
