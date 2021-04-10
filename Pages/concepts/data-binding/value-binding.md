@@ -68,7 +68,7 @@ access elements of collections, call some methods (only those which DotVVM can t
    * *Note*: This is a composition of supported expressions within one data-binding. DotVVM uses parentheses `( ... )` to enclose expressions as compared to C#, which uses curly braces `{ ... }`. Result type of any composite expression is determined by the last child expression.
 * Lambda functions (**new in version 3.0**)
    * `(int intArg, string strArg) => SomeMethod(intArg, strArg)`
-   * *Note*: Type inference for lambda parameters is not available in version 3.0, therefore type information needs to be explicitly supplied together with lambda parameters definition. Type inference is an upcomming feature in DotVVM 3.1.
+   * *Note*: Type inference for lambda parameters is not available in version 3.0, therefore type information needs to be explicitly supplied together with lambda parameters definition. Type inference is an upcoming feature in DotVVM 3.1.
 * Local variables (**new in version 3.0**)
    * `var myVariable = SomeFunction(arg1, arg2); SomeMethod(myVariable)`
    * *Note*: Variables are by design single-assignable (immutable). Variables may shadow property names and previously defined variables.
