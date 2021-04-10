@@ -21,7 +21,7 @@ In the example above, we can see an addition of a new redirection record to the 
 
 + The first argument specifies a **name of the redirection**. This name is not displayed anywhere, it is only a string which identifies the redirection within the framework.
 
-+ The second argument is the **route URL pattern** that we are redirecting from. More information on routes and route parameters can accessed on [routing overview](/{branch}/pages/concepts/routing/overview).
++ The second argument is the **route URL pattern** that we are redirecting from. More information on routes and route parameters can accessed on [routing overview](~/pages/concepts/routing/overview).
 
 + The third argument is either a **target route name**, or a **target route name provider** (there are two overloads). The first overload is quite straight forward, as it always redirects to the route determined by the given `string`. The second overload expects a `Func<IDotvvmRequestContext, string>`, as can be seen in the code snippet above. This can be used to obtain context-based redirection targets.
 
@@ -58,10 +58,16 @@ In the example above, we can see a new redirection addition to the route table. 
 
 + The first argument specifies a **name of the redirection**. This name is not displayed anywhere, it is only a string which identifies the redirection within the route table.
 
-+ The second argument is the **route URL pattern** that we are redirecting from. More information on routes and route parameters can accessed on [routing overview](/{branch}/pages/concepts/routing/overview).
++ The second argument is the **route URL pattern** that we are redirecting from. More information on routes and route parameters can accessed on [routing overview](~/pages/concepts/routing/overview).
 
 + The third argument is either a **target URL**, or a **target URL provider** (there are two overloads). The first overload is quite straight forward, as it always redirects to the URL determined by the given `string`. The second overload expects a `Func<IDotvvmRequestContext, string>`, as can be seen in the code snippet above. This can be used to obtain context-based redirection targets.
 
 + The fourth argument (optional) specifies **default values for [route parameters](parameters)**.
 
 + The fifth argument (optional) specifies whether this redirection is **permanent**. The default value is `false`, which means non-permanent.
+
+## See also
+
+* [Parameters](~/pages/concepts/routing/parameters)
+* [Auto-discover routes](~/pages/concepts/routing/auto-discover-routes)
+* [Custom presenter](~/pages/concepts/routing/custom-presenters)
