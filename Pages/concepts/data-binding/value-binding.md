@@ -1,9 +1,11 @@
 # Value binding
 
-The **value binding** is the most frequently used binding in DotVVM.
+The **value binding** is the most frequently used binding in DotVVM. It allows you to bind a property in the viewmodel to a property of a control in the DotHTML file, or just render the value as a text. 
 
-It allows you to bind a property in the viewmodel to a property of a control in the DOTHTML file, or just render the value as a text.
- 
+The data-binding works in both directions - whenever the `Url` property changes, the control that this property is bound to, will be updated accordingly. Also, if the user makes a change in the control, the property value will be written back to the viewmodel.
+
+## Example
+
 Let's have the following viewmodel:
 
 ```CSHARP
@@ -14,59 +16,80 @@ public class MyViewModel {
 }
 ```
 
-In the DOTHTML markup, we can bind the property to the hyperlink's `href` attribute:
+In the DotHTML markup, you can bind the property to the `Text` property of a [TextBox](~/controls/builtin/TextBox) control:
 
 ```DOTHTML
-<a href="{value: Url}">Go To URL</a>
+<dot:TextBox Text="{value: Url}" />
 ```
 
-If you run the page and view the page source code, you'll see that DotVVM translated the binding into a Knockout JS expression. DotVVM uses this 
-popular JavaScript framework to perform the data binding.
- 
-This is the HTML that will be rendered and sent to the browser:
+If you run the page and view the page source code, you'll see that DotVVM translated the binding into a [Knockout](https://knockoutjs.com/) `data-bind` attribute. DotVVM uses this popular JavaScript library to perform the data-binding and provide the MVVM experience. This is how the HTML will look like in the browser:
 
 ```DOTHTML
-<a data-bind="attr: { 'href': Url }">Go To URL</a>
+<input type="text" data-bind="attr: { 'href': Url }" />
 ```
 
-The word `value` represents the type of the data binding. 
+## Supported expressions in value binding
 
-The `Url` is an expression that will be evaluated in the client's browser. The expression can use the public properties from the viewmodel, 
-access elements of collections and use supported operators. 
+Let's look at the binding expression:
 
-You cannot, for example, call methods from the value bindings.
+```DOTHTML
+{value: Url}
+```
 
-## Expressions Supported in Value Bindings
+The `value` prefix indicates the type of the binding - **value binding**. There are [other types of binding expressions](~/pages/concepts/data-binding/overview).
+
+The `Url` is an expression that will be evaluated in the browser. The expression can use the public properties in the viewmodel, 
+access elements of collections, call some methods (only those which DotVVM can translate in the JavaScript), and use a few operators. 
+
+> Remember that DotVVM translates expressions specified in value binding in JavaScript so they can be evaluated using Knockout JS. Not all expressions can be translated - see the following section.
 
 * Member access
    * `SomeProperty`
    * `SomeProperty.OtherProperty`
+* Access the parent [binding contexts](~/pages/concepts/data-binding/binding-context)
+  * `_root.SomeProperty`
+  * `_parent.SomeProperty`
 * Collections and array elements access
    * `SomeCollection[6]`
    * `SomeCollection[6].OtherProperty`
-* Binary operation
+* Access the collection metadata (if the current [binding context](~/pages/concepts/data-binding/binding-context) is a collection)
+   * `_collection.Index`
+   * `_collection.IsOdd`, `_collection.IsEven`...
+* Binary operations
    * `SomeProperty >= 0`
    * `SomeProperty + 1`
    * `SomeProperty != OtherProperty`
 * Ternary conditional operator
    * `SomeProperty ? "some string" : "other string"`
-* Method invocation
+* Method invocation (only supported methods)
    * `SomeMethod(argument)`
 * Block expression
    * `(expression1; expression2; expression3)`
    * *Note*: This is a composition of supported expressions within one data-binding. DotVVM uses parentheses `( ... )` to enclose expressions as compared to C#, which uses curly braces `{ ... }`. Result type of any composite expression is determined by the last child expression.
-* Lambda function (**new in version 3.0**)
+* Lambda functions (**new in version 3.0**)
    * `(int intArg, string strArg) => SomeMethod(intArg, strArg)`
-   * *Note*: Type-inference for lambda parameters is not available in version 3.0, therefore type information needs to be explicitly supplied together with lambda parameters definition. Type-inference is an upcomming feature in DotVVM 3.1.
-* Local variable (**new in version 3.0**)
-   * `(var myVariable = SomeFunction(arg1, arg2); SomeMethod(myVariable))`
-   * *Note*: Variables are by design single-assignable (immutable). Variables may shadow property names and previous variables.
+   * *Note*: Type inference for lambda parameters is not available in version 3.0, therefore type information needs to be explicitly supplied together with lambda parameters definition. Type inference is an upcomming feature in DotVVM 3.1.
+* Local variables (**new in version 3.0**)
+   * `var myVariable = SomeFunction(arg1, arg2); SomeMethod(myVariable)`
+   * *Note*: Variables are by design single-assignable (immutable). Variables may shadow property names and previously defined variables.
 
-## .NET Methods Supported in Value Bindings
+### .NET methods supported in value bindings
 
-DotVVM can translate several .NET methods on basic types or collections to JavaScript, so you can safely use them in value bindings.  
+DotVVM can translate several .NET methods on basic types or collections to JavaScript, so you can safely use them in value bindings.
 
-### String Methods and ToString Overrides
+#### String methods
+* `String.Length`
+
+#### Collection methods
+* `ICollection.Count` and `Array.Length`
+
+#### Enum methods
+* `Enums.GetNames<TEnum>()`
+
+#### Task methods
+* `Task<T>.Result`
+
+#### Formatting
 * `String.Format(format, arg1 [, arg2, [ arg3]])`
 * `String.Format(format, argumentArray)`
 * `Object.ToString()`
@@ -74,31 +97,30 @@ DotVVM can translate several .NET methods on basic types or collections to JavaS
 * `DateTime.ToString()` and `DateTime.ToString(format)`
 * <code><em>numericType</em>.ToString()</code> and <code><em>numericType</em>.ToString(format)</code>
 
-### Nullable Methods
+#### Nullable types
 * `Nullable<T>.HasValue`
 * `Nullable<T>.Value`
 
-### Enumerable Methods
-* `Enumerable.Select<T,U>(IEnumerable<T> collection, Func<T,U> selector)` (**new in version 3.0**)
-* `Enumerable.Where<T>(IEnumerable<T> collection, Func<T,bool> predicate)` (**new in version 3.0**)
+#### LINQ methods
+* `Enumerable.Select<T,U>(IEnumerable<T> collection, Func<T,U> selector)`
+* `Enumerable.Where<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
+* *Note*: These methods are **new in version 3.0**.
 
-### REST API Bindings Methods
+#### REST API binding methods
 * `Api.RefreshOnChange`
 * `Api.RefreshOnEvent`
 * `Api.PushEvent` 
-* *Note*: for more information about REST API bindings visit this [link](/docs/tutorials/basics-rest-api-bindings/{branch}).
+* *Note*: See [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api/bindings/overview) for more info
 
-### Other Methods
-* `ICollection.Count` and `Array.Length`
-* `String.Length`
-* `Enums.GetNames<TEnum>()`
-* `Task<T>.Result`
+### Provide custom method translators
 
-> It is possible to register custom translators for any .NET API. See [Providing Custom JavaScript Translators](/docs/tutorials/control-development-providing-custom-javascript-translators/{branch}) for more information.  
+It is possible to register custom translators for any method. See [Provide custom JavaScript translators](~/pages/concepts/control-development/provide-custom-method-translators) for more information.  
 
-## Upcomming Support for .NET Methods in DotVVM 3.1
+### Upcoming support for .NET methods in DotVVM 3.1
 
-### Enumerable Methods
+We plan to add support for the following methods in DotVVM 3.1.
+
+#### LINQ methods
 * `Enumerable.All<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
 * `Enumerable.Any<T>(IEnumerable<T> collection)`
 * `Enumerable.Any<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
@@ -120,7 +142,7 @@ DotVVM can translate several .NET methods on basic types or collections to JavaS
 * `Enumerable.ToArray<T>(IEnumerable<T> collection)`
 * `Enumerable.ToList<T>(IEnumerable<T> collection)`
 
-### String Methods
+#### String methods
 * `String.Contains(string value)` and `String.Contains(char value)`
 * `String.EndsWith(string value)` and `String.EndsWith(char value)`
 * `String.IndexOf(string value)` and `String.IndexOf(char value)`
@@ -135,21 +157,26 @@ DotVVM can translate several .NET methods on basic types or collections to JavaS
 * `String.ToLower()`
 * `String.ToUpper()`
 
-### Math Methods
+#### Math methods
 * Basic: `Math.Abs`, `Math.Exp`, `Math.Max`, `Math.Min`, `Math.Pow` `Math.Sign`, `Math.Sqrt`
 * Rounding: `Math.Ceiling`, `Math.Floor`, `Math.Round`, `Math.Trunc`
 * Logarithmic: `Math.Log`, `Math.Log10`
 * Trigonometric: `Math.Acos`, `Math.Asin`, `Math.Atan`, `Math.Atan2`, `Math.Cos`, `Math.Cosh`, `Math.Sin`, `Math.Sinh`, `Math.Tan`, `Math.Tanh`
 
-## Null Handling in Value Bindings
+## Null handling
 
-You don't have to be afraid of `null` values. If some part of the expression evaluates to null, the whole expression will return null. 
+You don't have to worry about `null` values in binding expressions. If some part of the expression evaluates to `null`, the whole expression will return `null`. 
 
 Internally, DotVVM treats every `.` as `.?` in C# 6.
 
-## Double and Single Quotes
+> In previous versions of DotVVM, when you tried to call a method in a value binding and any of its arguments evaluated to `null`, the method wasn't invoked and the result of the expression was `null`. From DotVVM 3.0, this behavior was changed - the method will be invoked and `null` value will be passed as an argument.
 
-Because the bindings in HTML attributes are often wrapped in double quotes, DotVVM allows to use single quotes (apostrophes) for strings as well.
+## Double and single quotes
+
+Because the bindings in HTML attributes are often wrapped in double quotes, DotVVM allows to use single quotes (apostrophes) for strings as well. 
+
+This is different from the C# syntax where double quotes are used for `string` values while single quotes are used for `char` values.
+In DotVVM, the single and double quotes can be used interchangeably.
 
 ```DOTHTML
 <a class="{value: Active ? 'active' : 'not-active' }"></a>
@@ -159,26 +186,32 @@ Because the bindings in HTML attributes are often wrapped in double quotes, DotV
 
 If you have a property of an enum type in your viewmodel, you may need to work with that value in the binding. 
 
-In DotVVM, the enum values are converted to strings on the client side, so you can compare the value with strings.
-
 ```CSHARP
 public class MyViewModel {
     ...
-    public ButtonColor Color { get; set; }    // ButtonColor is enum
+    public MyApp.Enums.ButtonColor Color { get; set; }    // ButtonColor is enum
     ...
 }
 ```
 
-Use strings for enum value literals:
+You can use the `@import` directive to import the namespace in which the enum is declared. Then, you can use the `ButtonColor.Red` to reference the enum member.
+
+```DOTHTML
+@viewModel ...
+@import MyApp.Enums
+
+<div class-red="{value: Color == ButtonColor.Red}"></div>
+```
+
+On the client-side, the enum values are converted to strings on the client side, so you can compare the value with strings. The following expression will also work - this is different from C# where enums cannot be compared with `string` values directly.
 
 ```DOTHTML
 <a class="{value: Color == 'Red' ? 'button-red' : 'button-normal'}">button</a>
 ```
 
-In **DotVVM 1.1** and newer, you can also use the `ButtonColor.Red` syntax, provided that you import the namespace using the `@import` directive.
+## See also
 
-```DOTHTML
-@import DotvvmDemo.DAL.Enums
-
-<a class="{value: Color == ButtonColor.Red ? 'button-red' : 'button-normal'}">button</a>
-```
+* [Data-binding overview](~/pages/concepts/data-binding/overview)
+* [Resource binding](~/pages/concepts/data-binding/resource-binding)
+* [Binding context](~/pages/concepts/data-binding/binding-context)
+* [Respond to user actions](~/pages/concepts/respond-to-user-actions/overview)
