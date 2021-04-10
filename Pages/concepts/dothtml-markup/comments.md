@@ -1,8 +1,6 @@
 # Comments
 
-Sometimes, you need to comment something out of the display. 
-
-In DotVVM, there are two types of comments.
+DotHTML markup supports two types of comments.
 
 ## Client-side comments
 
@@ -37,3 +35,8 @@ You can also use server-side comments inside tags, like this:
 ```
 
 > If you want to comment parts of the markup with controls, it is better to use the server-side comment, so the commented code cannot be read by the user.
+
+## See also
+
+* [DotHTML markup](~/pages/concepts/dothtml-markup/overview)
+* [Built-in controls](~/pages/concepts/dothtml-markup/builtin-controls)

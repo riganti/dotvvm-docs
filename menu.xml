@@ -29,6 +29,7 @@
 	
     <DocPageMenuItem RouteName="dothtml-markup" PageName="DotHTML markup">
 	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-built-in-controls" />
+	  <DocPageMenuItem RouteName="builtin-controls" PageName="Built-in controls" />
 	  <DocPageMenuItem RouteName="common-control-properties" PageName="Common control properties" LegacyPaths="basics-control-properties-and-attributes" />
 	  <DocPageMenuItem RouteName="combine-css-classes-and-styles" PageName="Combine CSS classes and styles" LegacyPaths="basics-class-and-style-attribute" />
 	  <DocPageMenuItem RouteName="comments" PageName="Comments" LegacyPaths="basics-comments" />

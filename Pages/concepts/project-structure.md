@@ -1,45 +1,38 @@
 # Project structure    
 
-After you [create a new DotVVM project](/docs/tutorials/how-to-start-dotnet-451/{branch}), there will be several files in your project:
+After you [create a new DotVVM project](~/pages/quick-starts/build/create-new-project), you will see several files in your project:
 
-* **Views\default.dothtml** - an example view.
+* `Views/Default.dothtml` - an example page.
 
-* **ViewModels\DefaultViewModel.cs** - an example viewmodel.
+* `ViewModels/DefaultViewModel.cs` - an example viewmodel.
 
-* **Startup.cs** - an OWIN / ASP.NET Core startup class which registers in the DotVVM and Static Files middleware.
+* `Startup.cs` - startup class which configures services and registers DotVVM and static files middlewares.
 
-* **Program.cs** - the entry-point of your app (.NET Core projects only).
+* `DotvvmStartup.cs` - a DotVVM configuration class (see the [Configuration](~/pages/concepts/configuration/overview) chapter).
 
-* **DotvvmStartup.cs** - a DotVVM configuration class (see the [Configuration](/docs/tutorials/basics-configuration/{branch}) chapter).
+* `Program.cs` (.NET Core only) - the entry-point of your app (.NET Core projects only).
 
-* **web.config** - a configuration file for ASP.NET and IIS. In ASP.NET Core projects, this file is optional, and is used only when you run the application inside IIS.
+* `web.config` (.NET Framework only) - a configuration file for ASP.NET and IIS. In ASP.NET Core projects, this file is optional, and is used only when you run the application inside IIS.
 
-<table>
-    <tr>
-        <td>
-            <h5 style="text-align: center">.NET Framework Project</h5>
-            <div style="text-align: center">
-                <img src="{imageDir}basics-project-structure-img1.png" alt="DotVVM Project Structure (.NET Framework Project)" />
-            </div>
-        </td>
-        <td>
-            <h5 style="text-align: center">.NET Core Project</h5>
-            <div style="text-align: center">
-                <img src="{imageDir}basics-project-structure-img2.png" alt="DotVVM Project Structure (.NET Core Project)" />
-            </div>
-        </td>
-    </tr>
-</table>
+.NET Core Project                                                   | .NET Framework Project 
+--------------------------------------------------------------------|--------------------------------------------------------------------------
+![DotVVM project Structure (.NET Core)](project-structure-img2.png) | ![DotVVM project structure (.NET Framework)](project-structure-img1.png)
 
+## Default convention for views and viewmodels
 
+Many people prefer to separate views and viewmodels in the `Views` and `ViewModels` folders. Also, there is a naming convention, that the file `Default.dothtml` corresponds to the `DefaultViewModel` class.
 
-## Views and ViewModels Folders
+If you install the [DotVVM for Visual Studio](https://www.dotvvm.com/get-dotvvm), it will respect that convention, so if you choose to add a new view in the `Views` folder, it will place the viewmodel in the `ViewModels` folder by default.
 
-Most people prefer to separate views and viewmodels in the **Views** and **ViewModels** folders. 
-Also, there is a naming convention, that the file **default.dothtml** corresponds to the **DefaultViewModel** class.
+> In Visual Studio, you can use the **F7** key to navigate from your view to your viewmodel, and **Shift-F7** to get back to your view.
 
-If you install the [DotVVM for Visual Studio](/landing/dotvvm-for-visual-studio-extension), it will respect that convention, so if you choose to add a new view in the *Views* folder, it will offer to add a viewmodel in the *ViewModels* folder.
+### Alternatives
 
-However, you can use any convention that suits your needs, e.g. place views together with viewmodels in the same folder.
+Some people prefer to create the `Pages` folder instead, and place the views along the viewmodels. You can even create a separate folder for every page, and also put related CSS or JavaScript files in this folder. 
 
-> In Visual Studio, you can use the **F7** key to navigate from your view to your viewmodel and **Shift-F7** to get back to your view.
+You can use any convention that suits your needs, e.g. place views together with viewmodels in the same folder.
+
+## See also
+
+* [Create new DotVVM project](~/pages/quick-starts/build/create-new-project)
+* [Configuration](~/pages/concepts/configuration/overview)
