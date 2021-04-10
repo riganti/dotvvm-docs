@@ -1,35 +1,21 @@
 # SPA (Single-page applications)
 
-DotVVM allows for building single page applications (SPA) with minimum effort. The SPAs integrate with the [master pages](/docs/tutorials/basics-master-pages/{branch}) mechanism.
+DotVVM allows for building single page applications (SPA) with minimum effort. The SPAs integrate with the [master pages](~/pages/concepts/layout/master-pages) mechanism.
 
-To create a SPA, you just need to replace the [ContentPlaceHolder](/docs/controls/builtin/ContentPlaceHolder/{branch}) with the [SpaContentPlaceHolder](/docs/controls/builtin/SpaContentPlaceHolder/{branch}). When navigated to another page which uses the same master page, the content inside `SpaContentPlaceHolder` will be replaced without unloading the entire page.
+To create a SPA, you just need to replace the [ContentPlaceHolder](~/controls/builtin/ContentPlaceHolder) with the [SpaContentPlaceHolder](~/controls/builtin/SpaContentPlaceHolder). 
 
-To navigate between the pages in the SPA, we recommend to use the [RouteLink](/docs/controls/builtin/RouteLink/{branch}) control. It builds the correct URLs
-with support of route parameters. Actually, we recommend to use the [RouteLink](/docs/controls/builtin/RouteLink/{branch})s everywhere, even if you are not using SPAs. You may want to change the URLs for individual routes without the need to modify dozens of pages in your application.
+When navigated to another page which uses the same master page, the content inside `SpaContentPlaceHolder` will be replaced without unloading the entire page. If the target page uses a different master page, a full navigation will be performed (the entire page will be replaced with the new one).
 
-## Using RouteLink
+## Navigation in SPA
 
-Let's have the following route registrations in the `DotvvmStartup.cs` file:
+To navigate between the pages in the SPA, you need to use the [RouteLink](~/controls/builtin/RouteLink) control. If the page contains the `SpaContentPlaceHolder` control, DotVVM will try to load the page in the SPA mode.
 
-```CSHARP
-config.RouteTable.Add("ArticleDetail", "Article/{Id}/{Title}", "article.dothtml");
-```
+## Redirects in SPA
 
-The `RouteLink` control is used this way:
+If you want to redirect the user to another page, you can use the `Context.RedirectToRoute` method. There are some optional parameters which can be used in the SPA applications:
 
-```DOTHTML
-<dot:RouteLink RouteName="ArticleDetail" Param-Id="{value: CurrentArticleId}" Param-Title="{value: CurrentArticleTitle}" />
-```
-
-The route parameters can be specified using properties starting with `Param-`. These won't appear in the page HTML, but they will used to compose the final URL.
-
-If the parameter is not specified here and the current page has a parameter with the same name, the value from the current page will be used.
-If the current page doesn't have this parameter, the default value from the route is used. If it is not specified, an empty string will be substituted for this parameter.
-
-In order to redirect to another page from the viewmodel code, you can call `Context.RedirectToUrl("url")` or
-`Context.RedirectToRoute("routeName", new { Param1 = param... })`.
-
-It will generate a correct URL, no matter whether you run inside SPA or not.
+* `replaceInHistory` can replace the History API stack, so the browser Back button won't go to the previous SPA state.
+* `allowSpaRedirect` can be used to disable SPA redirects; in such case, DotVVM will unload the current page and perform a full navigation to the new page.
 
 ## Changes to SPAs in DotVVM 3.0
 
@@ -41,7 +27,7 @@ In previous versions of DotVVM, there could be only one `SpaContentPlaceHolder` 
 
 In DotVVM 2.x, the default behavior of SPAs was using the hashbang format of the URL (e. g. `~/MySpaApp#!/Pages/Default`). When the user navigated to another page, the part of the URL after the URL fragment changed. It was possible to explicitly enable [History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API) which was using the classic format of the URL which is not recognizeable from the non-SPA application. 
 
-In DotVVM 3.0, the History API mode is the only option - the old way with hashbang URLs was removed from the framework. All requests pointing to the hashbang URL format will get redirected to the correct URLs, and History API will be used everywhere.
+In DotVVM 3.0, the **History API mode is the one and only option** - the old way with hashbang URLs was removed from the framework. All requests pointing to the hashbang URL format will get redirected to the correct URLs, and History API will be used everywhere.
 
 The following properties on `SpaContentPlaceHolder` were marked as obsolete:
 

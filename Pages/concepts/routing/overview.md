@@ -53,6 +53,24 @@ If you change the URLs in your app, you can use [redirection routes](~/pages/con
 
 > If you have a larger project, you may want to use conventions to [auto-discover routes](~/pages/concepts/routing/auto-discover-routes) instead of registering them one by one.
 
+## Using RouteLink to create links between pages
+
+To create hyperlinks to DotVVM pages, it is recommended to use the `RouteLink` controls:
+
+```DOTHTML
+<dot:RouteLink RouteName="ArticleDetail" 
+               Param-Id="{value: CurrentArticleId}" 
+               Param-Title="{value: CurrentArticleTitle}" />
+```
+
+The route parameters can be specified using properties starting with `Param-`. If the parameter is not specified, and the current page has a parameter with the same name, the value from the current page will be used.
+
+If the current page doesn't have this parameter, the default value from the route will be used. If no default value for the parameter is not specified, an empty string will be substituted for this parameter.
+
+## Redirect to another route
+
+If you want to redirect the user to another page from the viewmodel code, you can call `Context.RedirectToRoute("routeName", new { Param1 = param... })`.
+
 ## See also
 
 * [Parameters](~/pages/concepts/routing/parameters)
