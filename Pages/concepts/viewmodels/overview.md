@@ -1,16 +1,16 @@
 # Viewmodels overview
 
-In **DotVVM**, the **viewmodel** can be any JSON-serializable class. The viewmodel does two important things:
+The viewmodel has two main responsibilities:
 
-+ It represents the state of the page (values in all form fields, options for ComboBoxes etc.).
++ **It manages the state of the page** - i. e. values in all form fields, rows in a [GridView](~/controls/builtin/GridView), items in a [ComboBox](~/controls/builtin/ComboBox), and so on.
 
-+ It defines commands which can be invoked by the user (e.g. button clicks). 
++ **It processes commands invoked by the user** - e. g. defines what happens when the user clicks on a [Button](~/controls/builtin/Button). 
 
 ```CSHARP
 public class CalculatorViewModel 
 {
     // The state of the page is represented by public properties.
-    // If you serialize the viewmodel, you should have all the information to be able to restore the page in the exactly same state later.
+    // If you serialize the viewmodel, you should have all the information to restore the page exactly same state in the future.
 
     public int Number1 { get; set; }
 
@@ -20,7 +20,7 @@ public class CalculatorViewModel
 
 
     // The commands that can be invoked from the page are public methods.
-    // They can modify the state of the viewmodel.
+    // They can access the state of the viewmodel and change it.
 
     public void Calculate() 
     {
@@ -29,33 +29,77 @@ public class CalculatorViewModel
 }
 ```
 
-## Viewmodel limitations
+> Be careful. The viewmodels viewmodels are sent to the client in the JSON format - any property can be changed by the user even though the UI doesn't allow such change. 
 
-The state part of the viewmodel is done using public properties. Please note that the **viewmodel must be JSON-serializable**. 
+> Always [validate](~/pages/concepts/validation/overview) that the values submitted by the user are correct, and that the user has appropriate permissions to perform the operation. 
 
-Therefore, a "DotVVM-friendly" viewmodel can contain properties of these types:
+> Do not put sensitive information in the viewmodels. Check out the [viewmodel protection](viewmodel-protection) chapter for more details.
 
-* `string`, `Guid`, `bool`, `int` and other numeric types and `DateTime`, including nullable ones (e.g. `decimal?`)
+## Types supported in viewmodels
 
-* enum
+The state of the page is represented using public properties. Please note that the **viewmodel must be JSON-serializable**, because DotVVM needs to send it to the browser together with the page HTML. 
 
-* another DotVVM-friendly object
+Therefore, the viewmodel can contain properties of the following types:
 
-* collections (array, `List<T>`) of DotVVM-friendly objects, enums or primitive types
+* supported primitive types
+    * `string`
+    * numeric types - `int` and `double` are preferred (you can use `byte`, `sbyte`, `short`, `ushort`, `uint`, `long`, `ulong`, `float`, and `decimal`, but the precision can be lost during the JSON serialization)
+    * `bool`
+    * `Guid`
+    * `DateTime`
+    * enums
+* nullable versions of supported primitive types (e. g. `int?`, `DateTime?`...)
+* objects with properties of supported types, and a public parameterless constructor
+* collections (array, `List<T>`) of supported objects, or primitive types
 
 > Please note that the `TimeSpan` and `DateTimeOffset` are not supported in the current version. 
 
-## DotvvmViewModelBase
+## Base class
 
-We recommend to inherit all viewmodels from `DotvvmViewModelBase`. It is not required - any class can be the viewmodel. 
+Viewmodels in DotVVM commonly inherit from the `DotvvmViewModelBase` class. Althought it is not mandatory, we recommend to follow this convention.
 
-But the `DotvvmViewModelBase` class gives you several useful mechanisms that you may need (e.g. the `Context` property). If you cannot use it, consider using the `IDotvvmViewModel` interface to be able to get the `Context` property and the viewmodel events.
+The `DotvvmViewModelBase` class offers several useful mechanisms that you may need:
 
-If the viewmodel derives from the `DotvvmViewModelBase`, you can override the `Init`, `Load` and `PreRender` methods. 
+* The [`Context` property](request-context) gives you information about the current HTTP request.
+* You can override the `Init`, `Load` and `PreRender` methods that are called during the viewmodel lifecycle.
 
-In the following diagram, you can see the lifecycle of the HTTP request. The left side shows what's going on when the client access the page first time (the HTTP GET request). The right side shows what happens during the postback (e.g. when the user clicks a button to call a method in the viewmodel).
+If you cannot use the `DotvvmViewModelBase` base class, you can implement the `IDotvvmViewModel` interface to get a similar functionality.
 
-<p><img src="{imageDir}basics-viewmodels-img1.png" alt="DotVVM Page Lifecycle" /></p>
+## Viewmodel lifecycle
 
-> Sending the entire viewmodel to the server and back may be inefficient in many real-world scenarios. DotVVM offers different ways of calling methods on the server which don't require presence of the viewmodel. See the [Optimizing PostBacks](/docs/tutorials/basics-optimizing-postbacks/{branch}) page for more info.
+In the following diagram, you can see the lifecycle of the HTTP request in DotVVM. 
 
+The left side shows what's going on when the client access the page first time (the HTTP GET request). The right side shows what happens when a [command](~/pages/concepts/respond-to-user-actions/commands) is invoked (e.g. when the user clicks a button to call a method in the viewmodel).
+
+![Viewmodel lifecycle](viewmodels-img1.png)
+
+## Other features
+
+DotVVM supports [dependency injection](~/pages/concepts/configuration/dependency-injection) in the viewmodels - it is easy for the viewmodels to request any services they may need in their commands. We recommend to declare the injected services as private fields in the viewmodel class - this will exclude them from the serialization automatically.
+
+```CSHARP
+public class MyViewModel : DotvvmViewModelBase 
+{
+
+    private MyService _myService;
+
+    public MyViewModel(MyService myService)
+    {
+        this._myService = myService;
+    }
+
+}
+```
+
+If you need to store sensitive information in the viewmodel, or you want to sign some properties to be sure the users didn't change them, see the [viewmodel protection](viewmodel-protection) chapter for more details.
+
+You can instruct DotVVM to exclude some properties from serialization, or to transfer them only in one way (e. g. from the server to the client). This can be configured using the [Bind attribute](binding-direction).
+
+## See also
+
+* [Request context](request-context)
+* [Viewmodel best practices](work-with-data/best-practices)
+* [GridView data sets](work-with-data/gridview-data-sets)
+* [Dependency injection](~/pages/concepts/configuration/dependency-injection)
+* [Binding direction](binding-direction)
+* [Viewmodel protection](viewmodel-protection)
