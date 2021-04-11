@@ -1,9 +1,8 @@
 # Exception filters
 
-If you want to handle exceptions, there is a class called `ExceptionFilterAttribute`.
-It derives from the `ActionFilterAttribute` and it adds the `OnCommandExceptionAsync` method. 
+If you want to handle exceptions in a generic way using a [filter](overview), there is a class called `ExceptionFilterAttribute`. It derives from the `ActionFilterAttribute`, and provides the `OnCommandExceptionAsync` method, which is a common place where you can log or handle any exceptions. 
 
-The `OnCommandExceptionAsync` is called whenever an error occurs in a method triggered by the [Command Binding](/docs/tutorials/basics-command-binding/{branch}) or [Static Command Binding](/docs/tutorials/basics-static-command-binding/{branch}).
+The `OnCommandExceptionAsync` is called whenever an error occurs in a method triggered by a [command](~/pages/concepts/respond-to-user-actions/commands) or a [static command](~/pages/concepts/respond-to-user-actions/static-commands).
 
 The `ActionFilterAttribute` class then defines the `OnPageExceptionAsync` and `OnPresenterExceptionAsync` methods. These methods are called when any other exception occurs when the page or presenter is being processed. In most cases, it catches the exceptions in the `Init`, `Load` and `PreRender` in the viewmodel, and the exceptions that occur during the rendering or serialization phases. 
 
@@ -48,7 +47,7 @@ namespace DotvvmDemo
 
 ## Handle exceptions from all commands
 
-In many apps, the commands sometimes end with an exception. However, you don't always want to show the error page to the user. You want to log the exception and display an error message to the user.
+In many apps, the commands sometimes end with an exception. However, you don't always want to show the error page to the user. You want to log the exception and display some friendly error message to the user.
 
 In such cases you can use something like this:
 
@@ -119,3 +118,9 @@ namespace DotvvmDemo
     }
 }
 ```
+
+## See also
+
+* [Filters](overview)
+* [Action filters](action-filters)
+* [Authentication and authorization](~/pages/concepts/security/authentication-and-authorization/overview)
