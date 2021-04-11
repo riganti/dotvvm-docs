@@ -54,13 +54,15 @@
 	  <DocPageMenuItem RouteName="value-binding" PageName="Value binding" LegacyPaths="basics-value-binding" />
 	  <DocPageMenuItem RouteName="resource-binding" PageName="Resource binding" LegacyPaths="basics-resource-binding" />
 	  <DocPageMenuItem RouteName="binding-context" PageName="Binding context" LegacyPaths="basics-binding-context" />
+	  <DocPageMenuItem RouteName="supported-expressions" PageName="Supported expressions" />
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="respond-to-user-actions" PageName="Respond to user actions">
-	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-optimizing-postbacks" />
+	  <DocPageMenuItem RouteName="overview" PageName="Overview" />
 	  <DocPageMenuItem RouteName="commands" PageName="Commands" LegacyPaths="basics-command-binding" />
 	  <DocPageMenuItem RouteName="static-commands" PageName="Static commands" LegacyPaths="basics-static-command-binding" />
 	  <DocPageMenuItem RouteName="static-command-services" PageName="Static command services" LegacyPaths="basics-static-command-services" />
+	  <DocPageMenuItem RouteName="optimize-command-performance" PageName="Optimize command performance" LegacyPaths="basics-optimizing-postbacks" />
 	  <DocPageMenuItem RouteName="postback-handlers" PageName="Postback handlers" LegacyPaths="basics-postback-handlers" />
 	  <DocPageMenuItem RouteName="concurrency-mode" PageName="Concurrency mode" LegacyPaths="basics-postback-concurrency-mode" />
 	  <DocPageMenuItem RouteName="rest-api-bindings" PageName="REST API bindings">

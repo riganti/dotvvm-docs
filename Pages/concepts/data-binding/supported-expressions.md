@@ -1,0 +1,136 @@
+# Supported expressions
+
+DotVVM translates [value](value-binding) binding expressions into JavaScript so they can be evaluated in the browsed. Therefore, not all expressions can be used in the bindings.
+
+The [static command](~/pages/concepts/respond-to-user-actions/static-commands) expressions are also translated to JavaScript. If there is any method that cannot be translated to JavaScript, the static command will make a request to the server to invoke the method and obtain its return value. The method must be marked with the `[AllowStaticCommand]` attribute.
+
+The [resource](resource-binding) and [command](~/pages/concepts/respond-to-user-actions/commands) bindings are not translated into JavaScript, but they are limited to the syntax constructs that can be used in binding expressions. 
+
+## Syntax constructs
+
+* Member access
+   * `SomeProperty`
+   * `SomeProperty.OtherProperty`
+* Access the parent [binding contexts](binding-context)
+  * `_root.SomeProperty`
+  * `_parent.SomeProperty`
+* Collections and array elements access
+   * `SomeCollection[6]`
+   * `SomeCollection[6].OtherProperty`
+* Access the collection metadata (if the current [binding context](binding-context) is a collection)
+   * `_collection.Index`
+   * `_collection.IsOdd`, `_collection.IsEven`...
+* Binary operations
+   * `SomeProperty >= 0`
+   * `SomeProperty + 1`
+   * `SomeProperty != OtherProperty`
+* Ternary conditional operator
+   * `SomeProperty ? "some string" : "other string"`
+* Method invocation (only supported methods)
+   * `SomeMethod(argument)`
+* Block expression
+   * `(expression1; expression2; expression3)`
+   * *Note*: This is a composition of supported expressions within one data-binding. DotVVM uses parentheses `( ... )` to enclose expressions as compared to C#, which uses curly braces `{ ... }`. Result type of any composite expression is determined by the last child expression.
+* Lambda functions (**new in version 3.0**)
+   * `(int intArg, string strArg) => SomeMethod(intArg, strArg)`
+   * *Note*: Type inference for lambda parameters is not available in version 3.0, therefore type information needs to be explicitly supplied together with lambda parameters definition. Type inference is an upcoming feature in DotVVM 3.1.
+* Local variables (**new in version 3.0**)
+   * `var myVariable = SomeFunction(arg1, arg2); SomeMethod(myVariable)`
+   * *Note*: Variables are by design single-assignable (immutable). Variables may shadow property names and previously defined variables.
+
+### .NET methods supported in value bindings
+
+DotVVM can translate several .NET methods on basic types or collections to JavaScript, so you can safely use them in value bindings.
+
+#### String methods
+* `String.Length`
+
+#### Collection methods
+* `ICollection.Count` and `Array.Length`
+
+#### Enum methods
+* `Enums.GetNames<TEnum>()`
+
+#### Task methods
+* `Task<T>.Result`
+
+#### Formatting
+* `String.Format(format, arg1 [, arg2, [ arg3]])`
+* `String.Format(format, argumentArray)`
+* `Object.ToString()`
+* `Convert.ToString()`
+* `DateTime.ToString()` and `DateTime.ToString(format)`
+* <code><em>numericType</em>.ToString()</code> and <code><em>numericType</em>.ToString(format)</code>
+
+#### Nullable types
+* `Nullable<T>.HasValue`
+* `Nullable<T>.Value`
+
+#### LINQ methods
+* `Enumerable.Select<T,U>(IEnumerable<T> collection, Func<T,U> selector)`
+* `Enumerable.Where<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
+* *Note*: These methods are **new in version 3.0**.
+
+#### REST API binding methods
+* `Api.RefreshOnChange`
+* `Api.RefreshOnEvent`
+* `Api.PushEvent` 
+* *Note*: See [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api/bindings/overview) for more info
+
+### Provide custom method translators
+
+It is possible to register custom translators for any method. See [Provide custom JavaScript translators](~/pages/concepts/control-development/provide-custom-method-translators) for more information.  
+
+### Upcoming support for .NET methods in DotVVM 3.1
+
+We plan to add support for the following methods in DotVVM 3.1.
+
+#### LINQ methods
+* `Enumerable.All<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
+* `Enumerable.Any<T>(IEnumerable<T> collection)`
+* `Enumerable.Any<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
+* `Enumerable.Concat<T>(IEnumerable<T> first, IEnumerable<T> second)`
+* `Enumerable.Distinct<T>(IEnumerable<T> collection)`
+   * *Note*: this method is restricted to primitive types.
+* `Enumerable.FirstOrDefault<T>(IEnumerable<T> collection)` and `Enumerable.FirstOrDefault<T>(IEnumerable<T> collections, Func<T,bool> predicate)`
+* `Enumerable.LastOrDefault<T>(IEnumerable<T> collection)` and `Enumerable.LastOrDefault<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
+* `Enumerable.Max<T>(IEnumerable<T> collection)` and `Enumerable.Max<T,U>(IEnumerable<T> collection, Func<T,U> selector)`
+   * *Note*: these methods are restricted to numeric types
+* `Enumerable.Min<T>(IEnumerable<T> collection)` and `Enumerable.Min<T,U>(IEnumerable<T> collection, Func<T,U> selector)`
+   * *Note*: these methods are restricted to numeric types
+* `Enumerable.OrderBy<T,U>(IEnumerable<T> collection, Func<T,U> selector)`
+   * *Note*: this method is restricted to primitive types
+* `Enumerable.OrderByDescending<T,U>(IEnumerable<T> collection, Func<T,U> selector)`
+   * *Note*: this method is restricted to primitive types
+* `Enumerable.Skip<T>(IEnumerable<T> collection, int count)`
+* `Enumerable.Take<T>(IEnumerable<T> collection, int count)`
+* `Enumerable.ToArray<T>(IEnumerable<T> collection)`
+* `Enumerable.ToList<T>(IEnumerable<T> collection)`
+
+#### String methods
+* `String.Contains(string value)` and `String.Contains(char value)`
+* `String.EndsWith(string value)` and `String.EndsWith(char value)`
+* `String.IndexOf(string value)` and `String.IndexOf(char value)`
+* `String.IndexOf(string value, int startIndex)` and `String.IndexOf(char value, int startIndex)`
+* `String.IsNullOrEmpty(string value)`
+* `String.Join(string separator, IEnumerable<string> values)` and `String.Join(char separator, IEnumerable<string> values)`
+* `String.LastIndexOf(string value)` and `String.LastIndexOf(char value)`
+* `String.LastIndexOf(string value, int startIndex)` and `String.LastIndexOf(char value, int startIndex)`
+* `String.Replace(char oChar, char nChar)` and `String.Replace(string oStr, string nStr)`
+* `String.Split(char separator, StringSplitOptions = StringSplitOptions.None)` and `String.Split(string separator, StringSplitOptions = StringSplitOptions.None)`
+* `String.StartsWith(string value)` and `String.StartsWith(char value)`
+* `String.ToLower()`
+* `String.ToUpper()`
+
+#### Math methods
+* Basic: `Math.Abs`, `Math.Exp`, `Math.Max`, `Math.Min`, `Math.Pow` `Math.Sign`, `Math.Sqrt`
+* Rounding: `Math.Ceiling`, `Math.Floor`, `Math.Round`, `Math.Trunc`
+* Logarithmic: `Math.Log`, `Math.Log10`
+* Trigonometric: `Math.Acos`, `Math.Asin`, `Math.Atan`, `Math.Atan2`, `Math.Cos`, `Math.Cosh`, `Math.Sin`, `Math.Sinh`, `Math.Tan`, `Math.Tanh`
+
+## See also
+
+* [Data-binding overview](~/pages/concepts/data-binding/overview)
+* [Respond to user actions](~/pages/concepts/respond-to-user-actions/overview)
+* [Binding context](~/pages/concepts/data-binding/binding-context)
+* [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api/bindings/overview)

@@ -49,7 +49,7 @@ It is not possible to use the binding expression in the HTML attribute value in 
 <a class="this-does-not-work {value: DoNotUseThis}">...</a>
 ```
 
-However, you can use expressions inside the binding, so you can combine the values easily:
+However, you can use [expressions](supported-expressions) inside the binding, so you can combine the values easily:
 
 ```DOTHTML
 <!-- This works - the whole attribute is a binding expression -->
