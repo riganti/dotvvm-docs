@@ -134,3 +134,4 @@ See the [Globalization](~/pages/concepts/localization-and-cultures/multi-languag
 * [Value binding](~/pages/concepts/data-binding/value-binding)
 * [Binding context](~/pages/concepts/data-binding/binding-context)
 * [Respond to user actions](~/pages/concepts/respond-to-user-actions/overview)
+* [Video: Server rendering - value vs resource binding](https://www.youtube.com/watch?v=FLIcYBaja-I&ab_channel=DotVVM)

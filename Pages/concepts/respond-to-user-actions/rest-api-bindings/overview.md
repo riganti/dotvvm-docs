@@ -1,35 +1,73 @@
 # Overview
 
-DotVVM allows interacting with REST APIs directly from the DOTHTML views. You can fill [GridView](/docs/controls/builtin/GridView/{branch}), [Repeater](/docs/controls/builtin/Repeater/{branch}) and other controls with data from the REST API, and use [Button](/docs/controls/builtin/Button/{branch}) or other controls to call REST API methods as a response to user action. It is also possible to refresh data that have already been loaded (in the `GridView` for example) based on a change of a particular viewmodel property, or explicitly.
+DotVVM allows interacting with REST APIs directly from the DotHTML views. 
 
-## Building the REST API
+For example, you can load data into [GridView](~/controls/builtin/GridView), [Repeater](~/controls/builtin/Repeater), and other controls directly from a REST API, or you can use [Button](~/controls/builtin/Button) or other controls to call REST API methods in response to user actions. 
 
-It is possible to consume an external REST API, but in most scenarios, you will be consuming your own API. This API can be build in any technology, the most common scenario for .NET developers will be **ASP.NET Web API** or **ASP.NET MVC Core**. For these two technologies, DotVVM includes special NuGet packages that allow to reuse objects between the API controllers and DotVVM viewmodels.
+It is also possible to refresh data that have already been loaded (in the `GridView` for example) based on a change of a particular viewmodel property, or explicitly.
 
-> See [Building own REST API for REST API Bindings](/docs/tutorials/basics-rest-api-bindings-building-own-api/{branch}) for more information.
+## Build the REST API
 
-The API needs to expose Swagger JSON metadata so DotVVM can generate client classes. 
+It is possible to consume an external REST API from DotVVM, but in most scenarios you will probably be calling your own API. 
 
-## Registering the REST API and generating the clients
+This API can be built in any technology, the most common scenario for .NET developers will be using [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-5.0) or [ASP.NET Web API](https://docs.microsoft.com/en-us/aspnet/web-api/). For these two technologies, DotVVM offers special NuGet packages which allow to reuse data models between the API controllers and DotVVM viewmodels.
 
-To start using the API, you need to register it using [DotVVM Command Line](/docs/tutorials/advanced-dotvvm-command-line/{branch}) and generate C# and TypeScript client classes. The C# client class can be used in the viewmodels to access the API. The TypeScript class is used on the client side by DotVVM and binding expressions which use the API are using this class.
+In order to consume the API from DotVVM, the API needs to expose [Open API](https://www.openapis.org/) metadata. 
 
-To register the API, run the following command in the project directory:
+> See [Provide API metadata](provide-api-metadata) chapter for more information.
+
+## Register the REST API and generate the clients
+
+To start using the API, you need to **generate C# and TypeScript clients**, and **register them** in the application.
+
+The C# client class can be used in the viewmodels to access the API if you need to call it from the server. The TypeScript classes will be used on the client-side by DotVVM.
+
+### Prerequisites
+
+In order to generate the clients, you will need the following runtimes installed. 
+
+* [.NET Core SDK](https://dotnet.microsoft.com/download)
+* [Node.js](https://nodejs.org/en/)
+
+> These runtimes are not necessary for _running_ the app, but they are necessary to generate and compile the client classes - they need to be installed on the developer's machine.
+
+If you have the runtimes, install the [DotVVM CLI](~/pages/concepts/cli/install) and TypeScript compiler (`tsc`):
 
 ```
+dotnet tool install -g DotVVM.CommandLine
+npm install -g typescript
+```
+
+### Configure TypeScript in the project
+
+If you haven't used TypeScript in the project, you'll need to add support for it first.
+
+**Option 1: Compile TypeScript via MSBuild**
+
+Run `Install-Package Microsoft.TypeScript.MSBuild` in the Package Manager Console window to install TypeScript NuGet package. It should compile all `*.ts` files automatically as part of the project build.
+
+**Option 2: Build with `tsc`**
+
+If you prefer to compile the scripts manually, or if you are using webpack or other bundler, make sure you have `tsconfig.json` file present in the project directory. It can be created by running the following command:
+
+```
+cd <your-project-directory>
+tsc init
+```
+
+### Generate the clients
+
+To generate the clients, navigate to the project directory and run the following command:
+
+```
+cd <your-project-directory>
 dotnet dotvvm api create http://localhost:43852/swagger/v1/swagger.json MyProject.Api Api/ApiClient.cs wwwroot/Scripts/ApiClient.ts
 ```
 
-* The first argument is the URL of the Swagger JSON metadata. 
+* The first argument is the URL of the Open API metadata. 
 * The second argument is the namespace in which the client classes will be declared.
 * The third argument is the path to the file in which the C# client classes will be generated.
 * The fourth argument is the path to the file in which the TypeScript classes will be generated.
-
-If you haven't been using TypeScript in the project, add the [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) file in the root folder of the project and install the TypeScript command-line compiler (you will need [Node.js](https://nodejs.org/en/) for this):
-
-```
-npm install typescript -g
-```
 
 Finally, add the following registration in `DotvvmStartup.cs` file:
 
@@ -42,29 +80,36 @@ config.RegisterApiClient(typeof(Api.Client), "http://localhost:43852/", "/Script
 * The third argument is relative URL to the JavaScript file of the TypeScript client class.
 * The fourth argument is the name of variable which will be used in DotVVM views.
 
-## Updating the generated clients
+### Update the generated clients
 
-Whenever the REST API changes, you should generate the client classes so they exactly match the interface of the REST API. To do that, run the following command in the project directory:
+Whenever the REST API changes, you should re-generate the client classes so they exactly match the interface of the REST API. To do that, run the following command in the project directory:
 
 ```
 dotnet dotvvm api regen
 ```
 
-This will refresh all registered APIs. If you want to update only a specific API, add the URL of Swagger JSON metadata at the end of the command above.
+This will refresh all registered APIs. If you have registered multiple APIs in the project and want to update only a specific API, add the URL of Swagger JSON metadata at the end of the command above.
 
-## Using the API in binding expressions
+## Use the API
 
-The REST APIs can be used in [Value Binding](/docs/tutorials/basics-value-binding/{branch}) and in [Static Command Binding](/docs/tutorials/basics-static-command-binding/{branch}). 
+The REST APIs can be used in [value bindings](~/pages/concepts/data-binding/value-bindings) and in [static commands](../static-commands). 
 
-You must not change the default `Newtonsoft.Json` settings for serialization/deserialization. This is due to the fact that the same settings are currently used within the generated API bindings. If you require changes to the settings, you can achieve this by using a different overload of `JsonConvert.SerializeObject` or `JsonConvert.DeserializeObject` and pass your settings as an additional parameter.
+You must not change the default `Newtonsoft.Json` settings for serialization and deserialization. This is due to the fact that the same settings are currently used within the generated API bindings. If you require changes to the settings, you can achieve this by using a different overload of `JsonConvert.SerializeObject` or `JsonConvert.DeserializeObject` and pass your settings as an additional parameter.
 
-## Loading data from API
+### Load data from API
 
-You can use the variable registered in `DotvvmStartup.cs` in value bindings to load data into [GridView](/docs/controls/builtin/GridView/{branch}), [Repeater](/docs/controls/builtin/Repeater/{branch}), [ComboBox](/docs/controls/builtin/ComboBox/{branch}) or other controls. The collection doesn't need to be declared in the viewmodel and it is not transferred on postbacks, which significantly reduces the amount of data being sent to the server.
+You can use the variable registered in `DotvvmStartup.cs` in value bindings to load data into [GridView](~/controls/builtin/GridView), [Repeater](~/controls/builtin/Repeater), [ComboBox](~/controls/builtin/ComboBox), or other controls. 
+
+The collection doesn't need to be declared in the viewmodel, which significantly reduces the amount of data sent to the server.
 
 ```DOTHTML
-<dot:ComboBox DataSource="{value: _myApi.GetCountries()}" SelectedValue="{value: CountryId}" ItemTextBinding="{value: name}" ItemValueBinding="{value: id}" />
+<dot:ComboBox DataSource="{value: _myApi.GetCountries()}" 
+              SelectedValue="{value: CountryId}" 
+              ItemTextBinding="{value: name}" 
+              ItemValueBinding="{value: id}" />
 ```
+
+It is possible to take advantage of the HTTP-level caching. If the REST API provides a `Cache-Control` header, DotVVM won't even make a request to the API - the data will be fetched from the browser cache. 
 
 <!-- 
 ### Using GridViewDataSet
@@ -113,36 +158,39 @@ public GridViewDataSet<Company> GetCompanies([FromQuery, AsObject(typeof(ISortin
 }
 ``` -->
 
-## Invoking actions on REST API
+### Invoke actions on REST API
 
-DotVVM can also invoke any methods on REST API using [Button](/docs/controls/builtin/Button/{branch}) or other controls which are capable of invoking commands.
+DotVVM can also invoke any methods on REST API using [Button](~/controls/builtin/Button) or other controls.
 
-You can use [Static Command Binding](/docs/tutorials/basics-static-command-binding/{branch}) to call any REST API method. 
+You can use [static command](../static-commands) to call any REST API method. 
 
 ```DOTHTML
 <dot:Button Text="Save" Click="{staticCommand: CompanyId = _myApi.SaveCompany(Company)}" />
 ```
 
-## Refreshing data loaded from REST API
+### Refresh data loaded from REST API
 
-Imagine a page displaying a grid of companies and allowing the users to edit these records. Both loading and saving changes uses REST API bindings. When the company is modified, the grid needs to be refreshed. 
+Imagine a page displaying a grid of companies, and allowing the users to edit these records. Both loading and saving changes uses REST API bindings. 
 
-DotVVM provides both automatic and manual ways to refresh data. 
+When the company is modified, the grid needs to be refreshed. DotVVM provides both automatic and manual ways to refresh data. 
 
-### Automatic refresh based on URL
+#### Automatic refresh based on URL
 
 DotVVM refreshes all binding expressions which use `HTTP GET` methods whenever another HTTP method (such as `POST`, `PUT` or `DELETE`) was posted to the same URL. 
 
-If you load the `GridView` using `GET /api/companies` and the save button calls `POST /api/companies`, the `GridView` will be refreshed automatically. 
+If you load the `GridView` using `GET /api/companies`, and the save button calls `POST /api/companies`, the `GridView` will be refreshed automatically. 
 
-### Manual refresh based on viewmodel property
+#### Manual refresh based on viewmodel property
 
 To make the REST API call refreshed when a viewmodel property changes, you can wrap the call on API binding expression variable into `_api.RefreshOnChange(apiCall, Property)`.
 
-For example, you can refresh contents of a [GridView](/docs/controls/builtin/GridView/{branch}) based on country selected in a [ComboBox](/docs/controls/builtin/ComboBox/{branch}):
+For example, you can refresh contents of a `GridView` based on country selected in a `ComboBox`:
 
 ```DOTHTML
-<dot:ComboBox DataSource="{value: _myApi.GetCountries()}" SelectedValue="{value: CountryId}" ItemTextBinding="{value: name}" ItemValueBinding="{value: id}" />
+<dot:ComboBox DataSource="{value: _myApi.GetCountries()}" 
+              SelectedValue="{value: CountryId}" 
+              ItemTextBinding="{value: name}" 
+              ItemValueBinding="{value: id}" />
 
 <dot:GridView DataSource="{value: _api.RefreshOnChange(_myApi.GetSales(CountryId), CountryId)}">
     ...
@@ -152,21 +200,21 @@ For example, you can refresh contents of a [GridView](/docs/controls/builtin/Gri
 If you need to refresh data based on multiple properties, you can pass an expression that uses these properties as a second argument:
 
 ```DOTHTML
-<dot:GridView DataSource="{value: _api.RefreshOnChange(_myApi.GetSales(CountryId, TypeName), CountryId + '/' + TypeName)}">
+<dot:GridView DataSource="{value: _api.RefreshOnChange(_myApi.GetSales(CountryId, TypeName), CountryId + '---' + TypeName)}">
     ...
 </dot:GridView>
 ```
 
-Whenever the value of the second argument changes, the API call will be refreshed.
+Whenever the value of the second argument changes, the API will be called again and the new value will be used.
 
-### Manual refresh on explicit events
+#### Manual refresh on explicit events
 
-If you need to refresh the data explicitly on some event (a button click for example), you can wrap the API call in `_api.RefreshOnEvent(apiCall, YourEventName)`. You can trigger the event by calling `_api.PushEvent(YourEventName)`. 
+If you need to refresh the data explicitly on some event (a button click for example), you can wrap the API call in `_api.RefreshOnEvent(apiCall, "YourEventName")`. You can trigger the event by calling `_api.PushEvent("YourEventName")`. 
 
 ```DOTHTML
-<dot:Button Text="Refresh" Click="{staticCommand: _api.PushEvent('LoadCompanies')}" />
+<dot:Button Text="Refresh" Click="{staticCommand: _api.PushEvent("LoadCompanies")}" />
 
-<dot:GridView DataSource="{value: _api.RefreshOnEvent(_myApi.GetCompanies(), 'LoadCompanies')}">
+<dot:GridView DataSource="{value: _api.RefreshOnEvent(_myApi.GetCompanies(), "LoadCompanies")}">
     ...
 </dot:GridView>
 ```
@@ -174,5 +222,12 @@ If you need to refresh the data explicitly on some event (a button click for exa
 You can use `;` operator to combine multiple statements in the commands, so it is possible for example to save and refresh:
 
 ```DOTHTML
-<dot:Button Text="Save" Click="{staticCommand: _myApi.SaveCompany(Company); _api.PushEvent('LoadCompanies')}" />
+<dot:Button Text="Save" Click="{staticCommand: _myApi.SaveCompany(Company); _api.PushEvent("LoadCompanies")}" />
 ```
+
+## See also
+
+* [Provide API metadata](provide-api-metadata)
+* [DotVVM CLI](~/pages/concepts/cli/install)
+* [Value binding](~/pages/concepts/data-binding/value-binding)
+* [Static commands](../static-commands)

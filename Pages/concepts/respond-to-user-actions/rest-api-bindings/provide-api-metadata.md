@@ -1,59 +1,30 @@
 # Provide API metadata
 
-> This feature is new in **DotVVM 2.0**. See [REST API Bindings](/docs/tutorials/basics-rest-api-bindings/{branch}) for more details about configuration.
+In order to [call REST API](overview) from DotVVM, the API needs to provide [Open API](https://www.openapis.org/) metadata.
 
-If you decide to build the REST API using **ASP.NET Web API** or **ASP.NET MVC Core**, there are NuGet packages you can use to allow sharing objects between DotVVM application and the REST API.
+## ASP.NET Core or ASP.NET Web API
 
-These NuGet packages work with **Swashbuckle**, a popular library that exposes Swagger JSON metadata. 
+If you decide to build the REST API using [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-5.0) or [ASP.NET Web API](https://docs.microsoft.com/en-us/aspnet/web-api/), there are NuGet packages you can use to allow sharing data models between DotVVM application and the REST API.
 
-## Installing Swashbuckle extensions for DotVVM (OWIN)
+These NuGet packages work with [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore), a popular library that generates Open API metadata. 
 
-First, make sure you have Swashbuckle installed and configured in your project. 
+# [Install Swashbuckle ASP.NET Core](#tab/aspnetcore)
 
-* [Swashbuckle - classic ASP.NET](https://github.com/domaindrivendev/Swashbuckle) 
-
-Then, install the following NuGet package to the REST API project:
-
-```
-Install-Package DotVVM.Api.Swashbuckle.Owin
-```
-
-## Installing Swashbuckle extensions for DotVVM (ASP.NET Core)
-
-First, make sure you have Swashbuckle installed and configured in your project.
+First, make sure you have `Swashbuckle` installed and configured in your project.
 
 * [Swashbuckle - ASP.NET Core](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
-* [Swashbuckle - ASP.NET Core - Newtonsoft](https://www.nuget.org/packages/Swashbuckle.AspNetCore.Newtonsoft/) (This package is necessary only for DotVVM 2.5+ projects that target ASP.NET Core 2.x, or that are using Newtonsoft.Json serializer with ASP.NET Core 3.x)
+* [Swashbuckle - ASP.NET Core - Newtonsoft](https://www.nuget.org/packages/Swashbuckle.AspNetCore.Newtonsoft/) (_Optional: This package is necessary only for DotVVM 2.5+ projects that target ASP.NET Core 2.x, or projects using `Newtonsoft.Json` serializer with ASP.NET Core 3.x_)
 
 Then install the following NuGet package to the REST API project:
 
 ```
 Install-Package DotVVM.Api.Swashbuckle.AspNetCore
+
+# optional - install only if you are using Newtonsoft.Json
+Install-Package Swashbuckle.AspNetCore.Newtonsoft
 ```
 
-## Configure Swashbuckle extensions for DotVVM (OWIN)
-
-To enable DotVVM integration, call the `EnableDotvvmIntegration` extension method in the Swashbuckle configuration.
-
-In OWIN, this is typically done in `SwaggerConfig.cs` file.
-
-```CSHARP
-config.EnableSwagger(c =>
-    {
-        ...
-        c.EnableDotvvmIntegration(opt => 
-        {
-            // TODO: configure DotVVM Swashbuckle options    
-        });
-    })
-    .EnableSwaggerUi(c => { ... });
-```
-
-## Configure Swashbuckle extensions for DotVVM (ASP.NET Core)
-
-To enable DotVVM integration, call the `EnableDotvvmIntegration` extension method in the Swashbuckle configuration.
-
-In ASP.NET Core, this is configured in `Startup.cs` file.
+To enable DotVVM integration, call the `EnableDotvvmIntegration` extension method in the Swashbuckle configuration in `Startup.cs` file.
 
 ```CSHARP
 services.Configure<DotvvmApiOptions>(opt => 
@@ -67,35 +38,51 @@ services.AddSwaggerGen(options => {
 });
 ```
 
-Additionally, in case of DotVVM 2.5 or newer with ASP.NET Core 2.x or ASP.NET Core 3.x with Newtonsoft.Json serializer, you also need to call `AddSwaggerGenNewtonsoftSupport`.
+**Optional**: In case of DotVVM 2.5 or newer with ASP.NET Core 2.x, or ASP.NET Core 3.x with `Newtonsoft.Json` serializer, you also need to call `AddSwaggerGenNewtonsoftSupport`.
 
 ```CSHARP
 services.AddSwaggerGenNewtonsoftSupport();
 ```
 
-### Registering known types
+# [Install Swashbuckle for OWIN](#tab/owin)
 
-By default, [DotVVM Command Line](/docs/tutorials/advanced-dotvvm-command-line/{branch}) generates classes for all types used in the REST API (in both C# and TypeScript clients). For example, if the API returns a list of orders, there will be the `Order` class in the generated client.
+First, make sure you have `Swashbuckle` installed and configured in your project. 
 
-If the API is hosted in the same project as the DotVVM application, or if the API project can share these types with the DotVVM application using a class library, you can register these types as **known types**. In this case, they won't be included in the generated client and you need to make sure both DotVVM and API can see these types with the same name and namespace.
+* [Swashbuckle - classic ASP.NET](https://github.com/domaindrivendev/Swashbuckle) 
+
+Then, install the following NuGet package to the REST API project:
+
+```
+Install-Package DotVVM.Api.Swashbuckle.Owin
+```
+
+To enable DotVVM integration, call the `EnableDotvvmIntegration` extension method in the Swashbuckle configuration in `SwaggerConfig.cs` file.
+
+```CSHARP
+config.EnableSwagger(c =>
+    {
+        ...
+        c.EnableDotvvmIntegration(opt => 
+        {
+            // TODO: configure DotVVM Swashbuckle options    
+        });
+    })
+    .EnableSwaggerUi(c => { ... });
+```
+
+***
+
+### Share models between API and DotVVM app
+
+By default, [DotVVM CLI](~/pages/concepts/cli/install) generates classes for all types used in the REST API (in both C# and TypeScript clients). For example, if the API returns a list of orders, there will be the `Order` class in the generated client.
+
+If the API is hosted in the same project as the DotVVM application, or if the API project can share these types with the DotVVM application using a class library, you can register these types as **known types**. In such case, they won't be included in the generated clients, and you just need to make sure both DotVVM and API can see these types with the same name and namespace.
 
 To register known types, configure the DotVVM integration like this:
 
+# [Register known types in ASP.NET Core](#tab/aspnetcore)
+
 ```CSHARP
-// OWIN
-c.EnableDotvvmIntegration(opt => 
-{
-    // add a single type
-    opt.AddKnownType(typeof(Order));
-
-    // add all types from the assembly
-    opt.AddKnownAssembly(typeof(Order).Assembly);
-
-    // add all types from the namespace
-    opt.AddKnownNamespace(typeof(Order).Namespace);
-});
-
-// ASP.NET Core
 services.Configure<DotvvmApiOptions>(opt => 
 {
     // add a single type
@@ -108,6 +95,24 @@ services.Configure<DotvvmApiOptions>(opt =>
     opt.AddKnownNamespace(typeof(Order).Namespace);
 });
 ```
+
+# [Register known types in OWIN](#tab/owin)
+
+```CSHARP
+c.EnableDotvvmIntegration(opt => 
+{
+    // add a single type
+    opt.AddKnownType(typeof(Order));
+
+    // add all types from the assembly
+    opt.AddKnownAssembly(typeof(Order).Assembly);
+
+    // add all types from the namespace
+    opt.AddKnownNamespace(typeof(Order).Namespace);
+});
+```
+
+***
 
 <!-- Some DotVVM types, such as `GridViewDataSet`, `SortingOptions` or `PagingOptions` are registered as known types by default. This makes building APIs with paging and sorting easier.
 
@@ -148,3 +153,17 @@ public GridViewDataSet<Company> GetCompanies(ISortingOptions sortingOptions, IPa
 ```
  -->
 
+## Azure Functions
+
+If you want to consume [Azure Functions](https://azure.microsoft.com/en-us/services/functions/), you can refer to the [Open API definition tutorial](https://docs.microsoft.com/en-us/azure/azure-functions/functions-openapi-definition) in the official docs.
+
+## Other technologies
+
+If the API is built with different technology, you'll need to obtain the Open API specification of the API. Most frameworks should be able to generate the document for you. 
+
+Alternatively, you can build it yourself in [Swagger Editor](https://editor.swagger.io).
+
+## See also
+
+* [REST API bindings](overview)
+* [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)

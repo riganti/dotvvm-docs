@@ -84,3 +84,4 @@ On the client-side, the enum values are converted to strings on the client side,
 * [Resource binding](~/pages/concepts/data-binding/resource-binding)
 * [Binding context](~/pages/concepts/data-binding/binding-context)
 * [Respond to user actions](~/pages/concepts/respond-to-user-actions/overview)
+* [Video: Server rendering - value vs resource binding](https://www.youtube.com/watch?v=FLIcYBaja-I&ab_channel=DotVVM)
