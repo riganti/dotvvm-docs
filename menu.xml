@@ -2,7 +2,7 @@
   <DocStaticMenuItem RouteName="Docs" PageName="Home" />
   <DocPageMenuItem RouteName="introduction" PageName="Introduction" />
   
-  <DocPageMenuItem RouteName="quick-starts" PageName="Quick Starts">
+  <DocPageMenuItem RouteName="quick-starts" PageName="Quick starts">
   
 	<DocPageMenuItem RouteName="build" PageName="Build a new app">
 	  <DocPageMenuItem RouteName="create-new-project" PageName="Create a new project" LegacyPaths="how-to-start-dnx,how-to-start-dotnet-451,how-to-start-command-line" />
@@ -161,14 +161,14 @@
 	  <DocPageMenuItem RouteName="generate-rest-api-clients" PageName="Generate REST API clients" />
 	</DocPageMenuItem>
 	
-	<DocPageMenuItem RouteName="control-development" PageName="Control Development">
+	<DocPageMenuItem RouteName="control-development" PageName="Control development">
       <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="control-development-introduction" />
       <DocPageMenuItem RouteName="markup-controls" PageName="Markup controls" LegacyPaths="control-development-markup-only-controls" />
       <DocPageMenuItem RouteName="markup-control-registration" PageName="Markup control registration" LegacyPaths="control-development-markup-control-registration" />
       <DocPageMenuItem RouteName="markup-controls-with-code" PageName="Markup controls with code-behind" LegacyPaths="control-development-markup-controls-with-code" />
       <DocPageMenuItem RouteName="code-only-controls" PageName="Code-only controls" LegacyPaths="control-development-code-only-controls" />
       <DocPageMenuItem RouteName="interactivity" PageName="Adding interactivity using Knockout binding handlers" LegacyPaths="control-development-interactivity" />
-      <DocPageMenuItem RouteName="creating-custom-postback-handlers" PageName="Creating custom postback handlers" LegacyPaths="control-development-creating-custom-postback-handlers" />
+      <DocPageMenuItem RouteName="custom-postback-handlers" PageName="Custom postback handlers" LegacyPaths="control-development-creating-custom-postback-handlers" />
       <DocPageMenuItem RouteName="binding-extensibility" PageName="Binding system extensibility" LegacyPaths="control-development-binding-extensibility" />
       <DocPageMenuItem RouteName="binding-extension-parameters" PageName="Custom binding extension parameters" LegacyPaths="control-development-binding-extension-parameters" />
       <DocPageMenuItem RouteName="provide-custom-method-translators" PageName="Provide custom method translators" LegacyPaths="control-development-providing-custom-javascript-translators" />

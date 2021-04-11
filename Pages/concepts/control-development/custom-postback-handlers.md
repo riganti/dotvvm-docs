@@ -1,4 +1,4 @@
-# Creating custom postback handlers
+# Custom postback handlers
 
 If you want to create a custom [Postback Handler](/docs/tutorials/basics-postback-handlers/{branch}), you need to do three things:
 
