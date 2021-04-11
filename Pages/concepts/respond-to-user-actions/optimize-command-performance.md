@@ -12,7 +12,7 @@ For example, if you need to display a table of employees where only few columns 
 public class EmployeeViewModel
 {
     // The Employee class has ~40 properties with all information about the employee.
-    // Instead, we are using EmployeeSimpleDto which contains only the properties which are used in the page.
+    // Instead, we are using EmployeeListDto which contains only the properties which are used in the page.
     public List<EmployeeListDto> Employees { get; set; }
 
     public override Task PreRender() 
