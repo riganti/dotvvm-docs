@@ -36,6 +36,7 @@ When used, the translator above will yield the following JavaScript expression: 
 AddPropertyGetterTranslator(typeof(Array), nameof(Array.Length), translator);
 ```
 
-## Translators supported by DotVVM
+## See also
 
-Both methods presented in this page are already supported by DotVVM 3.x. Regardless of this fact, the purpose of this page is to showcase this powerful feature of DotVVM and serve as a starting point when defining custom translators. For the full list of supported methods and their translators, visit the page about [value bindings](value-binding). 
+* [Data-binding overview](overview)
+* [Supported expressions and .NET methods](supported-expressions)
