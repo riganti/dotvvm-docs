@@ -1,6 +1,6 @@
 # Custom JavaScript translators
 
-DotVVM implements an extendable binding translations mechanism, which is an API for building **abstract syntax trees** [AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree) that represent JavaScript expressions. We can then register custom translators for specific .NET methods and as such extend the set of supported methods inside data bindings.
+DotVVM implements an extendable binding translations mechanism, which is an API for building **abstract syntax trees** ([AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree)) that represent JavaScript expressions. We can then register custom translators for specific .NET methods and as such extend the set of supported methods inside data bindings.
 
 ## Register custom translator
 
