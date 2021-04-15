@@ -55,6 +55,7 @@
 	  <DocPageMenuItem RouteName="resource-binding" PageName="Resource binding" LegacyPaths="basics-resource-binding" />
 	  <DocPageMenuItem RouteName="binding-context" PageName="Binding context" LegacyPaths="basics-binding-context" />
 	  <DocPageMenuItem RouteName="supported-expressions" PageName="Supported expressions" />
+	  <DocPageMenuItem RouteName="custom-javascript-translators" PageName="Custom JavaScript translators" />
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="respond-to-user-actions" PageName="Respond to user actions">
