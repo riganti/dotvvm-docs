@@ -79,7 +79,7 @@ DotVVM can translate several .NET methods on basic types or collections to JavaS
 
 ### Provide custom method translators
 
-It is possible to register custom translators for any method. See [Provide custom JavaScript translators](~/pages/concepts/control-development/provide-custom-method-translators) for more information.  
+It is possible to register custom translators for any method. See [Provide custom JavaScript translators](custom-javascript-translators) for more information.  
 
 ### Upcoming support for .NET methods in DotVVM 3.1
 
