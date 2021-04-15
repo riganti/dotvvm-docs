@@ -1,12 +1,12 @@
 # Custom JavaScript translators
 
-DotVVM implements an extendable binding translations mechanism, which is an API for building abstract syntax trees ([AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree)) that represent JavaScript expressions. We can then register custom translators for specific .NET methods and as such extend the set of supported methods inside data bindings.
+DotVVM implements an extendable binding translations mechanism, which is an API for building **abstract syntax trees** [AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree) that represent JavaScript expressions. We can then register custom translators for specific .NET methods and as such extend the set of supported methods inside data bindings.
 
-## Registering custom translator
+## Register custom translator
 
 Every translator must implement the `IJavascriptMethodTranslator` interface. However, it is a bit simpler to utilize the fact that DotVVM already exposes a general-purpose implementation called `GenericMethodCompiler`.
 
-### Example 1: translating `Enumerable.Where` method
+### Example 1: translator for `Enumerable.Where` method
 
 In the following code-snippet we will create a custom translation for the method `Where(source, predicate)` on the type `System.Linq.Enumerable`. Whenever constructing the `GenericMethodCompiler`, we need to provide a transformation for the provided method arguments. In this case, we need to work with two arguments: 1) source collection, 2) predicate that filters elements. Therefore, an example translator that combines these arguments into a JavaScript expression can be seen in the code-snippet below.
 
@@ -23,7 +23,7 @@ var whereMethodInfo = /* obtain method info using reflection */;
 config.Markup.JavascriptTranslator.MethodCollection.AddMethodTranslator(whereMethodInfo, translator);
 ```
 
-### Example 2: translating `Array.Length` property getter method
+### Example 2: translator for `Array.Length` property getter method
 
 In the following code-snippet we will create a custom translation for the `Length` property getter method on the type `System.Array`. In this case, we need to work with a single arguments that represents the array. Since the `Length` property is bound to a specific instance, the array argument is passed as the `this` pointer, which corresponds to the `args[0]` expression. An example translation can be seen in the code-snippet below.
 
@@ -38,5 +38,6 @@ AddPropertyGetterTranslator(typeof(Array), nameof(Array.Length), translator);
 
 ## See also
 
-* [Data-binding overview](overview)
-* [Supported expressions and .NET methods](supported-expressions)
+* [Abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
+* [Data-binding overview](~/pages/concepts/data-binding/binding-context)
+* [Supported expressions and .NET methods](~/pages/concepts/data-binding/supported-expressions)
