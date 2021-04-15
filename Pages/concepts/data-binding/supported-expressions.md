@@ -27,7 +27,8 @@ The [resource](resource-binding) and [command](~/pages/concepts/respond-to-user-
 * Ternary conditional operator
    * `SomeProperty ? "some string" : "other string"`
 * Method invocation (only supported methods)
-   * `SomeMethod(argument)`
+   * Regular methods: `SomeMethod(argument)`
+   * Extension methods: `argument.SomeExtensionMethod()` (**new in version 3.0**)
 * Block expression
    * `(expression1; expression2; expression3)`
    * *Note*: This is a composition of supported expressions within one data-binding. DotVVM uses parentheses `( ... )` to enclose expressions as compared to C#, which uses curly braces `{ ... }`. Result type of any composite expression is determined by the last child expression.
@@ -81,11 +82,18 @@ DotVVM can translate several .NET methods on basic types or collections to JavaS
 
 It is possible to register custom translators for any method. See [Provide custom JavaScript translators](~/pages/concepts/control-development/provide-custom-method-translators) for more information.  
 
+### Use custom .NET extension methods (**new in version 3.1**)
+
+Whenever you need to use custom .NET extension methods, you need to provide information about where should DotVVM search for these methods. This can be achieved using the `@import` directive, using which it is possible provide namespaces that should be searched for extension methods. Furthermore, you can also provide method translators for custom extension methods. That way it is possible to use custom extension methods safely inside value bindings.
+
+Since we are adding a lot of methods from `System.Linq` namespace, we decided to include this namespace to the default DotVVM namespaces for extension methods lookup. Therefore, it is not necessary to write `@import System.Linq` in your `DotHTML` files.
+
 ### Upcoming support for .NET methods in DotVVM 3.1
 
 We plan to add support for the following methods in DotVVM 3.1.
 
 #### LINQ methods
+
 * `Enumerable.All<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
 * `Enumerable.Any<T>(IEnumerable<T> collection)`
 * `Enumerable.Any<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
