@@ -10,7 +10,7 @@ DotVVM can do client validation for the following attributes on the client side:
 + `RegularExpression`
 + `Range`
 + `EmailAddress`
-+ `DotvvmEnforceClientFormat` - see the [Formatting dates and numbers](~/pages/concepts/localization-and-cultures/formatting-dates-and-numbers) for more info
++ `DotvvmEnforceClientFormat` - see [details](#DotvvmEnforceClientFormat) below
 
 > The client-side validation is only an addition to the server-side validation. Even if the rule can be translated to JavaScript and executed on the client side, it is always executed on the server.
 
@@ -23,6 +23,14 @@ In such case, everything will be validated only on the server.
 ```CSHARP
 config.ClientSideValidation = false;
 ```
+
+## DotvvmEnforceClientFormat attribute
+
+DotVVM contains a special validation attribute called `DotvvmEnforceClientFormat`. 
+
+It is applied automatically on date and numberic properties, and makes sure that a validation errors is raised when a value entered by the user (e. g. in a [TextBox](~/controls/builtin/TextBox)) cannot be parsed. See [Formatting dates and numbers](~/pages/concepts/localization-and-cultures/formatting-dates-and-numbers) for more info.
+
+This attribute does nothing on the server - it only has a client-side behavior. You may not need to use this attribute, except for a case when you need to turn this default behavior off.
 
 ## See also
 
