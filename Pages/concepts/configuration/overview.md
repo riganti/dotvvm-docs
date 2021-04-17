@@ -1,75 +1,72 @@
 # Configuration overview
 
-DotVVM uses C# code to configure its features and settings. 
+DotVVM uses C# code to configure its features and settings. A typical DotVVM app needs to configure the following areas:
 
-The typical DotVVM app needs to configure the following things:
++ **Routes** (see more information in the [Routing](~/pages/concepts/routing/overview) chapter)
 
-+ **Routes** (see more information in the [Routing](/docs/tutorials/basics-routing/{branch}) chapter)
++ **Scripts and styles** (see more in the [Script & style resources](~/pages/concepts/script-and-style-resources/overview) chapter)
 
-+ **Custom resources** (see more in the [Javascript and CSS Resource Management](/docs/tutorials/basics-javascript-and-css/{branch}) chapter)
++ **Custom controls** (see more in the [Control development](~/pages/concepts/control-development/overview) chapter)
 
-+ **Custom controls** (see more in the [Control Development](/docs/tutorials/control-development-introduction/{branch}) chapter)
++ **Services** that handle [File uploads](~/pages/concepts/upload-and-download-files/upload-files), [Returned files](~/pages/concepts/upload-and-download-files/return-file-from-viewmodel) or [Dependency injection](dependency-injection/overview)
 
-+ **Services** that handle [File Uploads](/docs/controls/builtin/FileUpload/{branch}), [Returned Files](/docs/tutorials/advanced-returning-files/{branch}) or [Dependency Injection](/docs/tutorials/advanced-ioc-di-container/{branch})
+## Configuration files
 
-In the default project template, there are 2 files - `Startup.cs` and `DotvvmStartup.cs`. 
+In the default project template, there are 2 files - `Startup.cs` and `DotvvmStartup.cs`:
 
-In `Startup.cs`, we configure DotVVM services and register DotVVM middlewares. In `DotvvmStartup.cs`, we configure routes, resources and controls.
+* `Startup.cs` is a main configuration of ASP.NET Core and OWIN applications. In this file, we need to register DotVVM services and middleware in the request pipeline. 
 
+* `DotvvmStartup.cs` file contains DotVVM-specific configuration - routes, resources, and controls.
 
-## Startup.cs in OWIN
+### Startup.cs
 
-In OWIN, the `Startup.cs` contains the OWIN startup class. DotVVM is just an OWIN middleware and you can easily combine it with ASP.NET MVC or any other OWIN middlewares in one application. 
+# [ASP.NET Core](#tab/aspnetcore)
 
-All you have to do is to register the DotVVM middleware in the `IAppBuilder` object.
+In ASP.NET Core, the registration of all frameworks is split to registration of services, and registration of middlewares. 
 
-```CSHARP
-var config = app.UseDotVVM<DotvvmStartup>(ApplicationPhysicalPath);
-```
-
-> The configuration of DotVVM services has been changed in **DotVVM 2.0** - it was moved to `DotvvmStartup.cs` file. 
-
-This extension method initializes the middlewares required by DotVVM. The `DotvvmStartup` type parameter of the `UseDotVVM` represents the class which contains DotVVM configuration.
-
-## Startup.cs in ASP.NET Core
-
-In ASP.NET Core, the registration of frameworks is split to the registration of services and middlewares. 
-
-In the `ConfigureServices` method, we should register DotVVM services:
+In the `ConfigureServices` method, we need to register DotVVM services:
 
 ```CSHARP
 services.AddDotVVM<DotvvmStartup>();
 ```
 
-In the `Configure` method we have to register the DotVVM middleware.
+In the `Configure` method, we have to register the DotVVM middleware.
 
 ```CSHARP
 var config = app.UseDotVVM<DotvvmStartup>();
 ```
 
-This extension method initializes the middlewares required by DotVVM. The `DotvvmStartup` type parameter of the `UseDotVVM` represents the class which contains DotVVM configuration.
+This extension method initializes the middlewares required by DotVVM. 
 
-> The configuration of DotVVM services has been changed in **DotVVM 2.0** — it was moved to `DotvvmStartup.cs` file. 
+The `DotvvmStartup` type argument of the `AddDotVVM` and `UseDotVVM` methods represents the class which contains DotVVM configuration.
 
-## DotvvmStartup.cs
+# [OWIN](#tab/owin)
+
+In OWIN, the `Startup.cs` contains the OWIN startup class. DotVVM is just an OWIN middleware - you can easily combine it with ASP.NET MVC or any other OWIN middlewares in one application. 
+
+All you have to do is to register the DotVVM middleware in the `IAppBuilder` object:
+
+```CSHARP
+var config = app.UseDotVVM<DotvvmStartup>(HostingEnvironment.ApplicationPhysicalPath);
+```
+
+This extension method initializes the middlewares required by DotVVM. The `DotvvmStartup` type argument of the `UseDotVVM` method represents the class which contains DotVVM configuration.
+
+***
+
+### DotvvmStartup.cs
 
 The `DotvvmStartup` class must implement the `IDotvvmStartup` interface and contains the `Configure` method. There should be only one class implementing the `IDotvvmStartup` interface in the assembly.
 
-This class configures resources, controls and routes. The default project template prepares this class in the following structure. 
-We have also included examples of how to configure a route, custom control namespace and script resource.
+`DotvvmStartup` also commonly implements the `IDotvvmServiceConfigurator` interface and has the `ConfigureServices` method which is responsible for registering DotVVM-related services. You can move the implementation into a separate class.
 
-`DotvvmStartup` also typically implements `IDotvvmServiceConfigurator` and declares the `ConfigureServices` method that is responsible for registering DotVVM-related services.
+The default project template prepares this class in the structure below. We have also included examples of how to configure a route, custom control namespace and script resource.
 
 ```CSHARP
 public class DotvvmStartup : IDotvvmStartup, IDotvvmServiceConfigurator
 {
-    public void ConfigureServices(IDotvvmServiceCollection services)
-    {
-        // configure all DotVVM-related services
-        services.AddDefaultTempStorages("Temp");
-    }
+    // IDotvvmStartup implementation
 
-    // For more information about this class, visit https://dotvvm.com/docs/tutorials/basics-project-structure
     public void Configure(DotvvmConfiguration config, string applicationPath)
     {
         ConfigureRoutes(config, applicationPath);
@@ -99,23 +96,36 @@ public class DotvvmStartup : IDotvvmStartup, IDotvvmServiceConfigurator
             Location = new LocalFileResourceLocation("~/wwwroot/Scripts/myscript.js")
         });
     }
+
+
+    // IDotvvmServiceConfigurator implementation
+
+    public void ConfigureServices(IDotvvmServiceCollection services)
+    {
+        // configure all DotVVM-related services
+        services.AddDefaultTempStorages("Temp");
+    }
+
 }
 ```
 
-Please note that the [Visual Studio Extension](/landing/dotvvm-for-visual-studio-extension) executes the `Configure` and `ConfigureServices` methods in the `DotvvmStartup` class during the project build process so the IntelliSense can suggest custom controls, route and resource names.
+Please note that the [Visual Studio Extension](https://www.dotvvm.com/products/visual-studio-extensions) runs the `Configure` and `ConfigureServices` methods in the `DotvvmStartup` class during the project build process - this is needed so the IntelliSense can retrieve control, route, and resource names from your app.
 
-> Avoid registering any other things than routes, custom resources and custom controls in the `Configure` method.
-> This method is executed during the project build in Visual Studio, so please don't launch rockets in it.
+> Avoid registering any other things than routes, custom resources and custom controls in the `Configure` method. This method is executed during the project build in Visual Studio, so please don't launch rockets into Space in these methods. If you need to register or initialize anything else (e.g. initialize the database, create default users), do it in the `Startup.cs`, or anywhere else.
 
-If you need to register or initialize anything else (e.g. initialize the database, create default users), do it in the `Startup.cs`, or anywhere else.
+## Debug mode
 
-## Debug Mode
+The `DotvvmConfiguration` object contains the `Debug` property which should be set to `true` in the development environment, and turned off in production.
 
-The `DotvvmConfiguration` object contains the `Debug` property which should be turned in the development environment, and turned off in production.
+If the `Debug` mode is enabled,
 
-In the `Debug` mode, DotVVM displays an error page for all unhandled exceptions that occur, it uses non-minified versions of scripts (where applicable) and reports validation errors using a red popup that appears in the top right corner of the page.
+* DotVVM displays a developer-friendly error page for all unhandled exceptions that occur
+* a non-minified versions of scripts is used, so the debugging is easier
+* validation errors are indicated using a red popup that appears in the top right corner of the page
 
-The property is automatically set in ASP.NET Core based on [IHostingEnvironment.IsDevelopment()](https://docs.microsoft.com/en-us/aspnet/core/api/microsoft.aspnetcore.hosting.hostingenvironmentextensions#Microsoft_AspNetCore_Hosting_HostingEnvironmentExtensions_IsDevelopment_Microsoft_AspNetCore_Hosting_IHostingEnvironment_). In OWIN you need to set the value yourself. 
+The property is automatically set in ASP.NET Core based on [IWebHostEnvironment.IsProduction()](https://docs.microsoft.com/en-us/aspnet/core/api/microsoft.aspnetcore.hosting.hostingenvironmentextensions#Microsoft_AspNetCore_Hosting_HostingEnvironmentExtensions_IsDevelopment_Microsoft_AspNetCore_Hosting_IHostingEnvironment_). 
+
+In OWIN, you need to set the value yourself. 
 
 The typical setup that is present in default DotVVM OWIN project, looks like this:
 
@@ -133,6 +143,11 @@ private bool IsDebug()
 app.UseDotVVM<DotvvmStartup>(applicationPhysicalPath, debug: IsDebug());
 ```
 
-## Static Files
+## See also
 
-In the default project template, the `Startup` class also registers a static files middleware. DotVVM doesn't need it itself, however in 99% cases you want to use it to serve static files like images to the user.
+* [Routing](~/pages/concepts/routing/overview)
+* [Script & style resources](~/pages/concepts/script-and-style-resources/overview)
+* [Control development](~/pages/concepts/control-development/overview)
+* [Dependency injection](dependency-injection/overview)
+* [View compilation modes](view-compilation-modes)
+* [Explicit assembly loading](explicit-assembly-loading)
