@@ -28,6 +28,8 @@ We have the following types of resources:
 
 There are also `ViewModuleImportResource`, `ViewModuleInitResource`, and other types of resources that server internal purposes of DotVVM, and should not be used directly.
 
+> In DotVVM 3.0, all script resource are using the [defer](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script) option by default, because the client-side part of DotVVM was rewritten to use ES modules (with a System polyfill for IE11). Because of that, DotVVM scripts are deferred, and thus, all custom scripts (which in most cases depend on DotVVM) have this option enabled by default. You can set `Defer` to `false` on custom scripts.
+
 ## Register resources
 
 All resources are registered in resource repository found in the `config.Resources` collection.
