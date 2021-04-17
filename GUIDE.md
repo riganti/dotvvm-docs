@@ -72,6 +72,26 @@ While the titles of books are proper nouns, in these docs we treat the titles of
 | right quotation mark  | ”         | U+201D             | 0148     | &rdquo\; |
 | m-dash                | —         | U+2015             | 0151     | &#8213\; |
 
+## Release notes format
+Release notes should be split into several sections:
+- New features
+- Improvements and fixes
+- Breaking changes
+- ...
+
+Sections should be level 1 headings `# New features` while individual entries should be level 3 headings `### Cool new feature`.  
+This division provides the best distinction between individual sections.
+
+Format of each entry should be as follows:
+```
+### Entry name not ending by .
+#123 <Pull request ID.>  
+Brief description of the new feature.  
+[Link to doc](https://www.dotvvm.com/docs/tutorials/basics-routing/)
+```
+
+[Example of release notes](https://github.com/riganti/dotvvm/releases/tag/v3.0)
+
 ## Tools
 
 **[LTeX](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex)**
