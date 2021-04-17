@@ -1,31 +1,38 @@
 # Script and style resources overview
 
-DotVVM has a built-in mechanism for managing resources. It supports JavaScript files, inline JavaScript snippets and CSS files. It is extensible so it can be used to work with fonts, icons and other kinds of static files.
+DotVVM has a built-in mechanism for managing resources. It supports JavaScript files, inline JavaScript snippets, and CSS files. It is extensible so it can be used to work with fonts, icons, and other kinds of static files.
 
-The resources are named and stored in a global repository which is configured in [DotVVM configuration](/docs/tutorials/basics-configuration/{branch}). 
+The resources are named and stored in a global repository which is configured in [DotVVM configuration](~/pages/concepts/configuration/overview). 
 
-Each resource can also specify its dependencies. Thanks to this, DotVVM can include all required resources in the page in the correct order. 
+Each resource can also specify its dependencies. Thanks to this, DotVVM can include all required resources in the correct order. 
 
-And finally, if any DotVVM control needs a particular resource, it can request the resource to be included in the page. DotVVM keeps track of the resources needed by controls in the page and renders only the those which are really needed.
+Finally, if any DotVVM control needs a particular resource to be included in the page, it can just request it to be included in the page. DotVVM keeps track of the resources required by controls in the page, and renders only the those which are really needed.
+
+## Resource types
 
 We have the following types of resources:
 
 * `ScriptResource` renders the `<script>` element and is used to include JavaScript files.
 
+* `ScriptModuleResource` renders the `<script type="module">` element and is used to include JavaScript files in the ES module format.
+
 * `StylesheetResource` renders the `<link rel="stylesheet">` element and is used to include CSS files.
 
 * `InlineScriptResource` renders the `<script>` element with JavaScript code snippet.
 
+* `InlineStylesheetResource` renders the `<style>` element with CSS code snippet.
+
+* `TemplateResource` renders the `<script type="text/html">` template used by some controls (e. g. [Repeater](~/controls/builtin/Repeater)).
+
 * `NullResource` is a special type of resource that doesn't render anything. It is used when some control requests the resource to be included in the page, however you have included the resource itself (e.g. in the master page).
 
-## Resource repository
+There are also `ViewModuleImportResource`, `ViewModuleInitResource`, and other types of resources that server internal purposes of DotVVM, and should not be used directly.
 
-> The resource registration has changed in DotVVM 1.1. Visit the [Upgrading to DotVVM 1.1](/docs/tutorials/how-to-start-upgrade-from-1-0/1-1) for more details.
+## Register resources
 
 All resources are registered in resource repository found in the `config.Resources` collection.
 
-You can register a new resource with the `Register` method. This method can also replace existing resources if they exists.
-The resources should be registered in the `DotvvmStartup.cs` file.
+You can register a new resource with the `Register` method. This method can also replace existing resources if they exists. The resources should be registered in the `DotvvmStartup.cs` file.
 
 ```CSHARP
 config.Resources.Register("bootstrap-css", new StylesheetResource()
@@ -47,7 +54,7 @@ jquery.Location = new UrlResourceLocation("~/Scripts/jquery.2.1.1.min.js");
 jquery.LocationFallback = null;
 ```
 
-## Resource locations
+### Resource locations
 
 Most resources have the `Location` property of type `IResourceLocation` which defines, how the resource file is obtained. You can use one of the following implementations:
 
@@ -59,7 +66,7 @@ Most resources have the `Location` property of type `IResourceLocation` which de
 
 You can of course implement custom resource types and resource location implementations. 
 
-## CDN fallbacks
+### CDN fallbacks
 
 If you want to use CDN for script files, it is often a good idea to have a local fallback for the case that CDN is down, or if you are debugging the app without the Internet connection. 
 
@@ -72,7 +79,8 @@ configuration.Resources.Register(ResourceConstants.JQueryResourceName,
 	new ScriptResource()
 	{
 		Location = new UrlResourceLocation("https://code.jquery.com/jquery-2.1.1.min.js"),
-		LocationFallback = new ResourceLocationFallback("window.jQuery", new EmbeddedResourceLocation(typeof(DotvvmConfiguration).GetType().Assembly, "DotVVM.Framework.Resources.Scripts.jquery-2.1.1.min.js")),
+		LocationFallback = new ResourceLocationFallback("window.jQuery", 
+		    new EmbeddedResourceLocation(typeof(DotvvmConfiguration).GetType().Assembly, "DotVVM.Framework.Resources.Scripts.jquery-2.1.1.min.js")),
 		VerifyResourceIntegrity = true
 	});
 ```
@@ -81,7 +89,7 @@ If the `VerifyResourceIntegrity` property on the `ScriptResource` is set to true
 
 ## Registering jQuery
 
-If you application uses jQuery and if it is not included with another library (like [Bootstrap for DotVVM](/docs/tutorials/commercial-bootstrap-for-dotvvm/{branch}) or [DotVVM Business Pack](/docs/tutorials/commercial-business-pack-install/{branch})), add the following code into `ConfigureResources` method in `DotvvmStartup.cs`:
+If you application uses jQuery and if it is not included with another library (like [Bootstrap for DotVVM](~/pages/bootstrap-for-dotvvm/v4/getting-started) or [DotVVM Business Pack](~/pages/business-pack/getting-started)), add the following code into `ConfigureResources` method in `DotvvmStartup.cs`:
 
 ```CSHARP
 config.Resources.Register("jquery", new ScriptResource()
@@ -90,3 +98,27 @@ config.Resources.Register("jquery", new ScriptResource()
     Location = new UrlResourceLocation("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
 });
 ```
+
+## Built-in resources
+
+DotVVM already includes the following built-in resources:
+
+* `dotvvm` - a fundamental set of function required by DotVVM to work correctly.
+
+* `dotvvm.debug` - a helper that displays exception details from the commands. It is only included in the page in [debug mode](/docs/tutorials/basics-configuration/{branch}).
+
+* `dotvvm.fileUpload-css` - a CSS styles for the [FileUpload](/docs/controls/builtin/FileUpload/{branch}) control.
+
+* `knockout` - Knockout JS 3.5.0 (with a few tweaks).
+
+* `globalize` - a modified version of the globalize.js library.
+
+To support client-side number and date formats, there are also automatically generated resources for every culture:
+
+* `globalize:en-US` - a globalization resources for en-US culture. All cultures in .NET Framework are supported, 
+however only a subset of the number and datetime formats are supported.
+
+## See also
+
+* [Use resources in pages](use-resources-in-pages)
+* [Bundling & minification](bundling-minification)
