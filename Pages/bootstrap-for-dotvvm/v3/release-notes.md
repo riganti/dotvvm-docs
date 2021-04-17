@@ -1,4 +1,7 @@
-# Release notes
+# 3.0.1
+## Package updates
+- DotVVM upgraded to **3.0.1**
+
 ## 2.5.1
 * Updated DotVVM to 2.5.1
 ## 2.4.0

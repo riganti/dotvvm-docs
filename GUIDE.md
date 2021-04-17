@@ -92,6 +92,33 @@ Brief description of the new feature.
 
 [Example of release notes](https://github.com/riganti/dotvvm/releases/tag/v3.0)
 
+### Control packs release notes 
+Control packs do not have release notes split into multiple documents, but all versions share the same file.  
+Due to this difference the guidelines slightly differ.
+
+The heading levels are shifted:
+- Version — level 1
+- Section (e.g. Changes to existing controls) — level 2
+- Change entries (e.g. RadioButton) — level 3 
+- individual changes — list items
+
+Breaking changes should be marked by prefixing change entry by `**BREAKING CHANGE**`.
+
+Resulting structure should look something like this.
+```
+# 2.4.0.10
+## New controls
+- ### [```Icon```](https://www.dotvvm.com/docs/controls/bootstrap4/Icon)
+    
+## Changes to existing controls
+### **Toast**
+- Fixed bug in *OnShown* and *OnHide* events.
+-  *OnShown* and *OnHide* events are no longer called immediately after page load. Those events are now called only after client side change.
+
+### Other changes
+- General bug fixes in Custom CSS feature.
+```
+
 ## Tools
 
 **[LTeX](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex)**
