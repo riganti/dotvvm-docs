@@ -127,6 +127,7 @@
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="client-side-development" PageName="Client-side development">
+	  <DocPageMenuItem RouteName="overview" PageName="Overview" />
 	  <DocPageMenuItem RouteName="js-directive" PageName="JS directive">
 	    <DocPageMenuItem RouteName="overview" PageName="Overview" />
 		<DocPageMenuItem RouteName="call-js-from-dotvvm" PageName="Call JS from DotVVM" />
