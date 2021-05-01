@@ -103,9 +103,9 @@ dotvvm.globalize.parseDotvvmDate(date);
 
 The coercer will convert `Date` to DotVVM string representation automatically, when you try to set the value. However, if you read the value, you'll see the string. If you need `Date`, use the `dotvvm.globalize.parseDotvvmDate` function.
 
-### Timezone handling
+### Time zone handling
 
-Be careful about timezones - since the `Date` object converts all dates to the local time zone, which can cause problems when such dates are transferred to the server, DotVVM decided to ignore the offset argument, and gathers just the years, months, days, hours, minutes, seconds, and milliseconds values. 
+Be careful about time zones - since the `Date` object converts all dates to the local time zone, which can cause problems when such dates are transferred to the server, DotVVM decided to ignore the offset argument, and gathers just the years, months, days, hours, minutes, seconds, and milliseconds values. 
 
 Our intent is to make sure that when you send a `DateTime` value `2000-01-02 03:04:05:666` to the client (no matter if the `Kind` was `Local` or `Utc`), you'll see the same digits in the date (although the date is converted to the user's local timezone). 
 
