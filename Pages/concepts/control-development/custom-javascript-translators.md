@@ -27,17 +27,20 @@ config.Markup.JavascriptTranslator.MethodCollection.AddMethodTranslator(whereMet
 
 In the following code snippet, we will create a custom translation for the `Length` property getter method on the type `System.Array`. In this case, we need to work with a single arguments that represents the array. Since the `Length` property is bound to a specific instance, the array argument is passed as the `this` pointer, which corresponds to the `args[0]` expression. An example translation can be seen in the code snippet below.
 
-```csharp
+```CSHARP
 var translator = new GenericMethodCompiler(a => a[0].Member("length"));
 ```
+
 When used, the translator above will yield the following JavaScript expression: `args[0].length`. Now, the only thing left is registering this translation. We can perform the registration using the following code snippet.
 
-```csharp
+```CSHARP
 AddPropertyGetterTranslator(typeof(Array), nameof(Array.Length), translator);
 ```
 
 ## See also
 
+* [Control development overview](overview)
 * [Data-binding overview](~/pages/concepts/data-binding/binding-context)
 * [Supported expressions and .NET methods](~/pages/concepts/data-binding/supported-expressions)
-* [Abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
+* [Binding system extensibility](binding-extensibility)
+* [Binding extension parameters](binding-extension-parameters)

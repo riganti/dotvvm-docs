@@ -1,10 +1,16 @@
 # Code-only controls
 
-This kind of controls is useful when you need to render a piece of HTML and/or you need to support data-binding and manipulate the viewmodel.
+This kind of controls is useful when you need to render more complex or dynamic HTML, or when you need to support complex data-binding scenarios, or manipulate the viewmodel on the client-side.
 
 Building code-only controls is more difficult, but they can do much more. All built-in DotVVM controls are implemented as code-only controls. 
 
-If you want to learn about how to write controls in DotVVM, we encourage you to look in the [GitHub](https://github.com/riganti/dotvvm) repository to see how the built-in controls are implemented.
+If you want to learn about how to write controls in DotVVM, we encourage you to look in the [DotVVM GitHub repository](https://github.com/riganti/dotvvm/tree/main/src/DotVVM.Framework/Controls), on in the [DotVVM Contrib repo](https://github.com/riganti/dotvvm-contrib) to see how the built-in controls are implemented.
+
+## Fundamentals
+
+In general, all controls in `DotVVM` inherit from the `DotvvmControl` class. This base class provides only basic functionality and _it is not a good base class to inherit directly_ for most purposes. 
+
+**The most useful class to be derived from is `HtmlGenericControl`** (which inherits from `DotvvmControl`). It is prepared to render one HTML element, and can contain child elements or controls. Most built-in controls in DotVVM derive from the `HtmlGenericControl` class. 
 
 ## Register controls
 
@@ -16,36 +22,29 @@ config.Markup.AddCodeControls("cc", typeof(DotvvmDemo.Controls.Control));
 
 Using this code snippet, if you use the `<cc:` tag prefix, DotVVM will search for the control in the specified namespace and assembly.
 
-> If you register a markup control with code behind like this, it won't work. If the control has a markup, it must be registered using the `AddMarkupControl` method.
+> If you register a markup control with code behind like this, it won't work correctly. If the control has a markup, it must be registered using the `AddMarkupControl` method. See the [Markup control registration](markup-control-registration) chapter for more details.
 
-## Fundamentals
+## Create code-only control
 
-All controls in `DotVVM` derive from the `DotvvmControl` class. This base class provides only 
-basic functionality and _it is not a good base class to inherit directly_ for most purposes. 
+The best example to learn how to write controls in DotVVM is to look how the built-in controls are implemented. Some of them are pretty complicated, but there are some which are simple. 
 
-The most useful class to be derived from is `HtmlGenericControl`. It is prepared to render one HTML element (which can contain child elements of course). Most built-in controls in **DotVVM** derive from the `HtmlGenericControl` class. 
+For the purpose of this chapter, let's begin with implementing a control similar to the [TextBox](~/controls/builtin/TextBox) control. The real `TextBox` control included in the framework is much more complex as it supports formatting values or different kinds of `input` element, but let's focus only on the main functionality - providing the way to edit a string value in the viewmodel.
 
-## Creating code-only control
-
-The best example to learn how to write controls in **DotVVM** is to look how the built-in controls are implemented.
-Let's begin with the [TextBox](/docs/controls/builtin/TextBox/{branch}).
-
-The textbox in HTML (with Knockout JS binding) looks like this:
+In order to use the control in the browser, we need it to produce the following markup:
 
 ```DOTHTML
 <input type="text" data-bind="value: FirstName" />
 ```
 
-This is what we'd like to render when we see `<dot:TextBox Text="{value: FirstName"}" />`. 
+This is what we'd like to render when we see `<cc:SimpleTextBox Text="{value: FirstName"}" />`. 
 
-So let's create a class that derives from `HtmlGenericControl`. In the constructor, we call the base constructor and tell the name of the HTML element - in our case we want `input`.
+So let's create a class that derives from `HtmlGenericControl`. In the constructor, we call the base constructor and tell the name of the HTML element we want the control to render: `input`.
 
 ```CSHARP
-public class TextBox : HtmlGenericControl
+public class SimpleTextBox : HtmlGenericControl
 {
-    public TextBox() : base("input")
+    public SimpleTextBox() : base("input")
     {
-
     }
 }
 ```
@@ -66,46 +65,54 @@ Now, the `HtmlGenericControl` has 4 methods which we can override to modify the 
 
 ## HtmlWriter
 
-Now, let's see how to render the HTML element. In **DotVVM**, we use the `HtmlWriter` to generate HTML. To render the `<input type="text" />` we need to call something like this:
+Now, let's see how to render the HTML element. In DotVVM, we use the `HtmlWriter` object to generate HTML. To render the `<input type="text" />` we need to call something like this:
 
 ```CSHARP
     writer.AddAttribute("type", "text");
     writer.RenderSelfClosingTag("input");
 ```
 
+Notice that the flow is this: first add the attributes we want to render, and then render the tag. The `HtmlWriter` stores the attributes in a temporary buffer, and emits them when you decide what tag you want to render.
+
 There are also methods `RenderBeginTag("input")`, `RenderEndTag()`, `WriteText("some text")` or `WriteUnencodedText("some HTML")`.
 
-The `AddAttribute` method is called before rendering the tag and it also has a third argument called `append`. If you call `AddAttribute("class", "blue")` and then `AddAttribute("class", "red", true)`, the class will be appended. 
+The `AddAttribute` method is called before rendering the tag and it also has a third argument called `append`. If you call `AddAttribute("class", "blue")` and then `AddAttribute("class", "red", append: true)`, the classes will be appended. The `HtmlWriter` knows that values in the `class` HTML attribute are separated by spaces, values in the `style` attribute by semicolons etc. You can also specify your own separator character as the fourth argument.
 
-The `HtmlWriter` knows that values in the `class` HTML attribute are separated by spaces, values in the `style` attribute by semicolons etc. You can also specify your own separator character as the fourth argument.
+## Render HTML
 
-## Rendering HTML
+Let's continue with our `SimpleTextBox` class. We don't want to render begin and end tags `<input></input>`, but just the self closing one `<input />`. 
 
-Let's continue with the **TextBox** class. We don't want to render begin and end tags `<input></input>`, but the self closing one `<input />`. 
-
-It doesn't make sense to allow the `TextBox` to have any content inside. We can decorate the class with the `[ControlMarkupOptions(AllowContent = false)]` attribute to tell DotVVM that there should be no content inside the `<dot:TextBox>` and `</dot:TextBox>` tags. If the user places anything there, DotVVM will display an error page.  
+Also, it doesn't make sense to allow the `TextBox` to have any content inside. We can decorate the class with the `[ControlMarkupOptions(AllowContent = false)]` attribute to tell DotVVM that there should be no content inside the `<dot:TextBox>` and `</dot:TextBox>` tags. If the user places anything there, DotVVM will display an error page.  
 
 We can override the `RenderBeginTag` method to render the self-closing tag, and the `RenderEndTag` to render nothing. 
 
 Between these two methods, the rendering pipeline calls also the `RenderContents` method which renders the contents between the `<dot:TextBox>` and `</dot:TextBox>` tags, but we won't have anything here thanks to the `ControlMarkupOptions` attribute.
 
 ```CSHARP
-protected override void RenderBeginTag(IHtmlWriter writer, IDotvvmRequestContext context)
-{   
-    // TagName contains the value passed to the base constructor. 
-    // We don't want to call base.RenderBeginTag here because it would render the begin tag and then the closing tag.
-    // We want the self closing tag. 
-    
-    writer.RenderSelfClosingTag(TagName); 
-}
+[ControlMarkupOptions(AllowContent = false)]
+public class SimpleTextBox : HtmlGenericControl
+{
+    public SimpleTextBox() : base("input")
+    {
+    }
 
-protected override void RenderEndTag(IHtmlWriter writer, IDotvvmRequestContext context)
-{    
-    // do nothing, we have already rendered the self-closing tag
+    protected override void RenderBeginTag(IHtmlWriter writer, IDotvvmRequestContext context)
+    {   
+        // TagName contains the value passed to the base constructor. 
+        // We don't want to call base.RenderBeginTag here because it would render the begin tag and then the closing tag.
+        // We want the self closing tag. 
+        
+        writer.RenderSelfClosingTag(TagName); 
+    }
+
+    protected override void RenderEndTag(IHtmlWriter writer, IDotvvmRequestContext context)
+    {    
+        // do nothing, we have already rendered the self-closing tag
+    }
 }
 ```
 
-## Rendering HTML attributes
+### HTML attributes
 
 The most interesting is the `AddAttributesToRender` method. 
 
@@ -117,7 +124,7 @@ to the `HtmlWriter`.
 The custom attributes even support data-bindings, so you don't have to care about this. You just need to take care of the control properties.
 
 ```DOTHTML
-<dot:TextBox Text="{value: FirstName}" style="border: none" class="txb1" placeholder="Enter first name" />
+<cc:SimpleTextBox Text="{value: FirstName}" style="border: none" class="txb1" placeholder="Enter first name" />
 ```
 
 We need to declare the `Text` property first:
@@ -129,14 +136,14 @@ public string Text
     set { SetValue(TextProperty, value); }
 }
 public static readonly DotvvmProperty TextProperty =
-    DotvvmProperty.Register<string, TextBox>(t => t.Text, "");
+    DotvvmProperty.Register<string, SimpleTextBox>(t => t.Text, "");
 ```
 
 However, we should support two scenarios:
 
 ```DOTHTML
-<dot:TextBox Text="{value: FirstName}" />
-<dot:TextBox Text="Test" />
+<cc:SimpleTextBox Text="{value: FirstName}" />
+<cc:SimpleTextBox Text="Test" />
 ```
 
 In the first case, we need to render `data-bind="value: FirstName"`, in the second case we need to render `value="Test"`.
@@ -164,7 +171,7 @@ protected override void AddAttributesToRender(IHtmlWriter writer, IDotvvmRequest
 }
 ```
 
-Because this pattern is quite usual and in most controls you would have written the `if` statement checking the presence of binding and rendering the appropriate output, there is an overload of the `AddKnockoutDataBind` method with four arguments.
+Because this pattern is quite usual, and in most controls you would have written the `if` statement checking the presence of binding and rendering the appropriate output, there is an overload of the `AddKnockoutDataBind` method with four arguments.
 
 It allows you to specify a function which is called when the specified property doesn't contain a binding.
 
@@ -185,7 +192,7 @@ protected override void AddAttributesToRender(IHtmlWriter writer, IDotvvmRequest
 
 Thanks to this, the syntax is much shorter.
 
-## Building control tree
+## Build the inner control tree
 
 Rendering HTML using the `HtmlWriter` class is good for simple controls. If the control is more complicated or can contain controls which invoke postbacks, you need to build a control tree inside the control.
 
@@ -194,8 +201,6 @@ This is especially handy if you need to compose a complex control of already exi
 This approach often results in a cleaner code, but rendering the HTML using the `HtmlWriter` is much faster than creating a control for the `<div>` element using `new HtmlGenericControl("div")`.
 
 You need to decide if rendering raw HTML is OK for your case, or if the control is more complex and you need to build a tree of child controls and manipulate them somehow.  
-
-## Composite controls
 
 Let's create a control that is composed of two existing controls (`TextBox` and `Literal`) placed inside a `div` element.
 
@@ -234,7 +239,7 @@ public static readonly DotvvmProperty LabelTextProperty
     = DotvvmProperty.Register<string, TextBoxWithLabel>(c => c.LabelText, null);
 ```
 
-## Child controls
+### Child controls
 
 Similarly to the viewmodels, every control has lifecycle events `OnInit`, `OnLoad` and `OnPreRender` which follow the logic of the viewmodel `Init`, `Load` and `PreRender` events.
 
@@ -260,3 +265,10 @@ protected override void OnInit(IDotvvmRequestContext context)
 ```
 
 After the `Load` phase, the commands are executed and the control tree must be complete at that moment. Moreover, the control tree must be equal as it was in the previous postback, otherwise DotVVM won't be able to find the control which triggered the postback. DotVVM validates postback information and if the control doesn't exist in the page, an error page shows up and the postback is not processed.
+
+## See also
+
+* [Markup controls](markup-controls)
+* [Markup control registration](markup-control-registration)
+* [Markup controls with code](markup-controls-with-code)
+* [Adding interactivity using Knockout binding handlers](interactivity)
