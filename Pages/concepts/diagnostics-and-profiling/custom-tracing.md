@@ -2,7 +2,7 @@
 
 This guide describes how to achieve something similar like the [MiniProfiler widget](miniprofiler), but for any tracing technology you like.
 
-## IRequestTracer interface
+## Request tracing
 
 You can implement a `IRequestTracer` interface, and register the instance in the `ServiceCollection`. DotVVM will automatically call the methods on it.
 
@@ -28,7 +28,7 @@ The `EndRequest(IDotvvmRequestContext context)` is called in case the request is
 
 All these method return a `Task`, so you can do any async operation. However, we encourage you to avoid long running operations since the tracing is called quite number of times during the request. If you want to monitor timing between the events of a DotVVM application, slow tracing may ruin your measurements.
 
-## Sample tracer
+### Sample tracer
 
 With this knowledge, we can create a simple tracer, that will just write the timings to standard output. We'll start a `Stopwatch` when we get the `BeginRequest` event and then just print the elapsed time.
 
@@ -67,6 +67,30 @@ services.AddScoped<IRequestTracer, SampleRequestTracer>();
 ```
 
 Note that only requests to DotVVM pages are traced. Requests for other resources are not included in DotVVM tracing.
+
+## Application startup tracing
+
+DotVVM also contains an interface called `IStartupTracer`, which uses similar logic as the `IRequestTracer` to track the events of the application startup routine.
+
+### TraceEvent
+
+The main method of the tracer is `TraceEvent` method. It receives name of the event as a string. We use string just to allow anyone to extend the set of events, but DotVVM itself will call you with following events.
+
+* `AddDotvvmStarted` is called when the `AddDotVVM` method is entered in ASP.NET Core (`UseDotVVM` in ASP.NET Core).
+* `DotvvmConfigurationUserServicesRegistrationStarted` is called before the `ConfigureServices` in `DotvvmStartup.cs` is called.
+* `DotvvmConfigurationUserServicesRegistrationFinished` is called after the `ConfigureServices` in `DotvvmStartup.cs` was completed
+* `DotvvmConfigurationUserConfigureStarted` is called before the `Configure` in `DotvvmStartup.cs` is called.
+* `DotvvmConfigurationUserConfigureStarted` is called after the `Configure` in `DotvvmStartup.cs` was completed.
+* `UseDotvvmStarted` is called when the `UseDotVVM` method is entered in ASP.NET Core. On OWIN, this is called before DotVVM middleware is added in the request pipeline.
+* `InvokeAllStaticConstructorsStarted` is called before DotVVM starts scanning assemblies for DotVVM controls and properties.
+* `InvokeAllStaticConstructorsFinished` is called after DotVVM finishes scanning assemblies for DotVVM controls and properties.
+* `UseDotvvmFinished` is called when the `UseDotVVM` method is ending.
+* `ViewCompilationStarted` is called before the view compilation starts. This event is not traced when the [view compilation mode](~/pages/concepts/configuration/view-compilation-modes) is set to `Lazy`.
+* `ViewCompilationFinished ` is called after the view compilation ended. This event is not traced when the [view compilation mode](~/pages/concepts/configuration/view-compilation-modes) is set to `Lazy`.
+
+### NotifyStartupCompleted
+
+This method is called after the application startup is completed. Because the view compilation runs on background, some events may be traced after this method is called. The startup tracer can optionally submit these "late events" to the `IDiagnosticsInformationSender` instance.
 
 ## See also
 
