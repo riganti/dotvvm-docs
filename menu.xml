@@ -143,7 +143,7 @@
 	<DocPageMenuItem RouteName="security" PageName="Security">
 	  <DocPageMenuItem RouteName="authentication-and-authorization" PageName="Authentication &amp; authorization">
 	    <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="advanced-authentication-authorization" />
-        <DocPageMenuItem RouteName="aspnet-core" PageName="ASP.NET Core" LegacyPaths="advanced-aspnetcore-authentication" />
+        <DocPageMenuItem RouteName="aspnetcore" PageName="ASP.NET Core" LegacyPaths="advanced-aspnetcore-authentication" />
         <DocPageMenuItem RouteName="owin" PageName="OWIN" LegacyPaths="advanced-owin-security" />
 	  </DocPageMenuItem>
 	  <DocPageMenuItem RouteName="recommendations-for-viewmodels" PageName="Recommendations for viewmodels" />

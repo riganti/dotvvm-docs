@@ -1,10 +1,12 @@
 # OWIN authentication
 
-> This section is applicable if your application uses OWIN and classic .NET Framework. 
-> For ASP.NET Core stack, visit the [Using Microsoft ASP.NET Core Authentication](/docs/tutorials/advanced-aspnetcore-authentication/{branch}).
+> This section is applicable if your application uses OWIN with .NET Framework. For ASP.NET Core, visit the [Authentication in ASP.NET Core](aspnetcore) chapter.
 
-Let's see how to use the OWIN Security framework. To set up the standard cookie authentication, 
-just add this snippet in the `Startup.cs` file.
+In general, the authentication is configured in the `Startup.cs` file by registering an authentication middleware before the DotVVM middleware.
+
+## Cookie authentication
+
+The most common way of authenticating is using the cookie authentication, which can be configured like this:
 
 ```CSHARP
 app.UseCookieAuthentication(new CookieAuthenticationOptions()
@@ -16,13 +18,15 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions()
         OnApplyRedirect = e => DotvvmAuthenticationHelper.ApplyRedirectResponse(e.OwinContext, e.RedirectUri)
     }
 });
+
+app.UseDotVVM<DotvvmStartup>(...);
 ```
 
 > Please note that authentication middlewares should be always registered **before DotVVM**. The authentication middleware needs to determine the current user (e.g. by parsing the authentication token from the cookie) before DotVVM takes control of the HTTP request. 
 
 > The `DotvvmAuthenticationHelper.ApplyRedirectResponse` method is used to perform the redirect because DotVVM uses a different way to handle redirects. Because the HTTP requests invoked by the command bindings are done using AJAX, DotVVM cannot return the HTTP 302 code. Instead, it returns HTTP 200 with a JSON object which instructs DotVVM to load the new URL.
 
-## Login Page with OWIN Cookie Authentication
+### Create the login page
 
 In the login page, you need to verify the user credentials and create the `ClaimsIdentity` object that represents the logged user's identity. Then, you need to pass the identity to the `GetAuthentication().SignIn` method:
 
@@ -32,6 +36,9 @@ public class LoginViewModel : DotvvmViewModelBase
     public string UserName { get; set; }
     public string Password { get; set; }        
 
+    [FromQuery("returnUrl")]
+    public string ReturnUrl { get; set; }
+
     public void Login() 
     {
         if (VerifyCredentials(UserName, Password)) 
@@ -39,7 +46,19 @@ public class LoginViewModel : DotvvmViewModelBase
             // the CreateIdentity is your own method which creates the IIdentity representing the user
             var identity = CreateIdentity(UserName);
             Context.GetAuthentication().SignIn(identity);
-            Context.RedirectToUrl("/signedIn");
+
+            if (!string.IsNullOrEmpty(ReturnUrl)) 
+            {
+                Context.RedirectToLocalUrl(ReturnUrl);
+            }
+            else 
+            {
+                Context.RedirectToRoute("Default");
+            }       
+        }
+        else 
+        {
+            // show the error to the user
         }
     }
 
@@ -64,12 +83,11 @@ public class LoginViewModel : DotvvmViewModelBase
 }
 ```
 
-## Using Social Providers
+## Social providers authentication
 
-If you want to let the users to sign in using Facebook or other third party identity provider,
-you need to do several things. 
+If you want to let the users to sign in using Facebook or other third party identity provider, you need to use a different middleware. 
 
-First, you need to install the appropriate NuGet package - `Microsoft.Owin.Security.Facebook`.
+First, you need to install the appropriate NuGet package, for example `Microsoft.Owin.Security.Facebook`.
 
 In order to redirect to the Facebook login page, you can use this code:
 
@@ -88,7 +106,7 @@ public void LoginWithFacebook()
 Please note that after the `Authentication.Challenge` call which sets the HTTP code to 403, we need to call
 `Context.InterruptRequest()`. This will tell DotVVM to stop executing this request and not to manipulate with the HTTP response.
 
-To configure the Facebook Authentication, use the following code in the `Startup.cs`:
+To configure the Facebook authentication, use the following code in the `Startup.cs`:
 
 ```CSHARP
 app.UseFacebookAuthentication(new FacebookAuthenticationOptions()
@@ -102,8 +120,13 @@ app.UseFacebookAuthentication(new FacebookAuthenticationOptions()
 });
 ```
 
-## Using Azure Active Directory
+## Azure Active Directory authentication
 
 In order to use Azure Active Directory as the identity provider, you can use the Open ID Connect middleware using the `Microsoft.Owin.Security.OpenIdConnect` package.
 
 For the details, visit the [DotVVM with Azure AD Authentication Sample](https://github.com/riganti/dotvvm-samples-azuread-auth).
+
+## See also
+
+* [Authentication & authorization](overview)
+* [Sample: Azure Active Directory authentication](https://github.com/riganti/dotvvm-samples-azuread-auth)
