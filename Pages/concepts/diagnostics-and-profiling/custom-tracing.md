@@ -1,13 +1,12 @@
 # Custom tracing
 
-This guide describes how to achieve something similar like the [MiniProfiler widget](./advanced-miniprofiler.md), but for any tracing technology you like.
+This guide describes how to achieve something similar like the [MiniProfiler widget](miniprofiler), but for any tracing technology you like.
 
+## IRequestTracer interface
 
-## `IRequestTracer` interface
+You can implement a `IRequestTracer` interface, and register the instance in the `ServiceCollection`. DotVVM will automatically call the methods on it.
 
-You can implement a `IRequestTracer` interface and register the instance in the `ServiceCollection` and DotVVM will automatically call the methods on it.
-
-### `TraceEvent`
+### TraceEvent
 
 The main method of the tracer is `TraceEvent` method. It receives name of the event as a string. We use string just to allow anyone to extend the set of events, but DotVVM itself will call you with following events.
 
@@ -23,7 +22,7 @@ The main method of the tracer is `TraceEvent` method. It receives name of the ev
 * `OutputRendered` - when output HTML or JSON is written to the response body
 * `StaticCommandExecuted` - after static command method is executed
 
-### `EndRequest`
+### EndRequest
 
 The `EndRequest(IDotvvmRequestContext context)` is called in case the request is handled successfully. The other overload `EndRequest(IDotvvmRequestContext context, Exception exception)` is used, in case an exception occurs.
 
@@ -33,7 +32,7 @@ All these method return a `Task`, so you can do any async operation. However, we
 
 With this knowledge, we can create a simple tracer, that will just write the timings to standard output. We'll start a `Stopwatch` when we get the `BeginRequest` event and then just print the elapsed time.
 
-In our sample, we don't use async IO as writing using `Console.WriteLine` is more convenient.
+In our sample, we don't use async IO, as writing using `Console.WriteLine` is more convenient.
 
 ```csharp
 public class SampleRequestTracer : IRequestTracer
@@ -61,10 +60,16 @@ public class SampleRequestTracer : IRequestTracer
 }
 ```
 
-It should be registered `IServiceCollection` (in the `ConfigureServices` method of Asp.Net Core startup class):
+The tracer should be registered in the `IServiceCollection` (in the `ConfigureServices` method of ASP.NET Core startup class):
 
 ```csharp
 services.AddScoped<IRequestTracer, SampleRequestTracer>();
 ```
 
-Also note that only requests to the page itself are traced. Requests for resources are not included in DotVVM tracing.
+Note that only requests to DotVVM pages are traced. Requests for other resources are not included in DotVVM tracing.
+
+## See also
+
+* [Application Insights](application-insights)
+* [MiniProfiler](miniprofiler)
+
