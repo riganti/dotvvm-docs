@@ -75,7 +75,7 @@
 	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-viewmodels" />
 	  <DocPageMenuItem RouteName="work-with-data" PageName="Work with data">
 	    <DocPageMenuItem RouteName="gridview-data-sets" PageName="GridView data sets" />
-	    <DocPageMenuItem RouteName="best-practices" PageName="Best practises" />
+	    <DocPageMenuItem RouteName="best-practices" PageName="Best practices" />
 	  </DocPageMenuItem>
       <DocPageMenuItem RouteName="request-context" PageName="Request context" LegacyPaths="basics-request-context" />
 	  <DocPageMenuItem RouteName="binding-direction" PageName="Binding direction" LegacyPaths="basics-binding-direction" />
