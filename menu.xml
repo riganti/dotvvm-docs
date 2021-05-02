@@ -215,14 +215,14 @@
   </DocPageMenuItem>
   
   <DocPageMenuItem RouteName="upgrading-from-older-versions" PageName="Upgrading from older versions" CssClass="icon upgrading-from-older-versions">
-    <DocPageMenuItem RouteName="from-1.0-to-1.1" PageName="From 1.0 to 1.1" LegacyPaths="how-to-start-upgrade-from-1-0" />
-    <DocPageMenuItem RouteName="from-1.1-to-2.0" PageName="From 1.1 to 2.0" LegacyPaths="how-to-start-upgrade-to-2-0" />
-	<DocPageMenuItem RouteName="from-2.0-to-2.1" PageName="From 2.0 to 2.1" />
-	<DocPageMenuItem RouteName="from-2.1-to-2.2" PageName="From 2.1 to 2.2" />
-	<DocPageMenuItem RouteName="from-2.2-to-2.3" PageName="From 2.2 to 2.3" />
-	<DocPageMenuItem RouteName="from-2.3-to-2.4" PageName="From 2.3 to 2.4" />
-	<DocPageMenuItem RouteName="from-2.4-to-2.5" PageName="From 2.4 to 2.5" />
-	<DocPageMenuItem RouteName="from-2.5-to-3.0" PageName="From 2.5 to 3.0" />
+    <DocPageMenuItem RouteName="from-1-0-to-1-1" PageName="From 1.0 to 1.1" LegacyPaths="how-to-start-upgrade-from-1-0" />
+    <DocPageMenuItem RouteName="from-1-1-to-2-0" PageName="From 1.1 to 2.0" LegacyPaths="how-to-start-upgrade-to-2-0" />
+	<DocPageMenuItem RouteName="from-2-0-to-2-1" PageName="From 2.0 to 2.1" />
+	<DocPageMenuItem RouteName="from-2-1-to-2-2" PageName="From 2.1 to 2.2" />
+	<DocPageMenuItem RouteName="from-2-2-to-2-3" PageName="From 2.2 to 2.3" />
+	<DocPageMenuItem RouteName="from-2-3-to-2-4" PageName="From 2.3 to 2.4" />
+	<DocPageMenuItem RouteName="from-2-4-to-2-5" PageName="From 2.4 to 2.5" />
+	<DocPageMenuItem RouteName="from-2-5-to-3-0" PageName="From 2.5 to 3.0" />
 	<DocPageMenuItem RouteName="compilation-status-page" PageName="Compilation status page" />
   </DocPageMenuItem>
 

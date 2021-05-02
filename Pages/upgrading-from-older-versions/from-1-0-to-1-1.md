@@ -159,3 +159,8 @@ configuration.Resources.Register(ResourceConstants.JQueryResourceName,
         }
     });
 ```
+
+
+## See also
+
+* [From 1.1 to 2.0](from-1-1-to-2-0)

@@ -213,7 +213,7 @@ Also note that `dotvvm.postBackHandlers` collection was renamed to `dotvvm.postb
 
 <a name="gridview"></a>
 
-## 6. GridView Control 
+## 7. GridView Control 
 
 We have changed the way collection data are loaded into GridViewDataSet. In DotVVM 1.1, you could provide delegate to `GridViewDataSet` which would be used to load data. We have removed the delegate because loading the data could lead to deadlock.
 
@@ -246,17 +246,17 @@ public override Task PreRender()
 
 
 
-# Obsolete Constructs
+## 8. Obsolete Constructs
 
 There are several things in **DotVVM 2.0** which were marked as obsolete. Although the features still work, we recommend to fix them soon.
 
-## 1. ValueType property on TextBox, Literal and GridViewTextColumn
+### 1. ValueType property on TextBox, Literal and GridViewTextColumn
 
 The `ValueType` property was needed whenever you worked with date or numeric values in `TextBox`, `Literal` or `GridViewTextColumn` controls. In **DotVVM 2.0**, this property was made obsolete and is not used by the framework - the type of the data-bound value is inferred automatically.
 
 
 
-## 2. ComboBox now supports ItemTextBinding and ItemValueBinding
+### 2. ComboBox now supports ItemTextBinding and ItemValueBinding
 
 The `DisplayMember` property was replaced by `ItemTextBinding`, the `ValueMember` was replaced with `ItemValueBinding`.
 
@@ -274,6 +274,10 @@ The `DisplayMember` property was replaced by `ItemTextBinding`, the `ValueMember
               SelectedValue="{value: SelectedPerson}" />
 ```
 
-## 3. DotvvmConfiguration now exposes IServiceProvider
+### 3. DotvvmConfiguration now exposes IServiceProvider
 
 The `ServiceLocator` property was replaced by `ServiceProvider` in the `DotvvmConfiguration`.
+
+## See also
+
+* [From 2.0 to 2.1](from-2-0-to-2-1)
