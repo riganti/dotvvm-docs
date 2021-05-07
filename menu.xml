@@ -1,5 +1,5 @@
 <DocMenu Version="2.0">
-  <DocStaticMenuItem RouteName="Docs" PageName="Home" />
+  <DocStaticMenuItem RouteName="Docs" PageName="Home" CssClass="icon home separator-top" />
   <DocPageMenuItem RouteName="introduction" PageName="Introduction" CssClass="icon introduction" />
   
   <DocPageMenuItem RouteName="quick-starts" PageName="Quick starts" CssClass="icon quick-starts">
@@ -179,7 +179,7 @@
     
   <DocControlCategory Category="builtin" CssClass="icon controls" />
     
-  <DocPageMenuItem RouteName="business-pack" PageName="DotVVM Business Pack" CssClass="icon dotvvm-business-pack">
+  <DocPageMenuItem RouteName="business-pack" PageName="DotVVM Business Pack" CssClass="icon dotvvm-business-pack separator-top">
     <DocPageMenuItem RouteName="getting-started" PageName="Getting started" LegacyPaths="commercial-business-pack-install" />
     <DocControlCategory RouteName="controls" Category="businesspack" />
     <DocPageMenuItem RouteName="themes" PageName="Themes">
@@ -207,7 +207,7 @@
 	
   </DocPageMenuItem>
   
-  <DocPageMenuItem RouteName="dotvvm-for-visual-studio" PageName="DotVVM for Visual Studio" CssClass="icon dotvvm-for-visual-studio">
+  <DocPageMenuItem RouteName="dotvvm-for-visual-studio" PageName="DotVVM for Visual Studio" CssClass="icon dotvvm-for-visual-studio separator-bottom">
     <DocPageMenuItem RouteName="overview" PageName="Overview" />
     <DocPageMenuItem RouteName="dotvvm-private-nuget-feed" PageName="Using DotVVM private NuGet feed" LegacyPaths="commercial-dotvvm-private-nuget-feed" />
     <DocPageMenuItem RouteName="troubleshooting" PageName="Troubleshooting" LegacyPaths="commercial-troubleshooting-dotvvm-for-visual-studio,troubleshooting-dotvvm-compiler-not-found" />
