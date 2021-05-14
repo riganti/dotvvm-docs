@@ -93,7 +93,7 @@
 	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-configuration" />
 	  <DocPageMenuItem RouteName="dependency-injection" PageName="Dependency injection">
 	    <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="advanced-ioc-di-container" />
-        <DocPageMenuItem RouteName="aspnet-core" PageName="ASP.NET Core" LegacyPaths="advanced-ioc-di-container-aspnetcore" />
+        <DocPageMenuItem RouteName="aspnetcore" PageName="ASP.NET Core" LegacyPaths="advanced-ioc-di-container-aspnetcore" />
         <DocPageMenuItem RouteName="owin" PageName="OWIN" LegacyPaths="advanced-ioc-di-container-owin" />
 	  </DocPageMenuItem>
 	  <DocPageMenuItem RouteName="view-compilation-modes" PageName="View compilation mode" LegacyPaths="advanced-view-compilation-modes" />
