@@ -2,7 +2,7 @@
 
 Dependency injection is used widely in many large applications, and since it is built-in in ASP.NET Core, it is a preferred way of working with services.
 
-**DotVVM** supports dependency injection in [viewmodels](~/pages/concepts/viewmodels/overview), [static command services](~/pages/concepts/respond-to-user-actions/static-command-services), and [custom controls](~/pages/concepts/control-development/introduction).
+**DotVVM** supports dependency injection in [viewmodels](~/pages/concepts/viewmodels/overview), [static command services](~/pages/concepts/respond-to-user-actions/static-command-services), and [custom controls](~/pages/concepts/control-development/overview).
 
 ## Register services
 

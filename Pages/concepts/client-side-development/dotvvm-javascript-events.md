@@ -89,4 +89,4 @@ Also, the `error` event is raised in case of any error.
 * [Read and modify viewmodel from JS](read-and-modify-viewmodel-from-js)
 * [Access validation errors from JS](access-validation-errors-from-js)
 * [JS directive overview](js-directive/overview)
-* [Control development](~/pages/concepts/control-development/introduction)
+* [Control development](~/pages/concepts/control-development/overview)

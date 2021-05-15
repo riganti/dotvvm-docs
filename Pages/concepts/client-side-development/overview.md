@@ -97,7 +97,7 @@ See the [JS directive](js-directive/overview) chapter for more info.
 
 ## Other options
 
-There are even more advanced options which may be helpful when developing custom controls or extending DotVVM. See the [Control development](~/pages/concepts/control-development/introduction) section for more info.
+There are even more advanced options which may be helpful when developing custom controls or extending DotVVM. See the [Control development](~/pages/concepts/control-development/overview) section for more info.
 
 ## See also
 
@@ -105,4 +105,4 @@ There are even more advanced options which may be helpful when developing custom
 * [Read and modify viewmodel from JS](read-and-modify-viewmodel-from-js)
 * [DotVVM JavaScript events](dotvvm-javascript-events)
 * [Access validation errors from JS](access-validation-errors-from-js)
-* [Control development](~/pages/concepts/control-development/introduction)
+* [Control development](~/pages/concepts/control-development/overview)

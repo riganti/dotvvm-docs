@@ -19,7 +19,7 @@ The new ExtensionParameter is defined by the `BindingExtensionParameter` abstrac
 * `GetJsTranslation(JsExpression dataContext)` - This gets the expression that can be used in the translated Javascript expressions. Here, you can use a reference to the knockout context to compute the value.
 
 
-For example, you may know the [`@import` directive](/Pages/advanced-ioc-di-container.md) - it basically introduces a new extension parameter that represents a service imported from `IServiceProvider`. Let's have a look at how we could implement it. First, we will need class inheriting from `BindingExtensionParameter`:
+For example, you may know the `@import` directive - it basically introduces a new extension parameter that represents a service imported from `IServiceProvider`. Let's have a look at how we could implement it. First, we will need class inheriting from `BindingExtensionParameter`:
 
 ```CSHARP
 public class InjectedServiceExtensionParameter : BindingExtensionParameter

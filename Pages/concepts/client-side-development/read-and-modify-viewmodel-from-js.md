@@ -115,4 +115,4 @@ Our intent is to make sure that when you send a `DateTime` value `2000-01-02 03:
 * [JS directive](js-directive/overview)
 * [DotVVM JavaScript events](dotvvm-javascript-events)
 * [Access validation errors from JS](access-validation-errors-from-js)
-* [Control development](~/pages/concepts/control-development/introduction)
+* [Control development](~/pages/concepts/control-development/overview)

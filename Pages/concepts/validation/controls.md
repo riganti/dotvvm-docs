@@ -20,7 +20,7 @@ If you want to display the errors attached to the `Validation.Target` object its
 
 ## Validator control
 
-The second options is to use the [Validator](~/controls/builtin/Validator}) to display an error attached to a particular viewmodel property.
+The second options is to use the [Validator](~/controls/builtin/Validator) to display an error attached to a particular viewmodel property.
 
 ```DOTHTML
 <dot:TextBox Text="{value: NewTaskTitle}" />

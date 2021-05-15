@@ -46,7 +46,7 @@ If you plan to build a larger application, check out our [commercial components]
 
 ## Other controls
 + [InlineScript](~/controls/builtin/InlineScript) - includes an inline JavaScript snippet in the page
-+ [RequiredResource](/docs/tutorials/basics-javascript-and-css) - includes a script or style resource in the page
++ [RequiredResource](~/pages/concepts/script-and-style-resources/use-resources-in-pages) - includes a script or style resource in the page
 + [UpdateProgress](~/controls/builtin/UpdateProgress) - displays specified content during the postback
 
 ## See also

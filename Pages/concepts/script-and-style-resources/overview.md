@@ -107,9 +107,9 @@ DotVVM already includes the following built-in resources:
 
 * `dotvvm` - a fundamental set of function required by DotVVM to work correctly.
 
-* `dotvvm.debug` - a helper that displays exception details from the commands. It is only included in the page in [debug mode](/docs/tutorials/basics-configuration/{branch}).
+* `dotvvm.debug` - a helper that displays exception details from the commands. It is only included in the page in [debug mode](~/pages/concepts/configuration/overview).
 
-* `dotvvm.fileUpload-css` - a CSS styles for the [FileUpload](/docs/controls/builtin/FileUpload/{branch}) control.
+* `dotvvm.fileUpload-css` - a CSS styles for the [FileUpload](~/controls/builtin/FileUpload) control.
 
 * `knockout` - Knockout JS 3.5.0 (with a few tweaks).
 

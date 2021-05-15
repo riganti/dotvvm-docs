@@ -32,7 +32,7 @@ For all these usages, you need to track the origin of the value - where does it 
 
 Sometimes, it comes from a trusted source (e. g. a small group of the website authors) where you don't need to do anything.
 
-In other cases, it is provided by the website users: entirely, or partially (users provide some input which is inserted into some template). In such cases, you either need to HTML-encode all the input from the user, or use libraries like [HtmlSanitizer](https://www.nuget.org/packages/HtmlSanitizer/) to remove all potentially dangerous constructs from the HTML.
+In other cases, it is provided by the website users: entirely, or partially (users provide some input which is inserted into some template). In such cases, you either need to HTML-encode all the input from the user, or use libraries like [HtmlSanitizer](https://www.nuget.org/packages/HtmlSanitizer) to remove all potentially dangerous constructs from the HTML.
 
 We also recommend to use some penetration testing tool to discover potential vulnerabilities.
 

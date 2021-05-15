@@ -15,8 +15,8 @@ You have to do the following things to make the inline editing work:
 
 * If you want to make some column read-only, set its `IsEditable` property to `false`.
 
-* If you don't want to use the default `GridViewTextColumn`, which renders a [Literal](/docs/controls/builtin/Literal/{branch}) in the read-only 
-    mode and the [TextBox](/docs/controls/builtin/TextBox/{branch}) in the edit mode, use the `GridViewTemplateColumn` and use its `EditTemplate` 
+* If you don't want to use the default `GridViewTextColumn`, which renders a [Literal](~/controls/builtin/Literal) in the read-only 
+    mode and the [TextBox](~/controls/builtin/TextBox) in the edit mode, use the `GridViewTemplateColumn` and use its `EditTemplate` 
     to specify how the cell will look like when in the edit mode.
 
 

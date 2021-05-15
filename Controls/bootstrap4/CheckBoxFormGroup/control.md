@@ -1,1 +1,1 @@
-Represents a [CheckBox](/docs/controls/bootstrap4/CheckBox/{branch}) in [FormGroup](/docs/controls/bootstrap4/FormGroup/{branch}).
+Represents a [CheckBox](~/controls/bootstrap4/CheckBox) in [FormGroup](~/controls/bootstrap4/FormGroup).

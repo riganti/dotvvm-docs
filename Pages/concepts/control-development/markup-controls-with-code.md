@@ -199,7 +199,7 @@ Because the `Value` property is bound to a property in the viewmodel, DotVVM wil
 
 ## See also
 
-* [Markup controls](markup-control)
+* [Markup controls](markup-controls)
 * [Markup control registration](markup-control-registration)
 * [Code-only controls](code-only-controls)
 * [Adding interactivity using Knockout binding handlers](interactivity)

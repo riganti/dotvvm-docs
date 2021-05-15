@@ -1,6 +1,6 @@
 # Getting started with Bootstrap for DotVVM (version 3)
 
-To use the [Bootstrap for DotVVM](/landing/bootstrap-for-dotvvm) controls, you have use the [DotVVM Private Nuget Feed](/docs/tutorials/commercial-dotvvm-private-nuget-feed).
+To use the [Bootstrap for DotVVM](https://www.dotvvm.com/products/bootstrap-for-dotvvm) controls, you have use the [DotVVM Private Nuget Feed](~/pages/dotvvm-for-visual-studio/dotvvm-private-nuget-feed).
 
 1. Install the `DotVVM.Controls.Bootstrap` package from the DotVVM Private Nuget Feed.
 
@@ -22,7 +22,7 @@ This will register all Bootstrap controls under the `<bs:*` tag prefix, and it a
 
 ## Configuration
 
-The [Bootstrap for DotVVM](/landing/bootstrap-for-dotvvm) package doesn't include the Bootstrap CSS and JavaScript libraries as they are too large and you might have 
+The [Bootstrap for DotVVM](https://www.dotvvm.com/products/bootstrap-for-dotvvm) package doesn't include the Bootstrap CSS and JavaScript libraries as they are too large and you might have 
 your own compilation of Bootstrap (e.g. if you use some Bootstrap template).   
 
 There are two ways how to work with Bootstrap resources.
@@ -111,4 +111,4 @@ no errors in the developer console, especially some messages which say that some
 
 ## Limitations
 
-The current version of [Bootstrap for DotVVM](/landing/bootstrap-for-dotvvm) supports **Bootstrap 3**. For more information about Bootstrap, navigate into its [documentation](https://getbootstrap.com).
+The current version of [Bootstrap for DotVVM](https://www.dotvvm.com/products/bootstrap-for-dotvvm) supports **Bootstrap 3**. For more information about Bootstrap, navigate into its [documentation](https://getbootstrap.com).

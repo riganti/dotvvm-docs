@@ -5,4 +5,4 @@ Expected values are `Link` which generates "a" element, `Button` which generates
  
 Additionally the `ListGroupItem` control has the `IsDisabled` and `IsSelected` properties.
 
-You can also use [GlyphIcon](/docs/controls/bootstrap/GlyphIcon/{branch}) or any other kind of HTML content inside the control.
+You can also use [GlyphIcon](~/controls/bootstrap/GlyphIcon) or any other kind of HTML content inside the control.

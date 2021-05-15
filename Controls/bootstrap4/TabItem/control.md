@@ -1,3 +1,3 @@
-Represents the tab item inside the Bootstrap [TabControl](/docs/controls/bootstrap4/TabControl/{branch}).
+Represents the tab item inside the Bootstrap [TabControl](~/controls/bootstrap4/TabControl).
 
 <https://getbootstrap.com/docs/4.3/components/navs/#javascript-behavior>

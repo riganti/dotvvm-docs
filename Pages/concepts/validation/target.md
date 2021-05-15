@@ -17,7 +17,7 @@ You can apply the `Validation.Target` property to any HTML element, and to almos
 
 ## ValidationSummary
 
-This applies also to the [ValidationSummary](~/controls/builtin/ValidationSummery) control. If this control or some of its parents has the `Validate.Target` property set, the `ValidationSummary` will display only the errors from the validation target.
+This applies also to the [ValidationSummary](~/controls/builtin/ValidationSummary) control. If this control or some of its parents has the `Validate.Target` property set, the `ValidationSummary` will display only the errors from the validation target.
 
 If you don't set the `Validation.Target`, entire viewmodel is validated - the default value for the property is `{value: _root}`.
 

@@ -1,2 +1,2 @@
-Renders a list of [RadioButton](/docs/controls/businesspack/RadioButton/{branch}) controls and lets the user to select a single value.
+Renders a list of [RadioButton](~/controls/businesspack/RadioButton) controls and lets the user to select a single value.
 The selected value can be set or retrieved using the `SelectedValue` property of the control.

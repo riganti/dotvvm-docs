@@ -123,7 +123,7 @@ If the `Debug` mode is enabled,
 * a non-minified versions of scripts is used, so the debugging is easier
 * validation errors are indicated using a red popup that appears in the top right corner of the page
 
-The property is automatically set in ASP.NET Core based on [IWebHostEnvironment.IsProduction()](https://docs.microsoft.com/en-us/aspnet/core/api/microsoft.aspnetcore.hosting.hostingenvironmentextensions#Microsoft_AspNetCore_Hosting_HostingEnvironmentExtensions_IsDevelopment_Microsoft_AspNetCore_Hosting_IHostingEnvironment_). 
+The property is automatically set in ASP.NET Core based on [IWebHostEnvironment.IsProduction()](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.hosting.hostingenvironmentextensions?view=dotnet-plat-ext-5.0). 
 
 In OWIN, you need to set the value yourself. 
 

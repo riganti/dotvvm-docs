@@ -79,7 +79,7 @@ Then, you can just call `config.AddMyAwesomeControls()` in your `DotvvmStartup.c
 
 ## See also
 
-* [Markup controls](markup-control)
+* [Markup controls](markup-controls)
 * [Markup controls with code](markup-controls-with-code)
 * [Code-only controls](code-only-controls)
 * [Adding interactivity using Knockout binding handlers](interactivity)

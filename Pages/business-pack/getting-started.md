@@ -1,6 +1,6 @@
 # Getting started with DotVVM Business Pack
 
-[DotVVM Business Pack](/products/dotvvm-business-pack) is a set of advanced components which can save a lot of time if you are building large line of business applications.
+[DotVVM Business Pack](https://www.dotvvm.com/products/dotvvm-business-pack) is a set of advanced components which can save a lot of time if you are building large line of business applications.
 
 **Business Pack** ships with **~30 controls** you can see in the [Business Pack Gallery](https://www.dotvvm.com/gallery/business-pack/AutoComplete).
 

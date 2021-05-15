@@ -141,7 +141,7 @@ Also, you might need this e.g. on the `Changed` event of `TextBox` when you need
 <!-- There are additional fields in the form which are required, but we need the command to be executed even if these fields are empty. -->
 ```
 
-> If you turn on the **debug mode** in the [configuration](~/pages/concepts/configuration), a red notification in the top right corner of the screen appears if the postback was canceled because of validation errors. This helps you to discover validation errors when you don't have [validator controls](controls) on the page yet.
+> If you turn on the **debug mode** in the [configuration](~/pages/concepts/configuration/overview), a red notification in the top right corner of the screen appears if the postback was canceled because of validation errors. This helps you to discover validation errors when you don't have [validator controls](controls) on the page yet.
 
 ## See also
 

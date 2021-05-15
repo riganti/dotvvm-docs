@@ -1,1 +1,1 @@
-Represents a [DateTimePicker](/docs/controls/bootstrap4/DateTimePicker/{branch}) in [FormGroup](/docs/controls/bootstrap4/FormGroup/{branch}).
+Represents a [DateTimePicker](~/controls/bootstrap4/DateTimePicker) in [FormGroup](~/controls/bootstrap4/FormGroup).

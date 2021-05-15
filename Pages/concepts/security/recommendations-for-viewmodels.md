@@ -51,7 +51,7 @@ public override Task Load()
 
 ### Use bind direction
 
-Another way of "ignoring" client-side changes to the property is to set [bind direction](~/pages/concepts/viewmodels/bind-direction) to `ServerToClient` or `ServerToClientFirstRequest`. You can achieve the same behavior by delaring the setter as private.
+Another way of "ignoring" client-side changes to the property is to set [bind direction](~/pages/concepts/viewmodels/binding-direction) to `ServerToClient` or `ServerToClientFirstRequest`. You can achieve the same behavior by delaring the setter as private.
 
 ```CSHARP
 [Bind(Direction.ServerToClientFirstRequest)]
@@ -61,7 +61,7 @@ public UserBasicInfoDto UserInfo { get; }
 public bool CanChangeShippingAddress { get; private set; }
 ```
 
-See the [bind direction](~/pages/concepts/viewmodels/bind-direction) chapter for more info.
+See the [bind direction](~/pages/concepts/viewmodels/binding-direction) chapter for more info.
 
 A special case are properties which are fetched from the route or query string parameters using `FromRoute` or `FromQuery` parameters. They are set to `Bind(Direction.ServerToClient)` automatically. We recommend to use `private set` for such properties to express that the value cannot be provided by the user.
 

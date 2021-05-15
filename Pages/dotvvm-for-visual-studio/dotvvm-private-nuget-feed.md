@@ -18,7 +18,7 @@ If you sign in in the extension, it will offer you to _install the DotVVM Privat
 
 If you don't see the DotVVM Private NuGet Feed in your NuGet sources, or if you want to set up the private feed to be used on your build server where you don't have Visual Studio, you can take the following manual steps:
 
-1. Locate the `nuget.exe` tool, or [download it from the NuGet website](https://dist.nuget.org/index.html). 
+1. Locate the `nuget.exe` tool, or [download it from the NuGet website](https://www.nuget.org/downloads). 
 
 2. Open command line in the folder with `nuget.exe`, and run this script (don't forget to fill your own credentials):
 

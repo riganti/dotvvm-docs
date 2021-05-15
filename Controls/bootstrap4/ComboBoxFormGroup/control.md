@@ -1,1 +1,1 @@
-Represents a [ComboBox](/docs/controls/bootstrap4/ComboBox/{branch}) in [FormGroup](/docs/controls/bootstrap4/FormGroup/{branch}).
+Represents a [ComboBox](~/controls/bootstrap4/ComboBox) in [FormGroup](~/controls/bootstrap4/FormGroup).

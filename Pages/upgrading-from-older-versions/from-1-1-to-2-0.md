@@ -91,7 +91,7 @@ public class DotvvmStartup : IDotvvmStartup, IDotvvmServiceConfigurator
 }
 ```
 
-> This `ConfigureServices` should register only services that are related to DotVVM - uploaded file storage, custom viewmodel loaders, or commercial controls like [DotVVM Business Pack](/docs/tutorials/commercial-business-pack-install/{branch}). All other services should be configured in `Startup.cs` like it was before.
+> This `ConfigureServices` should register only services that are related to DotVVM - uploaded file storage, custom viewmodel loaders, or commercial controls like [DotVVM Business Pack](/docs/tutorials/commercial-business-pack-install/2.0). All other services should be configured in `Startup.cs` like it was before.
 
 
 
@@ -99,7 +99,7 @@ public class DotvvmStartup : IDotvvmStartup, IDotvvmServiceConfigurator
 
 **DotVVM 1.1** was including jQuery in the page in Debug mode, because it was required by `dotvvm.debug.js` helper library. The need for jQuery in this helper was removed with **DotVVM 2.0**, so `jQuery` resource is not registered in the DotVVM configuration.
 
-If you application uses jQuery and if it is not included with another library (like [Bootstrap for DotVVM](/docs/tutorials/commercial-bootstrap-for-dotvvm/{branch}) or [DotVVM Business Pack](/docs/tutorials/commercial-business-pack-install/{branch})), add the following code into `ConfigureResources` method in `DotvvmStartup.cs`:
+If you application uses jQuery and if it is not included with another library (like [Bootstrap for DotVVM](/docs/tutorials/commercial-bootstrap-for-dotvvm/2.0) or [DotVVM Business Pack](/docs/tutorials/commercial-business-pack-install/2.0)), add the following code into `ConfigureResources` method in `DotvvmStartup.cs`:
 
 ```CSHARP
 config.Resources.Register("jquery", new ScriptResource()
@@ -113,7 +113,7 @@ config.Resources.Register("jquery", new ScriptResource()
 
 ## 4. Route Registration with Custom Presenters
 
-We have changed the signature of `RouteTable.Add` method for registering [custom presenters](/docs/tutorials/advanced-custom-presenters/{branch}). Now you can specify only a type of the presenter - in this case, the presenter instance will be retrieved from `IServiceProvider`. 
+We have changed the signature of `RouteTable.Add` method for registering [custom presenters](/docs/tutorials/advanced-custom-presenters/2.0). Now you can specify only a type of the presenter - in this case, the presenter instance will be retrieved from `IServiceProvider`. 
 
 An unnecessary parameter specifying the virtual path has been removed the overloads with presenters:
 
@@ -161,7 +161,7 @@ If you have a custom exception filter and need to handle exceptions from present
 
 ## 6. Custom PostBack Handlers 
 
-We have rearchitected the way how [custom postback handlers](/docs/tutorials/control-development-creating-custom-postback-handlers/{branch}) are implemented. 
+We have rearchitected the way how [custom postback handlers](/docs/tutorials/control-development-creating-custom-postback-handlers/2.0) are implemented. 
 
 If you implemented your own postback handlers, you will need to make the following change in the C# part of the handler:
 

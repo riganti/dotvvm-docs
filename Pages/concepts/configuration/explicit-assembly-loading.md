@@ -34,7 +34,7 @@ The easiest way to make sure you haven't missed any of the assemblies, is to use
 
 ## See also
 
-* [Configuration overview](configuration)
+* [Configuration overview](overview)
 * [View compilation modes](view-compilation-modes)
 * [Control development](~/pages/concepts/control-development/overview)
 
