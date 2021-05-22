@@ -69,7 +69,7 @@ If the `MyClass` is not in the sames namespace as the viewmodel, use the `@impor
 
 ### Static command service methods
 
-Since the static methods cannot use [dependency injection](~/pageS/concepts/viewmodels/dependency-injection/overview), we recommend usin [static command services](static-command-services) instead of static methods. 
+Since the static methods cannot use [dependency injection](~/pageS/concepts/configuration/dependency-injection/overview), we recommend usin [static command services](static-command-services) instead of static methods. 
 
 ### JavaScript methods
 

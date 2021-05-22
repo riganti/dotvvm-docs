@@ -1,5 +1,5 @@
-A special version of the [RouteLink](/docs/controls/bootstrap4/RouteLink/{branch}) control that can be used in [InputGroup](/docs/controls/bootstrap4/InputGroup/{branch}).
+A special version of the [RouteLink](~/controls/bootstrap4/RouteLink) control that can be used in [InputGroup](~/controls/bootstrap4/InputGroup).
 
-See [RouteLink](/docs/controls/bootstrap4/RouteLink/{branch}) for more info on how to use this control.
+See [RouteLink](~/controls/bootstrap4/RouteLink) for more info on how to use this control.
 
 <https://getbootstrap.com/docs/4.3/components/input-group/>

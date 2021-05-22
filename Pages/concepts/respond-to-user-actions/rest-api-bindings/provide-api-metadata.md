@@ -13,7 +13,7 @@ These NuGet packages work with [Swashbuckle](https://github.com/domaindrivendev/
 First, make sure you have `Swashbuckle` installed and configured in your project.
 
 * [Swashbuckle - ASP.NET Core](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
-* [Swashbuckle - ASP.NET Core - Newtonsoft](https://www.nuget.org/packages/Swashbuckle.AspNetCore.Newtonsoft/) (_Optional: This package is necessary only for DotVVM 2.5+ projects that target ASP.NET Core 2.x, or projects using `Newtonsoft.Json` serializer with ASP.NET Core 3.x_)
+* [Swashbuckle - ASP.NET Core - Newtonsoft](https://www.nuget.org/packages/Swashbuckle.AspNetCore.Newtonsoft) (_Optional: This package is necessary only for DotVVM 2.5+ projects that target ASP.NET Core 2.x, or projects using `Newtonsoft.Json` serializer with ASP.NET Core 3.x_)
 
 Then install the following NuGet package to the REST API project:
 

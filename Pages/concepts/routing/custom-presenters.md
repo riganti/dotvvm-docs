@@ -99,7 +99,7 @@ Finally, you need to register the presenter in the `DotvvmStartup.cs` file:
 config.RouteTable.Add("t", "u", typeof(RssPresenter));
 ```
 
-The `RssPresenter` must be registered in the `IServiceCollection`. See [Dependency injection](~/pages/configuration/dependency-injection/overview) for more information.
+The `RssPresenter` must be registered in the `IServiceCollection`. See [Dependency injection](~/pages/concepts/configuration/dependency-injection/overview) for more information.
 
 Alternatively, you can register your own factory method that will be used to create the instance of the presenter. In that case, the presented doesn't need to be registered in `IServiceCollection`:
 
@@ -116,4 +116,4 @@ You can apply [Action filters](~/pages/concepts/viewmodels/filters/action-filter
 * [Parameters](~/pages/concepts/routing/parameters)
 * [Route redirection](~/pages/concepts/routing/route-redirection)
 * [Auto-discover routes](~/pages/concepts/routing/auto-discover-routes)
-* [Dependency injection](~/pages/configuration/dependency-injection/overview)
+* [Dependency injection](~/pages/concepts/configuration/dependency-injection/overview)

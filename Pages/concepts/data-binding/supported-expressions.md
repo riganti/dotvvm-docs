@@ -75,11 +75,11 @@ DotVVM can translate several .NET methods on basic types or collections to JavaS
 * `Api.RefreshOnChange`
 * `Api.RefreshOnEvent`
 * `Api.PushEvent` 
-* *Note*: See [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api/bindings/overview) for more info
+* *Note*: See [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api-bindings/overview) for more info
 
 ### Provide custom method translators
 
-It is possible to register custom translators for any method. See [Provide custom JavaScript translators](~/pages/concepts/control-development/provide-custom-method-translators) for more information.  
+It is possible to register custom translators for any method. See [Provide custom JavaScript translators](~/pages/concepts/control-development/custom-javascript-translators) for more information.
 
 ### Upcoming support for .NET methods in DotVVM 3.1
 
@@ -133,4 +133,5 @@ We plan to add support for the following methods in DotVVM 3.1.
 * [Data-binding overview](~/pages/concepts/data-binding/overview)
 * [Respond to user actions](~/pages/concepts/respond-to-user-actions/overview)
 * [Binding context](~/pages/concepts/data-binding/binding-context)
-* [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api/bindings/overview)
+* [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api-bindings/overview)
+* [Custom JavaScript translators](~/pages/concepts/control-development/custom-javascript-translators)

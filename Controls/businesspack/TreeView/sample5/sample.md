@@ -6,4 +6,4 @@ The icons used by the control can be customized using the following inner elemen
 
 * `CollapseIcon` represents an icon of toggle button that collapse data. The default is `Minus` icon.
 
-See the [Icon](/docs/controls/businesspack/Icon/{branch}) documentation to find about using other icon packs.
+See the [Icon](~/controls/businesspack/Icon) documentation to find about using other icon packs.

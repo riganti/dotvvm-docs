@@ -1,8 +1,8 @@
-This control is different from the built-in [GridView](/docs/controls/builtin/GridView/{branch}) and is not derived from it.
+This control is different from the built-in [GridView](~/controls/builtin/GridView) and is not derived from it.
 
 The *Business Pack* `GridView` control is a advanced grid control with many features.
 
-The *version 2.0* supports the following features (except of the features supported in the built-in GridView):
+The *version 3.0* supports the following features (except of the features supported in the built-in GridView):
 
 * Inline Insert row
 * Column Hiding

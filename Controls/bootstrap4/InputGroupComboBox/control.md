@@ -1,5 +1,5 @@
-A special version of the [ComboBox](/docs/controls/bootstrap4/ComboBox/{branch}) control that can be used in [InputGroup](/docs/controls/bootstrap4/InputGroup/{branch}).
+A special version of the [ComboBox](~/controls/bootstrap4/ComboBox) control that can be used in [InputGroup](~/controls/bootstrap4/InputGroup).
 
-See [ComboBox](/docs/controls/bootstrap4/ComboBox/{branch}) for more info on how to use this control.
+See [ComboBox](~/controls/bootstrap4/ComboBox) for more info on how to use this control.
 
 <https://getbootstrap.com/docs/4.3/components/input-group/>

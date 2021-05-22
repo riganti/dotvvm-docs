@@ -10,4 +10,4 @@ The `CrollableContent` sets whether the modal dialog content would be vertically
 
 The `CloseOnBackdropClick` or `CloseOnEscape` properties allows to specify whether the dialog should be closed by clicking outside of it or by pressing the Escape key.
 
-If `AddCloseButton` is set to `true`, the [CloseButton](/docs/controls/bootstrap4/CloseButton/{branch}) control will be added to the modal dialog header.
+If `AddCloseButton` is set to `true`, the [CloseButton](~/controls/bootstrap4/CloseButton) control will be added to the modal dialog header.

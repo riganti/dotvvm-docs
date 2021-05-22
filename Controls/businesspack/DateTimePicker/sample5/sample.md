@@ -14,4 +14,4 @@ To customize the look of icons in the control, you can use the following inner e
 
 * `NextTimeIcon` allows to customize the icon displayed on the button navigating to next page of time picker. The default value is `ChevronDown`.
 
-See the [Icon](/docs/controls/businesspack/Icon/{branch}) documentation to find about using other icon packs.
+See the [Icon](~/controls/businesspack/Icon) documentation to find about using other icon packs.

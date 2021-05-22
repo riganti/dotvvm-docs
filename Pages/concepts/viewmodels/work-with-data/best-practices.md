@@ -203,7 +203,7 @@ public class OrderDialogViewModel : DotvvmViewModelBase
 
 * [Viewmodels overview](../overview)
 * [GridView data sets](gridview-data-sets)
-* [Dependency injection](~/pages/concepts/configuration/dependency-injection)
+* [Dependency injection](~/pages/concepts/configuration/dependency-injection/overview)
 * [Binding direction](../binding-direction)
 * [Viewmodel protection](../viewmodel-protection)
 * [Video: Thinking in the MVVM way](https://www.youtube.com/watch?v=2iolJ_tgP4g&ab_channel=DotVVM)

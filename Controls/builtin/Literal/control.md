@@ -4,4 +4,4 @@ If you set the `FormatString` property, you can apply a format string to numbers
 
 By default, the *Literal* encodes the text, so you don't have to worry about the *script injection* attacks. 
 
-If you want to render raw HTML content in the page, use [HtmlLiteral](/docs/controls/builtin/HtmlLiteral/{branch}) control instead.
+If you want to render raw HTML content in the page, use [HtmlLiteral](~/controls/builtin/HtmlLiteral) control instead.

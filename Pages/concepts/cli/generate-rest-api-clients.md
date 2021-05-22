@@ -1,6 +1,10 @@
 # Generate REST API clients
 
-The DotVVM Command Line tool can also be used to add and update [REST API Bindings](/docs/tutorials/basics-rest-api-bindings/{branch}) clients. 
+The [DotVVM Command Line tool](install) can also be used to add and update [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api-bindings/overview) clients.
+
+Even though the DotVVM CLI requires .NET Core, it can be used also for .NET Framework projects with OWIN since it is not a runtime component. It is used only on the developer machines.
+
+## Supported commands
 
 <table class="table table-bordered">
     <tr>
@@ -31,11 +35,11 @@ The DotVVM Command Line tool can also be used to add and update [REST API Bindin
     </tr>
 </table>
 
-The metadata of REST API Bindings are stored in `dotvvm.json` file. If any of the parameters needs to be updated, change them in this file.
+The metadata of REST API Bindings are stored in `dotvvm.json` file. If any of the parameters needs to be updated, you can change them in this file.
 
-Please note that the API client needs to be registered in `DotvvmStartup.cs`. See [REST API Bindings](/docs/tutorials/basics-rest-api-bindings/{branch}) chapter for more details.
+Please note that the API client needs to be registered in `DotvvmStartup.cs`. See [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api-bindings/overview) chapter for more details.
 
-### Examples
+## Examples
 
 1. Registering the API client:
 
@@ -48,3 +52,9 @@ dotnet dotvvm api create http://localhost:43852/swagger/v1/swagger.json DotVVM2.
 ```
 dotnet dotvvm api regen
 ```
+
+## See also
+
+* [Install DotVVM CLI](install)
+* [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api-bindings/overview)
+* [Create pages and controls](create-pages-and-controls)

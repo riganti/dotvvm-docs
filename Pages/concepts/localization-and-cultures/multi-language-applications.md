@@ -1,45 +1,95 @@
 # Multi-language applications
 
-When DotVVM serializes the viewmodel, it includes an information about the current thread culture which was used to process the request.
+DotVVM supports localization and comes with many features that help building multi-language applications.
 
-If you use any control which works with numeric or date values (e.g. [Literal](/docs/controls/builtin/Literal/{branch}) with its `FormatString` property), 
-the page needs to know which culture should be used in order to apply the correct format.
+* The [Resource binding](~/pages/concepts/data-binding/resource-binding) can be used to obtain values from RESX files. See [RESX files](resx-files) chapter for more info.
+* You can use [format strings and functions](formatting-dates-and-numbers) to format dates and numbers according to the current culture.
 
-## Default application culture
+## Request culture
 
-In the [DotVVM configuration](/docs/tutorials/basics-configuration/{branch}), you can specify the default culture which is used for all requests. The best way 
+When DotVVM serializes the viewmodel, it includes an information about the current thread culture which was used to process the request. This information is then used on the client so the formatting and other features work the same as on the server.
+
+If you use any control which works with numeric or date values (e.g. [Literal](~/controls/builtin/Literal) with its `FormatString` property), or use the `ToString` method in a [value binding](~/pages/concepts/data-binding/value-binding), the page needs to know which culture should be used in order to apply the correct format.
+
+### Default application culture
+
+In the [configuration](~/pages/concepts/configuration/overview) of DotVVM, you can specify the default culture which is used for all requests. The best way 
 is to set this value in the `DotvvmStartup.cs` file using the following code:
 
 ```CSHARP
 config.DefaultCulture = "en-US";
 ```
 
-## Switching cultures
+### Switching cultures
 
-If your website supports multiple languages and cultures, you need to store the language the user has selected somewhere. 
-Whichever method you use (cookies, URL, database...), you need to tell DotVVM at the beginning of the request processing, which culture is used for the particular
-HTTP request.
+If your website supports multiple languages and cultures, you need to store the language the user has selected somewhere. It is common to detect the language from the `Accept-Language` header, and when the user chooses a different language, store the selection in cookies or include it in the URL.
 
-When you register the route, you can specify a custom presenter factory and use [Localization Presenter](/docs/tutorials/advanced-localization-presenter/{branch}).
+# [ASP.NET Core](#tab/aspnetcore)
 
-The easiest way is to use route parameters to persist the current culture. The URL format will be `/en/Home`.
+In ASP.NET Core, the preferred way for handling this is using the [Request localization middleware](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/localization?view=aspnetcore-5.0#localization-middleware-2). You can configure the supported languages, the storage of the selected language, and so on.
 
-```CSHARP
-config.RouteTable.Add("Home", "{Lang}/home", "Views/Home.dothtml", new { Lang = "en" }, 
-    presenterFactory: LocalizablePresenter.BasedOnParameter("Lang"));
-```
-
-Alternatively, you can use a query string parameter - the URL format will be `/Home?lang=en` in this case:
+First, configure the request localization in `ConfigureServices` in `Startup.cs`:
 
 ```CSHARP
-config.RouteTable.Add("Home", "home", "Views/Home.dothtml", 
-    presenterFactory: LocalizablePresenter.BasedOnQuery("lang"));
+public void ConfigureServices(IServiceCollection services)
+{
+    ... 
+
+    services.Configure<RequestLocalizationOptions>(options =>
+    {
+        var supportedCultures = new[]
+        {
+            new CultureInfo("en"),
+            new CultureInfo("cs")
+        };
+        options.DefaultRequestCulture = new RequestCulture(culture: "en", uiCulture: "en");
+        options.SupportedCultures = supportedCultures;
+        options.SupportedUICultures = supportedCultures;
+    });
+}
 ```
 
-The localizable presenter will use the culture from the route or query string parameter and sets the `Thread.CurrentThread.CurrentCulture` to this culture for the HTTP request. The same culture is set for all async calls and is used even if the part of the method after an awaited call is executed on a different thread.
+Then, register the request localization middleware before the call to `UseDotVVM`:
 
-The `BasedOnParameter` and `BasedOnQuery` methods have a second optional parameter which specifies whether a redirect should be performed when the specified culture was not found. It is `true` by default.
+```CSHARP
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    app.UseRequestLocalization();   // must be before UseDotVVM
+    ...
+    app.UseDotVVM<DotvvmStartup>(env.ContentRootPath);
+}
+```
 
-If you need to implement another way of handling the culture, see [Localization Presenter](/docs/tutorials/advanced-localization-presenter/{branch}) chapter for more details.
+Now, the request localization middleware will try to detect the language from the `Accept-Language` HTTP header, or from a cookie. 
 
-> The `Context.ChangeCurrentCulture` method used in [DotVVM 1.1](/docs/tutorials/basics-globalization/1-1) and older versions was removed.
+To switch the language, you need to store the language preference in the cookie:
+
+```CSHARP
+public void SwitchLanguage(string language)
+{
+    Context.GetAspNetCoreContext().Response.Cookies
+        .Append(
+            CookieRequestCultureProvider.DefaultCookieName,
+            CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(language))
+        );
+    Context.RedirectToLocalUrl(Context.HttpContext.Request.Url.PathAndQuery);
+}
+```
+
+See the [DotVVM request localization sample](https://github.com/riganti/dotvvm-samples-request-localization) for more info.
+
+
+# [OWIN](#tab/owin)
+
+In OWIN, a mechanism similar to ASP.NET Core request localization is not supported. 
+
+Instead, you can use the [Localizable presenter](localizable-presenter) which can define a route parameter to persist the language chosen by the user. 
+
+***
+
+## See also
+
+* [Formatting dates and numbers](formatting-dates-and-numbers)
+* [RESX files](resx-files)
+* [Sample: DotVVM request localization](https://github.com/riganti/dotvvm-samples-request-localization)
+* [Localizable presenter](localizable-presenter) (recommended for OWIN only)

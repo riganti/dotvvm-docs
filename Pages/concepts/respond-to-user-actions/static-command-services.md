@@ -1,6 +1,6 @@
 # Static command services
 
-**Static command services** is a feature which allows injecting a C# class in the page using the `@service` directive, and calling its methods from [static commands](static-commands). This allows to use static command binding on instance methods and taking advantage of advanced techniques like a [dependency injection](~/pages/concepts/viewmodels/dependency-injection/overview).
+**Static command services** is a feature which allows injecting a C# class in the page using the `@service` directive, and calling its methods from [static commands](static-commands). This allows to use static command binding on instance methods and taking advantage of advanced techniques like a [dependency injection](~/pages/concepts/configuration/dependency-injection/overview).
 
 ## Register the service
 

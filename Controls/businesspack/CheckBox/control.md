@@ -1,1 +1,1 @@
-Inherits the built-in [CheckBox](/docs/controls/builtin/CheckBox/{branch}) control with a *DotVVM Business Pack* visual style.
+Inherits the built-in [CheckBox](~/controls/builtin/CheckBox) control with a *DotVVM Business Pack* visual style.

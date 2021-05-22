@@ -126,7 +126,7 @@ The wizard will generate the `<dot:Content>` controls based on the `<dot:Content
 ## See also
 
 * [Viewmodels](~/pages/concepts/viewmodels/overview)
-* [Routing](~/pages/routing/overview)
+* [Routing](~/pages/concepts/routing/overview)
 * [ContentPlaceHolder](~/controls/builtin/ContentPlaceHolder)
 * [Content](~/controls/builtin/Content)
 * [SPA (Single-page applications)](~/pages/concepts/layout/single-page-applications-spa)
