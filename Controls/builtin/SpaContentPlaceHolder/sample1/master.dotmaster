@@ -17,7 +17,7 @@
         </li>
     </menu>
 
-    <dot:SpaContentPlaceHolder ID="Sample" DefaultRouteName="SampleA" />
+    <dot:SpaContentPlaceHolder ID="Sample" />
 
 </body>
 </html>
