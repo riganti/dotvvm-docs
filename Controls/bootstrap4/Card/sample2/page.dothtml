@@ -12,7 +12,6 @@
 
   <bs:CardBody>
       <p>Some buttons</p>
-      <bs:RouteLink RouteName="Card_Advanced" Text="RouteLink" Type="Info" />
       <bs:Button Click="{command: DoSomething()}" Text="Button" Type="Danger" />
   </bs:CardBody>
 </bs:Card>
