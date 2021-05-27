@@ -17,7 +17,7 @@ The expression would look like this:
 
 In DotVVM, there is a concept called _property group_. Basically, it is a group of properties with a common prefix (e.g. `MyGroup-`).
 
-For example, you can see this feature in the [RouteLink](/docs/controls/builtin/RouteLink/{branch}) where the `Param-` property group is used to define values of route parameters.
+For example, you can see this feature in the [RouteLink](~/controls/builtin/RouteLink) where the `Param-` property group is used to define values of route parameters.
 
 DotVVM includes a built-in property group with prefix `Class-` which can be used to combine multiple CSS classes.
 

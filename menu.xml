@@ -1,8 +1,8 @@
 <DocMenu Version="2.0">
-  <DocStaticMenuItem RouteName="Docs" PageName="Home" />
-  <DocPageMenuItem RouteName="introduction" PageName="Introduction" />
+  <DocStaticMenuItem RouteName="Docs" PageName="Home" CssClass="icon home separator-top" />
+  <DocPageMenuItem RouteName="introduction" PageName="Introduction" CssClass="icon introduction" />
   
-  <DocPageMenuItem RouteName="quick-starts" PageName="Quick starts">
+  <DocPageMenuItem RouteName="quick-starts" PageName="Quick starts" CssClass="icon quick-starts">
   
 	<DocPageMenuItem RouteName="build" PageName="Build a new app">
 	  <DocPageMenuItem RouteName="create-new-project" PageName="Create a new project" LegacyPaths="how-to-start-dnx,how-to-start-dotnet-451,how-to-start-command-line" />
@@ -23,7 +23,7 @@
 	
   </DocPageMenuItem>
   
-  <DocPageMenuItem RouteName="concepts" PageName="Concepts">
+  <DocPageMenuItem RouteName="concepts" PageName="Concepts" CssClass="icon concepts">
   
     <DocPageMenuItem RouteName="project-structure" PageName="Project structure" LegacyPaths="basics-project-structure" />
 	
@@ -75,7 +75,7 @@
 	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-viewmodels" />
 	  <DocPageMenuItem RouteName="work-with-data" PageName="Work with data">
 	    <DocPageMenuItem RouteName="gridview-data-sets" PageName="GridView data sets" />
-	    <DocPageMenuItem RouteName="best-practices" PageName="Best practises" />
+	    <DocPageMenuItem RouteName="best-practices" PageName="Best practices" />
 	  </DocPageMenuItem>
       <DocPageMenuItem RouteName="request-context" PageName="Request context" LegacyPaths="basics-request-context" />
 	  <DocPageMenuItem RouteName="binding-direction" PageName="Binding direction" LegacyPaths="basics-binding-direction" />
@@ -93,7 +93,7 @@
 	  <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="basics-configuration" />
 	  <DocPageMenuItem RouteName="dependency-injection" PageName="Dependency injection">
 	    <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="advanced-ioc-di-container" />
-        <DocPageMenuItem RouteName="aspnet-core" PageName="ASP.NET Core" LegacyPaths="advanced-ioc-di-container-aspnetcore" />
+        <DocPageMenuItem RouteName="aspnetcore" PageName="ASP.NET Core" LegacyPaths="advanced-ioc-di-container-aspnetcore" />
         <DocPageMenuItem RouteName="owin" PageName="OWIN" LegacyPaths="advanced-ioc-di-container-owin" />
 	  </DocPageMenuItem>
 	  <DocPageMenuItem RouteName="view-compilation-modes" PageName="View compilation mode" LegacyPaths="advanced-view-compilation-modes" />
@@ -127,6 +127,7 @@
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="client-side-development" PageName="Client-side development">
+	  <DocPageMenuItem RouteName="overview" PageName="Overview" />
 	  <DocPageMenuItem RouteName="js-directive" PageName="JS directive">
 	    <DocPageMenuItem RouteName="overview" PageName="Overview" />
 		<DocPageMenuItem RouteName="call-js-from-dotvvm" PageName="Call JS from DotVVM" />
@@ -142,7 +143,7 @@
 	<DocPageMenuItem RouteName="security" PageName="Security">
 	  <DocPageMenuItem RouteName="authentication-and-authorization" PageName="Authentication &amp; authorization">
 	    <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="advanced-authentication-authorization" />
-        <DocPageMenuItem RouteName="aspnet-core" PageName="ASP.NET Core" LegacyPaths="advanced-aspnetcore-authentication" />
+        <DocPageMenuItem RouteName="aspnetcore" PageName="ASP.NET Core" LegacyPaths="advanced-aspnetcore-authentication" />
         <DocPageMenuItem RouteName="owin" PageName="OWIN" LegacyPaths="advanced-owin-security" />
 	  </DocPageMenuItem>
 	  <DocPageMenuItem RouteName="recommendations-for-viewmodels" PageName="Recommendations for viewmodels" />
@@ -171,14 +172,14 @@
       <DocPageMenuItem RouteName="custom-postback-handlers" PageName="Custom postback handlers" LegacyPaths="control-development-creating-custom-postback-handlers" />
       <DocPageMenuItem RouteName="binding-extensibility" PageName="Binding system extensibility" LegacyPaths="control-development-binding-extensibility" />
       <DocPageMenuItem RouteName="binding-extension-parameters" PageName="Custom binding extension parameters" LegacyPaths="control-development-binding-extension-parameters" />
-      <DocPageMenuItem RouteName="provide-custom-method-translators" PageName="Provide custom method translators" LegacyPaths="control-development-providing-custom-javascript-translators" />
+	  <DocPageMenuItem RouteName="custom-javascript-translators" PageName="Custom JavaScript translators" LegacyPaths="control-development-providing-custom-javascript-translators" />
     </DocPageMenuItem>
 	
   </DocPageMenuItem>
     
-  <DocControlCategory Category="builtin" />
+  <DocControlCategory Category="builtin" CssClass="icon controls" />
     
-  <DocPageMenuItem RouteName="business-pack" PageName="DotVVM Business Pack">
+  <DocPageMenuItem RouteName="business-pack" PageName="DotVVM Business Pack" CssClass="icon dotvvm-business-pack separator-top">
     <DocPageMenuItem RouteName="getting-started" PageName="Getting started" LegacyPaths="commercial-business-pack-install" />
     <DocControlCategory RouteName="controls" Category="businesspack" />
     <DocPageMenuItem RouteName="themes" PageName="Themes">
@@ -189,7 +190,7 @@
     <DocPageMenuItem RouteName="release-notes" PageName="Release notes" LegacyPaths="commecial-business-pack-release-notes" />
   </DocPageMenuItem>
     
-  <DocPageMenuItem RouteName="bootstrap-for-dotvvm" PageName="Bootstrap for DotVVM">
+  <DocPageMenuItem RouteName="bootstrap-for-dotvvm" PageName="Bootstrap for DotVVM" CssClass="icon bootstrap-for-dotvvm">
   
     <DocPageMenuItem RouteName="v4" PageName="Bootstrap 4">
       <DocPageMenuItem RouteName="getting-started" PageName="Getting started" LegacyPaths="commercial-bootstrap4-for-dotvvm-install" />
@@ -206,28 +207,28 @@
 	
   </DocPageMenuItem>
   
-  <DocPageMenuItem RouteName="dotvvm-for-visual-studio" PageName="DotVVM for Visual Studio">
+  <DocPageMenuItem RouteName="dotvvm-for-visual-studio" PageName="DotVVM for Visual Studio" CssClass="icon dotvvm-for-visual-studio separator-bottom">
     <DocPageMenuItem RouteName="overview" PageName="Overview" />
     <DocPageMenuItem RouteName="dotvvm-private-nuget-feed" PageName="Using DotVVM private NuGet feed" LegacyPaths="commercial-dotvvm-private-nuget-feed" />
     <DocPageMenuItem RouteName="troubleshooting" PageName="Troubleshooting" LegacyPaths="commercial-troubleshooting-dotvvm-for-visual-studio,troubleshooting-dotvvm-compiler-not-found" />
     <DocPageMenuItem RouteName="release-notes" PageName="Release notes" LegacyPaths="commercial-dotvvm-for-visual-studio-release-notes" />
   </DocPageMenuItem>
   
-  <DocPageMenuItem RouteName="upgrading-from-older-versions" PageName="Upgrading from older versions">
-    <DocPageMenuItem RouteName="from-1.0-to-1.1" PageName="From 1.0 to 1.1" LegacyPaths="how-to-start-upgrade-from-1-0" />
-    <DocPageMenuItem RouteName="from-1.1-to-2.0" PageName="From 1.1 to 2.0" LegacyPaths="how-to-start-upgrade-to-2-0" />
-	<DocPageMenuItem RouteName="from-2.0-to-2.1" PageName="From 2.0 to 2.1" />
-	<DocPageMenuItem RouteName="from-2.1-to-2.2" PageName="From 2.1 to 2.2" />
-	<DocPageMenuItem RouteName="from-2.2-to-2.3" PageName="From 2.2 to 2.3" />
-	<DocPageMenuItem RouteName="from-2.3-to-2.4" PageName="From 2.3 to 2.4" />
-	<DocPageMenuItem RouteName="from-2.4-to-2.5" PageName="From 2.4 to 2.5" />
-	<DocPageMenuItem RouteName="from-2.5-to-3.0" PageName="From 2.5 to 3.0" />
+  <DocPageMenuItem RouteName="upgrading-from-older-versions" PageName="Upgrading from older versions" CssClass="icon upgrading-from-older-versions">
+    <DocPageMenuItem RouteName="from-1-0-to-1-1" PageName="From 1.0 to 1.1" LegacyPaths="how-to-start-upgrade-from-1-0" />
+    <DocPageMenuItem RouteName="from-1-1-to-2-0" PageName="From 1.1 to 2.0" LegacyPaths="how-to-start-upgrade-to-2-0" />
+	<DocPageMenuItem RouteName="from-2-0-to-2-1" PageName="From 2.0 to 2.1" />
+	<DocPageMenuItem RouteName="from-2-1-to-2-2" PageName="From 2.1 to 2.2" />
+	<DocPageMenuItem RouteName="from-2-2-to-2-3" PageName="From 2.2 to 2.3" />
+	<DocPageMenuItem RouteName="from-2-3-to-2-4" PageName="From 2.3 to 2.4" />
+	<DocPageMenuItem RouteName="from-2-4-to-2-5" PageName="From 2.4 to 2.5" />
+	<DocPageMenuItem RouteName="from-2-5-to-3-0" PageName="From 2.5 to 3.0" />
 	<DocPageMenuItem RouteName="compilation-status-page" PageName="Compilation status page" />
   </DocPageMenuItem>
 
-  <DocPageMenuItem RouteName="samples-videos" PageName="Samples &amp; videos" />
+  <DocPageMenuItem RouteName="samples-videos" PageName="Samples &amp; videos" CssClass="icon samples-videos"/>
   
-  <DocPageMenuItem RouteName="community-add-ons" PageName="Community add-ons">
+  <DocPageMenuItem RouteName="community-add-ons" PageName="Community add-ons" CssClass="icon community-add-ons">
     <DocPageMenuItem RouteName="dotvvm-dynamic-data" PageName="DotVVM Dynamic Data" />
     <DocPageMenuItem RouteName="dotvvm-contrib-controls" PageName="DotVVM Contrib Controls" />
 	<DocPageMenuItem RouteName="dotvvm-amp" PageName="DotVVM AMP" />

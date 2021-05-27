@@ -8,7 +8,6 @@ Any DotVVM binding is an expression that may use certain identifiers and there a
 * Properties/Methods of current view model - For example `MyProperty`. This is just an alias for `_this.MyProperty`, the value comes from the data context.
 * Extension Parameters - For example, `_index`, `_api`. This is also an identifier with a value and these parameters can be user-defined. The value is usually computed from some properties on the invoking control and can be used arbitrarily in the binding. The point of this document is to have a look in depth how do they work.
 
-
 ## Extension parameter API
 
 The new ExtensionParameter is defined by the `BindingExtensionParameter` abstract class. In order to be recognized by the binding compiler, it has to be registered globally in `DotvvmConfiguration.Markup.DefaultExtensionParameters` or locally in `DataContextStack.ExtensionParameters`. In order to make it useful, we will have to define some methods and values:
@@ -20,9 +19,9 @@ The new ExtensionParameter is defined by the `BindingExtensionParameter` abstrac
 * `GetJsTranslation(JsExpression dataContext)` - This gets the expression that can be used in the translated Javascript expressions. Here, you can use a reference to the knockout context to compute the value.
 
 
-For example, you may know the [`@import` directive](/Pages/advanced-ioc-di-container.md) - it basically introduces a new extension parameter that represents a service imported from `IServiceProvider`. Let's have a look at how we could implement it. First, we will need class inheriting from `BindingExtensionParameter`:
+For example, you may know the `@import` directive - it basically introduces a new extension parameter that represents a service imported from `IServiceProvider`. Let's have a look at how we could implement it. First, we will need class inheriting from `BindingExtensionParameter`:
 
-```csharp
+```CSHARP
 public class InjectedServiceExtensionParameter : BindingExtensionParameter
 {
 	...
@@ -31,14 +30,14 @@ public class InjectedServiceExtensionParameter : BindingExtensionParameter
 
 Then, we'll need a constructor that sets the parameters of the base class. We don't need to do anything inside it, and we will let the users decide which `type` they want to import and which `identifier` they want to give it:
 
-```csharp
+```CSHARP
 public InjectedServiceExtensionParameter(string identifier, ITypeDescriptor type)
 	: base(identifier, type, inherit: true) { }
 ```
 
 We'll need to implement the runtime behavior of the parameter - which value should the identifier have. The parameter is translated into an expression that may use the current control by the `GetServerEquivalent` method:
 
-```csharp
+```CSHARP
 public override Expression GetServerEquivalent(Expression controlParameter)
 {
 	// Extract System.Type from the ITypeDescriptor, so we can use it to invoke `IServiceProvider.GetService`
@@ -49,7 +48,7 @@ public override Expression GetServerEquivalent(Expression controlParameter)
 	return Expression.Convert(expr, type);
 }
 
-/// This is a helper method that finds a IServiceProvider in the control tree and resolves a service of the `type`
+// This is a helper method that finds a IServiceProvider in the control tree and resolves a service of the `type`
 private object ResolveStaticCommandService(DotvvmBindableObject c, Type type)
 {
 	// The IDotvvmRequestContext is saved in the control tree
@@ -62,21 +61,20 @@ The `ExpressionUtils.Replace` is a helper method that exploits the fact that we 
 
 Finally, we'll have to say how should it be translated to Javascript. Unfortunately, there is not a reasonable way to translate this into Javascript, so we will simply throw an exception. It will basically forbid the usage of this extension parameter in bindings translated to Javascript (`value` and `staticCommand` bindings)
 
-```csharp
+```CSHARP
 public override JsExpression GetJsTranslation(JsExpression dataContext)
 {
 	throw new InvalidOperationException($"Can't use injected services in javascript-translated bindings.");
 }
 ```
 
-
-> If you'd like to see implementation of a few more, have a look at [the real implementation on Github](https://github.com/riganti/dotvvm/blob/master/src/DotVVM.Framework/Compilation/ControlTree/BindingExtensionParameter.cs)
+> If you'd like to see implementation of a few more, have a look at [the real implementation on Github](https://github.com/riganti/dotvvm/blob/main/src/DotVVM.Framework/Compilation/ControlTree/BindingExtensionParameter.cs)
 
 ### Registration
 
 It's very simple to register the extension parameter globally (for all pages), you simply put the modification of `DotvvmConfiguration` into a startup class:
 
-```csharp
+```CSHARP
 config.Markup.DefaultExtensionParameters.Add(
 	new InjectedServiceExtensionParameter("myCoolService", new ResolvedTypeDescriptor(typeof(MyCoolService))));
 ```
@@ -85,8 +83,7 @@ The parameters are part of the data context (represented by `DataContextStack` c
 
 This is done by annotating the template property or the control by an attribute that inherits `DataContextChangeAttribute`. For example, `Repeater` changes data context of its `ItemTemplate` into the type of element of the collection bound in `DataSource` property. This is done by annotating the property with two change attributes - the changes the type to be the type of the `DataSource` property and the second changes the type to be element of that collection:
 
-```csharp
-
+```CSHARP
 [ControlPropertyBindingDataContextChange(nameof(DataSource))]
 [CollectionElementDataContextChange(1)]
 public ITemplate ItemTemplate { ... }
@@ -94,7 +91,7 @@ public ITemplate ItemTemplate { ... }
 
 These attributes can also add extension parameters to the content. For example, if we'd like to allow children of our control use some injected service parameter, we could implement the attribute as follows:
 
-```csharp
+```CSHARP
 public class CollectionElementDataContextChangeAttribute : DataContextChangeAttribute
 {
 	public override int Order { get; }
@@ -115,4 +112,13 @@ public class CollectionElementDataContextChangeAttribute : DataContextChangeAttr
 }
 ```
 
+## See also
+
+* [Control development overview](overview)
+* [Markup controls](markup-controls)
+* [Code-only controls](code-only-controls)
+* [Adding interactivity using Knockout binding handlers](interactivity)
+* [Custom postback handlers](custom-postback-handlers)
+* [Binding system extensibility](binding-extensibility)
+* [Custom JavaScript translators](custom-javascript-translators)
 

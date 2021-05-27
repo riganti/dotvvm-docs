@@ -9,4 +9,4 @@ The `IsCollapsed` property indicates whether the menu is open or not. You can al
 Place `<bs:DropDownButtonItem>` controls inside the `<bs:DropDownButton>` control and use their `NavigateUrl` property to specify the link URL. 
 You can place them inside the `<Items>` element, however it is not required because the `Items` is the default property of `DropDownButton`.
 
-Because the class `DropDownButtonItem` inherits from the [ListItem](/docs/controls/bootstrap/ListItem/{branch}), please refer to the `ListItem` documentation for more information.
+Because the class `DropDownButtonItem` inherits from the [ListItem](~/controls/bootstrap/ListItem), please refer to the `ListItem` documentation for more information.

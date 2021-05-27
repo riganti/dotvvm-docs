@@ -91,7 +91,7 @@ public class DotvvmStartup : IDotvvmStartup, IDotvvmServiceConfigurator
 }
 ```
 
-> This `ConfigureServices` should register only services that are related to DotVVM - uploaded file storage, custom viewmodel loaders, or commercial controls like [DotVVM Business Pack](/docs/tutorials/commercial-business-pack-install/{branch}). All other services should be configured in `Startup.cs` like it was before.
+> This `ConfigureServices` should register only services that are related to DotVVM - uploaded file storage, custom viewmodel loaders, or commercial controls like [DotVVM Business Pack](/docs/tutorials/commercial-business-pack-install/2.0). All other services should be configured in `Startup.cs` like it was before.
 
 
 
@@ -99,7 +99,7 @@ public class DotvvmStartup : IDotvvmStartup, IDotvvmServiceConfigurator
 
 **DotVVM 1.1** was including jQuery in the page in Debug mode, because it was required by `dotvvm.debug.js` helper library. The need for jQuery in this helper was removed with **DotVVM 2.0**, so `jQuery` resource is not registered in the DotVVM configuration.
 
-If you application uses jQuery and if it is not included with another library (like [Bootstrap for DotVVM](/docs/tutorials/commercial-bootstrap-for-dotvvm/{branch}) or [DotVVM Business Pack](/docs/tutorials/commercial-business-pack-install/{branch})), add the following code into `ConfigureResources` method in `DotvvmStartup.cs`:
+If you application uses jQuery and if it is not included with another library (like [Bootstrap for DotVVM](/docs/tutorials/commercial-bootstrap-for-dotvvm/2.0) or [DotVVM Business Pack](/docs/tutorials/commercial-business-pack-install/2.0)), add the following code into `ConfigureResources` method in `DotvvmStartup.cs`:
 
 ```CSHARP
 config.Resources.Register("jquery", new ScriptResource()
@@ -113,7 +113,7 @@ config.Resources.Register("jquery", new ScriptResource()
 
 ## 4. Route Registration with Custom Presenters
 
-We have changed the signature of `RouteTable.Add` method for registering [custom presenters](/docs/tutorials/advanced-custom-presenters/{branch}). Now you can specify only a type of the presenter - in this case, the presenter instance will be retrieved from `IServiceProvider`. 
+We have changed the signature of `RouteTable.Add` method for registering [custom presenters](/docs/tutorials/advanced-custom-presenters/2.0). Now you can specify only a type of the presenter - in this case, the presenter instance will be retrieved from `IServiceProvider`. 
 
 An unnecessary parameter specifying the virtual path has been removed the overloads with presenters:
 
@@ -161,7 +161,7 @@ If you have a custom exception filter and need to handle exceptions from present
 
 ## 6. Custom PostBack Handlers 
 
-We have rearchitected the way how [custom postback handlers](/docs/tutorials/control-development-creating-custom-postback-handlers/{branch}) are implemented. 
+We have rearchitected the way how [custom postback handlers](/docs/tutorials/control-development-creating-custom-postback-handlers/2.0) are implemented. 
 
 If you implemented your own postback handlers, you will need to make the following change in the C# part of the handler:
 
@@ -213,7 +213,7 @@ Also note that `dotvvm.postBackHandlers` collection was renamed to `dotvvm.postb
 
 <a name="gridview"></a>
 
-## 6. GridView Control 
+## 7. GridView Control 
 
 We have changed the way collection data are loaded into GridViewDataSet. In DotVVM 1.1, you could provide delegate to `GridViewDataSet` which would be used to load data. We have removed the delegate because loading the data could lead to deadlock.
 
@@ -246,17 +246,17 @@ public override Task PreRender()
 
 
 
-# Obsolete Constructs
+## 8. Obsolete Constructs
 
 There are several things in **DotVVM 2.0** which were marked as obsolete. Although the features still work, we recommend to fix them soon.
 
-## 1. ValueType property on TextBox, Literal and GridViewTextColumn
+### 1. ValueType property on TextBox, Literal and GridViewTextColumn
 
 The `ValueType` property was needed whenever you worked with date or numeric values in `TextBox`, `Literal` or `GridViewTextColumn` controls. In **DotVVM 2.0**, this property was made obsolete and is not used by the framework - the type of the data-bound value is inferred automatically.
 
 
 
-## 2. ComboBox now supports ItemTextBinding and ItemValueBinding
+### 2. ComboBox now supports ItemTextBinding and ItemValueBinding
 
 The `DisplayMember` property was replaced by `ItemTextBinding`, the `ValueMember` was replaced with `ItemValueBinding`.
 
@@ -274,6 +274,10 @@ The `DisplayMember` property was replaced by `ItemTextBinding`, the `ValueMember
               SelectedValue="{value: SelectedPerson}" />
 ```
 
-## 3. DotvvmConfiguration now exposes IServiceProvider
+### 3. DotvvmConfiguration now exposes IServiceProvider
 
 The `ServiceLocator` property was replaced by `ServiceProvider` in the `DotvvmConfiguration`.
+
+## See also
+
+* [From 2.0 to 2.1](from-2-0-to-2-1)

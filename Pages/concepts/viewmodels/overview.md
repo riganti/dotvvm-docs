@@ -75,7 +75,7 @@ The left side shows what's going on when the client access the page first time (
 
 ## Other features
 
-DotVVM supports [dependency injection](~/pages/concepts/configuration/dependency-injection) in the viewmodels - it is easy for the viewmodels to request any services they may need in their commands. We recommend to declare the injected services as private fields in the viewmodel class - this will exclude them from the serialization automatically.
+DotVVM supports [dependency injection](~/pages/concepts/configuration/dependency-injection/overview) in the viewmodels - it is easy for the viewmodels to request any services they may need in their commands. We recommend to declare the injected services as private fields in the viewmodel class - this will exclude them from the serialization automatically.
 
 ```CSHARP
 public class MyViewModel : DotvvmViewModelBase 
@@ -100,6 +100,6 @@ You can instruct DotVVM to exclude some properties from serialization, or to tra
 * [Request context](request-context)
 * [Viewmodel best practices](work-with-data/best-practices)
 * [GridView data sets](work-with-data/gridview-data-sets)
-* [Dependency injection](~/pages/concepts/configuration/dependency-injection)
+* [Dependency injection](~/pages/concepts/configuration/dependency-injection/overview)
 * [Binding direction](binding-direction)
 * [Viewmodel protection](viewmodel-protection)

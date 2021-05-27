@@ -65,4 +65,4 @@ public void NormalTest()
 ## See also
 
 * [Viewmodels overview](overview)
-* [Dependency injection](~/pages/concepts/configuration/dependency-injection)
+* [Dependency injection](~/pages/concepts/configuration/dependency-injection/overview)

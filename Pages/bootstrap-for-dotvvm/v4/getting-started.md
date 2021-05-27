@@ -1,6 +1,6 @@
 # Getting started with Bootstrap for DotVVM (version 4)
 
-To use the [Bootstrap for DotVVM](/landing/bootstrap-for-dotvvm) controls, you have use the [DotVVM Private Nuget Feed](/docs/tutorials/commercial-dotvvm-private-nuget-feed).
+To use the [Bootstrap for DotVVM](https://www.dotvvm.com/products/bootstrap-for-dotvvm) controls, you have use the [DotVVM Private Nuget Feed](~/pages/dotvvm-for-visual-studio/dotvvm-private-nuget-feed).
 
 1. Install the `DotVVM.Controls.Bootstrap4` package from the DotVVM Private Nuget Feed.
 
@@ -22,7 +22,7 @@ This will register all Bootstrap controls under the `<bs:*` tag prefix, and it a
 
 ## Configuration
 
-The [Bootstrap for DotVVM](/landing/bootstrap-for-dotvvm) package includes Bootstrap CSS and JavaScript libraries. You can replace them with your own ones.
+The [Bootstrap for DotVVM](https://www.dotvvm.com/products/bootstrap-for-dotvvm) package includes Bootstrap CSS and JavaScript libraries. You can replace them with your own ones.
  
 If you have already included the Bootstrap script and styles using the `<script>` and `<style>` elements in the page header (e.g. in the master page), you can tell 
 DotVVM that it should not render the default Bootstrap resources. Add this in the `DotvvmStartup.cs`:
@@ -62,11 +62,11 @@ Or specify your own IResources.
             config.AddBootstrap4Configuration(options);
 ```
 
-### Is It OK?
+### Is it OK?
 
 To verify that Bootstrap resources are included correctly, press F12 in your web browser. Verify that bootstrap.css or bootstrap.js is not loaded twice, and there are 
 no errors in the developer console, especially some messages which say that some Bootstrap-related resource could not be found.
 
 ## Limitations
 
-The current version of [Bootstrap for DotVVM](/landing/bootstrap-for-dotvvm) supports **Bootstrap 4**. For more information about Bootstrap, navigate into its [documentation](https://getbootstrap.com).
+The current version of [Bootstrap for DotVVM](https://www.dotvvm.com/products/bootstrap-for-dotvvm) supports **Bootstrap 4**. For more information about Bootstrap, navigate into its [documentation](https://getbootstrap.com).

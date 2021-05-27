@@ -1,17 +1,16 @@
 # DotVVM Contrib controls
 
-Currently we have 8 contrib controls from the DotVVM community. If you like, you can use them easily, just add a proper package from our official nuget feed. Next add contrib configuration to `DotvvmStartup.cs`.
+[DotVVM Contrib](https://github.com/riganti/dotvvm-contrib) is a repository which contains community-authored controls for DotVVM. 
+
+The controls are free to use, and we publish them regularly on the official NuGet.
+
+If you've developed your own controls you want to share, we'd be happy to receive a pull request. If you are not sure how to do that, [contact us](https://www.dotvvm.com/support/contact-us) - we'll be happy to help.
 
 ## List of controls
 
-* [CkEditorMinimal](https://github.com/riganti/dotvvm-contrib/blob/master/Controls/CkEditorMinimal/readme.md)
-* [GoogleAnalyticsJavascript](https://github.com/riganti/dotvvm-contrib/blob/master/Controls/GoogleAnalyticsJavascript/readme.md)
-* [NoUiSlider](https://github.com/riganti/dotvvm-contrib/blob/master/Controls/NoUiSlider/readme.md) with *Slider* and *Switch* controls
-* [Select2](https://github.com/riganti/dotvvm-contrib/blob/master/Controls/Select2/readme.md)
-* [TemplateSelector](https://github.com/riganti/dotvvm-contrib/blob/master/Controls/TemplateSelector/readme.md)
-* [TypeAhead](https://github.com/riganti/dotvvm-contrib/blob/master/Controls/TypeAhead/readme.md)
-* [PolicyView](https://github.com/riganti/dotvvm-contrib/blob/master/Controls/FAIcon/readme.md)
-* [FAIcon](https://github.com/riganti/dotvvm-contrib/blob/master/Controls/FAIcon/readme.md)
+Go to [DotVVM Contrib GitHub repo](https://github.com/riganti/dotvvm-contrib) to see the list of controls.
 
+## See also
 
-If you want to share your control or to contribute, feel free to send a pull request to our official repository. For more info about controls and contributing please visit our [official github repository](https://github.com/riganti/dotvvm-contrib).
+* [DotVVM Business Pack](~/pages/business-pack/getting-started)
+* [Bootstrap for DotVVM](~/pages/bootstrap-for-dotvvm/v4/getting-started)

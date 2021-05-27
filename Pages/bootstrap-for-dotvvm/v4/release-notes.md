@@ -26,7 +26,7 @@
         * Added property *HeaderImageTooltip* for setting title property of image.
 ## 2.4.0.10
 * **New controls**
-    * [```Icon```](https://www.dotvvm.com/docs/controls/bootstrap4/Icon)
+    * [```Icon```](~/controls/bootstrap4/Icon)
     
 * **Changes to existing controls**
     * **Toast**
@@ -57,7 +57,7 @@
         When not set than label will be rendered only if needed.
 * **Other changes**
     * Users can now specify their own IResource to be used as BoostrapJs, BootstrapCss and JQuery.  
-    [```Usage example```](https://www.dotvvm.com/docs/tutorials/commercial-bootstrap4-for-dotvvm/)
+    [```Usage example```](getting-started)
     
 ## 2.2.0
 
@@ -82,8 +82,8 @@
     * Bootstrap upgraded to **4.3.1**
 
 * **New controls**
-    * [```Spinner```](https://www.dotvvm.com/docs/controls/bootstrap4/Spinner)
-    * [```Toast```](https://www.dotvvm.com/docs/controls/bootstrap4/Toast)
+    * [```Spinner```](~/controls/bootstrap4/Spinner)
+    * [```Toast```](~/controls/bootstrap4/Toast)
 
 * **Changes to existing controls**
     * **Carousel**
@@ -111,11 +111,11 @@
         
 ## 2.0.0-preview02-final
 * **New controls**
-  * [```CollapsiblePanel```](https://www.dotvvm.com/docs/controls/bootstrap4/CollapsiblePanel)
-  * [```ComboBoxFormGroup```](https://www.dotvvm.com/docs/controls/bootstrap4/ComboBoxFormGroup)
-  * [```DateTimePickerFormGroup```](https://www.dotvvm.com/docs/controls/bootstrap4/DateTimePickerFormGroup)
-  * [```RadioButtonFormGroup```](https://www.dotvvm.com/docs/controls/bootstrap4/RadioButtonFormGroup)
-  * [```TextBoxFormGroup```](https://www.dotvvm.com/docs/controls/bootstrap4/TextBoxFormGroup)
+  * [```CollapsiblePanel```](~/controls/bootstrap4/CollapsiblePanel)
+  * [```ComboBoxFormGroup```](~/controls/bootstrap4/ComboBoxFormGroup)
+  * [```DateTimePickerFormGroup```](~/controls/bootstrap4/DateTimePickerFormGroup)
+  * [```RadioButtonFormGroup```](~/controls/bootstrap4/RadioButtonFormGroup)
+  * [```TextBoxFormGroup```](~/controls/bootstrap4/TextBoxFormGroup)
 
 * **Changes to existing controls**
     * Every items control (```Accordion```, ```NavigationBar```, etc.) now accepts any child control which implements given interface instead of one concrete implementation (```IAccordionItem``` instead of ```AccordionItem```).

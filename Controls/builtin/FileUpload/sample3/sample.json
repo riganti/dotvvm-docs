@@ -8,8 +8,8 @@
       "name": "ViewModel.cs",
       "replacements": [
         {
-          "pattern": "(storage\\.SaveAs)",
-          "replacement": "//storage.SaveAs",
+          "pattern": "(await storage\\.SaveAsAsync)",
+          "replacement": "//await storage.SaveAsAsync",
           "singleLine": true
         }
       ]

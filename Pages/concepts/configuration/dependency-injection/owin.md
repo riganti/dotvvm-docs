@@ -3,23 +3,31 @@
 The `DotvvmStartup` class implements `IDotvvmServiceConfigurator` interface with the following method:
 
 ```CSHARP
-public void ConfigureServices(IDotvvmServiceCollection services)
+public void ConfigureServices(IDotvvmServiceCollection options)
 {
-    services.Services.AddSingleton(...);
+    options.Services.AddSingleton(...);
 }
 ```
 
-In this method, you can register any services in the `IServiceCollection`. 
+In this method, you can register any services in the `IServiceCollection`. You can register custom services using `options.Services.AddTransient`, `options.Services.AddSingleton` or `options.Services.AddScoped`. 
 
-You can register custom services using `options.Services.AddTransient`, `options.Services.AddSingleton` or `options.Services.AddScoped`. 
+The `IServiceCollection` uses the implementation from the `Microsoft.Extensions.DependencyInjection` library. 
 
-One of the services that is already present in the collection, is the viewmodel loader represented by the `IViewModelLoader` interface. This class is responsible for locating of the class specified by the `@viewModel` directive in the page and creating an instance of the viewmodel. 
+If you are fine with using this library, you can register all services in the `ConfigureServices` mentioned above. Then, everything will work as described in the [Dependency injection](overview) chapter.
 
-DotVVM uses the `DefaultViewModelLoader` class which locates the class and calls its default constructor. If you need to plug a dependency injection container in, you can create a class that inherits `DefaultViewModelLoader` and override the `CreateViewModelInstance`.
+## Custom viewmodel loader
 
-## Custom ViewModelLoader for Castle Windsor
+If you are using a different dependency injection container, you'll want to resolve viewmodel dependencies using this container.
 
-**Castle Windsor** is one of the favorite IoC/DI containers in .NET. Here is how to create the viewmodel loader using this container. Notice that we call `container.Resolve` in the `CreateViewModelInstance` and `container.Release` in the `DisposeViewModel`.
+By default, when DotVVM needs to create a viewmodel, it looks in the `IServiceCollection` if the viewmodel is registered. If not, it then inspects its constructor and tries to obtain all the dependencies from the `IServiceCollection`.
+
+This is done in the `DefaultViewModelLoader` class, which is a default implementation of the `IViewModelLoader` interface. If you need to plug a dependency injection container in, you can create a class that inherits `DefaultViewModelLoader`, and override the `CreateViewModelInstance` method.
+
+### Castle Windsor
+
+[Castle Windsor](https://github.com/castleproject/Windsor) is one of the favorite DI containers in .NET. 
+
+Here is how to create the viewmodel loader using this container. Notice that we call `container.Resolve` in the `CreateViewModelInstance`, and `container.Release` in the `DisposeViewModel`.
 
 ```CSHARP
 using System;
@@ -51,25 +59,29 @@ namespace DotvvmDemo.Web
 }
 ```
 
-If you use another container, the implementation will be very similar. Don't forget to tell the container to release the instances in the `DisposeViewModel` method. This method is called when the HTTP request ends and DotVVM no longer needs the viewmodel object.
-
-Some containers do this by initiating a "scope" in the `CreateViewModelInstance` method and disposing the scope in the `DisposeViewModel` method.
-
-## Registering Custom ViewModelLoader
-
-The last thing is to replace the default viewmodel loader with the one you have just created.
-We should do this in the `DotvvmStartup.cs` class:
+The last thing is to replace the default viewmodel loader with the one you have just created. We should do this in the `DotvvmStartup.cs` class:
 
 ```CSHARP
-public void ConfigureServices(IDotvvmServiceCollection services)
-{
-    services.Services.AddSingleton<IViewModelLoader>(serviceProvider => new WindsorViewModelLoader(container));
+public void ConfigureServices(IDotvvmServiceCollection options)
+{  
+    // obtain the WindsorContainer instance from the place where you initialize it
+    var windsorContainer = ...
+
+    options.Services.AddSingleton<IViewModelLoader>(serviceProvider => new WindsorViewModelLoader(windsorContainer));
 }
 ```
 
-## Static Command Services
+### Other containers
 
-Since registering all components in `IServiceCollection` on DotVVM startup can be problematic, you might use a custom `IStaticCommandServiceLoader` to have your service instances resolved directly from your container.
+If you use another container, the implementation will be very similar. Don't forget to tell the container to release the instances in the `DisposeViewModel` method. This method is called when the HTTP request ends and DotVVM no longer needs the viewmodel object.
+
+Some containers do this by creating a "scope" in the `CreateViewModelInstance` method and disposing the scope in the `DisposeViewModel` method.
+
+## Static command services
+
+If you are using a different dependency injection container, registering all components in `IServiceCollection` in `DotvvmStartup` can be problematic and can lead to registration of the same services in the two containers.
+
+Instead, you might use a custom `IStaticCommandServiceLoader` to have your service instances resolved directly from your container.
 
 ```CSHARP
 using System;
@@ -104,3 +116,8 @@ public void ConfigureServices(IDotvvmServiceCollection services)
     services.Services.AddSingleton<IStaticCommandServiceLoader>(serviceProvider => new WindsorStaticCommandServiceLoader(container));
 }
 ```
+
+## See also
+
+* [Dependency injection overview](overview)
+* [Configuration overview](../overview)

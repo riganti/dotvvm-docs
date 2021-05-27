@@ -1,6 +1,10 @@
 # Create pages and controls
 
-**DotVVM Command Line** can create new pages, master pages and markup controls in ASP.NET Core projects.
+The [DotVVM Command Line tool](install) can create new [pages](~/pages/concepts/dothtml-markup/overview), [master pages](~/pages/concepts/layout/master-pages), or [markup controls](~/pages/concepts/control-development/markup-controls) in ASP.NET Core projects.
+
+> Creating pages, master pages, and controls is suported only in ASP.NET Core projects using the new project system. For .NET Framework projects, we recommend [using Visual Studio](~/pages/quick-starts/build/first-page).
+
+## Supported commands
 
 <table class="table table-bordered">
     <tr>
@@ -43,7 +47,7 @@
     </tr>
 </table>
 
-### Examples
+## Example
 
 1. Create the `Views/Site.dotmaster` master page:
 
@@ -62,3 +66,8 @@ dotnet dotvvm add page Page1 -m Site
 ```
 dotnet dotvvm add control Controls/MyControl.dotcontrol -c
 ```
+
+## See also
+
+* [Install DotVVM CLI](install)
+* [Generate REST API clients](generate-rest-api-clients)

@@ -1,1 +1,1 @@
- Renders the HTML button that can switch states like the [CheckBox](/docs/controls/businesspack/CheckBox/{branch})
+ Renders the HTML button that can switch states like the [CheckBox](~/controls/businesspack/CheckBox)

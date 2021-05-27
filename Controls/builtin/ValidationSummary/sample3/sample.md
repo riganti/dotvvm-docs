@@ -2,4 +2,4 @@
 
 You can also tell the `ValidationSummary` control to display validation errors attached directly to the `Validation.Target` itself using the `IncludeErrorsFromTarget` property.
 
-> The sample below creates a server-side validation error using the [IValidatableObject](/docs/tutorials/basics-validator-controls/{branch}) interface.
+> The sample below creates a server-side validation error using the [IValidatableObject](~/pages/concepts/validation/overview) interface.

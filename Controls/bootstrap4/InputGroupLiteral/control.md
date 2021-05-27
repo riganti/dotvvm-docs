@@ -1,5 +1,5 @@
-A special version of the [Literal](/docs/controls/builtin/Literal/{branch}) control that can be used in [InputGroup](/docs/controls/bootstrap4/InputGroup/{branch}).
+A special version of the [Literal](~/controls/builtin/Literal) control that can be used in [InputGroup](~/controls/bootstrap4/InputGroup).
 
-See [Literal](/docs/controls/builtin/Literal/{branch}) for more info on how to use this control.
+See [Literal](~/controls/builtin/Literal) for more info on how to use this control.
 
 <https://getbootstrap.com/docs/4.3/components/input-group/>

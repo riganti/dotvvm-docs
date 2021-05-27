@@ -1,6 +1,7 @@
 ﻿using System.IO;
+using System.Threading.Tasks;
 using DotVVM.Framework.Controls;
-using DotVVM.Framework.Storage;
+using DotVVM.Core.Storage;
 using DotVVM.Framework.ViewModel;
 
 namespace DotvvmWeb.Views.Docs.Controls.builtin.FileUpload.sample3
@@ -21,7 +22,7 @@ namespace DotvvmWeb.Views.Docs.Controls.builtin.FileUpload.sample3
         }
 
 
-        public void Process()
+        public async Task Process()
         {
             var uploadPath = GetUploadPath();
 
@@ -29,8 +30,8 @@ namespace DotvvmWeb.Views.Docs.Controls.builtin.FileUpload.sample3
             foreach (var file in Files.Files)
             {
                 var targetPath = Path.Combine(uploadPath, file.FileId + ".bin");
-                storage.SaveAs(file.FileId, targetPath);
-                storage.DeleteFile(file.FileId);
+                await storage.SaveAsAsync(file.FileId, targetPath);
+                await storage.DeleteFileAsync(file.FileId);
             }
 
             // clear the uploaded files collection so the user can continue with other files
