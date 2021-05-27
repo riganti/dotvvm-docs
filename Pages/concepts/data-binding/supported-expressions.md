@@ -117,7 +117,9 @@ We plan to add support for the following methods in DotVVM 3.1.
 * `String.LastIndexOf(string value)` and `String.LastIndexOf(char value)`
 * `String.LastIndexOf(string value, int startIndex)` and `String.LastIndexOf(char value, int startIndex)`
 * `String.Replace(char oChar, char nChar)` and `String.Replace(string oStr, string nStr)`
+* `String.Split(params char[] separators)`
 * `String.Split(char separator, StringSplitOptions = StringSplitOptions.None)` and `String.Split(string separator, StringSplitOptions = StringSplitOptions.None)`
+   * *Note*: DotVVM supports `None` and `RemoveEmptyEntries` options. When targeting .NET Framework, these overloads are exposed using custom extensions to ensure they are available on all supported frameworks.
 * `String.StartsWith(string value)` and `String.StartsWith(char value)`
 * `String.ToLower()`
 * `String.ToUpper()`
