@@ -38,6 +38,10 @@ The [resource](resource-binding) and [command](~/pages/concepts/respond-to-user-
 * Local variables (**new in version 3.0**)
    * `var myVariable = SomeFunction(arg1, arg2); SomeMethod(myVariable)`
    * *Note*: Variables are by design single-assignable (immutable). Variables may shadow property names and previously defined variables.
+* String interpolation (**new in version 3.1**)
+   * `$"Hello {NameProperty}!"`
+   * `$"Date: {DateProperty:dd/MM/yyyy}"`
+   * *Note*: Interpolation expressions and formatting component are supported. Regarding the formatting component, see [Formatting dates and numbers](~/pages/concepts/localization-and-cultures/formatting-dates-and-numbers) for more info about supported formats.
 
 ### .NET methods supported in value bindings
 
@@ -143,5 +147,6 @@ We plan to add support for the following methods in DotVVM 3.1.
 * [Data-binding overview](~/pages/concepts/data-binding/overview)
 * [Respond to user actions](~/pages/concepts/respond-to-user-actions/overview)
 * [Binding context](~/pages/concepts/data-binding/binding-context)
-* [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api-bindings/overview)
+* [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api/bindings/overview)
+* [Formatting dates and numbers](~/pages/concepts/localization-and-cultures/formatting-dates-and-numbers)
 * [Custom JavaScript translators](~/pages/concepts/control-development/custom-javascript-translators)
