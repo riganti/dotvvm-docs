@@ -6,4 +6,4 @@ The server rendering can be turned on using the `RenderSettings.Mode` property.
 
 This helps especially the search engines to index the contents of the page. Additionally, the server rendering might make the grid load faster in the browser if there are hundreds of rows or more.
 
-You can read more in the [Server-Side HTML Generation and SEO](/docs/tutorials/basics-server-side-html-generation/{branch}) chapter.
+You can read more in the [Server-Side HTML Generation and SEO](~/pages/concepts/server-side-rendering) chapter.

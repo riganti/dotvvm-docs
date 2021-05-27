@@ -1,3 +1,3 @@
 # Business Pack themes overview
 
-[DotVVM Business Pack](https://www.dotvvm.com/landing/business-pack) comes with a built-in theme, however you can craft your own one. 
+Sorry, this page hasn't been written yet. We're doing our best to publish it as soon as possible.

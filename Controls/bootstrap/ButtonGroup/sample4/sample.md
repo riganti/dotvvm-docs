@@ -1,6 +1,6 @@
 ## Sample 4: CheckBoxes and RadioButtons in the ButtonGroup
 
-The `ButtonGroup` also supports [CheckBox](/docs/controls/bootstrap/CheckBox/{branch}) and [RadioButton](/docs/controls/bootstrap/RadioButton/{branch}).
+The `ButtonGroup` also supports [CheckBox](~/controls/bootstrap/CheckBox) and [RadioButton](~/controls/bootstrap/RadioButton).
 
 Remember that Bootstrap doesn't support the `Size` and `IsVertical` modifiers when checkboxes or radio buttons are inside the button group.
 

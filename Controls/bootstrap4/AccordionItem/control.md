@@ -1,6 +1,6 @@
-Represents an item in [Accordion](/docs/controls/bootstrap4/Accordion/{branch}) control.
+Represents an item in [Accordion](~/controls/bootstrap4/Accordion) control.
 
-This control inherits from [Card](/docs/controls/bootstrap4/Card/{branch}). 
+This control inherits from [Card](~/controls/bootstrap4/Card). 
 
 It has an additional property `IsExpanded` which determines whether the card content is expanded or not.
 

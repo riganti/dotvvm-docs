@@ -1,6 +1,6 @@
 ## Sample 1: TabItem Control
 
-Use the `<bs:TabItem>` controls inside the [TabControl](/docs/controls/bootstrap4/TabControl/{branch}) control.
+Use the `<bs:TabItem>` controls inside the [TabControl](~/controls/bootstrap4/TabControl) control.
 
 The header and content of each `TabItem` is defined using the `HeaderTemplate` and `ContentTemplate` properties.  
 

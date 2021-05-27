@@ -1,3 +1,3 @@
 ## Sample 4: TextBox Enabled with CheckBox
 
-`TextBox` has `Enabled` property for setting if `TextBox` input is enabled. You can bind and switch it for example with [CheckBox](/docs/controls/builtin/CheckBox/{branch}).
+`TextBox` has `Enabled` property for setting if `TextBox` input is enabled. You can bind and switch it for example with [CheckBox](~/controls/builtin/CheckBox).

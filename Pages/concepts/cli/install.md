@@ -1,18 +1,33 @@
 # Install the CLI
 
-When you create DotVVM project (ASP.NET Core) using [DotVVM for Visual Studio](https://www.dotvvm.com/landing/dotvvm-for-visual-studio-extension) or using [dotnet new](/docs/tutorials/how-to-start-command-line/{branch}), the **DotVVM Command Line** tool should be already registered in the project file:
+**DotVVM Command-Line tool** can be used for several purposes:
+
+* Adding [pages](~/pages/concepts/dothtml-markup/overview), [master pages](~/pages/concepts/layout/master-pages), or [markup controls](~/pages/concepts/control-development/markup-controls) in the project
+* Generating [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api-bindings/overview)
+
+In the future, we plan to add additional features, like generating Selenium page objects for DotHTML pages, and more.
+
+## Install the CLI tool
+
+To install DotVVM CLI globally, run the following command in the terminal:
 
 ```
-<Project ToolsVersion="15.0" Sdk="Microsoft.NET.Sdk.Web">
-  <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-  </PropertyGroup>
-  ...
+dotnet tool install -g DotVVM.CommandLine
+```
+
+## Remove the DotNetCliToolReference
+
+If you've been using ASP.NET Core with .NET Core 2.2 or lower, you'll probably have the following entry in the `.csproj` file:
+
+```
   <ItemGroup>
     <DotNetCliToolReference Include="DotVVM.CommandLine" Version="2.0.0" />
   </ItemGroup>
-</Project>
 ```
 
-This will allow you to run commands starting with `dotnet dotvvm ...` in the project directory to perform various actions with the DotVVM project.
+This can be safely removed, as the `DotNetCliToolReference` was deprecated, and installing command-line tools via `dotnet tool install` is now the preferred way.
 
+## See also
+
+* [Create pages and controls](create-pages-and-controls)
+* [Generate REST API clients](generate-rest-api-clients)

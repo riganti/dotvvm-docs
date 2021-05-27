@@ -1,2 +1,2 @@
-Renders a list of [CheckBox](/docs/controls/businesspack/CheckBox/{branch}) controls and lets the user to select multiple values.
+Renders a list of [CheckBox](~/controls/businesspack/CheckBox) controls and lets the user to select multiple values.
 The values are stored in a collection bound to the `SelectedValues` property of the control.

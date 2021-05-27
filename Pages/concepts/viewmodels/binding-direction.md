@@ -19,7 +19,7 @@ The `Direction` is an enumeration with the following options:
 
 * `ServerToClient` transfers the value only from the server to the client. 
 
-* `ServerToClientFirstRequest` transfers the value from the server to the client on the initial page load, not during postbacks. This is useful e. g. for representing a list of items in the [ComboBox](/docs/controls/builtin/ComboBox/{branch}) when the collection is static and cannot be changed. 
+* `ServerToClientFirstRequest` transfers the value from the server to the client on the initial page load, not during postbacks. This is useful e. g. for representing a list of items in the [ComboBox](~/controls/builtin/ComboBox) when the collection is static and cannot be changed. 
 
 * `ClientToServer` transfers the value only from the client to the server. You can use this for the values of the form fields which can only be read on the server (e.g. value in the search box). 
 

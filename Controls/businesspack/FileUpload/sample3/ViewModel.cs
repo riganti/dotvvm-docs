@@ -1,6 +1,7 @@
 using System.IO;
+using System.Threading.Tasks;
 using DotVVM.BusinessPack.Controls;
-using DotVVM.Framework.Storage;
+using DotVVM.Core.Storage;
 using DotVVM.Framework.ViewModel;
 
 namespace DotvvmWeb.Views.Docs.Controls.businesspack.FileUpload.sample3
@@ -16,7 +17,7 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.FileUpload.sample3
 
         public UploadData Upload { get; set; } = new UploadData();
 
-        public void Process()
+        public async Task Process()
         {
             var folderPath = GetFolderPath();
 
@@ -24,8 +25,8 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.FileUpload.sample3
             foreach (var file in Upload.Files)
             {
                 var filePath = Path.Combine(folderPath, file.FileId + ".bin");
-                fileStorage.SaveAs(file.FileId, filePath);
-                fileStorage.DeleteFile(file.FileId);
+                await fileStorage.SaveAsAsync(file.FileId, filePath);
+                await fileStorage.DeleteFileAsync(file.FileId);
             }
 
             // clear the data so the user can continue with other files

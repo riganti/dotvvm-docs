@@ -9,7 +9,7 @@ Each binding is, in fact, a `Dictionary` of its properties - things like the exe
 
 You may now doubt about runtime performance if the property is parsed every time the property is requested. For that reason, the result is cached in the dictionary, so when resolved, the property behaves like it would be assigned to a constructor. And the binding instance is shared between requests, so it the expression is compiled only once in the application lifetime. Because of that, it's very important that the functions are pure and their result is immutable.
 
-As you can see, these resolvers may form a dependency graph (only an acyclic one), if you are interested, almost all default resolvers are in the [GeneralBindingPropertyResolvers](https://github.com/riganti/dotvvm/blob/master/src/DotVVM.Framework/Compilation/Binding/GeneralBindingPropertyResolvers.cs) class. As you can see, all of them are just simple functions that take the dependencies as arguments and return the result. The main point of this is extensibility, so let's write a custom property and resolver:
+As you can see, these resolvers may form a dependency graph (only an acyclic one), if you are interested, almost all default resolvers are in the [GeneralBindingPropertyResolvers](https://github.com/riganti/dotvvm/blob/main/src/DotVVM.Framework/Compilation/Binding/GeneralBindingPropertyResolvers.cs) class. As you can see, all of them are just simple functions that take the dependencies as arguments and return the result. The main point of this is extensibility, so let's write a custom property and resolver:
 
 It will contain a property used in the binding, for example a PropertyInfo of `Name` for binding `{value: Name}` or `{value: _root.Article.Name}`. First, we have to declare the binding property type:
 
@@ -24,7 +24,7 @@ public sealed class UsedPropertyBindingProperty {
 
 Then you can write the function. It requires the `ParsedExpressionBidningProperty` which contains the parsed semantic tree of the binding.
 
-```cs
+```CSHARP
 public class MyResolvers {
     public UsedPropertyBindingProperty GetUsedProperty(ParsedExpressionBindingProperty parsedExpression) {
         var expr = parsedExpression.Expression;
@@ -52,7 +52,7 @@ You can see, the resolver may throw an exception when the expression is not a me
 
 Last thing missing is registration of the `MyResolvers` class. It can be added to the `BindingCompilationOptions.TransformerClasses` property using the Asp.Net Core configuration in the `ConfigureServices` method:
 
-```cs
+```CSHARP
 services.Configure<BindingCompilationOptions>(o => {
     o.TransformerClasses.Add(new MyResolvers());
 });
@@ -62,7 +62,7 @@ services.Configure<BindingCompilationOptions>(o => {
 
 The binding properties allow you to create almost anything from other binding properties - including other bindings. Derived binding can, for example, contain a negated expression:
 
-```cs
+```CSHARP
 public NegatedBindingExpression NegateBinding(ParsedExpressionBindingProperty e, IBinding binding) {
     return new NegatedBindingExpression(binding.DeriveBinding(
         new ParsedExpressionBindingProperty(
@@ -83,11 +83,11 @@ Note the usage of `DeriveBinding` extension method on the `IBinding` instance - 
 
 This binding property is present by default in the DotVVM Framework, but you can define your own in the same way.
 
-## Post-processing existing properties
+## Post-process existing properties
 
 You can register a resolver with signature like:
 
-```cs
+```CSHARP
 public ParsedExpressionBindingProperty WrapExpression(ParsedExpressionBindingProperty prop, some other dependencies) {
     return new ParsedExpressionBindingProperty(Expression.Add(prop.Expression, Expression.Contant(1)));
 }
@@ -99,8 +99,7 @@ It will be executed always after the property is resolved, which means that all 
 
 You can even create your own binding, you just need to inherit from `BindingExpression` and register the name at `ControlResolverBase.BindingTypes` with its `BindingParserOptions`. You can have a look how `ResourceBindingExpression` is defined in the framework:
 
-```cs
-
+```CSHARP
 [BindingCompilationRequirements(
     // the binding implicitly requires an executable BindingDelegate
     required: new[] {typeof(CompiledBindingExpression.BindingDelegate)}
@@ -135,6 +134,16 @@ public class ResourceBindingExpression<T> : ResourceBindingExpression, IStaticVa
 
 And it is registered in the collection like this:
 
-```cs
+```CSHARP
 ControlResolverBase.BindingTypes.Add(ParserConstants.ResourceBinding, BindingParserOptions.Create(typeof(ResourceBindingExpression<>)));
 ```
+
+## See also
+
+* [Control development overview](overview)
+* [Markup controls](markup-controls)
+* [Code-only controls](code-only-controls)
+* [Adding interactivity using Knockout binding handlers](interactivity)
+* [Custom postback handlers](custom-postback-handlers)
+* [Binding extension parameters](binding-extension-parameters)
+* [Custom JavaScript translators](custom-javascript-translators)

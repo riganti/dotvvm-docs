@@ -92,7 +92,7 @@ This will refresh all registered APIs. If you have registered multiple APIs in t
 
 ## Use the API
 
-The REST APIs can be used in [value bindings](~/pages/concepts/data-binding/value-bindings) and in [static commands](../static-commands). 
+The REST APIs can be used in [value bindings](~/pages/concepts/data-binding/value-binding) and in [static commands](../static-commands). 
 
 You must not change the default `Newtonsoft.Json` settings for serialization and deserialization. This is due to the fact that the same settings are currently used within the generated API bindings. If you require changes to the settings, you can achieve this by using a different overload of `JsonConvert.SerializeObject` or `JsonConvert.DeserializeObject` and pass your settings as an additional parameter.
 
@@ -114,9 +114,9 @@ It is possible to take advantage of the HTTP-level caching. If the REST API prov
 <!-- 
 ### Using GridViewDataSet
 
-REST API bindings support the `GridViewDataSet<T>` object which can be used to perform sorting and paging. It must be supported on the REST API side - see [Building own REST API for REST API Bindings](/docs/tutorials/basics-rest-api-bindings-building-own-api/{branch}) for more information.
+REST API bindings support the `GridViewDataSet<T>` object which can be used to perform sorting and paging. It must be supported on the REST API side - see [Building own REST API for REST API Bindings](/docs/tutorials/basics-rest-api-bindings-building-own-api) for more information.
 
-You can use [GridView](/docs/controls/builtin/GridView/{branch}) with paging and sorting like this:
+You can use [GridView](~/controls/builtin/GridView) with paging and sorting like this:
 
 ```DOTHTML
 <dot:GridView DataSource="{value: DataSet = _myApi.GetCompanies(DataSet.SortingOptions, DataSet.PagingOptions)}">
@@ -125,7 +125,7 @@ You can use [GridView](/docs/controls/builtin/GridView/{branch}) with paging and
 <dot:DataPager DataSet="{value: DataSet}" />
 ```
 
-The `DataSet` property must be declared in the viewmodel and its [Binding Direction](/docs/tutorials/basics-binding-direction/{branch}) can be set to `ServerToClientFirstRequest`:
+The `DataSet` property must be declared in the viewmodel and its [Binding Direction](/docs/tutorials/basics-binding-direction) can be set to `ServerToClientFirstRequest`:
 
 ```CSHARP
 [Bind(Direction.ServerToClientFirstRequest)]

@@ -1,6 +1,6 @@
 ## Sample 1: Thumbnail
 
-The `Thumbnail` control has the same properties of the displayed image as the [Image](/docs/controls/bootstrap/Image/{branch}) control.  
+The `Thumbnail` control has the same properties of the displayed image as the [Image](~/controls/bootstrap/Image) control.  
 
 Additionally, it has the `NavigateUrl` property which specifies the URL where the hyperlink navigates to.
 

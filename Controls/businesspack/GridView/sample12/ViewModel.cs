@@ -14,7 +14,7 @@ public class ViewModel : DotvvmViewModelBase
         // you can initialize default filters
         if (!Context.IsPostBack) 
         {
-            Customers.FilteringOptions =
+            Customers.FilteringOptions = new FilteringOptions()
             {
                 FilterGroup = new FilterGroup()
                 {
@@ -24,7 +24,7 @@ public class ViewModel : DotvvmViewModelBase
                     },
                     Logic = FilterLogicType.And
                 }
-            }
+            };
         }
         
         // refresh data

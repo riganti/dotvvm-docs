@@ -4,8 +4,8 @@
 
 DotVVM is implemented as OWIN or ASP.NET Core middleware that can be added in the request processing pipeline.
 
-* [Adding DotVVM in Existing Web App (OWIN)](/docs/tutorials/how-to-start-existing-app-owin/{branch})
-* [Adding DotVVM in Existing Web App (ASP.NET Core)](/docs/tutorials/how-to-start-existing-app-aspnetcore/{branch})
+* [Adding DotVVM in Existing Web App (OWIN)](/docs/tutorials/how-to-start-existing-app-owin)
+* [Adding DotVVM in Existing Web App (ASP.NET Core)](/docs/tutorials/how-to-start-existing-app-aspnetcore)
 
 ## Sample Integration Projects
 

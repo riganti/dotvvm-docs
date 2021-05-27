@@ -16,4 +16,4 @@ To customize the look of toolbar icons in the control, you can use the following
 
 * `ZoomOutIcon` allows to customize the zoom out icon. The default value is `ZoomOut`.
 
-See the [Icon](/docs/controls/businesspack/Icon/{branch}) documentation to find about using other icon packs.
+See the [Icon](~/controls/businesspack/Icon) documentation to find about using other icon packs.

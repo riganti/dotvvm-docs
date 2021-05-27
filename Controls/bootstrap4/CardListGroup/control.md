@@ -1,5 +1,5 @@
-A special version of the [ListGroup](/docs/controls/bootstrap4/ListGroup/{branch}) control that can be used in [Card](/docs/controls/bootstrap4/Card/{branch}).
+A special version of the [ListGroup](~/controls/bootstrap4/ListGroup) control that can be used in [Card](~/controls/bootstrap4/Card).
 
-See [ListGroup](/docs/controls/bootstrap4/ListGroup/{branch}) for more info on how to use this control.
+See [ListGroup](~/controls/bootstrap4/ListGroup) for more info on how to use this control.
 
 <https://getbootstrap.com/docs/4.3/components/card/>

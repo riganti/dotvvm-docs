@@ -1,5 +1,5 @@
-A special version of the [Button](/docs/controls/bootstrap4/Button/{branch}) control that can be used in [InputGroup](/docs/controls/bootstrap4/InputGroup/{branch}).
+A special version of the [Button](~/controls/bootstrap4/Button) control that can be used in [InputGroup](~/controls/bootstrap4/InputGroup).
 
-See [Button](/docs/controls/bootstrap4/Button/{branch}) for more info on how to use this control.
+See [Button](~/controls/bootstrap4/Button) for more info on how to use this control.
 
 <https://getbootstrap.com/docs/4.3/components/input-group/>

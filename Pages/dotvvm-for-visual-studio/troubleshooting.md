@@ -4,16 +4,16 @@ If you encounter any problems with the DotVVM extension (e.g. IntelliSense not w
 
 ## IntelliSense is not working
 
-### 1. Update to Latest Version
+### 1. Update to the latest version
 
 In Visual Studio, choose the **DotVVM / Check for Updates** menu item and if newer version is available, install it.
 
-### 2. Check You Are Signed In
+### 2. Check that you are signed in
 
-Some features from the **Professional** edition work only if you are signed in. 
+Some features from the **commercial** edition work only if you are signed in. 
 In Visual Studio, choose the **DotVVM / About** and check whether your license is active and whether you are signed in.
 
-### 3. Delete the Component Model Cache
+### 3. Delete the component model cache
 
 Occasionally, some things break in Visual Studio MEF component cache. If you see message boxes that DotVVM package
 didn't load correctly, shut down Visual Studio and delete the folder `c:\Users\<your user name>\AppData\Local\Microsoft\VisualStudio\v14.0\ComponentModelCache`
@@ -31,7 +31,7 @@ Also, IntelliSense in DOTHTML files is broken, the directives are being underlin
 
 Visual Studio uses the DotVVM Compiler to read the settings in the `DotvvmStartup` file, or to precompile the DOTVVM views.
 
-### How To Resolve the Issue
+### How to resolve the issue
 
 The most common reason for this behavior is that Visual Studio cannot find the `DotVVM` binaries, because they are not
 present in the `packages` folder. 
@@ -47,4 +47,9 @@ to actually execute the `DotvvmStartup.cs` to be able to retrieve the configurat
 
 ## Other issues
 
-If the issue still occurs, <a href="/support">please contact us</a> and provide us with description of the problem and screenshots.
+If the issue still occurs, [contact us](https://www.dotvvm.com/support) and provide us with description of the problem and screenshots.
+
+## See also
+
+* [DotVVM Private NuGet Feed](dotvvm-private-nuget-feed)
+* [Release notes](release-notes)

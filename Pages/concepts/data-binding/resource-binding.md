@@ -35,20 +35,9 @@ Resource binding may be helpful in combination with [server-side rendering and S
 
 ## Access the RESX file entries
 
-The primary scenario for this binding is to access .NET resource files (RESX). The default syntax is `{resource: FullNamespace.ResourceClass.ResourceKey}`. 
-This will find the appropriate RESX file and use the value with the specified key.
+The primary scenario for this binding is to access .NET resource files (RESX) which are used for localization. 
 
-For example, if you have a project named `MyWebApp` and you have a `Resources\Web\Strings.resx` file in the project, the resource class will 
-be `MyWebApp.Resources.Web.Strings` (provided you haven't change the default namespace in the project properties). 
-
-To retrieve the resource, you need to use the following expression:
-```DOTHTML
-<dot:Button Text="{resource: MyWebApp.Resources.Web.Strings.SomeResourceKey}" />
-```
-
-In order to be able to access the RESX file entries, they must be generated as public members. Make sure that you have set the __Access Modifier__ field to **Public**.
-
-!(Enable public members code generation in RESX files)[resource-binding-img1.png]
+See the [RESX files](~/pages/concepts/localization-and-cultures/resx-files) chapter for more info.
 
 ## The @import directive
 

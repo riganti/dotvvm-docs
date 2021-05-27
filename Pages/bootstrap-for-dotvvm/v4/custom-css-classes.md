@@ -1,6 +1,6 @@
 # Custom CSS classes
 
-If you are using [Bootstrap for DotVVM](/landing/bootstrap-for-dotvvm) and you need to modify which css classes (classes on outer control element or classes on inner control structure) are used on Bootstrap 4 controls, than you can use bootstrap Custom CSS API to do so.
+If you are using [Bootstrap for DotVVM](https://www.dotvvm.com/products/bootstrap-for-dotvvm) and you need to modify which css classes (classes on outer control element or classes on inner control structure) are used on Bootstrap 4 controls, than you can use bootstrap Custom CSS API to do so.
 
 ## Basic usage
 For example, let's say that you want to redefine `<bs:ModalDialog ... />` body to also use css class `custom-body` instead of standard `modal-body`.
@@ -40,7 +40,7 @@ config.Styles.RegisterBootstrapCss(new CustomBootstrapCss(), dotvvmConfig);
 ```
 
 ## Restricting where would our custom CSS be used
-If you don't wont our custom classes to be applied to every control, than we can restrict on which controls and under which conditions it would be used by [Server-side Styles API](/docs/tutorials/basics-server-side-styles).
+If you don't wont our custom classes to be applied to every control, than we can restrict on which controls and under which conditions it would be used by [Server-side Styles API](~/pages/concepts/dothtml-markup/server-side-styles).
 
 For example if we want to limit our custom classes to only modal dialogs in admin section (has view in folder `~/Views/admin/`) than we can register our `CustomBootstrapCss` this way:
 
@@ -58,8 +58,8 @@ When set to *true* (it's true by default), than all control  which does not have
 When set to *false* than no inheritance is performed. The control used explicitly set instance of `IBootstrapCss` or `DefaultBootstrapCustomCss`.
 
 ### DefaultBootstrapCustomCss
-Instance of `IBootstrapCss` which will be used when no other css class is specified for control **AND** if InheritCustomCssFromParentControl is set to *false*.
+Instance of `IBootstrapCss` which will be used when no other css class is specified for control **AND** if `InheritCustomCssFromParentControl` is set to *false*.
 
-If InheritCustomCssFromParentControl is *true* than Bootstrap custom CSS class from nearest ancestor with would be used.
+If `InheritCustomCssFromParentControl` is *true* than Bootstrap custom CSS class from nearest ancestor with would be used.
 
-If no custom css is found on any of the ancestors than DefaultBootstrapCustomCss is used.
+If no custom css is found on any of the ancestors than `DefaultBootstrapCustomCss` is used.

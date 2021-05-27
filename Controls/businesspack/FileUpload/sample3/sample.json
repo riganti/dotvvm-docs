@@ -1,6 +1,17 @@
 {
   "files": [
-    { "name": "page.dothtml" },    
-    { "name": "ViewModel.cs" }
+    {
+      "name": "page.dothtml"
+    },
+    {
+      "name": "ViewModel.cs",
+      "replacements": [
+        {
+          "pattern": "(await storage\\.SaveAsAsync)",
+          "replacement": "//await storage.SaveAsAsync",
+          "singleLine": true
+        }
+      ]
+    }
   ]
 }

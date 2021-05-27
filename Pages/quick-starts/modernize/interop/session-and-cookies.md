@@ -125,3 +125,11 @@ public void ConfigureServices(IDotvvmServiceCollection services)
     services.Services.AddSingleton<ICookieManager, SystemWebCookieManager>();
 }
 ```
+
+## See also
+
+* [Add DotVVM to existing app](../add-dotvvm-to-existing-app)
+* [Plan the modernization](../plan-the-modernization)
+* [Create the first page](~/pages/quick-starts/build/first-page)
+* [Web Forms modernization sample using DotVVM - C# version](https://github.com/riganti/dotvvm-samples-webforms-migration)
+* [Web Forms modernization sample using DotVVM - VB.NET version](https://github.com/riganti/dotvvm-samples-webforms-migration)
