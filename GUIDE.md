@@ -109,7 +109,7 @@ Resulting structure should look something like this.
 ```
 # 2.4.0.10
 ## New controls
-- ### [```Icon```](https://www.dotvvm.com/docs/controls/bootstrap4/Icon)
+- ### [Icon](https://www.dotvvm.com/docs/controls/bootstrap4/Icon)
     
 ## Changes to existing controls
 ### **Toast**
