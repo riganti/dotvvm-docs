@@ -45,7 +45,7 @@ options.AddStatusPage(new StatusPageOptions()
 
 ## Accessing compilation results via API
 
-If manual checking using status page is not an option, then the status page API can be used.
+If manual checking using status page is not an option, then the status page API can be used. This can be especially useful for automated checking of the compilation status before/after deployment to the production.   
 The API can be found (in default configuration) at After registration using `_diagnostics/status/api`.  
 The API is enabled by calling `AddStatusPageApi`.
 
