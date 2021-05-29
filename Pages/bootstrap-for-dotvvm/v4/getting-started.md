@@ -1,4 +1,4 @@
-# Getting started with Bootstrap for DotVVM (version 4)
+# Getting started with Bootstrap 4 for DotVVM
 
 To use the [Bootstrap for DotVVM](https://www.dotvvm.com/products/bootstrap-for-dotvvm) controls, you have use the [DotVVM Private Nuget Feed](~/pages/dotvvm-for-visual-studio/dotvvm-private-nuget-feed).
 
@@ -62,11 +62,5 @@ Or specify your own IResources.
             config.AddBootstrap4Configuration(options);
 ```
 
-### Is it OK?
-
-To verify that Bootstrap resources are included correctly, press F12 in your web browser. Verify that bootstrap.css or bootstrap.js is not loaded twice, and there are 
-no errors in the developer console, especially some messages which say that some Bootstrap-related resource could not be found.
-
-## Limitations
-
-The current version of [Bootstrap for DotVVM](https://www.dotvvm.com/products/bootstrap-for-dotvvm) supports **Bootstrap 4**. For more information about Bootstrap, navigate into its [documentation](https://getbootstrap.com).
+## Usage
+The usage of each control is shown in the [controls documentation](~/controls/bootstrap4/Accordion).
