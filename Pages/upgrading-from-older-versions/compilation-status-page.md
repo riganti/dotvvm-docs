@@ -10,6 +10,7 @@ DotVVM views are compiled on demand when the page requests a DotHTML file. This 
 
 ![Compilation Status Page](https://raw.githubusercontent.com/riganti/dotvvm-samples-compilation-status-page/42184142d7905be3d2e23661dbb1905c3ed4ba80/docs/sample.PNG)
 
+
 ## Install Compilation Status Page
 
 1. Install the `DotVVM.Diagnostics.StatusPage` NuGet package in the project
@@ -25,6 +26,64 @@ public void ConfigureServices(IDotvvmServiceCollection services)
 ```
 
 3. Run the app and visit `_diagnostics/status` to see the status.
+
+
+## Security
+
+Having status page publicly available is not recommended because that would allow potential attacker to trigger page recompilation which would slow down or disable entire application.  
+Due to this concern there is ability to specify authorization function which decides whether user will be allowed to access status page or not.  
+
+The Authorization function can be specified during status page registration. Examples of such authorization function can be checking source IP address are checking whether user has some specific claim.
+
+```CSHARP
+options.AddStatusPage(new StatusPageOptions()
+{
+    Authorize = context => Task.FromResult(context.HttpContext.User.HasClaim(claim => claim.Type== "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" && !string.IsNullOrWhiteSpace(claim.Value)))
+});
+```
+
+
+## Accessing compilation results via API
+
+If manual checking using status page is not an option, then the status page API can be used.
+The API can be found (in default configuration) at After registration using `_diagnostics/status/api`.  
+The API is enabled by calling `AddStatusPageApi`.
+
+```CSHARP
+public void ConfigureServices(IDotvvmServiceCollection services)
+{
+    services.AddStatusPageApi();
+    ...
+}
+```
+
+### API Security
+
+The API can be secured in the same way as the status page is.  
+API can trigger only one compilation of any given page, so there should not be possibility of DDOS attack. Leaking of sensitive information is still possible, so some security measures should be put in place.
+
+Additionally, the behavior for unauthorized access can be configured via `NonAuthorizedApiAccessMode` property on `StatusPageApiOptions`.
+
+
+Possible values are:
+-   `Deny`   
+   Default behavior where unauthorized clients will receive `401` error code.
+-   `BasicResponse`   
+    Unauthorized clients will receive 200 for successful compilation and 500 for failed one.  
+-   `DetailedResponse`  
+    Even Unauthorized clients will receive complete enumeration of discovered errors.
+
+```CSHARP
+public void ConfigureServices(IDotvvmServiceCollection services)
+{
+    var statusPageApiOptions = StatusPageApiOptions.CreateDefaultOptions();
+            
+    statusPageApiOptions.NonAuthorizedApiAccessMode = NonAuthorizedApiAccessMode.BasicResponse;
+
+    options.AddStatusPageApi(statusPageApiOptions);
+    ...
+}
+```
 
 ## See also
 
