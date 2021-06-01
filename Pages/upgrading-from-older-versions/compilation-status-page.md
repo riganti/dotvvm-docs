@@ -30,10 +30,10 @@ public void ConfigureServices(IDotvvmServiceCollection services)
 
 ## Security
 
-Having status page publicly available is not recommended because that would allow potential attacker to trigger page recompilation which would slow down or disable entire application.  
-Due to this concern there is ability to specify authorization function which decides whether user will be allowed to access status page or not.  
+Having status page publicly available is not recommended because that would allow potential attackers to trigger page recompilation which could slow down the entire application.  
+Due to this concern, there is an option to specify an authorization function which decides whether user will be allowed to access status page or not.  
 
-The Authorization function can be specified during status page registration. Examples of such authorization function can be checking source IP address are checking whether user has some specific claim.
+The authorization function can be specified during status page registration. Examples of such, the authorization function can check the source IP address, or check whether the user identity contains some specific claim.
 
 ```CSHARP
 options.AddStatusPage(new StatusPageOptions()
@@ -59,19 +59,14 @@ public void ConfigureServices(IDotvvmServiceCollection services)
 
 ### API Security
 
-The API can be secured in the same way as the status page is.  
-API can trigger only one compilation of any given page, so there should not be possibility of DDOS attack. Leaking of sensitive information is still possible, so some security measures should be put in place.
+The API can be secured in the same way as the status page is. API can trigger only one compilation of any given page, so there should not be possibility of DDOS attack. Leaking of sensitive information is still possible, so some security measures should be put in place.
 
 Additionally, the behavior for unauthorized access can be configured via `NonAuthorizedApiAccessMode` property on `StatusPageApiOptions`.
 
-
 Possible values are:
--   `Deny`   
-   Default behavior where unauthorized clients will receive `401` error code.
--   `BasicResponse`   
-    Unauthorized clients will receive 200 for successful compilation and 500 for failed one.  
--   `DetailedResponse`  
-    Even Unauthorized clients will receive complete enumeration of discovered errors.
+-   `Deny`: Default behavior where unauthorized clients will receive `401` error code.
+-   `BasicResponse`: Unauthorized clients will receive 200 for successful compilation and 500 for failed one.  
+-   `DetailedResponse`: Even Unauthorized clients will receive complete enumeration of discovered errors.
 
 ```CSHARP
 public void ConfigureServices(IDotvvmServiceCollection services)
