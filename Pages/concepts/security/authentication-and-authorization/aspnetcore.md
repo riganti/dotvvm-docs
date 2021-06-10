@@ -127,7 +127,7 @@ public class LoginViewModel : DotvvmViewModelBase
 
     public async Task Login()
     {
-        var result = await _signInManager.PasswordSignInAsync(UserName, Password);
+        var result = await _signInManager.PasswordSignInAsync(UserName, Password, false, true);
         if (result.Succeeded)
         {
             if (!string.IsNullOrEmpty(ReturnUrl)) 
