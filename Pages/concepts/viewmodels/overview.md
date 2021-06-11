@@ -50,7 +50,7 @@ Therefore, the viewmodel can contain properties of the following types:
     * enums
 * nullable versions of supported primitive types (e. g. `int?`, `DateTime?`...)
 * objects with properties of supported types, and a public parameterless constructor
-* collections (array, `List<T>`) of supported objects, or primitive types
+* collections (array, `List<T>`, `Dictionary<K,V>`) of supported objects, or primitive types
 
 > Please note that the `TimeSpan` and `DateTimeOffset` are not supported in the current version. 
 

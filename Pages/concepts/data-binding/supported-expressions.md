@@ -119,6 +119,26 @@ We plan to add support for the following methods in DotVVM 3.1.
 * `Enumerable.ToArray<T>(IEnumerable<T> collection)`
 * `Enumerable.ToList<T>(IEnumerable<T> collection)`
 
+#### List<T> methods
+* `List<T>.Add(T element)`
+* `List<T>.AddRange(IEnumerable<T> elements)`
+* `List<T>.Clear()`
+* `List<T>.Insert(int index, T element)`
+* `List<T>.InsertRange(int index, IEnumerable<T> elements)`
+* `List<T>.RemoveAt(int index)`
+* `List<T>.RemoveAll(Predicate<T> predicate)`
+* `List<T>.RemoveRange(int index, int count)`
+* `List<T>.Reverse()`
+* `ListExtensions.AddOrUpdate<T>(this List<T> list, T element, Func<T,bool> matcher, Func<T,T> updater)`
+   * *Note*: this method tries to update an element using `updater`. Element for updating can be selected using `matcher`. If no element matched the predicate, `element` is added to list.
+* `ListExtensions.RemoveFirst<T>(this List<T> list, Func<T,bool> predicate)`
+* `ListExtensions.RemoveLast<T>(this List<T> list, Func<T,bool> predicate)`
+
+#### Dictionary<K,V> methods
+* `Dictionary<K,V>.Clear()`
+* `Dictionary<K,V>.ContainsKey(K key)`
+* `Dictionary<K,V>.Remove(K key)`
+
 #### String methods
 * `String.Contains(string value)` and `String.Contains(char value)`
 * `String.EndsWith(string value)` and `String.EndsWith(char value)`
