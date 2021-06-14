@@ -56,7 +56,7 @@ Therefore, the viewmodel can contain properties of the following types:
 
 ## Base class
 
-Viewmodels in DotVVM commonly inherit from the `DotvvmViewModelBase` class. Althought it is not mandatory, we recommend to follow this convention.
+Viewmodels in DotVVM commonly inherit from the `DotvvmViewModelBase` class. Although it is not mandatory, we recommend to follow this convention.
 
 The `DotvvmViewModelBase` class offers several useful mechanisms that you may need:
 

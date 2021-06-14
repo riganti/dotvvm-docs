@@ -28,7 +28,7 @@ config.ClientSideValidation = false;
 
 DotVVM contains a special validation attribute called `DotvvmEnforceClientFormat`. 
 
-It is applied automatically on date and numberic properties, and makes sure that a validation errors is raised when a value entered by the user (e. g. in a [TextBox](~/controls/builtin/TextBox)) cannot be parsed. See [Formatting dates and numbers](~/pages/concepts/localization-and-cultures/formatting-dates-and-numbers) for more info.
+It is applied automatically on date and numeric properties, and makes sure that a validation errors is raised when a value entered by the user (e. g. in a [TextBox](~/controls/builtin/TextBox)) cannot be parsed. See [Formatting dates and numbers](~/pages/concepts/localization-and-cultures/formatting-dates-and-numbers) for more info.
 
 This attribute does nothing on the server - it only has a client-side behavior. You may not need to use this attribute, except for a case when you need to turn this default behavior off.
 

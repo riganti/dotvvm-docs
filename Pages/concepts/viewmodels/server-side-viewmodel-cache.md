@@ -2,7 +2,7 @@
 
 > This feature is new in **DotVVM 2.4**.
 
-Thi **server-side viewmodel cache** can dramatically reduce the amount of data transferred between the server and the client.
+The **server-side viewmodel cache** can dramatically reduce the amount of data transferred between the server and the client.
 
 ## Principle
 
@@ -14,7 +14,7 @@ When the user makes a postback, DotVVM can send only the properties that was cha
 
 Imagine a page with a `GridView` control, and a delete button in every row. When you click on the button, the viewmodel on the client hasn't changed at all - it is still the same as it is in the server cache. Thus, the diff will be empty, and the postback will transfer only a tiny JSON object with an identification of the button that was clicked – no viewmodel data at all.
 
-## Resilliency
+## Resilience
 
 Since the viewmodel cache is stored in memory of the web application process, it can be easily lost (e. g. when the process is restarted). 
 

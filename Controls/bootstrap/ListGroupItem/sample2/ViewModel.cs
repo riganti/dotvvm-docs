@@ -8,7 +8,7 @@ namespace DotvvmWeb.Views.Docs.Controls.bootstrap.ListGroupItem.sample2
 {
     public class ViewModel : DotvvmViewModelBase
     {
-        public string BadgeText { get; set; } = "Binded Badge Text From View Model";
+        public string BadgeText { get; set; } = "Bound Badge Text From View Model";
 
         public string NavigateUrl { get; set; } = "https://www.dotvvm.com";
     }

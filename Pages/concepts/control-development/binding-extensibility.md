@@ -22,7 +22,7 @@ public sealed class UsedPropertyBindingProperty {
 }
 ```
 
-Then you can write the function. It requires the `ParsedExpressionBidningProperty` which contains the parsed semantic tree of the binding.
+Then you can write the function. It requires the `ParsedExpressionBindingProperty` which contains the parsed semantic tree of the binding.
 
 ```CSHARP
 public class MyResolvers {
@@ -30,7 +30,7 @@ public class MyResolvers {
         var expr = parsedExpression.Expression;
 
         // unwrap possible casts
-        while (expr.NodeType == ExpressionType.Convert) expr = ((UnaryExpresssion)expr).Operand;
+        while (expr.NodeType == ExpressionType.Convert) expr = ((UnaryExpression)expr).Operand;
 
         // check the node type
         if (expr.NodeType == ExpressionType.MemberAccess) {
@@ -89,11 +89,11 @@ You can register a resolver with signature like:
 
 ```CSHARP
 public ParsedExpressionBindingProperty WrapExpression(ParsedExpressionBindingProperty prop, some other dependencies) {
-    return new ParsedExpressionBindingProperty(Expression.Add(prop.Expression, Expression.Contant(1)));
+    return new ParsedExpressionBindingProperty(Expression.Add(prop.Expression, Expression.Constant(1)));
 }
 ```
 
-It will be executed always after the property is resolved, which means that all bindings will be incremented by one. Incrementing all bindings does not seem to be much useful, but I'm sure post-processing expressions or tweaking generated Javscript is really powerfull metaprogramming technique. Just please, use it wisely, all bindings incremented by one may be pretty tricky to debug for your teammates.
+It will be executed always after the property is resolved, which means that all bindings will be incremented by one. Incrementing all bindings does not seem to be much useful, but I'm sure post-processing expressions or tweaking generated Javascript is really powerful metaprogramming technique. Just please, use it wisely, all bindings incremented by one may be pretty tricky to debug for your teammates.
 
 ## Custom binding type
 
@@ -107,7 +107,7 @@ You can even create your own binding, you just need to inherit from `BindingExpr
 [Options]
 public class ResourceBindingExpression : BindingExpression, IStaticValueBinding
 {
-    // You need a contructor with this exact signature
+    // You need a constructor with this exact signature
     public ResourceBindingExpression(BindingCompilationService service, IEnumerable<object> properties) : base(service, properties) { }
 
     // You can have helpers for the binding properties, so they can be accessed like normal .NET properties

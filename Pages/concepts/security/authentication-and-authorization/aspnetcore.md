@@ -10,7 +10,7 @@ Second, you need to apply the authentication and authorization middlewares in th
 
 ## Configure the cookie authentication
 
-The most populare way is to use the standard cookie authentication.
+The most popular way is to use the standard cookie authentication.
 
 ```CSHARP
 public void ConfigureServices(IServiceCollection services)

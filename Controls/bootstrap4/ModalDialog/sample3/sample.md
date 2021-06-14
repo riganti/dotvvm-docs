@@ -6,7 +6,7 @@ If the modal dialog lays over other elements in the page, you may want to modify
 
 The `UseBackdrop` indicates whether the modal backdrop should be rendered under the modal dialog.
 
-The `CrollableContent` sets whether the modal dialog content would be vertically scrollable.
+The `ScrollableContent` sets whether the modal dialog content would be vertically scrollable.
 
 The `CloseOnBackdropClick` or `CloseOnEscape` properties allows to specify whether the dialog should be closed by clicking outside of it or by pressing the Escape key.
 

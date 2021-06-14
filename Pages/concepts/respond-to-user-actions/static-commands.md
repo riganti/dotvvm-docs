@@ -65,11 +65,11 @@ Also, you may want to use the method result to update some viewmodel property.
 <dot:Button Text="Something" Click="{staticCommand: SomeProperty = MyClass.MyMethod(SomeArg)}" />
 ```
 
-If the `MyClass` is not in the sames namespace as the viewmodel, use the `@import` directive.
+If the `MyClass` is not in the same namespace as the viewmodel, use the `@import` directive.
 
 ### Static command service methods
 
-Since the static methods cannot use [dependency injection](~/pageS/concepts/configuration/dependency-injection/overview), we recommend usin [static command services](static-command-services) instead of static methods. 
+Since the static methods cannot use [dependency injection](~/pageS/concepts/configuration/dependency-injection/overview), we recommend using [static command services](static-command-services) instead of static methods. 
 
 ### JavaScript methods
 

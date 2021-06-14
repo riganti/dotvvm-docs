@@ -9,7 +9,7 @@
 	<dot:RadioButton CheckedItem="{value: PriceWithoutTax}" Changed="{command: UpdatePrice()}" 
 					 CheckedValue="{value: 6.0f}" Text="Orange"/>
 	<dot:RadioButton CheckedItem="{value: PriceWithoutTax}" Changed="{command: UpdatePrice()}" 
-					 CheckedValue="{value: 5.0f}" Text="Pinapple"/>
+					 CheckedValue="{value: 5.0f}" Text="Pineapple"/>
 </p>
 
 <h3>Tax</h3>

@@ -1,1 +1,1 @@
-Combines [Collapsible](~/controls/bootstrap4/Collapsible) and [Card](~/controls/bootstrap4/Card) into control with allways visible header and collapsible content (+ footer).
+Combines [Collapsible](~/controls/bootstrap4/Collapsible) and [Card](~/controls/bootstrap4/Card) into control with always visible header and collapsible content (+ footer).

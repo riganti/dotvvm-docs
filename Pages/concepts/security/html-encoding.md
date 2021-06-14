@@ -1,6 +1,6 @@
 # HTML encoding
 
-When you need to display any content to the users, in most cases it should be HTML-encoded to prevent [cross-site scripting](https://en.wikipedia.org/wiki/Code_injection#Cross-site_scripting) attachs.
+When you need to display any content to the users, in most cases it should be HTML-encoded to prevent [cross-site scripting](https://en.wikipedia.org/wiki/Code_injection#Cross-site_scripting) attacks.
 
 DotVVM takes the safety-first approach, and encodes automatically all content before printing it out using the [value binding](~/pages/concepts/data-binding/value-binding) or [resource binding](~/pages/concepts/data-binding/resource-binding). 
 

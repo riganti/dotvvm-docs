@@ -50,7 +50,7 @@ config.Styles.Register<ModalDialog>().WithCondition(context => context.HasViewIn
 
 ## Optional settings of Bootstrap Custom CSS
 
-Behavior of Bootstrap Custom CSS can be further customised by setting some properties in `DotvvmBootstrapOptions`.
+Behavior of Bootstrap Custom CSS can be further customized by setting some properties in `DotvvmBootstrapOptions`.
 
 ### InheritCustomCssFromParentControl
 When set to *true* (it's true by default), than all control  which does not have `IBootstrapCss` set will try to find some `IBootstrapCss` instance on their ancestors. If no instance is found, than the `DefaultBootstrapCustomCss` is used.

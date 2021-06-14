@@ -68,7 +68,7 @@ dotvvm.events.init.subscribe(function () {
                 if (confirm(message)) {
                     callback().then(resolve, reject);
                 } else {
-                    // signalize that the postback was cancelled
+                    // signalize that the postback was canceled
                     reject({type: "handler", handler: this, message: "The postback was aborted by user."});
                 }
             });

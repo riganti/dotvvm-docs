@@ -7,9 +7,9 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.ListView.sample2
     {
         public List<string> Fruit { get; set; } = new List<string> {
             "Apple",
-            "Bannana",
+            "Banana",
             "Orange",
-            "Watermeloon"
+            "Watermelon"
         };
 
         public List<string> SelectedFruit { get; set; } = new List<string>();

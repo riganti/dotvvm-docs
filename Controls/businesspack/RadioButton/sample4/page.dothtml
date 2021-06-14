@@ -18,7 +18,7 @@
     <bp:RadioButton CheckedItem="{value: PriceWithoutTax}" 
                     Changed="{command: UpdatePrice()}"
                     CheckedValue="{value: 5}" 
-                    Text="Pinapple" />
+                    Text="Pineapple" />
 </p>
 
 <h3>Tax</h3>

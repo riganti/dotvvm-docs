@@ -4,7 +4,7 @@ namespace DotvvmWeb.Views.Docs.Controls.bootstrap4.TextBoxFormGroup.sample1
 {
     public class ViewModel : DotvvmViewModelBase
     {
-        public string LabelText { get; set; } = "Binded label";
-        public string ValueText { get; set; } = "Binded value";
+        public string LabelText { get; set; } = "Bound label";
+        public string ValueText { get; set; } = "Bound value";
     }
 }
