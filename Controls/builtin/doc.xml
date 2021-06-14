@@ -6,7 +6,7 @@
     <members>
         <member name="T:DotVVM.Framework.Binding.BindingCompilationRequirementsAttribute">
             <summary>
-            Specifies requirements that binding has to satisfy in order to succesfully Initialize (and compile).
+            Specifies requirements that binding has to satisfy in order to successfully Initialize (and compile).
             Can be applied on binding class, bound property or instance (as property).
             Attribute can be applied multiple times - all values are combined before compilation.
             </summary>
@@ -24,7 +24,7 @@
         <member name="F:DotVVM.Framework.Binding.BindingCompilationRequirementsAttribute.Excluded">
             <summary>
             Properties that does not have to be there - overwrites previous specification of Required or Optional.
-            For example may be usefull for property that may contain value binding, but does not need a Javascript translation
+            For example may be useful for property that may contain value binding, but does not need a Javascript translation
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Binding.BindingCompilationService.InitializeBinding(DotVVM.Framework.Binding.Expressions.IBinding,System.Collections.Generic.IEnumerable{DotVVM.Framework.Binding.BindingCompilationRequirementsAttribute})">
@@ -59,7 +59,7 @@
         </member>
         <member name="M:DotVVM.Framework.Binding.BindingHelper.FindDataContextTarget(DotVVM.Framework.Binding.Expressions.IBinding,DotVVM.Framework.Controls.DotvvmBindableObject)">
             <summary>
-            Finds expected context control of the `binding` and returns (parent index of the correct DataContext, control in the corrent context)
+            Finds expected context control of the `binding` and returns (parent index of the correct DataContext, control in the current context)
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Binding.BindingHelper.ExecUpdateDelegate(DotVVM.Framework.Binding.Expressions.BindingUpdateDelegate,DotVVM.Framework.Controls.DotvvmBindableObject,System.Object)">
@@ -99,12 +99,12 @@
         </member>
         <member name="M:DotVVM.Framework.Binding.BindingHelper.UpdateSource(DotVVM.Framework.Binding.Expressions.IUpdatableValueBinding,System.Object,DotVVM.Framework.Controls.DotvvmBindableObject)">
             <summary>
-            Writes the value to binding - binded viewModel property is updated. May throw an exception when binding does not support assignment.
+            Writes the value to binding - bound viewModel property is updated. May throw an exception when binding does not support assignment.
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Binding.BindingHelper.UpdateSource``1(DotVVM.Framework.Binding.Expressions.IUpdatableValueBinding{``0},``0,DotVVM.Framework.Controls.DotvvmBindableObject)">
             <summary>
-            Writes the value to binding - binded viewModel property is updated. May throw an exception when binding does not support assignment.
+            Writes the value to binding - bound viewModel property is updated. May throw an exception when binding does not support assignment.
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Binding.BindingHelper.GetCommandDelegate(DotVVM.Framework.Binding.Expressions.ICommandBinding,DotVVM.Framework.Controls.DotvvmBindableObject)">
@@ -206,7 +206,7 @@
             Contains <see cref="T:System.Linq.Expressions.Expression"/> instance that represents code as it was written in markup with minimal processing.
             </summary>
         </member>
-        <member name="T:DotVVM.Framework.Binding.Properties.CastedExpressionBindingProperty">
+        <member name="T:DotVVM.Framework.Binding.Properties.CastExpressionBindingProperty">
             <summary>
             Contains <see cref="T:System.Linq.Expressions.Expression"/> instance that represents code converted to be evaluated as binding (type conversions applied, ...). 
             </summary>
@@ -303,7 +303,7 @@
         </member>
         <member name="P:DotVVM.Framework.Binding.DotvvmProperty.IsVirtual">
             <summary>
-            Virtual DotvvmProperty are not explicitly registred but marked with [MarkupOptions] attribute on DotvvmControl
+            Virtual DotvvmProperty are not explicitly registered but marked with [MarkupOptions] attribute on DotvvmControl
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Binding.DotvvmProperty.IsBindingProperty">
@@ -378,7 +378,7 @@
         </member>
         <member name="P:DotVVM.Framework.Binding.DotvvmPropertyWithFallback.FallbackProperty">
             <summary>
-            Gets the property which value will be used as a follback when this property is not set.
+            Gets the property which value will be used as a fallback when this property is not set.
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Binding.DotvvmPropertyWithFallback.GetValue(DotVVM.Framework.Controls.DotvvmBindableObject,System.Boolean)">
@@ -394,7 +394,7 @@
             Registers a new DotVVM property which fallbacks to the <paramref name="fallbackProperty" /> when not set.
             </summary>
             <param name="propertyAccessor">The expression pointing to instance property.</param>
-            <param name="fallbackProperty">The property which value will be used as a follback when the new property is not set.</param>
+            <param name="fallbackProperty">The property which value will be used as a fallback when the new property is not set.</param>
             <param name="isValueInherited">Indicates whether the value can be inherited from the parent controls.</param>
         </member>
         <member name="M:DotVVM.Framework.Binding.DotvvmPropertyWithFallback.Register``2(System.String,DotVVM.Framework.Binding.DotvvmProperty,System.Boolean)">
@@ -402,17 +402,17 @@
             Registers a new DotVVM property which fallbacks to the <paramref name="fallbackProperty" /> when not set.
             </summary>
             <param name="propertyName">The name of the property.</param>
-            <param name="fallbackProperty">The property which value will be used as a follback when the new property is not set.</param>
+            <param name="fallbackProperty">The property which value will be used as a fallback when the new property is not set.</param>
             <param name="isValueInherited">Indicates whether the value can be inherited from the parent controls.</param>
         </member>
         <member name="M:DotVVM.Framework.Binding.Expressions.BindingExpression.AddNullResolvers">
             <summary>
-            For performance reasons, derived bindings can set BindingResolverCollection to null to prevent runtime computation of the property which is somewhat costy
+            For performance reasons, derived bindings can set BindingResolverCollection to null to prevent runtime computation of the property which is somewhat costly
             </summary>
         </member>
         <member name="T:DotVVM.Framework.Binding.Expressions.Command">
             <summary>
-            Represents typical command binding delegate, quivalent to Func&lt;Task&gt;
+            Represents typical command binding delegate, equivalent to Func&lt;Task&gt;
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Binding.Expressions.CommandBindingExpression.CreateJsPostbackInvocation(System.String,System.Nullable{System.Boolean})">
@@ -466,7 +466,7 @@
         </member>
         <member name="M:DotVVM.Framework.Compilation.Binding.TypeConversion.MagicLambdaConversion(System.Linq.Expressions.Expression,System.Type)">
             This is a strange conversion that wraps the entire expression into a Lambda
-            and makes an invokable delegate from a normal expression.
+            and makes an invocable delegate from a normal expression.
             It also replaces special ExtensionParameters attached to the expression for lambda parameters
         </member>
         <member name="M:DotVVM.Framework.Compilation.Binding.TypeConversion.TaskConversion(System.Linq.Expressions.Expression,System.Type)">
@@ -1044,28 +1044,28 @@
         </member>
         <member name="M:DotVVM.Framework.Compilation.Javascript.Ast.JsNode.GetNextNode(System.Func{DotVVM.Framework.Compilation.Javascript.Ast.JsNode,System.Boolean})">
             <summary>
-            Gets the next node which fullfills a given predicate
+            Gets the next node which fulfills a given predicate
             </summary>
             <returns>The next node.</returns>
             <param name="pred">The predicate.</param>
         </member>
         <member name="M:DotVVM.Framework.Compilation.Javascript.Ast.JsNode.GetPrevNode(System.Func{DotVVM.Framework.Compilation.Javascript.Ast.JsNode,System.Boolean})">
             <summary>
-            Gets the previous node which fullfills a given predicate
+            Gets the previous node which fulfills a given predicate
             </summary>
             <returns>The next node.</returns>
             <param name="pred">The predicate.</param>
         </member>
         <member name="M:DotVVM.Framework.Compilation.Javascript.Ast.JsNode.GetNextSibling(System.Func{DotVVM.Framework.Compilation.Javascript.Ast.JsNode,System.Boolean})">
             <summary>
-            Gets the next sibling which fullfills a given predicate
+            Gets the next sibling which fulfills a given predicate
             </summary>
             <returns>The next node.</returns>
             <param name="pred">The predicate.</param>
         </member>
         <member name="M:DotVVM.Framework.Compilation.Javascript.Ast.JsNode.GetPrevSibling(System.Func{DotVVM.Framework.Compilation.Javascript.Ast.JsNode,System.Boolean})">
             <summary>
-            Gets the next sibling which fullfills a given predicate
+            Gets the next sibling which fulfills a given predicate
             </summary>
             <returns>The next node.</returns>
             <param name="pred">The predicate.</param>
@@ -1112,7 +1112,7 @@
         </member>
         <member name="M:DotVVM.Framework.Compilation.Javascript.JsParensFixingVisitor.NeedsParens(DotVVM.Framework.Compilation.Javascript.Ast.JsExpression)">
             <summary>
-            Determines if the expression will have to be parenthised when called from parent expression
+            Determines if the expression will have to be parenthesized when called from parent expression
             </summary>
         </member>
         <member name="T:DotVVM.Framework.Compilation.Javascript.ParametrizedCode">
@@ -1122,7 +1122,7 @@
         </member>
         <member name="M:DotVVM.Framework.Compilation.Javascript.ParametrizedCode.ToString(System.Func{DotVVM.Framework.Compilation.Javascript.CodeSymbolicParameter,DotVVM.Framework.Compilation.Javascript.CodeParameterAssignment})">
             <summary>
-            Converts this to string and assigns all parameters using `parameterAsssignment`. If there is any missing, exception is thrown.
+            Converts this to string and assigns all parameters using `parameterAssignment`. If there is any missing, exception is thrown.
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Compilation.Javascript.ParametrizedCode.AssignParameters(System.Func{DotVVM.Framework.Compilation.Javascript.CodeSymbolicParameter,DotVVM.Framework.Compilation.Javascript.CodeParameterAssignment})">
@@ -1150,12 +1150,12 @@
         </member>
         <member name="F:DotVVM.Framework.Compilation.Javascript.CodeParameterInfo.OperatorPrecedence">
             <summary>
-            Operator precedence of the top expression to make sure that the parameter is correctly parenthised.
+            Operator precedence of the top expression to make sure that the parameter is correctly parenthesized.
             </summary>
         </member>
         <member name="F:DotVVM.Framework.Compilation.Javascript.CodeParameterInfo.IsSafeMemberAccess">
             <summary>
-            If the parameter would be available as global, can it be ommited?
+            If the parameter would be available as global, can it be omitted?
             </summary>
         </member>
         <member name="T:DotVVM.Framework.Compilation.Javascript.CodeSymbolicParameter">
@@ -1479,7 +1479,7 @@
         </member>
         <member name="M:DotVVM.Framework.Compilation.ViewCompilingVisitor.ProcessBinding(DotVVM.Framework.Compilation.ControlTree.Resolved.ResolvedBinding)">
             <summary>
-            Emits binding contructor and returns variable name
+            Emits binding constructor and returns variable name
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Compilation.ViewCompilingVisitor.CreateTemplate(System.String)">
@@ -2072,7 +2072,7 @@
             <summary>
             Gets all ancestors of this control starting with the parent.
             </summary>
-            <param name="incudingThis">Returns also the caller control</param>
+            <param name="includingThis">Returns also the caller control</param>
             <param name="onlyWhenInChildren">Only enumerate until the parent has this control in <see cref="P:DotVVM.Framework.Controls.DotvvmControl.Children" />. Note that it may have a non-trivial performance penalty</param>
         </member>
         <member name="M:DotVVM.Framework.Controls.DotvvmBindableObject.GetRoot">
@@ -2240,7 +2240,7 @@
         </member>
         <member name="M:DotVVM.Framework.Controls.DotvvmControl.OnLoad(DotVVM.Framework.Hosting.IDotvvmRequestContext)">
             <summary>
-            Occurs after the viewmodel is applied to the page IHtmlWriter writerand before the commands are executed.
+            Occurs after the viewmodel is applied to the page IHtmlWriter writer and before the commands are executed.
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Controls.DotvvmControl.OnPreRender(DotVVM.Framework.Hosting.IDotvvmRequestContext)">
@@ -2729,7 +2729,7 @@
         <member name="M:DotVVM.Framework.Controls.HtmlWriter.AssertIsValidHtmlName(System.String)">
             Throws an exception if the specified string can't be a valid html name.
             The point is not to validate according to specification, but to make XSS attacks
-            impossibe - it disables html control characters, but won't throw on digit at the start of the name.
+            impossible - it disables html control characters, but won't throw on digit at the start of the name.
         </member>
         <member name="M:DotVVM.Framework.Controls.HtmlWriter.RenderEndTag">
             <summary>
@@ -3048,7 +3048,7 @@
         </member>
         <member name="P:DotVVM.Framework.Controls.MarkupOptionsAttribute.AttributeValueMerger">
             <summary>
-            Type with non parametric contstructor which implements IAttributeValueMerger interface
+            Type with non parametric constructor which implements IAttributeValueMerger interface
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.MarkupOptionsAttribute.MappingMode">
@@ -3058,7 +3058,7 @@
         </member>
         <member name="P:DotVVM.Framework.Controls.MarkupOptionsAttribute.AllowAttributeWithoutValue">
             <summary>
-            Determines whether attributes without value are alowed.
+            Determines whether attributes without value are allowed.
             </summary>
         </member>
         <member name="T:DotVVM.Framework.Controls.MultiSelectHtmlControlBase">
@@ -3581,7 +3581,7 @@
         </member>
         <member name="P:DotVVM.Framework.Hosting.DotvvmRequestContext.ResultIdFragment">
             <summary>
-            Gets or sets new url fragment (tha part after #) to be set on client
+            Gets or sets new url fragment (the part after #) to be set on client
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Hosting.DotvvmRequestContext.IsSpaRequest">
@@ -3777,7 +3777,7 @@
             The query string of the request to try to match the Googlebot hashbang escaped fragment on.
             </param>
             <param name="url">
-            The plain URL string that the hasbang escaped fragment represents.
+            The plain URL string that the hashbang escaped fragment represents.
             </param>
             <returns>
             <code>true</code>, if the URL contains valid Googlebot hashbang escaped fragment; otherwise <code>false</code>.
@@ -3833,7 +3833,7 @@
         </member>
         <member name="T:DotVVM.Framework.ResourceManagement.CachingResourceRepository">
             <summary>
-            Base <see cref="T:DotVVM.Framework.ResourceManagement.IDotvvmResourceRepository"/>. Ensures that FindResource is called only once for one name and rembers the result for next calls.
+            Base <see cref="T:DotVVM.Framework.ResourceManagement.IDotvvmResourceRepository"/>. Ensures that FindResource is called only once for one name and remembers the result for next calls.
             </summary>
         </member>
         <member name="T:DotVVM.Framework.ResourceManagement.DotvvmResourceRepository">
@@ -3889,7 +3889,7 @@
         </member>
         <member name="T:DotVVM.Framework.ResourceManagement.IDebugFileLocalLocation">
             <summary>
-            Can get physical location of the file for debugging purposes. In that directory can be located asociated source maps and based on file will be the resource refreshed.
+            Can get physical location of the file for debugging purposes. In that directory can be located associated source maps and based on file will be the resource refreshed.
             </summary>
         </member>
         <member name="T:DotVVM.Framework.ResourceManagement.ILinkResource">
@@ -3929,7 +3929,7 @@
         </member>
         <member name="T:DotVVM.Framework.ResourceManagement.IResourceHashService">
             <summary>
-            Computes cryptographicaly secure hashes for given <see cref="T:DotVVM.Framework.ResourceManagement.ILocalResourceLocation"/>
+            Computes cryptographically secure hashes for given <see cref="T:DotVVM.Framework.ResourceManagement.ILocalResourceLocation"/>
             </summary>
         </member>
         <member name="T:DotVVM.Framework.ResourceManagement.IResourceLocation">
@@ -3962,12 +3962,12 @@
         </member>
         <member name="T:DotVVM.Framework.ResourceManagement.NullResource">
             <summary>
-            A resource that is not rendered. Use this class if you load the scripts or styles yourself using hte script or style element in the page.
+            A resource that is not rendered. Use this class if you load the scripts or styles yourself using the script or style element in the page.
             </summary>
         </member>
         <member name="M:DotVVM.Framework.ResourceManagement.RegistrationUtils.SetEmbeddedResourceDebugFile(DotVVM.Framework.ResourceManagement.DotvvmResourceRepository,System.String,System.String)">
             <summary>
-            Registers debug file path for the specified embeded resource.
+            Registers debug file path for the specified embedded resource.
             In debug mode resource is loaded from this path, it is refreshed on every request, and debug maps are looked up in the same directory.
             </summary>
         </member>
@@ -5175,9 +5175,9 @@
             Populates the specified JObject.
             </summary>
         </member>
-        <member name="M:DotVVM.Framework.ViewModel.Serialization.ViewModelPropertyMap.IsFullyTransfered">
+        <member name="M:DotVVM.Framework.ViewModel.Serialization.ViewModelPropertyMap.IsFullyTransferred">
             <summary>
-            Gets whether the property is transfered both ways.
+            Gets whether the property is transferred both ways.
             </summary>
         </member>
         <member name="T:DotVVM.Framework.ViewModel.Serialization.ViewModelSerializationMap">
