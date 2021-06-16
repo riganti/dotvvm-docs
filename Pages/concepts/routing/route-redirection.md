@@ -29,7 +29,7 @@ In the example above, we can see an addition of a new redirection record to the 
 
 + The fifth argument (optional) specifies whether this redirection is **permanent**. The default value is `false`, which means non-permanent.
 
-+ The sixth argument (optional) is a **parameters provider** of type `Func<IDotVVMRequestContex, Dictionary<string, object?>>`. This provider can be used to perform context-based transformations on parameters. An example that copies obtained parameters and alters the *Id* parameter by setting it with value *123* can be seen in the snippet below.
++ The sixth argument (optional) is a **parameters provider** of type `Func<IDotVVMRequestContext, Dictionary<string, object?>>`. This provider can be used to perform context-based transformations on parameters. An example that copies obtained parameters and alters the *Id* parameter by setting it with value *123* can be seen in the snippet below.
 
 ```CSHARP
     parametersProvider: context => {

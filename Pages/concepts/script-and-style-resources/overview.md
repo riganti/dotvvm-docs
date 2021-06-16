@@ -72,7 +72,7 @@ You can of course implement custom resource types and resource location implemen
 
 If you want to use CDN for script files, it is often a good idea to have a local fallback for the case that CDN is down, or if you are debugging the app without the Internet connection. 
 
-There is a property called `LocationFallback`. If it is set, the framework will try to load the script from the primary location (the CDN) first and will use the `ResourceLocationFallback.JavasciptCondition` to check whether the resource has loaded successfully. The `JavascriptCondition` property should contain a JavaScript expression which evaluates to `true` when used in the `if` statement. For jQuery, you can use `window.jQuery`. 
+There is a property called `LocationFallback`. If it is set, the framework will try to load the script from the primary location (the CDN) first and will use the `ResourceLocationFallback.JavascriptCondition` to check whether the resource has loaded successfully. The `JavascriptCondition` property should contain a JavaScript expression which evaluates to `true` when used in the `if` statement. For jQuery, you can use `window.jQuery`. 
 
 If the resource could not be loaded from the CDN, it would fall back to the `AlternativeLocations` and use the first one that works.
 

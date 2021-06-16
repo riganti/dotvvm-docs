@@ -1,9 +1,9 @@
 ﻿<bs:StyleDecorator Visibility="VisibleExtraSmallBlock">
-  <p>Text vissible on extra small devices.</p>
+  <p>Text visible on extra small devices.</p>
 </bs:StyleDecorator>
 
 <bs:StyleDecorator Visibility="VisibleMediumBlock">
-  <p>Text vissible on devices with medium sized display.</p>
+  <p>Text visible on devices with medium sized display.</p>
 </bs:StyleDecorator>
 
 <bs:StyleDecorator Visibility="HiddenSmall">

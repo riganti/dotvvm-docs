@@ -6,7 +6,7 @@ The extension adds DotVVM project templates, syntax highlighting and IntelliSens
 
 ## Free edition vs subscription
 
-The **free** version of the extension supports basic features, and can be used for both commecrial and non-commercial projects.
+The **free** version of the extension supports basic features, and can be used for both commercial and non-commercial projects.
 
 If you want to build large projects in DotVVM, check out the [subscription](https://www.dotvvm.com/products/visual-studio-extensions). It has more features that can save a lot of time.
 

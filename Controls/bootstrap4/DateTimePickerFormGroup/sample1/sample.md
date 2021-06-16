@@ -1,7 +1,7 @@
 ## Sample 1: Basic Usage
 
 The `DateTimePickerFormGroup` control has the `SelectedDate` property for storing the datetime the user has selected.
-It needs to be binded to a property in the viewmodel.
+It needs to be bound to a property in the viewmodel.
 
 The `LabelText` property is used to set the label of the `DateTimePickerFormGroup` control.
 

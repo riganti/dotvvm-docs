@@ -12,7 +12,7 @@ In DotVVM, there are two types of controls - **markup controls** and **code-only
 
 For example, if you write a shopping site, you need the user to enter a billing and delivery address. Both of them use the same set of fields like name, number and street, city, state, ZIP code etc. It would be great to create a control called `AddressEditor`, and use it on every place you need to edit the addresses.
 
-Moreover, you can take this ready-made control, and use it in another project because in almost all apps you need the user to give you an address. The control can maintain its own state and have its own internal logic, e.g. guess the city name from the ZIP code. This is commonly done by shiping a control viewmodel together with the control. This viewmodel is then embedded as a child in the viewmodel of the page.
+Moreover, you can take this ready-made control, and use it in another project because in almost all apps you need the user to give you an address. The control can maintain its own state and have its own internal logic, e.g. guess the city name from the ZIP code. This is commonly done by shipping a control viewmodel together with the control. This viewmodel is then embedded as a child in the viewmodel of the page.
 
 ### Code-only controls
 

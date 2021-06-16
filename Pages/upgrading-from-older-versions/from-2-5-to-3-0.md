@@ -32,7 +32,7 @@ The `input[type=checkbox]` value is now `"on"`/`"off"` instead of `true`/`false`
 
 ### DotVVM Knockout binding handles renamed
 
-If you used some Knockoug binding handlers added by DotVVM in your own control, check out if they still work. We have renamed and reorganized some of them - for example, `dotvvmEnable` was renamed to `dotvvm-enabled`.
+If you used some Knockout binding handlers added by DotVVM in your own control, check out if they still work. We have renamed and reorganized some of them - for example, `dotvvmEnable` was renamed to `dotvvm-enabled`.
 
 
 

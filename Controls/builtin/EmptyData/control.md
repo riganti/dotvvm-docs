@@ -1,1 +1,1 @@
-Allows to display content if and only if `DataSource` is empty or `null`. The property `EmptyDataTemplate` in the [Repeater](~/controls/builtin/Repeater) has similar behaviour but the usage is limited only inside `Repeater`.
+Allows to display content if and only if `DataSource` is empty or `null`. The property `EmptyDataTemplate` in the [Repeater](~/controls/builtin/Repeater) has similar behavior but the usage is limited only inside `Repeater`.

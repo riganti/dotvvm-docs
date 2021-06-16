@@ -107,7 +107,7 @@
     * **ResponsiveNavigation**
         * **BREAKING CHANGE** : enum *ResponsiveNavigationBreakpoins* used in *MaximumScreenSizeBeforeCollapse* property was renamed to *ResponsiveBreakpoints*
     * **Tooltip**
-        * Added *AllowHtmlSanitization* propery
+        * Added *AllowHtmlSanitization* property
         
 ## 2.0.0-preview02-final
 * **New controls**

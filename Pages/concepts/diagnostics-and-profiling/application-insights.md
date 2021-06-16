@@ -48,7 +48,7 @@ public void ConfigureServices(IDotvvmServiceCollection options)
 
 First, you need to install *Application Insights* into your ASP.NET project. You can do this in the _Visual Studio Solution Explorer_ window.
 
-> Follow this guide: [Set up Application Insights for your ASP.NET website](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-asp-net) to add Applitaction Insights into your project.
+> Follow this guide: [Set up Application Insights for your ASP.NET website](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-asp-net) to add Application Insights into your project.
 
 After the Application Insights are installed, run the following command in the _Package Manager Console_ window:
 

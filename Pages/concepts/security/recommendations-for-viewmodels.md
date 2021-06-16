@@ -51,7 +51,7 @@ public override Task Load()
 
 ### Use bind direction
 
-Another way of "ignoring" client-side changes to the property is to set [bind direction](~/pages/concepts/viewmodels/binding-direction) to `ServerToClient` or `ServerToClientFirstRequest`. You can achieve the same behavior by delaring the setter as private.
+Another way of "ignoring" client-side changes to the property is to set [bind direction](~/pages/concepts/viewmodels/binding-direction) to `ServerToClient` or `ServerToClientFirstRequest`. You can achieve the same behavior by declaring the setter as private.
 
 ```CSHARP
 [Bind(Direction.ServerToClientFirstRequest)]

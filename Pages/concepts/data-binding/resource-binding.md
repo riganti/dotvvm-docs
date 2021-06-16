@@ -43,7 +43,7 @@ See the [RESX files](~/pages/concepts/localization-and-cultures/resx-files) chap
 
 The syntax with the full namespace is quite long, so you can use the `@import` directive to import namespaces.
 
-For example, in a project with the `Resources\Web\Strings1.resx` and `Resources\Web\Strings2.`esx* files, the markup can look like this:
+For example, in a project with the `Resources\Web\Strings1.resx` and `Resources\Web\Strings2.`resx* files, the markup can look like this:
 
 ```DOTHTML
 @import MyWebApp.Resources.Web

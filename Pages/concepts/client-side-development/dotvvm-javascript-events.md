@@ -45,7 +45,7 @@ The following sequence of events occur every time a [command](~/pages/concepts/r
 
 If the postback is rejected due to the validation errors, or from a postback handler, the following event is raised.
 
-* `postbackRejected` occurs whenever the postback processing is cancelled
+* `postbackRejected` occurs whenever the postback processing is canceled
 
 Also, the `error` event is raised in case of any error.
 

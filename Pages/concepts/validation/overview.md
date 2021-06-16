@@ -10,7 +10,7 @@ To use validation in DotVVM, you need to decide three things:
 
 * **How does it look like**: When validation errors are found, they need to be indicated to the user. We have several [validation controls](controls) which can display error messages, apply CSS classes on invalid form fields, and so on. 
 
-* **Define validation rules**: You need to specify the validation rules for properties, or even objects in the viewmodel. How to specify the rules is descibed in the rest of this chapter.
+* **Define validation rules**: You need to specify the validation rules for properties, or even objects in the viewmodel. How to specify the rules is described in the rest of this chapter.
 
 > Validation in [static commands](~/pages/concepts/respond-to-user-actions/static-commands) is currently not supported, but the work on this feature has already been started, and it will be available in the future releases of DotVVM.
 
@@ -47,7 +47,7 @@ public string Password { get; set; }
 
 You can even use custom validation attributes (by creating a class which implements the `IValidationAttribute` interface). 
 
-> Please note that is't not easy to use dependency injection in validation attributes (they are static), so it may be difficult to validate business rules (which may need to look in the database). For example, creating a validation attribute which checks the uniqueness of the e-mail address in the database, is not a good idea. Use the [ModelState](#using-modelstate) to report violations of business rules.
+> Please note that is not easy to use dependency injection in validation attributes (they are static), so it may be difficult to validate business rules (which may need to look in the database). For example, creating a validation attribute which checks the uniqueness of the e-mail address in the database, is not a good idea. Use the [ModelState](#using-modelstate) to report violations of business rules.
 
 ### IValidatableObject
 

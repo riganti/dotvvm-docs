@@ -30,7 +30,7 @@ The request execution is interrupted by this call.
 
 ## Asynchronous operations
 
-+ `GetCancellationToken` returns a cancellation token for the current request. You can pass this token to a long-running operations so they can be cancelled if the user leaves the page before it is loaded.
++ `GetCancellationToken` returns a cancellation token for the current request. You can pass this token to a long-running operations so they can be canceled if the user leaves the page before it is loaded.
 
 ## URL manipulation
 

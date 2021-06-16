@@ -118,7 +118,7 @@ c.EnableDotvvmIntegration(opt =>
 
 ## Working with GridViewDataSet
 
-You can declare API controler methods which return `GridViewDataSet` and accepts `SortingOptions` and `PagingOptions`:
+You can declare API controller methods which return `GridViewDataSet` and accepts `SortingOptions` and `PagingOptions`:
 
 ```CSHARP
 [HttpGet]

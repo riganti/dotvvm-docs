@@ -2,4 +2,4 @@
 
 The `TextBoxGroup` control has the `LabelText` property for the label and the `Text` property for text inside the text field.
 
-Both these properties can also be binded to properties in viewmodel.
+Both these properties can also be bound to properties in viewmodel.

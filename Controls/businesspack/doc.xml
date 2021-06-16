@@ -1154,7 +1154,7 @@
         </member>
         <member name="P:DotVVM.BusinessPack.Controls.GridView.FreezeHeaderRow">
             <summary>
-            Gets or sets whether the header row is freezed and is always visible.
+            Gets or sets whether the header row is frozen and is always visible.
             </summary>
         </member>
         <member name="T:DotVVM.BusinessPack.Controls.GridViewAutoCompleteColumn">
@@ -1232,7 +1232,7 @@
         <member name="M:DotVVM.BusinessPack.Controls.GridViewCheckBoxColumn.DetermineColumnName(System.Int32)">
             <inheritdoc />
         </member>
-        <member name="M:DotVVM.BusinessPack.Controls.GridViewCheckBoxColumn.CraeteCheckBox(System.Boolean)">
+        <member name="M:DotVVM.BusinessPack.Controls.GridViewCheckBoxColumn.CreateCheckBox(System.Boolean)">
             <summary>
             Creates a <see cref="T:DotVVM.BusinessPack.Controls.CheckBox" /> control used to view or edit column's value.
             </summary>
@@ -2576,12 +2576,12 @@
         </member>
         <member name="T:DotVVM.BusinessPack.Controls.DialogCloseButton">
             <summary>
-            Renders button that changes visible prop of parrent element to false.
+            Renders button that changes visible prop of parent element to false.
             </summary>
         </member>
         <member name="T:DotVVM.BusinessPack.Controls.DialogMaximizeButton">
             <summary>
-            Renders button that changes visible prop of parrent element to false.
+            Renders button that changes visible prop of parent element to false.
             </summary>
         </member>
         <member name="T:DotVVM.BusinessPack.Controls.ModalDialog">

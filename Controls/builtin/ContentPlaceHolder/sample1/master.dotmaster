@@ -12,7 +12,7 @@
     <h1>My Awesome App</h1>
 	  
     <dot:ContentPlaceHolder ID="Menu">
-      <!-- This default content can be overriden in the content page. -->
+      <!-- This default content can be overridden in the content page. -->
 	  <menu>
 		<li><a href="#">Page 1</a></li>
 		<li><a href="#">Page 2</a></li>
