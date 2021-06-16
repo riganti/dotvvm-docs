@@ -1,7 +1,7 @@
 <bp:ColorPicker SelectedRgbaColor="{value: Color}"
                 Placeholder="Select color" >
     <ToggleIcon>
-        <bp:Icon Icon="Palette"></bp:Icon>
+       <bp:Icon Icon="Pallete"></bp:Icon>
     </ToggleIcon>
     <UnselectIcon>
         <bp:Icon Icon="Close"></bp:Icon>
