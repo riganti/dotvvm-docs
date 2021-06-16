@@ -187,7 +187,7 @@
 	  <DocPageMenuItem RouteName="customize" PageName="Customize control styles" />
 	</DocPageMenuItem>
 	<DocPageMenuItem RouteName="exporting-data" PageName="Exporting data" />
-    <DocPageMenuItem RouteName="release-notes" PageName="Release notes" LegacyPaths="commercial-business-pack-release-notes" />
+    <DocPageMenuItem RouteName="release-notes" PageName="Release notes" LegacyPaths="commecial-business-pack-release-notes" />
   </DocPageMenuItem>
     
   <DocPageMenuItem RouteName="bootstrap-for-dotvvm" PageName="Bootstrap for DotVVM" CssClass="icon bootstrap-for-dotvvm">
