@@ -75,7 +75,7 @@ Renders an BusinessPack custom icon.
 		<path d="M144.4,76.4l-23,23l-5-5L130,80.8H81v49l13.4-13.4l5,5l-23,23l-23-23l5-5L72,130V80.8H22l14,14l-5,5l-23-23l23-23l5,5l-13,13h49v-49L58.4,36.4l-5-5l23-23l23,23l-5,5L81,23v48.7h48.7l-13.4-13.4l5-5L144.4,76.4z"></path>
 	</svg>
     <svg class="dotvvm-bp-control dotvvm-bp-icon" data-bind="dotvvm-businesspack-Icon:{ 'icon': $rawData, 'spriteUrl': &quot;/dotvvmResource/dotvvm--businesspack-svg/dotvvm--businesspack-svg&quot; }" viewBox="0 0 24 24" width="20">
-		<title>Palette</title>
+		<title>Pallete</title>
 		<path d="M7.3,11.9c-0.5,0-0.8,0.4-0.8,0.8s0.4,0.8,0.8,0.8c0.5,0,0.8-0.4,0.8-0.8S7.8,11.9,7.3,11.9z M8.4,8.1 C8,8.1,7.6,8.4,7.6,8.9S8,9.7,8.4,9.7c0.5,0,0.8-0.4,0.8-0.8S8.9,8.1,8.4,8.1z M12.3,2.8c-0.6,0-1.2,0.1-1.8,0.2 C7.1,3.7,4.3,6.4,3.7,9.8c-1.2,6,3.8,10.6,8,10.6c0.3,0,0.6,0,0.8-0.1c1.4-0.2,2.1-1.9,1.5-3.1c-0.8-1.6,0.3-3.4,2.1-3.4h2.7 c1.2,0,2.2-1,2.2-2.2C21,6.7,17.1,2.8,12.3,2.8z M18.8,12.7h-2.7c-1.2,0-2.3,0.6-2.9,1.6c-0.6,1-0.7,2.3-0.1,3.3 c0.2,0.3,0.2,0.7,0,1.1c-0.1,0.2-0.3,0.4-0.6,0.5c-0.2,0-0.4,0.1-0.7,0.1c-1.9,0-3.9-1.1-5.3-2.8c-1.5-1.8-2.1-4.1-1.6-6.5 c0.6-3,3-5.4,6-5.9c0.5-0.1,1-0.2,1.6-0.2c4.2,0,7.7,3.4,7.7,7.6C20,12.2,19.4,12.7,18.8,12.7L18.8,12.7z M16.1,7.5 c-0.5,0-0.8,0.4-0.8,0.8c0,0.5,0.4,0.8,0.8,0.8s0.8-0.4,0.8-0.8C16.9,7.9,16.6,7.5,16.1,7.5z M11.7,5.9c-0.5,0-0.8,0.4-0.8,0.8 c0,0.5,0.4,0.8,0.8,0.8c0.5,0,0.8-0.4,0.8-0.8C12.5,6.2,12.2,5.9,11.7,5.9z"></path>
 	</svg>
     <svg class="dotvvm-bp-control dotvvm-bp-icon" data-bind="dotvvm-businesspack-Icon:{ 'icon': $rawData, 'spriteUrl': &quot;/dotvvmResource/dotvvm--businesspack-svg/dotvvm--businesspack-svg&quot; }" viewBox="0 0 512 512" width="20">
