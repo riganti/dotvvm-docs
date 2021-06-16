@@ -1132,7 +1132,7 @@
         </member>
         <member name="M:DotVVM.Framework.Compilation.Javascript.ParametrizedCode.CopyTo(DotVVM.Framework.Compilation.Javascript.ParametrizedCode.Builder)">
             <summary>
-            Writes this code incusing parameters to the ParametrizedCode.Builder
+            Writes this code including parameters to the ParametrizedCode.Builder
             </summary>
         </member>
         <member name="T:DotVVM.Framework.Compilation.Javascript.ParametrizedCode.Builder">
