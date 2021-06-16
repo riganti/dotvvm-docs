@@ -206,7 +206,7 @@
             Contains <see cref="T:System.Linq.Expressions.Expression"/> instance that represents code as it was written in markup with minimal processing.
             </summary>
         </member>
-        <member name="T:DotVVM.Framework.Binding.Properties.CastExpressionBindingProperty">
+        <member name="T:DotVVM.Framework.Binding.Properties.CastedExpressionBindingProperty">
             <summary>
             Contains <see cref="T:System.Linq.Expressions.Expression"/> instance that represents code converted to be evaluated as binding (type conversions applied, ...). 
             </summary>
