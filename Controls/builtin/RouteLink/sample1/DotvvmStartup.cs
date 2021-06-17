@@ -11,7 +11,7 @@ namespace DotvvmWeb.Views.Docs.Controls.builtin.RouteLink.sample1
         public void Configure(DotvvmConfiguration config, string applicationPath)
         {
             config.RouteTable.Add("SampleA", "SampleA", "SampleA.dothtml", null);
-            config.RouteTable.Add("SampleB", "SampleB/{Id}", "SampleB.dothtml", null);
+            config.RouteTable.Add("SampleB", "SampleB/{Id?}", "SampleB.dothtml", null);
         }
     }
 }

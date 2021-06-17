@@ -23,7 +23,7 @@
       "name": "SampleB.dothtml",
       "registerRoute": true,
       "routeName": "SampleB",
-      "routeUrl": "SampleB/{Id}"
+      "routeUrl": "SampleB/{Id?}"
     },
     {
       "name": "DotvvmStartup.cs",
