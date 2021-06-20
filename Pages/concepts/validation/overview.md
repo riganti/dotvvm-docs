@@ -69,9 +69,9 @@ public class AppointmentData : IValidatableObject
     {
         if (BeginDate >= EndDate)
         {
-            yield return this.CreateValidationResult<AppointmentData>(
+            yield return new ValidationResult(
                 "The begin date of the appointment must be lower than the end date.", 
-                t => t.BeginDate, t => t.EndDate    // one (or more) expressions indicating which properties are invalid
+                new[] { nameof(BeginDate), nameof(EndDate) }    // one (or more) expressions indicating which properties are invalid
             );
         }
     }
@@ -81,6 +81,20 @@ public class AppointmentData : IValidatableObject
 This is helpful to provide _formal validation rules_ that verify the state of the object. 
 
 > Please note that this method doesn't make it easy for dependency injection, so it may be difficult to validate business rules (which may need to look in the database). For example, placing the detection of overlapping appointments in the `Validate` method is not a good idea. Use the [ModelState](#using-modelstate) to report violations of business rules.
+
+### Report errors for child objects
+
+If you need to validate properties in child objects, **we recommend to implement `IValidatableObject` in the child objects**. DotVVM calls the `Validate` method recursively on the entire viewmodel. 
+
+If this is not possible and you need to return validation errors for properties in child objects, you need to return the property path in a Knockout observable form, e. g. `ChildObject().InvalidProperty` or `SomeArray()[2]().InvalidProperty`. This will probably change in DotVVM 4.0 so use it only if there is no other way. There is an extension method called `CreateValidationResult<T>` which can produce these expressions from a lambda expression:
+
+```CSHARP
+yield return this.CreateValidationResult<YourViewModel>(    // YourViewModel must implement IDotvvmViewModel
+    "Error message", 
+    t => t.Child.InvalidProperty
+);
+```
+
 
 ### ModelState
 
