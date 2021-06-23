@@ -72,6 +72,56 @@ While the titles of books are proper nouns, in these docs we treat the titles of
 | right quotation mark  | ”         | U+201D             | 0148     | &rdquo\; |
 | m-dash                | —         | U+2015             | 0151     | &#8213\; |
 
+
+## Release notes format
+Release notes should be split into several sections:
+- New features
+- Improvements and fixes
+- Breaking changes
+- ...
+
+Sections should be level 2 headings `## New features` while individual entries should be level 3 headings `### Cool new feature`.  
+This division provides the best distinction between individual sections.
+
+Format of each entry should be as follows:
+```
+### Entry name not ending by .
+#123 <Pull request ID.>  
+Brief description of the new feature.  
+[Link to doc](https://www.dotvvm.com/docs/tutorials/basics-routing/)
+```
+
+[Example of release notes](https://github.com/riganti/dotvvm/releases/tag/v3.0)
+
+### Control packs release notes 
+Control packs do not have release notes split into multiple documents, but all versions share the same file.  
+Due to this difference the guidelines slightly differ.
+- Page heading (e.g. Release notes) — level 1
+- Version — level 2
+- Section (e.g. Changes to existing controls) — level 3
+- Change entries (e.g. RadioButton) — level 4
+- individual changes — list items
+
+Breaking changes should be marked by prefixing change entry by `**BREAKING CHANGE**`.
+
+Resulting structure should look something like this.
+```
+# Release notes
+
+## 2.4.0.10
+### New controls
+#### [Icon](https://www.dotvvm.com/docs/controls/bootstrap4/Icon)
+    
+### Changes to existing controls
+#### **Toast**
+- Fixed bug in *OnShown* and *OnHide* events.
+-  *OnShown* and *OnHide* events are no longer called immediately after page load. Those events are now called only after client side change.
+
+#### Other changes
+- General bug fixes in Custom CSS feature.
+```
+
+
 ## Headings and page structure
 
 * Each page must have exactly one first-level heading (`h1`). It must be equal to the title of the page in `menu.xml`.
@@ -127,6 +177,7 @@ If you use a name that appears in the code (class, property, method, and so on),
 The subsequent occurrences of such name should not be links, but they should be typed in `monospaced font`.
 
 It is a good idea to repeat the link in the "See also" section at the end of the page.
+
 
 ## Tools
 
