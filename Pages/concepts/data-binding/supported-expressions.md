@@ -92,9 +92,7 @@ Whenever you need to use custom .NET extension methods, you need to provide info
 
 Since we are adding a lot of methods from `System.Linq` namespace, we decided to include this namespace to the default DotVVM namespaces for extension methods lookup. Therefore, it is not necessary to write `@import System.Linq` in your `DotHTML` files.
 
-### Upcoming support for .NET methods in DotVVM 3.1
-
-We plan to add support for the following methods in DotVVM 3.1.
+### Additional .NET methods supported since DotVVM 3.1
 
 #### LINQ methods
 
@@ -119,6 +117,26 @@ We plan to add support for the following methods in DotVVM 3.1.
 * `Enumerable.ToArray<T>(IEnumerable<T> collection)`
 * `Enumerable.ToList<T>(IEnumerable<T> collection)`
 
+#### List methods
+* `List<T>.Add(T element)`
+* `List<T>.AddRange(IEnumerable<T> elements)`
+* `List<T>.Clear()`
+* `List<T>.Insert(int index, T element)`
+* `List<T>.InsertRange(int index, IEnumerable<T> elements)`
+* `List<T>.RemoveAt(int index)`
+* `List<T>.RemoveAll(Predicate<T> predicate)`
+* `List<T>.RemoveRange(int index, int count)`
+* `List<T>.Reverse()`
+* `ListExtensions.AddOrUpdate<T>(this List<T> list, T element, Func<T,bool> matcher, Func<T,T> updater)`
+   * *Note*: this method tries to update an element using `updater`. Element for updating can be selected using `matcher`. If no element matched the predicate, `element` is added to list.
+* `ListExtensions.RemoveFirst<T>(this List<T> list, Func<T,bool> predicate)`
+* `ListExtensions.RemoveLast<T>(this List<T> list, Func<T,bool> predicate)`
+
+#### Dictionary methods
+* `Dictionary<K,V>.Clear()`
+* `Dictionary<K,V>.ContainsKey(K key)`
+* `Dictionary<K,V>.Remove(K key)`
+
 #### String methods
 * `String.Contains(string value)` and `String.Contains(char value)`
 * `String.EndsWith(string value)` and `String.EndsWith(char value)`
@@ -133,8 +151,8 @@ We plan to add support for the following methods in DotVVM 3.1.
 * `String.Split(char separator, StringSplitOptions = StringSplitOptions.None)` and `String.Split(string separator, StringSplitOptions = StringSplitOptions.None)`
    * *Note*: DotVVM supports `None` and `RemoveEmptyEntries` options. When targeting .NET Framework, these overloads are exposed using custom extensions to ensure they are available on all supported frameworks.
 * `String.StartsWith(string value)` and `String.StartsWith(char value)`
-* `String.ToLower()`
-* `String.ToUpper()`
+* `String.ToLower()` and `String.ToLowerInvariant()`
+* `String.ToUpper()` and `String.ToUpperInvariant()`
 
 #### Math methods
 * Basic: `Math.Abs`, `Math.Exp`, `Math.Max`, `Math.Min`, `Math.Pow` `Math.Sign`, `Math.Sqrt`

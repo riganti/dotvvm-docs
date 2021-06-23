@@ -166,7 +166,7 @@ If you use a term (like viewmodel, postback etc.) on a page **for the first time
 * link to a page where the term is explained, if such a page exists (both externally, or internally),
 * it should be typed **in bold**.
 
-The subsequent occurences of the term should not be a link and should not be typed in bold.
+The subsequent occurrences of the term should not be a link and should not be typed in bold.
 
 It is a good idea to repeat the link in the "See also" section at the end of the page.
 
@@ -174,7 +174,7 @@ It is a good idea to repeat the link in the "See also" section at the end of the
 
 If you use a name that appears in the code (class, property, method, and so on), it should be always typed in `monospaced font`. We do not use the monospaced font only if the name is a link to another page. 
 
-The subsequent occurences of such name should not be links, but they should be typed in `monospaced font`.
+The subsequent occurrences of such name should not be links, but they should be typed in `monospaced font`.
 
 It is a good idea to repeat the link in the "See also" section at the end of the page.
 

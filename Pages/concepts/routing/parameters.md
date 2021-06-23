@@ -94,7 +94,7 @@ Notice the `{Id:int}` parameter, which says that the route will be matched only 
 
 Every parameter can specify only one constraint.
 
-### Custom contraints
+### Custom constraints
 
 You can also define your own route constraints by creating a class that implements the `IRouteParameterConstraint` interface. 
 

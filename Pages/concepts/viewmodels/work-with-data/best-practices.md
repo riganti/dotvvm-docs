@@ -83,7 +83,7 @@ The `CustomerDetailDto` contains only the `CountryId` property which indicates t
 
 Remember that the viewmodels are part of the presentation layer. They shouldn't communicate with the database, send e-mails, or launch rockets to the Universe directly. 
 
-In general, the viewmodel methods should only gather data from the viewmodel, and call some method from the business layer to do the real job. After the business layer performs the action, it shoul update the viewmodel with the results. 
+In general, the viewmodel methods should only gather data from the viewmodel, and call some method from the business layer to do the real job. After the business layer performs the action, it should update the viewmodel with the results. 
 
 A common example of placing the business logic in the presentation layer is injecting the `DbContext` in the viewmodel. Manipulation with the database should be definitely in another layer of the application. 
 

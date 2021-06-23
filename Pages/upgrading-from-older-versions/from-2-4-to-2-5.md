@@ -10,7 +10,7 @@ The `DotVVM.Api.Swashbuckle.AspNetCore` package now references `Swashbuckle.AspN
 
 ### DotVVM doesn't rely on DefaultSettings
 
-If you made some changes in `Netwonsoft.Json`'s `DefaultSettings` serializer configuration object, these changes were used by DotVVM until DotVVM 2.5. From this version, we are using our own instance of `JsonSerializerSettings`, so these changes are not applied to DotVVM serialization any more. 
+If you made some changes in `Newtonsoft.Json`'s `DefaultSettings` serializer configuration object, these changes were used by DotVVM until DotVVM 2.5. From this version, we are using our own instance of `JsonSerializerSettings`, so these changes are not applied to DotVVM serialization any more. 
 
 If you registered your own converters so you could transfer your own objects in the viewmodel, and then used JavaScript to work with such objects, this code will probably break. 
 

@@ -13,7 +13,7 @@ In DotVVM, there is the `Validation.Target` property. Using this property you ca
 </form>
 ```
 
-You can apply the `Validation.Target` property to any HTML element, and to almost all DotVVM controls. In the example, for all postbacks made by controls in the `form` elemtn, the validation rules will be checked only on the `Customer` property of the viewmodel. 
+You can apply the `Validation.Target` property to any HTML element, and to almost all DotVVM controls. In the example, for all postbacks made by controls in the `form` element, the validation rules will be checked only on the `Customer` property of the viewmodel. 
 
 ## ValidationSummary
 

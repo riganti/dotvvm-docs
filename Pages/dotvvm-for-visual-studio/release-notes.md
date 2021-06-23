@@ -81,7 +81,7 @@ Version for Visual Studio 2019: [download link](https://storage.dotvvm.com/publi
 ## v2.4.180.0
 ***Compatible with VS 2019 v16.5.4+***
 * IntelliSense for Bindings fixes
-* DotHTML Editor - fixed formating issues
+* DotHTML Editor - fixed formatting issues
 * Stability improvements - Updated Visual Studio APIs to latest versions
 * Improved design time resolving of controls 
 * Updated DotVVM Templates

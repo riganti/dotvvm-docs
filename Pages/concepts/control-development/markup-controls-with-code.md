@@ -23,7 +23,7 @@ public class AddressEditor : DotvvmMarkupControl
 
 If you've already created the control without the code-behind file, you can add it later.
 
-1. Create the code-behind class and make it ihnerit from `DotvvmMarkupControl`.
+1. Create the code-behind class and make it inherit from `DotvvmMarkupControl`.
 
 2. Then, reference this class using the `@baseType` directive:
 
@@ -147,7 +147,7 @@ Only in the third case, the value will be persisted. If you set the `Title` prop
 If you need to add custom logic in the markup control, you can declare a method (e.g. `ClearAddress`) in the code behind file, and invoke it like this:
 
 ```DOTHTML
-<dot:Button Text="Clear addres" Click="{command: _control.ClearAddress()}" />
+<dot:Button Text="Clear address" Click="{command: _control.ClearAddress()}" />
 ```
 
 In this case, the `ClearAddress` can be declared in the code behind file because it does the same thing in all of the implementations. The implementation in the code-behind class will look like this:

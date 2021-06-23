@@ -5,4 +5,4 @@ When `IsDismissible` property is set to true the close button will be rendered.
 
 The `IsDismissed` property gets or sets if the Alert is dismissed.
 
-The `Dismissed` event is called ofter the Alert is Dismissed.
+The `Dismissed` event is called after the Alert is Dismissed.

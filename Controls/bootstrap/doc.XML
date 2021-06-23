@@ -273,7 +273,7 @@
         </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap.CheckBox.IsInline">
             <summary>
-            Gets or sets whether there will be more checkboxes on the same line. When this propererty is true, the checkbox gets the Boostrap "inline" CSS class.
+            Gets or sets whether there will be more checkboxes on the same line. When this property is true, the checkbox gets the Boostrap "inline" CSS class.
             </summary>
         </member>
         <member name="T:DotVVM.Framework.Controls.Bootstrap.CheckBoxGroup">
@@ -307,7 +307,7 @@
         </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap.CheckBoxGroup.IsInline">
             <summary>
-            Gets or sets whether there will be more checkboxes on the same line. When this propererty is true, the checkbox gets the Boostrap "inline" CSS class.
+            Gets or sets whether there will be more checkboxes on the same line. When this property is true, the checkbox gets the Boostrap "inline" CSS class.
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap.CheckBoxGroup.Text">
@@ -372,7 +372,7 @@
         </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap.CheckBoxListGroup.IsInlineBinding">
             <summary>
-            Gets or sets whether there will be more <see cref="T:DotVVM.Framework.Controls.Bootstrap.CheckBox"/>es on the same line. When this propererty is true, the <see cref="T:DotVVM.Framework.Controls.Bootstrap.CheckBox"/> gets the Boostrap "inline" CSS class.
+            Gets or sets whether there will be more <see cref="T:DotVVM.Framework.Controls.Bootstrap.CheckBox"/>es on the same line. When this property is true, the <see cref="T:DotVVM.Framework.Controls.Bootstrap.CheckBox"/> gets the Boostrap "inline" CSS class.
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap.CheckBoxListGroup.IsJustified">
@@ -428,7 +428,7 @@
         </member>
         <member name="M:DotVVM.Framework.Controls.Bootstrap.CheckBoxListGroup.OnLoad(DotVVM.Framework.Hosting.IDotvvmRequestContext)">
             <summary>
-            Occurs after the viewmodel is applied to the page IHtmlWriter writerand before the commands are executed.
+            Occurs after the viewmodel is applied to the page IHtmlWriter writer and before the commands are executed.
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Controls.Bootstrap.CheckBoxListGroup.OnPreRender(DotVVM.Framework.Hosting.IDotvvmRequestContext)">
@@ -829,7 +829,7 @@
         </member>
         <member name="M:DotVVM.Framework.Controls.Bootstrap.HtmlBootstrapControlBase.#ctor(System.String)">
             <summary>
-            This class wraps all bootstrap controls. By using this class bootstrap resources are automaticly loaded.
+            This class wraps all bootstrap controls. By using this class bootstrap resources are automatically loaded.
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Controls.Bootstrap.HtmlBootstrapControlBase.ConcatCssClasses(System.String[])">
@@ -1169,7 +1169,7 @@
         </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap.MetaViewport.Width">
             <summary>
-            Gets or sets the width parameter value with default set to use width of mobilde device(device-width).
+            Gets or sets the width parameter value with default set to use width of mobile device(device-width).
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap.MetaViewport.InitialScale">
@@ -1428,7 +1428,7 @@
         </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap.RadioButton.IsInline">
             <summary>
-            Gets or sets whether there will be more radio buttons on the same line. When this propererty is true, the radio button gets the Boostrap "inline" CSS class.
+            Gets or sets whether there will be more radio buttons on the same line. When this property is true, the radio button gets the Boostrap "inline" CSS class.
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap.RadioButtonListGroup.ChangedBinding">
@@ -1464,7 +1464,7 @@
         </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap.RadioButtonListGroup.IsInlineBinding">
             <summary>
-            Gets or sets whether there will be more <see cref="T:DotVVM.Framework.Controls.Bootstrap.CheckBox"/>es on the same line. When this propererty is true, the <see cref="T:DotVVM.Framework.Controls.Bootstrap.CheckBox"/> gets the Boostrap "inline" CSS class.
+            Gets or sets whether there will be more <see cref="T:DotVVM.Framework.Controls.Bootstrap.CheckBox"/>es on the same line. When this property is true, the <see cref="T:DotVVM.Framework.Controls.Bootstrap.CheckBox"/> gets the Boostrap "inline" CSS class.
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap.RadioButtonListGroup.VisibleBinding">
@@ -1520,7 +1520,7 @@
         </member>
         <member name="M:DotVVM.Framework.Controls.Bootstrap.RadioButtonListGroup.OnLoad(DotVVM.Framework.Hosting.IDotvvmRequestContext)">
             <summary>
-            Occurs after the viewmodel is applied to the page IHtmlWriter writerand before the commands are executed.
+            Occurs after the viewmodel is applied to the page IHtmlWriter writer and before the commands are executed.
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Controls.Bootstrap.RadioButtonListGroup.OnPreRender(DotVVM.Framework.Hosting.IDotvvmRequestContext)">

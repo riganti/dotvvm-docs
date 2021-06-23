@@ -1,7 +1,7 @@
 ﻿<bs:Card FooterText="Card Footer">
   <bs:CardImage ImageUrl="~/Content/Images/img11.jpg" ToolTip="Card Image">
     <bs:CardBody>
-        <h1>Overlayed body</h1>
+        <h1>Overlaid body</h1>
         <p>
             Another text
         </p>

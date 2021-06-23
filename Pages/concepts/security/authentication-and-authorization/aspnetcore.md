@@ -10,7 +10,7 @@ Second, you need to apply the authentication and authorization middlewares in th
 
 ## Configure the cookie authentication
 
-The most populare way is to use the standard cookie authentication.
+The most popular way is to use the standard cookie authentication.
 
 ```CSHARP
 public void ConfigureServices(IServiceCollection services)
@@ -127,7 +127,7 @@ public class LoginViewModel : DotvvmViewModelBase
 
     public async Task Login()
     {
-        var result = await _signInManager.PasswordSignInAsync(UserName, Password);
+        var result = await _signInManager.PasswordSignInAsync(UserName, Password, false, true);
         if (result.Succeeded)
         {
             if (!string.IsNullOrEmpty(ReturnUrl)) 

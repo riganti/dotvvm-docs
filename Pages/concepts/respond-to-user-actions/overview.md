@@ -91,7 +91,7 @@ See the [commands](commands) chapter for more info.
 
 ### Static commands
 
-In contract to the commands, static commands are evaluated on the client-side. They can still invoke methods on the server too, but they need to pass all the infromation the methods will need, because the viewmodel is not transmitted to the server. 
+In contract to the commands, static commands are evaluated on the client-side. They can still invoke methods on the server too, but they need to pass all the information the methods will need, because the viewmodel is not transmitted to the server. 
 
 Static commands can perform the following kinds of operations:
 

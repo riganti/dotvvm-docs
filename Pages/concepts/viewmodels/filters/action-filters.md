@@ -22,7 +22,7 @@ You can then override any of the method listed below.
 
 + **ViewModel-level events** (applicable to DotVVM pages)
     - `OnViewModelCreatedAsync` is executed after the viewmodel instance is created and assigned to the root of the control tree, and the `PreInit` phase is completed.
-    - `OnViewModelSerializingAsync` is executed after the `PreRenderComplete` phase is completed and before the viemwodel is serialized to JSON.
+    - `OnViewModelSerializingAsync` is executed after the `PreRenderComplete` phase is completed and before the viewmodel is serialized to JSON.
     - `OnViewModelDeserializedAsync` is executed on postbacks, after the viewmodel from the client was deserialized, before the `Load` phase is initiated.
 
 + **Command-level events** (applicable to postbacks on DotVVM pages)

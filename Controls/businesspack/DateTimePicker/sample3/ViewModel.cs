@@ -11,7 +11,7 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.DateTimePicker.sample3
 
         public List<DateTimeRestriction> Restrictions { get; set; } = new List<DateTimeRestriction>()
         {
-            //Theese will prevent saturdays and sundays from being selected
+            //These will prevent saturdays and sundays from being selected
             new DayOfWeekRestriction() { DayOfWeek = DayOfWeek.Saturday },
             new DayOfWeekRestriction() { DayOfWeek = DayOfWeek.Sunday },
             //This will prevent selection of all dates from the 1st of June to the 6th of June of current year

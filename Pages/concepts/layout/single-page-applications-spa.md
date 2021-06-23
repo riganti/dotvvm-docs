@@ -25,7 +25,7 @@ In previous versions of DotVVM, there could be only one `SpaContentPlaceHolder` 
 
 ### Removed hashbang mode in favor of History API
 
-In DotVVM 2.x, the default behavior of SPAs was using the hashbang format of the URL (e. g. `~/MySpaApp#!/Pages/Default`). When the user navigated to another page, the part of the URL after the URL fragment changed. It was possible to explicitly enable [History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API) which was using the classic format of the URL which is not recognizeable from the non-SPA application. 
+In DotVVM 2.x, the default behavior of SPAs was using the hashbang format of the URL (e. g. `~/MySpaApp#!/Pages/Default`). When the user navigated to another page, the part of the URL after the URL fragment changed. It was possible to explicitly enable [History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API) which was using the classic format of the URL which is not recognizable from the non-SPA application. 
 
 In DotVVM 3.0, the **History API mode is the one and only option** - the old way with hashbang URLs was removed from the framework. All requests pointing to the hashbang URL format will get redirected to the correct URLs, and History API will be used everywhere.
 

@@ -2,7 +2,7 @@
 
 The [DotVVM Command Line tool](install) can create new [pages](~/pages/concepts/dothtml-markup/overview), [master pages](~/pages/concepts/layout/master-pages), or [markup controls](~/pages/concepts/control-development/markup-controls) in ASP.NET Core projects.
 
-> Creating pages, master pages, and controls is suported only in ASP.NET Core projects using the new project system. For .NET Framework projects, we recommend [using Visual Studio](~/pages/quick-starts/build/first-page).
+> Creating pages, master pages, and controls is supported only in ASP.NET Core projects using the new project system. For .NET Framework projects, we recommend [using Visual Studio](~/pages/quick-starts/build/first-page).
 
 ## Supported commands
 

@@ -1,6 +1,6 @@
 ## Sample 7: Inline Inserting
 
-The `InlineInserMode` property can be used to enable the inline insert feature on the grid. This feature adds an additional editable row to the table that can be used to add new items.
+The `InlineInsertMode` property can be used to enable the inline insert feature on the grid. This feature adds an additional editable row to the table that can be used to add new items.
 
 The `InlineInsertRowPlacement` property specifies whether the row is placed on the `Top` or the `Bottom` of the table.
 

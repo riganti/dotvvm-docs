@@ -104,7 +104,7 @@ After a non-`null` value is set to the `DataContext` property, the element will 
 
 This can be used to create optional sections in the page which are available only when corresponding objects are loaded.
 
-## Acces markup control properties
+## Access markup control properties
 
 The `_control` binding context variable can be used in user control files (`*.dotcontrol`) to access properties of the user control. 
 

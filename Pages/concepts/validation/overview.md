@@ -10,7 +10,7 @@ To use validation in DotVVM, you need to decide three things:
 
 * **How does it look like**: When validation errors are found, they need to be indicated to the user. We have several [validation controls](controls) which can display error messages, apply CSS classes on invalid form fields, and so on. 
 
-* **Define validation rules**: You need to specify the validation rules for properties, or even objects in the viewmodel. How to specify the rules is descibed in the rest of this chapter.
+* **Define validation rules**: You need to specify the validation rules for properties, or even objects in the viewmodel. How to specify the rules is described in the rest of this chapter.
 
 > Validation in [static commands](~/pages/concepts/respond-to-user-actions/static-commands) is currently not supported, but the work on this feature has already been started, and it will be available in the future releases of DotVVM.
 
@@ -47,7 +47,7 @@ public string Password { get; set; }
 
 You can even use custom validation attributes (by creating a class which implements the `IValidationAttribute` interface). 
 
-> Please note that is't not easy to use dependency injection in validation attributes (they are static), so it may be difficult to validate business rules (which may need to look in the database). For example, creating a validation attribute which checks the uniqueness of the e-mail address in the database, is not a good idea. Use the [ModelState](#using-modelstate) to report violations of business rules.
+> Please note that is not easy to use dependency injection in validation attributes (they are static), so it may be difficult to validate business rules (which may need to look in the database). For example, creating a validation attribute which checks the uniqueness of the e-mail address in the database, is not a good idea. Use the [ModelState](#using-modelstate) to report violations of business rules.
 
 ### IValidatableObject
 
@@ -69,9 +69,9 @@ public class AppointmentData : IValidatableObject
     {
         if (BeginDate >= EndDate)
         {
-            yield return this.CreateValidationResult<AppointmentData>(
+            yield return new ValidationResult(
                 "The begin date of the appointment must be lower than the end date.", 
-                t => t.BeginDate, t => t.EndDate    // one (or more) expressions indicating which properties are invalid
+                new[] { nameof(BeginDate), nameof(EndDate) }    // one (or more) expressions indicating which properties are invalid
             );
         }
     }
@@ -81,6 +81,20 @@ public class AppointmentData : IValidatableObject
 This is helpful to provide _formal validation rules_ that verify the state of the object. 
 
 > Please note that this method doesn't make it easy for dependency injection, so it may be difficult to validate business rules (which may need to look in the database). For example, placing the detection of overlapping appointments in the `Validate` method is not a good idea. Use the [ModelState](#using-modelstate) to report violations of business rules.
+
+### Report errors for child objects
+
+If you need to validate properties in child objects, **we recommend to implement `IValidatableObject` in the child objects**. DotVVM calls the `Validate` method recursively on the entire viewmodel. 
+
+If this is not possible and you need to return validation errors for properties in child objects, you need to return the property path in a Knockout observable form, e. g. `ChildObject().InvalidProperty` or `SomeArray()[2]().InvalidProperty`. This will probably change in DotVVM 4.0 so use it only if there is no other way. There is an extension method called `CreateValidationResult<T>` which can produce these expressions from a lambda expression:
+
+```CSHARP
+yield return this.CreateValidationResult<YourViewModel>(    // YourViewModel must implement IDotvvmViewModel
+    "Error message", 
+    t => t.Child.InvalidProperty
+);
+```
+
 
 ### ModelState
 

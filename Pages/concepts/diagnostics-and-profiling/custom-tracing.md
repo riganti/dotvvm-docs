@@ -54,7 +54,7 @@ public class SampleRequestTracer : IRequestTracer
 
     public Task EndRequest(IDotvvmRequestContext context, Exception exception)
     {
-        Console.WriteLine($"Trace {sw.Elapsed}: Error occured ({exception})");
+        Console.WriteLine($"Trace {sw.Elapsed}: Error occurred ({exception})");
         return Task.CompletedTask;
     }
 }

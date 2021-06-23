@@ -25349,7 +25349,7 @@
           "MappingMode": 1,
           "Required": false
         },
-        "DefaultValue": "Insert teable",
+        "DefaultValue": "Insert table",
         "IsBasicProperty": false
       }
     ],
