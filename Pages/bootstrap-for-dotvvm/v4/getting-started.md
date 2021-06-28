@@ -49,7 +49,7 @@ Or specify your own IResources.
             {
                 BootstrapJsResource = new ScriptResource(new UrlResourceLocation("PATH TO CUSTOM BOOSTRAP.JS")),
                 BootstrapCssResource = new StylesheetResource(new UrlResourceLocation("PATH OT CUSTOM BOOSTRAP.CSS")),
-                JQueryResource = new ScriptResource(new UrlResourceLocation("PATH TO CUSTOM BOOSTRAP.JS")),
+                JQueryResource = new ScriptResource(new UrlResourceLocation("PATH TO CUSTOM JQUERY.JS")),
                 IncludeBootstrapResourcesInPage = true,
                 IncludeJQueryResourceInPage = true
             };
