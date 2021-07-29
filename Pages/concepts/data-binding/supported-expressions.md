@@ -160,6 +160,32 @@ Since we are adding a lot of methods from `System.Linq` namespace, we decided to
 * Logarithmic: `Math.Log`, `Math.Log10`
 * Trigonometric: `Math.Acos`, `Math.Asin`, `Math.Atan`, `Math.Atan2`, `Math.Cos`, `Math.Cosh`, `Math.Sin`, `Math.Sinh`, `Math.Tan`, `Math.Tanh`
 
+### Additional .NET methods supported since DotVVM 3.2
+
+### DateTime property getters
+* `DateTime.Year`
+* `DateTime.Month`
+* `DateTime.Day`
+* `DateTime.Hour`
+* `DateTime.Minute`
+* `DateTime.Second`
+* `DateTime.Millisecond`
+
+### String methods
+* `string.Contains(string value, StringComparison options)`
+* `string.EndsWith(string value, StringComparison options)`
+* `string.IndexOf(string value, StringComparison options)`
+* `string.IndexOf(string value, int startIndex, StringComparison options)`
+* `string.LastIndexOf(string value, StringComparison options)`
+* `string.LastIndexOf(string value, int startIndex, StringComparison options)`
+* `string.StartsWith(string value, StringComparison options)`
+* *Note*: for overloads with `StringComparison` only `InvariantCulture` and `InvariantCultureIgnoreCase` are supported. Furthermore, the value `InvariantCulture` is used by default, unless specified otherwise.
+
+### WebUtility methods
+* `WebUtility.UrlEncode(string value)`
+* `WebUtility.UrlDecode(string value)`
+* *Note*: to use methods above, you need to specify `@import System.Net`.
+
 ## See also
 
 * [Data-binding overview](~/pages/concepts/data-binding/overview)
