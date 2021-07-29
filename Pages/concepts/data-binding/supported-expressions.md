@@ -149,10 +149,12 @@ Since we are adding a lot of methods from `System.Linq` namespace, we decided to
 * `String.Replace(char oChar, char nChar)` and `String.Replace(string oStr, string nStr)`
 * `String.Split(params char[] separators)`
 * `String.Split(char separator, StringSplitOptions = StringSplitOptions.None)` and `String.Split(string separator, StringSplitOptions = StringSplitOptions.None)`
-   * *Note*: DotVVM supports `None` and `RemoveEmptyEntries` options. When targeting .NET Framework, these overloads are exposed using custom extensions to ensure they are available on all supported frameworks.
 * `String.StartsWith(string value)` and `String.StartsWith(char value)`
 * `String.ToLower()` and `String.ToLowerInvariant()`
 * `String.ToUpper()` and `String.ToUpperInvariant()`
+* *Note*: DotVVM supports only `InvariantCulture` and `InvariantCultureIgnoreCase` values from the `StringComparison` enum. The default string comparing strategy is `InvariantCulture`. This is different as compared to behavior in dotnet, where the default behavior is `CurrentCulture`.
+* *Note*: DotVVM supports `None` and `RemoveEmptyEntries` options from the `StringSplitOptions` enum.
+* *Note*: Missing overloads in some frameworks (e.g. .NET Framework) are exposed as extension methods. Therefore, all methods listed on this page can be used by all supported frameworks.
 
 #### Math methods
 * Basic: `Math.Abs`, `Math.Exp`, `Math.Max`, `Math.Min`, `Math.Pow` `Math.Sign`, `Math.Sqrt`
