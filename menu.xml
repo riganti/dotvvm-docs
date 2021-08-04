@@ -158,6 +158,7 @@
 	
 	<DocPageMenuItem RouteName="cli" PageName="DotVVM CLI">
 	  <DocPageMenuItem RouteName="install" PageName="Install the CLI" LegacyPaths="advanced-dotvvm-command-line" />
+	  <DocPageMenuItem RouteName="lint-dothtml" PageName="Lint DotHTML" />
 	  <DocPageMenuItem RouteName="create-pages-and-controls" PageName="Create pages and controls" />
 	  <DocPageMenuItem RouteName="generate-rest-api-clients" PageName="Generate REST API clients" />
 	</DocPageMenuItem>
