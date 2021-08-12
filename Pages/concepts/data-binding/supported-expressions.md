@@ -178,10 +178,22 @@ Since we are adding a lot of methods from `System.Linq` namespace, we decided to
 * `string.EndsWith(string value, StringComparison options)`
 * `string.IndexOf(string value, StringComparison options)`
 * `string.IndexOf(string value, int startIndex, StringComparison options)`
+* `String.IsNullOrWhiteSpace(string value)`
 * `string.LastIndexOf(string value, StringComparison options)`
 * `string.LastIndexOf(string value, int startIndex, StringComparison options)`
+* `string.PadLeft(int length)`
+* `string.PadLeft(int length, char c)`
+* `string.PadRight(int length)`
+* `string.PadRight(int length, char c)`
 * `string.StartsWith(string value, StringComparison options)`
+* `string.Trim()`
+* `string.Trim(char c)`
+* `string.TrimStart()`
+* `string.TrimStart(char c)`
+* `string.TrimEnd()`
+* `string.TrimEnd(char c)`
 * *Note*: for overloads with `StringComparison` only `InvariantCulture` and `InvariantCultureIgnoreCase` are supported. Furthermore, the value `InvariantCulture` is used by default, unless specified otherwise.
+* *Note*: Missing overloads in some frameworks (e.g. .NET Framework) are exposed as extension methods. Therefore, all methods listed on this page can be used by all supported frameworks.
 
 ### WebUtility methods
 * `WebUtility.UrlEncode(string value)`
