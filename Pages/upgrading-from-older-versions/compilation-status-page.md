@@ -80,6 +80,23 @@ public void ConfigureServices(IDotvvmServiceCollection services)
 }
 ```
 
+## Adding custom checks to DotVVM controls.
+
+If control design does not allow for control to be being used under some specific circumstances (that cannot be handled by classic MarkupOptions attributes) than we need to add all necessary checks in a specific way in order to detect all errors on Status Page (API).
+
+In example below we check whether control does have one on the properties *Icon* | *Text* set.
+```C#
+[ControlUsageValidator]
+public static IEnumerable<ControlUsageError> ValidateUsage(ResolvedControl control)
+{
+    //Control usage checks
+    if (!control.HasProperty(IconProperty) && !control.HasProperty(TextProperty))
+    {
+        yield return new ControlUsageError("Button requires Icon, Text or both properties set.", control.DothtmlNode);
+    }
+}
+```
+
 ## See also
 
 * [Routing](~/pages/concepts/routing/overview)
