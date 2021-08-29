@@ -43,6 +43,8 @@ The output format for the TypeScript compilation must be `es6` or higher, becaus
 
 In order to see the type hints, you also need to modify the [typeRoots](https://www.typescriptlang.org/tsconfig#typeRoots) configuration so TypeScript will visit also the `dotvvm-types` folder when looking for declaration files.
 
+> See the [TypeScript declarations](../typescript-declarations) page for more info.
+
 ## Declare the module
 
 The module can now use TypeScript type annotations as well as TypeScript language features:

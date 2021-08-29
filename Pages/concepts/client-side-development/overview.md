@@ -4,6 +4,8 @@ Most of the time, you will be spending your time writing a server-side code in C
 
 However, in order to create more advanced experiences for the users, or if you want to integrate third-party libraries or components into DotVVM pages, you will need to work with the client-side part of DotVVM. 
 
+> If you plan to use TypeScript, check out the [TypeScript declarations](typescript-declarations) chapter on how to obtain the definition files and get IntelliSense and type checking for interactions with DotVVM client-side API.
+
 ## Value binding and static commands
 
 Even without digging into JavaScript, there is a way to invoke actions in the browser without the need to communicate with the server - the [static commands](~/pages/concepts/respond-to-user-actions/static-commands). They can be used to perform simple client-side manipulations to the viewmodel:
@@ -101,6 +103,7 @@ There are even more advanced options which may be helpful when developing custom
 
 ## See also
 
+* [TypeScript declarations](typescript-declarations)
 * [JS directive](js-directive/overview)
 * [Read and modify viewmodel from JS](read-and-modify-viewmodel-from-js)
 * [DotVVM JavaScript events](dotvvm-javascript-events)
