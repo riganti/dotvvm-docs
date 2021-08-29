@@ -110,8 +110,10 @@ Since we are adding a lot of methods from `System.Linq` namespace, we decided to
    * *Note*: these methods are restricted to numeric types
 * `Enumerable.OrderBy<T,U>(IEnumerable<T> collection, Func<T,U> selector)`
    * *Note*: this method is restricted to primitive types
+   * *Note*: internally, the sorting algorithm is stable. Therefore, if you need to sort, for example using multiple keys, you write something like: `Collection.OrderBy(e => e.SecondaryKey).OrderBy(e => e.PrimaryKey)`
 * `Enumerable.OrderByDescending<T,U>(IEnumerable<T> collection, Func<T,U> selector)`
    * *Note*: this method is restricted to primitive types
+   * *Note*: internally, the sorting algorithm is stable. Therefore, if you need to sort, for example using multiple keys, you write something like: `Collection.OrderByDescending(e => e.SecondaryKey).OrderByDescending(e => e.PrimaryKey)`
 * `Enumerable.Skip<T>(IEnumerable<T> collection, int count)`
 * `Enumerable.Take<T>(IEnumerable<T> collection, int count)`
 * `Enumerable.ToArray<T>(IEnumerable<T> collection)`
