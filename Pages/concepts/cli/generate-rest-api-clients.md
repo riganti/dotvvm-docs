@@ -1,41 +1,50 @@
 # Generate REST API clients
 
-The [DotVVM Command Line tool](install) can also be used to add and update [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api-bindings/overview) clients.
+The [DotVVM Command-Line tool](install) can be used to add and update [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api-bindings/overview) clients.
 
-Even though the DotVVM CLI requires .NET Core, it can be used also for .NET Framework projects with OWIN since it is not a runtime component. It is used only on the developer machines.
+> Even though the DotVVM CLI requires .NET Core, it can be used on .NET Framework projects with OWIN as well, since .NET Core is not a runtime component and is used only on the developer's machine.
 
-## Supported commands
 
-<table class="table table-bordered">
-    <tr>
-        <th>Task</th>
-        <th>Syntax</th>
-        <th>Options</th>
-    </tr>
-    <tr>
-        <td>Add API Client</td>
-        <td><code>dotnet dotvvm api create</code></td>
-        <td>
-            <ul>
-                <li><code>{SwaggerJsonUrl}</code> - URL of the Swagger JSON metadata</li>
-                <li><code>{Namespace}</code> - namespace in which the API clients will be declared</li>
-                <li><code>{CSharpClientPath}</code> - relative path to the generate C# client file</li>
-                <li><code>{TypescriptClientPath}</code> - relative path to the generate TypeScript client file</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>Update API Client</td>
-        <td><code>dotnet dotvvm api regen</code></td>
-        <td>
-            <ul>
-                <li><code>{SwaggerJsonUrl}</code> - (optional) URL of the Swagger JSON metadata; if not specified, all clients will be regenerated</li>
-            </ul>
-        </td>
-    </tr>
-</table>
+## Add an API client
 
-The metadata of REST API Bindings are stored in `dotvvm.json` file. If any of the parameters needs to be updated, you can change them in this file.
+### Syntax
+
+```bash
+dotnet dotvvm api [<target>] create [options] <definition>
+```
+
+### Arguments
+
+* `[<target>]` - an optional path to the DotVVM project where a new API client should be created. If left unspecified, the current working directory is used.
+* `[<definition>]` - path or a URL to an OpenAPI definition.
+
+### Options
+
+* `--namespace <namespace` - the namespace of the generated C# API client.
+* `--cs-path <cs-path>` - path to the generated C# client.
+* `--ts-path <ts-path` - path to the generated TypeScript client.
+
+
+## Update an API client
+
+### Syntax
+
+```bash
+dotnet dotvvm api [<target>] regen [options] [<definition>]
+```
+
+### Arguments
+
+* `[<target>]` - an optional path to the DotVVM project where an API client should be regenerated. If left unspecified, the current working directory is used.
+* `[<definition>]` - an optional path or a URL to the OpenAPI definition whose API client should be updated. If left unspecified, all API clients defined in the config file will be regenerated.
+
+### Options
+
+* `--config <config>` - path to the DotVVM API configuration file (`dotvvm-api.json` by default).
+
+## Metadata
+
+The metadata of the REST API Bindings are stored in a `dotvvm-api.json` file. If any of the parameters need to be updated, you can change them there.
 
 Please note that the API client needs to be registered in `DotvvmStartup.cs`. See [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api-bindings/overview) chapter for more details.
 
@@ -43,13 +52,13 @@ Please note that the API client needs to be registered in `DotvvmStartup.cs`. Se
 
 1. Registering the API client:
 
-```
+```bash
 dotnet dotvvm api create http://localhost:43852/swagger/v1/swagger.json DotVVM2.Demo.RestApi.Api Api/ApiClient.cs wwwroot/Scripts/ApiClient.ts
 ``` 
 
 2. Updating the generated clients:
 
-```
+```bash
 dotnet dotvvm api regen
 ```
 
@@ -57,4 +66,5 @@ dotnet dotvvm api regen
 
 * [Install DotVVM CLI](install)
 * [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api-bindings/overview)
+* [Lint DotHTML](lint-dothtml)
 * [Create pages and controls](create-pages-and-controls)
