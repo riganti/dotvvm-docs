@@ -151,16 +151,56 @@ Since we are adding a lot of methods from `System.Linq` namespace, we decided to
 * `String.Replace(char oChar, char nChar)` and `String.Replace(string oStr, string nStr)`
 * `String.Split(params char[] separators)`
 * `String.Split(char separator, StringSplitOptions = StringSplitOptions.None)` and `String.Split(string separator, StringSplitOptions = StringSplitOptions.None)`
-   * *Note*: DotVVM supports `None` and `RemoveEmptyEntries` options. When targeting .NET Framework, these overloads are exposed using custom extensions to ensure they are available on all supported frameworks.
 * `String.StartsWith(string value)` and `String.StartsWith(char value)`
 * `String.ToLower()` and `String.ToLowerInvariant()`
 * `String.ToUpper()` and `String.ToUpperInvariant()`
+* *Note*: DotVVM supports only `InvariantCulture` and `InvariantCultureIgnoreCase` values from the `StringComparison` enum. The default string comparing strategy is `InvariantCulture`. This is different as compared to behavior in .NET, where the default behavior is `CurrentCulture`.
+* *Note*: DotVVM supports `None` and `RemoveEmptyEntries` options from the `StringSplitOptions` enum.
+* *Note*: Missing overloads in some frameworks (e.g. .NET Framework) are exposed as extension methods. Therefore, all methods listed on this page can be used by all supported frameworks.
 
 #### Math methods
 * Basic: `Math.Abs`, `Math.Exp`, `Math.Max`, `Math.Min`, `Math.Pow` `Math.Sign`, `Math.Sqrt`
 * Rounding: `Math.Ceiling`, `Math.Floor`, `Math.Round`, `Math.Trunc`
 * Logarithmic: `Math.Log`, `Math.Log10`
 * Trigonometric: `Math.Acos`, `Math.Asin`, `Math.Atan`, `Math.Atan2`, `Math.Cos`, `Math.Cosh`, `Math.Sin`, `Math.Sinh`, `Math.Tan`, `Math.Tanh`
+
+### Additional .NET methods supported since DotVVM 3.2
+
+### DateTime property getters
+* `DateTime.Year`
+* `DateTime.Month`
+* `DateTime.Day`
+* `DateTime.Hour`
+* `DateTime.Minute`
+* `DateTime.Second`
+* `DateTime.Millisecond`
+
+### String methods
+* `string.Contains(string value, StringComparison options)`
+* `string.EndsWith(string value, StringComparison options)`
+* `string.IndexOf(string value, StringComparison options)`
+* `string.IndexOf(string value, int startIndex, StringComparison options)`
+* `String.IsNullOrWhiteSpace(string value)`
+* `string.LastIndexOf(string value, StringComparison options)`
+* `string.LastIndexOf(string value, int startIndex, StringComparison options)`
+* `string.PadLeft(int length)`
+* `string.PadLeft(int length, char c)`
+* `string.PadRight(int length)`
+* `string.PadRight(int length, char c)`
+* `string.StartsWith(string value, StringComparison options)`
+* `string.Trim()`
+* `string.Trim(char c)`
+* `string.TrimStart()`
+* `string.TrimStart(char c)`
+* `string.TrimEnd()`
+* `string.TrimEnd(char c)`
+* *Note*: for overloads with `StringComparison` only `InvariantCulture` and `InvariantCultureIgnoreCase` are supported. Furthermore, the value `InvariantCulture` is used by default, unless specified otherwise.
+* *Note*: Missing overloads in some frameworks (e.g. .NET Framework) are exposed as extension methods. Therefore, all methods listed on this page can be used by all supported frameworks.
+
+### WebUtility methods
+* `WebUtility.UrlEncode(string value)`
+* `WebUtility.UrlDecode(string value)`
+* *Note*: to use methods above, you need to specify `@import System.Net`.
 
 ## See also
 
