@@ -152,7 +152,7 @@ Since we are adding a lot of methods from `System.Linq` namespace, we decided to
 * `String.StartsWith(string value)` and `String.StartsWith(char value)`
 * `String.ToLower()` and `String.ToLowerInvariant()`
 * `String.ToUpper()` and `String.ToUpperInvariant()`
-* *Note*: DotVVM supports only `InvariantCulture` and `InvariantCultureIgnoreCase` values from the `StringComparison` enum. The default string comparing strategy is `InvariantCulture`. This is different as compared to behavior in dotnet, where the default behavior is `CurrentCulture`.
+* *Note*: DotVVM supports only `InvariantCulture` and `InvariantCultureIgnoreCase` values from the `StringComparison` enum. The default string comparing strategy is `InvariantCulture`. This is different as compared to behavior in .NET, where the default behavior is `CurrentCulture`.
 * *Note*: DotVVM supports `None` and `RemoveEmptyEntries` options from the `StringSplitOptions` enum.
 * *Note*: Missing overloads in some frameworks (e.g. .NET Framework) are exposed as extension methods. Therefore, all methods listed on this page can be used by all supported frameworks.
 
