@@ -11,4 +11,4 @@
     </CollapseIcon>
 
     <span>{{value: Name}}</span>
-</bp:TreeView>CS
+</bp:TreeView>
