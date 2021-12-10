@@ -171,6 +171,7 @@
       <DocPageMenuItem RouteName="markup-control-registration" PageName="Markup control registration" LegacyPaths="control-development-markup-control-registration" />
       <DocPageMenuItem RouteName="markup-controls-with-code" PageName="Markup controls with code-behind" LegacyPaths="control-development-markup-controls-with-code" />
       <DocPageMenuItem RouteName="code-only-controls" PageName="Code-only controls" LegacyPaths="control-development-code-only-controls" />
+      <DocPageMenuItem RouteName="validate-control-usage" PageName="Validate control usage" LegacyPaths="validate-control-usage" />
       <DocPageMenuItem RouteName="interactivity" PageName="Adding interactivity using Knockout binding handlers" LegacyPaths="control-development-interactivity" />
       <DocPageMenuItem RouteName="custom-postback-handlers" PageName="Custom postback handlers" LegacyPaths="control-development-creating-custom-postback-handlers" />
       <DocPageMenuItem RouteName="binding-extensibility" PageName="Binding system extensibility" LegacyPaths="control-development-binding-extensibility" />
