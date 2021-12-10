@@ -34,6 +34,7 @@
 	  <DocPageMenuItem RouteName="combine-css-classes-and-styles" PageName="Combine CSS classes and styles" LegacyPaths="basics-class-and-style-attribute" />
 	  <DocPageMenuItem RouteName="comments" PageName="Comments" LegacyPaths="basics-comments" />
 	  <DocPageMenuItem RouteName="server-side-styles" PageName="Server-side styles" LegacyPaths="basics-server-side-styles" />
+	  <DocPageMenuItem RouteName="compilation-test" PageName="Compilation test" />
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="routing" PageName="Routing">
