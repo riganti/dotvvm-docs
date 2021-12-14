@@ -14,6 +14,12 @@
 Version for Visual Studio 2019: [download link](https://storage.dotvvm.com/public/DotVVM.Integration.VisualStudio.VS2019.RTM.2.5.254.0.vsix) <br/>
 Version for Visual Studio 2019 Preview (16.11 Preview 1.0+): [download link](https://storage.dotvvm.com/public/DotVVM.Integration.VisualStudio.VS2019-Preview.2.5.254.0.vsix) 
 
+## v4.0.532.0
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019-RTM.4.0.532.0.vsix) <br/>
+Version for Visual Studio 2020: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-RTM.4.0.532.0.vsix) <br/>
+Version for Visual Studio 2020 Preview (17.1.0 Preview 1.1+): [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.532.0.vsix) 
 
 ## v2.5.251.0
 ***Compatible with VS 2019 v16.9.3+***
