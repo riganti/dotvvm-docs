@@ -1,7 +1,14 @@
 # Release notes
 
+## v4.0.535.0
+
+### Compatibility
+* Version for Visual Studio 2022 Preview (17.1.0 Preview 3.0+)
+
+### Assets
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.535.0.vsix)
+
 ## v4.0.534.0
-* Updated codebase to reflect Visual Studio API changes in the new Preview version
 * Added support for lambda functions (syntax highlighting and Intellisense)
 * Added autocompletion capabilities for more operators
 * Fixed F7 shortcut
@@ -9,17 +16,22 @@
 * Improved categorization of identifiers
 * Stability fixes: resolved some exceptions during startup
 
+### Compatibility
+* Version for Visual Studio 2019 (16.11.8+)
+* Version for Visual Studio 2022 (17.0.4+)
+* Version for Visual Studio 2022 Preview (17.1.0 Preview 2.0+)
+
 ### Assets
 Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019.RTM.4.0.534.0.vsix) <br/>
-Version for Visual Studio 2020: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.RTM.4.0.534.0.vsix) <br/>
-Version for Visual Studio 2020 Preview (17.1.0 Preview 2.0+): [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.534.0.vsix)
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.RTM.4.0.534.0.vsix) <br/>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.534.0.vsix)
 
 ## v4.0.532.0
 
 ### Assets
 Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019-RTM.4.0.532.0.vsix) <br/>
-Version for Visual Studio 2020: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-RTM.4.0.532.0.vsix) <br/>
-Version for Visual Studio 2020 Preview (17.1.0 Preview 1.1+): [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.532.0.vsix) 
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-RTM.4.0.532.0.vsix) <br/>
+Version for Visual Studio 2022 Preview (17.1.0 Preview 1.1+): [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.532.0.vsix) 
 
 ## v2.5.254.0
 ***Compatible with VS 2019 v16.10+***
