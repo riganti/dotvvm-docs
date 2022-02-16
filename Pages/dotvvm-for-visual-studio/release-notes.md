@@ -3,9 +3,11 @@
 ## v4.0.537.0
 
 ### Compatibility
+* Version for Visual Studio 2022 (17.1.0)
 * Version for Visual Studio 2022 Preview (17.1.0 Preview 6.0+)
 
 ### Assets
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.RTM.4.0.537.0.vsix)
 Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.537.0.vsix)
 
 ## v4.0.536.0
