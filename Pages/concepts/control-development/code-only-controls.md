@@ -239,6 +239,8 @@ public static readonly DotvvmProperty LabelTextProperty
     = DotvvmProperty.Register<string, TextBoxWithLabel>(c => c.LabelText, null);
 ```
 
+See the [Control properties](control-properties#specify-markup-options) chapter for more info about the `MarkupOptions` attribute.
+
 ### Child controls
 
 Similarly to the viewmodels, every control has lifecycle events `OnInit`, `OnLoad` and `OnPreRender` which follow the logic of the viewmodel `Init`, `Load` and `PreRender` events.
@@ -271,4 +273,5 @@ After the `Load` phase, the commands are executed and the control tree must be c
 * [Markup controls](markup-controls)
 * [Markup control registration](markup-control-registration)
 * [Markup controls with code](markup-controls-with-code)
+* [Control properties](control-properties)
 * [Adding interactivity using Knockout binding handlers](interactivity)

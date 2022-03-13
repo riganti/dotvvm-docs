@@ -2,7 +2,9 @@
 
 Building custom controls is not only for advanced developers and scenarios. We really encourage you to learn how to write your own **DotVVM** controls because it will help you even in very small apps. It will also boost your productivity because you'll be able to reuse significant amount of code across multiple pages or even across multiple projects.
 
-In DotVVM, there are two types of controls - **markup controls** and **code-only controls**. 
+In DotVVM, there are three types of controls - **markup controls**, **code-only controls** and **composite controls**.
+
+> Composite controls were added in DotVVM 4.0 and they provide an easy way of composing new controls from the existing ones.
 
 ## Types of controls
 
@@ -24,6 +26,12 @@ However, you would need to do all of this on every page where you need to use su
 
 The control may need to bring some scripts or even CSS styles with it, or may provide special behavior when it comes to validation, and so on. You can  pack such control into a NuGet package and reuse it in many projects.
 
+## Composite controls
+
+Composite controls are a new type of declaring controls that tries to make the entire process simpler. The composite control is defined by a _function_ which returns the control tree - a hierarchy of HTML elements or other DotVVM components, and provides an easy way to declare control properties and pass them to its children.
+
+See the [Composite controls](composite-controls) chapter for more info. 
+
 ## Commercial controls
 
 You don't need to write all controls yourself. We have created several packs of commercial controls which can save much time:
@@ -41,6 +49,8 @@ Also, this repo can be used as a learning material or inspiration for creating y
 
 * [Markup controls](markup-controls)
 * [Code-only controls](code-only-controls)
+* [Composite controls](composite-controls)
+* [Control properties](composite-controls)
 * [Adding interactivity using Knockout binding handlers](interactivity)
 * [Custom postback handlers](custom-postback-handlers)
 * [Binding system extensibility](binding-extensibility)

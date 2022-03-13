@@ -42,9 +42,7 @@ The first property is called `Title` - it will be printed out inside the `legend
 
 The second property is `DisplayPhoneNumber` property which will show or hide the _Phone_ field. 
 
-The properties in a DotVVM control cannot be simple C# properties with default getter and setter. Such properties could only contain values, but they couldn't store [data-binding expressions](~/pages/concepts/data-binding/overview). 
-
-To make the data-binding work, you have to expose those properties as `DotvvmProperty` objects which contains metadata about the property and which can store binding expressions. It is similar to [dependency properties](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/advanced/dependency-properties-overview?view=netframeworkdesktop-4.8) known from Windows Presentation Foundation.
+The properties in a DotVVM control cannot be simple C# properties with default getter and setter - in order to support [data-binding expressions](~/pages/concepts/data-binding/overview), they need to be exposed as `DotvvmProperty` objects which contain metadata about the property and can store binding expressions. 
 
 [DotVVM for Visual Studio](https://www.dotvvm.com/products/visual-studio-extensions) adds an easy-to-use code snippet, which makes declaration of these properties simple.
 
@@ -73,8 +71,10 @@ public bool DisplayPhoneNumber
     set { SetValue(DisplayPhoneNumberProperty, value); }
 }
 public static readonly DotvvmProperty DisplayPhoneNumberProperty
-        = DotvvmProperty.Register<bool, AddressEditor>(c => c.DisplayPhoneNumber, true);
+    = DotvvmProperty.Register<bool, AddressEditor>(c => c.DisplayPhoneNumber, true);
 ```
+
+See the [Control properties](control-properties) chapter for more information.
 
 ## Access the properties from the control
 
@@ -202,4 +202,5 @@ Because the `Value` property is bound to a property in the viewmodel, DotVVM wil
 * [Markup controls](markup-controls)
 * [Markup control registration](markup-control-registration)
 * [Code-only controls](code-only-controls)
+* [Control properties](control-properties)
 * [Adding interactivity using Knockout binding handlers](interactivity)
