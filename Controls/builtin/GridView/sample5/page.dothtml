@@ -7,7 +7,11 @@
     <dot:GridViewTextColumn ValueBinding="{value: Id}" 
                             HeaderText="ID" />
     <dot:GridViewTextColumn ValueBinding="{value: Name}" 
-                            HeaderText="Name" />
+                            HeaderText="Name">
+      <CellDecorators>
+        <dot:Decorator class-name-too-long="{value: Name.Length > 14}" />
+      </CellDecorators>
+    </dot:GridViewTextColumn>
   </Columns>
 </dot:GridView>
 
