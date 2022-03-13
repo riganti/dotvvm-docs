@@ -191,11 +191,15 @@ The `Up` method looks like this:
 ```CSHARP
 public void Up()
 {
-    Value++;
+    // breaking change in DotVVM 4.0 - you need to call SetValueToSource to update the original property
+    // previously, calling Value++; was enough 
+    SetValueToSource(ValueProperty, Value + 1);
 }
 ```
 
-Because the `Value` property is bound to a property in the viewmodel, DotVVM will update the `MyNumber` property too. 
+The `SetValueToSource` will look up the property in the viewmodel (`MyNumber`) to which the `Value` property is bound, and will update its value accordingly. 
+
+> Prior to DotVVM 4.0, the value in the viewmodel was updated just by calling the setter (which contains call to `SetValue`). However, this was not reliable in some cases, and when the property was not bound to anything, calling this had no effect. That's why DotVVM 4.0 added the explicit `SetValueToSource` method.
 
 ## See also
 
