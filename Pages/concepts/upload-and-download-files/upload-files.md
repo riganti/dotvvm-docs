@@ -73,12 +73,12 @@ public class MyViewModel : DotvvmViewModelBase
 
     private readonly IUploadedFileStorage storage;
 
-	public MyViewModel(IUploadedFileStorage storage)
-	{
-	    this.storage = storage;
-	}
+	  public MyViewModel(IUploadedFileStorage storage)
+	  {
+	      this.storage = storage;
+	  }
 	
-	...
+	  ...
 }
 ```
 

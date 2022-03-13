@@ -10,7 +10,7 @@ that generates the file and writes it to the response stream. Then you'll redire
 
 The process described above is not much convenient in case that you need a lot of information from the viewmodel in order to generate the file. Since the file would be generated in a separate HTTP request, you would need to pass all the information in a URL, or use session or a similar mechanism. 
 
-That's why DotVVM implements a feature which lets you just generate the file in your viewmodel command, and deliver it to the client using the `Context.ReturnFile` method.
+That's why DotVVM implements a feature which lets you just generate the file in your viewmodel command, and deliver it to the client using the `Context.ReturnFileAsync` method.
 
 ## IReturnedFileStorage
 
@@ -22,6 +22,11 @@ If you create a new DotVVM project, you will find the following line in `DotvvmS
 public void ConfigureServices(IDotvvmServiceCollection options)
 {
     options.AddDefaultTempStorage("temp");
+    
+    // this is equivalent to registering both uploaded and returned file storage
+
+    // options.AddUploadedFileStorage("temp");
+    // options.AddReturnedFileStorage("temp");
 }
 ``` 
 
@@ -38,14 +43,14 @@ public void ConfigureServices(IDotvvmServiceCollection options)
 }
 ```
 
-## context.ReturnFile
+## context.ReturnFileAsync
 
-To return a file as a response for a [command](~/pages/concepts/respond-to-user-actions/commands) or [static command](~/pages/concepts/respond-to-user-actions/static-commands), you can just call the `ReturnFile` method on the [request context](~/pages/concepts/viewmodels/request-context). 
+To return a file as a response for a [command](~/pages/concepts/respond-to-user-actions/commands) or [static command](~/pages/concepts/respond-to-user-actions/static-commands), you can just call the `ReturnFileAsync` method on the [request context](~/pages/concepts/viewmodels/request-context). 
 
-The file is saved in the temporary storage and the user is redirected to a special URL that returns the file. The ID of the file is a random Guid, so it should not be easy to guess a name of a file which belongs to someone else.
+The file is saved in the temporary storage and the user is redirected to a special URL that returns the file. The ID of the file is a random `Guid`, so it should not be easy to guess a name of a file which belongs to someone else.
 
 ```CSHARP
-Context.ReturnFile(file, "export.pdf", "application/pdf");
+await Context.ReturnFileAsync(file, "export.pdf", "application/pdf");
 ```
 
 The method accepts a byte array or a stream, the file name, the MIME type and a dictionary with additional response headers.

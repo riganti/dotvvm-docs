@@ -29,7 +29,7 @@ In the test, you may need to verify e.g. whether the viewmodel method has redire
 
 ## Testing redirects and validation failures
 
-In DotVVM, the methods `InterruptRequest`, `RedirectTo*`, `RedirectPermanentTo*`, `FailOnInvalidModelState` and `ReturnFile` throw the `DotvvmInterruptRequestExecutionException`. This allows to interrupt the execution of the HTTP request and pass it to the following middleware.
+In DotVVM, the methods `InterruptRequest`, `RedirectTo*`, `RedirectPermanentTo*`, `FailOnInvalidModelState` and `ReturnFileAsync` throw the `DotvvmInterruptRequestExecutionException`. This allows to interrupt the execution of the HTTP request and pass it to the following middleware.
 
 The `DotvvmInterruptRequestExecutionException` exception includes a property indication the reason why the request was interrupted and a `CustomData` parameter which holds e.g. the URL where the viewmodel action tried to redirect.
 

@@ -26,7 +26,7 @@ The request execution is interrupted by this call.
 
 ## Returning files
 
-+ `ReturnFile` function is used when you need to [return a file](~/pages/concepts/upload-and-download-files/return-file-from-viewmodel) which will be downloaded by the user.
++ `ReturnFileAsync` function is used when you need to [return a file](~/pages/concepts/upload-and-download-files/return-file-from-viewmodel) which will be downloaded by the user.
 
 ## Asynchronous operations
 
