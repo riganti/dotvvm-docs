@@ -1,7 +1,7 @@
 <dot:TextBox Text="{value: ChildObject.Text1}" />
 <dot:TextBox Text="{value: ChildObject.Text2}" />
 
-<dot:ValidationSummary IncludeErrorsFromTarget="true"
-                       Validation.Target="{value: ChildObject}"/>
+<dot:ValidationSummary 
+    Validation.Target="{value: ChildObject}"/>
 
 <dot:Button Text="SEND" Click="{command: Send()}" />
