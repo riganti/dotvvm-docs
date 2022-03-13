@@ -16,7 +16,7 @@ To use validation in DotVVM, you need to decide three things:
 
 ## Define validation rules 
 
-There are three ways how you can define the validation rules. You can use __validation attributes__ to define rules for individual viewmodel properties, you can implement your own validation logic by implementing the `IValidatableObject` interface on objects in the viewmodel, and you can add errors in the `ModelState` object directly.
+There are three ways how you can define the validation rules. You can use __validation attributes__ to define rules for individual viewmodel properties, you can implement your own validation logic by implementing the `IValidatableObject` interface on objects in the viewmodel, and you can add errors to the `ModelState` object using the `AddModelError` extension method on the [Context](../viewmodels/request-context) object.
 
 ### Validation attributes
 
@@ -78,37 +78,42 @@ public class AppointmentData : IValidatableObject
 }
 ```
 
-This is helpful to provide _formal validation rules_ that verify the state of the object. 
+This is helpful to provide _formal validation rules_ that verify the state or consistency of the object. 
 
-> Please note that this method doesn't make it easy for dependency injection, so it may be difficult to validate business rules (which may need to look in the database). For example, placing the detection of overlapping appointments in the `Validate` method is not a good idea. Use the [ModelState](#using-modelstate) to report violations of business rules.
+> Please note that this method doesn't make it easy for dependency injection, so it may be difficult to validate _business rules_ (which may need to look in the database etc.). For example, placing the detection of overlapping appointments in the `Validate` method is not a good idea (unless you are validation an object representing the entire calendar day). Use the [ModelState](#using-modelstate) to report violations of business rules.
 
 ### Report errors for child objects
 
 If you need to validate properties in child objects, **we recommend to implement `IValidatableObject` in the child objects**. DotVVM calls the `Validate` method recursively on the entire viewmodel. 
 
-If this is not possible and you need to return validation errors for properties in child objects, you need to return the property path in a Knockout observable form, e. g. `ChildObject().InvalidProperty` or `SomeArray()[2]().InvalidProperty`. This will probably change in DotVVM 4.0 so use it only if there is no other way. There is an extension method called `CreateValidationResult<T>` which can produce these expressions from a lambda expression:
+If this is not possible and you need to return validation errors for properties in child objects, you need to return the property path in a DotVVM property path format, e. g. `/ChildObject/InvalidProperty` or `/SomeArray/2/InvalidProperty`. The paths must be absolute, starting from the root viewmodel of the page.
+There is an extension method called `CreateValidationResult<T>` which can produce these expressions from a lambda expression:
 
 ```CSHARP
-yield return this.CreateValidationResult<YourViewModel>(    // YourViewModel must implement IDotvvmViewModel
-    "Error message", 
-    t => t.Child.InvalidProperty
-);
+public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+{
+    yield return this.CreateValidationResult<YourViewModel>(validationContext,
+        "Error message", 
+        t => t.Child.InvalidProperty
+    );
+}
 ```
 
+> The format of validation paths **has changed in DotVVM 4.0** - the validation paths should always be absolute and shall be separated by `/` - e. g. `/ChildObject/InvalidProperty`. Please see the [DotVVM 3.0](/docs/3-0/concepts/validation/overview#report-errors-for-child-objects) version of this page to see the old format of property validation paths.
 
 ### ModelState
 
 By default, the validation is triggered automatically on all postbacks. When all validation attributes and `IValidatableObject` rules pass, the [command](~/pages/concepts/respond-to-user-actions/commands) method is invoked. You can perform additional validation checks in the command method itself and report additional validation errors to the user. 
 
-This is commonly used to perform validations of _business rules_ which often require access to the database or other resources, e. g. to make sure that an e-mail address is not registered yet. It would be difficult to do such checks in validation attributes, or in the `IValidatableObject` implementation.
+This is commonly used to perform validations of _business rules_ which often require access to the database or other resources, e. g. to make sure that an e-mail address is not registered yet. It would be difficult to do such checks in validation attributes, or in the `IValidatableObject` implementation, since there is no easy way to use dependency injection and access various business services.
 
-The [request context](~/pages/concepts/viewmodels/request-context) contains the `ModelState` object which holds a list of validation errors. You can add your own errors to the collection to report violations of business rules to the users.
+The [request context](~/pages/concepts/viewmodels/request-context) contains the `ModelState` object which holds a list of validation errors. You can add your own errors to this object to report violations of business rules to the users, using the `AddModelError` on the viewmodel context object.
 
-If you need to report the errors to the user, you can use the `Context.FailOnInvalidModelState()` which interrupts execution of the current HTTP request and returns the `ModelState` errors to the user. The browser will show the validator controls, same as for the validation errors provided by attributes or `IValidatableObject`.
+Commonly, when you find validation errors, you want to report them to the user and stop processing the request. You can use the `Context.FailOnInvalidModelState()` method for this purpose. It will interrupt the execution of the current HTTP request and return the `ModelState` errors to the user. The browser will show the validator controls, same as for the validation errors provided by attributes or `IValidatableObject`.
 
 In the following sample, we validate the `EmailAddress` property using the validation attributes. When these checks pass, the `Subscribe` method is invoked. 
 
-If the registration of the user fails (we use a custom exception to indicate the cause of the problem), we add a validation error to the `Context.ModelState.Errors` collection and return the validation errors to the user. You can use a useful extension method `AddModelError`.
+If the registration of the user fails (we use a custom exception to indicate the cause of the problem), we add a validation error to the `Context.ModelState.Errors` collection and return the validation errors to the user.
 
 ```CSHARP
 public class RegisterViewModel : DotvvmViewModelBase 
@@ -142,9 +147,13 @@ You can see that the business rule itself is handled in the business layer of th
 
 Since this pattern is quite common in DotVVM applications, you can use [filters](~/pages/concepts/viewmodels/filters/overview) to transform business layer exceptions to model state errors globally. 
 
+There are more overloads of the `AddModelError` method - commonly they accept the viewmodel object and a lambda expression specifying the path to the invalid property. 
+
+There is also an overload which takes the string parameter - we recommend to avoid using this overload as it requires specifying the validation paths in DotVVM property path format - e. g. `/ChildObject/InvalidProperty`. The path must be absolute (from the root viewmodel of the page), or relative (starting from the specified object or lambda-expression property path).
+
 ## Disable validation
 
-You can also disable validation on a part of the page or on a specific control, by using `Validation.Enabled="false"`. You often need to do this e. g. for delete and cancel buttons where the values in the form don't need to be valid. 
+You can also disable validation on a part of the page or on a specific control, by using `Validation.Enabled="false"`. You often need to do this for delete and cancel buttons where the values in the form don't need to be valid. 
 
 Also, you might need this e.g. on the `Changed` event of `TextBox` when you need to pre-fill some values for the user, but the form may not be complete yet, and thus it is not valid at such time.
 

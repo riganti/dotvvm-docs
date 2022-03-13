@@ -15,6 +15,8 @@ In DotVVM, there is the `Validation.Target` property. Using this property you ca
 
 You can apply the `Validation.Target` property to any HTML element, and to almost all DotVVM controls. In the example, for all postbacks made by controls in the `form` element, the validation rules will be checked only on the `Customer` property of the viewmodel. 
 
+> From DotVVM 4.0, you can use the `AddModelError` method on the context object to report errors anywhere in the viewmodel, even outside of the validation target.
+
 ## ValidationSummary
 
 This applies also to the [ValidationSummary](~/controls/builtin/ValidationSummary) control. If this control or some of its parents has the `Validate.Target` property set, the `ValidationSummary` will display only the errors from the validation target.
