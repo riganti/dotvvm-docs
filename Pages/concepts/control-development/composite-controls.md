@@ -7,3 +7,4 @@ TODO
 * [Markup controls](markup-controls)
 * [Code-only controls](code-only-controls)
 * [Control properties](control-properties)
+* [Control capabilities](control-capabilities)

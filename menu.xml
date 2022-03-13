@@ -175,6 +175,7 @@
       <DocPageMenuItem RouteName="code-only-controls" PageName="Code-only controls" LegacyPaths="control-development-code-only-controls" />
       <DocPageMenuItem RouteName="composite-controls" PageName="Composite controls" />
       <DocPageMenuItem RouteName="control-properties" PageName="Control properties" />
+      <DocPageMenuItem RouteName="control-capabilities" PageName="Control capabilities" />
       <DocPageMenuItem RouteName="validate-control-usage" PageName="Validate control usage" LegacyPaths="validate-control-usage" />
       <DocPageMenuItem RouteName="interactivity" PageName="Adding interactivity using Knockout binding handlers" LegacyPaths="control-development-interactivity" />
       <DocPageMenuItem RouteName="custom-postback-handlers" PageName="Custom postback handlers" LegacyPaths="control-development-creating-custom-postback-handlers" />

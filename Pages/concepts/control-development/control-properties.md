@@ -118,8 +118,15 @@ public class Repeater : DotvvmControl
 </dot:Repeater>
 ```
 
+## Control capabilities
+
+Often, a group of control properties is used together and represent a common behavior. DotVVM 4.0 introduced a concept of **capabilities** which are an alternative way to declare properties.
+
+See [Control capabilities](control-capabilities) for more information.
+
 ## See also
 
 * [Markup controls with code](markup-controls-with-code)
 * [Code-only controls](code-only-controls)
 * [Composite controls](composite-controls)
+* [Control capabilities](control-capabilities)
