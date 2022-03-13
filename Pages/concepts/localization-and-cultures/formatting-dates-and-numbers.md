@@ -53,6 +53,7 @@ You can use the `Required` attribute to validate numeric and DateTime values. If
 ## See also
 
 * [Multi-language applications](multi-language-applications)
+* [Local vs UTC dates](local-vs-utc-dates)
 * [RESX files](resx-files)
 * [Literal control](~/controls/builtin/Literal)
 * [TextBox control](~/controls/builtin/TextBox)

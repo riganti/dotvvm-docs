@@ -111,6 +111,7 @@
 	
 	<DocPageMenuItem RouteName="localization-and-cultures" PageName="Localization &amp; cultures">
 	  <DocPageMenuItem RouteName="multi-language-applications" PageName="Multi-language applications" LegacyPaths="basics-globalization" />	  
+	  <DocPageMenuItem RouteName="local-vs-utc-dates" PageName="Local vs UTC dates" />
 	  <DocPageMenuItem RouteName="resx-files" PageName="RESX files" />
 	  <DocPageMenuItem RouteName="formatting-dates-and-numbers" PageName="Formatting dates and numbers" LegacyPaths="basics-formatting-dates-and-numbers" />
 	  <DocPageMenuItem RouteName="localizable-presenter" PageName="Localizable presenter" LegacyPaths="advanced-localization-presenter" />

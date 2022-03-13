@@ -90,6 +90,7 @@ Instead, you can use the [Localizable presenter](localizable-presenter) which ca
 ## See also
 
 * [Formatting dates and numbers](formatting-dates-and-numbers)
+* [Local vs UTC dates](local-vs-utc-dates)
 * [RESX files](resx-files)
 * [Sample: DotVVM request localization](https://github.com/riganti/dotvvm-samples-request-localization)
 * [Localizable presenter](localizable-presenter) (recommended for OWIN only)
