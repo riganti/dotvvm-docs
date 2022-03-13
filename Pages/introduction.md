@@ -4,7 +4,7 @@
 
 DotVVM consists of a **server-side part** (which integrates in the ASP.NET infrastructure) and a **client-side part** based on [Knockout JS](https://knockoutjs.com/) which creates the MVVM experience in the web browser. 
 
-The framework includes a **set of built-in components** (also called _controls_), and offers an [extension for Visual Studio 2019 and 2017](https://www.dotvvm.com/get-dotvvm) that gives syntax highlighting, IntelliSense, refactorings and code fixes, error checking, and other functions.
+The framework includes a **set of built-in components** (also called _controls_), and offers an [extension for Visual Studio 2022 and 2019](https://www.dotvvm.com/get-dotvvm) that gives syntax highlighting, IntelliSense, refactorings and code fixes, error checking, and other functions.
 
 ## Use-cases for DotVVM
 
@@ -33,7 +33,7 @@ See the [Quick start: Create a new project](~/pages/quick-starts/build/create-ne
 
 DotVVM can also be used to incrementally [modernize old ASP.NET-based applications](~/pages/quick-starts/modernize/add-dotvvm-to-existing-app) and migrate them to the latest versions of .NET.
 
-DotVVM supports both ASP.NET Core and old ASP.NET (.NET 4.5.1 and newer). It **can run in the same process side-by-side with other frameworks** such as ASP.NET Web Forms. 
+DotVVM supports both ASP.NET Core and old ASP.NET (.NET 4.7.2 and newer). It **can run in the same process side-by-side with other frameworks** such as ASP.NET Web Forms. 
 
 DotVVM can be installed into an existing ASP.NET Web Forms application and used to **replace ASPX pages** with their DotVVM equivalents **one by one**. During the process (which can take weeks or even months), the application will still work so the developers can fix bugs and implement new features while modernizing the code base at the same time. 
 
