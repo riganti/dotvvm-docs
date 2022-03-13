@@ -40,4 +40,5 @@ We also recommend to use some penetration testing tool to discover potential vul
 
 * [Recommendations for viewmodels](recommendations-for-viewmodels)
 * [Authentication & authorization](authentication-and-authorization/overview)
+* [Security headers](security-headers)
 

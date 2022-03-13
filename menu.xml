@@ -142,6 +142,7 @@
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="server-side-rendering" PageName="Server-side rendering" LegacyPaths="basics-server-side-html-generation" />  
+	
 	<DocPageMenuItem RouteName="security" PageName="Security">
 	  <DocPageMenuItem RouteName="authentication-and-authorization" PageName="Authentication &amp; authorization">
 	    <DocPageMenuItem RouteName="overview" PageName="Overview" LegacyPaths="advanced-authentication-authorization" />
@@ -149,6 +150,7 @@
         <DocPageMenuItem RouteName="owin" PageName="OWIN" LegacyPaths="advanced-owin-security" />
 	  </DocPageMenuItem>
 	  <DocPageMenuItem RouteName="recommendations-for-viewmodels" PageName="Recommendations for viewmodels" />
+	  <DocPageMenuItem RouteName="security-headers" PageName="Security headers" />
 	  <DocPageMenuItem RouteName="html-encoding" PageName="HTML encoding" />
 	</DocPageMenuItem>
 	

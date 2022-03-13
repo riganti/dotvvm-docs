@@ -115,3 +115,4 @@ The `RoleView` can display different content based on the user's role membership
 * [Authentication & authorization in OWIN](owin)
 * [AuthenticatedView](~/controls/builtin/AuthenticatedView)
 * [RoleView](~/controls/builtin/RoleView)
+* [Security headers](../security-headers)

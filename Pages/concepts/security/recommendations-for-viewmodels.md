@@ -181,4 +181,5 @@ public class OrderDetailViewModel : DotvvmViewModelBase
 
 * [HTML encoding](html-encoding)
 * [Authentication & authorization](authentication-and-authorization/overview)
+* [Security headers](security-headers)
 * [Best practices for viewmodels](~/pages/concepts/viewmodels/work-with-data/best-practices)
