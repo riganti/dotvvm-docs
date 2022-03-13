@@ -58,9 +58,13 @@ The `sum` function declared above can be called like this:
 
 > DotVVM has no way to verify that the function exists, gets the correct arguments, and that it returns the value of the specified type. If the function call doesn't work, check out the _Developer Tools_ (F11) console in your browser for more info.
 
+> From DotVVM 4.0, this function also checks whether the underlying JavaScript code doesn't return Promise. If it does, `InvokeAsync` must be used, or `TReturnValue` must be `Task` or `Task<T>`. See the following section for information about async functions. 
+
 ### Async functions
 
-If the function needs to perform an asynchronous action, you can return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), and use `Task<TReturnValue>` as a return type. In order to retrieve the value, you need to access the `Result` of the task.
+If the function needs to perform an asynchronous action, you can return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), and use `_js.InvokeAsync<T>` function instead. It is just a syntax helper for calling `_js.Invoke<Task<T>>` - the signature and usage is the same.
+
+In order to retrieve the value, you need to access the `Result` of the task.
 
 ```JS
 class MyModule {
@@ -77,7 +81,7 @@ class MyModule {
 
 ```DOTHTML
 <dot:Button Text="Refresh" 
-            Click="{staticCommand: Count = _js.Invoke<Task<int>>("getNumberOfAttendees").Result}" />
+            Click="{staticCommand: Count = _js.InvokeAsync<int>("getNumberOfAttendees").Result}" />
 ```
 
 ## See also
