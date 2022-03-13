@@ -17,17 +17,17 @@ See the [ASP.NET Core authentication](aspnetcore) and [OWIN authentication](owin
 
 Once the authentication and authorization is configured, you can restrict access to viewmodels and their methods based on the user identity, role memberships, and more.
 
-The easiest way is to use the `[DotVVM.Framework.Runtime.Filters.Authorize]` attribute. 
+This restriction is done by calling the `Context.Authorize()` method in the `Init` stage of the viewmodel, or in the [command](~/pages/concepts/respond-to-user-actions/commands) and [static command](~/pages/concepts/respond-to-user-actions/static-commands) methods.
 
-You can use the attribute to decorate:
+> Prior to DotVVM 4.0, the `[DotVVM.Framework.Runtime.Filters.Authorize]` attribute was used for this. We've decided to make the attribute obsolete (even though it will remain functional and stay in the framework forever) as its usage was not intuitive in all cases. For example, if you call a method "protected" by this attribute yourself, the attribute is not respected and the method is just called. We wanted to make the authorization explicit.   
 
-* the viewmodel class; the entire page will be accessible only to the authorized users
+The `Context.Authorize()` method can be called:
+
+* the `Init` method of the viewmodel; the entire page will be accessible only to the authorized users
 
 * specific viewmodel methods which are called from the [command binding](~/pages/concepts/respond-to-user-actions/commands); the commands will fail for unauthorized users
 
-> The `Authorize` attribute is checked **only if method is called from a command binding**. If you call the method from another method in your C# code, the attribute won't be checked automatically.
-
-> ASP.NET MVC and other framework are also using the `Authorize` attribute, but they have their own implementation. When adding the `using` statement, make sure the `Authorize` attribute comes from the `DotVVM.Framework.Runtime.Filters` namespace.
+> If you are still using the `[Authorize]` attribute, please note that ASP.NET MVC and other frameworks are also using the `Authorize` attribute, but they have their own implementation. When adding the `using` statement, make sure the `Authorize` attribute comes from the `DotVVM.Framework.Runtime.Filters` namespace.
 
 ```CSHARP
 using System;
@@ -37,9 +37,16 @@ using DotVVM.Framework.Runtime.Filters;
 
 namespace DotvvmDemo.ViewModels
 {
-    [Authorize]
     public class AdminViewModelBase : DotvvmViewModelBase
     {
+
+        public override async Task Init() 
+        {
+            await Context.Authorize();
+
+            await base.Init();  // always call base.Init() - another authorization checks can be specified in the base page 
+        }
+        
         // The page with this viewmodel will return 403 Forbidden if the user is not authenticated.
         // No commands to this page will be accepted.
 
@@ -62,8 +69,10 @@ namespace DotvvmDemo.ViewModels
     public class AdminViewModelBase : DotvvmViewModelBase
     {
         [Authorize(Roles = new[] { "Admin" })]
-        public void DeleteUser(int id)
+        public async Task DeleteUser(int id)
         {
+            await Context.Authorize(roles: new[] { "Admin" });
+
             // Only the users with the Admin role will be able
             // to call this method from the command binding.
         }
@@ -75,7 +84,32 @@ namespace DotvvmDemo.ViewModels
 }
 ```
 
-It is possible to apply the `Authorize` to the base class of the viewmodel. This is useful when you need to restrict access for an entire section of the application, for example an admin area. All pages in the admin area will use the same [master page](~/pages/concepts/layout/master-pages), so the `Authorize` attribute is often applied to the viewmodel of the master page. 
+Note that the `Context.Authorize` method has several optional parameters - you can enforce the user to be a member of specific roles, or comply with specific ASP.NET Core Authorization policies, or be authenticated via specified authentication scheme.
+
+If you want the same permission check for all pages, you can place the `Authorize` method call to the [master page](~/pages/concepts/layout/master-pages) viewmodel. If you override the `Init` method in page viewmodels, make sure to properly call `await base.Init(context);` so the check is applied. 
+
+### Obtaining the context in static commands
+
+You should perform the authorization also in the [static commands](~/pages/concepts/respond-to-user-actions/static-commands). 
+
+If you declare the static command methods in a [static command service](~/pages/concepts/respond-to-user-actions/static-command-services), you can use dependency injection to obtain the `IDotvvmRequestContext` object. This object contains the `Authorize` method.
+
+In case your static command method is static, you need to pass `IDotvvmRequestContext` to the method so it can perform the check. You can resolve the context object in the markup file using the `@service` directive:
+
+```DOTHTML
+@service context = IDotvvmRequestContext
+
+<dot:Button Text="Call" Click="{staticCommand: MyMethod(context, ...)"} />
+```
+
+```CSHARP
+[AllowStaticCommand]
+public static async Task MyMethod(IDotvvmRequestContext context, ...)
+{
+    await context.Authorize();
+    ...
+}
+```
 
 ## Render different content for authorized users
 
