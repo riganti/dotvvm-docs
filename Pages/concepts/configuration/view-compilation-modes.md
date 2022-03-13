@@ -1,7 +1,5 @@
 # View compilation mode
 
-> This feature is new from **DotVVM 2.5**.
-
 Because of the performance reasons, all [DotHTML files](~/pages/concepts/dothtml-markup/overview) (pages, markup controls, master pages) need to be compiled before their first use. This process is not done during project compilation, but at runtime, as it needs to access the [configuration](overview) which is defined in C# code (the application must be launched in order to retrieve the control registrations, route names, and so on). 
 
 Because of that, the first load of the page can take slightly longer than subsequent page loads.
@@ -15,7 +13,7 @@ Due to these differences, the view compilation behavior can be modified using th
 
 ## Lazy mode
 
-This is the default compilation mode. The views are compiled only when first user accesses the page that uses them. 
+This is the default compilation mode for the development environment. The views are compiled only when first user accesses the page that uses them. 
 
 **This mode is great for development inner loop.** It can also be used in production if there is not a massive traffic on the site.
 
@@ -26,6 +24,8 @@ The views are compiled on the background after the application startup routine. 
 If uses enter a page that hasn't been compiled yet, the compilation will be done "on-demand", same as in the `Lazy` mode.
 
 **This mode is ideal for simple production environments which do not use deployment slots.** It has the advantages of the default mode (fast application startup), and thanks to the background compilation of the pages, it decreases the chance that users who hit the page for the first time will need to wait for the compilation.
+
+> From DotVVM 4.0, this mode is the default mode in production environment (when `config.Debug` is `false`).
 
 ## DuringApplicationStart mode
 
