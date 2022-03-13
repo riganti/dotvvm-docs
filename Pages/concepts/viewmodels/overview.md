@@ -98,6 +98,20 @@ If you need to store sensitive information in the viewmodel, or you want to sign
 
 You can instruct DotVVM to exclude some properties from serialization, or to transfer them only in one way (e. g. from the server to the client). This can be configured using the [Bind attribute](binding-direction).
 
+## Roslyn Analyzers
+
+Since version DotVVM 4.0, DotVVM ships with Roslyn Analyzers that help with quick identification of common problems when declaring viewmodels. 
+
+The analyzers are packaged within the main DotVVM NuGet package and therefore should be automatically registered by your IDE when referencing the new framework version. 
+
+These analyzers will notify you about potential problems problems in your code-base by issuing warnings.
+
+The analyzers implement several checks that evaluate whether viewmodels are serializable of not.
+* **DotVVM02** - Use only serializable properties in viewmodels
+   * Guard analyzing the properties and their types to determine whether they are JSON-serializable by DotVVM. This will notify you when you try to use an unsupported type in the viewmodel.
+* **DotVVM03** - Do not use public fields in viewmodels
+   * Guard notifying users to use public properties to store the state of viewmodel instead. Forgotten getter and setter in viewmodel properties are a quite common mistake. 
+
 ## See also
 
 * [Request context](request-context)

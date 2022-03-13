@@ -182,6 +182,7 @@
       <DocPageMenuItem RouteName="binding-extensibility" PageName="Binding system extensibility" LegacyPaths="control-development-binding-extensibility" />
       <DocPageMenuItem RouteName="binding-extension-parameters" PageName="Custom binding extension parameters" LegacyPaths="control-development-binding-extension-parameters" />
 	  <DocPageMenuItem RouteName="custom-javascript-translators" PageName="Custom JavaScript translators" LegacyPaths="control-development-providing-custom-javascript-translators" />
+	  <DocPageMenuItem RouteName="testing-controls" PageName="Testing controls" />
     </DocPageMenuItem>
 	
   </DocPageMenuItem>
