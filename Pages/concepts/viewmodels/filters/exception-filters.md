@@ -21,7 +21,7 @@ namespace DotvvmDemo
         protected override Task OnCommandExceptionAsync(IDotvvmRequestContext context, ActionInfo actionInfo, Exception exception)
         {
             // Log exceptions from commands in the viewmodel
-			LogService.LogException(exception.ToString());
+            LogService.LogException(exception.ToString());
 
             return base.OnCommandExceptionAsync(context, actionInfo, exception);
         }
@@ -29,7 +29,7 @@ namespace DotvvmDemo
         protected override Task OnPageExceptionAsync(IDotvvmRequestContext context, Exception exception)
         {
             // Log other exceptions that occur during the page execution
-			LogService.LogException(exception.ToString());
+            LogService.LogException(exception.ToString());
 
             return base.OnPageExceptionAsync(context, exception);
         } 
@@ -37,7 +37,7 @@ namespace DotvvmDemo
         protected override Task OnPresenterExceptionAsync(IDotvvmRequestContext context, Exception exception)
         {
             // Log other exceptions that occur during the page or custom presenter execution
-			LogService.LogException(exception.ToString());
+            LogService.LogException(exception.ToString());
 
             return base.OnPresenterExceptionAsync(context, exception);
         }               
@@ -65,13 +65,13 @@ namespace DotvvmDemo
     {
         protected override Task OnCommandExceptionAsync(IDotvvmRequestContext context, ActionInfo actionInfo, Exception exception)
         {
-			// AppViewModelBase declares the ErrorMessage property to display error messages
-			// If it is set, the master page will display the error message alert.
+            // AppViewModelBase declares the ErrorMessage property to display error messages
+            // If it is set, the master page will display the error message alert.
             if (context.ViewModel is AppViewModelBase)
             {
-				((AppViewModelBase) context.ViewModel).ErrorMessage = exception.Message;
+                ((AppViewModelBase) context.ViewModel).ErrorMessage = exception.Message;
                 
-				// We need the request to end normally, not with an error
+                // We need the request to end normally, not with an error
                 context.IsCommandExceptionHandled = true;
             }
 
@@ -106,7 +106,7 @@ namespace DotvvmDemo
         protected override Task OnPageExceptionAsync(IDotvvmRequestContext context, Exception exception)
         {
             // Suppress the default DotVVM error page
-			context.IsPageExceptionHandled = true;
+            context.IsPageExceptionHandled = true;
             
             // TODO: Log the exception details
             
