@@ -68,7 +68,6 @@ namespace DotvvmDemo.ViewModels
 {
     public class AdminViewModelBase : DotvvmViewModelBase
     {
-        [Authorize(Roles = new[] { "Admin" })]
         public async Task DeleteUser(int id)
         {
             await Context.Authorize(roles: new[] { "Admin" });
