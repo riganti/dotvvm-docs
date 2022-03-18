@@ -41,7 +41,7 @@ For easy matching of the controls, we've introduced a new property `Styles.Tag`.
 
 ```CSHARP
 c.Styles.RegisterAnyControl(c => c.HasTag("delete-icon"))
-  .Prepend(new HtmlGenericControl("img").SetAttribute("src", "delete.png"));
+  .Prepend(new HtmlGenericControl("img").SetAttribute("src", "~/icons/delete.png"));
 ```
 
 You can also match by tags on ancestor controls in the hierarchy:
