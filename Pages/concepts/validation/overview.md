@@ -86,7 +86,8 @@ This is helpful to provide _formal validation rules_ that verify the state or co
 
 If you need to validate properties in child objects, **we recommend to implement `IValidatableObject` in the child objects**. DotVVM calls the `Validate` method recursively on the entire viewmodel. 
 
-If this is not possible and you need to return validation errors for properties in child objects, you need to return the property path in a DotVVM property path format, e. g. `/ChildObject/InvalidProperty` or `/SomeArray/2/InvalidProperty`. The paths must be absolute, starting from the root viewmodel of the page.
+If this is not possible and you need to return validation errors for properties in child objects, you need to return the property path in a DotVVM property path format, e. g. `ChildObject/InvalidProperty` or `SomeArray/2/InvalidProperty`. The paths here are relative to currently validated object (`this`).
+
 There is an extension method called `CreateValidationResult<T>` which can produce these expressions from a lambda expression:
 
 ```CSHARP
@@ -99,13 +100,13 @@ public IEnumerable<ValidationResult> Validate(ValidationContext validationContex
 }
 ```
 
-> The format of validation paths **has changed in DotVVM 4.0** - the validation paths should always be absolute and shall be separated by `/` - e. g. `/ChildObject/InvalidProperty`. Please see the [DotVVM 3.0](/docs/3-0/concepts/validation/overview#report-errors-for-child-objects) version of this page to see the old format of property validation paths.
+> The format of validation paths **has changed in DotVVM 4.0** - the validation paths shall be separated by `/` - e. g. `ChildObject/InvalidProperty`. In the `IValidatableObject` implementation, the paths are relative to the currently validated object. Please see the [DotVVM 3.0](/docs/3-0/concepts/validation/overview#report-errors-for-child-objects) version of this page to see the old format of property validation paths.
 
 ### ModelState
 
 By default, the validation is triggered automatically on all postbacks. When all validation attributes and `IValidatableObject` rules pass, the [command](~/pages/concepts/respond-to-user-actions/commands) method is invoked. You can perform additional validation checks in the command method itself and report additional validation errors to the user. 
 
-This is commonly used to perform validations of _business rules_ which often require access to the database or other resources, e. g. to make sure that an e-mail address is not registered yet. It would be difficult to do such checks in validation attributes, or in the `IValidatableObject` implementation, since there is no easy way to use dependency injection and access various business services.
+This is commonly used to perform validations of _business rules_ which often require access to the database or other resources, e. g. to make sure that an e-mail address is not registered yet. It would be difficult to do such checks in validation attributes, or in the `IValidatableObject` implementation, since the method cannot be asynchronous and in some classes (especially in data transfer objects) you don't want to use dependency injection to access various business services.
 
 The [request context](~/pages/concepts/viewmodels/request-context) contains the `ModelState` object which holds a list of validation errors. You can add your own errors to this object to report violations of business rules to the users, using the `AddModelError` on the viewmodel context object.
 
@@ -149,7 +150,7 @@ Since this pattern is quite common in DotVVM applications, you can use [filters]
 
 There are more overloads of the `AddModelError` method - commonly they accept the viewmodel object and a lambda expression specifying the path to the invalid property. 
 
-There is also an overload which takes the string parameter - we recommend to avoid using this overload as it requires specifying the validation paths in DotVVM property path format - e. g. `/ChildObject/InvalidProperty`. The path must be absolute (from the root viewmodel of the page), or relative (starting from the specified object or lambda-expression property path).
+There is also a method `AddRawModelError` which takes the string parameter - we recommend to avoid using this method as it requires specifying the validation paths in DotVVM property path format - e. g. `/ChildObject/InvalidProperty`. The path must be absolute (from the root viewmodel of the page).
 
 ## Disable validation
 
