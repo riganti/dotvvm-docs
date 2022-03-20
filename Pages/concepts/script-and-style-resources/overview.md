@@ -28,7 +28,7 @@ We have the following types of resources:
 
 There are also `ViewModuleImportResource`, `ViewModuleInitResource`, and other types of resources that server internal purposes of DotVVM, and should not be used directly.
 
-> In DotVVM 3.0, all script resource are using the [defer](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script) option by default, because the client-side part of DotVVM was rewritten to use ES modules (with a System polyfill for IE11). Because of that, DotVVM scripts are deferred, and thus, all custom scripts (which in most cases depend on DotVVM) have this option enabled by default. You can set `Defer` to `false` on custom scripts.
+> From DotVVM 3.0, all script resource are using the [defer](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script) option by default, because the client-side part of DotVVM was rewritten to use ES modules (with a System polyfill for IE11). Because of that, DotVVM scripts are deferred, and thus, all custom scripts (which in most cases depend on DotVVM) have this option enabled by default. You can set `Defer` to `false` on custom scripts.
 
 ## Register resources
 
@@ -48,6 +48,8 @@ config.Resources.Register("bootstrap", new ScriptResource()
 });
 ```
 
+> See the [Single-line registration helpers](#single-line-registration-helpers) for a shorter syntax to register common resource types.
+
 In the code, you can retrieve the resource by its name using `FindResource` method. If you need to change the path for the `jquery` resource, you can do it like this:
 
 ```CSHARP
@@ -60,9 +62,11 @@ jquery.LocationFallback = null;
 
 Most resources have the `Location` property of type `IResourceLocation` which defines, how the resource file is obtained. You can use one of the following implementations:
 
-* `UrlResourceLocation` specifies just the URL where the resource can be found. You can use either absolute URL (e.g. to point to some CDN), a relative URL to your server, or even a data URI. DotVVM will render the `<script>` or `<link>` element with the exact URL you have specified.
+* `FileResourceLocation` expects the app-relative filesystem path to the script or stylesheet file. This path should not start with `/` - it would point to the root of the filesystem. DotVVM will render the `<script>` or `<link>` element which points to a DotVVM resource handler (`~/dotvvmResource/{checksum}/{resourceName}`) that will serve the resource. 
 
-* `LocalFileResourceLocation` expects the app-relative filesystem path to the script or stylesheet file. This path should not start with `/` - it would point to the root of the filesystem. DotVVM will render the `<script>` or `<link>` element which points to a DotVVM resource handler (`~/dotvvmResource/checksum/resourceName`) that will serve the resource. This is useful for bundling or advanced scenarios.
+> Since the script contains the checksum of the file, this type of resource provides works well with browser or proxy caches since whenever the resource changes, it will get a unique URL. In the debug mode, the checksum is not a part of the URL in order to allow for easy debugging experience in the browser Developer tools (the URL remains the same even if the content changes so you won't lose your breakpoints and other settings). 
+
+* `UrlResourceLocation` specifies just the URL where the resource can be found. You can use either absolute URL (e.g. to point to some CDN), a relative URL to your server, or even a data URI. DotVVM will render the `<script>` or `<link>` element with the exact URL you have specified.
 
 * `EmbeddedResourceLocation` can extract the embedded resource from an assembly. This is very useful if you need to pack some DotVVM controls in a library and embed the resources in the DLL file.
 
@@ -88,6 +92,19 @@ configuration.Resources.Register(ResourceConstants.JQueryResourceName,
 ```
 
 If the `VerifyResourceIntegrity` property on the `ScriptResource` is set to true, then it will use the `LocationFallback` to automatically compute the subresource integrity hash, for an extra guarantee that the remote resource being downloaded is the one intended.
+
+## Single-line registration helpers
+
+Because the syntax shown in the previous section is quite long, DotVVM 4.0 introduces shorter helper methods for common resource types and locations.
+
+* `config.RegisterStylesheet` - registers `StylesheetResource` with any given location
+* `config.RegisterStylesheetFile` - registers `StylesheetResource` with `FileResourceLocation`
+* `config.RegisterStylesheetUrl` - registers `StylesheetResource` with `UrlResourceLocation`
+* `config.RegisterScript` - registers `StylesheetResource` with any given location
+* `config.RegisterScriptFile` - registers `StylesheetResource` with `FileResourceLocation`
+* `config.RegisterScriptUrl` - registers `StylesheetResource` with `UrlResourceLocation`
+* `config.RegisterScriptModuleUrl` - registers `ScriptModuleResource` with `FileResourceLocation`
+* `config.RegisterScriptModuleFile` - registers `ScriptModuleResource` with `UrlResourceLocation`
 
 ## Registering jQuery
 
