@@ -1,5 +1,5 @@
 ﻿<bs:Form>
-    <bs:TextBoxGroup LabelText="Update test" Text="{value: UpdateTestText}" UpdateTextAfterKeydown="true" />
+    <bs:TextBoxGroup LabelText="Update test" Text="{value: UpdateTestText}" UpdateTextOnInput="true" />
 
     <bs:TextBoxGroup LabelText="OnChanged test" Text="{value: ChangedTestText}" Changed="{command: Changed()}" />
 </bs:Form>

@@ -1,5 +1,5 @@
 ﻿<bs:Form>
     <bs:TextBoxGroup LabelText="Password box" Text="password" Type="Password" />
 
-    <bs:TextBoxGroup LabelText="Numeric value" Text="0" ValueType="Number" />
+    <bs:TextBoxGroup LabelText="Numeric value" Text="0" />
 </bs:Form>

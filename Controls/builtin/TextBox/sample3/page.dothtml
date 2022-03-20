@@ -1,5 +1,5 @@
 <dot:TextBox Text="{value: Text}" 
-             UpdateTextAfterKeydown="true" 
+             UpdateTextOnInput="true" 
              Changed="{command: TextToUpperCase()}"/>
 
 {{value: Text}}
