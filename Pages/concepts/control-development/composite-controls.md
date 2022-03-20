@@ -72,6 +72,12 @@ In order to simplify building control hierarchy, DotVVM adds several extension m
 
 * `AppendChildren` - appends children to the control's children collection.
 
+### Using Markup controls in code-only controls
+
+If you plan to instantiate a markup control as a child inside a composite control, you should use the `MarkupControlContainer` class.
+
+See the [Markup controls](markup-controls#using-markup-controls-in-code-only-controls) page for more info. 
+
 ## See also
 
 * [Markup controls](markup-controls)

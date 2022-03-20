@@ -268,6 +268,26 @@ protected override void OnInit(IDotvvmRequestContext context)
 
 After the `Load` phase, the commands are executed and the control tree must be complete at that moment. Moreover, the control tree must be equal as it was in the previous postback, otherwise DotVVM won't be able to find the control which triggered the postback. DotVVM validates postback information and if the control doesn't exist in the page, an error page shows up and the postback is not processed.
 
+### Using Markup controls in code-only controls
+
+When you try to instantiate a markup control in your code-only control, you'll se it doesn't work correctly - only the control's code-behind class will be instantiated, but the content specified in the markup is not shown.
+
+```CSHARP
+// WRONG - do not instantiate markup controls like this
+var child = new MyMarkupControl();
+this.Children.Add(child);
+```
+
+From DotVVM 4.0, there is a special control which can help with rendering markup controls in your code-only controls - `MarkupControlContainer`.
+
+```CSHARP
+var child = new MarkupControlContainer("cc:MyControl", c => {
+    c.SetValue(MyControl.NameProperty, someValue); 
+    ...
+});
+this.Children.Add(child);
+```
+
 ## See also
 
 * [Markup controls](markup-controls)
