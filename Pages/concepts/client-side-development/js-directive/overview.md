@@ -145,12 +145,34 @@ You can use the `context` parameter to [call commands in the page from the modul
 this.context.namedCommands["MyCommand"](arg1, ...);
 ```
 
+## Export JavaScript components
+
+DotVVM can use JavaScript components exported from the module. Currently, we support [React components](../integrate-third-party-controls/react) via the `registerReactComponent` function, but the integration is generic and more frameworks will be supported in the future.
+
+The controls are exported by exporting the `$controls` object from the module. Each member of the object is treated as a component:
+
+`
+class MyModule 
+{
+    ...
+
+    $controls: {
+        MyButton: registerReactComponent(...),
+        ...
+    }
+}
+
+The controls can be instantiated using `<js:MyButton ...>` in the page.
+
+See [Integrate React components](../integrate-third-party-controls/react.md) chapter for more info.
+
 ## See also
 
 * [Call JavaScript from DotVVM](call-js-from-dotvvm)
 * [Call DotVVM from JavaScript](call-dotvvm-from-js)
 * [Use TypeScript to declare modules](use-typescript-to-declare-modules)
 * [Sample app: JS directive](https://github.com/riganti/dotvvm-samples-js-integration)
+* [Integrate React components](../integrate-third-party-controls/react)
 * [Read and modify viewmodel from JS](../read-and-modify-viewmodel-from-js)
 * [DotVVM client-side events](../dotvvm-javascript-events)
 * [ES6 modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)

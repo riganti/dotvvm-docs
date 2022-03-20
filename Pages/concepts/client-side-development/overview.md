@@ -97,6 +97,18 @@ The module exposes an object which can:
 
 See the [JS directive](js-directive/overview) chapter for more info.
 
+## Integrating React controls
+
+DotVVM supports integrating components from other client-side frameworks.
+
+Currently, there is a wrapper for **React components** - they can be hosted in DotVVM pages, access the viewmodel and trigger commands.
+
+The support for integrating components from other frameworks is generic so we expect the support for other popular client-side frameworks to come in the next versions of DotVVM. 
+
+See the [Integrate React controls](integrate-third-party-controls/react) chapter for more info.
+
+> This feature was added in DotVVM 4.0.
+
 ## Other options
 
 There are even more advanced options which may be helpful when developing custom controls or extending DotVVM. See the [Control development](~/pages/concepts/control-development/overview) section for more info.
@@ -105,6 +117,7 @@ There are even more advanced options which may be helpful when developing custom
 
 * [TypeScript declarations](typescript-declarations)
 * [JS directive](js-directive/overview)
+* [Integrate React components](integrate-third-party-controls/react)
 * [Read and modify viewmodel from JS](read-and-modify-viewmodel-from-js)
 * [DotVVM JavaScript events](dotvvm-javascript-events)
 * [Access validation errors from JS](access-validation-errors-from-js)

@@ -139,6 +139,9 @@
 	  </DocPageMenuItem>
 	  <DocPageMenuItem RouteName="dotvvm-javascript-events" PageName="DotVVM JavaScript events" LegacyPaths="advanced-javascript-events-and-client-side-viewmodel" />
 	  <DocPageMenuItem RouteName="read-and-modify-viewmodel-from-js" PageName="Read &amp; modify viewmodel from JS" />
+	  <DocPageMenuItem RouteName="integrate-third-party-controls" PageName="Integrate third-party controls">
+		<DocPageMenuItem RouteName="react" PageName="React" />
+	  </DocPageMenuItem>
 	  <DocPageMenuItem RouteName="access-validation-errors-from-js" PageName="Access validation errors from JS" />
 	</DocPageMenuItem>
 	
