@@ -48,10 +48,61 @@ The [resource](resource-binding) and [command](~/pages/concepts/respond-to-user-
 DotVVM can translate several .NET methods on basic types or collections to JavaScript, so you can safely use them in value bindings.
 
 #### String methods
+* `String.Contains(string value)` and `String.Contains(char value)`
+* `String.EndsWith(string value)` and `String.EndsWith(char value)`
+* `String.IndexOf(string value)` and `String.IndexOf(char value)`
+* `String.IndexOf(string value, int startIndex)` and `String.IndexOf(char value, int startIndex)`
+* `String.IsNullOrEmpty(string value)`
+* `String.IsNullOrWhiteSpace(string value)`
+* `String.Join(string separator, IEnumerable<string> values)` and `String.Join(char separator, IEnumerable<string> values)`
+* `String.LastIndexOf(string value)` and `String.LastIndexOf(char value)`
+* `String.LastIndexOf(string value, int startIndex)` and `String.LastIndexOf(char value, int startIndex)`
 * `String.Length`
+* `String.PadLeft(int length)`
+* `String.PadLeft(int length, char c)`
+* `String.PadRight(int length)`
+* `String.PadRight(int length, char c)`
+* `String.Replace(char oChar, char nChar)` and `String.Replace(string oStr, string nStr)`
+* `String.Split(params char[] separators)`
+* `String.Split(char separator, StringSplitOptions = StringSplitOptions.None)` and `String.Split(string separator, StringSplitOptions = StringSplitOptions.None)`
+* `String.StartsWith(string value)` and `String.StartsWith(char value)`
+* `String.ToLower()` and `String.ToLowerInvariant()`
+* `String.ToUpper()` and `String.ToUpperInvariant()`
+* `String.Trim()`
+* `String.Trim(char c)`
+* `String.TrimStart()`
+* `String.TrimStart(char c)`
+* `String.TrimEnd()`
+* `String.TrimEnd(char c)`	
+
+> DotVVM supports only `InvariantCulture` and `InvariantCultureIgnoreCase` values from the `StringComparison` enum. The default string comparing strategy is `InvariantCulture`. This is different as compared to behavior in .NET, where the default behavior is `CurrentCulture`.
+
+> DotVVM supports `None` and `RemoveEmptyEntries` options from the `StringSplitOptions` enum.
+
+> Missing overloads in some frameworks (e.g. .NET Framework) are exposed as extension methods. Therefore, all methods listed on this page can be used by all supported frameworks.
 
 #### Collection methods
 * `ICollection.Count` and `Array.Length`
+
+#### List methods
+* `List<T>.Add(T element)`
+* `List<T>.AddRange(IEnumerable<T> elements)`
+* `List<T>.Clear()`
+* `List<T>.Insert(int index, T element)`
+* `List<T>.InsertRange(int index, IEnumerable<T> elements)`
+* `List<T>.RemoveAt(int index)`
+* `List<T>.RemoveAll(Predicate<T> predicate)`
+* `List<T>.RemoveRange(int index, int count)`
+* `List<T>.Reverse()`
+* `ListExtensions.AddOrUpdate<T>(this List<T> list, T element, Func<T,bool> matcher, Func<T,T> updater)`
+   * *Note*: this method tries to update an element using `updater`. Element for updating can be selected using `matcher`. If no element matched the predicate, `element` is added to list.
+* `ListExtensions.RemoveFirst<T>(this List<T> list, Func<T,bool> predicate)`
+* `ListExtensions.RemoveLast<T>(this List<T> list, Func<T,bool> predicate)`
+
+#### Dictionary methods
+* `Dictionary<K, V>.Clear()`
+* `Dictionary<K, V>.ContainsKey(K key)`
+* `Dictionary<K, V>.Remove(K key)`
 
 #### Enum methods
 * `Enums.GetNames<TEnum>()`
@@ -62,9 +113,22 @@ DotVVM can translate several .NET methods on basic types or collections to JavaS
 #### Formatting
 * `String.Format(format, arg1 [, arg2, [ arg3]])`
 * `String.Format(format, argumentArray)`
-* `Object.ToString()`
-* `Convert.ToString()`
-* `DateTime.ToString()` and `DateTime.ToString(format)`
+* `Object.ToString(object value)`
+* `Convert.ToString(object value)`
+* `Convert.ToBoolean(object value)`
+* `Convert.ToByte(object value)`
+* `Convert.ToSByte(object value)`
+* `Convert.ToInt16(object value)`
+* `Convert.ToUInt16(object value)`
+* `Convert.ToInt32(object value)`
+* `Convert.ToUInt32(object value)`
+* `Convert.ToInt64(object value)`
+* `Convert.ToUInt64(object value)`
+* `Convert.ToSingle(object value)`
+* `Convert.ToDouble(object value)`
+* `Convert.ToDecimal(object value)`
+* `DateTime.ToString()`
+* `DateTime.ToString(format)`
 * <code><em>numericType</em>.ToString()</code> and <code><em>numericType</em>.ToString(format)</code>
 
 #### Nullable types
@@ -72,30 +136,6 @@ DotVVM can translate several .NET methods on basic types or collections to JavaS
 * `Nullable<T>.Value`
 
 #### LINQ methods
-* `Enumerable.Select<T,U>(IEnumerable<T> collection, Func<T,U> selector)`
-* `Enumerable.Where<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
-* *Note*: These methods are **new in version 3.0**.
-
-#### REST API binding methods
-* `Api.RefreshOnChange`
-* `Api.RefreshOnEvent`
-* `Api.PushEvent` 
-* *Note*: See [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api-bindings/overview) for more info
-
-### Provide custom method translators
-
-It is possible to register custom translators for any method. See [Provide custom JavaScript translators](~/pages/concepts/control-development/custom-javascript-translators) for more information.
-
-### Use custom .NET extension methods (**new in version 3.1**)
-
-Whenever you need to use custom .NET extension methods, you need to provide information about where should DotVVM search for these methods. This can be achieved using the `@import` directive, using which it is possible provide namespaces that should be searched for extension methods. Furthermore, you can also provide method translators for custom extension methods. That way it is possible to use custom extension methods safely inside value bindings.
-
-Since we are adding a lot of methods from `System.Linq` namespace, we decided to include this namespace to the default DotVVM namespaces for extension methods lookup. Therefore, it is not necessary to write `@import System.Linq` in your `DotHTML` files.
-
-### Additional .NET methods supported since DotVVM 3.1
-
-#### LINQ methods
-
 * `Enumerable.All<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
 * `Enumerable.Any<T>(IEnumerable<T> collection)`
 * `Enumerable.Any<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
@@ -114,57 +154,12 @@ Since we are adding a lot of methods from `System.Linq` namespace, we decided to
 * `Enumerable.OrderByDescending<T,U>(IEnumerable<T> collection, Func<T,U> selector)`
    * *Note*: this method is restricted to primitive types
    * *Note*: internally, the sorting algorithm is stable. Therefore, if you need to sort, for example using multiple keys, you write something like: `Collection.OrderByDescending(e => e.SecondaryKey).OrderByDescending(e => e.PrimaryKey)`
+* `Enumerable.Select<T, U>(IEnumerable<T> collection, Func<T, U> selector)`
 * `Enumerable.Skip<T>(IEnumerable<T> collection, int count)`
 * `Enumerable.Take<T>(IEnumerable<T> collection, int count)`
 * `Enumerable.ToArray<T>(IEnumerable<T> collection)`
 * `Enumerable.ToList<T>(IEnumerable<T> collection)`
-
-#### List methods
-* `List<T>.Add(T element)`
-* `List<T>.AddRange(IEnumerable<T> elements)`
-* `List<T>.Clear()`
-* `List<T>.Insert(int index, T element)`
-* `List<T>.InsertRange(int index, IEnumerable<T> elements)`
-* `List<T>.RemoveAt(int index)`
-* `List<T>.RemoveAll(Predicate<T> predicate)`
-* `List<T>.RemoveRange(int index, int count)`
-* `List<T>.Reverse()`
-* `ListExtensions.AddOrUpdate<T>(this List<T> list, T element, Func<T,bool> matcher, Func<T,T> updater)`
-   * *Note*: this method tries to update an element using `updater`. Element for updating can be selected using `matcher`. If no element matched the predicate, `element` is added to list.
-* `ListExtensions.RemoveFirst<T>(this List<T> list, Func<T,bool> predicate)`
-* `ListExtensions.RemoveLast<T>(this List<T> list, Func<T,bool> predicate)`
-
-#### Dictionary methods
-* `Dictionary<K,V>.Clear()`
-* `Dictionary<K,V>.ContainsKey(K key)`
-* `Dictionary<K,V>.Remove(K key)`
-
-#### String methods
-* `String.Contains(string value)` and `String.Contains(char value)`
-* `String.EndsWith(string value)` and `String.EndsWith(char value)`
-* `String.IndexOf(string value)` and `String.IndexOf(char value)`
-* `String.IndexOf(string value, int startIndex)` and `String.IndexOf(char value, int startIndex)`
-* `String.IsNullOrEmpty(string value)`
-* `String.Join(string separator, IEnumerable<string> values)` and `String.Join(char separator, IEnumerable<string> values)`
-* `String.LastIndexOf(string value)` and `String.LastIndexOf(char value)`
-* `String.LastIndexOf(string value, int startIndex)` and `String.LastIndexOf(char value, int startIndex)`
-* `String.Replace(char oChar, char nChar)` and `String.Replace(string oStr, string nStr)`
-* `String.Split(params char[] separators)`
-* `String.Split(char separator, StringSplitOptions = StringSplitOptions.None)` and `String.Split(string separator, StringSplitOptions = StringSplitOptions.None)`
-* `String.StartsWith(string value)` and `String.StartsWith(char value)`
-* `String.ToLower()` and `String.ToLowerInvariant()`
-* `String.ToUpper()` and `String.ToUpperInvariant()`
-* *Note*: DotVVM supports only `InvariantCulture` and `InvariantCultureIgnoreCase` values from the `StringComparison` enum. The default string comparing strategy is `InvariantCulture`. This is different as compared to behavior in .NET, where the default behavior is `CurrentCulture`.
-* *Note*: DotVVM supports `None` and `RemoveEmptyEntries` options from the `StringSplitOptions` enum.
-* *Note*: Missing overloads in some frameworks (e.g. .NET Framework) are exposed as extension methods. Therefore, all methods listed on this page can be used by all supported frameworks.
-
-#### Math methods
-* Basic: `Math.Abs`, `Math.Exp`, `Math.Max`, `Math.Min`, `Math.Pow` `Math.Sign`, `Math.Sqrt`
-* Rounding: `Math.Ceiling`, `Math.Floor`, `Math.Round`, `Math.Trunc`
-* Logarithmic: `Math.Log`, `Math.Log10`
-* Trigonometric: `Math.Acos`, `Math.Asin`, `Math.Atan`, `Math.Atan2`, `Math.Cos`, `Math.Cosh`, `Math.Sin`, `Math.Sinh`, `Math.Tan`, `Math.Tanh`
-
-### Additional .NET methods supported since DotVVM 3.2
+* `Enumerable.Where<T>(IEnumerable<T> collection, Func<T, bool> predicate)`
 
 ### DateTime property getters
 * `DateTime.Year`
@@ -175,32 +170,34 @@ Since we are adding a lot of methods from `System.Linq` namespace, we decided to
 * `DateTime.Second`
 * `DateTime.Millisecond`
 
-### String methods
-* `string.Contains(string value, StringComparison options)`
-* `string.EndsWith(string value, StringComparison options)`
-* `string.IndexOf(string value, StringComparison options)`
-* `string.IndexOf(string value, int startIndex, StringComparison options)`
-* `String.IsNullOrWhiteSpace(string value)`
-* `string.LastIndexOf(string value, StringComparison options)`
-* `string.LastIndexOf(string value, int startIndex, StringComparison options)`
-* `string.PadLeft(int length)`
-* `string.PadLeft(int length, char c)`
-* `string.PadRight(int length)`
-* `string.PadRight(int length, char c)`
-* `string.StartsWith(string value, StringComparison options)`
-* `string.Trim()`
-* `string.Trim(char c)`
-* `string.TrimStart()`
-* `string.TrimStart(char c)`
-* `string.TrimEnd()`
-* `string.TrimEnd(char c)`
-* *Note*: for overloads with `StringComparison` only `InvariantCulture` and `InvariantCultureIgnoreCase` are supported. Furthermore, the value `InvariantCulture` is used by default, unless specified otherwise.
-* *Note*: Missing overloads in some frameworks (e.g. .NET Framework) are exposed as extension methods. Therefore, all methods listed on this page can be used by all supported frameworks.
+#### Math methods
+* Basic: `Math.Abs`, `Math.Exp`, `Math.Max`, `Math.Min`, `Math.Pow` `Math.Sign`, `Math.Sqrt`
+* Rounding: `Math.Ceiling`, `Math.Floor`, `Math.Round`, `Math.Trunc`
+* Logarithmic: `Math.Log`, `Math.Log10`
+* Trigonometric: `Math.Acos`, `Math.Asin`, `Math.Atan`, `Math.Atan2`, `Math.Cos`, `Math.Cosh`, `Math.Sin`, `Math.Sinh`, `Math.Tan`, `Math.Tanh`
+
+#### REST API binding methods
+* `Api.RefreshOnChange`
+* `Api.RefreshOnEvent`
+* `Api.PushEvent` 
+
+> See [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api-bindings/overview) for more info
+
+### Provide custom method translators
+
+It is possible to register custom translators for any method. See [Provide custom JavaScript translators](~/pages/concepts/control-development/custom-javascript-translators) for more information.
+
+### Use custom .NET extension methods
+
+Whenever you need to use custom .NET extension methods, you need to provide information about where should DotVVM search for these methods. This can be achieved using the `@import` directive, using which it is possible provide namespaces that should be searched for extension methods. Furthermore, you can also provide method translators for custom extension methods. That way it is possible to use custom extension methods safely inside value bindings.
+
+Since we are adding a lot of methods from `System.Linq` namespace, we decided to include this namespace to the default DotVVM namespaces for extension methods lookup. Therefore, it is not necessary to write `@import System.Linq` in your `DotHTML` files.
 
 ### WebUtility methods
 * `WebUtility.UrlEncode(string value)`
 * `WebUtility.UrlDecode(string value)`
-* *Note*: to use methods above, you need to specify `@import System.Net`.
+
+> In order to use methods above, you need to specify `@import System.Net`.
 
 ## See also
 
