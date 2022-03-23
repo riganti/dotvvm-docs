@@ -1,6 +1,6 @@
 # DotVVM for Visual Studio overview
 
-[DotVVM for Visual Studio](https://www.dotvvm.com/products/visual-studio-extensions) is an extension for **Visual Studio 2019 and 2017** which adds support for DotVVM projects.
+[DotVVM for Visual Studio](https://www.dotvvm.com/products/visual-studio-extensions) is an extension for **Visual Studio 2022 and 2019** which adds support for DotVVM projects.
 
 The extension adds DotVVM project templates, syntax highlighting and IntelliSense in DotHTML files, and more. See the [complete list of features](https://www.dotvvm.com/products/visual-studio-extensions).
 
@@ -26,7 +26,7 @@ You can **try the subscription of DotVVM for Visual Studio for 30 days for free*
 
 ## Install the extension
 
-**The extension supports the latest releases of Visual Studio 2019 and 2017.** If you don't see the extension in the _Extension Manager_ window, make sure you have installed the **latest updates of VS**.
+**The extension supports the latest releases of Visual Studio 2022 and 2019.** If you don't see the extension in the _Extension Manager_ window, make sure you have installed the **latest updates of VS**.
 
 [Get DotVVM for Visual Studio](https://www.dotvvm.com/get-dotvvm)
 
