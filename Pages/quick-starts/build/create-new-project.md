@@ -1,10 +1,10 @@
 # Create a new project
 
-The easiest and most convenient way to work with DotVVM is to use **Visual Studio 2019** (or 2017). 
+The easiest and most convenient way to work with DotVVM is to use **Visual Studio 2022** (or 2019). 
 
 If you are using a different IDE or code editor (for example, Visual Studio Code), you can create a new DotVVM application from the command line.
 
-## Create a DotVVM project using Visual Studio 2019
+## Create a DotVVM project using Visual Studio 2022
 
 ### Prerequisites
 
