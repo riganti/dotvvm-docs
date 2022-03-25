@@ -244,7 +244,7 @@
             Extensions for controls that render a Bootstrap Button.
             </summary>
         </member>
-        <member name="M:DotVVM.Framework.Controls.Bootstrap4.BootstrapButtonExtensions.AddCommonButtonAttributesToRender``1(``0,DotVVM.Framework.Controls.IHtmlWriter,DotVVM.Framework.Hosting.IDotvvmRequestContext,DotVVM.Framework.Binding.DotvvmProperty,DotVVM.Framework.Binding.DotvvmProperty,DotVVM.Framework.Binding.DotvvmProperty)">
+        <member name="M:DotVVM.Framework.Controls.Bootstrap4.BootstrapButtonExtensions.AddCommonButtonAttributesToRender``1(``0,DotVVM.Framework.Controls.IHtmlWriter,DotVVM.Framework.Hosting.IDotvvmRequestContext,DotVVM.Framework.Binding.DotvvmProperty,DotVVM.Framework.Binding.DotvvmProperty,DotVVM.Framework.Binding.DotvvmProperty,DotVVM.Framework.Controls.Bootstrap.IBootstrapCss)">
             <summary>
             Adds all common bootstrap button attributes to render
             </summary>
@@ -530,6 +530,12 @@
             A base for Bootstrap CheckBox controls which extends default CheckBox control.
             </summary>
         </member>
+        <member name="P:DotVVM.Framework.Controls.Bootstrap4.CheckBoxBase.RenderLabel">
+            <summary>
+            Gets or sets whether the label will be rendered.
+            If set to null than the label will be rendered if needed.
+            </summary>
+        </member>
         <member name="T:DotVVM.Framework.Controls.Bootstrap4.CloseButton">
             <summary>
             Renders an universal close button for modal dialogs and alerts.
@@ -690,6 +696,11 @@
             Gets or sets whether the control is enabled.
             </summary>
         </member>
+        <member name="P:DotVVM.Framework.Controls.Bootstrap4.DateTimePicker.PickOnly">
+            <summary>
+            Gets or sets whether the typing into textbox will be allowed.
+            </summary>
+        </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap4.DotvvmBootstrapOptions.IncludeBootstrapResourcesInPage">
             <summary>
             Gets or sets a value indicating whether DotVVM should include Bootstrap javascript and CSS files in the page automatically.
@@ -701,9 +712,14 @@
             Gets or sets a value indicating whether DotVVM should include the jQuery script file in the page automatically.
             </summary>
         </member>
+        <member name="P:DotVVM.Framework.Controls.Bootstrap4.DotvvmBootstrapOptions.InheritCustomCssFromParentControl">
+            <summary>
+            If no Bootstrap Custom Css is set on current control, than inherit settings from parent. If disabled default Bootstrap css will be used.
+            </summary>
+        </member>
         <member name="M:DotVVM.Framework.Controls.Bootstrap4.DotvvmBootstrapOptions.CreateDefaultSettings(System.Boolean)">
             <summary>
-            Creates the default settings of Bootstrap for DotVVM.
+            Creates the default settings of Bootstrap for DotVVM with custom BootstrapCssImplementation.
             </summary>
         </member>
         <member name="T:DotVVM.Framework.Controls.Bootstrap4.DropDownButton">
@@ -933,6 +949,11 @@
             Gets or sets the size of controls in the form group.
             </summary>
         </member>
+        <member name="P:DotVVM.Framework.Controls.Bootstrap4.FormGroup.ControlID">
+            <summary>
+            Gets or sets the ID of the main control inside the FormGroup to be associated with the label.
+            </summary>
+        </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap4.FormGroup.LabelSize">
             <summary>
             Gets or sets the size of size the label area for all screen sizes. This applies only to the Horizontal forms.
@@ -971,6 +992,26 @@
         <member name="P:DotVVM.Framework.Controls.Bootstrap4.FormGroup.ContentTemplate">
             <summary>
             Gets or sets the content of the form group.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Controls.Bootstrap4.FormGroup.GenerateControlID(DotVVM.Framework.Hosting.IDotvvmRequestContext)">
+            <summary>
+            Generates deterministic unique Control ID
+            </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Controls.Bootstrap4.FormGroup.TryApplyControlID">
+            <summary>
+            Tries to apply the generated ControlID to inner control.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Controls.Bootstrap4.FormGroup.TrySuggestControlID">
+            <summary>
+            Tries to determine meaningful control ID from the inner control bindings.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Controls.Bootstrap4.FormGroup.TryGetControlIDFromBinding(DotVVM.Framework.Controls.DotvvmControl,DotVVM.Framework.Binding.DotvvmProperty)">
+            <summary>
+            Helps with extracting the control ID from a data-binding property.
             </summary>
         </member>
         <member name="T:DotVVM.Framework.Controls.Bootstrap4.RadioButtonFormGroup">
@@ -1054,7 +1095,7 @@
             Gets or sets the mode of the text field.
             </summary>
         </member>
-        <member name="P:DotVVM.Framework.Controls.Bootstrap4.TextBoxFormGroup.UpdateTextAfterKeydown">
+        <member name="P:DotVVM.Framework.Controls.Bootstrap4.TextBoxFormGroup.UpdateTextOnInput">
             <summary>
             Gets or sets whether the viewmodel property will be updated after the key is pressed. 
             By default, the viewmodel is updated after the control loses its focus.
@@ -1176,6 +1217,16 @@
             Trims all classes and joins them with space.
             </summary>
         </member>
+        <member name="T:DotVVM.Framework.Controls.Bootstrap4.Icon">
+            <summary>
+            Renders a Bootstrap icon component.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.Bootstrap4.Icon.Type">
+            <summary>
+            Gets or sets the used icon.
+            </summary>
+        </member>
         <member name="T:DotVVM.Framework.Controls.Bootstrap4.Image">
             <summary>
             Renders an image and allows to apply Bootstrap CSS classes.
@@ -1209,16 +1260,6 @@
         <member name="P:DotVVM.Framework.Controls.Bootstrap4.SimpleImage.Height">
             <summary>
             Gets or sets the height of the image.
-            </summary>
-        </member>
-        <member name="T:DotVVM.Framework.Controls.Bootstrap4.Icon">
-            <summary>
-            Renders a Bootstrap icon component.
-            </summary>
-        </member>
-        <member name="T:DotVVM.Framework.Controls.Bootstrap4.Icon.Type">
-            <summary>
-             Gets or sets the used icon.
             </summary>
         </member>
         <member name="T:DotVVM.Framework.Controls.Bootstrap4.InputGroup">
@@ -1816,6 +1857,16 @@
             Gets or sets text that will be put in header. If HeaderImage is set this text will be used as alternate image text.
             </summary>
         </member>
+        <member name="P:DotVVM.Framework.Controls.Bootstrap4.ResponsiveNavigation.HeaderImageAltText">
+            <summary>
+            Gets or sets alternative text for image.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.Bootstrap4.ResponsiveNavigation.HeaderImageTooltip">
+            <summary>
+            Gets or sets Tooltip (Title) for image.
+            </summary>
+        </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap4.ResponsiveNavigation.HeaderImageUrl">
             <summary>
             Gets or sets image URL that will be put in header. If HeaderText is set it will be used as alternate image text.
@@ -1824,6 +1875,11 @@
         <member name="P:DotVVM.Framework.Controls.Bootstrap4.ResponsiveNavigation.HeaderLinkUrl">
             <summary>
             Gets or sets URL which will be Header linked to.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.Bootstrap4.ResponsiveNavigation.HeaderTemplate">
+            <summary>
+            Gets or sets inner content of header link.
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap4.ResponsiveNavigation.CollapseButtonTemplate">
@@ -1973,6 +2029,12 @@
         <member name="T:DotVVM.Framework.Controls.Bootstrap4.RadioButtonBase">
             <summary>
             A base for Bootstrap RadioButton controls which extends default RadioButton control.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.Bootstrap4.RadioButtonBase.RenderLabel">
+            <summary>
+            Gets or sets whether the label will be rendered.
+            If set to null than the label will be rendered if needed.
             </summary>
         </member>
         <member name="T:DotVVM.Framework.Controls.Bootstrap4.Range">
@@ -2201,6 +2263,11 @@
             Gets or sets the size of the TextBox.
             </summary>
         </member>
+        <member name="T:DotVVM.Framework.Controls.Bootstrap4.Toast">
+            <summary>
+            Renders a Bootstrap Toast notification.
+            </summary>
+        </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap4.Toast.HeaderTemplate">
             <summary>
             Gets or sets the content of the header.
@@ -2250,6 +2317,13 @@
         <member name="P:DotVVM.Framework.Controls.Bootstrap4.Toast.Animation">
             <summary>
             Gets or sets which animation will be used. Animation can be also disable by setting animation to None.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.Bootstrap4.ConnectedElementDecoratorBase.AutoCloseMonitoringDepth">
+            <summary>
+            Gets or sets how many levels of ancestors would be monitored for element removal.
+            Setting this property can resolve that Tooltip | Popover would not close after its parent element was removed.
+            Setting this property to high number can have performance impact for some pages.
             </summary>
         </member>
         <member name="T:DotVVM.Framework.Controls.Bootstrap4.Tooltip">
@@ -2311,6 +2385,16 @@
         <member name="M:DotVVM.Framework.Controls.Bootstrap4.BootstrapExtensions.AddBootstrap4Configuration(DotVVM.Framework.Configuration.DotvvmConfiguration,DotVVM.Framework.Controls.Bootstrap4.DotvvmBootstrapOptions)">
             <summary>
             Extends the DotVVM configuration object with settings for Bootstrap for DotVVM library.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Controls.Bootstrap4.BootstrapExtensions.RegisterBootstrapCss(DotVVM.Framework.Compilation.Styles.StyleRepository,DotVVM.Framework.Controls.Bootstrap.IBootstrapCss,DotVVM.Framework.Configuration.DotvvmConfiguration)">
+            <summary>
+            Registers provided Bootstrap custom css for every control.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Controls.Bootstrap4.BootstrapExtensions.RegisterBootstrapCss``1(DotVVM.Framework.Compilation.Styles.IStyleBuilder{``0},DotVVM.Framework.Controls.Bootstrap.IBootstrapCss,DotVVM.Framework.Configuration.DotvvmConfiguration)">
+            <summary>
+            Registers provided Bootstrap custom css for TControl.
             </summary>
         </member>
         <member name="T:DotVVM.Framework.Controls.Bootstrap4.Localization">

@@ -44,6 +44,15 @@
             Gets or sets the command that will be triggered when the alert is dismissed.
             </summary>
         </member>
+        <member name="M:DotVVM.Framework.Controls.Bootstrap.Alert.AddVisibleAttributeOrBinding(DotVVM.Framework.Controls.HtmlGenericControl.RenderState@,DotVVM.Framework.Controls.IHtmlWriter)">
+            <inheritdoc />
+        </member>
+        <member name="M:DotVVM.Framework.Controls.Bootstrap.Alert.AddAttributesToRender(DotVVM.Framework.Controls.IHtmlWriter,DotVVM.Framework.Hosting.IDotvvmRequestContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:DotVVM.Framework.Controls.Bootstrap.Alert.RenderContents(DotVVM.Framework.Controls.IHtmlWriter,DotVVM.Framework.Hosting.IDotvvmRequestContext)">
+            <inheritdoc />
+        </member>
         <member name="T:DotVVM.Framework.Controls.Bootstrap.Badge">
             <summary>
             Renders a Bootstrap badge component.
@@ -126,7 +135,7 @@
             </summary>
             <param name="context"></param>
         </member>
-        <member name="M:DotVVM.Framework.Controls.Bootstrap.BootstrapItemsControl.CreateItem">
+        <member name="M:DotVVM.Framework.Controls.Bootstrap.BootstrapItemsControl.CreateItem(System.Func{System.Int32,System.String},System.Nullable{System.Int32})">
             <summary>
             Creates the default item.
             </summary>
@@ -565,14 +574,14 @@
             Gets or sets a value indicating whether the control is enabled and can be modified.
             </summary>
         </member>
-        <member name="P:DotVVM.Framework.Controls.Bootstrap.ComboBoxGroup.DisplayMember">
+        <member name="P:DotVVM.Framework.Controls.Bootstrap.ComboBoxGroup.ItemTextBinding">
             <summary>
-            Gets or sets the name of property in the DataSource collection that will be displayed in the control.
+            The expression of DataSource item that will be displayed in the control.
             </summary>
         </member>
-        <member name="P:DotVVM.Framework.Controls.Bootstrap.ComboBoxGroup.ValueMember">
+        <member name="P:DotVVM.Framework.Controls.Bootstrap.ComboBoxGroup.ItemValueBinding">
             <summary>
-            Gets or sets the name of property in the DataSource collection that will be passed to the SelectedValue property when the item is selected.
+            The expression of DataSource item that will be passed to the SelectedValue property when the item is selected.
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap.ComboBoxGroup.SelectionChanged">
@@ -949,7 +958,7 @@
             Use this property in combination with the DataSource property.
             </summary>
         </member>
-        <member name="M:DotVVM.Framework.Controls.Bootstrap.ListGroup.CreateItem">
+        <member name="M:DotVVM.Framework.Controls.Bootstrap.ListGroup.CreateItem(System.Func{System.Int32,System.String},System.Nullable{System.Int32})">
             <summary>
             Creates the default item.
             </summary>
@@ -1732,11 +1741,6 @@
             <summary>
             Gets or sets whether the viewmodel property will be updated after the key is pressed.
             By default, the viewmodel is updated after the control loses its focus.
-            </summary>
-        </member>
-        <member name="P:DotVVM.Framework.Controls.Bootstrap.TextBoxGroup.ValueType">
-            <summary>
-            Gets or sets the type of value being formatted - Number or DateTime.
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.Bootstrap.TextBoxGroup.Changed">
