@@ -1,5 +1,20 @@
 # Release notes
 
+## v4.0.539.0
+* Added initial support for string interpolation (syntax highlighting)
+* Updated project templates to DotVVM 4.0
+* Updated YouTube channel link in templates
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.11)
+* Version for Visual Studio 2022 (17.1.2)
+* Version for Visual Studio 2022 Preview (17.2.0 Preview 2.1)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019.RTM.4.0.539.0.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.RTM.4.0.539.0.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.539.0.vsix)
+
 ## v4.0.538.0
 
 ### Compatibility
