@@ -1,9 +1,10 @@
 # Release notes
 
-## v4.0.540.0
+## v4.0.541.0
 * Fixed "Manage DotVVM packages" button
 * Fixed "Add DotVVM" button
 * Fixed F12 shortcut to enter control definition
+* Fixed breaking changes in some dialogs
 * Improvements in the way we work with file system and access NuGet package references
 
 ### Compatbility
@@ -12,9 +13,9 @@
 * Version for Visual Studio 2022 Preview (17.2.0 Preview 4.0)
 
 ### Assets
-Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019.RTM.4.0.540.0.vsix) </br>
-Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.RTM.4.0.540.0.vsix) </br>
-Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.540.0.vsix)
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019.RTM.4.0.541.0.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.RTM.4.0.541.0.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.541.0.vsix)
 
 ## v4.0.539.0
 * Added initial support for string interpolation (syntax highlighting)
