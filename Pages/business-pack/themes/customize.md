@@ -13,7 +13,7 @@ For example, the **CP** might look like this: `--bp-padding-horizontal_large`. E
 All **CP** are set on the pseudo-element `:root` by default, which is in the **DOM** (Document Object Model) at the same level as the html element. For easy override of the default **DotVVM Business Pack** style, we recommend that you create a a custom CSS class (e.g. `.bp-override`) and set  it on the body element.
 
 ```HTML
-<body class=“bp-override“>
+<body class="bp-override">
   <!-- Page content -->
 </body>
 ```
