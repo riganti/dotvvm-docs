@@ -120,7 +120,7 @@ The columns can specify the following options:
 * `.WithDataType(dataType)` method specifies the data type of the column. The possible values are `Text`, `Number`, `Boolean`, `DateTime` and `TimeSpan`. 
 * `.WithIgnore()` method excludes the column from the export.
 * `.WithValueTransform<TValue>(v => ...)` allows to pre-process the value in the column before it is exported. This allows you to perform any custom conversions.
-* `.WithRule(onWorksheetExporting, onDataExporting, onDataExported)` methods allows you to hook into specific phases of the export. You have access to the worksheet objects and you can perform any customization to the exported file.
+* `.WithRule(onDataTransforming, onColumnExporting, onColumnExported, onCellExporting, onCellExported)` methods allows you to hook into specific phases of the export. You have access to the worksheet objects and you can perform any customization to the exported file.
 
 ### Column value providers
 
