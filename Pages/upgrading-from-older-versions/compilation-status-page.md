@@ -6,7 +6,7 @@
 
 ## How it works
 
-Visit `_dotvvm/diagnostics/status` to see the list of all `.dothtml` pages, controls and master pages.
+Visit `_dotvvm/diagnostics/compilation` to see the list of all `.dothtml` pages, controls and master pages.
 
 DotVVM views are compiled on demand when the page requests a DotHTML file, so you probably won't see any status for most pages initially. Press the **Compile All** button to initiate compilation of all pages and controls, so see all errors in the application.
 
