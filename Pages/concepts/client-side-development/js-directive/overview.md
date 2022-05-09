@@ -151,7 +151,7 @@ DotVVM can use JavaScript components exported from the module. Currently, we sup
 
 The controls are exported by exporting the `$controls` object from the module. Each member of the object is treated as a component:
 
-`
+```JS
 class MyModule 
 {
     ...
@@ -161,6 +161,7 @@ class MyModule
         ...
     }
 }
+```
 
 The controls can be instantiated using `<js:MyButton ...>` in the page.
 
