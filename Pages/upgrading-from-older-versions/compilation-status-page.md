@@ -48,7 +48,7 @@ config.Diagnostics.CompilationPage.AuthorizationPredicate =
 
 If manual checking using status page is not an option, then the status page API can be used. This can be especially useful for automated checking of the compilation status before/after deployment to the production.
 
-The API can be found (in default configuration) at After registration using `_dotvvm/diagnostics/status/api`.  
+The API can be found (in default configuration) at After registration using `_dotvvm/diagnostics/compilation/api`.  
 
 The API is enabled using the `IsApiEnabled` option.
 
