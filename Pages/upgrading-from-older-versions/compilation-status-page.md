@@ -6,7 +6,7 @@
 
 ## How it works
 
-Visit `_dotvvm/diagnostics/status` to see the list of all `.dothtml` pages, controls and master pages.
+Visit `_dotvvm/diagnostics/compilation` to see the list of all `.dothtml` pages, controls and master pages.
 
 DotVVM views are compiled on demand when the page requests a DotHTML file, so you probably won't see any status for most pages initially. Press the **Compile All** button to initiate compilation of all pages and controls, so see all errors in the application.
 
@@ -48,7 +48,7 @@ config.Diagnostics.CompilationPage.AuthorizationPredicate =
 
 If manual checking using status page is not an option, then the status page API can be used. This can be especially useful for automated checking of the compilation status before/after deployment to the production.
 
-The API can be found (in default configuration) at After registration using `_dotvvm/diagnostics/status/api`.  
+The API can be found (in default configuration) at After registration using `_dotvvm/diagnostics/compilation/api`.  
 
 The API is enabled using the `IsApiEnabled` option.
 
