@@ -1,5 +1,22 @@
 # Release notes
 
+## v4.0.543.0
+* Added reliable way to query referenced DotVVM Framework version
+* Improved stability by fixing exceptions being thrown on various actions
+* Improved syntax highlighting for nested string interpolation
+* Fixed auto-completion issues for directives
+* Fixed binding end recognition
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.14)
+* Version for Visual Studio 2022 (17.2.0)
+* Version for Visual Studio 2022 Preview (17.3.0 Preview 1.0)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019.RTM.4.0.543.0.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.RTM.4.0.543.0.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.543.0.vsix)
+
 ## v4.0.541.0
 * Fixed "Manage DotVVM packages" button
 * Fixed "Add DotVVM" button
@@ -7,7 +24,7 @@
 * Fixed breaking changes in some dialogs
 * Improvements in the way we work with file system and access NuGet package references
 
-### Compatbility
+### Compatibility
 * Version for Visual Studio 2019 (16.11.13)
 * Version for Visual Studio 2022 (17.1.5)
 * Version for Visual Studio 2022 Preview (17.2.0 Preview 4.0)
