@@ -165,7 +165,7 @@ class MyModule
 
 The controls can be instantiated using `<js:MyButton ...>` in the page.
 
-See [Integrate React components](../integrate-third-party-controls/react.md) chapter for more info.
+See [Integrate React components](../integrate-third-party-controls/react) chapter for more info.
 
 ## See also
 
