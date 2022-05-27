@@ -2,7 +2,7 @@
 
 The icons used by the control can be customized using the following inner elements:
 
-* `ToggleIcon` represents an icon that opens the popup with color scale and predefined colors. The default is `Pallete` icon.
+* `ToggleIcon` represents an icon that opens the popup with color scale and predefined colors. The default is `Palette` icon.
 
 * `UnselectIcon` represents an icon that allows the user to deselect the color. The default is `Close` icon.
 

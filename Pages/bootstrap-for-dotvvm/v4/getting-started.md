@@ -47,15 +47,15 @@ Or specify your own IResources.
 ```CSHARP
             var options = new DotvvmBootstrapOptions()
             {
-                BootstrapJsResource = new ScriptResource(new UrlResourceLocation("PATH TO CUSTOM BOOSTRAP.JS")),
-                BootstrapCssResource = new StylesheetResource(new UrlResourceLocation("PATH OT CUSTOM BOOSTRAP.CSS")),
+                BootstrapJsResource = new ScriptResource(new UrlResourceLocation("PATH TO CUSTOM BOOTSTRAP.JS")),
+                BootstrapCssResource = new StylesheetResource(new UrlResourceLocation("PATH OT CUSTOM BOOTSTRAP.CSS")),
                 JQueryResource = new ScriptResource(new UrlResourceLocation("PATH TO CUSTOM JQUERY.JS")),
                 IncludeBootstrapResourcesInPage = true,
                 IncludeJQueryResourceInPage = true
             };
 
             //var options = DotvvmBootstrapOptions.CreateDefaultSettings();
-            //options.BootstrapJsResource = new ScriptResource(new UrlResourceLocation("PATH TO CUSTOM BOOSTRAP.JS"));
+            //options.BootstrapJsResource = new ScriptResource(new UrlResourceLocation("PATH TO CUSTOM BOOTSTRAP.JS"));
 
 
             // bootstrap configuration

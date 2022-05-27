@@ -28,7 +28,7 @@ public static readonly DotvvmProperty ExampleCapabilityProperty =
 <cc:MyControl MyProperty="A" MyAnotherProperty="something" />
 ``` 
 
-To access the properties from C# code, you can use the `control.GetCapability<ExampleCapability>()` method. Alternativelly, to get only one of the properties, use `control.GetValue<string>(nameof(ExampleCapability.MyProperty))`. 
+To access the properties from C# code, you can use the `control.GetCapability<ExampleCapability>()` method. Alternatively, to get only one of the properties, use `control.GetValue<string>(nameof(ExampleCapability.MyProperty))`. 
 
 To set a capability into a control, the `control.SetCapability(...)` method is available.
 

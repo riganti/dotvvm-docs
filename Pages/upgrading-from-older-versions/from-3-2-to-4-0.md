@@ -18,7 +18,7 @@ In case of .NET Core, upgrade to **.NET Core 3.1**, or better **.NET 6**.
 
 ### Validation changes
 
-If you have been adding validation errors into `Context.ModelState.Errors` collection directly, this is now not supported. Plase use `Context.AddModelError(this, vm => vm.SomeProperty.SomeProperty...)` to add errors in the collection.
+If you have been adding validation errors into `Context.ModelState.Errors` collection directly, this is now not supported. Please use `Context.AddModelError(this, vm => vm.SomeProperty.SomeProperty...)` to add errors in the collection.
 
 If you need to build your validation paths as strings (in `IValidatableObject` implementation), use the `CreateValidationResult` extension method which will help you to build the path.
 
@@ -65,7 +65,7 @@ See the [Authentication and authorization](~/pages/concepts/security/authenticat
 
 ### Removed support for virtual control properties 
 
-Prior to DotVVM 4.0, DotVVM controls can specify properties without the property decriptors (`DotvvmProperty.Register` or `DotvvmPropertyGroup.Register`) - DotVVM inferred these descriptors itself.
+Prior to DotVVM 4.0, DotVVM controls can specify properties without the property descriptors (`DotvvmProperty.Register` or `DotvvmPropertyGroup.Register`) - DotVVM inferred these descriptors itself.
 
 The feature was not used frequently and caused problems on some places, so we decided to remove it. Add the property descriptors with proper calls to `DotvvmProperty.Register`.
 
@@ -80,7 +80,7 @@ If you want to update the bound viewmodel property, you have to do it explicitly
 The `SetControlProperty` method in the [server-side style](~/pages/concepts/dothtml-markup/server-side-styles) registration has now a different signature. 
 The call `.SetControlProperty<MyControl>(TheProperty)` is replaced by `.SetControlProperty(TheProperty, new MyControl())`. Also, you'll need to add additional using so the extension method is found.
 
-### DotVVM error page displays only errors that occured in DotVVM
+### DotVVM error page displays only errors that occurred in DotVVM
 
 The DotVVM error page now only displays errors coming from DotVVM pages and presenters, not from the subsequent middlewares. If you are using both DotVVM and other technology in your backend, add the ASP.NET Error Page too.
 
