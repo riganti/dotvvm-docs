@@ -21,7 +21,7 @@ This restriction is done by calling the `Context.Authorize()` method in the `Ini
 
 > Prior to DotVVM 4.0, the `[DotVVM.Framework.Runtime.Filters.Authorize]` attribute was used for this. We've decided to make the attribute obsolete (even though it will remain functional and stay in the framework forever) as its usage was not intuitive in all cases. For example, if you call a method "protected" by this attribute yourself, the attribute is not respected and the method is just called. We wanted to make the authorization explicit.   
 
-The `Context.Authorize()` method can be called:
+The `Context.Authorize()` method can be called in:
 
 * the `Init` method of the viewmodel; the entire page will be accessible only to the authorized users
 

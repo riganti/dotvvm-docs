@@ -26,7 +26,7 @@ If you want to switch to the **Bootstrap 4** theme, change the line to this:
 options.AddBusinessPack(theme: BusinessPackTheme.Bootstrap4);
 ```
 
-The `Boostrap4` theme doesn't require Boostrap 4 CSS files to be present in the application - all controls are still using the Business Pack CSS styles and the Boostrap 4 look & feel is just emulated.
+The `Boostrap4` theme doesn't require Bootstrap 4 CSS files to be present in the application - all controls are still using the Business Pack CSS styles and the Bootstrap 4 look & feel is just emulated.
 
 ## Customize the theme
 

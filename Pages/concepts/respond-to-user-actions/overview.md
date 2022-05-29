@@ -103,7 +103,7 @@ Static commands can perform the following kinds of operations:
 
 * **Invoke REST API bindings** - e. g. `{staticCommand: _myApi.Delete(CustomerId)}`, see [REST API bindings](rest-api-bindings/overview).
 
-Expressing in the static command binding are translated to the JavaScript. If the expression contains a method that is on the server, DotVVM will make a request and call the method. You can pass any arguments to the method, and you can use the result of the method to update some viewmodel properties. 
+Expression in the static command binding is translated to the JavaScript. If the expression contains a method that is on the server, DotVVM will make a request and call the method. You can pass any arguments to the method, and you can use the result of the method to update some viewmodel properties. 
 
 Static commands are much more light-weight - they don't need to transmit the viewmodel to the server, they don't build the control tree, or call the [viewmodel lifecycle events](~/pages/concepts/viewmodels/overview). 
 

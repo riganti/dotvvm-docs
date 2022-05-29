@@ -42,7 +42,7 @@ The code snippet above declared the `ImageButton` control with 3 properties:
 
 * `Click` - the property specifies `ICommandBinding` as a type, so only the [command binding](~/pages/concepts/respond-to-user-actions/commands) can be assigned to the property. It doesn't have a default value, therefore it is required. 
 
-* `ImageUrl` - the property is declared as `string`, so it will suppport only hard-coded values in markup (or a resource binding). It has a default value.
+* `ImageUrl` - the property is declared as `string`, so it will support only hard-coded values in markup (or a resource binding). It has a default value.
 
 You can also use the following types of parameters:
 

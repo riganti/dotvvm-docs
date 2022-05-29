@@ -16,7 +16,7 @@ If you need to work with the dates on the client-side, use the `dotvvm.serializa
 
 ## Converting UTC time to the browser timezone
 
-Considering the principles mentioned in the previous section, DotVVM doesn't distinguish between local and UTC times. DotVVM doesn't attemt to convert the date into browser timezone - it keeps it as it is.
+Considering the principles mentioned in the previous section, DotVVM doesn't distinguish between local and UTC times. DotVVM doesn't attempt to convert the date into browser timezone - it keeps it as it is.
 
 However, there are some cases when you have the date in the UTC format and want to convert it into the user's timezone (the timezone of the browser). 
 

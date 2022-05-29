@@ -2,7 +2,7 @@
 
 From DotVVM 4.0, there is a new NuGet package called `DotVVM.Testing` which helps control developers to write unit test for DotVVM controls.
 
-> Please note that this package helps only to make sure the server-side part of the control works and that the control renders a correct HTML code. For propert end-to-end testing of DotVVM controls, you will need to use the control in an actual application and use tools like Selenium to interact with the control.
+> Please note that this package helps only to make sure the server-side part of the control works and that the control renders a correct HTML code. For proper end-to-end testing of DotVVM controls, you will need to use the control in an actual application and use tools like Selenium to interact with the control.
 
 ## Helper classes
 

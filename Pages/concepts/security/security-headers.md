@@ -2,7 +2,7 @@
 
 DotVVM 4.0 added support for several security-related HTTP headers. We believe they should be used in 99% of cases - thus, they are enabled by default. 
 
-Firstly, **this DOES NOT magically protect your application** from all kinds of attacks. Most common attacks are related to wrongly configured authentication and insuficient user input validation, and none of these headers can help with that. Please remember that everything in your viewmodel which is not marked by the `[Protect]` attribute is suddently a user input in a command or static command. See the [Recommendations for viewmodels](recommendations-for-viewmodels) section for more info.
+Firstly, **this DOES NOT magically protect your application** from all kinds of attacks. Most common attacks are related to wrongly configured authentication and insufficient user input validation, and none of these headers can help with that. Please remember that everything in your viewmodel which is not marked by the `[Protect]` attribute is suddenly a user input in a command or static command. See the [Recommendations for viewmodels](recommendations-for-viewmodels) section for more info.
 
 Also, we only set headers which are not likely to cause any problems to your application - incidentally, these are the headers which are less effective. 
 
