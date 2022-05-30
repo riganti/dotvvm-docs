@@ -52,7 +52,11 @@ public class AdminViewModelBase : DotvvmViewModelBase
 
     public override async Task Init() 
     {
+        // ASP.NET Core has new asynchronous authorization API:
         await Context.Authorize();
+
+        // OWIN has a synchronous Authorize method
+        // Context.Authorize();
 
         await base.Init();  // always call base.Init() - another authorization checks can be specified in the base page 
     }
