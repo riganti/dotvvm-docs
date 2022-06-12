@@ -22,7 +22,7 @@ The following events represent page-level state changes:
 
 * `init` occurs as soon as the page and DotVVM script is loaded, right before the viewmodel is applied to the page DOM. This event is commonly used to register custom Knockout binding handlers, or other things that are needed before DotVVM starts working with the viewmodel. _If you subscribe to the event after it has been raised, the callback will be fired immediately._ 
 
-* `initComplete` occurs after the viewmodel has been applied to the page. _If you subscribe to the event after it has been raised, the callback will be fired immediately._ 
+* `initCompleted` occurs after the viewmodel has been applied to the page. _If you subscribe to the event after it has been raised, the callback will be fired immediately._ 
 
 * `error` occurs when a postback, static command, or a SPA navigation fails with an unhandled error. You can use this event to display a generic error message dialog, or to perform any global error-handling routine.
 
