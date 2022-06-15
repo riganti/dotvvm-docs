@@ -1,5 +1,23 @@
 # Release notes
 
+## v4.0.544.0
+* Added support for composite controls	
+* Fixed "Add User Control" dialog	
+* Fixed "Extract DotVVM Control" dialog	
+* Fixed Shift-F7 command	
+* Partially fixed extract to RESX file (auto-reloading is still not working though...)	
+* Removed usage of culture-sensitive string operations
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.16)
+* Version for Visual Studio 2022 (17.2.4)
+* Version for Visual Studio 2022 Preview (17.3.0 Preview 2.0)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019.RTM.4.0.544.0.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.RTM.4.0.544.0.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.544.0.vsix)
+
 ## v4.0.543.0
 * Added reliable way to query referenced DotVVM Framework version
 * Improved stability by fixing exceptions being thrown on various actions
