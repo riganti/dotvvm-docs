@@ -1,5 +1,22 @@
 # Release notes
 
+## v4.0.546.0
+* Updated project templates to use newest DotVVM packages
+* Extract text to RESX dialog now allows more complex resource keys
+* Fixed extract text to RESX dialog sometimes silently crashing when parsing project references
+* Fixed auto-reloading issue with rewritten RESX files
+* Fixed package not found error when creating new OWIN projects
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.17)
+* Version for Visual Studio 2022 (17.2.6)
+* Version for Visual Studio 2022 Preview (17.3.0 Preview 3.0)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019.RTM.4.0.546.0.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.RTM.4.0.546.0.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.546.0.vsix)
+
 ## v4.0.545.0
 * Fixed dialogs sometimes not being able to read / write files
 
