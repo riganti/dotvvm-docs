@@ -1,5 +1,20 @@
 # Release notes
 
+## v4.0.547.0
+* Extract text to RESX dialog now checks for restricted keywords (ToString, GetHashCode...)
+* Extract text to RESX dialog now checks for duplicities and recommends fixes (create new record, merge records...)	
+* Fixed VS breaking changes affecting autocompletion and intellisense
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.17)
+* Version for Visual Studio 2022 (17.2.6)
+* Version for Visual Studio 2022 Preview (17.3.0 Preview 5.0)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019.RTM.4.0.547.0.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.RTM.4.0.547.0.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.547.0.vsix)
+
 ## v4.0.546.0
 * Updated project templates to use newest DotVVM packages
 * Extract text to RESX dialog now allows more complex resource keys
