@@ -1,5 +1,14 @@
 # Release notes
 
+## v4.0.548.0
+
+### Compatibility
+* Version for Visual Studio 2022 Preview (17.3.0 Preview 6.0)
+
+### Assets
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.548.0.vsix)
+
+
 ## v4.0.547.0
 * Extract text to RESX dialog now checks for restricted keywords (ToString, GetHashCode...)
 * Extract text to RESX dialog now checks for duplicities and recommends fixes (create new record, merge records...)	
