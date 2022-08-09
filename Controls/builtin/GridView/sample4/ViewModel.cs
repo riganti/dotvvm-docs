@@ -18,8 +18,6 @@ namespace DotvvmWeb.Views.Docs.Controls.builtin.GridView.sample4
 
         public GridViewDataSet<Customer> Customers { get; set; } = new GridViewDataSet<Customer>() { PagingOptions = { PageSize = 4 } };
 
-        public string SelectedSortColumn { get; set; }
-
         public override Task PreRender()
         {
             if (Customers.IsRefreshRequired)
@@ -32,7 +30,7 @@ namespace DotvvmWeb.Views.Docs.Controls.builtin.GridView.sample4
 
         public void Sort(string column)
         {
-            SelectedSortColumn = column;
+            Customers.SetSortExpression(column);
         }
     }
 

@@ -4,7 +4,7 @@
             <div class="arrow"></div>
             <div class="popover-header"></div>
             <div class="popover-body"></div>
-            <img src="https://www.dotvvm.com/Content/img/product-detail-bs/bs-to-dotvvm.svg" />
+            <img src="~/images/favicon.png" />
         </div>
     </PopoverTemplate>
     <bs:Button Text="Text" Type="Primary" />

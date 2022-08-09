@@ -10,6 +10,7 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.GridView.sample8
 {
     public class ViewModel : DotvvmViewModelBase
     {
+        public bool IsEditing { get; set; }
         public BusinessPackDataSet<Order> Orders { get; set; } = new BusinessPackDataSet<Order> {
                 PagingOptions = {
                     PageSize = 10
@@ -29,6 +30,30 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.GridView.sample8
             }
 
             return base.PreRender();
+        }
+
+        public void EditOrder(Order order)
+        {
+            Orders.RowEditOptions.EditRowId = order.Id;
+            IsEditing = true;
+        }
+
+        public void UpdateOrder(Order order)
+        {
+            // Submit customer changes to your database..
+            CancelEdit();
+        }
+
+        private void CancelEdit()
+        {
+            Orders.RowEditOptions.EditRowId = -1;
+            IsEditing = false;
+        }
+
+        public void CancelEditOrder()
+        {
+            CancelEdit();
+            Orders.RequestRefresh();
         }
 
         private IQueryable<Order> GetQueryable(int size)

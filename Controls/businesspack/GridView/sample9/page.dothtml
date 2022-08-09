@@ -1,5 +1,5 @@
 <bp:GridView DataSource="{value: Customers}"
-             InlineEditing="true">
+             InlineEditMode="SingleRow">
     <RowDecorators>
         <%-- Set different css class for even and odd rows --%>
         <dot:Decorator class="{value: Id % 2 == 0 ? 'even-row' : 'odd-row'}" />
@@ -22,7 +22,10 @@
                 <bp:Button Text="Edit"
                            Click="{command: _parent.Customers.RowEditOptions.EditRowId = Id}" />
             </ContentTemplate>
-            <EditTemplate></EditTemplate>
+            <EditTemplate>
+                <dot:Button Text="Save" Click="{command: _parent.UpdateCustomer(_this)}" />
+                <dot:Button Text="Cancel" Click="{command: _parent.CancelEditCustomer()}" />
+            </EditTemplate>
         </bp:GridViewTemplateColumn>
     </Columns>
 </bp:GridView>

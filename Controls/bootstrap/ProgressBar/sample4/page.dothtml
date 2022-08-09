@@ -1,5 +1,4 @@
 ﻿  <bs:ProgressBar Value="{value: Width}" Color="{value: Color}" IsStriped="{value: Striped}" IsAnimated="{value: Animated}">
-    {{value: Width}}%
   </bs:ProgressBar>
 
 <dot:Button Text="Change width" Click="{command: ChangeWidth()}" />

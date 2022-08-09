@@ -1,4 +1,4 @@
-﻿<bs:TabControl>
+﻿<bs:TabControl VisualStyle="Pills">
   <bs:TabItem IsActive="true">
     <HeaderTemplate>Tab 1</HeaderTemplate>
     <ContentTemplate>
