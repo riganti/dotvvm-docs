@@ -1,6 +1,11 @@
-﻿<bs:Column SizeXS="7" SizeLG="2" style="background-color: blue; color: white">
-    no offset
-</bs:Column>
-<bs:Column SizeXS="5" OffsetLG="4" SizeLG="6" style="background-color: red; color: white">
-    offset = 4 for the large screen
-</bs:Column>
+﻿<bs:Row>
+    <bs:Column FlexDecorator.OrderLG="last" Size="4" style="background-color: blue; color: white">
+        First
+    </bs:Column>
+    <bs:Column FlexDecorator.OrderLG="2" FlexDecorator.Order="last" Size="4" style="background-color: red; color: white">
+        Second
+    </bs:Column>
+    <bs:Column FlexDecorator.OrderLG="first" FlexDecorator.Order="2" Size="4" style="background-color: green; color: white">
+        Third
+    </bs:Column>
+</bs:Row>
