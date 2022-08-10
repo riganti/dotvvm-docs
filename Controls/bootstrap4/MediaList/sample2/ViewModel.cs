@@ -4,7 +4,7 @@
     {
         new MediaItem()
         {
-            ImageUrl = "../../images/1.png",
+            ImageUrl = "~/Images/1.png",
             AltText = "google alt",
             NavigateUrl = "https://www.google.cz/",
             Header = "Google",
@@ -14,7 +14,7 @@
         },
         new MediaItem()
         {
-            ImageUrl = "../../images/2.png",
+            ImageUrl = "~/Images/2.png",
             AltText = "w3schools alt",
             NavigateUrl = "http://www.w3schools.com/",
             Header = "W3Schools",
@@ -24,7 +24,7 @@
         },
         new MediaItem()
         {
-            ImageUrl = "../../images/3.png",
+            ImageUrl = "~/Images/3.png",
             AltText = "bootstrap alt",
             NavigateUrl = "http://getbootstrap.com/",
             Header = "Bootstrap",
