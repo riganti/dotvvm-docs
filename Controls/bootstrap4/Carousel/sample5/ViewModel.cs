@@ -2,9 +2,9 @@
 {
     public ImageData[] Images { get; set; } = new[]
     {
-        new ImageData("../../Images/LA.jpg", "Los Angeles"),
-        new ImageData("../../Images/NY.jpg", "New York", true),
-        new ImageData("../../Images/Miami.jpg", "Miami")
+        new ImageData("~/Images/LA.jpg", "Los Angeles"),
+        new ImageData("~/Images/NY.jpg", "New York", true),
+        new ImageData("~/Images/Miami.jpg", "Miami")
     };
 }
 
