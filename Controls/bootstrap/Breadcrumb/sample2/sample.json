@@ -6,7 +6,7 @@
       "replacements": [
         {
           "pattern": "(https?://)",
-          "replacement": "/bootstrap-2.0/?url=\\1"
+          "replacement": "/bootstrap-4.0/?url=\\1"
         }
       ]
     }

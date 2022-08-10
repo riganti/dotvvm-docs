@@ -1,4 +1,4 @@
-<%--<bp:DateTimePicker SelectedDateTime="{value: SelectedDate}"
-                   ShowInline />
+<bp:DateTimePicker SelectedDateTime="{value: SelectedDate}"
+                   ShowInline="true" />
 
-<p>Selected date: <dot:Literal Text="{value: SelectedDate}" FormatString="g" /></p>--%>
+<p>Selected date: <dot:Literal Text="{value: SelectedDate}" FormatString="g" /></p>

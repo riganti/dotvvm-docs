@@ -1,5 +1,5 @@
 <bp:GridView DataSource="{value: Orders}"
-             InlineEditing="true">
+             InlineEditMode="SingleRow">
     <Columns>
         <bp:GridViewTextColumn Value="{value: Id}"
                                HeaderText="Order ID" />
@@ -27,7 +27,10 @@
                 <bp:Button Text="Edit"
                            Click="{command: _parent.Orders.RowEditOptions.EditRowId = Id}" />
             </ContentTemplate>
-            <EditTemplate></EditTemplate>
+            <EditTemplate>
+                <dot:Button Text="Save" Click="{command: _parent.UpdateOrder(_this)}" />
+                <dot:Button Text="Cancel" Click="{command: _parent.CancelEditOrder()}" />
+            </EditTemplate>
         </bp:GridViewTemplateColumn>
     </Columns>
 </bp:GridView>

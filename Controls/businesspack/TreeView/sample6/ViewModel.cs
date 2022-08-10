@@ -17,16 +17,13 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.TreeView.sample6
         [AllowStaticCommand]
         public IEnumerable<TreeItem> LoadChildren(TreeItem parent)
         {
-            if (parent.Name == "Documents")
-            {
-                yield return new TreeItem {
-                    Name = "Invoices",
-                    HasItems = true,
-                    Items = new List<TreeItem> {
-                        new TreeItem { Name = "Invoice.pdf" }
-                    }
-                };
-            }
+            yield return new TreeItem {
+                Name = "Invoices",
+                HasItems = true,
+                Items = new List<TreeItem> {
+                    new TreeItem { Name = "Invoice.pdf" }
+                }
+            };
         }
     }
 }

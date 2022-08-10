@@ -11,6 +11,7 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.GridView.sample9
 {
     public class ViewModel : DotvvmViewModelBase
     {
+        public bool IsEditing { get; set; }
         public BusinessPackDataSet<Customer> Customers { get; set; } = new BusinessPackDataSet<Customer>()
         {
             SortingOptions = { SortExpression = nameof(Customer.Id) },
@@ -24,6 +25,30 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.GridView.sample9
                 Customers.LoadFromQueryable(GetQueryable(15));
             }
             return base.PreRender();
+        }
+
+        public void EditCustomer(Customer customer)
+        {
+            Customers.RowEditOptions.EditRowId = customer.Id;
+            IsEditing = true;
+        }
+
+        public void UpdateCustomer(Customer customer)
+        {
+            // Submit customer changes to your database..
+            CancelEdit();
+        }
+
+        private void CancelEdit()
+        {
+            Customers.RowEditOptions.EditRowId = -1;
+            IsEditing = false;
+        }
+
+        public void CancelEditCustomer()
+        {
+            CancelEdit();
+            Customers.RequestRefresh();
         }
 
         private IQueryable<Customer> GetQueryable(int size)
