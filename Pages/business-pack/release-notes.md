@@ -1,5 +1,12 @@
 # Release notes
 
+## 4.0.5
+
+### Bug fixes
+* Fixed the overlay under the `ModalDialog` control.
+* Fixed the frozen headers feature (the `FixedHeaderRow` property) in the `GridView` control.
+* Fixed the NuGet package publish issue in `DotVVM.BusinessPack.Messaging` - the `tsconfig.json` and `package.json` files are not linked to the project any more.
+
 ## 4.0.4
 
 ### Bug fixes
