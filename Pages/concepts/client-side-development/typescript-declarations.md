@@ -32,7 +32,7 @@ The main advantage of TypeScript is type checking and IntelliSense. If your code
 Run the following command in the console:
 
 ```
-npm install --save-dev dotvvm-types @types/knockout
+npm install --save-dev dotvvm-types
 ```
 
 ## tsconfig.json
