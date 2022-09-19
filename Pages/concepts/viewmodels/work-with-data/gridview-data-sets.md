@@ -67,6 +67,8 @@ public class CustomerListViewModel : DotvvmViewModelBase
 
 Notice that the `GetCustomerList` method doesn't get any information about the column we use for sorting, or how many records we want. The `LoadFromQueryable` method will append `OrderBy`, `Skip` and `Take` calls on the `IQueryable` before it calls `ToList`, so only the rows that are actually needed will be fetched from the database.
 
+> Please note that some `IQueryable` providers cannot perform paging when the sort expression is not set. For example, if you try to use `PagingOptions` without `SortingOptions` with Entity Framework or Entity Framework Core, you'll get `System.NotSupportedException: The method 'Skip' is only supported for sorted input in LINQ to Entities. The method 'OrderBy' must be called before the method 'Skip'.` In such case, you need to set the `SortingOptions.SortExpression` property to a name of the property that shall be used for sorting. 
+
 ## Load data manually
 
 If you don't use `IQueryable`, you can load data on your own by assigning the `Items` and `PagingOptions.TotalItemsCount` properties on the data set.
