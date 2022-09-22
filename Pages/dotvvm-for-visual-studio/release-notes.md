@@ -1,5 +1,24 @@
 # Release notes
 
+## v4.0.550.0
+* Fixed issue with extension using lower-cased paths in most situations	
+	* All paths should now be correctly cased and use '/' as directory separators
+* Fixed NRE when using shift-f7 and there are multiple candidates
+* Fixed NRE when resolving configuration and project is not yet loaded
+* Removed unsupported path suggestions from extract control dialog
+* Default name for extracted control now begins with capital letter
+	* This better reflects conventions used both by DotVVM and .NET in general
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.19)
+* Version for Visual Studio 2022 (17.3.4)
+* Version for Visual Studio 2022 Preview (17.4.0 Preview 2.1)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019.RTM.4.0.550.0.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.RTM.4.0.550.0.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.550.0.vsix)
+
 ## v4.0.549.0
 * Fixed VS breaking changes
 
