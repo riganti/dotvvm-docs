@@ -1,5 +1,10 @@
 # Release notes
 
+## 4.0.7
+
+### Bug fixes
+* Fixed the overlay under the `RangeSlider` control with non-zero `Minimum` values.
+
 ## 4.0.5
 
 ### Bug fixes
