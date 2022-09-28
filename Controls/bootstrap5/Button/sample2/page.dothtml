@@ -1,0 +1,35 @@
+﻿<bs:Button Click="{command: DoSomething()}"
+           Text="Primary"
+           Type="Primary" />
+
+<bs:Button Click="{command: DoSomething()}"
+           Text="Secondary"
+           Type="Secondary" />
+
+<bs:Button Click="{command: DoSomething()}"
+           Text="Success"
+           Type="Success" />
+
+<bs:Button Click="{command: DoSomething()}"
+           Text="Danger"
+           Type="Danger" />
+
+<bs:Button Click="{command: DoSomething()}"
+           Text="Warning"
+           Type="Warning" />
+
+<bs:Button Click="{command: DoSomething()}"
+           Text="Info"
+           Type="Info" />
+
+<bs:Button Click="{command: DoSomething()}"
+           Text="Light"
+           Type="Light" />
+
+<bs:Button Click="{command: DoSomething()}"
+           Text="Dark"
+           Type="Dark" />
+
+<bs:Button Click="{command: DoSomething()}"
+           Text="Link"
+           Type="Link" />

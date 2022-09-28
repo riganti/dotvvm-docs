@@ -1,0 +1,9 @@
+﻿<bs:RouteLink RouteName="RouteLink_sample3"
+                Text="Solid Fill"
+                Type="Primary"
+                VisualStyle="SolidFill" />
+
+<bs:RouteLink RouteName="RouteLink_sample3"
+                Text="Outline"
+                Type="Primary"
+                VisualStyle="Outline" />

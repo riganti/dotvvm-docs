@@ -1,0 +1,4 @@
+﻿<bs:Button Click="{command: DoSomething()}"
+           Text="Solid Fill"
+           Type="Primary"
+           IsBlockButton="true" />
