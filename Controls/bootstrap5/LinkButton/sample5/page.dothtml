@@ -1,0 +1,8 @@
+﻿<bs:LinkButton Click="{command: DoSomething()}"
+                   Type="Primary">
+        Text in content
+    </bs:LinkButton>
+    <bs:LinkButton Click="{command: DoSomething()}"
+                   Type="Primary">
+        <bs:TextBox Text="Text"/>
+    </bs:LinkButton>
