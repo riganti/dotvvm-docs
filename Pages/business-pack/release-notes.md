@@ -1,5 +1,10 @@
 # Release notes
 
+## 4.0.8
+
+### Bug fixes
+* Changed CSS styles for `CheckBoxList` control to use CSS grid - it should now better position multiple boxes with labels of varying sizes.
+
 ## 4.0.7
 
 ### Bug fixes
