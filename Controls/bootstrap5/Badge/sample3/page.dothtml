@@ -1,0 +1,2 @@
+﻿<bs:Badge Text="{value: Clicks + ' clicks'}" 
+            Click="{command: Increment()}" />

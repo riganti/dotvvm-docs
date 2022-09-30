@@ -1,0 +1,3 @@
+﻿<bs:Button Click="{command: Increment()}" ButtonTagName="button">
+  Number of clicks: <bs:Badge Text="{value: Clicks}"/>
+</bs:Button>

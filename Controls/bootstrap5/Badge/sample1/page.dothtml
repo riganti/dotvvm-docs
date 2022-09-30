@@ -1,0 +1,7 @@
+﻿<bs:Badge Text="100"/>
+
+<bs:Badge>
+  <h1>9000+</h1>
+</bs:Badge>
+
+<bs:Badge Type="Primary" VisualStyle="Pill" />
