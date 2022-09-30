@@ -1,0 +1,5 @@
+﻿<dot:LinkButton Click="{staticCommand: IsCollapsed = !IsCollapsed}" Text="Expand or collapse" />
+
+<bs:Collapsible IsCollapsed="{value: IsCollapsed}">
+  Collapsible content
+</bs:Collapsible>
