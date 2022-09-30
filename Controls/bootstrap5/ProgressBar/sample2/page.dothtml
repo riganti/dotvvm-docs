@@ -1,0 +1,8 @@
+﻿<bs:ProgressBar Color="Danger" VisualStyle="Striped" Value="39">
+  39%
+</bs:ProgressBar>
+
+
+<bs:ProgressBar Color="Success" VisualStyle="AnimatedStriped" Value="100">
+  COMPLETED
+</bs:ProgressBar>

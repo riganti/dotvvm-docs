@@ -1,0 +1,6 @@
+﻿  <bs:ProgressBar Value="{value: Width}" Color="{value: Color}">
+    {{value: Width}}%
+  </bs:ProgressBar>
+
+<dot:Button Text="Change width" Click="{command: ChangeWidth()}" />
+<dot:Button Text="Change color" Click="{command: ChangeColor()}" />
