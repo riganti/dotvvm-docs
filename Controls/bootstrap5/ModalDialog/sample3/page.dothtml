@@ -1,0 +1,13 @@
+﻿    <bs:Button Text="Open Dialog" Click="{staticCommand: Displayed = true}" />
+
+    <bs:ModalDialog IsDisplayed="{value: IsDisplayed}" ScrollableContent="true" UseBackdrop="true" Size="XLarge" ZIndex="2150">
+        <HeaderTemplate>
+            <span>Header</span>
+        </HeaderTemplate>
+        <Content>
+            <span>Modal Body</span>
+        </Content>
+        <FooterTemplate>
+            <span>Footer</span>
+        </FooterTemplate>
+    </bs:ModalDialog>
