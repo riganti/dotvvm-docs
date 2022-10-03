@@ -1,0 +1,5 @@
+﻿<bs:TextBox Size="Small" Text="{value: Text}" />
+
+<bs:TextBox Size="Default" Text="{value: Text}" />
+
+<bs:TextBox Size="Large" Text="{value: Text}" />

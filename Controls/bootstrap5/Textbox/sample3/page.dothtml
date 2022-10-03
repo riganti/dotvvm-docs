@@ -1,0 +1,5 @@
+﻿<bs:TextBox  Text="{value: Text}"  UpdateTextOnInput="true" />
+
+<bs:TextBox  Text="{value: Text}"  UpdateTextOnInput="false" />
+
+<p>{{value: Text}}</p>
