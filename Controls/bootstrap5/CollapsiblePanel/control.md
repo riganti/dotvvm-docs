@@ -1,0 +1,1 @@
+Combines [Collapsible](~/controls/bootstrap5/Collapsible) and [Card](~/controls/bootstrap5/Card) into control with always visible header and collapsible content (+ footer).
