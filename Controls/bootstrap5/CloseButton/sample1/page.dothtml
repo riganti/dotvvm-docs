@@ -1,0 +1,11 @@
+<bs:ModalDialog IsDisplayed="{value: Displayed}">
+
+  <HeaderTemplate>
+    Dialog header
+    <bs:CloseButton Dismissed="{command: DoSomething()}/>
+  </HeaderTemplate>
+
+  <ContentTemplate>
+    This is the contents of the dialog.
+  </ContentTemplate>
+</bs:ModalDialog>
