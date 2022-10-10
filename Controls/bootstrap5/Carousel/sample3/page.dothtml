@@ -1,0 +1,30 @@
+<div style="height: 428px; width: 640px;">
+
+    <bs:Carousel>
+        <Items>
+        
+            <bs:CarouselItem IsActive="true">
+                <bs:Image ImageUrl="~/Images/LA.jpg" />
+            </bs:CarouselItem>
+        
+            <bs:CarouselItem>
+                <bs:Image ImageUrl="~/Images/NY.jpg" />
+            </bs:CarouselItem>
+        
+            <bs:CarouselItem>
+                <bs:Image ImageUrl="~/Images/Miami.jpg" />
+            </bs:CarouselItem>
+        
+        </Items>
+
+        <RightControlTemplate>
+            <span aria-hidden="true" style="color: white">&gt; Next</span>
+        </RightControlTemplate>
+
+        <LeftControlTemplate>
+            <span aria-hidden="true" style="color: white">&lt; Previous</span>
+        </LeftControlTemplate>
+
+    </bs:Carousel>
+
+</div>
