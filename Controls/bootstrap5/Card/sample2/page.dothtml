@@ -1,0 +1,15 @@
+﻿<bs:Card FooterText="Card Footer">
+  <bs:CardImage ImageUrl="~/images/LA.jpg" ToolTip="Card Image">
+    <bs:CardBody style="color:aliceblue;">
+      <h1>Overlaid body</h1>
+      <p>
+          Another text
+      </p>
+      <p>Some buttons</p>
+      <bs:Button Click="{command: DoSomething()}" Text="Button" Type="Danger" />
+    </bs:CardBody>
+  </bs:CardImage>
+  
+  <bs:CardListGroup DataSource="{value: Texts}" TextBinding="{value: _this}" />
+
+</bs:Card>

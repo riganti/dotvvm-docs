@@ -1,0 +1,20 @@
+<div style="height: 428px; width: 640px;">
+
+    <bs:Carousel>
+        <bs:CarouselItem Caption="Los Angeles" ImageAlternateText="Los Angeles">
+            <bs:Image ImageUrl="~/Images/LA.jpg" />
+        </bs:CarouselItem>
+        
+        <bs:CarouselItem Delay="2000">
+            <bs:Image ImageUrl="~/Images/NY.jpg"/>
+            <CaptionTemplate>
+                <h1>New York</h1>
+            </CaptionTemplate>
+        </bs:CarouselItem>
+        
+        <bs:CarouselItem>
+            <bs:Image ImageUrl="~/Images/Miami.jpg" />
+        </bs:CarouselItem>
+    </bs:Carousel>
+
+</div>
