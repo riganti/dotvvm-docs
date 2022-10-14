@@ -457,6 +457,12 @@
         <member name="M:DotVVM.Framework.Binding.Properties.ExpectedAsStringBindingExpression.#ctor(DotVVM.Framework.Binding.Expressions.IBinding)">
             <summary> Contains the same binding as this binding but converted to a string. </summary>
         </member>
+        <member name="T:DotVVM.Framework.Binding.Properties.ReferencedViewModelPropertiesBindingProperty">
+            <summary> Contains references to the .NET properties referenced in the binding. MainProperty is the property on the root node (modulo conversions and simple expressions). </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.Properties.ReferencedViewModelPropertiesBindingProperty.#ctor(System.Reflection.PropertyInfo,System.Reflection.PropertyInfo[],DotVVM.Framework.Binding.Expressions.IValueBinding)">
+            <summary> Contains references to the .NET properties referenced in the binding. MainProperty is the property on the root node (modulo conversions and simple expressions). </summary>
+        </member>
         <member name="T:DotVVM.Framework.Binding.DotvvmCapabilityProperty">
             <summary> Descriptor of a DotVVM capability.
             Capability is a way to register multiple properties at once in DotVVM. </summary>
@@ -486,6 +492,14 @@
         <member name="M:DotVVM.Framework.Binding.DotvvmCapabilityProperty.ThisAndOwners">
             <summary> Returns an iterator of the <see cref="P:DotVVM.Framework.Binding.DotvvmProperty.OwningCapability" /> chain. The first element is this capability. </summary>
         </member>
+        <member name="M:DotVVM.Framework.Binding.DotvvmCapabilityProperty.FindProperty(System.String)">
+            <summary> Return a <see cref="T:DotVVM.Framework.Binding.DotvvmProperty" /> defined by this capability with the specified name. `null` is returned if there is no property with the name or if this capability does not have property mapping.
+            <code> HtmlGenericControl.HtmlCapabilityProperty.FindProperty("Visible") </code> </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.DotvvmCapabilityProperty.FindPropertyGroup(System.String)">
+            <summary> Return a <see cref="T:DotVVM.Framework.Compilation.ControlTree.DotvvmPropertyGroup" /> defined by this capability with the specified name. `null` is returned if there is no property with the name or if this capability does not have property mapping.
+            <code> HtmlGenericControl.HtmlCapabilityProperty.FindPropertyGroup("Attributes") </code> </summary>
+        </member>
         <member name="M:DotVVM.Framework.Binding.DotvvmCapabilityProperty.RegisterCapability``2(System.String,System.String,System.Reflection.ICustomAttributeProvider)">
             <summary> Registers a new DotVVM capability. For a given <typeparamref name="TCapabilityType"/>, this method will register a DotVVM property for each property of the capability type. </summary>
             <param name="globalPrefix"> Prefix prepended to all properties registered by this capability. </param>
@@ -499,7 +513,7 @@
             <param name="capabilityAttributeProvider"> A member info from System.Reflection which will be used to look for attributes. If not specified, DotVVM will look for property or field with the specified <paramref name="name"/>. </param>
         </member>
         <member name="M:DotVVM.Framework.Binding.DotvvmCapabilityProperty.InitializeArgument(System.Reflection.ICustomAttributeProvider,System.String,System.Type,System.Type,DotVVM.Framework.Binding.DotvvmCapabilityProperty,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Object}})">
-            <summary> Returns DotvvmProperty, DotvvmCapabilityProperty or DotvvmPRopertyGroup </summary>
+            <summary> Returns DotvvmProperty, DotvvmCapabilityProperty or DotvvmPropertyGroup </summary>
         </member>
         <member name="T:DotVVM.Framework.Binding.CompileTimeOnlyDotvvmProperty">
             <summary>
@@ -530,6 +544,18 @@
         </member>
         <member name="P:DotVVM.Framework.Binding.DataContextChangeAttribute.PropertyDependsOn">
             Gets a list of attributes that need to be resolved before this attribute is invoked.
+        </member>
+        <member name="M:DotVVM.Framework.Binding.DotvvmBindingCacheHelper.CreateValueBinding(System.String,DotVVM.Framework.Compilation.ControlTree.DataContextStack,DotVVM.Framework.Compilation.BindingParserOptions)">
+            <summary> Compiles a new `{value: ...code...}` binding which can be evaluated server-side and also client-side. The result is cached. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.DotvvmBindingCacheHelper.CreateValueBinding``1(System.String,DotVVM.Framework.Compilation.ControlTree.DataContextStack,DotVVM.Framework.Compilation.BindingParserOptions)">
+            <summary> Compiles a new `{value: ...code...}` binding which can be evaluated server-side and also client-side. The result is implicitly converted to <typeparamref name="TResult" />. The result is cached. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.DotvvmBindingCacheHelper.CreateStaticCommand(System.String,DotVVM.Framework.Compilation.ControlTree.DataContextStack,DotVVM.Framework.Compilation.BindingParserOptions)">
+            <summary> Compiles a new `{staticCommand: ...code...}` binding which can be evaluated server-side and also client-side. The result is cached. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.DotvvmBindingCacheHelper.CreateStaticCommand``1(System.String,DotVVM.Framework.Compilation.ControlTree.DataContextStack,DotVVM.Framework.Compilation.BindingParserOptions)">
+            <summary> Compiles a new `{staticCommand: ...code...}` binding which can be evaluated server-side and also client-side. The result is implicitly converted to <typeparamref name="TResult" />. The result is cached. </summary>
         </member>
         <member name="T:DotVVM.Framework.Binding.DotvvmControlCapabilityAttribute">
             <summary> This attribute is used for marking a DotVVM capability type. It can be also used to mark a capability property inside another capability. </summary>
@@ -737,10 +763,10 @@
         <member name="M:DotVVM.Framework.Binding.Expressions.ValueBindingExpression.CreateBinding``1(DotVVM.Framework.Binding.BindingCompilationService,System.Func{System.Object[],``0},DotVVM.Framework.Compilation.Javascript.Ast.JsExpression,DotVVM.Framework.Compilation.ControlTree.DataContextStack)">
             Crates a new value binding expression from the specified .NET delegate and Javascript expression. Note that this operation is not very cheap and the result is not cached.
         </member>
-        <member name="M:DotVVM.Framework.Binding.Expressions.ValueBindingExpression.CreateBinding``1(DotVVM.Framework.Binding.BindingCompilationService,System.Func{System.Object[],``0},DotVVM.Framework.Compilation.Javascript.ParametrizedCode,DotVVM.Framework.Compilation.ControlTree.DataContextStack)">
+        <member name="M:DotVVM.Framework.Binding.Expressions.ValueBindingExpression.CreateBinding``1(DotVVM.Framework.Binding.BindingCompilationService,System.Func{System.Object[],``0},DotVVM.Framework.Compilation.Javascript.ParametrizedCode,DotVVM.Framework.Compilation.ControlTree.DataContextStack,System.Object[])">
             Crates a new value binding expression from the specified .NET delegate and Javascript expression. Note that this operation is not very cheap and the result is not cached.
         </member>
-        <member name="M:DotVVM.Framework.Binding.Expressions.ValueBindingExpression.CreateBinding``1(DotVVM.Framework.Binding.BindingCompilationService,System.Linq.Expressions.Expression{System.Func{System.Object[],``0}},DotVVM.Framework.Compilation.ControlTree.DataContextStack)">
+        <member name="M:DotVVM.Framework.Binding.Expressions.ValueBindingExpression.CreateBinding``1(DotVVM.Framework.Binding.BindingCompilationService,System.Linq.Expressions.Expression{System.Func{System.Object[],``0}},DotVVM.Framework.Compilation.ControlTree.DataContextStack,System.Object[])">
             Crates a new value binding expression from the specified Linq.Expression. Note that this operation is quite expansive and the result is not cached (you are supposed to do it and NOT invoke this function for every request).
         </member>
         <member name="M:DotVVM.Framework.Binding.HelperNamespace.DateTimeExtensions.ToBrowserLocalTime(System.DateTime)">
@@ -843,6 +869,9 @@
             <summary> Gets a value from ValueOrBinding or throws an exception if the it contains a binding. To evaluate the binding use the <see cref="M:DotVVM.Framework.Binding.ValueOrBinding`1.Evaluate(DotVVM.Framework.Controls.DotvvmBindableObject)" /> method. </summary>
         </member>
         <member name="M:DotVVM.Framework.Binding.ValueOrBinding`1.DownCast``1(DotVVM.Framework.Binding.ValueOrBinding{``0})">
+            <summary> Returns a ValueOrBinding with new type T which is a base type of the old T2 </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.ValueOrBinding`1.UpCast(DotVVM.Framework.Binding.ValueOrBinding)">
             <summary> Returns a ValueOrBinding with new type T which is a base type of the old T2 </summary>
         </member>
         <member name="M:DotVVM.Framework.Binding.ValueOrBinding`1.UpCast``1">
@@ -951,6 +980,22 @@
             Tries to resolve compiled assembly.
             </summary>
         </member>
+        <member name="T:DotVVM.Framework.Compilation.ControlPrecompilationVisitor">
+            <summary> Evaluates GetContents method on composite controls with <see cref="P:DotVVM.Framework.Controls.ControlMarkupOptionsAttribute.Precompile" /> set. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Compilation.ControlPrecompilationVisitor.Precompile(DotVVM.Framework.Compilation.ControlTree.Resolved.ResolvedControl,DotVVM.Framework.Controls.ControlPrecompilationMode,System.IServiceProvider)">
+            <summary> Tries to precompile the specified control. Null is returned only in "IfPossible" precompilation mode when there is a binding which cannot be passed into the control. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Compilation.ControlPrecompilationVisitor.AllowsBindings(System.Type)">
+            Returns true if we can send binding into the property without evaluating it
+            -> true for ValueOrBinding, IBinding, or IReadOnlyDictionary{_, T}, IDictionary{_, T} where T allows bindings
+        </member>
+        <member name="T:DotVVM.Framework.Compilation.SkipPrecompilationException">
+            <summary> When thrown, precompilation will be skipped, even though normal exceptions are not ignored. If precompilation mode is set to Always, the compilation fails with the specified message. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Compilation.SkipPrecompilationException.#ctor(System.String,System.Exception)">
+            <summary> When thrown, precompilation will be skipped, even though normal exceptions are not ignored. If precompilation mode is set to Always, the compilation fails with the specified message. </summary>
+        </member>
         <member name="T:DotVVM.Framework.Compilation.ControlTree.BindingExtensionParameter">
             Base class for defining an extension parameter.
         </member>
@@ -1014,7 +1059,7 @@
             Finds the DotVVM property in the global property store.
             </summary>
         </member>
-        <member name="M:DotVVM.Framework.Compilation.ControlTree.ControlResolverBase.FindCompiledControl(System.String,System.String,System.String)">
+        <member name="M:DotVVM.Framework.Compilation.ControlTree.ControlResolverBase.FindCompiledControl(System.String,System.String,System.String,System.String)">
             <summary>
             Finds the compiled control.
             </summary>
@@ -1039,7 +1084,7 @@
             An abstract base class for control tree resolver.
             </summary>
         </member>
-        <member name="M:DotVVM.Framework.Compilation.ControlTree.ControlTreeResolverBase.#ctor(DotVVM.Framework.Compilation.ControlTree.IControlResolver,DotVVM.Framework.Compilation.ControlTree.IAbstractTreeBuilder,DotVVM.Framework.ResourceManagement.DotvvmResourceRepository)">
+        <member name="M:DotVVM.Framework.Compilation.ControlTree.ControlTreeResolverBase.#ctor(DotVVM.Framework.Compilation.ControlTree.IControlResolver,DotVVM.Framework.Compilation.ControlTree.IAbstractTreeBuilder,DotVVM.Framework.Compilation.Directives.IMarkupDirectiveCompilerPipeline)">
             <summary>
             Initializes a new instance of the <see cref="T:DotVVM.Framework.Compilation.ControlTree.ControlTreeResolverBase"/> class.
             </summary>
@@ -1052,11 +1097,6 @@
         <member name="M:DotVVM.Framework.Compilation.ControlTree.ControlTreeResolverBase.ResolveRootContent(DotVVM.Framework.Compilation.Parser.Dothtml.Parser.DothtmlRootNode,DotVVM.Framework.Compilation.ControlTree.IAbstractControl,DotVVM.Framework.Compilation.ControlTree.IControlResolverMetadata)">
             <summary>
             Resolves the content of the root node.
-            </summary>
-        </member>
-        <member name="M:DotVVM.Framework.Compilation.ControlTree.ControlTreeResolverBase.ResolveViewModelType(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Collections.Generic.IReadOnlyList{DotVVM.Framework.Compilation.ControlTree.IAbstractDirective}},DotVVM.Framework.Compilation.Parser.Dothtml.Parser.DothtmlRootNode,System.String)">
-            <summary>
-            Resolves the view model for the root node.
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Compilation.ControlTree.ControlTreeResolverBase.ProcessNode(DotVVM.Framework.Compilation.ControlTree.IAbstractTreeNode,DotVVM.Framework.Compilation.Parser.Dothtml.Parser.DothtmlNode,DotVVM.Framework.Compilation.ControlTree.IControlResolverMetadata,DotVVM.Framework.Compilation.ControlTree.IDataContextStack)">
@@ -1105,16 +1145,6 @@
             Gets the inner property elements and makes sure that no other content is present.
             </summary>
         </member>
-        <member name="M:DotVVM.Framework.Compilation.ControlTree.ControlTreeResolverBase.ResolveWrapperType(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Collections.Generic.IReadOnlyList{DotVVM.Framework.Compilation.ControlTree.IAbstractDirective}},System.String)">
-            <summary>
-            Resolves the type of the wrapper.
-            </summary>
-        </member>
-        <member name="M:DotVVM.Framework.Compilation.ControlTree.ControlTreeResolverBase.GetDefaultWrapperType(System.String)">
-            <summary>
-            Gets the default type of the wrapper for the view.
-            </summary>
-        </member>
         <member name="M:DotVVM.Framework.Compilation.ControlTree.ControlTreeResolverBase.GetDataContextChange(DotVVM.Framework.Compilation.ControlTree.IDataContextStack,DotVVM.Framework.Compilation.ControlTree.IAbstractControl,DotVVM.Framework.Compilation.ControlTree.IPropertyDescriptor)">
             <summary>
             Gets the data context change behavior for the specified control property.
@@ -1155,9 +1185,17 @@
             Invokes the static constructors on all controls to register all <see cref="T:DotVVM.Framework.Binding.DotvvmProperty"/>.
             </summary>
         </member>
+        <member name="M:DotVVM.Framework.Compilation.ControlTree.DefaultControlResolver.InitType(System.Type)">
+            <summary> Ensures that the type is initialized - run .cctor and registers all properties/capabilities. </summary>
+        </member>
         <member name="M:DotVVM.Framework.Compilation.ControlTree.DefaultControlResolver.ResolveAllPropertyAliases">
             <summary>
             After all DotvvmProperties have been registered, those marked with PropertyAliasAttribute can be resolved.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Compilation.ControlTree.DefaultControlResolver.BuildControlAliasesMap">
+            <summary>
+            After all DotvvmControls have been discovered, build a map of alternative names.
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Compilation.ControlTree.DefaultControlResolver.ResolveControl(DotVVM.Framework.Compilation.ControlTree.ITypeDescriptor)">
@@ -1165,7 +1203,7 @@
             Resolves the control metadata for specified type.
             </summary>
         </member>
-        <member name="M:DotVVM.Framework.Compilation.ControlTree.DefaultControlResolver.FindCompiledControl(System.String,System.String,System.String)">
+        <member name="M:DotVVM.Framework.Compilation.ControlTree.DefaultControlResolver.FindCompiledControl(System.String,System.String,System.String,System.String)">
             <summary>
             Finds the compiled control.
             </summary>
@@ -1185,7 +1223,7 @@
             A runtime implementation of the control tree resolver.
             </summary>
         </member>
-        <member name="M:DotVVM.Framework.Compilation.ControlTree.DefaultControlTreeResolver.#ctor(DotVVM.Framework.Compilation.ControlTree.IControlResolver,DotVVM.Framework.Compilation.IControlBuilderFactory,DotVVM.Framework.Compilation.ControlTree.IAbstractTreeBuilder,DotVVM.Framework.ResourceManagement.DotvvmResourceRepository)">
+        <member name="M:DotVVM.Framework.Compilation.ControlTree.DefaultControlTreeResolver.#ctor(DotVVM.Framework.Compilation.ControlTree.IControlResolver,DotVVM.Framework.Compilation.ControlTree.IAbstractTreeBuilder,DotVVM.Framework.Compilation.Directives.IMarkupDirectiveCompilerPipeline)">
             <summary>
             Initializes a new instance of the <see cref="T:DotVVM.Framework.Compilation.ControlTree.DefaultControlTreeResolver"/> class.
             </summary>
@@ -1195,6 +1233,23 @@
         </member>
         <member name="P:DotVVM.Framework.Compilation.ControlTree.DotvvmPropertyGroup.UsedInCapabilities">
             <summary> The capabilities which use this property. </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Compilation.ControlTree.IAbstractDirectiveAttributeReference">
+            <summary>
+            Abstract tree node representing attribute defined on a markup declared property.
+            See the part marked by `-- --` in th following next example:
+            @property MyProp, --MyAttribute.Property--
+            
+            This is used to provide simplyfied equivalent of `[MyAttribute]` C# syntax
+            </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Compilation.ControlTree.IAbstractPropertyDeclarationDirective">
+             <summary>
+             Abstract tree node representing semantic for control property declaration in DotHTML markup.
+            
+             Example:
+             @property string MyProperty = "Initial value", MyAttribute.Property = true
+             </summary>
         </member>
         <member name="P:DotVVM.Framework.Compilation.ControlTree.IAbstractViewModuleDirective.ImportedModule">
             <summary>Original path specified by the module</summary>
@@ -1236,6 +1291,12 @@
             <summary>
             Gets property groups available on this control (list is ordered - longer prefix goes first)
             </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Compilation.ControlTree.ITypeDescriptor.CSharpName">
+            <summary> Returns type name with generic arguments in the C# style. Does not include namespaces. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Compilation.ControlTree.ITypeDescriptor.CSharpFullName">
+            <summary> Returns type name including namespace with generic arguments in the C# style. </summary>
         </member>
         <member name="M:DotVVM.Framework.Compilation.ControlTree.LifecycleRequirementsAssigningVisitor.ClearCaches(System.Type[])">
             <summary> Clear cache when hot reload happens </summary>
@@ -1285,6 +1346,14 @@
             Creates the control builder.
             </summary>
         </member>
+        <member name="M:DotVVM.Framework.Compilation.Directives.BaseTypeDirectiveCompiler.CreateDynamicDeclaringType(DotVVM.Framework.Compilation.ControlTree.ITypeDescriptor,System.Collections.Generic.IEnumerable{DotVVM.Framework.Compilation.Parser.Dothtml.Parser.DothtmlDirectiveNode})">
+            <summary> Gets or creates dynamic declaring type, and registers on it the properties declared using `@property` directives </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Compilation.Directives.BaseTypeDirectiveCompiler.GetDefaultWrapperType">
+            <summary>
+            Gets the default type of the wrapper for the view.
+            </summary>
+        </member>
         <member name="P:DotVVM.Framework.Compilation.DotHtmlFileInfo.VirtualPath">
             <summary>Gets or sets the virtual path to the view.</summary>
         </member>
@@ -1297,6 +1366,9 @@
             <summary>
             Contains debug information about original binding location.
             </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Compilation.DotvvmViewCompilationService.RegisterCompiledView(System.String,DotVVM.Framework.Compilation.ViewCompiler.ControlBuilderDescriptor,System.Exception)">
+            <summary> Callback from the compiler which adds the view compilation result to the status page. </summary>
         </member>
         <member name="M:DotVVM.Framework.Compilation.ExtensionMethodsCache.ClearCaches(System.Type[])">
             <summary> Clear cache when hot reload happens </summary>
@@ -1571,6 +1643,77 @@
         </member>
         <member name="T:DotVVM.Framework.Compilation.Javascript.VMPropertyInfoAnnotation">
             <summary> Marks that the expression is essentially a member access on the target. We use this to keep track which objects have observables and which don't. </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.Atomic">
+            <summary> atomic expression, like `x`, `(x + y)`, `0`, `{"f": 123}`, `x[1]`, ... </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.UnaryPostfix">
+            <summary> postfix unary expressions `x++`, `x--` </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.UnaryPrefix">
+            <summary> prefix unary expressions `typeof x`, `!x`, `+x`, `-x`, `++x`, ... </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.Multiplication">
+            <summary> Multiplication, division or modulo binary expression </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.Addition">
+            <summary> Plus or minus binary expression </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.BinaryShifts">
+            <summary> int32 binary shift expressions `x >> 10`, `x &lt;&lt; 10`, `x >>> 10` </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.Comparison">
+            <summary> Comparison expressions `x > 10`, `x &lt; 10`, `x >= 10`, `x in y`, `x instanceof Y` </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.Equal">
+            <summary> expressions `x == 10`, `x != 10`, `x === 10`, `x !== y` </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.BitwiseAnd">
+            <summary> `x &amp; 0xff` </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.BitwiseXor">
+            <summary> `x ^ 0xff` </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.BitwiseOr">
+            <summary> `x | 0xff` </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.ConditionalAnd">
+            <summary> `x == 1 &amp;&amp; y == 1` </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.ConditionalOr">
+            <summary> `x == 1 || y == 1` </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.NullishCoalescing">
+            <summary> `x ?? y` </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.Conditional">
+            <summary> `x == 1 ? y : z` </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.Assignment">
+            <summary> `x = 123` </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.ArrowFunction">
+            <summary> `x => x + 1` </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.OperatorPrecedence.Sequence">
+            <summary> `x, y` </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Compilation.Javascript.JsParensFixingVisitor">
+            <summary> Wraps nodes with <see cref="T:DotVVM.Framework.Compilation.Javascript.Ast.JsParenthesizedExpression" /> when needed to preserve semantics when the AST is stringified. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Compilation.Javascript.JsParensFixingVisitor.GetParentLevel(DotVVM.Framework.Compilation.Javascript.Ast.JsExpression)">
+            <summary> Returns the "inner operator precedence" of the parent node, as seen from the specified child node.
+            For example: binary expression have the same inner and outer precedence, <see cref="T:DotVVM.Framework.Compilation.Javascript.Ast.JsParenthesizedExpression" /> will return Atomic (20) from the outside, but 0 from the inside. Similarly, <see cref="T:DotVVM.Framework.Compilation.Javascript.Ast.JsInvocationExpression" /> is Atomic from the outside, but 1 (Sequence needs parens) from the argument position and 20 (needs to be Atomic) from the invocation target position. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Compilation.Javascript.JsParensFixingVisitor.OperatorLevel(DotVVM.Framework.Compilation.Javascript.Ast.JsExpression)">
+            <summary> Returns the "outer operator precedence" of the <paramref name="expression" />.
+            For example, Sequence expression will return 1; <see cref="T:DotVVM.Framework.Compilation.Javascript.Ast.JsInvocationExpression" />, <see cref="T:DotVVM.Framework.Compilation.Javascript.Ast.JsParenthesizedExpression" />, ... will return Atomic (20). </summary> 
+        </member>
+        <member name="M:DotVVM.Framework.Compilation.Javascript.JsParensFixingVisitor.IsPreferredSide(DotVVM.Framework.Compilation.Javascript.Ast.JsExpression)">
+            <summary> Returns true if the expression is in the more associative position of the parent node. For example `a + b` will return true for `a` and return false for `b`. For non-associative nodes (invocations, ...), always returns true.  </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Compilation.Javascript.JsParensFixingVisitor.GetOperatorPrecedence(DotVVM.Framework.Compilation.Javascript.Ast.JsExpression)">
+            <summary> Returns the "outer operator precedence" of the specified JS expression. </summary>
         </member>
         <member name="M:DotVVM.Framework.Compilation.Javascript.JsParensFixingVisitor.NeedsParens(DotVVM.Framework.Compilation.Javascript.Ast.JsExpression)">
             <summary>
@@ -1888,6 +2031,15 @@
         </member>
         <member name="T:DotVVM.Framework.Compilation.Styles.FunctionOrValue`2">
             <summary> A helper class for an optionally computed value that can still be used for debug strings. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Compilation.Styles.ResolvedControlHelper.FromRuntimeControl(DotVVM.Framework.Controls.DotvvmBindableObject,DotVVM.Framework.Compilation.ControlTree.DataContextStack,DotVVM.Framework.Configuration.DotvvmConfiguration)">
+            <summary> Creates a ResolvedControl from a DotvvmBindableObject. Used in control precompilation and server-side styles. If <paramref name="config" /> isn't specified, it won't be able to translate <see cref="T:DotVVM.Framework.Controls.Infrastructure.MarkupControlContainer" />.  </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Compilation.Styles.ResolvedControlHelper.ToRuntimeControl(DotVVM.Framework.Compilation.ControlTree.Resolved.ResolvedControl,System.IServiceProvider)">
+            <summary> Creates a new instance of the dotvvm object represented by this ResolvedControl. This is a lightweight alternative to compiling the control using the <see cref="T:DotVVM.Framework.Compilation.ViewCompiler.ViewCompilingVisitor" />. Children are not initialized immediately, all child components are replaced by <see cref="T:DotVVM.Framework.Compilation.Styles.ResolvedControlHelper.LazyRuntimeControl" /> </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Compilation.Styles.ResolvedControlHelper.LazyRuntimeControl">
+            <summary> Lazily creates children from the ResolvedControl when OnInit or GetLogicalChildren is invoked. </summary>
         </member>
         <member name="M:DotVVM.Framework.Compilation.Styles.StyleMatcher.ClearCaches(System.Type[])">
             <summary> Clear cache when hot reload happens </summary>
@@ -2234,6 +2386,11 @@
             Gets or sets the options of the compilation status page.
             </summary>
         </member>
+        <member name="P:DotVVM.Framework.Configuration.DotvvmDiagnosticsConfiguration.PerfWarnings">
+            <summary>
+            Gets or sets the options for runtime warning about slow requests, too big viewmodels, ...
+            </summary>
+        </member>
         <member name="T:DotVVM.Framework.Configuration.DotvvmFeatureFlag">
             <summary> Enables certain DotVVM feature for the entire application or only for certain routes. </summary>
         </member>
@@ -2286,6 +2443,16 @@
             <summary>
             Registers code controls from the same namespace and assembly as exampleControl
             </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Configuration.DotvvmPerfWarningsConfiguration.IsEnabled">
+            <summary> Gets or sets whether the warnings about potentially bad performance are enabled. By default, it enabled in both Debug and Production environments.
+            Before turning it off, we suggest tweaking the warning thresholds if you find the default values to be too noisy. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Configuration.DotvvmPerfWarningsConfiguration.SlowRequestSeconds">
+            <summary> Gets or sets the threshold for the warning about too slow requests. In seconds, by default it's 3 seconds. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Configuration.DotvvmPerfWarningsConfiguration.BigViewModelBytes">
+            <summary> Gets or sets the threshold for the warning about too big viewmodels. In bytes, by default it's 5 megabytes. </summary>
         </member>
         <member name="P:DotVVM.Framework.Configuration.DotvvmRuntimeConfiguration.GlobalFilters">
             <summary>
@@ -2495,6 +2662,16 @@
             Gets or sets a value indicating whether the control is enabled and can be clicked on.
             </summary>
         </member>
+        <member name="P:DotVVM.Framework.Controls.CheckableControlBase.LabelCssClass">
+            <summary>
+            Gets or sets a CSS class that will be appended on the rendered label element.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.CheckableControlBase.InputCssClass">
+            <summary>
+            Gets or sets a CSS class that will be appended on the rendered input element.
+            </summary>
+        </member>
         <member name="P:DotVVM.Framework.Controls.CheckableControlBase.ItemKeyBinding">
             <summary>
             Gets or sets a property that retrieves an unique key for the CheckedValue so it can be compared with objects in the CheckedItems collection. This property must be set if the value of the CheckedValue property is not a primitive type.
@@ -2639,6 +2816,44 @@
             <summary>
             Represents a placeholder in the master page that contains the Content from the content page.
             </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Controls.ControlMarkupOptionsAttribute">
+            <summary> Controls various aspects of how this control behaves in dothtml markup files. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.ControlMarkupOptionsAttribute.AllowContent">
+            <summary> When false, adding children to this control in a markup file will be an error. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.ControlMarkupOptionsAttribute.DefaultContentProperty">
+            <summary> Name of the DotvvmProperty where all child nodes will be placed. When null <see cref="P:DotVVM.Framework.Controls.DotvvmControl.Children" /> collection is used. If the property is not a collection type, only one child control will be allowed. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.ControlMarkupOptionsAttribute.Precompile">
+            <summary> When set, the control will be evaluated only once during view compilation, instead of execting it for every request. It only work for <see cref="T:DotVVM.Framework.Controls.CompositeControl" />s. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.ControlMarkupOptionsAttribute.PrimaryName">
+            <summary>
+            If set, the control will be referenced by this name in the markup and the primary name will appear in the Visual Studio IntelliSense.
+            If not set, the control class name will be used as a primary name.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.ControlMarkupOptionsAttribute.AlternativeNames">
+            <summary>
+            Represents a set of alternative names that are possible to use in the markup.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Controls.ControlPrecompilationMode.Never">
+            <summary> Never attempt precompilation. </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Controls.ControlPrecompilationMode.IfPossibleAndIgnoreExceptions">
+            <summary> Attempt precompilation whenever it's possible (the control is CompositeControl and there are no resource bindings in properties which can't handle bindings). If exception is thrown by the control, it is ignored and precompilation is skipped. </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Controls.ControlPrecompilationMode.IfPossible">
+            <summary> Attempt precompilation whenever it's possible (the control is CompositeControl and there are no resource bindings in properties which can't handle bindings). If exception is thrown by the control, compilation fails. </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Controls.ControlPrecompilationMode.Always">
+            <summary> Always try to precompile the control and fail compilation when it's not possible. </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Controls.ControlPrecompilationMode.InServerSideStyles">
+            <summary> Always precompile this controls and do that while styles are being processed. This will allow other styles to match onto the generated controls. </summary>
         </member>
         <member name="T:DotVVM.Framework.Controls.DataItemContainer">
             <summary>
@@ -2866,6 +3081,18 @@
             <param name="targetProperty">The <see cref="T:DotVVM.Framework.Binding.DotvvmProperty"/> to which <paramref name="sourceProperty"/> will be copied</param>
             <param name="throwOnFailure">Determines whether to throw an exception if copying fails</param>
         </member>
+        <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.GetHtmlAttributesDictionary``1(``0)">
+            <summary> Returns a mutable dictionary of html attributes defined in <see cref="P:DotVVM.Framework.Controls.HtmlCapability.Attributes" /> </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.GetCssClassesDictionary``1(``0)">
+            <summary> Returns a mutable dictionary of css classes defined in the <see cref="P:DotVVM.Framework.Controls.HtmlCapability.CssClasses" /> </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.GetCssStylesDictionary``1(``0)">
+            <summary> Returns a mutable dictionary of css styles defined in the <see cref="P:DotVVM.Framework.Controls.HtmlCapability.CssStyles" /> </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.AsObjectWithHtmlAttributes``1(``0)">
+            <summary> Little hack to convert <see cref="T:DotVVM.Framework.Controls.IObjectWithCapability`1" /> to IControlWithHtmlAttributes, so we can share code paths </summary>
+        </member>
         <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.GetDotvvmProperty``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
             <summary> Gets the DotvvmProperty referenced by the lambda expression. </summary>
         </member>
@@ -2878,8 +3105,8 @@
         <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.SetProperty``1(``0,DotVVM.Framework.Binding.DotvvmProperty,DotVVM.Framework.Binding.Expressions.IBinding)">
             <summary> Sets binding into the DotvvmProperty. Returns <paramref name="control"/> for fluent API usage. </summary>
         </member>
-        <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.SetProperty``1(``0,System.String,DotVVM.Framework.Binding.Expressions.IBinding)">
-            <summary> Sets binding into the DotvvmProperty with specified name. Returns <paramref name="control"/> for fluent API usage. </summary>
+        <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.SetProperty``1(``0,System.String,System.Object)">
+            <summary> Sets a value or a binding into the DotvvmProperty with specified name. Returns <paramref name="control"/> for fluent API usage. </summary>
         </member>
         <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.SetProperty``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},DotVVM.Framework.Binding.ValueOrBinding{``1})">
             <summary> Sets value or binding into the DotvvmProperty referenced in the lambda expression. Returns <paramref name="control"/> for fluent API usage. </summary>
@@ -2898,9 +3125,6 @@
         </member>
         <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.SetProperty``2(``0,DotVVM.Framework.Binding.DotvvmProperty,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{``1}})">
             <summary> Sets value or binding into the DotvvmProperty. If the <paramref name="valueOrBinding"/> is null, the property is removed. Returns <paramref name="control"/> for fluent API usage. </summary>
-        </member>
-        <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.SetProperty``1(``0,System.String,System.Object)">
-            <summary> Sets value or binding into the DotvvmProperty with specified name. Returns <paramref name="control"/> for fluent API usage. </summary>
         </member>
         <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.SetProperty``1(``0,DotVVM.Framework.Binding.DotvvmProperty,System.Object)">
             <summary> Sets value or binding into the DotvvmProperty. Returns <paramref name="control"/> for fluent API usage. </summary>
@@ -2947,7 +3171,16 @@
         <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.AddCssClasses``1(``0,System.String[])">
             <summary> Appends a list of css classes to this control. Returns <paramref name="control"/> for fluent API usage. </summary>
         </member>
+        <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.AddCssClass``1(``0,System.String,System.Boolean)">
+            <summary> Appends a css class to this control if the <paramref name="condition"/> is true. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.AddCssClass``1(``0,System.String,DotVVM.Framework.Binding.ValueOrBinding{System.Boolean})">
+            <summary> Appends a css class to this control if the <paramref name="condition"/> is true. </summary>
+        </member>
         <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.AddCssStyle``1(``0,System.String,System.String)">
+            <summary> Adds a css inline style - the `style` attribute. Returns <paramref name="control"/> for fluent API usage. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.AddCssStyle``2(``0,System.String,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{``1}})">
             <summary> Adds a css inline style - the `style` attribute. Returns <paramref name="control"/> for fluent API usage. </summary>
         </member>
         <member name="M:DotVVM.Framework.Controls.DotvvmBindableObjectHelper.SetCapability``2(``0,``1,System.String)">
@@ -3012,12 +3245,12 @@
         </member>
         <member name="P:DotVVM.Framework.Controls.DotvvmControl.ID">
             <summary>
-            Gets or sets the unique control ID.
+            Gets or sets the control client ID within its naming container.
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.DotvvmControl.ClientID">
             <summary>
-            Gets id of the control that will be written in 'id' attribute. Returns null if the IDProperty is not set.
+            Gets the calculated client ID of the control that will be rendered in the 'id' attribute. Returns null if the ID property is not set.
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.DotvvmControl.ClientIDMode">
@@ -3156,14 +3389,14 @@
             Occurs after the page commands are executed.
             </summary>
         </member>
-        <member name="M:DotVVM.Framework.Controls.DotvvmControl.GetDotvvmUniqueId">
+        <member name="M:DotVVM.Framework.Controls.DotvvmControl.GetDotvvmUniqueId(DotVVM.Framework.Binding.ValueOrBinding{System.String},DotVVM.Framework.Binding.ValueOrBinding{System.String})">
             <summary>
             Gets the internal unique ID of the control. Returns either string or IValueBinding.
             </summary>
         </member>
-        <member name="M:DotVVM.Framework.Controls.DotvvmControl.CreateClientId">
+        <member name="M:DotVVM.Framework.Controls.DotvvmControl.CreateClientId(DotVVM.Framework.Binding.ValueOrBinding{System.String},DotVVM.Framework.Binding.ValueOrBinding{System.String})">
             <summary>
-            Adds the corresponding attribute for the Id property.
+            Calculates the corresponding attribute for the Id property.
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Controls.DotvvmControl.TryGetTextContent(System.String@)">
@@ -3514,6 +3747,48 @@
             Gets or sets a binding which retrieves the value to display from the current data item.
             </summary>
         </member>
+        <member name="T:DotVVM.Framework.Controls.HierarchyRepeater">
+            <summary>
+            Repeats a template for each item in the hierarchical DataSource collection.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.HierarchyRepeater.ItemChildrenBinding">
+            <summary>
+            Gets or sets the binding which retrieves children of a data item.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.HierarchyRepeater.ItemTemplate">
+            <summary>
+            Gets or sets the template for each HierarchyRepeater item.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.HierarchyRepeater.EmptyDataTemplate">
+            <summary>
+            Gets or sets the template which will be displayed when the data source is empty.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.HierarchyRepeater.RenderWrapperTag">
+            <summary>
+            Gets or sets whether the control should render a wrapper element.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.HierarchyRepeater.WrapperTagName">
+            <summary>
+            Gets or sets the name of the tag that wraps the <see cref="T:DotVVM.Framework.Controls.HierarchyRepeater.HierarchyRepeaterLevel"/>.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Controls.HierarchyRepeater.HierarchyRepeaterLevel">
+            <summary>
+            An internal control for a level of the <see cref="T:DotVVM.Framework.Controls.HierarchyRepeater"/> that renders
+            the appropriate foreach binding.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Controls.HierarchyRepeater.HierarchyRepeaterItem">
+            <summary>
+            An internal control for an item of the <see cref="T:DotVVM.Framework.Controls.HierarchyRepeater"/>. Always renders a simple wit
+            binding.
+            </summary>
+        </member>
         <member name="T:DotVVM.Framework.Controls.HtmlGenericControl">
             <summary>
             A control that represents plain HTML tag.
@@ -3540,13 +3815,26 @@
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.HtmlGenericControl.Attributes">
-            <summary>
-            Gets the attributes.
-            </summary>
+            <summary> A dictionary of html attributes that are rendered on this control's html tag. </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Controls.HtmlGenericControl.AttributesGroupDescriptor">
+            <summary> A dictionary of html attributes that are rendered on this control's html tag. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.HtmlGenericControl.CssClasses">
+            <summary> A dictionary of css classes. All classes whose value is `true` will be placed in the `class` attribute. </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Controls.HtmlGenericControl.CssClassesGroupDescriptor">
+            <summary> A dictionary of css classes. All classes whose value is `true` will be placed in the `class` attribute. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.HtmlGenericControl.CssStyles">
+            <summary> A dictionary of css styles which will be placed in the `style` attribute. </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Controls.HtmlGenericControl.CssStylesGroupDescriptor">
+            <summary> A dictionary of css styles which will be placed in the `style` attribute. </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.HtmlGenericControl.InnerText">
             <summary>
-            Gets or sets the inner text of the HTML element.
+            Gets or sets the inner text of the HTML element. Note that this property can only be used on HtmlGenericControl directly and when the control does not have any children.
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.HtmlGenericControl.TagName">
@@ -3556,7 +3844,7 @@
         </member>
         <member name="P:DotVVM.Framework.Controls.HtmlGenericControl.Visible">
             <summary>
-            Gets or sets whether the control is visible.
+            Gets or sets whether the control is visible. When set to false, `style="display: none"` will be added to this control.
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.HtmlGenericControl.RendersHtmlTag">
@@ -3596,6 +3884,38 @@
         <member name="M:DotVVM.Framework.Controls.HtmlGenericControl.CheckInnerTextUsage(DotVVM.Framework.Controls.HtmlGenericControl.RenderState@)">
             <summary>
             Checks the inner text property usage.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Controls.HtmlGenericControl.AttributeList">
+            <summary> Linked list of attribute values, used when at least one attribute value is a binding, so the values can't be concatenated. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Controls.HtmlGenericControl.AttributeList.#ctor(System.Object,DotVVM.Framework.Controls.HtmlGenericControl.AttributeList)">
+            <summary> Linked list of attribute values, used when at least one attribute value is a binding, so the values can't be concatenated. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Controls.HtmlGenericControl.AttributeList.GetKnockoutBindingExpression(DotVVM.Framework.Controls.DotvvmBindableObject,System.String)">
+            <summary> Returns concatenation expression from all the list values. If the list contains no bindings, returns null. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.HtmlCapability.Attributes">
+            <summary> Gets or sets a dictionary of HTML attributes that are rendered on this control HTML tag. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.HtmlCapability.CssClasses">
+            <summary> Gets or sets a dictionary of CSS classes. All classes which value is `true` will be placed in the `class` attribute. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.HtmlCapability.ID">
+            <summary> Gets or sets the ID of the control. Based on the `ClientIDMode` property, the value may be prefixed by DotVVM in order to be unique. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Controls.HtmlCapability.IsEmpty">
+            <summary> Returns true if all properties are set to default value </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.HtmlCapability.CssStyles">
+            <summary> Gets or sets a dictionary of CSS styles which will be placed in the `style` attribute. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.HtmlCapability.Visible">
+            <summary> Gets or sets whether the control is visible. When set to false, `style="display: none"` will be added to this control. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.WrapperCapability.WrapperTagName">
+            <summary>
+            Gets or sets the name of the wrapper element.
             </summary>
         </member>
         <member name="T:DotVVM.Framework.Controls.HtmlLiteral">
@@ -3690,6 +4010,9 @@
             <summary>
             Interface for controls which will accept any attribute and stores it in the Attributes collection.
             </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.IControlWithHtmlAttributes.Attributes">
+            <summary> A dictionary of html attributes that are rendered on this control's html tag. </summary>
         </member>
         <member name="T:DotVVM.Framework.Controls.IDotvvmObjectLike">
             <summary> Object which is basically DotvvmBindableObject. This interface is useful for defining interfaces for controls, otherwise please prefer using DotvvmBindableObject directly. </summary>
@@ -3841,6 +4164,11 @@
             Renders the resource links with RenderPosition = Head. This control must be on every page, usually just before the end of head element.
             </summary>
         </member>
+        <member name="T:DotVVM.Framework.Controls.PrecompiledControlPlaceholder">
+            <summary>
+            Represents a control which was precompiled. This class does nothing, only serves as a marker for diagnostics.
+            </summary>
+        </member>
         <member name="T:DotVVM.Framework.Controls.InlineScript">
             <summary>
             Renders a script that is executed when the DotVVM framework is loaded.
@@ -3864,7 +4192,7 @@
         <member name="M:DotVVM.Framework.Controls.InternalPropertyExtensions.GetDataContextType(DotVVM.Framework.Controls.DotvvmBindableObject)">
             Gets an expected data context type (usually determined by the compiler)
         </member>
-        <member name="M:DotVVM.Framework.Controls.InternalPropertyExtensions.SetDataContextType(DotVVM.Framework.Controls.DotvvmBindableObject,DotVVM.Framework.Compilation.ControlTree.DataContextStack)">
+        <member name="M:DotVVM.Framework.Controls.InternalPropertyExtensions.SetDataContextType``1(``0,DotVVM.Framework.Compilation.ControlTree.DataContextStack)">
             Sets an expected data context type
         </member>
         <member name="T:DotVVM.Framework.Controls.ITemplate">
@@ -3931,6 +4259,11 @@
             <param name="nullBindingAction">Action that is executed when there is not a value binding in the specified property, or in server rendering</param>
             <param name="renderEvenInServerRenderingMode">When set to true, the binding is rendered even in server rendering mode. By default, the data-bind attribute is only added in client-rendering mode.</param>
         </member>
+        <member name="M:DotVVM.Framework.Controls.KnockoutHelper.AddKnockoutDataBind(DotVVM.Framework.Controls.IHtmlWriter,System.String,DotVVM.Framework.Controls.DotvvmBindableObject,DotVVM.Framework.Binding.Expressions.IValueBinding,System.String)">
+            <summary>
+            Adds the data-bind attribute to the next HTML element that is being rendered.
+            </summary>
+        </member>
         <member name="M:DotVVM.Framework.Controls.KnockoutHelper.AddKnockoutDataBind(DotVVM.Framework.Controls.IHtmlWriter,System.String,DotVVM.Framework.Binding.Expressions.IValueBinding,DotVVM.Framework.Controls.DotvvmBindableObject)">
             <summary>
             Adds the data-bind attribute to the next HTML element that is being rendered. The binding expression is taken from the specified value binding.
@@ -3973,6 +4306,9 @@
             Generates a list of postback update handlers.
             </summary>
         </member>
+        <member name="M:DotVVM.Framework.Controls.KnockoutHelper.GetValueBindingContextLambda(DotVVM.Framework.Binding.Expressions.IValueBinding,DotVVM.Framework.Controls.DotvvmBindableObject,System.Boolean)">
+            <summary> Returns a lambda function taking the knockout context as its single argument, returning the result of the IValueBinding. </summary>
+        </member>
         <member name="M:DotVVM.Framework.Controls.KnockoutHelper.GetValidationTargetExpression(DotVVM.Framework.Controls.DotvvmBindableObject)">
             <summary>
             Gets the validation target expression.
@@ -3997,6 +4333,9 @@
             <summary>
             Encodes the string so it can be used in Javascript code.
             </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Controls.Label">
+            <summary> Render an HTML `&lt; label for=X &gt;` element. The for=X should be a control ID that will be looked up and adjusted to match the control even when it's in Repeater </summary>
         </member>
         <member name="T:DotVVM.Framework.Controls.LinkButton">
             <summary>
@@ -4063,6 +4402,18 @@
             Initializes a new instance of the <see cref="T:DotVVM.Framework.Controls.Literal"/> class.
             </summary>
         </member>
+        <member name="F:DotVVM.Framework.Controls.MappingMode.Exclude">
+            <summary> It's not possible to use this property from dothtml markup. </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Controls.MappingMode.Attribute">
+            <summary> Property is used as an attribute. For example `&lt;div Visible={value: ...}` </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Controls.MappingMode.InnerElement">
+            <summary> Property is used as a child element. For example `&lt;dot:GridView ...&gt; &lt;Columns&gt; ... property content &lt;Columns&gt;` </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Controls.MappingMode.Both">
+            <summary> It is allowed to use this property either as an attribute or as a child element. </summary>
+        </member>
         <member name="T:DotVVM.Framework.Controls.MarkupOptionsAttribute">
             <summary>
             Declares instructions for control builder.
@@ -4070,12 +4421,12 @@
         </member>
         <member name="P:DotVVM.Framework.Controls.MarkupOptionsAttribute.AllowBinding">
             <summary>
-            Gets or sets whether the data-binding can be used on this property.
+            Gets or sets whether client-side data-bindings can be used on this property (`value` and `controlProperty`).
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.MarkupOptionsAttribute.AllowHardCodedValue">
             <summary>
-            Gets or sets whether the hard-coded value in markup can be used on this property.
+            Gets or sets whether the server-side value in markup can be used on this property. Allows both value hard-coded in markup and `resource` binding, which is always evaluated server-side.
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.MarkupOptionsAttribute.Name">
@@ -4085,7 +4436,7 @@
         </member>
         <member name="P:DotVVM.Framework.Controls.MarkupOptionsAttribute.AllowValueMerging">
             <summary>
-            Determines if multiple property assignments can be merged into one value
+            Determines if multiple property assignments can be merged into one value. For example `&lt;div class='x' class='y' ...` is equivalent to `&lt;div class='x y'` because of the merging.
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.MarkupOptionsAttribute.AttributeValueMerger">
@@ -4095,13 +4446,16 @@
         </member>
         <member name="P:DotVVM.Framework.Controls.MarkupOptionsAttribute.MappingMode">
             <summary>
-            Gets or sets the mapping mode.
+            Gets or sets the mapping mode - whether the property is used as an attribute or inner element (or both are allowed).
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.MarkupOptionsAttribute.AllowAttributeWithoutValue">
             <summary>
             Determines whether attributes without value are allowed.
             </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.MarkupOptionsAttribute.Required">
+            <summary> Whether the property must always be specified on this control. It is also allowed to set the property using server-side styles. </summary>
         </member>
         <member name="T:DotVVM.Framework.Controls.MultiSelectHtmlControlBase">
             <summary>
@@ -4442,6 +4796,9 @@
         <member name="F:DotVVM.Framework.Controls.Styles.RequiredResourcesProperty">
             <summary> Append to this property to add a required resource somewhere to the page. </summary> 
         </member>
+        <member name="F:DotVVM.Framework.Controls.Styles.RemoveProperty">
+            <summary> If true, the control will be removed from the control tree. Note that all appended, prepended and wrapper controls will be preserved. </summary>
+        </member>
         <member name="T:DotVVM.Framework.Controls.SuppressPostBackHandler">
             <summary>
             Adds a general mechanism to suppress PostBack.
@@ -4523,6 +4880,16 @@
         <member name="M:DotVVM.Framework.Controls.TextBox.RenderContents(DotVVM.Framework.Controls.IHtmlWriter,DotVVM.Framework.Hosting.IDotvvmRequestContext)">
             <summary>
             Renders the contents inside the control begin and end tags.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.TextOrContentCapability.Text">
+            <summary>
+            Gets or sets the text inside the control.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.TextOrContentCapability.Content">
+            <summary>
+            Gets or sets the content placed inside the control.
             </summary>
         </member>
         <member name="F:DotVVM.Framework.Controls.UITests.NameProperty">
@@ -4616,6 +4983,15 @@
             <summary>
             Initializes a new instance of the <see cref="T:DotVVM.Framework.Controls.Validator"/> class.
             </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Diagnostics.JsonSizeAnalyzer">
+            <summary> Computes the inclusive and exclusive size of each JSON property. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Diagnostics.JsonSizeAnalyzer.Analyze(Newtonsoft.Json.Linq.JObject)">
+            <summary> Computes the inclusive and exclusive size of each JSON property. </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Diagnostics.PerformanceWarningTracer">
+            <summary> DotVVM request tracer which produces log warning when a request is very slow or when view model is too large. </summary>
         </member>
         <member name="M:DotVVM.Framework.Hosting.AggregateMarkupFileLoader.GetMarkup(DotVVM.Framework.Configuration.DotvvmConfiguration,System.String)">
             <summary>
@@ -5187,6 +5563,14 @@
             <summary>
             Adds the required resource with specified name.
             </summary>
+        </member>
+        <member name="M:DotVVM.Framework.ResourceManagement.ResourceManager.AddTemplateResource(System.String,System.String)">
+            <summary>
+            Adds the template resource at the end of the HTML document.
+            </summary>
+            <param name="template">The rendered DOM elements.</param>
+            <param name="resourceId">The ID of the template resource.</param>
+            <returns>Resource ID</returns>
         </member>
         <member name="M:DotVVM.Framework.ResourceManagement.ResourceManager.AddTemplateResource(System.String)">
             <summary>
@@ -6339,6 +6723,9 @@
             The Guid is NOT a valid v4 Guid, that would only lower the security.
             </summary>
         </member>
+        <member name="M:DotVVM.Framework.Utils.StringSimilarity.DamerauLevenshteinDistance(System.String,System.String)">
+            <summary> Edit distance with deletion (Visble), insertion (Visivble), substitution (Visine) and transposition (Visilbe) </summary>
+        </member>
         <member name="M:DotVVM.Framework.ViewModel.ChildViewModelsCache.ClearCaches(System.Type[])">
             <summary> Clear cache when hot reload happens </summary>
         </member>
@@ -6502,7 +6889,7 @@
         <member name="P:DotVVM.Framework.ViewModel.Serialization.ViewModelSerializationMap.OriginalProperties">
             <summary> Rough structure of Properties when the object was initialized. This is used for hot reload to judge if it can be flushed from the cache. </summary>
         </member>
-        <member name="M:DotVVM.Framework.ViewModel.Serialization.ViewModelSerializationMap.#ctor(System.Type,System.Collections.Generic.IEnumerable{DotVVM.Framework.ViewModel.Serialization.ViewModelPropertyMap},DotVVM.Framework.Configuration.DotvvmConfiguration)">
+        <member name="M:DotVVM.Framework.ViewModel.Serialization.ViewModelSerializationMap.#ctor(System.Type,System.Collections.Generic.IEnumerable{DotVVM.Framework.ViewModel.Serialization.ViewModelPropertyMap},System.Reflection.MethodBase,DotVVM.Framework.Configuration.DotvvmConfiguration)">
             <summary>
             Initializes a new instance of the <see cref="T:DotVVM.Framework.ViewModel.Serialization.ViewModelSerializationMap"/> class.
             </summary>
@@ -6517,12 +6904,7 @@
             Gets the JSON writer factory.
             </summary>
         </member>
-        <member name="P:DotVVM.Framework.ViewModel.Serialization.ViewModelSerializationMap.ConstructorFactory">
-            <summary>
-            Gets the constructor factory.
-            </summary>
-        </member>
-        <member name="M:DotVVM.Framework.ViewModel.Serialization.ViewModelSerializationMap.CreateConstructorFactory">
+        <member name="M:DotVVM.Framework.ViewModel.Serialization.ViewModelSerializationMap.CallConstructor(System.Linq.Expressions.Expression,System.Collections.Generic.Dictionary{System.Reflection.PropertyInfo,System.Linq.Expressions.ParameterExpression})">
             <summary>
             Creates the constructor for this object.
             </summary>
@@ -6555,7 +6937,7 @@
             Creates the serialization map for specified type.
             </summary>
         </member>
-        <member name="M:DotVVM.Framework.ViewModel.Serialization.ViewModelSerializationMapper.GetProperties(System.Type)">
+        <member name="M:DotVVM.Framework.ViewModel.Serialization.ViewModelSerializationMapper.GetProperties(System.Type,System.Reflection.MethodBase)">
             <summary>
             Gets the properties of the specified type.
             </summary>
@@ -6892,6 +7274,12 @@
         </member>
         <member name="M:StyleBuilderExtensionMethods.Prepend``2(DotVVM.Framework.Compilation.Styles.IStyleBuilder{``0},System.Func{DotVVM.Framework.Compilation.Styles.IStyleMatchContext{``0},DotVVM.Framework.Controls.DotvvmBindableObject},DotVVM.Framework.Compilation.Styles.StyleOverrideOptions)">
             <summary> Adds a new control above the matched control. </summary>
+        </member>
+        <member name="M:StyleBuilderExtensionMethods.Remove``1(DotVVM.Framework.Compilation.Styles.IStyleBuilder{``0},System.Boolean,DotVVM.Framework.Compilation.Styles.StyleOverrideOptions)">
+            <summary> The control will be removed from the control tree if <paramref name="condition"/> is true. Note that all appended, prepended and wrapper controls will be preserved. </summary>
+        </member>
+        <member name="M:StyleBuilderExtensionMethods.Remove``1(DotVVM.Framework.Compilation.Styles.IStyleBuilder{``0},System.Func{DotVVM.Framework.Compilation.Styles.IStyleMatchContext{``0},System.Boolean},DotVVM.Framework.Compilation.Styles.StyleOverrideOptions)">
+            <summary> The control will be removed from the control tree if <paramref name="condition"/> is true. Note that all appended, prepended and wrapper controls will be preserved. </summary>
         </member>
         <member name="M:StyleMatchContextExtensionMethods.Cast``1(DotVVM.Framework.Compilation.Styles.IStyleMatchContext)">
             <summary> Ensures that control is of type <typeparamref name="T"/>, otherwise throws an exception. </summary>
