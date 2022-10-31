@@ -1,0 +1,8 @@
+﻿<bs:Row>
+  <bs:Column style="background-color: blue; color: white">
+    Column 1
+  </bs:Column>
+  <bs:Column style="background-color: red; color: white">
+    Column 2
+  </bs:Column>
+</bs:Row>
