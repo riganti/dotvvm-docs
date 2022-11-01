@@ -1,0 +1,26 @@
+﻿<bs:Row>
+    <bs:Column Flex.OrderAll="5">
+        Order 5
+    </bs:Column>
+    <bs:Column Flex.OrderSmall="5">
+        OrderSM 5
+    </bs:Column>
+    <bs:Column Flex.OrderMedium="5">
+        OrderMD 5
+    </bs:Column>
+    <bs:Column Flex.OrderLarge="5">
+        OrderLG 5
+    </bs:Column>
+    <bs:Column Flex.OrderXLarge="5">
+        OrderXL 5
+    </bs:Column>
+    <bs:Column Flex.OrderXXLarge="5">
+        OrderXXL 5
+    </bs:Column>
+    <bs:Column Flex.OrderAll="last">
+        Order Last
+    </bs:Column>
+    <bs:Column Flex.OrderAll="first">
+        Order First
+    </bs:Column>
+</bs:row>
