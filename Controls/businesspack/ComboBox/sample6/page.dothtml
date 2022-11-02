@@ -1,7 +1,7 @@
 <bp:ComboBox DataSource="{value: Countries}"
              Text="{value: TypedCountry}"
              SelectedValue="{value: SelectedCountry}"
-             AllowNewItem="true"
+             AllowNewItems="true"
              Placeholder="Please select or type Country" />
 
 <p>Selected Country: {{value: SelectedCountry ?? TypedCountry}}</p>

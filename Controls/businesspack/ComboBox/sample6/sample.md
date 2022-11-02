@@ -1,6 +1,6 @@
 ## Sample 6: New Items
 
-To allow entering a custom value which is not present in the `DataSource` collection, you can use the `AllowNewItem` property. 
+To allow entering a custom value which is not present in the `DataSource` collection, you can use the `AllowNewItems` property. 
 
 The `Text` property contains the exact value the user entered in the text field.
 
