@@ -1,15 +1,7 @@
 ﻿{
   "files": [
-    { 
-      "name": "page.dothtml",
-      "replacements": [
-        {
-          "pattern": "(https?://)",
-          "replacement": "/bootstrap4-4.0/?url=\\1"
-        }
-      ],
-      "routeUrl": "Badge/sample3/{Id?}"
-    },
-    { "name": "ViewModel.cs" }
+    { "name": "page.dothtml" },
+    { "name": "ViewModel.cs" },
+    { "name": "MyViewModelBase.cs"}
   ]
 }
