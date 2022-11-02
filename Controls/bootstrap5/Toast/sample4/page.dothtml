@@ -1,0 +1,12 @@
+﻿<bs:Toast IsDisplayed="{value: Displayed}" OnShow="{command: Shown()}" OnHide="{command: Hidden()}">
+    <HeaderTemplate>
+        Header
+    </HeaderTemplate>
+    <ContentTemplate>
+        Content
+    </ContentTemplate>
+</bs:Toast>
+
+<bs:Button Text="Show" Click="{staticCommand: Displayed = true}" />
+
+<pre>{{value: Log}}</pre>

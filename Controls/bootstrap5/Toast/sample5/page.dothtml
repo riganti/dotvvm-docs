@@ -1,0 +1,1 @@
+﻿<bs:Toast IsDisplayed="{value: Displayed}" Text="Content" HeaderText="Header Primary" Color="Secondary" FontColor="Primary" />

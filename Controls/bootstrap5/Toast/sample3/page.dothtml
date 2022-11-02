@@ -1,0 +1,3 @@
+﻿<bs:Toast IsDisplayed="{value: Displayed}" Text="Content" AutoHideDelay="3000" AddCloseButton="false" />
+
+<bs:Button Text="Show / Hide with delay" Click="{staticCommand: Displayed = !Displayed}" />
