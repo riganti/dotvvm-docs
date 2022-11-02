@@ -1,14 +1,3 @@
-﻿<bs:Row HorizontalGutterSmall="0" HorizontalGutterMedium="1" HorizontalGutterLarge="3" HorizontalGutterXLarge="4" HorizontalGutterXXLarge="5" ColumnNumberAll="2">
-    <bs:Column>
-        Column 1
-    </bs:Column>
-    <bs:Column>
-        Column 2
-    </bs:Column>
-    <bs:Column>
-        Column 3
-    </bs:Column>
-    <bs:Column>
-        Column 4
-    </bs:Column>
-</bs:Row>
+﻿<bs:Toast IsDisplayed="{value: Displayed}" Text="None Animation" Animation="None" />
+
+<bs:Toast IsDisplayed="{value: Displayed}" Text="Fade Animation" Animation="Fade" />

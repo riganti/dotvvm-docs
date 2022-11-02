@@ -1,9 +1,3 @@
-## Sample 4: Vertical Alignment
+## Sample 4: Callbacks
 
-The `AlignItems` property allows to specify vertical alignment of the columns in the row.
-
-* `None` aligns the columns by default.
-* `Start` aligns the columns to the top.
-* `Center` aligns the columns to the middle.
-* `End` aligns the columns to the bottom.
-
+You can use `OnShow` and `OnHide` commands to perform some actions when the toast changes its state.
