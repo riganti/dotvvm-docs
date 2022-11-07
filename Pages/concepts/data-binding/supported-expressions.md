@@ -88,6 +88,8 @@ DotVVM can translate several .NET methods on basic types or collections to JavaS
 * `List<T>.Add(T element)`
 * `List<T>.AddRange(IEnumerable<T> elements)`
 * `List<T>.Clear()`
+* `List<T>.Contains(T element)` (**new in version 4.1**)
+   * *Note*: this method is restricted to primitive types
 * `List<T>.Insert(int index, T element)`
 * `List<T>.InsertRange(int index, IEnumerable<T> elements)`
 * `List<T>.RemoveAt(int index)`
