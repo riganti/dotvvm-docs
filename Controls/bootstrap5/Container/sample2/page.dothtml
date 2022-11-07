@@ -3,11 +3,6 @@
         <bs:TextBox Text="Some text"/>
     </bs:Container>
 
-    <h4>Container with Text</h4>
-    <bs:Container data-ui="with-text">
-        {{value: Text}}
-    </bs:Container>
-
     <h24>Container with h2</h24>
     <bs:Container data-ui="with-h2">
         <h2>Container with h2</h2>
