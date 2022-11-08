@@ -1,0 +1,3 @@
+﻿<bs:Image ImageUrl="~/Resources/Images/img11.jpg" VisualStyles="Rounded, Responsive"/>
+
+<bs:Image ImageUrl="~/Resources/Images/img11.jpg" VisualStyles="Thumbnail, Rounded"/>
