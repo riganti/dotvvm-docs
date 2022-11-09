@@ -1,5 +1,16 @@
 # Release notes
 
+## v4.0.553.0
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.21)
+* Version for Visual Studio 2022 (17.4.0)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019.RTM.4.0.553.0.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.RTM.4.0.553.0.vsix)
+
+
 ## v4.0.552.0
 * Project system improvements
 * Fixed a bug with resolving syntax trees for certain projects
