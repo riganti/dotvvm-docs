@@ -1,0 +1,4 @@
+﻿
+<bs:Offcanvas BackDrop="BodyScrolling" IsCollapsed="{value: Scrolling}" BodyText="Body Scrolling" HeaderText="BodyScrolling"/>
+<bs:Offcanvas BackDrop="Backdrop" IsCollapsed="{value: Drop}" BodyText="Backdrop" HeaderText="With Backdrop"/>
+<bs:Offcanvas BackDrop="BodyScrollingAndBackdrop" IsCollapsed="{value: Scrollingdrop}" BodyText="Body Scrooling and Backdrop" HeaderText="BodyScrolling and Backdrop"/>

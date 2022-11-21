@@ -1,0 +1,2 @@
+﻿
+<bs:Offcanvas HeaderText="Header" BodyText="Body Text" IsCollapsed="{value: IsCollapsed}" Placement="Top" />

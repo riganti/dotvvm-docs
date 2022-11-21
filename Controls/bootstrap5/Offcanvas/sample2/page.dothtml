@@ -1,0 +1,17 @@
+﻿
+<bs:Offcanvas HeaderText="Sample Header" BodyText="This is body text of offcanvas component" IsCollapsed="{value: IsCollapsed}" />
+
+<bs:Offcanvas HeaderText="{value: HeaderText}" BodyText="{value: BodyText}" IsCollapsed="{value: IsCollapsed2}" />
+
+<bs:Offcanvas IsCollapsed="{value: IsCollapsed3}">
+    <HeaderTemplate>
+        <h2>Custom header</h2>
+        <bs:Button Click="{staticCommand: IsCollapsed3 = !IsCollapsed3}" Text="Close" />
+    </HeaderTemplate>
+    <BodyTemplate>
+        <bs:Button Click="{staticCommand: IsCollapsed3 = !IsCollapsed3}" Text="Another close button" />
+        <p>
+            {{value: TextSampleLong}}
+        </p>
+    </BodyTemplate>
+</bs:Offcanvas>
