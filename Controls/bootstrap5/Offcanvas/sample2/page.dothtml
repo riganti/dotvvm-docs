@@ -10,8 +10,6 @@
     </HeaderTemplate>
     <BodyTemplate>
         <bs:Button Click="{staticCommand: IsCollapsed3 = !IsCollapsed3}" Text="Another close button" />
-        <p>
-            {{value: TextSampleLong}}
-        </p>
+        <p>Bustom body content</p>
     </BodyTemplate>
 </bs:Offcanvas>
