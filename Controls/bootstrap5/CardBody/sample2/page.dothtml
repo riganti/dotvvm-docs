@@ -1,4 +1,4 @@
-﻿<bs:Card>
+﻿<bs:Card FooterText="Card Footer">
   <bs:CardImage ImageUrl="~/images/LA.jpg" ToolTip="Card Image">
     <bs:CardBody style="color:aliceblue;">
       <h1>Overlaid body</h1>
@@ -10,6 +10,6 @@
     </bs:CardBody>
   </bs:CardImage>
   
-  <bs:CardListGroup DataSource="{value: Texts}" ItemText="{value: _this}" />
+  <bs:CardListGroup DataSource="{value: Texts}" TextBinding="{value: _this}" />
 
 </bs:Card>

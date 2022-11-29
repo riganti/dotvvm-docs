@@ -1,0 +1,3 @@
+﻿<bs:Card>
+  <bs:CardImage ImageUrl="~/Images/la.jpg" AlternateText="Los Angeles" ToolTip="Los Angeles" />
+</bs:Card>
