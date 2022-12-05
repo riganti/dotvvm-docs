@@ -1,9 +1,9 @@
-﻿<bs:Card Color="Danger" BorderColor="Warning" data-ui="title">
+﻿<bs:Card Color="Danger" BorderColor="Warning">
   <bs:CardBody TitleText="Title" Text="Text" />
 </bs:Card>
-<bs:Card Color="Light" BorderColor="Dark" data-ui="title">
+<bs:Card Color="Light" BorderColor="Dark">
   <bs:CardBody TitleText="Title" Text="Text" />
 </bs:Card>
-<bs:Card Color="Success" BorderColor="Light" data-ui="title">
+<bs:Card Color="Success" BorderColor="Light">
   <bs:CardBody TitleText="Title" Text="Text" />
 </bs:Card>

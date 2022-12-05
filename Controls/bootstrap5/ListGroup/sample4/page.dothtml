@@ -1,0 +1,6 @@
+﻿<bs:ListGroup ItemType="Button" 
+              DataSource="{value: Values}" 
+              ItemText="{value: _this}" 
+              ItemClick="{command: _parent.Select(_this)}" />
+
+Selected item: {{value: SelectedValue}}

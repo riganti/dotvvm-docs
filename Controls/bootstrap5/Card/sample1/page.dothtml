@@ -10,4 +10,4 @@
          SubtitleText="Subtitle" Text="Text" 
          FooterText="Footer" />
 
-<bs:Card data-ui="binding" HeaderText="{value: HeaderText}" TitleText="{value: TitleText}" SubtitleText="{value: SubtitleText}" Text="{value: Text}" FooterText="{value: FooterText}" />
+<bs:Card HeaderText="{value: HeaderText}" TitleText="{value: TitleText}" SubtitleText="{value: SubtitleText}" Text="{value: Text}" FooterText="{value: FooterText}" />

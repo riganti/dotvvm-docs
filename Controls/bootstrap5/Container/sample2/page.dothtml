@@ -1,26 +1,26 @@
 ﻿    <h4>Container with TextBox</h4>
-    <bs:Container data-ui="with-textbox">
+    <bs:Container>
         <bs:TextBox Text="Some text"/>
     </bs:Container>
 
     <h24>Container with h2</h24>
-    <bs:Container data-ui="with-h2">
+    <bs:Container>
         <h2>Container with h2</h2>
     </bs:Container>
 
     <h4>Container with Spinner</h4>
-    <bs:Container data-ui="with-spinner">
+    <bs:Container>
         <bs:Spinner></bs:Spinner>
     </bs:Container>
 
     <h4>Container with Progress</h4>
-    <bs:Container data-ui="with-progress">
-        <bs:ProgressBar Value="100" data-ui="default">
+    <bs:Container>
+        <bs:ProgressBar Value="100">
             100% completed...
         </bs:ProgressBar>
     </bs:Container>
 
     <h4>Container with Badge</h4>
-    <bs:Container data-ui="with-badge">
+    <bs:Container>
         <bs:Badge Text="100" ID="badge-text" />
     </bs:Container>

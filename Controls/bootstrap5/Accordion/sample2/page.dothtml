@@ -3,4 +3,4 @@
                 ItemContentText="{value: Text}"
                 ExpandedItemIndex="{value: IndexAdvanced}" />
 
-<dot:Button Click="{command: Additem()}" Text="Add" data-ui="change-items-btn" />
+<dot:Button Click="{command: Additem()}" Text="Add" />

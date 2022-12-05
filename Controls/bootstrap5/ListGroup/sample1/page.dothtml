@@ -1,0 +1,9 @@
+﻿<bs:ListGroup>
+  <bs:ListGroupTextItem Text="{value: Text}" />
+  <bs:ListGroupTextItem Text="Item 2" />
+  <bs:ListGroupTextItem Text="Item 3" />
+  <bs:ListGroupTextItem>
+    <h3>Custom content</h3>
+    <p>Custom list item content</p>
+  </bs:ListGroupTextItem>
+</bs:ListGroup>

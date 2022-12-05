@@ -1,5 +1,4 @@
-﻿    <bs:ComboBox data-ui="hardcoded"
-                 SelectedValue="{value: null}"
+﻿    <bs:ComboBox SelectedValue="{value: null}"
                  DataSource="{value: ComboBoxDataSource}"
                  ItemTextBinding="{value: Text}"
                  ItemValueBinding="{value: Value}"

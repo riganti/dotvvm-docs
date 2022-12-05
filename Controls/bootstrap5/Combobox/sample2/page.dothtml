@@ -1,20 +1,17 @@
 ﻿    <h5>Default Size</h5>
-    <bs:ComboBox data-ui="default"
-                 SelectedValue="{value: SelectedValue}"
+    <bs:ComboBox SelectedValue="{value: SelectedValue}"
                  DataSource="{value: ComboBoxDataSource}"
                  ItemTextBinding="{value: Text}"
                  ItemValueBinding="{value: Value}"
                  Size="Default" />
     <h5>Large Size</h5>
-    <bs:ComboBox data-ui="large"
-                 SelectedValue="{value: SelectedValue}"
+    <bs:ComboBox SelectedValue="{value: SelectedValue}"
                  DataSource="{value: ComboBoxDataSource}"
                  ItemTextBinding="{value: Text}"
                  ItemValueBinding="{value: Value}"
                  Size="Large" />
     <h5>Small Size</h5>
-    <bs:ComboBox data-ui="small"
-                 SelectedValue="{value: SelectedValue}"
+    <bs:ComboBox SelectedValue="{value: SelectedValue}"
                  DataSource="{value: ComboBoxDataSource}"
                  ItemTextBinding="{value: Text}"
                  ItemValueBinding="{value: Value}"

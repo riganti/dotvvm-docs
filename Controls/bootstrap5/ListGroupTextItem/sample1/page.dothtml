@@ -1,0 +1,12 @@
+﻿<bs:ListGroup>
+    <bs:ListGroupTextItem>
+        <BadgeTemplate>
+            {{value: Text}}
+        </BadgeTemplate>
+        <Template>
+            <span>{{value: Text}}</span>
+        </Template>
+    </bs:ListGroupTextItem>
+    <bs:ListGroupTextItem Text="Item 2" />
+    <bs:ListGroupTextItem Text="{value: Text}" />
+</bs:ListGroup>

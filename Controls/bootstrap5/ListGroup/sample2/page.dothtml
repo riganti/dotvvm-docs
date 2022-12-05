@@ -1,0 +1,27 @@
+﻿<%--div and button tags--%>
+<bs:ListGroup ItemType="Button">
+    <bs:ListGroupButtonItem Text="Item 2" />
+    <bs:ListGroupButtonItem Text="{value: Text}" />
+</bs:ListGroup>
+
+<%--Div and a tags--%>
+<bs:ListGroup ItemType="Link">
+    <bs:ListGroupLinkItem Text="Item 2" Color="Danger" />
+    <bs:ListGroupLinkItem Text="{value: Text}" Color="Success" />
+    <bs:ListGroupLinkItem Text="{value: Text}" Enabled="False" />
+    <bs:ListGroupLinkItem Selected="True">
+        <h3>Custom content</h3>
+        <p>Custom list item content</p>
+    </bs:ListGroupLinkItem>
+</bs:ListGroup>
+
+<%--Ul and li tags--%>
+<bs:ListGroup>
+    <bs:ListGroupTextItem Text="Item 2" Color="Danger" />
+    <bs:ListGroupTextItem Text="{value: Text}" Color="Success" />
+    <bs:ListGroupTextItem Text="{value: Text}" Enabled="False" />
+    <bs:ListGroupTextItem Selected="True">
+        <h3>Custom content</h3>
+        <p>Custom list item content</p>
+    </bs:ListGroupTextItem>
+</bs:ListGroup>
