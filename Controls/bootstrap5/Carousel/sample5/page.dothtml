@@ -1,9 +1,7 @@
 <div style="height: 428px; width: 640px;">
-
-    <bs:Carousel DataSource="{value: Images}" 
-                ItemImageUrl="{value: Url}" 
-                ItemCaption="{value: Caption}"
-                ItemIsActive="{value: IsActive}"
-                ItemDelay="{value: Delay}" />
-
+    <bs:Carousel DataSource="{value: Images}"
+                 ItemImageUrl="{value: Url}" 
+                 ItemCaption="{value: Caption}"
+                 ItemIsActive="{value: IsActive}"
+                 ItemDelay="{value: Delay}" />
 </div>

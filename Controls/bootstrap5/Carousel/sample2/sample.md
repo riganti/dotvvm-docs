@@ -2,7 +2,7 @@
 
 The `Carousel` control has the following properties:
 
-* The `Animation` property specifies which transitions between slides should be used - `Slide`, `Fade` or `None`.
+* The `Animation` property specifies which transitions between slides should be used - `Fade` or `Slide`.
 
 * The `AutoSlideInterval` property sets the interval of automatic transitions in seconds. If this property is not set, the user has to switch the slides manually.
 
