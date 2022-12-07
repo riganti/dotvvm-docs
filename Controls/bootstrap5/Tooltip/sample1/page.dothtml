@@ -1,0 +1,3 @@
+﻿<bs:Tooltip Text="This element has simple tooltip">
+  <a href="#">Link 1</a>
+</bs:Tooltip>

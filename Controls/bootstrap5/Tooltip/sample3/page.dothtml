@@ -1,0 +1,11 @@
+﻿<bs:Tooltip Text="Title" EnableAnimation="false">
+    <bs:Button Text="Text" Type="Danger" />
+</bs:Tooltip>
+
+<bs:Tooltip Text="Title" Delay="1">
+    <bs:Button Text="Text" Type="Info" />
+</bs:Tooltip>
+
+<bs:Tooltip Text="Title" Container="body">
+    <bs:Button Text="Text" Type="Primary" />
+</bs:Tooltip>

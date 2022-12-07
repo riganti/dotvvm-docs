@@ -1,0 +1,15 @@
+﻿<bs:Tooltip Placement="Left" Text="This element has simple tooltip">
+  <a href="#">Link 1</a>
+</bs:Tooltip>
+
+<bs:Tooltip Placement="Right" Text="This element has simple tooltip">
+  <a href="#">Link 2</a>
+</bs:Tooltip>
+
+<bs:Tooltip Placement="Bottom" Text="This element has simple tooltip">
+  <a href="#">Link 3</a>
+</bs:Tooltip>
+
+<bs:Tooltip Placement="Top" Text="This element has simple tooltip">
+  <a href="#">Link 4</a>
+</bs:Tooltip>
