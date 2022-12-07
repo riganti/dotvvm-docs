@@ -1,3 +1,3 @@
-## Sample 1: Dismissed command
+## Sample 1: Close button 
 
-You can set `Dismissed` command which will be executed after pressing the CloseButton.
+`Close button` control can be used while using custom header templates.

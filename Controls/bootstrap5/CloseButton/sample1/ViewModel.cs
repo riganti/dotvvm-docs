@@ -1,7 +1,5 @@
 ﻿public class ViewModel
 {
-    
-    public void DoSomething()
-    {
-    }
+    public bool Displayed { get; set; } = true;
+
 }
