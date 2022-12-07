@@ -1,0 +1,11 @@
+﻿<bs:Popover Title="Title" Body="Content text" EnableAnimation="false">
+    <bs:Button Text="Text" Type="Danger" />
+</bs:Popover>
+
+<bs:Popover Title="Title" Body="Content text" Delay="1">
+    <bs:Button Text="Text" Type="Info" />
+</bs:Popover>
+
+<bs:Popover Title="Title" Body="Content text" Container="body">
+    <bs:Button Text="Text" Type="Secondary" />
+</bs:Popover>

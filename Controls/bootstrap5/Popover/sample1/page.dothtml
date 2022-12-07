@@ -1,0 +1,9 @@
+﻿<bs:Popover Title="Title text" Body="Content text">
+    <a>Simplest link with Popover</a>
+</bs:Popover>
+
+<bs:Popover Title="Title text" Body="Content text">
+    <div style="width: 220px">
+        simple div
+    </div>
+</bs:Popover>

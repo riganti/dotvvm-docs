@@ -1,0 +1,5 @@
+﻿<bs:Popover Title="{value: TitleHtml}" 
+            Body="{value: ContentHtml}" 
+            AllowHtmlInTitleAndContent="true">
+    <bs:Button Text="Text" Type="Success" />
+</bs:Popover>
