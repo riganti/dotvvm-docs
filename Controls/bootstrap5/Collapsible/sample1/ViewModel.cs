@@ -1,5 +1,5 @@
 ﻿public class ViewModel
 {
-    public bool IsCollapsed { get; set; } = true;
+    public bool IsExpanded { get; set; }
 
 }

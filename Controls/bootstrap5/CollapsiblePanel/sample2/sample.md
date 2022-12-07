@@ -1,5 +1,5 @@
-## Sample 2: IsCollapsed binding
+## Sample 2: IsExpanded binding
 
-Use `IsCollapsed` to control state of collapsible panel programmatically.
+Use `IsExpanded` to control state of collapsible panel programmatically.
 
-`IsCollapsed` property can be also use to set the initial state of Collapsible Panel.
+`IsExpanded` property can be also use to set the initial state of Collapsible Panel.
