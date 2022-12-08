@@ -1,0 +1,4 @@
+﻿<bs:Button Click="{command: ChangeIcon(); }">
+  <bs:Icon Type="{value: PostbackIcon}" />
+  {{value: ButtonText}}
+</bs:Button>
