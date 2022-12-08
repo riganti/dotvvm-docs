@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using DotVVM.Framework.Controls;
 using DotVVM.Framework.ViewModel;
 
-namespace DotvvmWeb.Views.Docs.Controls.bootstrap.DataPager.sample1
+namespace DotvvmWeb.Views.Docs.Controls.bootstrap.DataPager.sample2
 {
     public class ViewModel : DotvvmViewModelBase
     {

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using DotVVM.Framework.Controls;
 using DotVVM.Framework.ViewModel;
 
-namespace DotvvmWeb.Views.Docs.Controls.bootstrap.DataPager.sample1
+namespace DotvvmWeb.Views.Docs.Controls.bootstrap.DataPager.sample4
 {
     public class ViewModel : DotvvmViewModelBase
     {
@@ -21,7 +21,7 @@ namespace DotvvmWeb.Views.Docs.Controls.bootstrap.DataPager.sample1
             }.AsQueryable();
         }
 
-        public GridViewDataSet<Customer> Customers { get; set; } = new GridViewDataSet<Customer>() { PagingOptions = { PageSize = 4} };
+        public GridViewDataSet<Customer> Customers { get; set; } = new GridViewDataSet<Customer>() { PagingOptions = { PageSize = 4 } };
 
         public override Task PreRender()
         {
