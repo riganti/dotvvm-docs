@@ -1,0 +1,5 @@
+<bs:CheckBox Text="CheckBox default" Checked="{value: Checked1}" IsInline="true" />
+<bs:CheckBox Text="CheckBox bootstrap custom" Checked="{value: Checked2}" FormControlStyle="BootstrapCustom" IsInline="true" />
+
+<p>CheckBox 1: {{value: Checked1}}</p>
+<p>CheckBox 2: {{value: Checked2}}</p>
