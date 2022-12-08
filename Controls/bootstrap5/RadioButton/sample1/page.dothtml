@@ -1,0 +1,6 @@
+<bs:RadioButton Text="RadioButton 1" GroupName="RadioButtons" 
+                CheckedValue="RadioButton 1" CheckedItem="{value: Radio}" 
+                IsInline="true" />
+<bs:RadioButton Text="RadioButton 2" GroupName="RadioButtons" 
+                CheckedValue="RadioButton 2" CheckedItem="{value: Radio}"
+                IsInline="true" />
