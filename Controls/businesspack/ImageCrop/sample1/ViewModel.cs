@@ -7,7 +7,7 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.ImageCrop.sample1
 {
     public class ViewModel : DotvvmViewModelBase
     {
-        public string ImagePath { get; set; } = "../../images/imagecrop.webp";
+        public string ImagePath { get; set; } = "../images/imagecrop.webp";
         public string Result { get; set; }
         public ImageOperations ImageOperations { get; set; } = new ImageOperations();
 
