@@ -1,0 +1,23 @@
+<bs:DropDownButton Text="Dropdown with Headers">
+  <bs:DropDownButtonHeader>Item 1</bs:DropDownButtonHeader>
+  <bs:DropDownButtonItem NavigateUrl="https://www.google.com/">
+    Google
+  </bs:DropDownButtonItem>
+  <bs:DropDownButtonHeader>Item 2</bs:DropDownButtonHeader>
+  <bs:DropDownButtonItem NavigateUrl="https://github.com/riganti/dotvvm">
+    DotVVM
+  </bs:DropDownButtonItem>
+</bs:DropDownButton>
+
+<bs:DropDownButton>
+  <Content>
+    Very <strong>Simple Dropdown</strong> with separator and disabled value
+  </Content>
+  <bs:DropDownButtonItem NavigateUrl="https://www.google.com/" Enabled="false">
+    Google
+  </bs:DropDownButtonItem>
+  <bs:DropDownButtonSeparator/>
+  <bs:DropDownButtonItem NavigateUrl="https://github.com/riganti/dotvvm">
+    DotVVM
+  </bs:DropDownButtonItem>
+</bs:DropDownButton>

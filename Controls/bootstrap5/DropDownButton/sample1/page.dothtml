@@ -1,0 +1,36 @@
+<bs:DropDownButton Text="Very Simple Dropdown">
+    <bs:DropDownButtonItem NavigateUrl="https://www.google.com/">
+      Google
+    </bs:DropDownButtonItem>
+    <bs:DropDownButtonItem NavigateUrl="https://github.com/riganti/dotvvm" Text="DotVVM" />
+</bs:DropDownButton>
+
+<bs:DropDownButton ButtonType="Link" >
+  <Content>
+    <bs:Icon Type="Calendar" />
+    <strong>Simple Dropdown</strong>
+    with custom toggle
+  </Content>
+  <bs:DropDownButtonItem NavigateUrl="https://www.google.com/" Enabled="false">
+    Google
+  </bs:DropDownButtonItem>
+  <bs:DropDownButtonSeparator />
+  <bs:DropDownButtonItem NavigateUrl="https://github.com/riganti/dotvvm">
+    DotVVM
+  </bs:DropDownButtonItem>
+</bs:DropDownButton>
+
+<bs:DropDownButton Text="Drop up Button" DropDirection="DropUp">
+  <bs:DropDownButtonItem NavigateUrl="https://www.google.com/">
+      Google is a <strong>search engine</strong>
+  </bs:DropDownButtonItem>
+  <bs:DropDownButtonItem NavigateUrl="https://github.com/riganti/dotvvm">
+    DotVVM
+  </bs:DropDownButtonItem>
+</bs:DropDownButton>
+
+
+<p>IsCollapsed: {{value: Collapsed}}</p>
+<bs:DropDownButton IsCollapsed="{value: Collapsed}" Text="Collapse test">
+  <bs:DropDownButtonItem NavigateUrl="https://www.google.com">Google</bs:DropDownButtonItem>
+</bs:DropDownButton>
