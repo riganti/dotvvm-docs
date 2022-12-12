@@ -1,0 +1,15 @@
+﻿<bs:ButtonGroup Size="Large">
+  <bs:Button Click="{command: DoSomething()}" Text="Button 1" />
+  <bs:Button Click="{command: DoSomething()}" Text="Button 2" />
+  
+  <bs:DropDownButton Text="Dropdown">
+    <Items>
+      <bs:DropDownButtonItem NavigateUrl="https://www.google.com">
+        Google
+      </bs:DropDownButtonItem>
+      <bs:DropDownButtonItem NavigateUrl="https://www.youtube.com">
+        Youtube
+      </bs:DropDownButtonItem>
+    </Items>
+  </bs:DropDownButton>
+</bs:ButtonGroup>

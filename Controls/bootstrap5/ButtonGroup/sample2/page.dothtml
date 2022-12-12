@@ -1,0 +1,6 @@
+﻿<bs:ButtonGroup IsVertical="true">
+  <bs:Button Click="{command: DoSomething()}" Text="Button 1" />
+  <bs:Button Click="{command: DoSomething()}" Text="Button 2" />
+  <bs:Button Click="{command: DoSomething()}" Text="Button 3" />
+  <bs:Button Click="{command: DoSomething()}" Text="Button 4" />
+</bs:ButtonGroup>
