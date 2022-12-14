@@ -1,15 +1,6 @@
-﻿<bs:ButtonGroup>
-  <bs:ButtonGroupCheckBox Text="CheckBox 1" Checked="{value: Checked1}" />
-  <bs:ButtonGroupCheckBox Text="CheckBox 2" Checked="{value: Checked2}" />
-</bs:ButtonGroup>
-
-<p>CheckBox 1:{{value: Checked1}}</p>
-<p>CheckBox 2:{{value: Checked2}}</p>
-
-
-<bs:ButtonGroup>
-  <bs:ButtonGroupRadioButton CheckedValue="1" CheckedItem="{value: Result}" Text="RadioButton 1" />
-  <bs:ButtonGroupRadioButton CheckedValue="2" CheckedItem="{value: Result}" Text="RadioButton 2" />
-</bs:ButtonGroup>
-
-<p>RadioButton Result:{{value: Result}}</p>
+﻿
+<bs:ButtonGroup DataSource="{value: Buttons}"
+                ItemClick="{command: Action()}"
+                ItemText="{value: Text}"
+                ItemType="{value: Color}"
+                ItemVisualStyle="OutLine"/>
