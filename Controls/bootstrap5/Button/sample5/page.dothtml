@@ -29,7 +29,7 @@
            Text="Text"  />
 
 <bs:Button Click="{command: DoSomething()}" 
-           Type="Dark"
+           Type="Dark" 
            FontType="Light" 
            Text="Text"  />
 
@@ -49,8 +49,8 @@
            Text="Text"  />
 
 <bs:Button Click="{command: DoSomething()}" 
-           Type="Dark"
-           FontType="WhiteOpacity"
+           Type="Dark" 
+           FontType="WhiteOpacity" 
            Text="Text"  />
 
 <bs:Button Click="{command: DoSomething()}" 
