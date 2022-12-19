@@ -1,0 +1,18 @@
+﻿<bs:NavBar>
+    <bs:NavBarText>
+       Simple text!
+    </bs:NavBarText>
+    <bs:NavBarSection>
+        <bs:NavBarLink Click="{staticCommand: null}">
+            Link item
+        </bs:NavBarLink>
+        <bs:NavBarDropDownButton HeaderText="DropDownMenu">
+            <bs:DropDownButtonItem>
+                item
+            </bs:DropDownButtonItem>
+            <bs:DropDownButtonItem Enabled="false">
+                item
+            </bs:DropDownButtonItem>
+        </bs:NavBarDropDownButton>
+    </bs:NavBarSection>
+</bs:NavBar>

@@ -1,0 +1,13 @@
+﻿<bs:NavBar data-ui="datasource">
+    <BrandTemplate>
+        Brand Name
+    </BrandTemplate>
+    <bs:NavBarSection DataSource="{value: LinksDataSet}" 
+                      ItemEnabled="{value: Enabled}" 
+                      ItemIsSelected="{value: IsSelected}" 
+                      ItemText="{value: Text}" 
+                      ItemNavigateUrl="{value: NavigateUrl}" />
+    <bs:NavBarText>
+        text
+    </bs:NavBarText>
+</bs:NavBar>

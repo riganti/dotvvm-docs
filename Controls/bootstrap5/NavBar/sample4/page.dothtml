@@ -1,0 +1,46 @@
+﻿<h3>Brand BrandImageUrl and BrandLinkUrl</h3>
+<bs:NavBar backgroundColor="Primary">
+    <bs:NavBarSection>
+        <bs:NavBarLink Click="{staticCommand: null}">
+            item
+        </bs:NavBarLink>
+        <bs:NavBarDropDownButton HeaderText="DropDownMenu">
+            <bs:DropDownButtonItem>
+                item
+            </bs:DropDownButtonItem>
+        </bs:NavBarDropDownButton>
+    </bs:NavBarSection>
+</bs:NavBar>
+
+<bs:NavBar backgroundColor="Secondary">
+    <bs:NavBarSection>
+        <bs:NavBarLink Click="{staticCommand: null}">
+            item
+        </bs:NavBarLink>
+        <bs:NavBarDropDownButton HeaderText="DropDownMenu">
+            <bs:DropDownButtonItem>
+                item
+            </bs:DropDownButtonItem>
+        </bs:NavBarDropDownButton>
+    </bs:NavBarSection>
+</bs:NavBar>
+
+<bs:NavBar BackgroundColor="{value: ColorOfBackground}" IsDark="{value: DarkTheme}">
+    <bs:NavBarSection class="me-auto mb-2 mb-lg-0">
+        <bs:NavBarLink Click="{staticCommand: null}">
+            Link item
+        </bs:NavBarLink>
+        <bs:NavBarDropDownButton HeaderText="DropDownMenu">
+            <bs:DropDownButtonItem>
+                item
+            </bs:DropDownButtonItem>
+            <bs:DropDownButtonItem Enabled="false">
+                item
+            </bs:DropDownButtonItem>
+        </bs:NavBarDropDownButton>
+    </bs:NavBarSection>
+    <bs:NavBarText>
+        <bs:CheckBox VisualStyle="Switch" Text="Dark theme" Changed="{command: ChangeTheme()}" Checked="{value: false}" />
+    </bs:NavBarText>
+</bs:NavBar>
+
