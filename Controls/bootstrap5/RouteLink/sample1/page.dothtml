@@ -1,10 +1,10 @@
-﻿<bs:RouteLink RouteName="RouteLink_sample1"
+﻿<bs:RouteLink RouteName="RouteLink_sample1" 
               Text="Button" />
 
 <bs:RouteLink RouteName="RouteLink_sample1" 
               Text="Button" 
               Size="Large" />
 
-<bs:RouteLink RouteName="RouteLink_sample1"
+<bs:RouteLink RouteName="RouteLink_sample1" 
               Text="Button" 
               Size="Small" />
