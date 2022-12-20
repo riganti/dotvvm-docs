@@ -1,4 +1,4 @@
-﻿<bs:NavBar data-ui="datasource">
+﻿<bs:NavBar>
     <BrandTemplate>
         Brand Name
     </BrandTemplate>
@@ -6,4 +6,16 @@
     <bs:NavBarText>
         text
     </bs:NavBarText>
+</bs:NavBar>
+
+<bs:NavBar>
+    <BrandTemplate>
+        Brand Name
+    </BrandTemplate>
+    <bs:NavBarSection Datasource="{value: ItemSectionsSource}" ItemNavigateUrl="{value: Url}"  >
+        <ItemTemplate>
+            <bs:Icon Type="{value: IconType}" />
+            {{value: Text}}
+        </ItemTemplate>
+    </bs:NavBarSection>
 </bs:NavBar>

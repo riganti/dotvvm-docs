@@ -1,0 +1,32 @@
+﻿<h3>IsJustified = End</h3>
+<bs:NavBar Justify="End" Placement="FixedTop" backgroundColor="Primary">
+    <BrandTemplate>
+        Brand Name
+    </BrandTemplate>
+    <bs:NavBarSection>
+        <bs:NavBarLink Click="{staticCommand: null}">
+            item
+        </bs:NavBarLink>
+        <bs:NavBarDropDownButton HeaderText="DropDownMenu">
+            <bs:DropDownButtonItem>
+                item
+            </bs:DropDownButtonItem>
+        </bs:NavBarDropDownButton>
+    </bs:NavBarSection>
+</bs:NavBar>
+
+<bs:NavBar Justify="Center" Placement="FixedBottom" backgroundColor="Primary">
+    <BrandTemplate>
+        Brand Name
+    </BrandTemplate>
+    <bs:NavBarSection>
+        <bs:NavBarLink Click="{staticCommand: null}">
+            item
+        </bs:NavBarLink>
+        <bs:NavBarDropDownButton HeaderText="DropDownMenu">
+            <bs:DropDownButtonItem>
+                item
+            </bs:DropDownButtonItem>
+        </bs:NavBarDropDownButton>
+    </bs:NavBarSection>
+</bs:NavBar>

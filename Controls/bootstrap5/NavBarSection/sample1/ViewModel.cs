@@ -1,34 +1,36 @@
 ﻿public class ViewModel
 {
-    public List<NavigationItem> LinksDataSet { get; set; }
-
-    private static IQueryable<NavigationItem> GetData()
-    {
-        return new[]
-        {
-            new NavigationItem() { IsEnabled = true, IsSelected = false, NavigateUrl = "https://www.google.com/", Text = "Google" },
-            new NavigationItem() { IsEnabled = true, IsSelected = false, NavigateUrl = "http://www.w3schools.com/html/", Text = "W3Schools" },
-            new NavigationItem() { IsEnabled = true, IsSelected = true, NavigateUrl = "https://www.microsoft.com/en-us/", Text = "Microsoft" },
-            new NavigationItem() { IsEnabled = false, IsSelected = false, NavigateUrl = "https://github.com/riganti/dotvvm", Text = "DotVVM Github" }
-        }.AsQueryable();
-    }
+    public List<ItemSectionModel> ItemSectionsSource { get; set; }
 
     public ViewModel()
     {
-        LinksDataSet = new List<NavigationItem>();
-        foreach (NavigationItem l in GetData())
+        ItemSectionsSource = new List<ItemSectionModel>()
         {
-            LinksDataSet.Add(l);
-        }
+            new ItemSectionModel()
+            {
+                Text = "Riganti",
+                Url = "https://riganti.cz/",
+                Visible = false,
+                IconType = Icons.Window_Desktop
+            },
+            new ItemSectionModel()
+            {
+                Text = "Google",
+                Url = "https://www.google.com/",
+                Selected = true,
+                Visible = true,
+                IconType = Icons.Window_Dock
+            },
+        };
     }
-
 }
 
 
-public class NavigationItem
+public class ItemSectionModel
 {
     public string Text { get; set; }
-    public string NavigateUrl { get; set; }
-    public bool IsSelected { get; set; }
-    public bool IsEnabled { get; set; }
+    public string Url { get; set; }
+    public Icons IconType { get; set; }
+    public bool Visible { get; set; }
+    public bool Selected { get; set; }
 }
