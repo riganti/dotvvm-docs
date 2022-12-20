@@ -30,7 +30,7 @@
         <bs:NavBarLink Click="{staticCommand: null}">
             Link item
         </bs:NavBarLink>
-        <bs:NavBarDropDownButton HeaderText="DropDownMenu">
+        <bs:NavBarDropDownButton DropdownBackground="{value: DropDownBackGround}" HeaderText="DropDownMenu">
             <bs:DropDownButtonItem>
                 item
             </bs:DropDownButtonItem>
