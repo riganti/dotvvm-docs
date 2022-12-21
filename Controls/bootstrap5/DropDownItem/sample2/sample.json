@@ -1,0 +1,13 @@
+{
+  "files": [
+    { 
+      "name": "page.dothtml",
+      "replacements": [
+        {
+          "pattern": "(https?://)",
+          "replacement": "/bootstrap4-4.0/?url=\\1"
+        }
+      ]
+    }
+  ]
+}

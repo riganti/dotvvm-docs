@@ -17,11 +17,11 @@
 
 <%--Ul and li tags--%>
 <bs:ListGroup>
-    <bs:ListGroupTextItem Text="Item 2" Color="Danger" />
-    <bs:ListGroupTextItem Text="{value: Text}" Color="Success" />
-    <bs:ListGroupTextItem Text="{value: Text}" Enabled="False" />
-    <bs:ListGroupTextItem Selected="True">
+    <bs:ListGroupText Text="Item 2" Color="Danger" />
+    <bs:ListGroupText Text="{value: Text}" Color="Success" />
+    <bs:ListGroupText Text="{value: Text}" Enabled="False" />
+    <bs:ListGroupText Selected="True">
         <h3>Custom content</h3>
         <p>Custom list item content</p>
-    </bs:ListGroupTextItem>
+    </bs:ListGroupText>
 </bs:ListGroup>

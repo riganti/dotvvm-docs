@@ -1,12 +1,12 @@
 ﻿<bs:ListGroup>
-  <bs:ListGroupTextItem Text="{value: Text}">
+  <bs:ListGroupText Text="{value: Text}">
       <BadgeTemplate>
         14
       </BadgeTemplate>
-  </bs:ListGroupTextItem>
-  <bs:ListGroupTextItem IsJustified="true" Text="Item 2" BadgeType="Danger" BadgeVisualStyle="Pill">
+  </bs:ListGroupText>
+  <bs:ListGroupText IsJustified="true" Text="Item 2" BadgeType="Danger" BadgeVisualStyle="Pill">
       <BadgeTemplate>
         2
       </BadgeTemplate>
-  </bs:ListGroupTextItem>
+  </bs:ListGroupText>
 </bs:ListGroup>

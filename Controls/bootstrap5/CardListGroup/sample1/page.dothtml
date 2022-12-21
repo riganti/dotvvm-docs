@@ -1,9 +1,9 @@
 ﻿<bs:Card>
   <bs:CardListGroup DataSource="{value: Texts}" ItemText="{value: _this}" />
   <bs:CardListGroup class="mb-1">
-    <bs:ListGroupTextItem Text="Item 1" />
-    <bs:ListGroupTextItem Text="Item 2" />
-    <bs:ListGroupTextItem Text="Item 3" />
-    <bs:ListGroupTextItem Text="Item 4" />
+    <bs:ListGroupText Text="Item 1" />
+    <bs:ListGroupText Text="Item 2" />
+    <bs:ListGroupText Text="Item 3" />
+    <bs:ListGroupText Text="Item 4" />
   </bs:CardListGroup>
 </bs:Card>

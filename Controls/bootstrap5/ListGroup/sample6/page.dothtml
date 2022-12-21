@@ -6,9 +6,9 @@
 </bs:ListGroup>
 <h3>Numbered and Flush list group</h3>
 <bs:ListGroup GroupTypes="Numbered, Flush">
-    <bs:ListGroupTextItem Text="Ab" />
-    <bs:ListGroupTextItem Text="Cd" />
-    <bs:ListGroupTextItem Text="Ef" />
+    <bs:ListGroupText Text="Ab" />
+    <bs:ListGroupText Text="Cd" />
+    <bs:ListGroupText Text="Ef" />
 </bs:ListGroup>
 <h3>Numbered and Horizontal list group</h3>
 <bs:ListGroup ItemType="Button" Orientation="Horizontal" GroupTypes="Numbered">
