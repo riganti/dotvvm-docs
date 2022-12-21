@@ -1,6 +1,6 @@
 ﻿using DotVVM.Framework.ViewModel;
 
-namespace DotvvmWeb.Views.Docs.Controls.bootstrap.DropDownButton.sample1
+namespace DotvvmWeb.Views.Docs.Controls.bootstrap.DropDown.sample1
 {
     public class ViewModel : DotvvmViewModelBase
     {

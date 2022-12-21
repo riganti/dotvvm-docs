@@ -10,7 +10,7 @@ The following controls are supported inside `InputGroup`:
 * [LinkButton](~/controls/bootstrap5/LinkButton)
 * [RouteLink](~/controls/bootstrap5/RouteLink) 
 * [InputGroupCheckBox](~/controls/bootstrap5/InputGroupCheckBox) 
-* [InputGroupDropDownButton](~/controls/bootstrap5/InputGroupDropDownButton)
+* [InputGroupDropDown](~/controls/bootstrap5/InputGroupDropDown)
 * [InputGroupLiteral](~/controls/bootstrap5/InputGroupLiteral)
 * [InputGroupRadioButton](~/controls/bootstrap5/InputGroupRadioButton) 
 

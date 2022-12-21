@@ -4,11 +4,11 @@
         <bs:NavBarLink Click="{staticCommand: null}">
             item
         </bs:NavBarLink>
-        <bs:NavBarDropDownButton HeaderText="DropDownMenu">
-            <bs:DropDownButtonItem>
+        <bs:NavBarDropDown HeaderText="DropDownMenu">
+            <bs:DropDownItem>
                 item
-            </bs:DropDownButtonItem>
-        </bs:NavBarDropDownButton>
+            </bs:DropDownItem>
+        </bs:NavBarDropDown>
     </bs:NavBarSection>
 </bs:NavBar>
 
@@ -17,11 +17,11 @@
         <bs:NavBarLink Click="{staticCommand: null}">
             item
         </bs:NavBarLink>
-        <bs:NavBarDropDownButton HeaderText="DropDownMenu">
-            <bs:DropDownButtonItem>
+        <bs:NavBarDropDown HeaderText="DropDownMenu">
+            <bs:DropDownItem>
                 item
-            </bs:DropDownButtonItem>
-        </bs:NavBarDropDownButton>
+            </bs:DropDownItem>
+        </bs:NavBarDropDown>
     </bs:NavBarSection>
 </bs:NavBar>
 
@@ -30,14 +30,14 @@
         <bs:NavBarLink Click="{staticCommand: null}">
             Link item
         </bs:NavBarLink>
-        <bs:NavBarDropDownButton DropdownBackground="{value: DropDownBackGround}" HeaderText="DropDownMenu">
-            <bs:DropDownButtonItem>
+        <bs:NavBarDropDown DropdownBackground="{value: DropDownBackGround}" HeaderText="DropDownMenu">
+            <bs:DropDownItem>
                 item
-            </bs:DropDownButtonItem>
-            <bs:DropDownButtonItem Enabled="false">
+            </bs:DropDownItem>
+            <bs:DropDownItem Enabled="false">
                 item
-            </bs:DropDownButtonItem>
-        </bs:NavBarDropDownButton>
+            </bs:DropDownItem>
+        </bs:NavBarDropDown>
     </bs:NavBarSection>
     <bs:NavBarText>
         <bs:CheckBox VisualStyle="Switch" Text="Dark theme" Changed="{command: ChangeTheme()}" Checked="{value: false}" />

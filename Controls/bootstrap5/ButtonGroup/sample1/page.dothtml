@@ -2,14 +2,14 @@
   <bs:Button Click="{command: DoSomething()}" Text="Button 1" />
   <bs:Button Click="{command: DoSomething()}" Text="Button 2" />
   
-  <bs:DropDownButton Text="Dropdown">
+  <bs:DropDown Text="Dropdown">
     <Items>
-      <bs:DropDownButtonItem NavigateUrl="https://www.google.com">
+      <bs:DropDownItem NavigateUrl="https://www.google.com">
         Google
-      </bs:DropDownButtonItem>
-      <bs:DropDownButtonItem NavigateUrl="https://www.youtube.com">
+      </bs:DropDownItem>
+      <bs:DropDownItem NavigateUrl="https://www.youtube.com">
         Youtube
-      </bs:DropDownButtonItem>
+      </bs:DropDownItem>
     </Items>
-  </bs:DropDownButton>
+  </bs:DropDown>
 </bs:ButtonGroup>

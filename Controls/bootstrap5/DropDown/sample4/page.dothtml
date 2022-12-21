@@ -1,4 +1,4 @@
-<bs:DropDownButton Text="Dropdown Created From Data Source!"
+<bs:DropDown Text="Dropdown Created From Data Source!"
                    IsSplitButton="True"
                    VisualStyle="Outline"
                    Type="Success"
@@ -7,10 +7,10 @@
                    ItemIsSelected="{value: IsSelected}"
                    ItemText="{value: Text}"
                    ItemNavigateUrl="{value: NavigateUrl}">
-</bs:DropDownButton>
+</bs:DropDown>
 
-<bs:DropdownButton Text="Button Dropdown" ButtonType="Button" DropdownBackground="Dark">
-    <bs:DropdownButtonItem Text="Item1" />
-    <bs:DropdownButtonItem Text="Item1" />
-    <bs:DropdownButtonItem Text="Item1" />
-</bs:DropdownButton>
+<bs:DropDown Text="Button Dropdown" ButtonType="Button" DropdownBackground="Dark">
+    <bs:DropDownItem Text="Item1" />
+    <bs:DropDownItem Text="Item1" />
+    <bs:DropDownItem Text="Item1" />
+</bs:DropDown>

@@ -1,11 +1,11 @@
 ﻿<bs:TabControl HorizontalAlingment="Center" 
                Justify="fill">
-  <bs:TabDropDownButton HeaderText="Header">
-    <bs:DropDownButtonItem>item</bs:DropDownButtonItem>
+  <bs:TabDropDown HeaderText="Header">
+    <bs:DropDownItem>item</bs:DropDownItem>
     <bs:DropDownSeparator />
-    <bs:DropDownButtonItem>item</bs:DropDownButtonItem>
-    <bs:DropDownButtonItem>item</bs:DropDownButtonItem>
-  </bs:TabDropDownButton>
+    <bs:DropDownItem>item</bs:DropDownItem>
+    <bs:DropDownItem>item</bs:DropDownItem>
+  </bs:TabDropDown>
   <bs:TabItem>
     <HeaderTemplate> Tab 1 </HeaderTemplate>
     My tab 1

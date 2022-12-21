@@ -1,8 +1,8 @@
 ﻿<h3>Flush list group</h3>
 <bs:ListGroup ItemType="Link" GroupTypes="Flush">
-  <bs:ListGroupLinkItem Text="Ab" Color="Danger" />
-  <bs:ListGroupLinkItem Text="Cd" Color="Dark" />
-  <bs:ListGroupLinkItem Text="Ef" Color="Info" />
+  <bs:ListGroupLink Text="Ab" Color="Danger" />
+  <bs:ListGroupLink Text="Cd" Color="Dark" />
+  <bs:ListGroupLink Text="Ef" Color="Info" />
 </bs:ListGroup>
 <h3>Numbered and Flush list group</h3>
 <bs:ListGroup GroupTypes="Numbered, Flush">
@@ -12,7 +12,7 @@
 </bs:ListGroup>
 <h3>Numbered and Horizontal list group</h3>
 <bs:ListGroup ItemType="Button" Orientation="Horizontal" GroupTypes="Numbered">
-  <bs:ListGroupButtonItem Text="Ab" />
-  <bs:ListGroupButtonItem Text="Cd" />
-  <bs:ListGroupButtonItem Text="Ef" />
+  <bs:ListGroupButton Text="Ab" />
+  <bs:ListGroupButton Text="Cd" />
+  <bs:ListGroupButton Text="Ef" />
 </bs:ListGroup>

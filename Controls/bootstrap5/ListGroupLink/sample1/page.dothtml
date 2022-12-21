@@ -1,5 +1,5 @@
 ﻿<bs:ListGroup ItemType="Link">
-    <bs:ListGroupLinkItem>
+    <bs:ListGroupLink>
         <Template>
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">List group item heading</h5>
@@ -9,15 +9,15 @@
             <p class="mb-1">Some placeholder content in a paragraph.</p>
             <small>And some small print.</small>
         </Template>
-    </bs:ListGroupLinkItem>
-    <bs:ListGroupLinkItem Events.Click="{command: ChangeListGroup()}" Color="Danger" IsJustified="true">
+    </bs:ListGroupLink>
+    <bs:ListGroupLink Events.Click="{command: ChangeListGroup()}" Color="Danger" IsJustified="true">
         <BadgeTemplate>
             {{value: Text}}
         </BadgeTemplate>
         <Template>
             <span>{{value: Text}}</span>
         </Template>
-    </bs:ListGroupLinkItem>
-    <bs:ListGroupLinkItem Color="Success" Enabled="{value: Enabled}" Text="{value: Text}" />
-    <bs:ListGroupLinkItem Color="Success" Selected="{value: IsSelected}" Text="{value: Text}" />
+    </bs:ListGroupLink>
+    <bs:ListGroupLink Color="Success" Enabled="{value: Enabled}" Text="{value: Text}" />
+    <bs:ListGroupLink Color="Success" Selected="{value: IsSelected}" Text="{value: Text}" />
 </bs:ListGroup>

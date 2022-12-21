@@ -1,18 +1,18 @@
 ﻿<%--div and button tags--%>
 <bs:ListGroup ItemType="Button">
-    <bs:ListGroupButtonItem Text="Item 2" />
-    <bs:ListGroupButtonItem Text="{value: Text}" />
+    <bs:ListGroupButton Text="Item 2" />
+    <bs:ListGroupButton Text="{value: Text}" />
 </bs:ListGroup>
 
 <%--Div and a tags--%>
 <bs:ListGroup ItemType="Link">
-    <bs:ListGroupLinkItem Text="Item 2" Color="Danger" />
-    <bs:ListGroupLinkItem Text="{value: Text}" Color="Success" />
-    <bs:ListGroupLinkItem Text="{value: Text}" Enabled="False" />
-    <bs:ListGroupLinkItem Selected="True">
+    <bs:ListGroupLink Text="Item 2" Color="Danger" />
+    <bs:ListGroupLink Text="{value: Text}" Color="Success" />
+    <bs:ListGroupLink Text="{value: Text}" Enabled="False" />
+    <bs:ListGroupLink Selected="True">
         <h3>Custom content</h3>
         <p>Custom list item content</p>
-    </bs:ListGroupLinkItem>
+    </bs:ListGroupLink>
 </bs:ListGroup>
 
 <%--Ul and li tags--%>

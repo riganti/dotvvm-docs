@@ -13,16 +13,16 @@
                ItemValueBinding="{value: Value}"
                ItemTitleBinding="{value: Title}" />
 
-  <bs:InputGroupDropDownButton IsSplitButton="true" Text='Drop Split Button'>
-      <bs:DropDownButtonItem Text='Text'>
-      </bs:DropDownButtonItem>
-      <bs:DropDownButtonItem Text='Text'>
-      </bs:DropDownButtonItem>
-  </bs:InputGroupDropDownButton>
+  <bs:InputGroupDropDown IsSplitButton="true" Text='Drop Split Button'>
+      <bs:DropDownItem Text='Text'>
+      </bs:DropDownItem>
+      <bs:DropDownItem Text='Text'>
+      </bs:DropDownItem>
+  </bs:InputGroupDropDown>
 
   <bs:TextBox Text="{value: Text}" />
 
-  <bs:InputGroupDropDownButton DataSource="{value: ItemDataSet}"
+  <bs:InputGroupDropDown DataSource="{value: ItemDataSet}"
                                ItemText="{value: Text}"
                                VisualStyle="Outline"
                                Type="Danger" Text="Right Dropdown"

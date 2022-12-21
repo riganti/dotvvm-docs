@@ -1,32 +1,32 @@
-<bs:DropDownButton Text="Default close behavior">
-    <bs:DropDownButtonItem NavigateUrl="https://www.google.com/" Enabled="false">
+<bs:DropDown Text="Default close behavior">
+    <bs:DropDownItem NavigateUrl="https://www.google.com/" Enabled="false">
         Google
-    </bs:DropDownButtonItem>
-    <bs:DropDownButtonItem NavigateUrl="https://github.com/riganti/dotvvm">
+    </bs:DropDownItem>
+    <bs:DropDownItem NavigateUrl="https://github.com/riganti/dotvvm">
         DotVVM
-    </bs:DropDownButtonItem>
-</bs:DropDownButton>
-<bs:DropDownButton Text="Inside close behavior" CloseBehavior="Inside">
-    <bs:DropDownButtonItem NavigateUrl="https://www.google.com/" Enabled="false">
+    </bs:DropDownItem>
+</bs:DropDown>
+<bs:DropDown Text="Inside close behavior" CloseBehavior="Inside">
+    <bs:DropDownItem NavigateUrl="https://www.google.com/" Enabled="false">
         Google
-    </bs:DropDownButtonItem>
-    <bs:DropDownButtonItem NavigateUrl="https://github.com/riganti/dotvvm">
+    </bs:DropDownItem>
+    <bs:DropDownItem NavigateUrl="https://github.com/riganti/dotvvm">
         DotVVM
-    </bs:DropDownButtonItem>
-</bs:DropDownButton>
-<bs:DropDownButton Text="Outside close behavior" CloseBehavior="Outside">
-    <bs:DropDownButtonItem NavigateUrl="https://www.google.com/" Enabled="false">
+    </bs:DropDownItem>
+</bs:DropDown>
+<bs:DropDown Text="Outside close behavior" CloseBehavior="Outside">
+    <bs:DropDownItem NavigateUrl="https://www.google.com/" Enabled="false">
         Google
-    </bs:DropDownButtonItem>
-    <bs:DropDownButtonItem NavigateUrl="https://github.com/riganti/dotvvm">
+    </bs:DropDownItem>
+    <bs:DropDownItem NavigateUrl="https://github.com/riganti/dotvvm">
         DotVVM
-    </bs:DropDownButtonItem>
-</bs:DropDownButton>
-<bs:DropDownButton Text="Manual close behavior" CloseBehavior="Manual">
-    <bs:DropDownButtonItem NavigateUrl="https://www.google.com/" Enabled="false">
+    </bs:DropDownItem>
+</bs:DropDown>
+<bs:DropDown Text="Manual close behavior" CloseBehavior="Manual">
+    <bs:DropDownItem NavigateUrl="https://www.google.com/" Enabled="false">
         Google
-    </bs:DropDownButtonItem>
-    <bs:DropDownButtonItem NavigateUrl="https://github.com/riganti/dotvvm">
+    </bs:DropDownItem>
+    <bs:DropDownItem NavigateUrl="https://github.com/riganti/dotvvm">
         DotVVM
-    </bs:DropDownButtonItem>
-</bs:DropDownButton>
+    </bs:DropDownItem>
+</bs:DropDown>

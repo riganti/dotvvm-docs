@@ -1,5 +1,5 @@
-A special version of the [DropDownButton](~/controls/bootstrap5/DropDownButton) control that can be used in [TabControl](~/controls/bootstrap5/TabControl).
+A special version of the [DropDown](~/controls/bootstrap5/DropDown) control that can be used in [TabControl](~/controls/bootstrap5/TabControl).
 
-See [DropDownButton](~/controls/bootstrap5/DropDownButton) for more info on how to use this control.
+See [DropDown](~/controls/bootstrap5/DropDown) for more info on how to use this control.
 
 <https://getbootstrap.com/docs/5.2/components/navs-tabs>

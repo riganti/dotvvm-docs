@@ -5,7 +5,7 @@ The `ButtonGroup` control can contain any number of `ButtonGroup` child controls
 The following controls are supported inside `ButtonGroup`:
 
 * [Button](~/controls/bootstrap5/Button)
-* [DropDownButton](~/controls/bootstrap5/DropDownButton)
+* [DropDown](~/controls/bootstrap5/DropDown)
 * [ButtonGroupCheckBox](~/controls/bootstrap5/ButtonGroupCheckBox)
 * [ButtonGroupRadioButton](~/controls/bootstrap5/ButtonGroupRadioButton)
 

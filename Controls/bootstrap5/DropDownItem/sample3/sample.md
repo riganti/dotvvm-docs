@@ -1,4 +1,4 @@
-## Sample 3: DropDownButton with DataSource
+## Sample 3: DropDown with DataSource
 
 You can also load the dropdown button items from a collection in the viewmodel using the `DataSource` property.
 
