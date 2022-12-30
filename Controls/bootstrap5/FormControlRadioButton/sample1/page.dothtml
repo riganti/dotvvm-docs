@@ -1,0 +1,2 @@
+﻿<bs:FormControlRadioButton LabelText="some text" VisualStyle="Switch" GroupName="Style" CheckedValue="{value: true}" IsInline="true" />
+<bs:FormControlRadioButton LabelText="some text 2" VisualStyle="Default" GroupName="Style" CheckedValue="{value: true}" IsInline="true" />

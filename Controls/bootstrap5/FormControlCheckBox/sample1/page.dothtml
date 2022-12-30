@@ -1,0 +1,4 @@
+﻿<bs:FormControlCheckBox Checked="{value: true}" 
+                        LabelText="some text" 
+                        IsInline="true" 
+                        IsReversed="true"/>

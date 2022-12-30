@@ -9,4 +9,3 @@ Consider using some existing controls that combine FormControl with the most pop
 * [FormControlComboBox](~/controls/bootstrap5/FormControlComboBox)
 * [FormControlRadioButton](~/controls/bootstrap5/FormControlRadioButton)
 * [FormControlRange](~/controls/bootstrap5/FormControlRange)
-* [FormControlColorPicker](~/controls/bootstrap5/FormControlColorPicker)

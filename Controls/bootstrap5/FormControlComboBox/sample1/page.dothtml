@@ -1,0 +1,5 @@
+﻿<bs:FormControlComboBox IsMultiple="true" 
+                        DataSource="{value: Strings}" 
+                        SelectedValue="{value: SelectedString}" 
+                        LabelText="Basic" 
+                        OptionCount="3" />
