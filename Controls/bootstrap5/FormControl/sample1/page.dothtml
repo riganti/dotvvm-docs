@@ -1,0 +1,3 @@
+﻿<bs:FormControl LabelText="Feedback" HelpText="You can describe it in a few sentences.">
+        <bs:TextBox Type="MultiLine" Text="{value: 'Test'}" />
+</bs:FormControl>
