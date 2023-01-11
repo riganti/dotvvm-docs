@@ -163,7 +163,14 @@ DotVVM can translate several .NET methods on basic types or collections to JavaS
 * `Enumerable.ToList<T>(IEnumerable<T> collection)`
 * `Enumerable.Where<T>(IEnumerable<T> collection, Func<T, bool> predicate)`
 
-### DateTime property getters
+#### DateTime methods
+* `DateTimeExtensions.ToBrowserLocalTime(DateTime value)`
+   * *Note*: this method is meant to be called only from client-side (server does not know browser's timezone)
+* `DateTimeExtensions.ToBrowserLocalTime(DateTime? value)`
+   * *Note*: this method is meant to be called only from client-side (server does not know browser's timezone)
+> See [Local vs UTC dates](~/pages/concepts/localization-and-cultures/local-vs-utc-dates) for more info
+
+#### DateTime property getters
 * `DateTime.Year`
 * `DateTime.Month`
 * `DateTime.Day`
