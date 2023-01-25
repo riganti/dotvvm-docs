@@ -27,8 +27,7 @@ public class ImageButton : CompositeControl
             .AppendChildren(
                 new HtmlGenericControl("img")
                     .SetAttribute("src", imageUrl),
-                new Literal()
-                    .SetProperty(text)
+                new Literal(text)
             );
     }
 }
@@ -40,7 +39,7 @@ The code snippet above declared the `ImageButton` control with 3 properties:
 
 * `Text` - the property is of type `ValueOrBinding<string>`. You can assign both [value binding](~/pages/concepts/data-binding/value-binding) or a hard-coded value to the control. Also, the property has a default value - if it is not specified, the text "Button" will be used.
 
-* `Click` - the property specifies `ICommandBinding` as a type, so only the [command binding](~/pages/concepts/respond-to-user-actions/commands) can be assigned to the property. It doesn't have a default value, therefore it is required. 
+* `Click` - the property specifies `ICommandBinding` as a type, so only the [command](~/pages/concepts/respond-to-user-actions/commands) or staticCommand binding can be assigned to the property. It doesn't have a default value, therefore it is required. 
 
 * `ImageUrl` - the property is declared as `string`, so it will support only hard-coded values in markup (or a resource binding). It has a default value.
 
@@ -54,7 +53,9 @@ You can also use the following types of parameters:
 
 You can use nullable types - in general, they tell DotVVM that the property is optional. You can specify the default value either as a default value of the parameter, or via the `[DefaultValue]` attribute. If the property is not nullable and doesn't provide a default value, it will be treated as a required property.
 
-You can use the [MarkupOptions](control-properties#specify-markup-otpions) attributes or the DataContextChange attributes on the properties, same as on the properties in markup or code-only controls. 
+You can use the [MarkupOptions](control-properties#specify-markup-otpions) attributes or the DataContextChange attributes on the properties, same as on the properties in markup or code-only controls.
+
+If the property is named Content or ContentTemplate, it will be the default content property - any controls inside of the CompositeControl will be placed into this property.
 
 See the [Control properties](control-properties) for more information about declaring control properties.
 
@@ -76,7 +77,7 @@ In order to simplify building control hierarchy, DotVVM adds several extension m
 
 If you plan to instantiate a markup control as a child inside a composite control, you should use the `MarkupControlContainer` class.
 
-See the [Markup controls](markup-controls#using-markup-controls-in-code-only-controls) page for more info. 
+See the [Markup controls](markup-controls#using-markup-controls-in-code-only-controls) page for more info.
 
 ## See also
 
