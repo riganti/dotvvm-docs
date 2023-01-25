@@ -17,7 +17,7 @@ import { registerReactControl } from 'dotvvm-jscomponent-react';
 function ReactButton(props: any) {
     return (
         <input
-            type=button
+            type="button"
             value={props.text}
             onClick={(_) => props.onClick(s)} />
     );
@@ -32,11 +32,11 @@ class MyModule {
 
     $controls: {
         ReactButton: registerReactControl(ReactButton, { 
-            this.context, 
+            context: this.context, // make `context` available as property in the control
             onClick() { /* default value for props.onClick */ } 
         })
     }
-})
+}
 ```
 
 The page can then reference the JS component like this:
@@ -64,9 +64,11 @@ In order to implement React component in the page, you need to install the `dotv
 
 2. Run `npm install --save dotvvm-jscomponent-react react react-dom`.
 
-### Install Typescript and rollup to bundle React in the component (Optional)
+### Install Typescript and rollup to bundle React in the component
 
-This is an optional step which will allow you to bundle the JS module, the component, and React libraries in one bundle. 
+This step will allow you to bundle the JS module, the component, and React libraries in one bundle.
+While you could use plain view modules without using a JS compiler, it will not work without it if you need to use npm libraries and React JSX syntax.
+We show how to setup Rollup with TypeScript, but you can use any JS bundler you like, as long as it can produce ES modules.
 
 1. First, follow the instructions from the [Use TypeScript to declare modules](../js-directive/use-typescript-to-declare-modules) to configure **TypeScript** and **rollup** module bundler.
 
@@ -84,6 +86,10 @@ This is an optional step which will allow you to bundle the JS module, the compo
 
 4. Register the output file as a `ScriptModuleResource` in the `DotvvmStartup.cs` class.
 
+```CSHARP
+config.Resources.RegisterScriptModuleFile("react-components-js", "./script/react-components-bundle.js");
+```
+
 ### Expose the React component
 
 Now, you can expose your component using the `registerReactComponent` function in your JS module:
@@ -92,26 +98,55 @@ Now, you can expose your component using the `registerReactComponent` function i
 import { registerReactControl } from 'dotvvm-jscomponent-react';
 import { YourReactComponent } from ...;
 
-export default (context: any) => new MyModule(context);
-
-class MyModule {
-    constructor(context) {
-        this.context = context;
-    }
-    ...
-
+export default (context: any) => ({
     $controls: {
         YourComponent: registerReactControl(YourReactComponent, { 
-            this.context, // always pass the context to the component
+            context: this.context, // always pass the context to the component
             
             // specify default values for all parameters
-            text = "default text",
+            text: "default text",
             onClick() { /* do nothing when onClick is not set */ } 
         }),
         ...
     }
 })
 ```
+
+
+## Integration API
+
+DotVVM will take any properties set on the `JsComponent` in dothtml and transfer them into props of the React component.
+
+* Primitive types are untouched, no conversions are applied. Note that date types are represented as ISO 8601 strings without timezone.
+* Complex objects are also transferred untouched from the `dotvvm.state`. You will not see any knockout observables in the objects.
+* Commands and Static Commands are represented as async functions. If the command had parameters, the function accepts them.
+* Content properties can also be used in the JsComponent, those are represented as string ids of the corresponding `<template>` element.
+    * Use `<KnockoutTemplateReactComponent templateName={props.MyTemplate} />` to use this template in the React DOM.
+    * Alternatively, you can inspect the HTML template yourself using `document.getElementById(props.MyTemplate)`
+
+```DOTHTML
+<js:TheComponent>
+   <MyTemplate>  <span>{{value: SomePropertyInTheViewModel}}</span> </MyTemplate>
+</js:TheComponent>
+```
+
+The props includes a `setProps` function which can be used to write values back into the value binding.
+It will throw an exception if writing into a one-way binding (or into command/template property).
+For example, you can use it for writing custom interactive input components in React:
+
+```DOTHTML
+<js:FancyEditor text={value: Text} />
+```
+
+```JAVASCRIPT
+function FancyEditorWrapper({ text, setProps }) {
+    function onChange(event) {
+        setProps({ text: event.newText })
+    }
+    return <FancyEditor text={text} onChange={onChange} />
+}
+```
+
 
 ## See also
 
