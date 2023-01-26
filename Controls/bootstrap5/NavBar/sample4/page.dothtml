@@ -1,5 +1,8 @@
-﻿<h3>Brand BrandImageUrl and BrandLinkUrl</h3>
-<bs:NavBar backgroundColor="Primary">
+﻿<h3>IsJustified = End</h3>
+<bs:NavBar Justify="End" Placement="FixedTop" backgroundColor="Primary">
+    <BrandTemplate>
+        Brand Name
+    </BrandTemplate>
     <bs:NavBarSection>
         <bs:NavBarLink Click="{staticCommand: null}">
             item
@@ -12,7 +15,10 @@
     </bs:NavBarSection>
 </bs:NavBar>
 
-<bs:NavBar backgroundColor="Secondary">
+<bs:NavBar Justify="Center" Placement="FixedBottom" backgroundColor="Primary">
+    <BrandTemplate>
+        Brand Name
+    </BrandTemplate>
     <bs:NavBarSection>
         <bs:NavBarLink Click="{staticCommand: null}">
             item
@@ -24,23 +30,3 @@
         </bs:NavBarDropDown>
     </bs:NavBarSection>
 </bs:NavBar>
-
-<bs:NavBar BackgroundColor="{value: ColorOfBackground}" IsDark="{value: DarkTheme}">
-    <bs:NavBarSection class="me-auto mb-2 mb-lg-0">
-        <bs:NavBarLink Click="{staticCommand: null}">
-            Link item
-        </bs:NavBarLink>
-        <bs:NavBarDropDown DropdownBackground="{value: DropDownBackGround}" HeaderText="DropDownMenu">
-            <bs:DropDownItem>
-                item
-            </bs:DropDownItem>
-            <bs:DropDownItem Enabled="false">
-                item
-            </bs:DropDownItem>
-        </bs:NavBarDropDown>
-    </bs:NavBarSection>
-    <bs:NavBarText>
-        <bs:CheckBox VisualStyle="Switch" Text="Dark theme" Changed="{command: ChangeTheme()}" Checked="{value: false}" />
-    </bs:NavBarText>
-</bs:NavBar>
-
