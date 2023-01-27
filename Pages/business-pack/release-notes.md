@@ -1,5 +1,16 @@
 # Release notes
 
+## 4.0.10
+
+### Bug fixes
+* Changed hover effect on `CheckBox` and `RadioButton` controls in the Bootstrap 4 theme.
+* Fixed `GridView` and `FilterBuilder` filtering condition for `NotEquals` on `string` properties
+
+## 4.0.9
+
+### Bug fixes
+* Changed hover effect on `CheckBox` and `RadioButton` controls in the Enterprise theme.
+
 ## 4.0.8
 
 ### Bug fixes
