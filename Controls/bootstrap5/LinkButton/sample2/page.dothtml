@@ -1,35 +1,35 @@
-﻿<bs:LinkButton Click="{command: DoSomething()}"
-               Text="Primary"
+﻿<bs:LinkButton Click="{command: DoSomething()}" 
+               Text="Primary" 
                Type="Primary" />
 
-<bs:LinkButton Click="{command: DoSomething()}"
-               Text="Secondary"
+<bs:LinkButton Click="{command: DoSomething()}" 
+               Text="Secondary" 
                Type="Secondary" />
 
-<bs:LinkButton Click="{command: DoSomething()}"
-               Text="Success"
+<bs:LinkButton Click="{command: DoSomething()}" 
+               Text="Success" 
                Type="Success" />
 
-<bs:LinkButton Click="{command: DoSomething()}"
-               Text="Danger"
+<bs:LinkButton Click="{command: DoSomething()}" 
+               Text="Danger" 
                Type="Danger" />
 
-<bs:LinkButton Click="{command: DoSomething()}"
-               Text="Warning"
+<bs:LinkButton Click="{command: DoSomething()}" 
+               Text="Warning" 
                Type="Warning" />
 
-<bs:LinkButton Click="{command: DoSomething()}"
-               Text="Info"
+<bs:LinkButton Click="{command: DoSomething()}" 
+               Text="Info" 
                Type="Info" />
 
-<bs:LinkButton Click="{command: DoSomething()}"
-               Text="Light"
+<bs:LinkButton Click="{command: DoSomething()}" 
+               Text="Light" 
                Type="Light" />
 
-<bs:LinkButton Click="{command: DoSomething()}"
-               Text="Dark"
+<bs:LinkButton Click="{command: DoSomething()}" 
+               Text="Dark" 
                Type="Dark" />
 
-<bs:LinkButton Click="{command: DoSomething()}"
-               Text="Link"
+<bs:LinkButton Click="{command: DoSomething()}" 
+               Text="Link" 
                Type="Link" />

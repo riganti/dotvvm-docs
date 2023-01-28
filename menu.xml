@@ -208,6 +208,7 @@
 
     <DocPageMenuItem RouteName="v5" PageName="Bootstrap 5">
       <DocPageMenuItem RouteName="getting-started" PageName="Getting started" />
+      <DocPageMenuItem RouteName="changing-theme" PageName="Using Dark Theme" />
       <DocControlCategory Category="bootstrap5" />
       <DocPageMenuItem RouteName="release-notes" PageName="Release notes" />
     </DocPageMenuItem>
