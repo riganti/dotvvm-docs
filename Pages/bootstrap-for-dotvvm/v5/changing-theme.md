@@ -1,11 +1,11 @@
 # Use Bootstrap 5 Dark Theme
 
-Boostrap for DotVVM allows you to change a default Boostrap theme to customize the look and feel of their application. 
-This feature is available through a new attached property, `Theme.Value`. The property can be added to any html tag or control and support both binding or hard-coded values.
+Bootstrap for DotVVM allows you to change a default Bootstrap theme to customize the look and feel of their application. 
+This feature is available through a new attached property, `Theme.Value`. The property can be added to any HTML tag or control and support binding or hard-coded values.
 
 ## Example
 
-First, let's add theme property to the `body`. This way the theme change will be applied to all components on the page.
+First, let's add theme property to the `body`. This way, the theme change will be applied to all components on the page.
 
 ```html
 @viewModel DotVVM.Bootstrap5.Samples.ViewModels.MasterPageViewModel, DotVVM.Bootstrap5.Samples
@@ -22,6 +22,7 @@ First, let's add theme property to the `body`. This way the theme change will be
 </body>
 </html>
 ```
+
 To make the binding work, `MasterPageViewModel` should have a public `Theme` property. 
 
 ```CSHARP
@@ -31,7 +32,7 @@ public class MasterPageViewModel : DotvvmViewModelBase
 }
 ```
 
-Let's add a simple View, where `NavBar` control above includes a `NavBarDropDown`, that will change the global theme.
+Let's add a simple View, where `NavBar` control above includes a `NavBarDropDown` that will change the global theme.
 
 ```html
 <bs:Container ID="TestContainer">
