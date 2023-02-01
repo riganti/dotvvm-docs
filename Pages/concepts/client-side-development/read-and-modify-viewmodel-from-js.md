@@ -98,10 +98,12 @@ dotvvm.serialization.serializeDate(date, convertToUtc);
 To convert DotVVM date representation to JavaScript `Date`, use the following function:
 
 ```JS
-dotvvm.globalize.parseDotvvmDate(date);
+dotvvm.serialization.parseDate(date, convertFromUtc);
 ```
 
-The coercer will convert `Date` to DotVVM string representation automatically, when you try to set the value. However, if you read the value, you'll see the string. If you need `Date`, use the `dotvvm.globalize.parseDotvvmDate` function.
+The coercer will convert `Date` to DotVVM string representation automatically, when you try to set the value. However, if you read the value, you'll see the string. If you need `Date`, use the `dotvvm.serialization.parseDate` function.
+
+Similarly, `TimeOnly` is stored as `HH:mm:ss` and `DateOnly` is stored as `yyyy-MM-dd`
 
 ### Time zone handling
 

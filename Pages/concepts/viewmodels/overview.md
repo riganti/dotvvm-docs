@@ -46,10 +46,11 @@ Therefore, the viewmodel can contain properties of the following types:
     * numeric types - `int` and `double` are preferred (you can use `byte`, `sbyte`, `short`, `ushort`, `uint`, `long`, `ulong`, `float`, and `decimal`, but the precision can be lost during the JSON serialization)
     * `bool`
     * `Guid`
-    * `DateTime`
+    * `DateTime`, `DateOnly` and `TimeOnly`
     * enums
 * nullable versions of supported primitive types (e. g. `int?`, `DateTime?`...)
 * objects with properties of supported types, and a public parameterless constructor
+* records with properties of supported types
 * collections of supported objects, or primitive types
     * Arrays: `T[]`
     * Lists: `List<T>`
