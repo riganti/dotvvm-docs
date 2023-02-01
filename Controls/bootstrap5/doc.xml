@@ -97,7 +97,7 @@
             Renders the Bootstrap button group widget. 
             </summary>
         </member>
-        <member name="M:DotVVM.Bootstrap5.Controls.ButtonGroup.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Size,DotVVM.Bootstrap5.Controls.ButtonGroupItemCapability,ItemsOrDataSourceCapability{DotVVM.Bootstrap5.Controls.Base.IBootstrapButton},DotVVM.Bootstrap5.Controls.ButtonGroupOrientation)">
+        <member name="M:DotVVM.Bootstrap5.Controls.ButtonGroup.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.Size,DotVVM.Bootstrap5.Controls.ButtonGroupItemCapability,ItemsOrDataSourceCapability{DotVVM.Bootstrap5.Controls.Base.IBootstrapButton},DotVVM.Bootstrap5.Controls.ButtonGroupOrientation)">
             <summary>
             Builds the inner content of the control.
             </summary>
@@ -413,7 +413,7 @@
             <param name="content">Gets or sets the content inside the collapsible element.</param>
             <returns></returns>
         </member>
-        <member name="M:DotVVM.Bootstrap5.Controls.ColorPicker.GetContents(DotVVM.Bootstrap5.Controls.Capabilities.ColorPickerCapability,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Size}},DotVVM.Framework.Controls.TextOrContentCapability,System.Boolean)">
+        <member name="M:DotVVM.Bootstrap5.Controls.ColorPicker.GetContents(DotVVM.Bootstrap5.Controls.Capabilities.ColorPickerCapability,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.Size}},DotVVM.Framework.Controls.TextOrContentCapability,System.Boolean)">
             <summary>
             Builds the inner content of the control.
             </summary>
@@ -473,7 +473,7 @@
             Extends the built-in DataPager control with Bootstrap CSS classes. 
             </summary>
         </member>
-        <member name="M:DotVVM.Bootstrap5.Controls.DataPager.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.Expressions.IValueBinding{DotVVM.Framework.Controls.IPageableGridViewDataSet},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},ResponsiveValueCapability{DotVVM.Bootstrap5.BootstrapJustifyContent},DotVVM.Framework.Controls.ITemplate,DotVVM.Framework.Controls.ITemplate,DotVVM.Framework.Controls.ITemplate,DotVVM.Framework.Controls.ITemplate,System.Boolean,DotVVM.Bootstrap5.Size)">
+        <member name="M:DotVVM.Bootstrap5.Controls.DataPager.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.Expressions.IValueBinding{DotVVM.Framework.Controls.IPageableGridViewDataSet},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},ResponsiveValueCapability{DotVVM.Bootstrap5.BootstrapJustifyContent},DotVVM.Framework.Controls.ITemplate,DotVVM.Framework.Controls.ITemplate,DotVVM.Framework.Controls.ITemplate,DotVVM.Framework.Controls.ITemplate,System.Boolean,DotVVM.Bootstrap5.Controls.Size)">
             <summary>
             Builds the inner content of the control.
             </summary>
@@ -498,7 +498,7 @@
             Renders a DateTimePicker control which lets the user either to type the date, or select it from a calendar pop-up. 
             </summary>
         </member>
-        <member name="M:DotVVM.Bootstrap5.Controls.DateTimePicker.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.ValueOrBinding{System.DateTime},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.DateTime}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.DateTime}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Size}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},DotVVM.Framework.Binding.Expressions.ICommandBinding,DotVVM.Framework.Binding.Expressions.ICommandBinding)">
+        <member name="M:DotVVM.Bootstrap5.Controls.DateTimePicker.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.ValueOrBinding{System.DateTime},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.DateTime}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.DateTime}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.Size}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},DotVVM.Framework.Binding.Expressions.ICommandBinding,DotVVM.Framework.Binding.Expressions.ICommandBinding)">
             <summary>
             Builds the inner content of the control.
             </summary>
@@ -521,6 +521,7 @@
             <summary>
             Builds the inner content of the control.
             </summary>
+            <capability-param name="items">Gets or sets the items inside the control.</capability-param>
             <capability-param name="toggleType">Gets or sets the toggle type. Possible values are the `Button` or `Link`.</capability-param>
             <capability-param name="closeBehavior">Gets or sets the dropdown closing behavior. Possible values are `Default`, `Inside`, `Outside` and `Manual`.</capability-param>
             <capability-param name="dataSource">Gets or sets the data source for the items in the dropdown menu.</capability-param>
@@ -569,7 +570,7 @@
             Represents a single element in the Form control.
             </summary>
         </member>
-        <member name="M:DotVVM.Bootstrap5.Controls.FormControl.GetContents(FormControlCapability,DotVVM.Framework.Controls.HtmlGenericControl)">
+        <member name="M:DotVVM.Bootstrap5.Controls.FormControl.GetContents(FormControlCapability,DotVVM.Framework.Controls.DotvvmControl)">
             <summary>
             Builds the inner content of the control.
             </summary>
@@ -632,7 +633,7 @@
             Extends the ColorPicker control for usage in Form.
             </summary>
         </member>
-        <member name="M:DotVVM.Bootstrap5.Controls.FormControlColorPicker.GetContents(FormControlCapability,DotVVM.Bootstrap5.Controls.Capabilities.ColorPickerCapability,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Size}})">
+        <member name="M:DotVVM.Bootstrap5.Controls.FormControlColorPicker.GetContents(FormControlCapability,DotVVM.Bootstrap5.Controls.Capabilities.ColorPickerCapability,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.Size}})">
             <summary>
             Builds the inner content of the control.
             </summary>
@@ -717,7 +718,7 @@
             Extends the RadioButton control for usage in Form.
             </summary>
         </member>
-        <member name="M:DotVVM.Bootstrap5.Controls.FormControlRadioButton.GetContents(DotVVM.Framework.Controls.HtmlCapability,System.Collections.Generic.List{DotVVM.Bootstrap5.Controls.RadioButton},DotVVM.Framework.Controls.TextOrContentCapability,System.String)">
+        <member name="M:DotVVM.Bootstrap5.Controls.FormControlRadioButton.GetContents(DotVVM.Framework.Controls.HtmlCapability,System.Collections.Generic.List{DotVVM.Bootstrap5.Controls.RadioButton},DotVVM.Framework.Controls.TextOrContentCapability,DotVVM.Framework.Binding.ValueOrBinding{System.Boolean},System.String)">
             <summary>
             Builds the inner content of the control.
             </summary>
@@ -775,7 +776,7 @@
             Extends the TextBox control for usage in Form.
             </summary>
         </member>
-        <member name="M:DotVVM.Bootstrap5.Controls.FormControlTextBox.GetContents(FormControlCapability,DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.Expressions.IValueBinding{System.String},DotVVM.Framework.Controls.TextBoxType,DotVVM.Framework.Binding.Expressions.ICommandBinding,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},System.String,DotVVM.Framework.Binding.Expressions.ICommandBinding,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},System.Boolean)">
+        <member name="M:DotVVM.Bootstrap5.Controls.FormControlTextBox.GetContents(FormControlCapability,DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.Expressions.IValueBinding{System.String},DotVVM.Framework.Controls.TextBoxType,DotVVM.Framework.Binding.Expressions.ICommandBinding,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.String,DotVVM.Framework.Binding.Expressions.ICommandBinding,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},System.Boolean)">
             <summary>
             Builds the inner content of the control.
             </summary>
@@ -783,6 +784,7 @@
             <param name="textBoxType">Gets or sets the mode of the text field.</param>
             <param name="changed">Gets or sets the command that will be triggered when the onchange event is fired.</param>
             <param name="enabled">Gets or sets a value indicating whether the control is enabled and can be modified.</param>
+            <param name="placeholder">Gets or sets a placeholder value. Cannot be combined with a floating label type.</param>
             <param name="formatString">Gets or sets a format of presentation of value to client.</param>
             <param name="textInput">Gets or sets the command that will be triggered when the user is typing in the field. Be careful when using this event - triggering frequent postbacks can make bad user experience. Consider using static commands or a throttling postback handler.</param>
             <param name="selectAllOnFocus">Gets or sets whether all text inside the TextBox becomes selected when the element gets focused.</param>
@@ -807,11 +809,44 @@
             <capability-param name="labelText">Gets or sets a plain text for the control label. Cannot be combined with a `LabelContent` property.</capability-param>
             <capability-param name="layout">Gets or sets the form control layout. Possible values are `Default`, `Horizontal` and `Grid`.</capability-param>
             <capability-param name="labelType">Gets or sets the label type. Possible values are `Default` and `Floating`.</capability-param>
-            <capability-param name="placeholder">Gets or sets the place holder attribute for control.</capability-param>
             <capability-param name="renderLabel">Gets or sets whether the label is rendered.</capability-param>
             <capability-param name="size">Gets or sets the size of the label and form control elements.</capability-param>
             <capability-param name="isInline">Gets or sets whether the label and the control should be rendered to the same row.</capability-param>
             <capability-param name="isReversed">Gets or sets whether the label and form control should be on the right side of the layout.</capability-param>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Form">
+            <summary>
+            Represents Form control.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Form.GetContents(DotVVM.Framework.Controls.HtmlCapability,FormControlCapability,System.Collections.Generic.List{DotVVM.Framework.Controls.DotvvmControl})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="itemformControlCssClass">Gets or sets the CSS class to apply to the form control element.</capability-param>
+            <capability-param name="itemformControlType">Gets or sets the available form control type.</capability-param>
+            <capability-param name="itemcontrolSizeAll">Gets or sets the size of the control for all screen sizes.</capability-param>
+            <capability-param name="itemcontrolSizeLarge">Gets or sets the size of the control for large screen sizes.</capability-param>
+            <capability-param name="itemcontrolSizeMedium">Gets or sets the size of the control for medium screen sizes.</capability-param>
+            <capability-param name="itemcontrolSizeSmall">Gets or sets the size of the control for small screen sizes.</capability-param>
+            <capability-param name="itemcontrolSizeXLarge">Gets or sets the size of the control for extra large screen sizes.</capability-param>
+            <capability-param name="itemcontrolSizeXXLarge">Gets or sets the size of the control for extra extra large screen sizes.</capability-param>
+            <capability-param name="itemlabelSizeAll">Gets or sets the size of the label for all screen sizes.</capability-param>
+            <capability-param name="itemlabelSizeLarge">Gets or sets the size of the label for large screen sizes.</capability-param>
+            <capability-param name="itemlabelSizeMedium">Gets or sets the size of the label for medium screen sizes.</capability-param>
+            <capability-param name="itemlabelSizeSmall">Gets or sets the size of the label for small screen sizes.</capability-param>
+            <capability-param name="itemlabelSizeXLarge">Gets or sets the size of the label for extra large screen sizes.</capability-param>
+            <capability-param name="itemlabelSizeXXLarge">Gets or sets the size of the label for extra extra large screen sizes.</capability-param>
+            <capability-param name="itemhelpContent">Gets or sets a custom template for for the help text. Cannot be combined with a `HelpText` property.</capability-param>
+            <capability-param name="itemhelpText">Gets or sets a plain text for the help text. Cannot be combined with a `HelpContent` property.</capability-param>
+            <capability-param name="itemlabelContent">Gets or sets a custom template for for the control label. Cannot be combined with a `LabelText` property.</capability-param>
+            <capability-param name="itemlabelText">Gets or sets a plain text for the control label. Cannot be combined with a `LabelContent` property.</capability-param>
+            <capability-param name="itemcontent">Gets or sets the inner form element.</capability-param>
+            <capability-param name="itemlayout">Gets or sets the form control layout. Possible values are `Default`, `Horizontal` and `Grid`.</capability-param>
+            <capability-param name="itemlabelType">Gets or sets the label type. Possible values are `Default` and `Floating`.</capability-param>
+            <capability-param name="itemplaceholder">Gets or sets the place holder attribute for control.</capability-param>
+            <capability-param name="itemrenderLabel">Gets or sets whether the label is rendered.</capability-param>
+            <capability-param name="itemsize">Gets or sets the size of the label and form control elements.</capability-param>
         </member>
         <member name="T:DotVVM.Bootstrap5.Controls.GridView">
             <summary>
@@ -904,7 +939,7 @@
             Renders a Bootstrap input group widget. 
             </summary>
         </member>
-        <member name="M:DotVVM.Bootstrap5.Controls.InputGroup.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Size,System.Collections.Generic.List{DotVVM.Bootstrap5.Controls.IInputGroupItem})">
+        <member name="M:DotVVM.Bootstrap5.Controls.InputGroup.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.Size,System.Collections.Generic.List{DotVVM.Bootstrap5.Controls.IInputGroupItem})">
             <summary>
             Builds the inner content of the control.
             </summary>
