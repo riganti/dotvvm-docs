@@ -1,0 +1,6 @@
+﻿<bs:ListGroup ItemType="Button">
+    <bs:ListGroupButton Text="{value: Text}" />
+    <bs:ListGroupButton Text="Item 2" Click="{command: ChangeListGroup()}" />
+    <bs:ListGroupButton Text="Item 2" Enabled="{value: Enabled}" />
+    <bs:ListGroupButton Text="Item 2" Selected="{value: IsSelected}" />
+</bs:ListGroup>

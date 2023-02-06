@@ -1,0 +1,13 @@
+﻿<bs:Accordion>
+    <bs:AccordionItem HeaderText="Header" ContentText="Text"/>
+    <bs:AccordionItem>
+        <HeaderTemplate>
+            HeaderTemplate
+        </HeaderTemplate>
+        <ContentTemplate>
+            <bs:CardBody>
+                Content
+            </bs:CardBody>
+        </ContentTemplate>
+    </bs:AccordionItem>
+</bs:Accordion>

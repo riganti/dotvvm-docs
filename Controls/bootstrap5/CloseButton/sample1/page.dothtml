@@ -1,0 +1,10 @@
+<bs:ModalDialog ScrollableContent="true" IsDisplayed="{value: IsDisplayed}">
+  <Content>
+      <span>
+          Dolore at lorem option no duis est magna erat diam lorem sadipscing eos ea minim justo nonumy dolores tempor vulputate erat amet molestie dolor et dolores at no ipsum at
+          eirmod et ut aliquyam sed in rebum dolor et vero sit feugiat et eirmod ullamcorper et invidunt et vero in accusam vulputate amet nulla</span>
+  </Content>
+  <FooterTemplate>
+      <bs:CloseButton data-ui="close-btn-dismissed" Click="{staticCommand: IsDisplayed = false}" />
+  </FooterTemplate>
+</bs:ModalDialog>

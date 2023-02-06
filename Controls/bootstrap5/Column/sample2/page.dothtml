@@ -1,0 +1,18 @@
+﻿<bs:Column OffsetAll="5">
+    Offset 5
+</bs:Column>
+<bs:Column OffsetSmall="5">
+    OffsetSM 5
+</bs:Column>
+<bs:Column OffsetMedium="5">
+    OffsetMD 5
+</bs:Column>
+<bs:Column OffsetLarge="5">
+    OffsetLG 5
+</bs:Column>
+<bs:Column OffsetXLarge="5">
+    OffsetXL 5
+</bs:Column>
+<bs:Column OffsetXXLarge="5">
+    OffsetXXL 5
+</bs:Column>

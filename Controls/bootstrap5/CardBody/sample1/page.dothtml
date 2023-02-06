@@ -1,0 +1,3 @@
+﻿<bs:Card>
+  <bs:CardBody TitleText="Main title" SubtitleText="Secondary title" Text="Body of the card" />
+</bs:Card>

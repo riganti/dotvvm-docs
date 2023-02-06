@@ -1,0 +1,9 @@
+﻿<bs:TextBox Type="Normal" Text="Normal textbox"/>
+
+<bs:TextBox Type="Password" Text="Password"/>
+
+<bs:TextBox Type="Multiline" Text="Multiline textbox"/>
+
+<bs:TextBox Type="Color" Text="Color textbox"/>
+
+<bs:TextBox Type="Date" Text="Date textbox"/>

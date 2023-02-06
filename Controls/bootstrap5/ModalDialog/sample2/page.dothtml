@@ -1,0 +1,10 @@
+﻿<bs:Button Text="Open Dialog" Click="{staticCommand: Displayed = true}" />
+
+<bs:ModalDialog AddCloseButton="true" IsDisplayed="{value: Displayed}" FooterText="Footer" CloseOnBackdropClick="false">
+    <HeaderTemplate>
+        <span>Header</span>
+    </HeaderTemplate>
+    <Content>
+        <span>Modal Body</span>
+    </Content>
+</bs:ModalDialog>

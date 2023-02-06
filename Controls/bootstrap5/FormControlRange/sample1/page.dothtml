@@ -1,0 +1,5 @@
+﻿<bs:FormControlRange LabelText="Range text" 
+                     MinValue="10" 
+                     MaxValue="200" 
+                     SelectedValue="{value: 10}" 
+                     Step="10" />

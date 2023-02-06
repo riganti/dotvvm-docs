@@ -1,5 +1,3 @@
-## Sample 1: Inline CheckBoxes
+## Sample 1: Close button
 
-The `IsInline` property allows to render checkboxes on one row.
-
-Use the `FormControlStyle` property to choose between browser default theme and Bootstrap custom theme.
+`Close button` control can be used while using custom header templates.

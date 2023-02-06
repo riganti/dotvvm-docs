@@ -1,0 +1,12 @@
+﻿<bs:FormControlTextBox LabelText="Basic" 
+                       Text="{value: "Text"}" 
+                       Placeholder="Basic"/>
+
+<bs:FormControlTextBox LabelText="horizontal" 
+                       Layout="Horizontal" 
+                       Text="{value: "Text"}" 
+                       Size="small"/>
+
+<bs:FormControlTextBox LabelText="Basic" 
+                       LabelType="Floating" 
+                       Text="{value: Value}"/>

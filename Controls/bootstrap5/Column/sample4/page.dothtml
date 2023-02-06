@@ -1,0 +1,16 @@
+﻿<bs:Row Flex.AlignItemsAll="Center" style="height:75px;border-style:solid">
+    <bs:Column>
+        some normal text
+    </bs:Column>
+    <bs:Column>
+        some very cool text
+    </bs:Column>
+</bs:Row>
+<bs:Row Flex.AlignItemsAll="End" style="height:75px;border-style:solid">
+    <bs:Column>
+        some normal text
+    </bs:Column>
+    <bs:Column>
+        some very cool text
+    </bs:Column>
+</bs:Row>

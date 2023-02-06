@@ -1,0 +1,6 @@
+﻿
+<bs:ButtonGroup DataSource="{value: Buttons}"
+                ItemClick="{command: Action()}"
+                ItemText="{value: Text}"
+                ItemType="{value: Color}"
+                ItemVisualStyle="OutLine"/>

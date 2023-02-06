@@ -1,0 +1,6 @@
+﻿<bs:ListGroup Type="Horizontal" ForceVerticalOrientationBreakpoint="Medium" >
+  <bs:ListGroupItem Text="{value: Text}" />
+  <bs:ListGroupItem Text="Item 2" />
+  <bs:ListGroupItem Text="Item 3" />
+  <bs:ListGroupItem Text="Item 4" />
+</bs:ListGroup>

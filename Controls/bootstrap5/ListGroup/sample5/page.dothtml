@@ -1,0 +1,12 @@
+﻿<bs:ListGroup>
+  <bs:ListGroupText Text="{value: Text}">
+      <BadgeTemplate>
+        14
+      </BadgeTemplate>
+  </bs:ListGroupText>
+  <bs:ListGroupText IsJustified="true" Text="Item 2" BadgeType="Danger" BadgeVisualStyle="Pill">
+      <BadgeTemplate>
+        2
+      </BadgeTemplate>
+  </bs:ListGroupText>
+</bs:ListGroup>

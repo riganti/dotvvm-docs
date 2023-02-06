@@ -1,0 +1,4 @@
+﻿<bs:Range MinValue="0" MaxValue="2000" Step="10" 
+          SelectedValue="{value: Value}" />
+
+{{value: Value}}

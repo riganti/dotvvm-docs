@@ -1,0 +1,4 @@
+﻿<bs:Image ImageUrl="~/Resources/Images/img11.jpg" BorderPositions="Full" BorderColor="Primary" BorderWidth="XLarge" />
+<bs:Image ImageUrl="~/Resources/Images/img11.jpg" BorderColor="Primary" BorderPositions="Full" BorderWidth="XLarge" BorderOpacity="XHigh" />
+<bs:Image ImageUrl="~/Resources/Images/img11.jpg" BorderColor="Primary" BorderWidth="XLarge" BorderPositions="Top, Left, Bottom" />
+<bs:Image ImageUrl="~/Resources/Images/img11.jpg" BorderColor="Primary" BorderWidth="XLarge" BorderRadius="Full" BorderRadiusSize="XSmall" />

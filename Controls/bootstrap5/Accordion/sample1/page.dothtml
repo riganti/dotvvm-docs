@@ -1,0 +1,13 @@
+﻿<bs:Accordion ExpandedItemIndex="{value: 2}">
+    <bs:AccordionItem HeaderText="Header1" ContentText="Text1"/>
+    <bs:AccordionItem HeaderText="Header2" ContentText="Text2"/>
+    <bs:AccordionItem HeaderText="Header3" ContentText="Text3"/>
+</bs:Accordion>
+<bs:Accordion ExpandedItemIndex="{value: Index}">
+    <bs:AccordionItem HeaderText="Header1" ContentText="Text1"/>
+    <bs:AccordionItem HeaderText="Header2" ContentText="Text2"/>
+    <bs:AccordionItem HeaderText="Header3" ContentText="Text3"/>
+</bs:Accordion>
+
+<dot:Button Click="{staticCommand: Index = 0}" Text="Change Index to 0" />
+<dot:Button Click="{staticCommand: Index = 3}" Text="Change Index to 3" />

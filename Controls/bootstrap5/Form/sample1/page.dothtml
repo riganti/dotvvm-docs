@@ -1,0 +1,9 @@
+﻿<bs:Form ItemFormControlType="FormControl" ItemLayout="Grid">
+    <bs:FormControl LabelText="Custom FormControl text">
+        <dot:Button>Dotvvm Button</dot:Button>
+    </bs:FormControl>
+    <%--This FormControl is horizontal!--%>
+    <bs:FormControl Layout="Horizontal" LabelText="Custom FormControl text">
+        <dot:Button>Dotvvm Button</dot:Button>
+    </bs:FormControl>
+</bs:Form>

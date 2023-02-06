@@ -1,0 +1,48 @@
+﻿<h3>Brand BrandImageUrl and BrandLinkUrl</h3>
+<bs:NavBar BrandImageUrl="https://via.placeholder.com/50?text=Brand" BrandLinkUrl="https://www.dotvvm.com" backgroundColor="Primary">
+    <bs:NavBarSection>
+        <bs:NavBarLink Click="{staticCommand: null}">
+            item
+        </bs:NavBarLink>
+        <bs:NavBarDropDown HeaderText="DropDownMenu">
+            <bs:DropDownItem>
+                item
+            </bs:DropDownItem>
+        </bs:NavBarDropDown>
+    </bs:NavBarSection>
+</bs:NavBar>
+
+<h3>Brand Placement HiddenWhenCollapsed</h3>
+<bs:NavBar BrandPlacement="HiddenWhenCollapsed" backgroundColor="Danger">
+    <BrandTemplate>
+        Brand Placement HiddenWhenCollapsed
+    </BrandTemplate>
+    <bs:NavBarSection>
+        <bs:NavBarLink Click="{staticCommand: null}">
+            item
+        </bs:NavBarLink>
+        <bs:NavBarDropDown HeaderText="DropDownMenu">
+            <bs:DropDownItem>
+                item
+            </bs:DropDownItem>
+        </bs:NavBarDropDown>
+    </bs:NavBarSection>
+</bs:NavBar>
+
+<h3>BrandTemplate</h3>
+<bs:NavBar backgroundColor="Warning">
+    <BrandTemplate>
+       <bs:Icon Type="Activity" />
+        You can put here anything!
+    </BrandTemplate>
+    <bs:NavBarSection>
+        <bs:NavBarLink Click="{staticCommand: null}">
+            item
+        </bs:NavBarLink>
+        <bs:NavBarDropDown HeaderText="DropDownMenu">
+            <bs:DropDownItem>
+                item
+            </bs:DropDownItem>
+        </bs:NavBarDropDown>
+    </bs:NavBarSection>
+</bs:NavBar>

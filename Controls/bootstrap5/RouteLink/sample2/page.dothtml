@@ -1,0 +1,35 @@
+﻿<bs:RouteLink RouteName="RouteLink_sample2" 
+              Text="Primary" 
+              Type="Primary" />
+
+<bs:RouteLink RouteName="RouteLink_sample2" 
+              Text="Secondary" 
+              Type="Secondary" />
+
+<bs:RouteLink RouteName="RouteLink_sample2" 
+              Text="Success" 
+              Type="Success" />
+
+<bs:RouteLink RouteName="RouteLink_sample2" 
+              Text="Danger" 
+              Type="Danger" />
+
+<bs:RouteLink RouteName="RouteLink_sample2" 
+              Text="Warning" 
+              Type="Warning" />
+
+<bs:RouteLink RouteName="RouteLink_sample2" 
+              Text="Info" 
+              Type="Info" />
+
+<bs:RouteLink RouteName="RouteLink_sample2" 
+              Text="Light" 
+              Type="Light" />
+
+<bs:RouteLink RouteName="RouteLink_sample2" 
+              Text="Dark" 
+              Type="Dark" />
+
+<bs:RouteLink RouteName="RouteLink_sample2" 
+              Text="Link" 
+              Type="Link" />

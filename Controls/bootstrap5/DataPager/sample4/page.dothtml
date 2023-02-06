@@ -1,0 +1,9 @@
+﻿<bs:GridView DataSource="{value: Customers}">
+  <Columns>
+    <dot:GridViewTextColumn ValueBinding="{value: Id}" HeaderText="ID" />
+    <dot:GridViewTextColumn ValueBinding="{value: Name}" HeaderText="Name" />
+  </Columns>
+</bs:GridView>
+
+<bs:DataPager DataSet="{value: Customers}" JustifyContentAll="Center" />
+<bs:DataPager DataSet="{value: Customers}" JustifyContentXLarge="Start" JustifyContentMedium="Evenly"/>

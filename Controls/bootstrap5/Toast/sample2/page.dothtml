@@ -1,0 +1,3 @@
+﻿<bs:Toast IsDisplayed="{value: Displayed}" Text="None Animation" Animation="None" />
+
+<bs:Toast IsDisplayed="{value: Displayed}" Text="Fade Animation" Animation="Fade" />

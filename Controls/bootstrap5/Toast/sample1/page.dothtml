@@ -1,0 +1,5 @@
+﻿<bs:Toast IsDisplayed="{value: Displayed}" HeaderText="Header" >
+    <ContentTemplate>
+        Content
+    </ContentTemplate>
+</bs:Toast>

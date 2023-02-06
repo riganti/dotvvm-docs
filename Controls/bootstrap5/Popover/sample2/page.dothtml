@@ -1,0 +1,19 @@
+﻿<bs:Popover Title="Title" Body="Content text" Placement="Auto">
+    <bs:Button Text="Text" Type="Success" />
+</bs:Popover>
+
+<bs:Popover Title="Title" Body="Content text" Placement="Bottom">
+    <bs:Button Text="Bottom" Type="Info" />
+</bs:Popover>
+
+<bs:Popover Title="Title" Body="Content text" Placement="Left">
+    <bs:Button Text="Left" Type="Success" />
+</bs:Popover>
+
+<bs:Popover Title="Title" Body="Content text" Placement="Right">
+    <bs:Button Text="Right" Type="Danger" />
+</bs:Popover>
+
+<bs:Popover Title="Title" Body="Content text" Placement="Top">
+    <bs:Button Text="Top" Type="Warning" />
+</bs:Popover>

@@ -1,0 +1,29 @@
+﻿    <bs:Row ColumnNumberSmall="1" ColumnNumberMedium="5" ColumnNumberLarge="3" ColumnNumberXLarge="4" ColumnNumberXXLarge="2">
+        <bs:Column>
+            Column 1
+        </bs:Column>
+        <bs:Column>
+            Column 2
+        </bs:Column>
+        <bs:Column>
+            Column 3
+        </bs:Column>
+        <bs:Column>
+            Column 4
+        </bs:Column>
+        <bs:Column>
+            Column 5
+        </bs:Column>
+        <bs:Column>
+            Column 6
+        </bs:Column>
+        <bs:Column>
+            Column 7
+        </bs:Column>
+        <bs:Column>
+            Column 8
+        </bs:Column>
+        <bs:Column>
+            Column 9
+        </bs:Column>
+    </bs:Row>

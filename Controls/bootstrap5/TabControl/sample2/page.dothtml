@@ -1,0 +1,11 @@
+﻿<bs:TabControl SelectedTabIndex="{value: Index}">
+  <bs:TabItem>
+    <HeaderTemplate>Tab 1</HeaderTemplate>
+      <p>First tab</p>
+  </bs:TabItem>
+
+  <bs:TabItem>
+    <HeaderTemplate>Tab 2</HeaderTemplate>
+      <p>Second tab</p>
+  </bs:TabItem>
+</bs:TabControl>

@@ -1,0 +1,6 @@
+﻿<bs:Alert Type="Success" Text="{value: AdvancedText}" HeaderText="{value: AdvancedHeader}" />
+
+<dot:button Click="{command: AdvancedHeader = null}">Set Header to null </dot:button>
+<dot:button Click="{command: AdvancedHeader = "Changed Advanced Header"}">Set Header to text </dot:button>
+<dot:button Click="{command: AdvancedText = null}">Set Text to null </dot:button>
+<dot:button Click="{command: AdvancedText = "Changed Advanced Text"}">Set Text to text </dot:button>

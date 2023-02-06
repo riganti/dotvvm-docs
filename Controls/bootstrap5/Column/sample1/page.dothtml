@@ -1,0 +1,21 @@
+﻿<bs:Column SizeAll="5">
+            Size 5
+</bs:Column>
+<bs:Column SizeSmall="5">
+    SizeSM 5
+</bs:Column>
+<bs:Column SizeMedium="5">
+    SizeMD 5
+</bs:Column>
+<bs:Column SizeLarge="5">
+    SizeLG 5
+</bs:Column>
+<bs:Column SizeXLarge="5">
+    SizeXL 5
+</bs:Column>
+<bs:Column SizeXXLarge="5">
+    SizeXXL 5
+</bs:Column>
+<bs:Column SizeAll="auto">
+    Size auto
+</bs:Column>

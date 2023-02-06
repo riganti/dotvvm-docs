@@ -1,0 +1,8 @@
+﻿<bs:DateTimePicker Value="{value: SelectedValue}"
+                   MinDate="{value: MinValue}"
+                   MaxDate="{value: MaxValue}"
+                   Size="{value: Size}"
+                   Changed="{staticCommand: Counter = Counter+1}" />
+
+<p>Date changed <b>{{value: Counter}}</b> times!</p>
+<dot:Button Click="{command: ChangeSize()}">Change Size</dot:Button>

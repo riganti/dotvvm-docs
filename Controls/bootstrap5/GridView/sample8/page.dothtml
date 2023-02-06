@@ -1,0 +1,49 @@
+﻿<bs:GridView DataSource="{value: Customers}" Alignment="Default">
+        <Columns>
+            <dot:GridViewTextColumn HeaderText="Id" ValueBinding="{value: CustomerId}" />
+            <dot:GridViewTextColumn HeaderText="Name" ValueBinding="{value: Name}" />
+            <dot:GridViewTextColumn HeaderText="Birth Date" ValueBinding="{value: BirthDate}" FormatString="dd.MM.yyyy" />
+        </Columns>
+    </bs:GridView>
+    <bs:GridView DataSource="{value: Customers}" Alignment="Top">
+        <Columns>
+            <dot:GridViewTextColumn HeaderText="Id" ValueBinding="{value: CustomerId}" />
+            <dot:GridViewTextColumn HeaderText="Name" ValueBinding="{value: Name}" />
+            <dot:GridViewTextColumn HeaderText="Birth Date" ValueBinding="{value: BirthDate}" FormatString="dd.MM.yyyy" />
+        </Columns>
+    </bs:GridView>
+    <bs:GridView DataSource="{value: Customers}" Alignment="Middle">
+        <Columns>
+            <dot:GridViewTextColumn HeaderText="Id" ValueBinding="{value: CustomerId}" />
+            <dot:GridViewTextColumn HeaderText="Name" ValueBinding="{value: Name}" />
+            <dot:GridViewTextColumn HeaderText="Birth Date" ValueBinding="{value: BirthDate}" FormatString="dd.MM.yyyy" />
+        </Columns>
+    </bs:GridView>
+    <bs:GridView DataSource="{value: Customers}" Alignment="Bottom">
+        <Columns>
+            <dot:GridViewTextColumn HeaderText="Id" ValueBinding="{value: CustomerId}" />
+            <dot:GridViewTextColumn HeaderText="Name" ValueBinding="{value: Name}" />
+            <dot:GridViewTextColumn HeaderText="Birth Date" ValueBinding="{value: BirthDate}" FormatString="dd.MM.yyyy" />
+        </Columns>
+    </bs:GridView>
+    <bs:GridView DataSource="{value: Customers}" Alignment="BaseLine">
+        <Columns>
+            <dot:GridViewTextColumn HeaderText="Id" ValueBinding="{value: CustomerId}" />
+            <dot:GridViewTextColumn HeaderText="Name" ValueBinding="{value: Name}" />
+            <dot:GridViewTextColumn HeaderText="Birth Date" ValueBinding="{value: BirthDate}" FormatString="dd.MM.yyyy" />
+        </Columns>
+    </bs:GridView>
+    <bs:GridView DataSource="{value: Customers}" Alignment="TextBottom">
+        <Columns>
+            <dot:GridViewTextColumn HeaderText="Id" ValueBinding="{value: CustomerId}" />
+            <dot:GridViewTextColumn HeaderText="Name" ValueBinding="{value: Name}" />
+            <dot:GridViewTextColumn HeaderText="Birth Date" ValueBinding="{value: BirthDate}" FormatString="dd.MM.yyyy" />
+        </Columns>
+    </bs:GridView>
+    <bs:GridView DataSource="{value: Customers}" Alignment="TextTop">
+        <Columns>
+            <dot:GridViewTextColumn HeaderText="Id" ValueBinding="{value: CustomerId}" />
+            <dot:GridViewTextColumn HeaderText="Name" ValueBinding="{value: Name}" />
+            <dot:GridViewTextColumn HeaderText="Birth Date" ValueBinding="{value: BirthDate}" FormatString="dd.MM.yyyy" />
+        </Columns>
+    </bs:GridView>

@@ -1,0 +1,3 @@
+﻿<bs:Spinner />
+<bs:Spinner Type="Success" />
+<bs:Spinner Size="Small"/>

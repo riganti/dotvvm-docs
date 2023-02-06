@@ -1,0 +1,9 @@
+﻿<bs:ProgressBar Value="25">
+  25% completed...
+</bs:ProgressBar>
+
+<bs:ProgressBar Color="Info" Value="85">
+  <HiddenTemplate>
+    69% completed...
+  </HiddenTemplate>
+</bs:ProgressBar>

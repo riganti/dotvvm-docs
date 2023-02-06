@@ -1,0 +1,1936 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotVVM.Bootstrap5</name>
+    </assembly>
+    <members>
+        <member name="T:DotVVM.Bootstrap5.Controls.Accordion">
+            <summary>
+            Wraps a group of AccordionItem controls to create an accordion-like behavior. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Accordion.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.AccordionCapability,ItemsOrDataSourceCapability{DotVVM.Bootstrap5.Controls.IAccordionItem},DotVVM.Framework.Binding.Expressions.IValueBinding{System.Int32})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="expandedItemIndex">Gets or sets an index of expanded accordion item. If none of the accordion items are expanded, the index is set to -1.</param>
+            <capability-param name="dataSource">Gets or sets a data-source object from which the child controls will be generated.</capability-param>
+            <capability-param name="items">Gets or sets the items inside the control.</capability-param>
+            <capability-param name="itemContentTemplate">Gets or sets a custom template for accordion item content when DataSource is set.</capability-param>
+            <capability-param name="itemContentText">Gets or sets a plain text for accordion item content when DataSource is set.</capability-param>
+            <capability-param name="itemHeaderTemplate">Gets or sets a custom template for accordion item header when DataSource is set.</capability-param>
+            <capability-param name="itemHeaderText">Gets or sets a plain text for accordion item header when DataSource is set.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.AccordionItem">
+            <summary>
+            AccordionItem controls used in Accordion component. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.AccordionItem.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.AccordionCapability,DotVVM.Framework.Binding.ValueOrBinding{System.Boolean})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="ContentTemplate">Gets or sets a custom template for accordion item content when DataSource is set.</capability-param>
+            <capability-param name="ContentText">Gets or sets a plain text for accordion item content when DataSource is set.</capability-param>
+            <capability-param name="HeaderTemplate">Gets or sets a custom template for accordion item header when DataSource is set.</capability-param>
+            <capability-param name="HeaderText">Gets or sets a plain text for accordion item header when DataSource is set.</capability-param>
+            <capability-param name="isExpanded">Gets or sets whether the item is expanded.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Alert">
+            <summary>
+            Displays contextual feedback messages for users.  
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Alert.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Controls.TextOrContentCapability,DotVVM.Framework.Controls.TextOrContentCapability,DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.AlertType},System.Boolean,DotVVM.Framework.Binding.Expressions.IValueBinding{System.Boolean},DotVVM.Framework.Binding.Expressions.ICommandBinding)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="headerContent">Gets or sets a custom template for the alert header.</capability-param>
+            <capability-param name="headerText">Gets or sets a plain text for the alert header.</capability-param>
+            <param name="type">Gets or sets the type of the alert. Possible values are Primary, Secondary, Success, Danger, Warning, Info, Light and Dark.</param>
+            <param name="isDismissible">Gets or sets whether a close icon should be displayed in the top right corner of the alert.</param>
+            <param name="isDismissed">Gets or sets a boolean binding whether the alert has been dismissed.</param>
+            <param name="dismissed">Gets or sets the command that will be triggered when the alert is dismissed.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Badge">
+            <summary>
+            Renders a Bootstrap badge widget.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Badge.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Controls.TextOrContentCapability,DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.BadgeColor},DotVVM.Bootstrap5.Controls.BadgeVisualStyle,DotVVM.Framework.Binding.Expressions.ICommandBinding)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="content">Gets or sets the content inside the badge.</capability-param>
+            <param name="type">Gets or sets the Bootstrap color of the badge.</param>
+            <param name="visualStyle">Gets or sets the visual style of the badge.</param>
+            <param name="click">Gets or sets the command that will be triggered when the badge is clicked.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Breadcrumb">
+            <summary>
+            Represents the Bootstrap breadcrumb navigation control with data-binding support. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Breadcrumb.GetContents(DotVVM.Framework.Controls.HtmlCapability,ListItemCapability,ItemsOrDataSourceCapability{DotVVM.Bootstrap5.Controls.IBreadcrumbItem},System.String)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="dataSource">Gets or sets a data-source object from which the child controls will be generated.</capability-param>
+            <capability-param name="items">Gets or sets the items inside the control.</capability-param>
+            <capability-param name="itemEnabled">Gets or sets whether the breadcrumb item is enabled when DataSource is set.</capability-param>
+            <capability-param name="itemSelected">Gets or sets whether the breadcrumb item is selected when DataSource is set.</capability-param>
+            <capability-param name="itemNavigateUrl">Gets or sets a URL for breadcrumb item when DataSource is set.</capability-param>
+            <capability-param name="itemRouteName">Gets or sets a route name for breadcrumb item when DataSource is set.</capability-param>
+            <capability-param name="itemTemplate">Gets or sets a custom template for breadcrumb item when DataSource is set.</capability-param>
+            <capability-param name="itemText">Gets or sets a plain text for breadcrumb item when DataSource is set.</capability-param>
+            <capability-param name="itemUrlSuffix">Gets or sets a URL suffix for breadcrumb item when DataSource is set.</capability-param>
+            <capability-param name="itemClick">Gets or sets a click action for breadcrumb item when DataSource is set.</capability-param>
+            <param name="divider">Gets or sets a string divider between the breadcrumb items.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.ButtonGroup">
+            <summary>
+            Renders the Bootstrap button group widget. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.ButtonGroup.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.Size,DotVVM.Bootstrap5.Controls.ButtonGroupItemCapability,ItemsOrDataSourceCapability{DotVVM.Bootstrap5.Controls.Base.IBootstrapButton},DotVVM.Bootstrap5.Controls.ButtonGroupOrientation)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="dataSource">Gets or sets a data-source object from which the child controls will be generated.</capability-param>
+            <capability-param name="items">Gets or sets the items inside the control.</capability-param>
+            <param name="size">Gets or sets the button sizes for all buttons inside the ButtonGroup control.</param>
+            <param name="orientation">Gets or sets the button group orientation.</param>
+            <capability-param name="itemEnabled">Gets or sets whether the button group item is enabled when DataSource is set.</capability-param>
+            <capability-param name="itemText">Gets or sets the button group item text when DataSource is set.</capability-param>
+            <capability-param name="itemType">Gets or sets the button group item type when DataSource is set.</capability-param>
+            <capability-param name="itemVisualStyle">Gets or sets the button group item visual style when DataSource is set.</capability-param>
+            <capability-param name="itemClick">Gets or sets the command that will be triggered when a button group item is clicked. The DataSource must be set.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.ButtonGroupCheckBox">
+            <summary>
+            Extends the default CheckBox control with additional Bootstrap features for usage inside ButtonGroup control. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.ButtonGroupCheckBox.GetContents(DotVVM.Framework.Controls.HtmlCapability,CheckBoxCapability,ButtonAppearanceCapability)">
+            <capability-param name="buttonFontType">Gets or sets the font color.</capability-param>
+            <capability-param name="buttonSize">Gets or sets the button size.</capability-param>
+            <capability-param name="buttonType">Gets or sets the button type.</capability-param>
+            <capability-param name="buttonVisualStyle">Gets or sets the button visual style.</capability-param>
+            <capability-param name="enabled">Gets or sets a value indicating whether the control is enabled and can be clicked on.</capability-param>
+            <capability-param name="checked">Gets or sets whether the control is checked.</capability-param>
+            <capability-param name="checkedItems">Gets or sets the collection of checked items. Use this property in combination with the CheckedValue property.</capability-param>
+            <capability-param name="checkedValue">Gets or sets the value that will be used as a result when the control is checked. Use this property in combination with CheckedItems property.</capability-param>
+            <capability-param name="changed">Gets or sets the command that will be triggered when the control check state is changed.</capability-param>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.ButtonGroupRadioButton">
+            <summary>
+            Extends the default RadioButton control with additional Bootstrap features for usage inside ButtonGroup control. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.ButtonGroupRadioButton.GetContents(DotVVM.Framework.Controls.HtmlCapability,RadioButtonCoreCapability,ButtonAppearanceCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="buttonFontType">Gets or sets the font color.</capability-param>
+            <capability-param name="buttonSize">Gets or sets the button size.</capability-param>
+            <capability-param name="buttonType">Gets or sets the button type.</capability-param>
+            <capability-param name="buttonVisualStyle">Gets or sets the button visual style.</capability-param>
+            <capability-param name="enabled">Gets or sets a value indicating whether the control is enabled and can be clicked on.</capability-param>
+            <capability-param name="checked">Gets or sets whether the control is checked.</capability-param>
+            <capability-param name="checkedItem">Gets or sets the checked item. Use this property in combination with the CheckedValue property.</capability-param>
+            <capability-param name="checkedValue">Gets or sets the value that will be used as a result when the control is checked. Use this property in combination with the CheckedItem property.</capability-param>
+            <capability-param name="groupName">Gets or sets a unique name for the radio button group.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.ButtonToolbar">
+            <summary>
+            Combines ButtonGroups or InputGroups into button toolbars. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.ButtonToolbar.GetContents(DotVVM.Framework.Controls.HtmlCapability,System.Collections.Generic.List{DotVVM.Bootstrap5.Controls.IButtonToolbarItem},ResponsiveValueCapability{DotVVM.Bootstrap5.BootstrapJustifyContent})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="JustifyContentAll">Gets or sets the flexbox utility CSS class for all screens.</capability-param>
+            <capability-param name="JustifyContentLarge">Gets or sets the flexbox utility CSS class for a large screen.</capability-param>
+            <capability-param name="JustifyContentMedium">Gets or sets the flexbox utility CSS class for a medium screen.</capability-param>
+            <capability-param name="JustifyContentSmall">Gets or sets the flexbox utility CSS class for a small screen.</capability-param>
+            <capability-param name="JustifyContentXLarge">Gets or sets the flexbox utility CSS class for a very large screen.</capability-param>
+            <capability-param name="JustifyContentXXLarge">Gets or sets the flexbox utility CSS class for the largest screen.</capability-param>
+            <param name="content">Gets or sets the inner elements containing only ButtonGroup and InputGroup controls.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Button">
+            <summary>
+            Extends the built-in Button control to allow applying Bootstrap CSS classes to the button.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Button.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.ButtonCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="buttonTagName">Gets or sets whether the control should render the input or the button tag in the HTML.</capability-param>
+            <capability-param name="enabled">Gets or sets a button disabled state.</capability-param>
+            <capability-param name="fontType">Gets or sets the button font color.</capability-param>
+            <capability-param name="isSubmitButton">Gets or sets whether the control should render a submit button or a normal button (type="submit" or type="button"). The submit button has some special features in the browsers, e.g. handles the Return key in HTML forms etc.</capability-param>
+            <capability-param name="size">Gets or sets the button size. Possible values are `Small` `Default` and `Large`.</capability-param>
+            <capability-param name="type">Gets or sets the button type.</capability-param>
+            <capability-param name="visualStyle">Gets or sets the button visual style. Possible values are `SolidFill` and `Outline`.</capability-param>
+            <capability-param name="click">Gets or sets the command that will be triggered when the button is clicked.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Capabilities.CheckablesExtensions.GetValidatedProperty(RadioButtonCapability)">
+            <summary>
+            Returns either CheckedItem or CheckedValue binding. If CheckedValue has no binding, null is returned
+            </summary>
+            <param name="capability"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Capabilities.CheckablesExtensions.GetValidatedProperty(CheckBoxCapability)">
+            <summary>
+            Returns either CheckedItem or CheckedValue binding. If CheckedValue has no binding, null is returned
+            </summary>
+            <param name="capability"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Card">
+            <summary>
+            Renders a bootstrap card component
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Card.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.CardCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="titleText">Gets or sets the control title text. H5 tag is used.</capability-param>
+            <capability-param name="subtitleText">Gets or sets the control subtitle text. H6 tag is used.</capability-param>
+            <capability-param name="content">Gets or sets a custom template for the card content. Cannot be combined with a `Text` property.</capability-param>
+            <capability-param name="text">Gets or sets a plain text for card content. Cannot be combined with any custom content inside the card.</capability-param>
+            <capability-param name="headerTemplate">Gets or sets a custom template for card header. Cannot be combined with a `HeaderText` property.</capability-param>
+            <capability-param name="headerText">Gets or sets a plain text for card header. Cannot be combined with a `HeaderTemplate` property.</capability-param>
+            <capability-param name="footerTemplate">Gets or sets a custom template for card footer. Cannot be combined with a `FooterText` property.</capability-param>
+            <capability-param name="footerText">Gets or sets a plain text for card footer. Cannot be combined with a `FooterTemplate` property.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.CardBody">
+            <summary>
+            Renders a body of a Card component.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.CardBody.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Controls.TextOrContentCapability,DotVVM.Bootstrap5.Controls.CardTitleAndSubtitleCapability,System.Boolean)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="titleText">Gets or sets the control title text. H5 tag is used.</capability-param>
+            <capability-param name="subtitleText">Gets or sets the control subtitle text. H6 tag is used.</capability-param>
+            <param name="addAppropriateCardClassesToContent">Gets or sets whether appropriate classes (card-text, card-link, ...) should be added to inner elements. Can be used only when the Content property is used.</param>
+            <returns></returns>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.CardCapability.TitleAndSubtitleCapability">
+            <summary>
+            Title and subtitle capability
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.CardCapability.Text">
+            <summary>
+            Gets or sets the card text content. This property cannot be combined with `Content` property. 
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.CardCapability.Content">
+            <summary>
+            Gets or sets the card content. 
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.CardCapability.BorderColor">
+            <summary>
+            Gets or sets the card border color. 
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.CardCapability.Color">
+            <summary>
+            Gets or sets the card color. Both the background and text color css classes are set. 
+            </summary>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.CardImage">
+            <summary>
+            Renders an image that is used inside the Card component.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.CardImage.GetContents(DotVVM.Framework.Controls.HtmlCapability,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},DotVVM.Framework.Binding.ValueOrBinding{System.String},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.String,System.String,DotVVM.Bootstrap5.Controls.CardBody)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="alternateText">Gets or sets the alt attribute value.</param>
+            <param name="toolTip">Gets or sets the title attribute value.</param>
+            <param name="imageUrl">Gets or sets the src attribute value.</param>
+            <param name="height">Gets or sets the height attribute value.</param>
+            <param name="width">Gets or sets the width attribute value.</param>
+            <param name="overlay">Gets or sets card body which overlays image.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.CardListGroup">
+            <summary>
+            Renders list group inside the card component.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.CardListGroup.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.ListGroupItemCapability,DotVVM.Bootstrap5.Controls.ListGroupCapability,ItemsOrDataSourceCapability{DotVVM.Bootstrap5.Controls.IListGroupItem})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="dataSource">Gets or sets a data-source object from which the child controls will be generated.</capability-param>
+            <capability-param name="items">Gets or sets the items inside the control.</capability-param>
+            <capability-param name="itemBadgeTemplate">Gets or sets a custom template for a Badge control inside a ListGroupItem when DataSource is set.</capability-param>
+            <capability-param name="itemBadgeText">Gets or sets a plain text for a Badge control inside a ListGroupItem when DataSource is set.</capability-param>
+            <capability-param name="itemBadgeType">Gets or sets a badge color when DataSource is set.</capability-param>
+            <capability-param name="itemBadgeVisualStyle">Gets or sets a badge visual style when DataSource is set. Possible values are `Default` or `Pill`.</capability-param>
+            <capability-param name="itemColor">Gets or sets a ListGroupItem color when DataSource is set.</capability-param>
+            <capability-param name="itemEnabled">Gets or sets a ListGroupItem disabled state when DataSource is set.</capability-param>
+            <capability-param name="itemIsJustified">When DataSource is set, adds `justify-content-between` and `align-items-center` CSS classes when DataSource is set.</capability-param>
+            <capability-param name="itemNavigateUrl">Gets or sets a navigation URL for `Link` ListGroupItem when DataSource is set.</capability-param>
+            <capability-param name="itemRouteName">Gets or sets a route name when DataSource is set.</capability-param>
+            <capability-param name="itemSelected">Gets or sets whether ListGroupItem control is selected when DataSource is set.</capability-param>
+            <capability-param name="itemTemplate">Gets or sets a custom template for a ListGroupItem control when DataSource is set.</capability-param>
+            <capability-param name="itemText">Gets or sets a plain text for a ListGroupItem control when DataSource is set.</capability-param>
+            <capability-param name="itemType">Gets or sets a type for a ListGroupItem control when DataSource is set.</capability-param>
+            <capability-param name="itemUrlSuffix">Gets or sets a URL suffix for a `Link` ListGroupItem control when DataSource is set.</capability-param>
+            <capability-param name="itemClick">Gets or sets the command that will be triggered when a `Button` ListGroupItem is clicked. DataSource must be is set.</capability-param>
+            <capability-param name="groupTypes">Gets or sets the types of the ListGroup. Possible values are `Numbered` or `Flush` or both.</capability-param>
+            <capability-param name="orientation">Gets or sets a ListGroup orientation.</capability-param>
+            <capability-param name="forceVerticalOrientationBreakpoint">Sets a breakpoint when ListGroup is changed from horizontal to vertical.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.CardTitleAndSubtitleCapability.TitleText">
+            <summary>
+            Gets or sets the control title text. H5 tag is used.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.CardTitleAndSubtitleCapability.SubtitleText">
+            <summary>
+            Gets or sets the control subtitle text. H6 tag is used.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Carousel">
+            <summary>
+            Renders a Bootstrap carousel widget. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Carousel.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.CarouselAnimationType,DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.CarouselAutoplay},DotVVM.Bootstrap5.Controls.CarouselItemCapability,ItemsOrDataSourceCapability{DotVVM.Bootstrap5.Controls.ICarouselItem},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.CarouselTheme},System.Nullable{System.Int32},System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,DotVVM.Framework.Controls.ITemplate,DotVVM.Framework.Controls.ITemplate)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="dataSource">Gets or sets a data-source object from which the child controls will be generated.</capability-param>
+            <capability-param name="items">Gets or sets the items inside the control.</capability-param>
+            <param name="animation">Gets or sets which animation will be used.</param>
+            <param name="autoplay">Gets or sets the autoplay settings. Autoplay could be enabled after load, enabled after first interaction or disabled completely.</param>
+            <param name="autoSlideInterval">Gets or sets the interval (in miliseconds) between changing slides.</param>
+            <capability-param name="itemCaption">Gets or sets the caption plain text for carousel item when DataSource is set.</capability-param>
+            <capability-param name="itemContent">Gets or sets the carousel item content when DataSource is set.</capability-param>
+            <capability-param name="itemCaptionTemplate">Gets or sets the caption template for carousel item when DataSource is set.</capability-param>
+            <capability-param name="itemDelay">Gets or sets the time delay (in seconds) for carousel item when DataSource is set.</capability-param>
+            <capability-param name="itemImageUrl">Gets or sets the image URL for carousel item when DataSource is set.</capability-param>
+            <capability-param name="itemIsActive">Gets or sets whether the carousel item is active when DataSource is set.</capability-param>
+            <capability-param name="itemImageAlternateText">Gets or sets the image alternate text for carousel item when DataSource is set.</capability-param>
+            <param name="activeItemIndex">Gets or sets the index of the active slide.</param>
+            <param name="cycleItems">Gets or sets whether the carousel should cycle through images continuously or stop after the slideshow is finished.</param>
+            <param name="pauseOnHover">Gets or sets whether changing of items shall be paused on hover.</param>
+            <param name="renderIndicators">Gets or sets whether the dots indicating the active slide will be rendered.</param>
+            <param name="renderSideControls">Gets or sets whether navigation controls will be rendered.</param>
+            <param name="disableTouchSwiping">Gets or sets whether swiping by touch is enabled.</param>
+            <param name="theme">Gets or sets the carousel theme.</param>
+            <param name="leftControlTemplate">Gets or sets the template for the "move left" control.</param>
+            <param name="rightControlTemplate">Gets or sets the template for the "move right" control.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.CheckBox">
+            <summary>
+            Extends the default CheckBox control with additional Bootstrap features. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.CheckBox.GetContents(CheckBoxFullCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="buttonFontType">Gets or sets the font color. Use this property in combination with a `Button` checkbox visual style.</capability-param>
+            <capability-param name="buttonSize">Gets or sets the button size. Use this property in combination with a `Button` checkbox visual style.</capability-param>
+            <capability-param name="buttonType">Gets or sets the button type. Use this property in combination with a `Button` checkbox visual style.</capability-param>
+            <capability-param name="buttonVisualStyle">Gets or sets the button visual style. Use this property in combination with a `Button` checkbox visual style.</capability-param>
+            <capability-param name="enabled">Gets or sets a value indicating whether the control is enabled and can be clicked on.</capability-param>
+            <capability-param name="checked">Gets or sets whether the control is checked.</capability-param>
+            <capability-param name="checkedItems">Gets or sets the collection of checked items. Use this property in combination with the CheckedValue property.</capability-param>
+            <capability-param name="checkedValue">Gets or sets the value that will be used as a result when the control is checked. Use this property in combination with the CheckedItem or CheckedItems property.</capability-param>
+            <capability-param name="isInline">Gets or sets whether the control should be rendered on the same horizontal row.</capability-param>
+            <capability-param name="isReversed">Gets or sets whether the control should be put on the opposite side of the page.</capability-param>
+            <capability-param name="renderLabel">Gets or sets whether the label will be rendered. If set to null than the label will be rendered if needed.</capability-param>
+            <capability-param name="visualStyle">Gets or sets the radio button visual style. Possible values are `Default`, `Switch`, `Button`.</capability-param>
+            <capability-param name="changed">Gets or sets the command that will be triggered when the control check state is changed.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.CloseButton">
+            <summary>
+            Renders a universal close button for modal dialogs and alerts.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.CloseButton.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.Expressions.ICommandBinding,System.String)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="click">Gets or sets the command that will be triggered when the close button is clicked. The `IsDisplayed` property can be set to `false` to close the ModalDialog or Alert control.</param>
+            <param name="closeButtonLabel">Gets or sets the text displayed for the screen readers.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.CollapsiblePanel">
+            <summary>
+            Renders a collapsible Card.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.CollapsiblePanel.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.CardCapability,DotVVM.Framework.Binding.Expressions.IValueBinding{System.Boolean})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="FooterTemplate">Gets or sets a custom template for panel footer.</capability-param>
+            <capability-param name="FooterText">Gets or sets a plain text for panel footer.</capability-param>
+            <capability-param name="HeaderTemplate">Gets or sets a custom template for panel header.</capability-param>
+            <capability-param name="HeaderText">Gets or sets a plain text for panel header.</capability-param>
+            <param name="isExpanded">Gets or sets whether the panel content is collapsed or not.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Collapsible">
+            <summary>
+            Renders a content that can be shown and hidden. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Collapsible.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.Expressions.IValueBinding{System.Boolean},System.Collections.Generic.List{DotVVM.Framework.Controls.DotvvmControl})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="isExpanded">Gets or sets whether the content is collapsed or not.</param>
+            <param name="content">Gets or sets the content inside the collapsible element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.ColorPicker.GetContents(DotVVM.Bootstrap5.Controls.Capabilities.ColorPickerCapability,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.Size}},DotVVM.Framework.Controls.TextOrContentCapability,System.Boolean)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="color">Gets or sets the color picker value.</param>
+            <param name="enabled">Gets or sets whether the color picker is enabled.</param>
+            <param name="size">Gets or sets the size of the color picker.</param>
+            <param name="renderLabel">Gets or sets whether the label will be rendered. If set to null than the label will be rendered if needed.</param>
+            <param name="title">Gets or sets the title attribute of the color picker.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Column">
+            <summary>
+            Renders a Bootstrap responsive column.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Column.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Controls.TextOrContentCapability,ResponsiveValueCapability{System.String},ResponsiveValueCapability{System.String},DotVVM.Bootstrap5.VerticalAlignment)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="OffsetAll">Gets or sets the row offset CSS class for all screens.</capability-param>
+            <capability-param name="OffsetLarge">Gets or sets the row offset CSS class for a large screen.</capability-param>
+            <capability-param name="OffsetMedium">Gets or sets the row offset CSS class for a medium screen.</capability-param>
+            <capability-param name="OffsetSmall">Gets or sets the row offset CSS class for a small screen.</capability-param>
+            <capability-param name="OffsetXLarge">Gets or sets the row offset CSS class for a very large screen.</capability-param>
+            <capability-param name="OffsetXXLarge">Gets or sets the row offset CSS class for the largest screen.</capability-param>
+            <capability-param name="SizeAll">Gets or sets the row size CSS class for all screens.</capability-param>
+            <capability-param name="SizeLarge">Gets or sets the row size CSS class for a large screen.</capability-param>
+            <capability-param name="SizeMedium">Gets or sets the row size CSS class for a medium screen.</capability-param>
+            <capability-param name="SizeSmall">Gets or sets the row size CSS class for a small screen.</capability-param>
+            <capability-param name="SizeXLarge">Gets or sets the row size CSS class for a very large screen.</capability-param>
+            <capability-param name="SizeXXLarge">Gets or sets the row size CSS class for the largest screen.</capability-param>
+            <param name="verticalAlignment">Gets or sets the vertical alignment CSS class. Possible values are Start (align-self-start), Center (align-self -center), End (align-self-end).</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.ComboBox">
+            <summary>
+            Renders a Bootstrap select control.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.ComboBox.Size">
+            <summary>
+            Gets or sets the size of the ComboBox.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Container">
+            <summary>
+            Renders a Boostrap container.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.Container.Type">
+            <summary>
+            Gets or sets the type of the container. Fluid type utilizes the available horizontal space. Small, Medium, Large, XLarge, XXLarge types utilize the available space according to corresponding Bootstrap screen size.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.DataPager">
+            <summary>
+            Extends the built-in DataPager control with Bootstrap CSS classes. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.DataPager.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.Expressions.IValueBinding{DotVVM.Framework.Controls.IPageableGridViewDataSet},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},ResponsiveValueCapability{DotVVM.Bootstrap5.BootstrapJustifyContent},DotVVM.Framework.Controls.ITemplate,DotVVM.Framework.Controls.ITemplate,DotVVM.Framework.Controls.ITemplate,DotVVM.Framework.Controls.ITemplate,System.Boolean,DotVVM.Bootstrap5.Controls.Size)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="JustifyContentAll">Gets or sets the flexbox utility CSS class for all screens.</capability-param>
+            <capability-param name="JustifyContentLarge">Gets or sets the flexbox utility CSS class for a large screen.</capability-param>
+            <capability-param name="JustifyContentMedium">Gets or sets the flexbox utility CSS class for a medium screen.</capability-param>
+            <capability-param name="JustifyContentSmall">Gets or sets the flexbox utility CSS class for a small screen.</capability-param>
+            <capability-param name="JustifyContentXLarge">Gets or sets the flexbox utility CSS class for a very large screen.</capability-param>
+            <capability-param name="JustifyContentXXLarge">Gets or sets the flexbox utility CSS class for the largest screen.</capability-param>
+            <param name="dataSet">Gets or sets the GridViewDataSet object in the viewmodel. </param>
+            <param name="enabled">Gets or sets whether data pager is enabled.</param>
+            <param name="firstPageTemplate">Gets or sets the template of the button which moves the user to the first page. </param>
+            <param name="lastPageTemplate">Gets or sets the template of the button which moves the user to the last page.</param>
+            <param name="nextPageTemplate">Gets or sets the template of the button which moves the user to the next page.</param>
+            <param name="previousPageTemplate">Gets or sets the template of the button which moves the user to the previous page.</param>
+            <param name="hideWhenOnlyOnePage">Gets or sets whether the pager should hide automatically when there is only one page of results. Must not be set to true when using the Visible property.</param>
+            <param name="size">Gets or sets the size of the data pager.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.DateTimePicker">
+            <summary>
+            Renders a DateTimePicker control which lets the user either to type the date, or select it from a calendar pop-up. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.DateTimePicker.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.ValueOrBinding{System.DateTime},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.DateTime}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.DateTime}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.Size}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},DotVVM.Framework.Binding.Expressions.ICommandBinding,DotVVM.Framework.Binding.Expressions.ICommandBinding)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="selectedDate">Gets or sets the date selected.</param>
+            <param name="title">Gets or sets the title attribute value.</param>
+            <param name="minDate">Gets or sets a minimal date that can be selected.</param>
+            <param name="maxDate">Gets or sets a maximal date that can be selected.</param>
+            <param name="size">Gets or sets the size of the calendar input.</param>
+            <param name="enabled">Gets or sets whether the control is enabled.</param>
+            <param name="changed">Gets or sets the command that will be triggered when the control text is changed.</param>
+            <param name="textInput">Gets or sets the command that will be triggered when the user is typing in the field. Be careful when using this event - triggering frequent postbacks can make bad user experience. Consider using static commands or a throttling postback handler.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.DropDown">
+            <summary>
+            Represents parent element for dropdown
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.DropDown.GetContents(DotVVM.Framework.Controls.HtmlCapability,DropDownCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="items">Gets or sets the items inside the control.</capability-param>
+            <capability-param name="toggleType">Gets or sets the toggle type. Possible values are the `Button` or `Link`.</capability-param>
+            <capability-param name="closeBehavior">Gets or sets the dropdown closing behavior. Possible values are `Default`, `Inside`, `Outside` and `Manual`.</capability-param>
+            <capability-param name="dataSource">Gets or sets the data source for the items in the dropdown menu.</capability-param>
+            <capability-param name="dropDirection">Gets or sets the direction in which the dropdown menu should open.</capability-param>
+            <capability-param name="enabled">Gets or sets a button disabled state.</capability-param>
+            <capability-param name="fontType">Gets or sets the font color for button toggle.</capability-param>
+            <capability-param name="isCollapsed">Gets or sets whether the dropdown menu is collapsed or expanded.</capability-param>
+            <capability-param name="isSplitButton">Gets or sets whether the dropdown button should be a split button.</capability-param>
+            <capability-param name="itemEnabled">Gets or sets whether the individual items in the dropdown menu should be enabled or disabled when DataSource is set.</capability-param>
+            <capability-param name="itemNavigateUrl">Gets or sets the URL to navigate to when an item in the dropdown menu is clicked when DataSource is set.</capability-param>
+            <capability-param name="itemRouteName">Gets or sets the route name to navigate to when an item in the dropdown menu is clicked when DataSource is set.</capability-param>
+            <capability-param name="itemSelected">Gets or sets whether an individual item in the dropdown menu is selected when DataSource is set.</capability-param>
+            <capability-param name="itemTemplate">Gets or sets the template to use for rendering each item in the dropdown menu when DataSource is set.</capability-param>
+            <capability-param name="itemText">Gets or sets the text to display for each item in the dropdown menu when DataSource is set.</capability-param>
+            <capability-param name="itemUrlSuffix">Gets or sets a suffix to append to the URL of each item in the dropdown menu when DataSource is set.</capability-param>
+            <capability-param name="itemClick">Gets or sets the command that will be triggered when individual items in the dropdown menu are clicked and DataSource is set.</capability-param>
+            <capability-param name="splitButtonMenuAlignment">Gets or sets whether the toggle menu should be displayed next to a button or next to an arrow.</capability-param>
+            <capability-param name="size">Gets or sets the size of the dropdown button toggle.</capability-param>
+            <capability-param name="text">Gets or sets the text to display on the dropdown button.</capability-param>
+            <capability-param name="click">Gets or sets the command that will be triggered when the dropdown button is clicked.</capability-param>
+            <capability-param name="type">Gets or sets the toggle button type.</capability-param>
+            <capability-param name="visualStyle">Gets or sets the toggle button visual style.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.DropDownItem">
+            <summary>
+            Represent a child element in dropdown
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.DropDownItem.GetContents(ListItemCapability,DotVVM.Framework.Controls.HtmlCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="enabled">Gets or sets whether the item in the dropdown menu should be enabled or disabled.</capability-param>
+            <capability-param name="navigateUrl">Gets or sets the URL to navigate to when an item in the dropdown menu is clicked.</capability-param>
+            <capability-param name="routeName">Gets or sets the route name to navigate to when an item in the dropdown menu is clicked.</capability-param>
+            <capability-param name="selected">Gets or sets whether an item in the dropdown menu is selected.</capability-param>
+            <capability-param name="template">Gets or sets the template to use for item in the dropdown menu.</capability-param>
+            <capability-param name="text">Gets or sets the text to display item in the dropdown menu.</capability-param>
+            <capability-param name="urlSuffix">Gets or sets a suffix to append to the URL for item in the dropdown menu.</capability-param>
+            <capability-param name="click">Gets or sets the command that will be triggered when item in the dropdown menu are clicked.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.FormControl">
+            <summary>
+            Represents a single element in the Form control.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.FormControl.GetContents(FormControlCapability,DotVVM.Framework.Controls.DotvvmControl)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="formControlCssClass">Gets or sets the CSS class to apply to the form control element.</capability-param>
+            <capability-param name="formControlType">Gets or sets the available form control type.</capability-param>
+            <capability-param name="controlSizeAll">Gets or sets the size of the control for all screen sizes.</capability-param>
+            <capability-param name="controlSizeLarge">Gets or sets the size of the control for large screen sizes.</capability-param>
+            <capability-param name="controlSizeMedium">Gets or sets the size of the control for medium screen sizes.</capability-param>
+            <capability-param name="controlSizeSmall">Gets or sets the size of the control for small screen sizes.</capability-param>
+            <capability-param name="controlSizeXLarge">Gets or sets the size of the control for extra large screen sizes.</capability-param>
+            <capability-param name="controlSizeXXLarge">Gets or sets the size of the control for extra extra large screen sizes.</capability-param>
+            <capability-param name="labelSizeAll">Gets or sets the size of the label for all screen sizes.</capability-param>
+            <capability-param name="labelSizeLarge">Gets or sets the size of the label for large screen sizes.</capability-param>
+            <capability-param name="labelSizeMedium">Gets or sets the size of the label for medium screen sizes.</capability-param>
+            <capability-param name="labelSizeSmall">Gets or sets the size of the label for small screen sizes.</capability-param>
+            <capability-param name="labelSizeXLarge">Gets or sets the size of the label for extra large screen sizes.</capability-param>
+            <capability-param name="labelSizeXXLarge">Gets or sets the size of the label for extra extra large screen sizes.</capability-param>
+            <capability-param name="helpContent">Gets or sets a custom template for for the help text. Cannot be combined with a `HelpText` property.</capability-param>
+            <capability-param name="helpText">Gets or sets a plain text for the help text. Cannot be combined with a `HelpContent` property.</capability-param>
+            <capability-param name="labelContent">Gets or sets a custom template for for the control label. Cannot be combined with a `LabelText` property.</capability-param>
+            <capability-param name="labelText">Gets or sets a plain text for the control label. Cannot be combined with a `LabelContent` property.</capability-param>
+            <capability-param name="content">Gets or sets the inner form element.</capability-param>
+            <capability-param name="layout">Gets or sets the form control layout. Possible values are `Default`, `Horizontal` and `Grid`.</capability-param>
+            <capability-param name="labelType">Gets or sets the label type. Possible values are `Default` and `Floating`.</capability-param>
+            <capability-param name="placeholder">Gets or sets the place holder attribute for control.</capability-param>
+            <capability-param name="renderLabel">Gets or sets whether the label is rendered.</capability-param>
+            <capability-param name="size">Gets or sets the size of the label and form control elements.</capability-param>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.FormControlCheckBox">
+            <summary>
+            Extends the CheckBox control for usage in Form.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.FormControlCheckBox.GetContents(CheckBoxFullCapability,DotVVM.Framework.Controls.TextOrContentCapability,System.String)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="helpContent">Gets or sets a custom template for for the help text. Cannot be combined with a `HelpText` property.</capability-param>
+            <capability-param name="helpText">Gets or sets a plain text for the help text. Cannot be combined with a `HelpContent` property.</capability-param>
+            <capability-param name="content">Gets or sets a single CheckBox control, that is validated.</capability-param>
+            <capability-param name="formControlCssClass">Gets or sets the CSS class to apply to the form control element.</capability-param>
+            
+            <capability-param name="buttonFontType">Gets or sets the font color. Use this property in combination with a `Button` checkbox visual style.</capability-param>
+            <capability-param name="buttonSize">Gets or sets the button size. Use this property in combination with a `Button` checkbox visual style.</capability-param>
+            <capability-param name="buttonType">Gets or sets the button type. Use this property in combination with a `Button` checkbox visual style.</capability-param>
+            <capability-param name="buttonVisualStyle">Gets or sets the button visual style. Use this property in combination with a `Button` checkbox visual style.</capability-param>
+            <capability-param name="enabled">Gets or sets a value indicating whether the control is enabled and can be clicked on.</capability-param>
+            <capability-param name="checked">Gets or sets whether the control is checked.</capability-param>
+            <capability-param name="checkedItems">Gets or sets the collection of checked items. Use this property in combination with the CheckedValue property.</capability-param>
+            <capability-param name="checkedValue">Gets or sets the value that will be used as a result when the control is checked. Use this property in combination with the CheckedItem or CheckedItems property.</capability-param>
+            <capability-param name="isInline">Gets or sets whether the control should be rendered on the same horizontal row.</capability-param>
+            <capability-param name="isReversed">Gets or sets whether the control should be put on the opposite side of the page.</capability-param>
+            <capability-param name="renderLabel">Gets or sets whether the label will be rendered. If set to null than the label will be rendered if needed.</capability-param>
+            <capability-param name="visualStyle">Gets or sets the radio button visual style. Possible values are `Default`, `Switch`, `Button`.</capability-param>
+            <capability-param name="changed">Gets or sets the command that will be triggered when the control check state is changed.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.FormControlColorPicker">
+            <summary>
+            Extends the ColorPicker control for usage in Form.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.FormControlColorPicker.GetContents(FormControlCapability,DotVVM.Bootstrap5.Controls.Capabilities.ColorPickerCapability,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.Size}})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="formControlCssClass">Gets or sets the CSS class to apply to the form control element.</capability-param>
+            <capability-param name="formControlType">Gets or sets the available form control type.</capability-param>
+            <capability-param name="controlSizeAll">Gets or sets the size of the control for all screen sizes.</capability-param>
+            <capability-param name="controlSizeLarge">Gets or sets the size of the control for large screen sizes.</capability-param>
+            <capability-param name="controlSizeMedium">Gets or sets the size of the control for medium screen sizes.</capability-param>
+            <capability-param name="controlSizeSmall">Gets or sets the size of the control for small screen sizes.</capability-param>
+            <capability-param name="controlSizeXLarge">Gets or sets the size of the control for extra large screen sizes.</capability-param>
+            <capability-param name="controlSizeXXLarge">Gets or sets the size of the control for extra extra large screen sizes.</capability-param>
+            <capability-param name="labelSizeAll">Gets or sets the size of the label for all screen sizes.</capability-param>
+            <capability-param name="labelSizeLarge">Gets or sets the size of the label for large screen sizes.</capability-param>
+            <capability-param name="labelSizeMedium">Gets or sets the size of the label for medium screen sizes.</capability-param>
+            <capability-param name="labelSizeSmall">Gets or sets the size of the label for small screen sizes.</capability-param>
+            <capability-param name="labelSizeXLarge">Gets or sets the size of the label for extra large screen sizes.</capability-param>
+            <capability-param name="labelSizeXXLarge">Gets or sets the size of the label for extra extra large screen sizes.</capability-param>
+            <capability-param name="helpContent">Gets or sets a custom template for for the help text. Cannot be combined with a `HelpText` property.</capability-param>
+            <capability-param name="helpText">Gets or sets a plain text for the help text. Cannot be combined with a `HelpContent` property.</capability-param>
+            <capability-param name="labelContent">Gets or sets a custom template for for the control label. Cannot be combined with a `LabelText` property.</capability-param>
+            <capability-param name="labelText">Gets or sets a plain text for the control label. Cannot be combined with a `LabelContent` property.</capability-param>
+            <capability-param name="layout">Gets or sets the form control layout. Possible values are `Default`, `Horizontal` and `Grid`.</capability-param>
+            <capability-param name="labelType">Gets or sets the label type. Possible values are `Default` and `Floating`.</capability-param>
+            <capability-param name="placeholder">Gets or sets the place holder attribute for control.</capability-param>
+            <capability-param name="renderLabel">Gets or sets whether the label is rendered.</capability-param>
+            <capability-param name="size">Gets or sets the size of the label and form control elements.</capability-param>
+            <capability-param name="validatedProperty">Gets or sets the property that should be validated.</capability-param>
+            <capability-param name="isInline">Gets or sets whether the label and the control should be rendered to the same row.</capability-param>
+            <capability-param name="isReversed">Gets or sets whether the label and form control should be on the right side of the layout.</capability-param>
+            <param name="color">Gets or sets the color picker value.</param>
+            <param name="enabled">Gets or sets whether the color picker is enabled.</param>
+            <param name="title">Gets or sets the title attribute of the color picker.</param>
+            <param name="colorPickerSize">Gets or sets the size attribute of the color picker.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.FormControlComboBox">
+            <summary>
+            Extends the ComboBox control for usage in Form.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.FormControlComboBox.GetContents(FormControlCapability,DotVVM.Framework.Controls.HtmlCapability,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Int32}},DotVVM.Framework.Binding.ValueOrBinding{System.Object},DotVVM.Framework.Binding.Expressions.IValueBinding{System.Object},DotVVM.Framework.Binding.Expressions.IValueBinding,DotVVM.Framework.Binding.Expressions.IValueBinding{System.String},DotVVM.Framework.Binding.Expressions.ICommandBinding,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="formControlCssClass">Gets or sets the CSS class to apply to the form control element.</capability-param>
+            <capability-param name="formControlType">Gets or sets the available form control type.</capability-param>
+            <capability-param name="controlSizeAll">Gets or sets the size of the control for all screen sizes.</capability-param>
+            <capability-param name="controlSizeLarge">Gets or sets the size of the control for large screen sizes.</capability-param>
+            <capability-param name="controlSizeMedium">Gets or sets the size of the control for medium screen sizes.</capability-param>
+            <capability-param name="controlSizeSmall">Gets or sets the size of the control for small screen sizes.</capability-param>
+            <capability-param name="controlSizeXLarge">Gets or sets the size of the control for extra large screen sizes.</capability-param>
+            <capability-param name="controlSizeXXLarge">Gets or sets the size of the control for extra extra large screen sizes.</capability-param>
+            <capability-param name="labelSizeAll">Gets or sets the size of the label for all screen sizes.</capability-param>
+            <capability-param name="labelSizeLarge">Gets or sets the size of the label for large screen sizes.</capability-param>
+            <capability-param name="labelSizeMedium">Gets or sets the size of the label for medium screen sizes.</capability-param>
+            <capability-param name="labelSizeSmall">Gets or sets the size of the label for small screen sizes.</capability-param>
+            <capability-param name="labelSizeXLarge">Gets or sets the size of the label for extra large screen sizes.</capability-param>
+            <capability-param name="labelSizeXXLarge">Gets or sets the size of the label for extra extra large screen sizes.</capability-param>
+            <capability-param name="helpContent">Gets or sets a custom template for for the help text. Cannot be combined with a `HelpText` property.</capability-param>
+            <capability-param name="helpText">Gets or sets a plain text for the help text. Cannot be combined with a `HelpContent` property.</capability-param>
+            <capability-param name="labelContent">Gets or sets a custom template for for the control label. Cannot be combined with a `LabelText` property.</capability-param>
+            <capability-param name="labelText">Gets or sets a plain text for the control label. Cannot be combined with a `LabelContent` property.</capability-param>
+            <capability-param name="layout">Gets or sets the form control layout. Possible values are `Default`, `Horizontal` and `Grid`.</capability-param>
+            <capability-param name="labelType">Gets or sets the label type. Possible values are `Default` and `Floating`.</capability-param>
+            <capability-param name="placeholder">Gets or sets the place holder attribute for control.</capability-param>
+            <capability-param name="renderLabel">Gets or sets whether the label is rendered.</capability-param>
+            <capability-param name="size">Gets or sets the size of the label and form control elements.</capability-param>
+            <capability-param name="isInline">Gets or sets whether the label and the control should be rendered to the same row.</capability-param>
+            <capability-param name="isReversed">Gets or sets whether the label and form control should be on the right side of the layout.</capability-param>
+            <param name="selectMenuSize">Gets or sets the size of the options menu.</param>
+            <param name="dataSource">Gets or sets the source collection or a GridViewDataSet that contains data in the control.</param>
+            <param name="selectedValue">Gets or sets the value of the selected item.</param>
+            <param name="itemValueBinding">The expression of DataSource item that will be passed to the SelectedValue property when the item is selected.</param>
+            <param name="itemTextBinding">The expression of DataSource item that will be displayed in the control.</param>
+            <param name="selectionChanged">Gets or sets the command that will be triggered when the selection is changed.</param>
+            <param name="emptyItemText">Text displayed when no value is selected.</param>
+            <param name="enabled">Gets or sets a value indicating whether the control is enabled and can be modified.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.FormControlRadioButton">
+            <summary>
+            Extends the RadioButton control for usage in Form.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.FormControlRadioButton.GetContents(DotVVM.Framework.Controls.HtmlCapability,System.Collections.Generic.List{DotVVM.Bootstrap5.Controls.RadioButton},DotVVM.Framework.Controls.TextOrContentCapability,DotVVM.Framework.Binding.ValueOrBinding{System.Boolean},System.String)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="helpContent">Gets or sets a custom template for for the help text. Cannot be combined with a `HelpText` property.</capability-param>
+            <capability-param name="helpText">Gets or sets a plain text for the help text. Cannot be combined with a `HelpContent` property.</capability-param>
+            <capability-param name="content">Gets or sets a collection of RadioButton controls, that are validated together.</capability-param>
+            <capability-param name="formControlCssClass">Gets or sets the CSS class to apply to the form control element.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.FormControlRange">
+            <summary>
+            Extends the Range control for usage in Form.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.FormControlRange.GetContents(FormControlCapability,DotVVM.Bootstrap5.Controls.Capabilities.RangeCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="formControlCssClass">Gets or sets the CSS class to apply to the form control element.</capability-param>
+            <capability-param name="formControlType">Gets or sets the available form control type.</capability-param>
+            <capability-param name="controlSizeAll">Gets or sets the size of the control for all screen sizes.</capability-param>
+            <capability-param name="controlSizeLarge">Gets or sets the size of the control for large screen sizes.</capability-param>
+            <capability-param name="controlSizeMedium">Gets or sets the size of the control for medium screen sizes.</capability-param>
+            <capability-param name="controlSizeSmall">Gets or sets the size of the control for small screen sizes.</capability-param>
+            <capability-param name="controlSizeXLarge">Gets or sets the size of the control for extra large screen sizes.</capability-param>
+            <capability-param name="controlSizeXXLarge">Gets or sets the size of the control for extra extra large screen sizes.</capability-param>
+            <capability-param name="labelSizeAll">Gets or sets the size of the label for all screen sizes.</capability-param>
+            <capability-param name="labelSizeLarge">Gets or sets the size of the label for large screen sizes.</capability-param>
+            <capability-param name="labelSizeMedium">Gets or sets the size of the label for medium screen sizes.</capability-param>
+            <capability-param name="labelSizeSmall">Gets or sets the size of the label for small screen sizes.</capability-param>
+            <capability-param name="labelSizeXLarge">Gets or sets the size of the label for extra large screen sizes.</capability-param>
+            <capability-param name="labelSizeXXLarge">Gets or sets the size of the label for extra extra large screen sizes.</capability-param>
+            <capability-param name="helpContent">Gets or sets a custom template for for the help text. Cannot be combined with a `HelpText` property.</capability-param>
+            <capability-param name="helpText">Gets or sets a plain text for the help text. Cannot be combined with a `HelpContent` property.</capability-param>
+            <capability-param name="labelContent">Gets or sets a custom template for for the control label. Cannot be combined with a `LabelText` property.</capability-param>
+            <capability-param name="labelText">Gets or sets a plain text for the control label. Cannot be combined with a `LabelContent` property.</capability-param>
+            <capability-param name="layout">Gets or sets the form control layout. Possible values are `Default`, `Horizontal` and `Grid`.</capability-param>
+            <capability-param name="labelType">Gets or sets the label type. Possible values are `Default` and `Floating`.</capability-param>
+            <capability-param name="placeholder">Gets or sets the place holder attribute for control.</capability-param>
+            <capability-param name="renderLabel">Gets or sets whether the label is rendered.</capability-param>
+            <capability-param name="size">Gets or sets the size of the label and form control elements.</capability-param>
+            <capability-param name="isInline">Gets or sets whether the label and the control should be rendered to the same row.</capability-param>
+            <capability-param name="isReversed">Gets or sets whether the label and form control should be on the right side of the layout.</capability-param>
+            
+            <param name="enabled">Gets or sets a value indicating whether the control is enabled.</param>
+            <param name="selectedValue">Gets or sets the value selected by the user.</param>
+            <param name="minValue">Gets or sets the start point of the scale.</param>
+            <param name="maxValue">Gets or sets the end point of the scale.</param>
+            <param name="step">Gets or sets the size of the step which defines the difference between selectable values.</param>
+            <param name="changed">Gets or sets the command that triggers when the user finishes changing the value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.FormControlTextBox">
+            <summary>
+            Extends the TextBox control for usage in Form.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.FormControlTextBox.GetContents(FormControlCapability,DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.Expressions.IValueBinding{System.String},DotVVM.Framework.Controls.TextBoxType,DotVVM.Framework.Binding.Expressions.ICommandBinding,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.String,DotVVM.Framework.Binding.Expressions.ICommandBinding,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},System.Boolean)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="text">Gets or sets the text in the control.</param>
+            <param name="textBoxType">Gets or sets the mode of the text field.</param>
+            <param name="changed">Gets or sets the command that will be triggered when the onchange event is fired.</param>
+            <param name="enabled">Gets or sets a value indicating whether the control is enabled and can be modified.</param>
+            <param name="placeholder">Gets or sets a placeholder value. Cannot be combined with a floating label type.</param>
+            <param name="formatString">Gets or sets a format of presentation of value to client.</param>
+            <param name="textInput">Gets or sets the command that will be triggered when the user is typing in the field. Be careful when using this event - triggering frequent postbacks can make bad user experience. Consider using static commands or a throttling postback handler.</param>
+            <param name="selectAllOnFocus">Gets or sets whether all text inside the TextBox becomes selected when the element gets focused.</param>
+            <param name="updateTextOnInput">Gets or sets whether the viewmodel property will be updated immediately after change. By default, the viewmodel is updated after the control loses its focus.</param>
+            <capability-param name="formControlCssClass">Gets or sets the CSS class to apply to the form control element.</capability-param>
+            <capability-param name="formControlType">Gets or sets the available form control type.</capability-param>
+            <capability-param name="controlSizeAll">Gets or sets the size of the control for all screen sizes.</capability-param>
+            <capability-param name="controlSizeLarge">Gets or sets the size of the control for large screen sizes.</capability-param>
+            <capability-param name="controlSizeMedium">Gets or sets the size of the control for medium screen sizes.</capability-param>
+            <capability-param name="controlSizeSmall">Gets or sets the size of the control for small screen sizes.</capability-param>
+            <capability-param name="controlSizeXLarge">Gets or sets the size of the control for extra large screen sizes.</capability-param>
+            <capability-param name="controlSizeXXLarge">Gets or sets the size of the control for extra extra large screen sizes.</capability-param>
+            <capability-param name="labelSizeAll">Gets or sets the size of the label for all screen sizes.</capability-param>
+            <capability-param name="labelSizeLarge">Gets or sets the size of the label for large screen sizes.</capability-param>
+            <capability-param name="labelSizeMedium">Gets or sets the size of the label for medium screen sizes.</capability-param>
+            <capability-param name="labelSizeSmall">Gets or sets the size of the label for small screen sizes.</capability-param>
+            <capability-param name="labelSizeXLarge">Gets or sets the size of the label for extra large screen sizes.</capability-param>
+            <capability-param name="labelSizeXXLarge">Gets or sets the size of the label for extra extra large screen sizes.</capability-param>
+            <capability-param name="helpContent">Gets or sets a custom template for for the help text. Cannot be combined with a `HelpText` property.</capability-param>
+            <capability-param name="helpText">Gets or sets a plain text for the help text. Cannot be combined with a `HelpContent` property.</capability-param>
+            <capability-param name="labelContent">Gets or sets a custom template for for the control label. Cannot be combined with a `LabelText` property.</capability-param>
+            <capability-param name="labelText">Gets or sets a plain text for the control label. Cannot be combined with a `LabelContent` property.</capability-param>
+            <capability-param name="layout">Gets or sets the form control layout. Possible values are `Default`, `Horizontal` and `Grid`.</capability-param>
+            <capability-param name="labelType">Gets or sets the label type. Possible values are `Default` and `Floating`.</capability-param>
+            <capability-param name="renderLabel">Gets or sets whether the label is rendered.</capability-param>
+            <capability-param name="size">Gets or sets the size of the label and form control elements.</capability-param>
+            <capability-param name="isInline">Gets or sets whether the label and the control should be rendered to the same row.</capability-param>
+            <capability-param name="isReversed">Gets or sets whether the label and form control should be on the right side of the layout.</capability-param>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Form">
+            <summary>
+            Represents Form control.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Form.GetContents(DotVVM.Framework.Controls.HtmlCapability,FormControlCapability,System.Collections.Generic.List{DotVVM.Framework.Controls.DotvvmControl})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="itemformControlCssClass">Gets or sets the CSS class to apply to the form control element.</capability-param>
+            <capability-param name="itemformControlType">Gets or sets the available form control type.</capability-param>
+            <capability-param name="itemcontrolSizeAll">Gets or sets the size of the control for all screen sizes.</capability-param>
+            <capability-param name="itemcontrolSizeLarge">Gets or sets the size of the control for large screen sizes.</capability-param>
+            <capability-param name="itemcontrolSizeMedium">Gets or sets the size of the control for medium screen sizes.</capability-param>
+            <capability-param name="itemcontrolSizeSmall">Gets or sets the size of the control for small screen sizes.</capability-param>
+            <capability-param name="itemcontrolSizeXLarge">Gets or sets the size of the control for extra large screen sizes.</capability-param>
+            <capability-param name="itemcontrolSizeXXLarge">Gets or sets the size of the control for extra extra large screen sizes.</capability-param>
+            <capability-param name="itemlabelSizeAll">Gets or sets the size of the label for all screen sizes.</capability-param>
+            <capability-param name="itemlabelSizeLarge">Gets or sets the size of the label for large screen sizes.</capability-param>
+            <capability-param name="itemlabelSizeMedium">Gets or sets the size of the label for medium screen sizes.</capability-param>
+            <capability-param name="itemlabelSizeSmall">Gets or sets the size of the label for small screen sizes.</capability-param>
+            <capability-param name="itemlabelSizeXLarge">Gets or sets the size of the label for extra large screen sizes.</capability-param>
+            <capability-param name="itemlabelSizeXXLarge">Gets or sets the size of the label for extra extra large screen sizes.</capability-param>
+            <capability-param name="itemhelpContent">Gets or sets a custom template for for the help text. Cannot be combined with a `HelpText` property.</capability-param>
+            <capability-param name="itemhelpText">Gets or sets a plain text for the help text. Cannot be combined with a `HelpContent` property.</capability-param>
+            <capability-param name="itemlabelContent">Gets or sets a custom template for for the control label. Cannot be combined with a `LabelText` property.</capability-param>
+            <capability-param name="itemlabelText">Gets or sets a plain text for the control label. Cannot be combined with a `LabelContent` property.</capability-param>
+            <capability-param name="itemcontent">Gets or sets the inner form element.</capability-param>
+            <capability-param name="itemlayout">Gets or sets the form control layout. Possible values are `Default`, `Horizontal` and `Grid`.</capability-param>
+            <capability-param name="itemlabelType">Gets or sets the label type. Possible values are `Default` and `Floating`.</capability-param>
+            <capability-param name="itemplaceholder">Gets or sets the place holder attribute for control.</capability-param>
+            <capability-param name="itemrenderLabel">Gets or sets whether the label is rendered.</capability-param>
+            <capability-param name="itemsize">Gets or sets the size of the label and form control elements.</capability-param>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.GridView">
+            <summary>
+            A Bootstrap extension for the built-in GridView control.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.GridView.TableTheme">
+            <summary>
+            Gets or sets the template color of the GridView.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.GridView.HeaderTheme">
+            <summary>
+            Gets or sets the template color of the GridView header.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.GridView.Border">
+            <summary>
+            Gets or sets the style of table border.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.GridView.CaptionTop">
+            <summary>
+            Gets or sets whether the capture should be placed above the table. 
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.GridView.Alignment">
+            <summary>
+            Gets or sets the cells alignment.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.GridView.HasStripedRows">
+            <summary>
+            Gets or sets whether rows have alternating colors.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.GridView.HighlightRowOnHover">
+            <summary>
+            Gets or sets whether row should be highlighted on hover.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.GridView.Size">
+            <summary>
+            Gets or sets table size
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.GridView.Caption">
+            <summary>
+            Gets or sets the caption of the GridView.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.GridView.MaximumScreenSizeBeforeScrollBarShows">
+            <summary>
+            Gets or sets the maximum screen size on which the horizontal scrollbar is still not visible.
+            Setting the property to None will cause the scrollbar to never appear.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Icon.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.Icons})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="type"> Gets or sets the used icon.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Image">
+            <summary>
+            Renders an image and allows to apply Bootstrap CSS classes. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Image.GetContents(DotVVM.Framework.Controls.HtmlCapability,BorderCapability,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},DotVVM.Bootstrap5.Controls.ImageVisualStyle[])">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="borderColor">Gets or sets the border color. Possible values are Primary, Secondary, Success, Danger, Warning, Info, Light, Dark and White.</capability-param>
+            <capability-param name="borderOpacity">Gets or sets the border radius opacity. Possible values are XLow (10%), Low (25%), Medium(50%), High(75%), XHigh(100%).</capability-param>
+            <capability-param name="borderPositions">Gets or sets a comma-separated list of border positions. Possible values are Full, Top, Bottom, Left, Right.</capability-param>
+            <capability-param name="borderRadius">Gets or sets the border radius css classes, that allow to round the corners.</capability-param>
+            <capability-param name="borderRadiusSize">Gets or sets the border radius size. Possible values are XSmall, Small, Medium, Large, XLarge.</capability-param>
+            <capability-param name="borderWidth">Gets or sets the border width. Possible values are XSmall, Small, Medium, Large, XLarge.</capability-param>
+            <param name="alternateText">Gets or sets the alt attribute value.</param>
+            <param name="toolTip">Gets or sets the title attribute value.</param>
+            <param name="imageUrl">Gets or sets the src attribute value.</param>
+            <param name="height">Gets or sets the height attribute value.</param>
+            <param name="width">Gets or sets the width attribute value.</param>
+            <param name="visualStyles">Gets or sets a comma-separated list of CSS classes. Possible values are Thumbnail (img-thumbnail), Responsive (img-fluid), Rounded (img-rounded).</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.InputGroup">
+            <summary>
+            Renders a Bootstrap input group widget. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.InputGroup.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.Size,System.Collections.Generic.List{DotVVM.Bootstrap5.Controls.IInputGroupItem})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="size">Gets or sets the input sizes for all elements inside the InputGroup control.</param>
+            <param name="content">Gets or sets the inner elements containing only RouteLink, Button, LinkButton, InputGroupDropDown, InputGroupRadioButton, TextBox, ComboBox, InputGroupCheckBox and InputGroupLiteral controls.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.InputGroupCheckBox">
+            <summary>
+            Extends the CheckBox control for usage in InputGroup.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.InputGroupCheckBox.GetContents(DotVVM.Framework.Controls.HtmlCapability,CheckBoxCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="enabled">Gets or sets a value indicating whether the control is enabled and can be clicked on.</capability-param>
+            <capability-param name="checked">Gets or sets whether the control is checked.</capability-param>
+            <capability-param name="checkedItems">Gets or sets the collection of checked items. Use this property in combination with the CheckedValue property.</capability-param>
+            <capability-param name="checkedValue">Gets or sets the value that will be used as a result when the control is checked. Use this property in combination with the CheckedItem or CheckedItems property.</capability-param>
+            <capability-param name="changed">Gets or sets the command that will be triggered when the control check state is changed.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.InputGroupDropDown">
+            <summary>
+            Extends the DropDown control for usage in InputGroup.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.InputGroupDropDown.GetContents(DotVVM.Framework.Controls.HtmlCapability,DropDownCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="items">Gets or sets the items inside the control.</capability-param>
+            <capability-param name="toggleType">Gets or sets the toggle button type. Possible values are the `Button` or `Link`.</capability-param>
+            <capability-param name="closeBehavior">Gets or sets the dropdown closing behavior. Possible values are `Default`, `Inside`, `Outside` and `Manual`.</capability-param>
+            <capability-param name="dataSource">Gets or sets the data source for the items in the dropdown menu.</capability-param>
+            <capability-param name="dropDirection">Gets or sets the direction in which the dropdown menu should open.</capability-param>
+            <capability-param name="theme">Gets or sets the background color of the dropdown menu.</capability-param>
+            <capability-param name="enabled">Gets or sets a button disabled state.</capability-param>
+            <capability-param name="fontType">Gets or sets the font color for button toggle.</capability-param>
+            <capability-param name="isCollapsed">Gets or sets whether the dropdown menu is collapsed or expanded.</capability-param>
+            <capability-param name="isSplitButton">Gets or sets whether the dropdown button should be a split button.</capability-param>
+            <capability-param name="itemEnabled">Gets or sets whether the individual items in the dropdown menu should be enabled or disabled when DataSource is set.</capability-param>
+            <capability-param name="itemNavigateUrl">Gets or sets the URL to navigate to when an item in the dropdown menu is clicked when DataSource is set.</capability-param>
+            <capability-param name="itemRouteName">Gets or sets the route name to navigate to when an item in the dropdown menu is clicked when DataSource is set.</capability-param>
+            <capability-param name="itemSelected">Gets or sets whether an individual item in the dropdown menu is selected when DataSource is set.</capability-param>
+            <capability-param name="itemTemplate">Gets or sets the template to use for rendering each item in the dropdown menu when DataSource is set.</capability-param>
+            <capability-param name="itemText">Gets or sets the text to display for each item in the dropdown menu when DataSource is set.</capability-param>
+            <capability-param name="itemUrlSuffix">Gets or sets a suffix to append to the URL of each item in the dropdown menu when DataSource is set.</capability-param>
+            <capability-param name="splitButtonMenuAlignment">Gets or sets whether the toggle menu should be displayed next to a button or next to an arrow.</capability-param>
+            <capability-param name="size">Gets or sets the size of the dropdown button toggle.</capability-param>
+            <capability-param name="text">Gets or sets the text to display on the dropdown button.</capability-param>
+            <capability-param name="click">Gets or sets the command that will be triggered when the dropdown button is clicked.</capability-param>
+            <capability-param name="itemClick">Gets or sets the command that will be triggered when individual items in the dropdown menu are clicked and DataSource is set.</capability-param>
+            <capability-param name="type">Gets or sets the command that will be triggered when individual items in the dropdown menu are clicked and DataSource is set.</capability-param>
+            <capability-param name="visualStyle">Gets or sets the command that will be triggered when individual items in the dropdown menu are clicked and DataSource is set.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.InputGroupLiteral">
+            <summary>
+            Extends the Literal control for usage in InputGroup.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.InputGroupLiteral.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.ValueOrBinding{System.String})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="text">Gets or sets a text content.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.InputGroupRadioButton.GetContents(DotVVM.Framework.Controls.HtmlCapability,RadioButtonCoreCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="enabled">Gets or sets a value indicating whether the control is enabled and can be clicked on.</capability-param>
+            <capability-param name="checked">Gets or sets whether the control is checked.</capability-param>
+            <capability-param name="checkedItem">Gets or sets the checked item. Use this property in combination with the CheckedValue property.</capability-param>
+            <capability-param name="checkedValue">Gets or sets the value that will be used as a result when the control is checked. Use this property in combination with the CheckedItem property.</capability-param>
+            <capability-param name="groupName">Gets or sets a unique name for the radio button group.</capability-param>
+            <capability-param name="changed">Gets or sets the command that will be triggered when the control check state is changed.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.LinkButton.Type">
+            <summary>
+            Gets or sets the color of the button.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.LinkButton.VisualStyle">
+            <summary>
+            Gets or sets whether the button has solid fill, or whether it is only an outline.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.LinkButton.Size">
+            <summary>
+            Gets or sets the size of the button.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.ListGroup">
+            <summary>
+            Renders a Bootstrap list group of items, links or buttons. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.ListGroup.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.ListGroupItemCapability,DotVVM.Bootstrap5.Controls.ListGroupCapability,ItemsOrDataSourceCapability{DotVVM.Bootstrap5.Controls.IListGroupItem},System.Boolean)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="dataSource">Gets or sets a data-source object from which the child controls will be generated.</capability-param>
+            <capability-param name="items">Gets or sets the items inside the control.</capability-param>
+            <capability-param name="itemBadgeTemplate">Gets or sets a custom template for a Badge control inside a ListGroupItem when DataSource is set.</capability-param>
+            <capability-param name="itemBadgeText">Gets or sets a plain text for a Badge control inside a ListGroupItem when DataSource is set.</capability-param>
+            <capability-param name="itemBadgeType">Gets or sets a badge color when DataSource is set.</capability-param>
+            <capability-param name="itemBadgeVisualStyle">Gets or sets a badge visual style when DataSource is set. Possible values are `Default` or `Pill`.</capability-param>
+            <capability-param name="itemColor">Gets or sets a ListGroupItem color when DataSource is set.</capability-param>
+            <capability-param name="itemEnabled">Gets or sets a ListGroupItem disabled state when DataSource is set.</capability-param>
+            <capability-param name="itemIsJustified">When DataSource is set, adds `justify-content-between` and `align-items-center` CSS classes when DataSource is set.</capability-param>
+            <capability-param name="itemNavigateUrl">Gets or sets a navigation URL for `Link` ListGroupItem when DataSource is set.</capability-param>
+            <capability-param name="itemRouteName">Gets or sets a route name when DataSource is set.</capability-param>
+            <capability-param name="itemSelected">Gets or sets whether ListGroupItem control is selected when DataSource is set.</capability-param>
+            <capability-param name="itemTemplate">Gets or sets a custom template for a ListGroupItem control when DataSource is set.</capability-param>
+            <capability-param name="itemText">Gets or sets a plain text for a ListGroupItem control when DataSource is set.</capability-param>
+            <capability-param name="itemType">Gets or sets a type for a ListGroupItem control when DataSource is set.</capability-param>
+            <capability-param name="itemUrlSuffix">Gets or sets a URL suffix for a `Link` ListGroupItem control when DataSource is set.</capability-param>
+            <capability-param name="itemClick">Gets or sets the command that will be triggered when a `Button` ListGroupItem is clicked. DataSource must be is set.</capability-param>
+            <capability-param name="groupTypes">Gets or sets the types of the ListGroup. Possible values are `Numbered` or `Flush` or both.</capability-param>
+            <capability-param name="orientation">Gets or sets a ListGroup orientation.</capability-param>
+            <capability-param name="forceVerticalOrientationBreakpoint">Sets a breakpoint when ListGroup is changed from horizontal to vertical.</capability-param>
+            <param name="isTabList">If set to true, `role` attribute is set to `tablist`</param>
+            <returns></returns>
+            <exception cref="T:DotVVM.Framework.Controls.DotvvmControlException"></exception>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.ListGroupItemCapability.Click">
+            <summary>
+            Gets or sets the command that will be executed when a button is clicked. 
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.ListGroupItemCapability.NavigateUrl">
+            <summary>
+            Gets or sets the navigate url.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.ListGroupButton">
+            <summary>
+            Represents an button item in the ListGroup control. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.ListGroupButton.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.ListGroupButtonCapability)">
+            <summary>
+            Builds the inner content of the control. 
+            </summary>
+            <capability-param name="badgeTemplate">Gets or sets a custom template for a Badge control inside a ListGroupItem.</capability-param>
+            <capability-param name="badgeText">Gets or sets a plain text for a Badge control inside a ListGroupItem.</capability-param>
+            <capability-param name="badgeType">Gets or sets a badge color.</capability-param>
+            <capability-param name="badgeVisualStyle">Gets or sets a badge visual style. Possible values are `Default` Badge control or `Pill`.</capability-param>
+            <capability-param name="color">Gets or sets a ListGroupItem color.</capability-param>
+            <capability-param name="urlSuffix">Gets or sets a URL suffix for a Link ListGroupItem control.</capability-param>
+            <capability-param name="enabled">Gets or sets a ListGroupItem's disabled state.</capability-param>
+            <capability-param name="isJustified">When DataSource is set, adds `justify-content-between` and `align-items-center` CSS classes.</capability-param>
+            <capability-param name="selected">Gets or sets if ListGroupItem control is selected.</capability-param>
+            <capability-param name="template">Gets or sets a custom template for a ListGroupItem control.</capability-param>
+            <capability-param name="text">Gets or sets a plain text for a ListGroupItem control.</capability-param>
+            <capability-param name="click">Gets or sets the command that will be triggered when a `Button` ListGroupItem is clicked.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.ListGroupLink">
+            <summary>
+            Represents a link item in the ListGroup control. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.ListGroupLink.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.ListGroupLinkCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="badgeTemplate">Gets or sets a custom template for a Badge control inside a ListGroupItem.</capability-param>
+            <capability-param name="badgeText">Gets or sets a plain text for a Badge control inside a ListGroupItem.</capability-param>
+            <capability-param name="badgeType">Gets or sets a badge color.</capability-param>
+            <capability-param name="badgeVisualStyle">Gets or sets a badge visual style. Possible values are `Default` Badge control or `Pill`.</capability-param>
+            <capability-param name="color">Gets or sets a ListGroupItem color.</capability-param>
+            <capability-param name="isJustified">When DataSource is set, adds `justify-content-between` and `align-items-center` CSS classes.</capability-param>
+            <capability-param name="enabled">Gets or sets a ListGroupItem disabled state.</capability-param>
+            <capability-param name="navigateUrl">Gets or sets a navigation URL for Link ListGroupItem.</capability-param>
+            <capability-param name="routeName">Gets or sets a route name.</capability-param>
+            <capability-param name="selected">Gets or sets if ListGroupItem control is selected.</capability-param>
+            <capability-param name="urlSuffix">Gets or sets a URL suffix for a Link ListGroupItem control.</capability-param>
+            <capability-param name="text">Gets or sets a plain text for a ListGroupItem control.</capability-param>
+            <capability-param name="template">Gets or sets a custom template for a ListGroupItem control.</capability-param>
+            <capability-param name="type">Gets or sets a type for a ListGroupItem control.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.ListGroupText">
+            <summary>
+            Represents a text item in the ListGroup control. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.ListGroupText.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.ListGroupItemInnerCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="badgeTemplate">Gets or sets a custom template for a Badge control inside a ListGroupItem.</capability-param>
+            <capability-param name="badgeText">Gets or sets a plain text for a Badge control inside a ListGroupItem.</capability-param>
+            <capability-param name="badgeType">Gets or sets a badge color.</capability-param>
+            <capability-param name="badgeVisualStyle">Gets or sets a badge visual style. Possible values are `Default` Badge control or `Pill`.</capability-param>
+            <capability-param name="color">Gets or sets a ListGroupItem color.</capability-param>
+            <capability-param name="enabled">Gets or sets a ListGroupItem disabled state.</capability-param>
+            <capability-param name="isJustified">When DataSource is set, adds `justify-content-between` and `align-items-center` CSS classes.</capability-param>
+            <capability-param name="selected">Gets or sets if ListGroupItem control is selected.</capability-param>
+            <capability-param name="template">Gets or sets a custom template for a ListGroupItem control.</capability-param>
+            <capability-param name="text">Gets or sets a plain text for a ListGroupItem control.</capability-param>
+            <capability-param name="type">Gets or sets a type for a ListGroupItem control.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.ModalDialog">
+            <summary>
+            Renders the Bootstrap modal dialog widget.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.ModalDialog.GetContents(DotVVM.Framework.Controls.HtmlCapability,TextOrTemplateCapability,TextOrTemplateCapability,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},System.Collections.Generic.List{DotVVM.Framework.Controls.DotvvmControl},DotVVM.Bootstrap5.Controls.ModalSize,DotVVM.Bootstrap5.Controls.ModalVerticalAlignment,System.Int32,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="ContentTemplate">Gets or sets a custom template for modal content.</capability-param>
+            <capability-param name="FooterTemplate">Gets or sets a custom template for modal footer.</capability-param>
+            <capability-param name="FooterText">Gets or sets a plain text for modal footer.</capability-param>
+            <capability-param name="HeaderTemplate">Gets or sets a custom template for modal header.</capability-param>
+            <capability-param name="HeaderText">Gets or sets a plain text for modal header.</capability-param>
+            <param name="isDisplayed">Gets or sets whether the dialog is currently displayed or not. Use data-binding on this property to show and hide the dialog.</param>
+            <param name="scrollableContent">Gets or sets whether the inner content of modal dialog is scrollable.</param>
+            <param name="content">Gets or sets the dialog content.</param>
+            <param name="size">Gets or sets the size of the dialog.</param>
+            <param name="verticalAlignment">Gets or sets the vertical alignment of the dialog.</param>
+            <param name="zindex">Gets or sets z-index value of the ModalDialog control.</param>
+            <param name="headerTagName">Gets or sets tag which wraps the value of the HeaderText property. This property cannot be used together with the HeaderTemplate property.</param>
+            <param name="closeOnBackdropClick">Gets or sets whether the dialog should be closed when the user clicks outside.</param>
+            <param name="useBackdrop">Gets or sets whether the dialog should use backdrop.</param>
+            <param name="closeOnEscape">Gets or sets whether the dialog should be closed when the user presses the Escape key.</param>
+            <param name="addCloseButton">Gets or sets whether the close button should be added to the dialog header.</param>
+            <param name="enableAnimation">Gets or sets whether modal dialog should use fade animation.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.NavBar">
+            <summary>
+            Renders a Bootstrap NavBar widget. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.NavBar.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.NavbarCollapseBehavior},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.BootstrapJustifyContent},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.NavBarType},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.NavBarPlacement},DotVVM.Bootstrap5.Controls.NavbarBrandCapability,System.Collections.Generic.List{DotVVM.Bootstrap5.Controls.INavBarSection},DotVVM.Bootstrap5.Controls.ContainerResponsiveBreakpoints,DotVVM.Bootstrap5.Controls.NavBarTogglerPlacement)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="brandImageHeight">Gets or sets the brand image height.</capability-param>
+            <capability-param name="brandImageWidth">Gets or sets the brand image width.</capability-param>
+            <capability-param name="brandImageUrl">Gets or sets the brand image URL.</capability-param>
+            <capability-param name="brandLinkUrl">Gets or sets the navigation link for brand image.</capability-param>
+            <capability-param name="brandTemplate">Gets or sets the a custom template for brand section of the navigation.</capability-param>
+            <capability-param name="brandText">Gets or sets the a plain text for brand section of the navigation.</capability-param>
+            <param name="justify">Gets or sets the flexbox utility CSS class for navigation items.</param>
+            <param name="collapseBehavior">Gets or sets the maximum screen to which navbar control can expand.</param>
+            <param name="type">Gets or sets the navbar background color.</param>
+            <param name="placement">Gets or sets the navbar placement. Possible values are Default, FixedTop, FixedBottom, StickyTop, StickyBottom.</param>
+            <param name="innerContainerResponsiveBreakpoint">Gets or sets the navigation container size. The default is Fluid, so the navigation takes all available space.</param>
+            <param name="togglerPlacement">Gets or sets the placement of a hamburger menu. Possible values are Left or Right.</param>
+            <param name="content">Gets or sets the inner elements containing only NavText, NavLink, and NavDropDown controls.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.NavBarDropDown">
+            <summary>
+            Represents a dropdown button in the navigation control. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.NavBarDropDown.GetContents(ListItemCapability,ItemsOrDataSourceCapability{DotVVM.Bootstrap5.Controls.IDropDownItem},TextOrTemplateCapability,DotVVM.Framework.Binding.ValueOrBinding{System.Boolean})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="dataSource">Gets or sets a data-source object from which the child controls will be generated.</capability-param>
+            <capability-param name="items">Gets or sets the items inside the control.</capability-param>
+            <capability-param name="headerTemplate">Gets or sets a custom template for the dropdown button.</capability-param>
+            <capability-param name="headerText">Gets or sets a plain text for the dropdown button.</capability-param>
+            
+            <capability-param name="enabled">Gets or sets whether the toggle button is enabled or disabled.</capability-param>
+            <capability-param name="text">Gets or sets the text to display on the dropdown button.</capability-param>
+            <capability-param name="itemEnabled">Gets or sets whether the individual items in the dropdown menu should be enabled or disabled when DataSource is set.</capability-param>
+            <capability-param name="itemNavigateUrl">Gets or sets the URL to navigate to when an item in the dropdown menu is clicked when DataSource is set.</capability-param>
+            <capability-param name="itemRouteName">Gets or sets the route name to navigate to when an item in the dropdown menu is clicked when DataSource is set.</capability-param>
+            <capability-param name="itemSelected">Gets or sets whether an individual item in the dropdown menu is selected when DataSource is set.</capability-param>
+            <capability-param name="itemTemplate">Gets or sets the template to use for rendering each item in the dropdown menu when DataSource is set.</capability-param>
+            <capability-param name="itemText">Gets or sets the text to display for each item in the dropdown menu when DataSource is set.</capability-param>
+            <capability-param name="itemUrlSuffix">Gets or sets a suffix to append to the URL of each item in the dropdown menu when DataSource is set.</capability-param>
+            <capability-param name="itemClick">Gets or sets the command that will be triggered when individual items in the dropdown menu are clicked and DataSource is set.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.NavBarLink">
+            <summary>
+            Represents a link in the navigation control. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.NavBarLink.GetContents(DotVVM.Bootstrap5.Controls.NavbarItemCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="enabled">Gets or sets whether the link is enabled or disabled.</capability-param>
+            <capability-param name="navigateUrl">Gets or sets a navigation URL for the link.</capability-param>
+            <capability-param name="routeName">Gets or sets a route name. Cannot be combined with navigateUrl URL.</capability-param>
+            <capability-param name="selected">Gets or sets whether the link is selected.</capability-param>
+            <capability-param name="urlSuffix">Gets or sets a URL suffix for the link.</capability-param>
+            <capability-param name="text">Gets or sets a plain text for the link.</capability-param>
+            <capability-param name="template">Gets or sets a custom template for the link.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.NavBarSection">
+            <summary>
+            Represents an item section in the navigation control. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.NavBarSection.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.NavbarItemCapability,ItemsOrDataSourceCapability{DotVVM.Bootstrap5.Controls.INavItem},DotVVM.Framework.Binding.ValueOrBinding{System.Boolean})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="dataSource">Gets or sets a data-source object from which the child controls will be generated.</capability-param>
+            <capability-param name="items">Gets or sets the items inside the control.</capability-param>
+            <capability-param name="itemVisible">Gets or sets whether the navigation item is visible when DataSource is set.</capability-param>
+            <capability-param name="itemID">Gets or sets the navigation item ID when DataSource is set.</capability-param>
+            <capability-param name="itemEnabled">Gets or sets whether the navigation item is enabled when DataSource is set.</capability-param>
+            <capability-param name="itemSelected">Gets or sets whether the navigation item is selected when DataSource is set.</capability-param>
+            <capability-param name="itemNavigateUrl">Gets or sets a URL for navigation item when DataSource is set.</capability-param>
+            <capability-param name="itemRouteName">Gets or sets a route name for navigation item when DataSource is set.</capability-param>
+            <capability-param name="itemTemplate">Gets or sets a custom template for navigation item when DataSource is set.</capability-param>
+            <capability-param name="itemText">Gets or sets a plain text for navigation item when DataSource is set.</capability-param>
+            <capability-param name="itemUrlSuffix">Gets or sets a URL suffix for navigation item when DataSource is set.</capability-param>
+            <capability-param name="itemClick">Gets or sets a click action for navigation item when DataSource is set.</capability-param>
+            <param name="isScrollable">Gets or sets whether the vertical scrollbar should be displayed when the navigation is collapsed and takes more than 75% of the viewport height.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.NavBarText">
+            <summary>
+            Represents a text in the navigation control. 
+            </summary>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Offcanvas">
+            <summary>
+            Renders a hidden modal-like sidebar control.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Offcanvas.GetContents(DotVVM.Framework.Controls.HtmlCapability,TextOrTemplateCapability,DotVVM.Bootstrap5.Controls.OffcanvasHeaderCapability,DotVVM.Framework.Binding.Expressions.IValueBinding{System.Boolean},DotVVM.Bootstrap5.Controls.OffcanvasPlacement,DotVVM.Bootstrap5.Controls.OffcanvasBackdrop)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="bodyTemplate">Gets or sets the content inside the Offcanvas body.</capability-param>
+            <capability-param name="bodyText">Gets or sets a plain text inside the Offcanvas body.</capability-param>
+            <capability-param name="headerTemplate">Gets or sets the content inside the Offcanvas header.</capability-param>
+            <capability-param name="headerText">Gets or sets a plain text inside the Offcanvas header.</capability-param>
+            <param name="isExpanded">A boolean binding that gets or sets whether the Offcanvas is expanded.</param>
+            <param name="theme">Gets or sets the Offcanvas theme.</param>
+            <param name="placement">Gets or sets the Offcanvas position.</param>
+            <param name="backdrop">Gets or sets a backdrop settings. Page content srolling can be enabled or disabled.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Popover">
+            <summary>
+            Allows to add the Bootstrap Popover widget on the inner element. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Popover.GetContents(DotVVM.Framework.Controls.HtmlCapability,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},DotVVM.Framework.Controls.DotvvmControl,DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.PopoverPlacement},DotVVM.Bootstrap5.Enums.Trigger[],DotVVM.Framework.Binding.Expressions.IValueBinding{System.Boolean},System.Boolean,System.Boolean,System.Boolean,System.Nullable{System.Int32},System.String)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="title">Gets or sets the popover title.</param>
+            <param name="body">Gets or sets the popover body.</param>
+            <param name="content">Gets or sets the element for which the popover is displayed.</param>
+            <param name="placement">Gets or sets the side on which the popover is placed.</param>
+            <param name="trigger">Gets or sets the event which triggers the popover to show.</param>
+            <param name="enabled">Gets or sets whether the popover is active or not.</param>
+            <param name="enableAnimation">Gets or sets whether the popover should use the fade animation.</param>
+            <param name="allowHtmlInTitleAndContent">Gets or sets whether the title and body can contain HTML.</param>
+            <param name="disableHtmlSanitization">Gets or sets whether the inner HTML should be sanitized.</param>
+            <param name="delay">Gets or sets number of miliseconds to delay the showing and hiding the popover.</param>
+            <param name="container">Gets or sets the selector for athen element in which the popover is created. It allows to position the popover in the flow of the document near the triggering element which will prevent the popover from floating away from the triggering element during a window resize.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.ProgressBar">
+            <summary>
+            Renders Bootstrap progress bar. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.ProgressBar.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Controls.ITemplate,DotVVM.Framework.Binding.ValueOrBinding{System.Double},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.BootstrapColor},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.ProgressBarVisualStyle})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="hiddenTemplate">Gets or sets additional hidden information of the progress bar.</param>
+            <param name="value">Gets or sets the percentage value (0-100) indicating the current progress.</param>
+            <param name="color">Gets or sets the color of the control.</param>
+            <param name="visualStyle">Gets or sets whether the progress bar has solid fill, stripes or animated stripes.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.RadioButton">
+            <summary>
+            Extends the default RadioButton control with additional Bootstrap features. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.RadioButton.GetContents(DotVVM.Framework.Controls.HtmlCapability,RadioButtonCapability,ButtonAppearanceCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="buttonFontType">Gets or sets the font color. Use this property in combination with a `Button` radio button visual style.</capability-param>
+            <capability-param name="buttonSize">Gets or sets the button size. Use this property in combination with a `Button` radio button visual style.</capability-param>
+            <capability-param name="buttonType">Gets or sets the button type. Use this property in combination with a `Button` radio button visual style.</capability-param>
+            <capability-param name="buttonVisualStyle">Gets or sets the button visual style. Use this property in combination with a `Button` radio button visual style.</capability-param>
+            <capability-param name="enabled">Gets or sets a value indicating whether the control is enabled and can be clicked on.</capability-param>
+            <capability-param name="checked">Gets or sets whether the control is checked.</capability-param>
+            <capability-param name="checkedItem">Gets or sets the checked item. Use this property in combination with the CheckedValue property.</capability-param>
+            <capability-param name="checkedValue">Gets or sets the value that will be used as a result when the control is checked. Use this property in combination with the CheckedItem property.</capability-param>
+            <capability-param name="isInline">Gets or sets whether the control should be rendered on the same horizontal row.</capability-param>
+            <capability-param name="isReversed">Gets or sets whether the control should be put on the opposite side of the page.</capability-param>
+            <capability-param name="renderLabel">Gets or sets whether the label will be rendered. If set to null than the label will be rendered if needed.</capability-param>
+            <capability-param name="visualStyle">Gets or sets the radio button visual style. Possible values are `Default`, `Switch`, `Button`.</capability-param>
+            <capability-param name="groupName">Gets or sets a unique name of the radio button group.</capability-param>
+            <capability-param name="changed">Gets or sets the command that will be triggered when the control check state is changed.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Range">
+            <summary>
+            Renders a Bootstrap range input.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Range.GetContents(DotVVM.Bootstrap5.Controls.Capabilities.RangeCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="enabled">Gets or sets a value indicating whether the control is enabled.</param>
+            <param name="selectedValue">Gets or sets the value selected by the user.</param>
+            <param name="minValue">Gets or sets the start point of the scale.</param>
+            <param name="maxValue">Gets or sets the end point of the scale.</param>
+            <param name="step">Gets or sets the size of the step which defines the difference between selectable values.</param>
+            <param name="changed">Gets or sets the command that triggers when the user finishes changing the value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Ratio">
+            <summary>
+            Renders a Bootstrap ratio helper control.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Ratio.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Controls.TextOrContentCapability,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.RatioTypes}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Double}})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="content">Gets or sets the inner content for the Ratio control.</param>
+            <param name="ratioType">Gets or sets the predefined ratio type. Possible values are `Ratio1x1`, `Ratio4x3`, `Ratio16x9` and `Ratio21x9`.</param>
+            <param name="customRatio">Gets or sets a custom percentage ratio. This property cannot be combined with RatioType.</param>
+            <returns></returns>
+            <exception cref="T:DotVVM.Framework.Controls.DotvvmControlException"></exception>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.RouteLink.Type">
+            <summary>
+            Gets or sets the color of the button.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.RouteLink.VisualStyle">
+            <summary>
+            Gets or sets whether the button has solid fill, or whether it is only an outline.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.RouteLink.Size">
+            <summary>
+            Gets or sets the size of the button.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Row">
+            <summary>
+            Renders a Bootstrap row.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Row.GetContents(DotVVM.Framework.Controls.HtmlCapability,ResponsiveValueCapability{System.String},ResponsiveValueCapability{System.String},ResponsiveValueCapability{System.String},System.Collections.Generic.List{DotVVM.Framework.Controls.DotvvmControl})">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="ColumnNumberAll">Gets or sets the number of columns in the row for all screens.</capability-param>
+            <capability-param name="ColumnNumberLarge">Gets or sets the number of columns in the row for a large screen.</capability-param>
+            <capability-param name="ColumnNumberMedium">Gets or sets the number of columns in the row for a medium screen.</capability-param>
+            <capability-param name="ColumnNumberSmall">Gets or sets the number of columns in the row for a small screen.</capability-param>
+            <capability-param name="ColumnNumberXLarge">Gets or sets the number of columns in the row for a very large screen.</capability-param>
+            <capability-param name="ColumnNumberXXLarge">Gets or sets the number of columns in the row for the largest screen.</capability-param>
+            <capability-param name="HorizontalGutterAll">Gets or sets the horizontal gutter size for all screens.</capability-param>
+            <capability-param name="HorizontalGutterLarge">Gets or sets the horizontal gutter size for a large screen.</capability-param>
+            <capability-param name="HorizontalGutterMedium">Gets or sets the horizontal gutter size for a medium screen.</capability-param>
+            <capability-param name="HorizontalGutterSmall">Gets or sets the horizontal gutter size for a small screen.</capability-param>
+            <capability-param name="HorizontalGutterXLarge">Gets or sets the horizontal gutter size for a very large screen.</capability-param>
+            <capability-param name="HorizontalGutterXXLarge">Gets or sets the horizontal gutter size for the largest screen.</capability-param>
+            <capability-param name="VerticalGutterAll">Gets or sets the vertical gutter size for all screens.</capability-param>
+            <capability-param name="VerticalGutterLarge">Gets or sets the vertical gutter size for a large screen.</capability-param>
+            <capability-param name="VerticalGutterMedium">Gets or sets the vertical gutter size for a medium screen.</capability-param>
+            <capability-param name="VerticalGutterSmall">Gets or sets the vertical gutter size for a small screen.</capability-param>
+            <capability-param name="VerticalGutterXLarge">Gets or sets the vertical gutter size for a very large screen.</capability-param>
+            <capability-param name="VerticalGutterXXLarge">Gets or sets the vertical gutter size for the largest screen.</capability-param>
+            <param name="content">Gets or sets the content inside the row.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Spinner">
+            <summary>
+            Renders a Boostrap spinner.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Spinner.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.SpinnerSize,DotVVM.Bootstrap5.BootstrapTextColor,DotVVM.Bootstrap5.Controls.SpinnerVisualStyle,System.String)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="size">Gets or sets the size of the Spinner component. Possible values are Default or Small.</param>
+            <param name="color">Gets or sets the color of the Spinner component.</param>
+            <param name="visualStyle">Gets or sets the style of the Spinner component. Possible values are Grow or Spinner.</param>
+            <param name="screenReaderOnlyText">Gets or sets text displayed to users of screen readers.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.TabControl">
+            <summary>
+            Renders Bootstrap tab control.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.TabControl.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.TabItemCapability,ItemsOrDataSourceCapability{DotVVM.Bootstrap5.Controls.ITabItem},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.TabControlBarHorizontalAlignment},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.TabControlVerticalAlignment}},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.Justify},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Int32}},DotVVM.Bootstrap5.Controls.NavigationBarVisualStyle,DotVVM.Bootstrap5.Controls.TabControlAnimation)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="dataSource">Gets or sets a data-source object from which the child controls will be generated.</capability-param>
+            <capability-param name="items">Gets or sets the items inside the control.</capability-param>
+            <capability-param name="itemContentTemplate">Gets or sets a custom template for TabTtem content when DataSource is set.</capability-param>
+            <capability-param name="itemContentText">Gets or sets a plain text for TabTtem content when DataSource is set.</capability-param>
+            <capability-param name="itemHeaderTemplate">Gets or sets a custom template for TabItem header when DataSource is set.</capability-param>
+            <capability-param name="itemHeaderText">Gets or sets a plain text for TabItem header when DataSource is set.</capability-param>
+            <capability-param name="itemDropDownItemDataSource">Gets or sets a source collection for DropDown tab when DataSource is set.</capability-param>
+            <capability-param name="itemDropDownItemItems">Gets or sets the items for DropDown tab when DataSource is set.</capability-param>
+            <capability-param name="itemSelected">Gets or sets whether the tab is selected when DataSource is set.</capability-param>
+            <capability-param name="itemEnabled">Gets or sets whether the tab is enabled when DataSource is set.</capability-param>
+            <param name="horizontalAlignment">Gets or sets the alignment of the tabs.</param>
+            <param name="verticalBreakPoint">Gets or sets the breakpoint when TabControl changes to column layout.</param>
+            <param name="justify">Gets or sets the justify behavior of the tabs. Fill makes items occupy all horizontal space, but not every nav item has the same width. Justify sets every nav item to the same width.</param>
+            <param name="selectedTabIndex">Gets or sets the index of the active tab.</param>
+            <param name="visualStyle">Gets or sets the type of the navigation bar.</param>
+            <param name="animation">Gets or sets whether the tab changes should use the fade animation.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.TabDropDown">
+            <summary>
+            Renders a dropdown button that can be used inside the TabControl. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.TabDropDown.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.TabDropDownCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="headerTemplate">Gets or sets a custom template for the dropdown button.</capability-param>
+            <capability-param name="headerText">Gets or sets a plain text for the dropdown button.</capability-param>
+            <capability-param name="items">Gets or sets the items inside the control.</capability-param>
+            
+            <capability-param name="closeBehavior">Gets or sets the dropdown closing behavior. Possible values are `Default`, `Inside`, `Outside` and `Manual`.</capability-param>
+            <capability-param name="dataSource">Gets or sets the data source for the items in the dropdown menu.</capability-param>
+            <capability-param name="dropDirection">Gets or sets the direction in which the dropdown menu should open.</capability-param>
+            <capability-param name="theme">Gets or sets the background color of the dropdown menu.</capability-param>
+            
+            <capability-param name="enabled">Gets or sets whether the toggle button is enabled or disabled.</capability-param>
+            <capability-param name="isCollapsed">Gets or sets whether the dropdown menu is collapsed or expanded.</capability-param>
+            <capability-param name="text">Gets or sets the text to display on the dropdown button.</capability-param>
+            <capability-param name="itemEnabled">Gets or sets whether the individual items in the dropdown menu should be enabled or disabled when DataSource is set.</capability-param>
+            <capability-param name="itemNavigateUrl">Gets or sets the URL to navigate to when an item in the dropdown menu is clicked when DataSource is set.</capability-param>
+            <capability-param name="itemRouteName">Gets or sets the route name to navigate to when an item in the dropdown menu is clicked when DataSource is set.</capability-param>
+            <capability-param name="itemSelected">Gets or sets whether an individual item in the dropdown menu is selected when DataSource is set.</capability-param>
+            <capability-param name="itemTemplate">Gets or sets the template to use for rendering each item in the dropdown menu when DataSource is set.</capability-param>
+            <capability-param name="itemText">Gets or sets the text to display for each item in the dropdown menu when DataSource is set.</capability-param>
+            <capability-param name="itemUrlSuffix">Gets or sets a suffix to append to the URL of each item in the dropdown menu when DataSource is set.</capability-param>
+            <capability-param name="itemClick">Gets or sets the command that will be triggered when individual items in the dropdown menu are clicked and DataSource is set.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.TabItem">
+            <summary>
+            Renders a Bootstrap tab item.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.TabItem.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.TabItemCapability)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <capability-param name="headerTemplate">Gets or sets a custom template for the tab header.</capability-param>
+            <capability-param name="headerText">Gets or sets a plain text for the tab header.</capability-param>
+            <capability-param name="contentTemplate">Gets or sets a custom template for the tab content.</capability-param>
+            <capability-param name="contentText">Gets or sets a plain text for the tab content.</capability-param>
+            <capability-param name="enabled">Gets or sets whether the tab header is enabled or disabled.</capability-param>
+            <capability-param name="selected">Gets or sets wether the tab is selected and its content is displayed.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.TextBox">
+            <summary>
+            Extends the built-in TextBox control to allow applying Bootstrap CSS classes. 
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.TextBox.Size">
+            <summary>
+            Gets or sets the size of the TextBox.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Toast">
+            <summary>
+            Renders a Boostrap Toast alert message
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Toast.GetContents(DotVVM.Framework.Controls.HtmlCapability,System.Nullable{System.Int32},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.ToastColor},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.ToastTextColor},DotVVM.Framework.Controls.TextOrContentCapability,DotVVM.Bootstrap5.Controls.ToastAnimation,DotVVM.Framework.Binding.Expressions.ICommandBinding,DotVVM.Framework.Binding.Expressions.ICommandBinding,DotVVM.Framework.Controls.ITemplate,System.Boolean)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="addCloseButton">Gets or sets the whether the close button will be added. The CloseButton component can be used to achieve the same behavior.</param>
+            <param name="autoHideDelay">Gets or sets how many miliseconds it will take before the toast closes. When set to null than the toast will never close automatically.</param>
+            <param name="isDisplayed">Gets or sets whether the Toast is displayed.</param>
+            <param name="color">Gets or sets the color of the toast.</param>
+            <param name="textColor">Gets or sets the font color of the toast.</param>
+            <param name="animation">Gets or sets which animation will be used. Animation can be also disabled by setting animation to None.</param>
+            <param name="hidden">Triggers when the Toast is hidden.</param>
+            <param name="shown">Triggers when the Toast is shown.</param>
+            <capability-param name="headerTemplate">Gets or sets the content inside the toast header.</capability-param>
+            <capability-param name="headerText">Gets or sets a single text inside the toast header.</capability-param>
+            <returns></returns>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.Tooltip">
+            <summary>
+            Allows to add the Bootstrap Tooltip widget on the inner element. 
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Controls.Tooltip.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.Expressions.IValueBinding{System.Boolean},DotVVM.Framework.Binding.ValueOrBinding{System.String},DotVVM.Bootstrap5.Controls.TooltipPlacement,DotVVM.Framework.Controls.DotvvmControl,System.String,DotVVM.Bootstrap5.Enums.Trigger[],System.Boolean,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            Builds the inner content of the control.
+            </summary>
+            <param name="enabled">Gets or sets whether the tooltip is active or not.</param>
+            <param name="text">Gets or sets the tooltip text.</param>
+            <param name="placement">Gets or sets the side on which the tooltip is placed.</param>
+            <param name="content">Gets or sets the element for which the tooltip is displayed.</param>
+            <param name="wrapperTagName">Gets or sets the wrapper tag name for tooltip.</param>
+            <param name="trigger">Gets or sets the event which triggers the tooltip to show.</param>
+            <param name="enableAnimation">Gets or sets whether the tooltip should use the fade animation.</param>
+            <param name="allowHtml">Gets or sets the whether the tooltip can contain HTML in text.</param>
+            <param name="disableHtmlSanitization">Gets or sets whether the inner HTML should be sanitized.</param>
+            <param name="delay">Gets or sets number of miliseconds to delay the showing and hiding the tooltip.</param>
+            <returns></returns>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.ModeAllProperty">
+            <summary>
+            Gets or sets whether the flex is enabled on the element for all sizes.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.ModeSmallProperty">
+            <summary>
+            Gets or sets whether the flex is enabled on the element for SM size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.ModeMediumProperty">
+            <summary>
+            Gets or sets whether the flex is enabled on the element for MD size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.ModeLargeProperty">
+            <summary>
+            Gets or sets whether the flex is enabled on the element for LG size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.ModeXLargeProperty">
+            <summary>
+            Gets or sets whether the flex is enabled on the element for XL size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.ModeXXLargeProperty">
+            <summary>
+            Gets or sets whether the flex is enabled on the element for XXL size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.DirectionAllProperty">
+            <summary>
+            Gets or sets the flex direction on the element for all sizes.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.DirectionSmallProperty">
+            <summary>
+            Gets or sets the flex direction on the element for SM size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.DirectionMediumProperty">
+            <summary>
+            Gets or sets the flex direction on the element for MD size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.DirectionLargeProperty">
+            <summary>
+            Gets or sets the flex direction on the element for LG size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.DirectionXLargeProperty">
+            <summary>
+            Gets or sets the flex direction on the element for XL size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.DirectionXXLargeProperty">
+            <summary>
+            Gets or sets the flex direction on the element for XXL size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.OrderAllProperty">
+            <summary>
+            Gets or sets the order in a flex container for all sizes. Allowed values are 0 to 5, "first" and "last", or any custom values in case of customized Bootstrap CSS.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.OrderSmallProperty">
+            <summary>
+            Gets or sets the order in a flex container for SM size. Allowed values are 0 to 5, "first" and "last", or any custom values in case of customized Bootstrap CSS.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.OrderMediumProperty">
+            <summary>
+            Gets or sets the order in a flex container for MD size. Allowed values are 0 to 5, "first" and "last", or any custom values in case of customized Bootstrap CSS.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.OrderLargeProperty">
+            <summary>
+            Gets or sets the order in a flex container for LG size. Allowed values are 0 to 5, "first" and "last", or any custom values in case of customized Bootstrap CSS.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.OrderXLargeProperty">
+            <summary>
+            Gets or sets the order in a flex container for XL size. Allowed values are 0 to 5, "first" and "last", or any custom values in case of customized Bootstrap CSS.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.OrderXXLargeProperty">
+            <summary>
+            Gets or sets the order in a flex container for XXL size. Allowed values are 0 to 5, "first" and "last", or any custom values in case of customized Bootstrap CSS.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.JustifyContentAllProperty">
+            <summary>
+            Gets or sets the justify content value for all sizes.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.JustifyContentSmallProperty">
+            <summary>
+            Gets or sets the justify content value for SM size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.JustifyContentMediumProperty">
+            <summary>
+            Gets or sets the justify content value for MD size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.JustifyContentLargeProperty">
+            <summary>
+            Gets or sets the justify content value for LG size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.JustifyContentXLargeProperty">
+            <summary>
+            Gets or sets the justify content value for XL size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.JustifyContentXXLargeProperty">
+            <summary>
+            Gets or sets the justify content value for XXL size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignItemsAllProperty">
+            <summary>
+            Gets or sets the align items value for all sizes.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignItemsSmallProperty">
+            <summary>
+            Gets or sets the align items value for SM size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignItemsMediumProperty">
+            <summary>
+            Gets or sets the align items value for MD size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignItemsLargeProperty">
+            <summary>
+            Gets or sets the align items value for LG size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignItemsXLargeProperty">
+            <summary>
+            Gets or sets the align items value for XL size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignItemsXXLargeProperty">
+            <summary>
+            Gets or sets the align items value for XXL size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignSelfAllProperty">
+            <summary>
+            Gets or sets the align self value for all sizes.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignSelfSmallProperty">
+            <summary>
+            Gets or sets the align self value for SM size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignSelfMediumProperty">
+            <summary>
+            Gets or sets the align self value for MD size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignSelfLargeProperty">
+            <summary>
+            Gets or sets the align self value for LG size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignSelfXLargeProperty">
+            <summary>
+            Gets or sets the align self value for XL size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignSelfXXLargeProperty">
+            <summary>
+            Gets or sets the align self value for XXL size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.FillAllProperty">
+            <summary>
+            Gets or sets whether the element should take all available space for all sizes.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.FillSmallProperty">
+            <summary>
+            Gets or sets whether the element should take all available space for SM size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.FillMediumProperty">
+            <summary>
+            Gets or sets whether the element should take all available space for MD size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.FillLargeProperty">
+            <summary>
+            Gets or sets whether the element should take all available space for LG size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.FillXLargeProperty">
+            <summary>
+            Gets or sets whether the element should take all available space for XL size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.FillXXLargeProperty">
+            <summary>
+            Gets or sets whether the element should take all available space for XXL size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.WrapAllProperty">
+            <summary>
+            Gets or sets the flex wrap value for all sizes.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.WrapSmallProperty">
+            <summary>
+            Gets or sets the flex wrap  value for SM size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.WrapMediumProperty">
+            <summary>
+            Gets or sets the flex wrap  value for MD size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.WrapLargeProperty">
+            <summary>
+            Gets or sets the flex wrap  value for LG size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.WrapXLargeProperty">
+            <summary>
+            Gets or sets the flex wrap  value for XL size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.WrapXXLargeProperty">
+            <summary>
+            Gets or sets the flex wrap  value for XXL size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignContentAllProperty">
+            <summary>
+            Gets or sets the align content value for all sizes.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignContentSmallProperty">
+            <summary>
+            Gets or sets the align content value for SM size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignContentMediumProperty">
+            <summary>
+            Gets or sets the align content value for MD size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignContentLargeProperty">
+            <summary>
+            Gets or sets the align content value for LG size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignContentXLargeProperty">
+            <summary>
+            Gets or sets the align content value for XL size.
+            </summary>
+        </member>
+        <member name="F:DotVVM.Bootstrap5.Flex.AlignContentXXLargeProperty">
+            <summary>
+            Gets or sets the align content value for XXL size.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.FontResource">
+            <summary>
+            Reference to a font file.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Utils.GetClosestParent``1(DotVVM.Framework.Controls.DotvvmBindableObject)">
+            <summary>
+            Finds the closest parent control of a specified type.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Utils.GetIdBinding(DotVVM.Framework.Controls.DotvvmControl,System.String,System.String)">
+            <summary>
+            Gets a client ID of the control if it ise specified by the ID property, or gets the unique ID of the control generated by the framework.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Utils.AddCssStyleIfNotNull``1(``0,System.String,System.String)">
+            <summary> Adds a css inline style - the `style` attribute. Returns <paramref name="control"/> for fluent API usage. </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.Utils.AddCssStyle``1(``0,System.String,DotVVM.Framework.Binding.ValueOrBinding{System.String})">
+            <summary> Adds a css inline style - the `style` attribute. Returns <paramref name="control"/> for fluent API usage. </summary>
+        </member>
+        <member name="P:BorderCapability.BorderPositions">
+            <summary>
+            Sets or gets a comma-separated list of border positions. Possible values are Full, Top, Bottom, Left, Right.
+            </summary>
+        </member>
+        <member name="P:BorderCapability.BorderColor">
+            <summary>
+            Sets or gets the border color. Possible values are Primary, Secondary, Success, Danger, Warning, Info, Light, Dark, White.
+            </summary>
+        </member>
+        <member name="P:BorderCapability.BorderRadius">
+            <summary>
+            Sets or gets a comma-separated list of border radius values. Possible values are Full, Top, Bottom, Left, Right, Circle, Pill.
+            </summary>
+        </member>
+        <member name="P:BorderCapability.BorderRadiusSize">
+            <summary>
+            Sets or gets the border radius size. Possible values are XSmall, Small, Medium, Large, XLarge.
+            </summary>
+        </member>
+        <member name="P:BorderCapability.BorderOpacity">
+            <summary>
+            Sets or gets the border radius opacity. Possible values are XLow (10%), Low (25%), Medium(50%), High(75%), XHigh(100%).
+            </summary>
+        </member>
+        <member name="P:BorderCapability.BorderWidth">
+            <summary>
+            Sets or gets the border width. Possible values are XSmall, Small, Medium, Large, XLarge.
+            </summary>
+        </member>
+        <member name="P:CheckBoxCoreCapability.CheckedValue">
+            <summary>
+            Gets or sets the value that will be used as a result when the control is checked. Use this property in combination with the CheckedItem or CheckedItems property.
+            </summary>
+        </member>
+        <member name="P:CheckBoxCoreCapability.Checked">
+            <summary>
+            Gets or sets whether the control is checked.
+            </summary>
+        </member>
+        <member name="P:CheckBoxCoreCapability.Enabled">
+            <summary>
+            Gets or sets a value indicating whether the control is enabled and can be clicked on.
+            </summary>
+        </member>
+        <member name="P:CheckBoxCoreCapability.Changed">
+            <summary>
+            Gets or sets the command that will be triggered when the control check state is changed.
+            </summary>
+        </member>
+        <member name="P:ItemsOrDataSourceCapability`1.Items">
+            <summary>
+            Gets or sets the items inside the control.
+            </summary>
+        </member>
+        <member name="P:ItemsOrDataSourceCapability`1.DataSource">
+            <summary>
+            Gets or sets a data-source object from which the child controls will be generated.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IsExternalInit">
+            <summary>
+            Reserved to be used by the compiler for tracking metadata.
+            This class should not be used by developers in source code.
+            </summary>
+        </member>
+    </members>
+</doc>

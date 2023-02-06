@@ -1,0 +1,16 @@
+﻿<bs:Row Flex.JustifyContentMedium="Center" style="border-style:dashed">
+    <bs:Column style="border-style:solid">
+        Column 1
+    </bs:Column>
+    <bs:Column style="border-style:solid">
+        Column 2
+    </bs:Column>
+</bs:Row>
+<bs:Row Flex.JustifyContentAll="Between" style="border-style:dashed">
+    <bs:Column style="border-style:solid">
+        Column 1
+    </bs:Column>
+    <bs:Column style="border-style:solid">
+        Column 2
+    </bs:Column>
+</bs:Row>

@@ -1,0 +1,15 @@
+﻿<bs:Breadcrumb>
+  <bs:BreadcrumbItem NavigateUrl="https://www.google.com/"
+                     Text="Google"/>
+
+  <bs:BreadcrumbItem NavigateUrl="http://www.w3schools.com/"
+                     Text="Wc3Schools"
+                     Enabled="false"/>
+
+  <bs:BreadcrumbItem RouteName="Breadcrumb_sample1"
+                     Param-Id="{value: Test}"
+                     Text="Route link" />
+
+  <bs:BreadcrumbItem Click="{command: ItemClicked()}"
+                     Text="Clickable item" />
+</bs:Breadcrumb>

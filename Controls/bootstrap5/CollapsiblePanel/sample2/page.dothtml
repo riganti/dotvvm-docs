@@ -1,0 +1,2 @@
+﻿<bs:CollapsiblePanel IsExpanded="{value: IsExpanded}" HeaderText="Always displayed header" Text="Text which is hidden when collapsed." />
+<dot:CheckBox Checked="{value: IsExpanded}" Text="Is expanded" />

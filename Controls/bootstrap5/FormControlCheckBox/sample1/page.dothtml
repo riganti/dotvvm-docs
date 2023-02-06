@@ -1,0 +1,5 @@
+﻿<bs:FormControlCheckBox HelpText="Let us know if you like potatoes" Text="I like potatoes" VisualStyle="Switch" Checked="{value: Value}" />
+
+<bs:FormControlCheckBox Text="Check this" VisualStyle="Default" CheckedValue="1" CheckedItems="{value: ResultItems}" />
+
+<bs:Button Text="Validate" Click="{command: Validate()}" />

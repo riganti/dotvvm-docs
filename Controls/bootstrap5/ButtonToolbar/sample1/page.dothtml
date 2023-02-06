@@ -1,0 +1,12 @@
+﻿<bs:ButtonToolbar JustifyContentAll="Evenly">
+  <bs:ButtonGroup Size="Default">
+      <bs:Button Text="1" Type="secondary" VisualStyle="Outline" />
+      <bs:Button Text="2" Type="secondary" VisualStyle="Outline" />
+      <bs:Button Text="3" Type="secondary" VisualStyle="Outline" />
+      <bs:Button Text="4" Type="secondary" VisualStyle="Outline" />
+  </bs:ButtonGroup>
+  <bs:InputGroup>
+      <bs:InputGroupLiteral Text="@" />
+      <bs:InputGroupTextBox Placeholder="Input group example" Text="" />
+  </bs:InputGroup>
+</bs:ButtonToolbar>

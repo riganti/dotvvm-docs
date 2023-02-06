@@ -1,0 +1,1 @@
+﻿Renders a textbox control which lets the user either to type the date, or select it from a calendar popup.

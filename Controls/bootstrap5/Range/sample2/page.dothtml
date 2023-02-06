@@ -1,0 +1,9 @@
+﻿<bs:Range MinValue="0" MaxValue="2000" Step="10" 
+          SelectedValue="{value: Value}"
+          Changed="{command: ValueChanges = ValueChanges + 1}"
+          Enabled="{value: Enabled}" />
+
+<p>Value: {{value: Value}}</p>
+<p>Number of changes: {{value: ValueChanges}}</p>
+
+<p><bs:CheckBox Text="Allow changes" Checked="{value: Enabled}" /></p>

@@ -1,0 +1,7 @@
+﻿<bs:TabControl DataSource="{value: Tabs}">
+  <HeaderTemplate>Tab {{value: Name}}</HeaderTemplate>
+  <p>{{value: Description}}</p>
+  <dot:Button Click="{command: _parent.SelectTab(Id)}" Text="Select Tab" />
+</bs:TabControl>
+
+<p>Selected Tab: {{value: Selected}}</p>

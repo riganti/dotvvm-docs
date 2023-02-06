@@ -1,0 +1,3 @@
+﻿<bs:FormControlColorPicker Value="{Value: "#070a64"}"
+                           Title="My Color Picker"
+                           LabelText="My Color Picker" />

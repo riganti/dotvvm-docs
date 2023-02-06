@@ -1,0 +1,5 @@
+﻿<bs:Tooltip Text="{value: TitleHtml}" 
+            AllowHtml="true"
+            AllowHtmlSanitization="false" >
+    <bs:Button Text="Text" Type="Success" />
+</bs:Tooltip>

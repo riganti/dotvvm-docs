@@ -1,0 +1,15 @@
+﻿<bs:CollapsiblePanel HeaderText="Always displayed header" Text="Text which is hidden when collapsed." FooterText="Footer which is hidden when collapsed." />
+
+<bs:CollapsiblePanel>
+    <HeaderTemplate>
+        Always displayed header
+    </HeaderTemplate>
+    <Content>
+        <bs:CardBody>
+            Text which is hidden when collapsed.
+        </bs:CardBody>
+    </Content>
+    <FooterTemplate>
+        Footer which is hidden when collapsed.
+    </FooterTemplate>
+</bs:CollapsiblePanel>

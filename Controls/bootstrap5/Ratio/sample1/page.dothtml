@@ -1,0 +1,9 @@
+﻿<bs:Ratio RatioType="Ratio1x1">
+    <iframe src="https://youtu.be/dQw4w9WgXcQ" />
+</bs:Ratio>
+
+<%-- Custom 50% ratio --%>
+<bs:Ratio CustomRatio="50">
+    <iframe src="https://youtu.be/dQw4w9WgXcQ" />
+</bs:Ratio>
+

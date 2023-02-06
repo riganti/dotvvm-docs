@@ -1,0 +1,32 @@
+<bs:DropDown Text="Default close behavior">
+    <bs:DropDownItem NavigateUrl="https://www.google.com/" Enabled="false">
+        Google
+    </bs:DropDownItem>
+    <bs:DropDownItem NavigateUrl="https://github.com/riganti/dotvvm">
+        DotVVM
+    </bs:DropDownItem>
+</bs:DropDown>
+<bs:DropDown Text="Inside close behavior" CloseBehavior="Inside">
+    <bs:DropDownItem NavigateUrl="https://www.google.com/" Enabled="false">
+        Google
+    </bs:DropDownItem>
+    <bs:DropDownItem NavigateUrl="https://github.com/riganti/dotvvm">
+        DotVVM
+    </bs:DropDownItem>
+</bs:DropDown>
+<bs:DropDown Text="Outside close behavior" CloseBehavior="Outside">
+    <bs:DropDownItem NavigateUrl="https://www.google.com/" Enabled="false">
+        Google
+    </bs:DropDownItem>
+    <bs:DropDownItem NavigateUrl="https://github.com/riganti/dotvvm">
+        DotVVM
+    </bs:DropDownItem>
+</bs:DropDown>
+<bs:DropDown Text="Manual close behavior" CloseBehavior="Manual">
+    <bs:DropDownItem NavigateUrl="https://www.google.com/" Enabled="false">
+        Google
+    </bs:DropDownItem>
+    <bs:DropDownItem NavigateUrl="https://github.com/riganti/dotvvm">
+        DotVVM
+    </bs:DropDownItem>
+</bs:DropDown>
