@@ -4,6 +4,22 @@
         <name>DotVVM.Framework</name>
     </assembly>
     <members>
+        <member name="T:DotVVM.Framework.Binding.ActiveDotvvmProperty">
+            <summary> An abstract DotvvmProperty which contains code to be executed when the assigned control is being rendered. </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Binding.AttachedPropertyAttribute">
+            <summary> Used to mark DotvvmProperty which are used on other control than the declaring type. For example, Validation.Target is an attached property. </summary>
+            <remark> Note that DotVVM allows this for any DotvvmProperty, but this attribute instructs editor extension to include the property in autocompletion. </remark>
+        </member>
+        <member name="T:DotVVM.Framework.Binding.BindingCompilationOptionsAttribute">
+            <summary> Allow to adjust how bindings are compiled. Can be placed on custom binding type (for example, see <see cref="T:DotVVM.Framework.Binding.Expressions.ValueBindingExpression" />) or on a dotvvm property </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.BindingCompilationOptionsAttribute.GetResolvers">
+            <summary> Returns a list of resolvers - functions which accept any set of existing binding properties and returns one new binding property.
+            It will be automatically invoked when the returned property is needed.
+            See <see cref="T:DotVVM.Framework.Compilation.Binding.BindingPropertyResolvers" /> for a list of default property resolvers - to adjust how the binding is compiled, you'll want to redefine one of the default resolvers.
+            See <see cref="T:DotVVM.Framework.Binding.Expressions.StaticCommandBindingExpression.OptionsAttribute" /> for example how to use this method. </summary>
+        </member>
         <member name="T:DotVVM.Framework.Binding.BindingCompilationRequirementsAttribute">
             <summary>
             Specifies requirements that binding has to satisfy in order to successfully Initialize (and compile).
@@ -27,15 +43,27 @@
             For example may be useful for property that may contain value binding, but does not need a Javascript translation
             </summary>
         </member>
+        <member name="T:DotVVM.Framework.Binding.BindingCompilationService">
+            <summary> A service used to create new bindings and compute binding properties. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Binding.BindingCompilationService.Cache">
+            <summary> Utilities for caching bindings created at runtime </summary>
+        </member>
         <member name="M:DotVVM.Framework.Binding.BindingCompilationService.InitializeBinding(DotVVM.Framework.Binding.Expressions.IBinding,System.Collections.Generic.IEnumerable{DotVVM.Framework.Binding.BindingCompilationRequirementsAttribute})">
             <summary>
-            Resolves required and optional properties
+            Resolves required properties of the binding. If the binding contains <see cref="T:DotVVM.Framework.Binding.Properties.BindingErrorReporterProperty" /> it will be used to report errors instead of throwing an exception.
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Binding.BindingFactory.CreateBinding(DotVVM.Framework.Binding.BindingCompilationService,System.Type,System.Object[])">
             <summary>
             Creates the binding by calling .ctor(BindingCompilationService service, object[] properties), does not wrap exceptions to TargetInvocationException.
             </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.BindingHelper.GetProperty``1(DotVVM.Framework.Binding.Expressions.IBinding,DotVVM.Framework.Binding.Expressions.ErrorHandlingMode)">
+            <summary> Gets the binding property identified by the type. The result may be null, if <paramref name="errorMode"/> is <see cref="F:DotVVM.Framework.Binding.Expressions.ErrorHandlingMode.ReturnNull">ReturnNul</see> This method should always return the same result and should run fast (may rely on caching, so first call might not be that fast). </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.BindingHelper.GetProperty``1(DotVVM.Framework.Binding.Expressions.IBinding)">
+            <summary> Gets the binding property identified by the type. This method should always return the same result and should run fast (may rely on caching, so first call might not be that fast). </summary>
         </member>
         <member name="M:DotVVM.Framework.Binding.BindingHelper.GetKnockoutBindingExpression(DotVVM.Framework.Binding.Expressions.IValueBinding,DotVVM.Framework.Controls.DotvvmBindableObject,System.Boolean)">
             <summary>
@@ -153,16 +181,25 @@
             It thread-safe.
             </summary>
         </member>
-        <member name="M:DotVVM.Framework.Binding.BindingHelper.GetDataContextType(DotVVM.Framework.Binding.DotvvmProperty,DotVVM.Framework.Controls.DotvvmBindableObject)">
+        <member name="M:DotVVM.Framework.Binding.BindingHelper.GetDataContextType(DotVVM.Framework.Binding.DotvvmProperty,DotVVM.Framework.Controls.DotvvmBindableObject,DotVVM.Framework.Compilation.ControlTree.DataContextStack)">
             <summary> Return the expected data context type for this property. Returns null if the type is unknown. </summary>
         </member>
-        <member name="M:DotVVM.Framework.Binding.BindingHelper.GetDataContextType(DotVVM.Framework.Binding.DotvvmProperty,DotVVM.Framework.Compilation.ControlTree.Resolved.ResolvedControl)">
+        <member name="M:DotVVM.Framework.Binding.BindingHelper.GetDataContextType(DotVVM.Framework.Binding.DotvvmProperty,DotVVM.Framework.Compilation.ControlTree.Resolved.ResolvedControl,DotVVM.Framework.Compilation.ControlTree.DataContextStack)">
             <summary> Return the expected data context type for this property. Returns null if the type is unknown. </summary>
         </member>
         <member name="M:DotVVM.Framework.Binding.BindingHelper.AnnotateStandardContextParams(System.Linq.Expressions.Expression,DotVVM.Framework.Compilation.ControlTree.DataContextStack)">
             <summary>
             Annotates `_this`, `_parent`, `_root` parameters with BindingParameterAnnotation indicating their DataContext
             </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Binding.BindingPageInfo.IsPostbackRunning">
+            <summary> Returns true if any command or staticCommand is currently running. Always returns false on the server. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Binding.BindingPageInfo.EvaluatingOnServer">
+            <summary> Returns true on server and false in JavaScript. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Binding.BindingPageInfo.EvaluatingOnClient">
+            <summary> Returns false on server and true in JavaScript. </summary>
         </member>
         <member name="T:DotVVM.Framework.Binding.Properties.KnockoutExpressionBindingProperty">
             <summary>
@@ -463,6 +500,9 @@
         <member name="M:DotVVM.Framework.Binding.Properties.ReferencedViewModelPropertiesBindingProperty.#ctor(System.Reflection.PropertyInfo,System.Reflection.PropertyInfo[],DotVVM.Framework.Binding.Expressions.IValueBinding)">
             <summary> Contains references to the .NET properties referenced in the binding. MainProperty is the property on the root node (modulo conversions and simple expressions). </summary>
         </member>
+        <member name="T:DotVVM.Framework.Binding.CollectionElementDataContextChangeAttribute">
+            <summary> Sets data context type to the element type of current data context. </summary>
+        </member>
         <member name="T:DotVVM.Framework.Binding.DotvvmCapabilityProperty">
             <summary> Descriptor of a DotVVM capability.
             Capability is a way to register multiple properties at once in DotVVM. </summary>
@@ -517,13 +557,19 @@
         </member>
         <member name="T:DotVVM.Framework.Binding.CompileTimeOnlyDotvvmProperty">
             <summary>
-            The DotvvmProperty that fallbacks to another DotvvmProperty's value.
+            The DotvvmProperty that can only be used at compile time (in server-side styles or precompiled CompositeControls)
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Binding.CompileTimeOnlyDotvvmProperty.Register``2(System.String)">
             <summary>
             Registers a new DotVVM property which can only be used at compile time.
             </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Binding.ConstantDataContextChangeAttribute">
+            <summary> Changes the data context type to the type specified in the attribute constructor. </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Binding.ControlPropertyBindingDataContextChangeAttribute">
+            <summary> Sets data context type to the result type of binding the specified property. </summary>
         </member>
         <member name="T:DotVVM.Framework.Binding.DataContextChangeAttribute">
             Controls which data context should be used inside of the marked control or property
@@ -544,6 +590,15 @@
         </member>
         <member name="P:DotVVM.Framework.Binding.DataContextChangeAttribute.PropertyDependsOn">
             Gets a list of attributes that need to be resolved before this attribute is invoked.
+        </member>
+        <member name="T:DotVVM.Framework.Binding.DelegateActionProperty`1">
+            <summary> DotvvmProperty which calls the function passed in the Register method, when the assigned control is being rendered. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.DotvvmBindingCacheHelper.CreateCachedBinding``1(System.String,System.Object[],System.Func{``0})">
+            <summary> Creates a new binding using the <paramref name="factory"/>, unless an existing cache entry is found. Entries are identified using the identifier and keys. By default, the cache is LRU with size=1000 </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.DotvvmBindingCacheHelper.CreateCachedBinding``1(System.String,System.Object[],System.Object[])">
+            <summary> Creates a new binding of type <typeparamref name="T"/> with the specified properties, unless an existing cache entry is found. Entries are identified using the identifier and keys. By default, the cache is LRU with size=1000 </summary>
         </member>
         <member name="M:DotVVM.Framework.Binding.DotvvmBindingCacheHelper.CreateValueBinding(System.String,DotVVM.Framework.Compilation.ControlTree.DataContextStack,DotVVM.Framework.Compilation.BindingParserOptions)">
             <summary> Compiles a new `{value: ...code...}` binding which can be evaluated server-side and also client-side. The result is cached. </summary>
@@ -733,6 +788,11 @@
             <param name="fallbackProperty">The property which value will be used as a fallback when the new property is not set.</param>
             <param name="isValueInherited">Indicates whether the value can be inherited from the parent controls.</param>
         </member>
+        <member name="T:DotVVM.Framework.Binding.Expressions.BindingExpression">
+            <summary> Represents a data-binding in DotVVM.
+            This is a base class for all bindings, BindingExpression in general does not guarantee that the binding will have any property.
+            This class only contains the glue code which automatically calls resolvers and caches the results when <see cref="M:DotVVM.Framework.Binding.Expressions.BindingExpression.GetProperty(System.Type,DotVVM.Framework.Binding.Expressions.ErrorHandlingMode)" /> is invoked. </summary>
+        </member>
         <member name="M:DotVVM.Framework.Binding.Expressions.BindingExpression.AddNullResolvers">
             <summary>
             For performance reasons, derived bindings can set BindingResolverCollection to null to prevent runtime computation of the property which is somewhat costly
@@ -749,8 +809,35 @@
         <member name="M:DotVVM.Framework.Binding.Expressions.CommandBindingExpression.CreateJsPostbackInvocation(System.String,System.Nullable{System.Boolean})">
             <param name="needsCommandArgs">Whether the Javascript will contain commandArgs (true - it will be required, false - the symbolic parameter will not be available, null - it will be optional)</param>
         </member>
+        <member name="T:DotVVM.Framework.Binding.Expressions.ErrorHandlingMode">
+            <summary> Controls what happens when the binding property does not exist on this binding or when its resolver throws an exception. </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Binding.Expressions.ErrorHandlingMode.ReturnNull">
+            <summary> Returns null. The null is returned even in case when resolver throws an exception, you can't distinguish between the "property does not exist", "resolver failed" states using this mode. </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Binding.Expressions.ErrorHandlingMode.ThrowException">
+            <summary> Throws the exception. Always throws <see cref="T:DotVVM.Framework.Binding.BindingPropertyException" />. In case the property is missing, message = "resolver not found". Otherwise, the exception will have the resolver error as InnerException. </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Binding.Expressions.ErrorHandlingMode.ReturnException">
+            <summary> Behaves similarly to ThrowException, but the exception is returned instead of being thrown. This is useful when you'd catch the exception immediately to avoid annoying debugger by throwing too many exceptions. </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Binding.Expressions.IBinding">
+            <summary> General interface which all DotVVM data binding types must implement. This interface does not provide any specific binding properties, only the basic building blocks - that bindings are composed of binding properties (<see cref="M:DotVVM.Framework.Binding.Expressions.IBinding.GetProperty(System.Type,DotVVM.Framework.Binding.Expressions.ErrorHandlingMode)" />), should have a DataContext and may have resolvers. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.Expressions.IBinding.GetProperty(System.Type,DotVVM.Framework.Binding.Expressions.ErrorHandlingMode)">
+            <summary> Gets the binding property identified by the type. Returned object will always be of type <paramref name="type"/>, null, or Exception (this depends on the <paramref name="errorMode" />). This method should always return the same result and should run fast (may rely on caching, so first call might not be that fast). </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Binding.Expressions.IBinding.DataContext">
+            <summary> If the binding expects a specific data context, this property should return it. "Normal" binding coming from dothtml markup won't return null since they always depend on the data context. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.Expressions.ICloneableBinding.GetAllComputedProperties">
+            <summary> Returns a list of all properties which are already cached. Creating a new binding with these properties will produce the same binding. </summary>
+        </member>
         <member name="P:DotVVM.Framework.Binding.Expressions.IStaticCommandBinding.OptionsLambdaJavascript">
             <summary> Returns code that should be placed in dotvvm.applyPostbackHandlers </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Binding.Expressions.StaticCommandBindingExpression">
+            <summary> The `{staticCommand: ...}` binding. It is a command that runs primarily client-side and is well-suited to handle events. Compared to `value` binding, `staticCommand`s are expected to have side effects and run asynchronously (the binding will return a Promise or a Task). </summary>
         </member>
         <member name="T:DotVVM.Framework.Binding.Expressions.ValueBindingExpression">
             <summary>
@@ -772,13 +859,11 @@
         <member name="M:DotVVM.Framework.Binding.HelperNamespace.DateTimeExtensions.ToBrowserLocalTime(System.DateTime)">
             <summary>
             Converts the date (assuming it is in UTC) to browser's local time.
-            CAUTION: When evaluated on the server, no conversion is made as we don't know the browser timezone.
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Binding.HelperNamespace.DateTimeExtensions.ToBrowserLocalTime(System.Nullable{System.DateTime})">
             <summary>
             Converts the date (assuming it is in UTC) to browser's local time.
-            CAUTION: When evaluated on the server, no conversion is made as we don't know the browser timezone.
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Binding.HelperNamespace.JsBindingApi.Invoke(System.String,System.Object[])">
@@ -792,6 +877,15 @@
         </member>
         <member name="M:DotVVM.Framework.Binding.HelperNamespace.JsBindingApi.InvokeAsync``1(System.String,System.Object[])">
             <summary> Invoke a command in client-side module registered for this page or control. <typeparamref name="T"/> is the return type. The command can return a Promise. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.HelperNamespace.ListExtensions.AddOrUpdate``1(System.Collections.Generic.List{``0},``0,System.Func{``0,System.Boolean},System.Func{``0,``0})">
+            <summary> Updates all entries identified by <paramref name="matcher"/> using the <paramref name="updater"/>. If none match, the <paramref name="element"/> is appended to the list. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.HelperNamespace.ListExtensions.RemoveFirst``1(System.Collections.Generic.List{``0},System.Func{``0,System.Boolean})">
+            <summary> Removes the first entry identified by <paramref name="predicate"/>. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.HelperNamespace.ListExtensions.RemoveLast``1(System.Collections.Generic.List{``0},System.Func{``0,System.Boolean})">
+            <summary> Removes the last entry identified by <paramref name="predicate"/>. </summary>
         </member>
         <member name="M:DotVVM.Framework.Binding.HelperNamespace.NetFrameworkExtensions.Split(System.String,System.String,System.StringSplitOptions)">
             <summary>
@@ -906,6 +1000,54 @@
         <member name="P:DotVVM.Framework.Binding.ViewModuleReferenceInfo.IsMarkupControl">
             <summary> Whether control id should be used instead of ViewId to identify the modules. </summary>
         </member>
+        <member name="T:DotVVM.Framework.Binding.VirtualPropertyGroupDictionary`1">
+            <summary> Represents a dictionary of values of <see cref="T:DotVVM.Framework.Compilation.ControlTree.DotvvmPropertyGroup" />. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Binding.VirtualPropertyGroupDictionary`1.Values">
+            <summary> Lists all values. If any of the properties contains a binding, it will be automatically evaluated. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Binding.VirtualPropertyGroupDictionary`1.Item(System.String)">
+            <summary> Gets or sets value of property identified by <paramref name="key"/>. If the property contains a binding, the getter will automatically evaluate it. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.VirtualPropertyGroupDictionary`1.GetValueBinding(System.String)">
+            <summary> Gets the value binding set to a specified property. Returns null if the property is not a binding, throws if the binding some kind of command. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.VirtualPropertyGroupDictionary`1.GetBinding(System.String)">
+            <summary> Gets the binding set to a specified property. Returns null if the property is not set or if the value is not a binding. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.VirtualPropertyGroupDictionary`1.GetValueRaw(System.String)">
+            <summary> Gets the value or a binding object for a specified property. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.VirtualPropertyGroupDictionary`1.Set(System.String,DotVVM.Framework.Binding.ValueOrBinding{`0})">
+            <summary> Adds value or overwrites the property identified by <paramref name="key"/>. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.VirtualPropertyGroupDictionary`1.Set(System.String,`0)">
+            <summary> Adds value or overwrites the property identified by <paramref name="key"/> with the value. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.VirtualPropertyGroupDictionary`1.SetBinding(System.String,DotVVM.Framework.Binding.Expressions.IBinding)">
+            <summary> Adds binding or overwrites the property identified by <paramref name="key"/> with the binding. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.VirtualPropertyGroupDictionary`1.Add(System.String,DotVVM.Framework.Binding.ValueOrBinding{`0})">
+            <summary> Adds the property identified by <paramref name="key"/>. If the property is already set, it tries appending the value using the group's <see cref="T:DotVVM.Framework.Compilation.IAttributeValueMerger" /> </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.VirtualPropertyGroupDictionary`1.Add(System.String,`0)">
+            <summary> Adds the property identified by <paramref name="key"/>. If the property is already set, it tries appending the value using the group's <see cref="T:DotVVM.Framework.Compilation.IAttributeValueMerger" /> </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.VirtualPropertyGroupDictionary`1.AddBinding(System.String,DotVVM.Framework.Binding.Expressions.IBinding)">
+            <summary> Adds the property identified by <paramref name="key"/>. If the property is already set, it tries appending the value using the group's <see cref="T:DotVVM.Framework.Compilation.IAttributeValueMerger" /> </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.VirtualPropertyGroupDictionary`1.TryGetValue(System.String,`0@)">
+            <summary> Tries getting value of property identified by <paramref name="key"/>. If the property contains a binding, it will be automatically evaluated. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.VirtualPropertyGroupDictionary`1.Add(System.Collections.Generic.KeyValuePair{System.String,`0})">
+            <summary> Adds the property-value pair to the dictionary. If the property is already set, it tries appending the value using the group's <see cref="T:DotVVM.Framework.Compilation.IAttributeValueMerger" /> </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Binding.VirtualPropertyGroupDictionary`1.GetEnumerator">
+            <summary> Enumerates all keys and values. If a property contains a binding, it will be automatically evaluated. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Binding.VirtualPropertyGroupDictionary`1.RawValues">
+            <summary> Enumerates all keys and values, without evaluating the bindings. </summary>
+        </member>
         <member name="P:DotVVM.Framework.Compilation.BindingParserOptions.ImportNamespaces">
             <summary>
             Additional namespace imports that will be added to imports defined in Dotvvm page just before the binding is resolved
@@ -975,7 +1117,7 @@
             <summary> Takes all variables from block expressions and hoists them into a top-level expression.
             This prevents glitches with undefined variables that would be introduced by following steps in static command translation. </summary>
         </member>
-        <member name="M:DotVVM.Framework.Compilation.CompiledAssemblyCache.DefaultOnResolving(System.Runtime.Loader.AssemblyLoadContext,System.Reflection.AssemblyName)">
+        <member name="M:DotVVM.Framework.Compilation.CompiledAssemblyCache.TryResolveAssembly(System.Object,System.ResolveEventArgs)">
             <summary>
             Tries to resolve compiled assembly.
             </summary>
@@ -1175,6 +1317,18 @@
             Represents compile-time DataContext info - Type of current DataContext, it's parent and other available parameters
             </summary>
         </member>
+        <member name="P:DotVVM.Framework.Compilation.ControlTree.DataContextStack.DataContextType">
+            <summary> Type of `_this` </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Compilation.ControlTree.DataContextStack.NamespaceImports">
+            <summary> Namespaces imported by data context change attributes. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Compilation.ControlTree.DataContextStack.ExtensionParameters">
+            <summary> Extension parameters added by data context change attributes (for example _index, _collection). </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Compilation.ControlTree.DataContextStack.BindingPropertyResolvers">
+            <summary> Extension property resolvers added by data context change attributes. </summary>
+        </member>
         <member name="M:DotVVM.Framework.Compilation.ControlTree.DataContextStack.GetCurrentExtensionParameters">
             <summary>
             Gets all extension parameter available in current context and their definition offset
@@ -1227,6 +1381,9 @@
             <summary>
             Initializes a new instance of the <see cref="T:DotVVM.Framework.Compilation.ControlTree.DefaultControlTreeResolver"/> class.
             </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Compilation.ControlTree.DotvvmPropertyGroup">
+            <summary> A set of DotvvmProperties identified by a common prefix. For example RouteLink.Params-XX or html attributes are property groups. </summary>
         </member>
         <member name="P:DotVVM.Framework.Compilation.ControlTree.DotvvmPropertyGroup.OwningCapability">
             <summary> The capability which declared this property. When the property is declared by an capability, it can only be used by this capability. </summary>
@@ -1320,7 +1477,7 @@
         </member>
         <member name="T:DotVVM.Framework.Compilation.DataContextPropertyAssigningVisitor">
             <summary>
-            Assigns <see cref="F:DotVVM.Framework.Controls.Internal.DataContextTypeProperty" /> to all controls that have different datacontext that their parent
+            Assigns <see cref="!:Internal.DataContextTypeProperty" /> to all controls that have different datacontext that their parent
             </summary>
         </member>
         <member name="T:DotVVM.Framework.Compilation.DefaultAttributeValueMerger">
@@ -1625,6 +1782,30 @@
         </member>
         <member name="T:DotVVM.Framework.Compilation.Javascript.LazyTranslatedExpression">
             Represents an Linq.Expression that is being translated to JsAst.
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.JavascriptTranslator.KnockoutContextParameter">
+            <summary> Parameter representing the current knockout context (`$context`) </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.JavascriptTranslator.ParentKnockoutContextParameter">
+            <summary> Parameter representing the parent knockout context (`$parentContext`) </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.JavascriptTranslator.KnockoutViewModelParameter">
+            <summary> Parameter representing the current view model (`$data`). The view model itself is not an ko.observable, but all it's properties are. </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.JavascriptTranslator.KnockoutViewModelObservableParameter">
+            <summary> Parameter representing the current view model in ko.observable (`$rawData`). </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.JavascriptTranslator.ParentKnockoutViewModelParameter">
+            <summary> Parameter representing the parent view model (`$parent`). The view model itself is not an ko.observable, but all it's properties are. </summary>
+        </member>
+        <member name="F:DotVVM.Framework.Compilation.Javascript.JavascriptTranslator.CurrentElementParameter">
+            <summary> Gets the HTML element where this binding is being evaluated. In knockout bindings, this translates to `$element`, in command bindings (i.e. JS event handlers), it translates to `this` </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Compilation.Javascript.JavascriptTranslator.ViewModelSymbolicParameter.ParentIndex">
+            <summary> Index in the knockout data context hierarchy. `ParentIndex == 0` means $data, ... </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Compilation.Javascript.JavascriptTranslator.ViewModelSymbolicParameter.ReturnObservable">
+            <summary> If the expression should return knockout observable. For `ReturnObservable == true` and `ParentIndex == 0`, it outputs `$rawData`, for false it outputs `$data`. </summary>
         </member>
         <member name="M:DotVVM.Framework.Compilation.Javascript.JavascriptTranslator.FormatKnockoutScript(DotVVM.Framework.Compilation.Javascript.Ast.JsExpression,System.Boolean,System.Int32)">
             <summary>
@@ -2701,6 +2882,9 @@
             <summary>
             Gets or sets a collection of values of all checked checkboxes. Use this property in combination with the CheckedValue property.
             </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.CheckBox.DisableIndeterminate">
+            <summary> When set to true, `null` in the Checked property will be treated as `false`, instead of marking the checkbox as indeterminate </summary>
         </member>
         <member name="M:DotVVM.Framework.Controls.CheckBox.RenderInputTag(DotVVM.Framework.Controls.IHtmlWriter)">
             <summary>
@@ -4252,6 +4436,9 @@
             Templates to pass into the JsComponent. The templates will be rendered as knockout templates and the client-side component will get their ids. In React, the KnockoutTemplateReactComponent can be used to add it to the virtual DOM.
             </summary>
         </member>
+        <member name="F:DotVVM.Framework.Controls.JsComponent.HtmlCapabilityProperty">
+            <summary> Allows modifying the attributes of the wrapper html tag (`div` by default) </summary>
+        </member>
         <member name="M:DotVVM.Framework.Controls.KnockoutHelper.AddKnockoutDataBind(DotVVM.Framework.Controls.IHtmlWriter,System.String,DotVVM.Framework.Controls.DotvvmBindableObject,DotVVM.Framework.Binding.DotvvmProperty,System.Action,System.String,System.Boolean,System.Boolean)">
             <summary>
             Adds the data-bind attribute to the next HTML element that is being rendered. The binding expression is taken from the specified property. If in server rendering mode, the binding is also not rendered.
@@ -4354,7 +4541,8 @@
         </member>
         <member name="T:DotVVM.Framework.Controls.ListBox">
             <summary>
-            Renders the HTML list box.
+            Renders the HTML list box - <c>&lt;select size="10"</c> element.
+            This component allows selecting only one value, for multiple selection use the <see cref="T:DotVVM.Framework.Controls.MultiSelect"/> component.
             </summary>
         </member>
         <member name="M:DotVVM.Framework.Controls.ListBox.#ctor">
@@ -4362,14 +4550,14 @@
             Initializes a new instance of the <see cref="T:DotVVM.Framework.Controls.ListBox"/> class.
             </summary>
         </member>
-        <member name="M:DotVVM.Framework.Controls.ListBox.AddAttributesToRender(DotVVM.Framework.Controls.IHtmlWriter,DotVVM.Framework.Hosting.IDotvvmRequestContext)">
-            <summary>
-            Adds all attributes that should be added to the control begin tag.
-            </summary>
-        </member>
         <member name="P:DotVVM.Framework.Controls.ListBox.Size">
             <summary>
             Gets or sets number of rows visible in this ListBox.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Controls.ListBox.AddAttributesToRender(DotVVM.Framework.Controls.IHtmlWriter,DotVVM.Framework.Hosting.IDotvvmRequestContext)">
+            <summary>
+            Adds all attributes that should be added to the control begin tag.
             </summary>
         </member>
         <member name="T:DotVVM.Framework.Controls.Literal">
@@ -4456,6 +4644,9 @@
         </member>
         <member name="P:DotVVM.Framework.Controls.MarkupOptionsAttribute.Required">
             <summary> Whether the property must always be specified on this control. It is also allowed to set the property using server-side styles. </summary>
+        </member>
+        <member name="T:DotVVM.Framework.Controls.MultiSelect">
+            <summary> Renders HTML list box - the <c>&lt;select multiple size=10</c> element. </summary>
         </member>
         <member name="T:DotVVM.Framework.Controls.MultiSelectHtmlControlBase">
             <summary>
@@ -4683,6 +4874,11 @@
         <member name="P:DotVVM.Framework.Controls.RouteLink.RouteName">
             <summary>
             Gets or sets the name of the route in the route table.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Controls.RouteLink.Enabled">
+            <summary>
+            Gets or sets a value indicating whether the link is enabled and can be clicked on. Please note that the HTML hyperlinks don't support the disabled state, so setting this property to "false" will still produce the "click" event in JavaScript. If the link is disabled, DotVVM will not perform the navigation.
             </summary>
         </member>
         <member name="P:DotVVM.Framework.Controls.RouteLink.UrlSuffix">
@@ -6871,6 +7067,21 @@
             Populates the specified JObject.
             </summary>
         </member>
+        <member name="P:DotVVM.Framework.ViewModel.Serialization.ViewModelPropertyMap.Name">
+            <summary> Property name, as seen in the serialized JSON and client-side. Note that it will be different than `PropertyInfo.Name`, if `[Bind(Name = X)]` or `[JsonProperty(X)]` is used. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.ViewModel.Serialization.ViewModelPropertyMap.ClientExtenders">
+            <summary> Client extenders which will be applied to the created knockout observable. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.ViewModel.Serialization.ViewModelPropertyMap.Populate">
+            <summary> When true, an existing object in this property will be preserved during deserialization. A new object will only be created if the property is null, or if we need to call the constructor to set some properties. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.ViewModel.Serialization.ViewModelPropertyMap.ValidationRules">
+            <summary> List of validation rules (~= validation attributes) on this property. Includes rules which can't be run client-side </summary>
+        </member>
+        <member name="P:DotVVM.Framework.ViewModel.Serialization.ViewModelPropertyMap.ConstructorParameter">
+            <summary> Used if the class doesn't have parameter-less constructor. This is the parameter where this property value should be when calling the constructor. Property setter will not be called, even if present </summary>
+        </member>
         <member name="M:DotVVM.Framework.ViewModel.Serialization.ViewModelPropertyMap.IsFullyTransferred">
             <summary>
             Gets whether the property is transferred both ways.
@@ -6904,7 +7115,7 @@
             Gets the JSON writer factory.
             </summary>
         </member>
-        <member name="M:DotVVM.Framework.ViewModel.Serialization.ViewModelSerializationMap.CallConstructor(System.Linq.Expressions.Expression,System.Collections.Generic.Dictionary{System.Reflection.PropertyInfo,System.Linq.Expressions.ParameterExpression})">
+        <member name="M:DotVVM.Framework.ViewModel.Serialization.ViewModelSerializationMap.CallConstructor(System.Linq.Expressions.Expression,System.Collections.Generic.Dictionary{System.Reflection.PropertyInfo,System.Linq.Expressions.ParameterExpression},System.Boolean)">
             <summary>
             Creates the constructor for this object.
             </summary>
@@ -7689,6 +7900,115 @@
             <summary>
             Redirects the client to the specified file.
             </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.AllowNullAttribute">
+            <summary>Specifies that null is allowed as an input even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DisallowNullAttribute">
+            <summary>Specifies that null is disallowed as an input even if the corresponding type allows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullAttribute">
+            <summary>Specifies that an output may be null even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullAttribute">
+            <summary>Specifies that an output will not be null even if the corresponding type allows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute">
+            <summary>Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue"/>, the parameter may be null even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified return value condition.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter may be null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute">
+            <summary>Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue"/>, the parameter will not be null even if the corresponding type allows it.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified return value condition.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter will not be null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute">
+            <summary>Specifies that the output will be non-null if the named parameter is non-null.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.#ctor(System.String)">
+            <summary>Initializes the attribute with the associated parameter name.</summary>
+            <param name="parameterName">
+            The associated parameter name.  The output will be non-null if the argument to the parameter specified is non-null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.ParameterName">
+            <summary>Gets the associated parameter name.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute">
+            <summary>Applied to a method that will never return under any circumstance.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute">
+            <summary>Specifies that the method will not return if the associated Boolean parameter is passed the specified value.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified parameter value.</summary>
+            <param name="parameterValue">
+            The condition parameter value. Code after the method will be considered unreachable by diagnostics if the argument to
+            the associated parameter matches this value.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.ParameterValue">
+            <summary>Gets the condition parameter value.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute">
+            <summary>Specifies that the method or property will ensure that the listed field and property members have not-null values.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.#ctor(System.String)">
+            <summary>Initializes the attribute with a field or property member.</summary>
+            <param name="member">
+            The field or property member that is promised to be not-null.
+            </param>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.#ctor(System.String[])">
+            <summary>Initializes the attribute with the list of field and property members.</summary>
+            <param name="members">
+            The list of field and property members that are promised to be not-null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.Members">
+            <summary>Gets field or property member names.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute">
+            <summary>Specifies that the method or property will ensure that the listed field and property members have not-null values when returning with the specified return value condition.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.#ctor(System.Boolean,System.String)">
+            <summary>Initializes the attribute with the specified return value condition and a field or property member.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter will not be null.
+            </param>
+            <param name="member">
+            The field or property member that is promised to be not-null.
+            </param>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.#ctor(System.Boolean,System.String[])">
+            <summary>Initializes the attribute with the specified return value condition and list of field and property members.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter will not be null.
+            </param>
+            <param name="members">
+            The list of field and property members that are promised to be not-null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.Members">
+            <summary>Gets field or property member names.</summary>
         </member>
     </members>
 </doc>

@@ -34,6 +34,16 @@
             The client-side value binding expression.
             </summary>
         </member>
+        <member name="F:DotVVM.BusinessPack.BusinessPackCss.GridViewFixedHeader">
+            <summary>
+            A class that will appear on the <![CDATA[<table>]]> element when FixedHeaderRow is enabled.
+            </summary>
+        </member>
+        <member name="F:DotVVM.BusinessPack.BusinessPackCss.GridViewFixedHeaderRow">
+            <summary>
+            A class that will appear on the <![CDATA[<thead>]]> element when FixedHeaderRow is enabled.
+            </summary>
+        </member>
         <member name="T:DotVVM.BusinessPack.Controls.Alert">
             <summary>
             Renders a contextual feedback message for users.
@@ -396,21 +406,6 @@
             The <see cref="T:DotVVM.BusinessPack.Controls.Calendar"/> view displaying months of a year.
             </summary>
         </member>
-        <member name="P:DotVVM.BusinessPack.Controls.Carousel.AllowAnimation">
-            <summary>
-            Gets or sets whether the transitions between the slides should be animated or not.
-            </summary>
-        </member>
-        <member name="P:DotVVM.BusinessPack.Controls.Carousel.AutoSlideInterval">
-            <summary>
-            Gets or sets interval (in seconds) of changing slides.
-            </summary>
-        </member>
-        <member name="P:DotVVM.BusinessPack.Controls.Carousel.Items">
-            <summary>
-            Gets or sets carousel slides.
-            </summary>
-        </member>
         <member name="T:DotVVM.BusinessPack.Controls.CheckableControlBase">
             <summary>
             The base class for CheckBox, RadioButton and similar controls.
@@ -570,21 +565,6 @@
             Returns <see cref="T:DotVVM.BusinessPack.Controls.ControlBinding" /> containing values for control's client-side handler.
             </summary>
         </member>
-        <member name="T:DotVVM.BusinessPack.Controls.CheckBoxList">
-            <summary>
-            Renders a control that renders a list of check boxes for a collection and allows the user to select some of them.
-            </summary>
-        </member>
-        <member name="P:DotVVM.BusinessPack.Controls.CheckBoxList.SelectedValues">
-            <summary>
-            Gets or sets a collection of values of all items that are checked.
-            </summary>
-        </member>
-        <member name="P:DotVVM.BusinessPack.Controls.CheckBoxList.ItemCheckedBinding">
-            <summary>
-            Gets or sets the binding indicating whether a particular item is checked.
-            </summary>
-        </member>
         <member name="T:DotVVM.BusinessPack.Controls.CheckBox">
             <summary>
             Renders a CheckBox control similar to HTML checkbox.
@@ -612,6 +592,68 @@
         </member>
         <member name="M:DotVVM.BusinessPack.Controls.CheckBox.CreateCheckedIcon">
             <inheritdoc />
+        </member>
+        <member name="T:DotVVM.BusinessPack.Controls.CheckBoxList">
+            <summary>
+            Renders a control that renders a list of check boxes for a collection and allows the user to select some of them.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Controls.CheckBoxList.SelectedValues">
+            <summary>
+            Gets or sets a collection of values of all items that are checked.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Controls.CheckBoxList.ItemCheckedBinding">
+            <summary>
+            Gets or sets the binding indicating whether a particular item is checked.
+            </summary>
+        </member>
+        <member name="T:DotVVM.BusinessPack.Controls.RadioButton">
+            <summary>
+            Renders a RadioButton control similar to HTML radio button.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Controls.RadioButton.Checked">
+            <summary>
+            Gets or sets whether the control is checked.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Controls.RadioButton.CheckedItem">
+            <summary>
+            Gets or sets the <see cref="P:DotVVM.BusinessPack.Controls.CheckableControlBase.CheckedValue"/> of the first checked <see cref="T:DotVVM.BusinessPack.Controls.RadioButton" /> in this group.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Controls.RadioButton.GroupName">
+            <summary>
+            Gets or sets a unique name of the radio button group.
+            </summary>
+        </member>
+        <member name="M:DotVVM.BusinessPack.Controls.RadioButton.ValidateUsageAtRuntime(DotVVM.Framework.Hosting.IDotvvmRequestContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:DotVVM.BusinessPack.Controls.RadioButton.CreateWrapper">
+            <inheritdoc />
+        </member>
+        <member name="M:DotVVM.BusinessPack.Controls.RadioButton.CreateInput">
+            <inheritdoc />
+        </member>
+        <member name="M:DotVVM.BusinessPack.Controls.RadioButton.CreateCheckedIcon">
+            <inheritdoc />
+        </member>
+        <member name="T:DotVVM.BusinessPack.Controls.RadioButtonList">
+            <summary>
+            Renders a RadioButtonList control displaying a list of radio buttons.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Controls.RadioButtonList.SelectedValue">
+            <summary>
+            Gets or sets the value of the first item checked by user.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Controls.RadioButtonList.GroupName">
+            <summary>
+            Gets or sets a unique name identifying this group of radio buttons. A random name is generated by default.
+            </summary>
         </member>
         <member name="T:DotVVM.BusinessPack.Controls.ClickButtonBase">
             <summary>
@@ -942,14 +984,6 @@
             <param name="isOnChange">
             Indicates whether the command can execute when ViewModel is updating.
             </param>
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.ControlBinding.AddValue``1(System.String,``0)">
-            <summary>
-            Adds a serialized value expression. It will properly handle boolean,
-            enum and other values.
-            </summary>
-            <param name="name">The name of the binding.</param>
-            <param name="value">The value to serialize.</param>
         </member>
         <member name="M:DotVVM.BusinessPack.Controls.ControlBinding.GetKnockoutBindingExpression(DotVVM.Framework.Controls.DotvvmBindableObject,DotVVM.Framework.Binding.Expressions.IValueBinding)">
             <inheritdoc />
@@ -1486,27 +1520,27 @@
             Adds the BusinessPack control binding to the wrapper element.
             </summary>
         </member>
-        <member name="M:DotVVM.BusinessPack.Controls.DotvvmControlExtensions.SetJsValueBinding``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.String,System.Boolean)">
+        <member name="M:DotVVM.BusinessPack.Controls.DotvvmControlExtensions.SetJsValueBinding``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.String,System.Boolean,System.Type)">
             <summary>
             Sets a client-side value binding to the specified property.
             </summary>
         </member>
-        <member name="M:DotVVM.BusinessPack.Controls.DotvvmControlExtensions.SetJsValueBinding``2(``0,System.Linq.Expressions.Expression{System.Func{``0,DotVVM.Framework.Binding.Expressions.IValueBinding{``1}}},System.String,System.Boolean)">
+        <member name="M:DotVVM.BusinessPack.Controls.DotvvmControlExtensions.SetJsValueBinding``2(``0,System.Linq.Expressions.Expression{System.Func{``0,DotVVM.Framework.Binding.Expressions.IValueBinding{``1}}},System.String,System.Boolean,System.Type)">
             <summary>
             Sets a client-side value binding to the specified property.
             </summary>
         </member>
-        <member name="M:DotVVM.BusinessPack.Controls.DotvvmControlExtensions.SetJsValueBinding(DotVVM.Framework.Controls.DotvvmBindableObject,DotVVM.Framework.Binding.DotvvmProperty,System.String,System.Boolean)">
+        <member name="M:DotVVM.BusinessPack.Controls.DotvvmControlExtensions.SetJsValueBinding(DotVVM.Framework.Controls.DotvvmBindableObject,DotVVM.Framework.Binding.DotvvmProperty,System.String,System.Boolean,System.Type)">
             <summary>
             Sets a client-side value binding to the specified property.
             </summary>
         </member>
-        <member name="M:DotVVM.BusinessPack.Controls.DotvvmControlExtensions.SetJsValueBinding``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.String,System.Func{``1},System.Boolean)">
+        <member name="M:DotVVM.BusinessPack.Controls.DotvvmControlExtensions.SetJsValueBinding``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.String,System.Func{``1},System.Boolean,System.Type)">
             <summary>
             Sets a client-side value binding to the specified property.
             </summary>
         </member>
-        <member name="M:DotVVM.BusinessPack.Controls.DotvvmControlExtensions.SetJsValueBinding``1(DotVVM.Framework.Controls.DotvvmBindableObject,DotVVM.Framework.Binding.DotvvmProperty,System.String,System.Func{``0},System.Boolean)">
+        <member name="M:DotVVM.BusinessPack.Controls.DotvvmControlExtensions.SetJsValueBinding``1(DotVVM.Framework.Controls.DotvvmBindableObject,DotVVM.Framework.Binding.DotvvmProperty,System.String,System.Func{``0},System.Boolean,System.Type)">
             <summary>
             Sets a client-side value binding to the specified property.
             </summary>
@@ -1569,7 +1603,7 @@
         </member>
         <member name="P:DotVVM.BusinessPack.Controls.DraggableList.GroupName">
             <summary>
-            Gets or sets the name of the group of the draggable items. If you have multiple DraggableList controls with the same GroupName, 
+            Gets or sets the name of the group of the draggable items. If you have multiple DraggableList controls with the same GroupName,
             the items can be moved between these lists.
             </summary>
         </member>
@@ -2228,7 +2262,7 @@
         <member name="P:DotVVM.BusinessPack.Controls.FilterEditorBase`1.IsOperatorsDropDownListRequired">
             <inheritdoc />
         </member>
-        <member name="M:DotVVM.BusinessPack.Controls.FilterEditorBase`1.CreateOperatorDropDownList">
+        <member name="M:DotVVM.BusinessPack.Controls.FilterEditorBase`1.CreateOperatorDropDownList(DotVVM.Framework.Compilation.ControlTree.DataContextStack)">
             <inheritdoc />
         </member>
         <member name="M:DotVVM.BusinessPack.Controls.FilterEditorBase`1.GetDefaultOperators">
@@ -2320,7 +2354,7 @@
             Performs the data-binding and builds controls inside the <see cref="T:DotVVM.BusinessPack.Controls.FilterEditorBase" />.
             </summary>
         </member>
-        <member name="M:DotVVM.BusinessPack.Controls.FilterEditorBase.CreateOperatorDropDownList">
+        <member name="M:DotVVM.BusinessPack.Controls.FilterEditorBase.CreateOperatorDropDownList(DotVVM.Framework.Compilation.ControlTree.DataContextStack)">
             <summary>
             Returns a <see cref="T:DotVVM.Framework.Controls.DotvvmControl" /> used to select an operator to compare values.
             </summary>
@@ -3010,47 +3044,6 @@
         </member>
         <member name="M:DotVVM.BusinessPack.Controls.FormItem.SetControlHtmlId(DotVVM.Framework.Controls.IControlWithHtmlAttributes)">
             <returns>ControlId</returns>
-        </member>
-        <member name="T:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor">
-            <summary>
-            Renders a control allowing users to edit GridView settings (show / hide columns, etc.).
-            </summary>
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor.#ctor(DotVVM.Framework.Binding.BindingCompilationService)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor" /> class.
-            </summary>
-        </member>
-        <member name="P:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor.UserSettings">
-            <summary>
-            Gets or sets the <see cref="T:DotVVM.BusinessPack.Controls.GridViewUserSettings" /> instance to edit.
-            </summary>
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor.OnLoad(DotVVM.Framework.Hosting.IDotvvmRequestContext)">
-            <inheritdoc />
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor.AddAttributesToRender(DotVVM.Framework.Controls.IHtmlWriter,DotVVM.Framework.Hosting.IDotvvmRequestContext)">
-            <inheritdoc />
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor.CreateColumnList">
-            <summary>
-            Returns an <see cref="T:DotVVM.Framework.Controls.HtmlGenericControl" /> rendering list of checkable columns.
-            </summary>
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor.CreateColumnItem">
-            <summary>
-            Returns an <see cref="T:DotVVM.Framework.Controls.HtmlGenericControl" /> rendering a checkable column.
-            </summary>
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor.CreateColumnCheckBox">
-            <summary>
-            Returns a <see cref="T:DotVVM.BusinessPack.Controls.CheckBox" /> used to show or hide columns.
-            </summary>
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor.GetControlBinding">
-            <summary>
-            Returns a group containing values for control's binding.
-            </summary>
         </member>
         <member name="T:DotVVM.BusinessPack.Controls.GridView">
             <summary>
@@ -4254,6 +4247,47 @@
             </summary>
             <param name="container">The container where to append the editor.</param>
         </member>
+        <member name="T:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor">
+            <summary>
+            Renders a control allowing users to edit GridView settings (show / hide columns, etc.).
+            </summary>
+        </member>
+        <member name="M:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor.#ctor(DotVVM.Framework.Binding.BindingCompilationService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor" /> class.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor.UserSettings">
+            <summary>
+            Gets or sets the <see cref="T:DotVVM.BusinessPack.Controls.GridViewUserSettings" /> instance to edit.
+            </summary>
+        </member>
+        <member name="M:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor.OnLoad(DotVVM.Framework.Hosting.IDotvvmRequestContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor.AddAttributesToRender(DotVVM.Framework.Controls.IHtmlWriter,DotVVM.Framework.Hosting.IDotvvmRequestContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor.CreateColumnList">
+            <summary>
+            Returns an <see cref="T:DotVVM.Framework.Controls.HtmlGenericControl" /> rendering list of checkable columns.
+            </summary>
+        </member>
+        <member name="M:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor.CreateColumnItem">
+            <summary>
+            Returns an <see cref="T:DotVVM.Framework.Controls.HtmlGenericControl" /> rendering a checkable column.
+            </summary>
+        </member>
+        <member name="M:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor.CreateColumnCheckBox">
+            <summary>
+            Returns a <see cref="T:DotVVM.BusinessPack.Controls.CheckBox" /> used to show or hide columns.
+            </summary>
+        </member>
+        <member name="M:DotVVM.BusinessPack.Controls.GridViewUserSettingsEditor.GetControlBinding">
+            <summary>
+            Returns a group containing values for control's binding.
+            </summary>
+        </member>
         <member name="T:DotVVM.BusinessPack.Controls.GridViewValueColumn`1">
             <summary>
             The base class for GridView columns bound to a value.
@@ -4850,6 +4884,11 @@
         <member name="P:DotVVM.BusinessPack.Controls.ImageCrop.Changed">
             <summary>
             Gets or sets the command triggered when the image attributes are changed.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Controls.ImageCrop.SelectOnlyImage">
+            <summary>
+            Gets or sets a value indicating selecting only image part.
             </summary>
         </member>
         <member name="T:DotVVM.BusinessPack.Controls.ItemsControlBase`1">
@@ -5520,53 +5559,6 @@
             Adds a client-side value binding to the property group.
             </summary>
         </member>
-        <member name="T:DotVVM.BusinessPack.Controls.RadioButtonList">
-            <summary>
-            Renders a RadioButtonList control displaying a list of radio buttons.
-            </summary>
-        </member>
-        <member name="P:DotVVM.BusinessPack.Controls.RadioButtonList.SelectedValue">
-            <summary>
-            Gets or sets the value of the first item checked by user.
-            </summary>
-        </member>
-        <member name="P:DotVVM.BusinessPack.Controls.RadioButtonList.GroupName">
-            <summary>
-            Gets or sets a unique name identifying this group of radio buttons. A random name is generated by default.
-            </summary>
-        </member>
-        <member name="T:DotVVM.BusinessPack.Controls.RadioButton">
-            <summary>
-            Renders a RadioButton control similar to HTML radio button.
-            </summary>
-        </member>
-        <member name="P:DotVVM.BusinessPack.Controls.RadioButton.Checked">
-            <summary>
-            Gets or sets whether the control is checked.
-            </summary>
-        </member>
-        <member name="P:DotVVM.BusinessPack.Controls.RadioButton.CheckedItem">
-            <summary>
-            Gets or sets the <see cref="P:DotVVM.BusinessPack.Controls.CheckableControlBase.CheckedValue"/> of the first checked <see cref="T:DotVVM.BusinessPack.Controls.RadioButton" /> in this group.
-            </summary>
-        </member>
-        <member name="P:DotVVM.BusinessPack.Controls.RadioButton.GroupName">
-            <summary>
-            Gets or sets a unique name of the radio button group.
-            </summary>
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.RadioButton.ValidateUsageAtRuntime(DotVVM.Framework.Hosting.IDotvvmRequestContext)">
-            <inheritdoc />
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.RadioButton.CreateWrapper">
-            <inheritdoc />
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.RadioButton.CreateInput">
-            <inheritdoc />
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.RadioButton.CreateCheckedIcon">
-            <inheritdoc />
-        </member>
         <member name="T:DotVVM.BusinessPack.Controls.Rating">
             <summary>
             Renders a set of points allowing users to edit rating.
@@ -5698,11 +5690,12 @@
             <param name="control">The resolved DotVVM control.</param>
             <param name="property">The property to check.</param>
         </member>
-        <member name="M:DotVVM.BusinessPack.Controls.ResourceManagerExtensions.AddBusinessPackRequiredResources(DotVVM.Framework.ResourceManagement.ResourceManager,DotVVM.Framework.Hosting.IDotvvmRequestContext)">
+        <member name="M:DotVVM.BusinessPack.Controls.ResourceManagerExtensions.AddBusinessPackRequiredResources(DotVVM.Framework.ResourceManagement.ResourceManager,System.String,DotVVM.Framework.Hosting.IDotvvmRequestContext)">
             <summary>
             Adds the resources required by BusinessPack components.
             </summary>
             <param name="resourceManager">The resource manager.</param>
+            <param name="chunk">The name of the BP chunk to be registered.</param>
             <param name="context"></param>
         </member>
         <member name="T:DotVVM.BusinessPack.Controls.RichTextBoxCommands.AlignCenterCommand">
@@ -6919,26 +6912,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="P:DotVVM.BusinessPack.Controls.TimeRangePicker.SelectedStartTime">
-            <summary>
-            Gets or sets the start time selected by user.
-            </summary>
-        </member>
-        <member name="P:DotVVM.BusinessPack.Controls.TimeRangePicker.StartTimePlaceholder">
-            <summary>
-            Gets or sets the text displayed when start time is not selected.
-            </summary>
-        </member>
-        <member name="P:DotVVM.BusinessPack.Controls.TimeRangePicker.SelectedEndTime">
-            <summary>
-            Gets or sets the end time selected by user.
-            </summary>
-        </member>
-        <member name="P:DotVVM.BusinessPack.Controls.TimeRangePicker.EndTimePlaceholder">
-            <summary>
-            Gets or sets the text displayed when end time is not selected.
-            </summary>
-        </member>
         <member name="T:DotVVM.BusinessPack.Controls.ToggleButton">
             <summary>
             Renders the HTML button that can switch states (like <see cref="T:DotVVM.BusinessPack.Controls.CheckBox" /> control).
@@ -7739,7 +7712,7 @@
         </member>
         <member name="P:DotVVM.BusinessPack.Localization.TableCommand_InsertButtonText">
             <summary>
-              Looks up a localized string similar to Insert teable.
+              Looks up a localized string similar to Insert table.
             </summary>
         </member>
         <member name="P:DotVVM.BusinessPack.Localization.TableCommand_RowsEditorLabel">
