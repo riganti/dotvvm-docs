@@ -1,3 +1,5 @@
 # Release notes
 
-TODO
+## 4.1.0
+
+* The first release of the library

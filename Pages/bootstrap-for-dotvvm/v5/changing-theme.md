@@ -80,7 +80,7 @@ Let's add a simple View, where `NavBar` control above includes a `NavBarDropDown
 </bs:Container>
 ```
 
-Corresponding ViewModel includes only two methods.
+The corresponding ViewModel includes only two methods.
 
 ```CSHARP
 public void ChangeToLight()
@@ -92,3 +92,5 @@ public void ChangeToDark()
     Theme = BootstrapTheme.Dark;
 }
 ```
+
+Now you are able to switch the themes.

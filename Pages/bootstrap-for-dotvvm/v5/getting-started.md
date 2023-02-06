@@ -13,7 +13,7 @@ config.AddBootstrap5Configuration();
 You might need to add the following `using` at the beginning of the file.
 
 ```CSHARP
-using DotVVM.Framework.Controls.Bootstrap5;
+using DotVVM.Bootstrap5.Controls;
 ```
 
 This will register all Bootstrap controls under the `<bs:*` tag prefix, and it also registers several Bootstrap resources. Bootstrap 5 for DotVVM also includes Bootstrap Icons font. All icons could are available using [<bs:Icon> control](~/controls/bootstrap5/Icon).

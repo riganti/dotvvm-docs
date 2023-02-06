@@ -14,4 +14,4 @@ Each property can be set for All or individual screens.
 * `Flex.AlignContent|All|XXLarge|XLarge|Large|Medium|Small` - Gets or sets the align content value.
 * `Flex.AlignSelf|All|XXLarge|XLarge|Large|Medium|Small` - Gets or sets the align self value for all sizes.
 * `Flex.Fill|All|XXLarge|XLarge|Large|Medium|Small` - Gets or sets whether the element should take all available space.
-* `Flex.Wrap|All|XXLarge|XLarge|Large|Medium|Small` - Gets or sets the flex wrap value
+* `Flex.Wrap|All|XXLarge|XLarge|Large|Medium|Small` - Gets or sets the flex wrap value.
