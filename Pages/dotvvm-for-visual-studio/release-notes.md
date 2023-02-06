@@ -1,5 +1,44 @@
 # Release notes
 
+## v4.0.554.0
+* Placing `div` in a dot:Repeater no longer produces a warning
+* IntelliSense for composite controls no longer suggest `Content` property
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.19)
+* Version for Visual Studio 2022 (17.4.1)
+* Version for Visual Studio 2022 Preview (17.5.0 Preview 1.0)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019.RTM.4.0.554.0.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.RTM.4.0.554.0.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.554.0.vsix)
+
+## v4.0.553.0
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.21)
+* Version for Visual Studio 2022 (17.4.0)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019.RTM.4.0.553.0.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.RTM.4.0.553.0.vsix)
+
+
+## v4.0.552.0
+* Project system improvements
+* Fixed a bug with resolving syntax trees for certain projects
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.19)
+* Version for Visual Studio 2022 (17.3.5)
+* Version for Visual Studio 2022 Preview (17.4.0 Preview 2.1)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019.RTM.4.0.552.0.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.RTM.4.0.552.0.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.552.0.vsix)
+
 ## v4.0.551.0
 * Fixed issue with loading projects
 

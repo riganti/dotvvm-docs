@@ -100,17 +100,50 @@ See the [Markup control registration](markup-control-registration) chapter for m
 
 The markup controls can declare custom properties, e. g. for passing additional information aside of the `DataContext`.
 
-```DOTHTML
-<cc:AddressEditor DataContext="{value: ShippingAddress}" Countries="{value: Countries}" />
+The property can be declared:
+
+* By using the `@property` directive __(supported in DotVVM 4.1 and newer)__
+* In the [code-behind file](markup-controls-with-code) of the control
+
+### Declare the property using the `@property` directive
+
+The `@property` directive can specify the name and type of the property, its default value, as well as the properties of the __MarkupOptions__ attribute.
+
+```
+@property string Title = "Panel"
+@property List<CategoryModel> Categories, MarkupOptionsAttribute.AllowHardCodedValue = false
+@property Action<CategoryModel> CategoryAdded
+@property string[] CategoryTypes = [ "defualt", "premium", "extra" ]
 ```
 
-Inside the control, you can then access these properties using the `_control` binding property:
+* The first declaration creates a `string` property named `Title`. If the user doesn't set this property in the page where the control is used, the default value will be `"Panel"`
+* The second declaration creates a property named `Categories` of type `List<CategoryModel>`. It also applies `MarkupOptions.AllowHardCodedValue` to `false`, which means that the property will only accept a binding expression.
+* The third declaration creates a property `CategoryAdded` of type `Action<CategoryModel>`. This property can be set with a command or static command binding.
+* The fourth declaration creates a property `CategoryTypes` of type `string[]`. If this property is not set, a default value (array with `"defualt"`, `"premium"`, and `"extra"`) will be used.
+
+### Declare the property in the code-behind file
+
+See the [Markup controls with code-behind](markup-controls-with-code) chapter for more info.
+
+### Use the custom property
+
+In the page where the control is used, you can specify the property as an attribute (default behavior), or as an inner element (if you've set the `MappingMode` property to `InnerElement`). Whether the property accepts binding expressions or hard-coded values can be specified using the `AllowBinding` and `AllowHardCodedValues` properties of the `MarkupOptions` attribute.
+
+```DOTHTML
+<cc:AddressEditor DataContext="{value: ShippingAddress}" 
+                  Countries="{value: Countries}" />
+```
+
+In the control markup file, you can access these properties using the `_control` binding property:
 
 ```DOTHTML
 <dot:ComboBox DataSource="{value: _control.Countries}" />
 ```
 
-See the [Markup controls with code-behind](markup-controls-with-code) chapter for more info.
+The same rule about when to use [value binding](~/pages/concepts/data-binding/value-binding) or [resource binding](~/pages/concepts/data-binding/resource-binding) is applied here:
+
+* If the property can contain a binding expression and you want to pass that expression to a control inside the markup control, use `value` binding.
+* If the property contains a hard-coded value, or the target property doesn't support binding expressions (e. g. `RouteName` of the [RouteLink](~/controls/builtin/RouteLink), use the `resource` binding.
 
 ## See also
 

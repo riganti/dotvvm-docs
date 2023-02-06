@@ -5,7 +5,7 @@ namespace DotvvmWeb.Views.Docs.Controls.businesspack.ImageCrop.sample2
 {
     public class ViewModel : DotvvmViewModelBase
     {
-        public string ImagePath { get; set; } = "https://www.dotvvm.com/Content/img/product-detail-bp/roadmap.png";
+        public string ImagePath { get; set; } = "../images/imagecrop.webp";
         public ImageOperations ImageOperations { get; set; } = new ImageOperations();
     }
 }

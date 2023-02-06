@@ -49,7 +49,7 @@ In case your website is split into multiple applications, or you need to redirec
 config.RouteTable.AddUrlRedirection(
     name: "Redirect2", 
     urlPattern: "my/page/url{Id}", 
-    targetUrlProvider: context => "https://www.dotvvm.com"
+    targetUrlProvider: context => "https://www.dotvvm.com",
     defaultValues: null,
     permanent: true);
 ```
