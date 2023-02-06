@@ -1,4 +1,5 @@
 ﻿using DotVVM.Framework.ViewModel;
+using Newtonsoft.Json;
 
 namespace DotvvmWeb.Views.Docs.Controls.builtin.GridView.Sample5
 {
@@ -23,14 +24,7 @@ namespace DotvvmWeb.Views.Docs.Controls.builtin.GridView.Sample5
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public Customer()
-        {
-            // NOTE: This default constructor is required. 
-            // Remember that the viewmodel is JSON-serialized
-            // which requires all objects to have a public 
-            // parameterless constructor
-        }
-
+        [JsonConstructor]
         public Customer(int id, string name)
         {
             Id = id;

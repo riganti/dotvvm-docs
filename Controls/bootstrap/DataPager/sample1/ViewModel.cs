@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DotVVM.Framework.Controls;
 using DotVVM.Framework.ViewModel;
+using Newtonsoft.Json;
 
 namespace DotvvmWeb.Views.Docs.Controls.bootstrap.DataPager.sample1
 {
@@ -41,14 +42,7 @@ namespace DotvvmWeb.Views.Docs.Controls.bootstrap.DataPager.sample1
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public Customer()
-        {
-            // NOTE: This default constructor is required. 
-            // Remember that the viewmodel is JSON-serialized
-            // which requires all objects to have a public 
-            // parameterless constructor
-        }
-
+        [JsonConstructor]
         public Customer(int id, string name)
         {
             Id = id;
