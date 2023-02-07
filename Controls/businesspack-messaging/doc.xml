@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotVVM.BusinessPack.Messaging</name>
+    </assembly>
+    <members>
+        <member name="T:DotVVM.BusinessPack.Messaging.IMessagingContext">
+            <summary>
+            Marks MessagingHub implementations
+            </summary>
+        </member>
+    </members>
+</doc>

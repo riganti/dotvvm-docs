@@ -1,0 +1,1 @@
+Generates an editor control for the specified property based on [DotVVM Auto UI model metadata](~/pages/concepts/auto-ui/metadata).

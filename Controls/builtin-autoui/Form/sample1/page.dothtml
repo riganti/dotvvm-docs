@@ -1,0 +1,1 @@
+<auto:Form DataContext="{value: Customer}" />

@@ -191,11 +191,15 @@
 	
   </DocPageMenuItem>
     
-  <DocControlCategory Category="builtin" CssClass="icon controls" />
+  <DocControlCategory Category="builtin" CssClass="icon controls">
+    <DocControlCategory Category="builtin-autoui" PageName="Auto UI" />
+  </DocControlCategory>
     
   <DocPageMenuItem RouteName="business-pack" PageName="DotVVM Business Pack" CssClass="icon dotvvm-business-pack separator-top">
     <DocPageMenuItem RouteName="getting-started" PageName="Getting started" />
-    <DocControlCategory RouteName="controls" Category="businesspack" />
+    <DocControlCategory RouteName="controls" Category="businesspack">
+      <DocControlCategory Category="businesspack-messaging" PageName="Messaging" />
+    </DocControlCategory>
     <DocPageMenuItem RouteName="themes" PageName="Themes">
 	  <DocPageMenuItem RouteName="overview" PageName="Overview" />
 	  <DocPageMenuItem RouteName="customize" PageName="Customize control styles" />
