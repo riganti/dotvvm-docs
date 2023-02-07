@@ -1,0 +1,8 @@
+<div class="two-columns">
+    <div>
+        <auto:BootstrapForm DataContext="{value: Customer}" IncludeProperties="Name,IsCompany" />
+    </div>
+    <div>
+        <auto:BootstrapForm DataContext="{value: Customer}" ExcludeProperties="Name,IsCompany" />
+    </div>
+</div>
