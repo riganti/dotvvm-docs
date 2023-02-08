@@ -1,0 +1,9 @@
+<dot:GridView DataSource="{value: Customers}">
+  <auto:GridViewColumns IncludeProperties="Name,BirthDate" />
+
+  <dot:GridViewTemplateColumn>
+    Custom column in the middle
+  </dot:GridViewTemplateColumn>
+
+  <auto:GridViewColumns ExcludeProperties="Name,BirthDate" />
+</dot:GridView>

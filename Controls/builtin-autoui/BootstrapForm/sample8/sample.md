@@ -42,18 +42,3 @@ config.Styles.Register<BootstrapForm>()
     .SetProperty(c => c.FormCheckInputCssClass, "form-check-input")
     .SetDotvvmProperty(Validator.InvalidCssClassProperty, "is-invalid");
 ```
-
-## Validation style of CheckBox in Bootstrap 4 and 5
-
-Due to the way how DotVVM [CheckBox](~/controls/builtin/CheckBox) renders (`label` wrapped around `input`), you may need to add the following CSS to correctly display validation appearance of this control in the form.
-
-```
-<style>
-    .is-invalid.form-check-label, .is-invalid .form-check-label {
-        color: #dc3545;
-    }
-    .is-invalid .form-check-input {
-        border-color: #dc3545;
-    }
-</style>
-```

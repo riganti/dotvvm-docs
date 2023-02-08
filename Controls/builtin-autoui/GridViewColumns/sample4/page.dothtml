@@ -1,0 +1,9 @@
+<dot:GridView DataSource="{value: Customers}">
+  <auto:GridViewColumns ViewName="List" />
+  
+  <dot:GridViewTemplateColumn>
+    <dot:RouteLink RouteName="CustomerDetail" 
+                   Param-Id="{value: Id}" 
+                   Text="Edit" />
+  </dot:GridViewTemplateColumn>
+</dot:GridView>
