@@ -30,7 +30,7 @@ config.Styles.Register<BootstrapForm>()
     .SetProperty(c => c.FormCheckInputCssClass, "")
     .SetProperty(c => c.WrapControlInDiv, true)
     .SetDotvvmProperty(Validator.InvalidCssClassProperty, "has-error");
-
+    
 // for Bootstrap 4
 config.Styles.Register<BootstrapForm>()
     .SetProperty(c => c.FormGroupCssClass, "form-group")

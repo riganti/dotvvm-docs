@@ -1,5 +1,5 @@
 <auto:BulmaForm DataContext="{value: Customer}" 
-                Enabled-CompanyNumber="{value: IsCompany}"
-                Changed-CompanyNumber="{command: _root.LookupCompanyAddress()}"
+                Enabled-CompanyNumber="{value: IsCompany}" 
+                Changed-CompanyNumber="{command: _root.LookupCompanyAddress()}" 
                 Visible-CountryName="{value: IsInternational}" 
                 Label-Name="{value: IsCompany ? 'Company name' : 'Person name'}" />

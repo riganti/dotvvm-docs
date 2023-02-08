@@ -9,7 +9,7 @@
             <td colspan="2">    
                 <img src="{value: ImageUrl}" />
 
-                <dot:FileUpload UploadedFiles="{value: _root.ImageUpload}"
+                <dot:FileUpload UploadedFiles="{value: _root.ImageUpload}" 
                                 UploadCompleted="{command: _root.ProcessImage()}" />
             </td>
         </tr>

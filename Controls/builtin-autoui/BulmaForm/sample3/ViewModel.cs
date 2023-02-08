@@ -5,16 +5,16 @@
 
 public class CustomerModel 
 {
-    [Display(Name = "Person or company name", GroupName = "BasicInfo")]
+    [Display(Name = "Person or company name")]
     public string Name { get; set; }
 
-    [Display(Name = "Is company", GroupName = "BasicInfo")]
+    [Display(Name = "Is company")]
     public bool IsCompany { get; set; }
 
 
-    [Display(Name = "E-mail address", GroupName = "ContactInfo")]
+    [Display(Name = "E-mail address")]
     public string Email { get; set; }
 
-    [Display(Name = "Phone number", GroupName = "ContactInfo")]
+    [Display(Name = "Phone number")]
     public string Phone { get; set; } 
 }

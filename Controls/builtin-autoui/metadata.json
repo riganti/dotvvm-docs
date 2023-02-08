@@ -2,10 +2,30 @@
   {
     "Namespace": "DotVVM.AutoUI.Controls",
     "Name": "AutoEditor",
+    "PrimaryName": "Editor",
     "IsContentAllowed": false,
     "DefaultContentPropertyName": null,
     "HasHtmlAttributesCollection": false,
     "Properties": [
+      {
+        "Name": "DataContext",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "DotvvmBindableObject",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "Object",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": false,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": true,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
       {
         "Name": "IncludeInPage",
         "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
@@ -20,6 +40,25 @@
           "Required": false
         },
         "DefaultValue": true,
+        "IsBasicProperty": true,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "ClientIDMode",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "DotvvmControl",
+        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+        "PropertyTypeName": "ClientIDMode",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": "Static",
         "IsBasicProperty": true,
         "IsCapability": false,
         "OwningCapabilityNamespace": null,
@@ -42,102 +81,7 @@
         "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "Props"
-      },
-      {
-        "Name": "ID",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "DotvvmControl",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": true,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "Property",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoEditor",
-        "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
-        "PropertyTypeName": "IValueBinding",
-        "IsBindingProperty": true,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": false,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "Props"
-      },
-      {
-        "Name": "ClientIDMode",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "DotvvmControl",
-        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
-        "PropertyTypeName": "ClientIDMode",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": false,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": "Static",
-        "IsBasicProperty": true,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "Visible",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoEditor",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "Boolean",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": true,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": "DotVVM.Framework.Controls",
-        "OwningCapabilityName": "HtmlCapability"
-      },
-      {
-        "Name": "DataContext",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "DotvvmBindableObject",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "Object",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": false,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": true,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
+        "OwningCapabilityName": "AutoEditor.Props"
       },
       {
         "Name": "OverrideTemplate",
@@ -156,45 +100,7 @@
         "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "Props"
-      },
-      {
-        "Name": "Enabled",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoEditor",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "Boolean",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": true,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "Props"
-      },
-      {
-        "Name": "HtmlCapability",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoEditor",
-        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
-        "PropertyTypeName": "HtmlCapability",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": true,
-        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "Props"
+        "OwningCapabilityName": "AutoEditor.Props"
       },
       {
         "Name": "Props",
@@ -216,6 +122,25 @@
         "OwningCapabilityName": null
       },
       {
+        "Name": "Property",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoEditor",
+        "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
+        "PropertyTypeName": "IValueBinding",
+        "IsBindingProperty": true,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": false,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
+        "OwningCapabilityName": "AutoEditor.Props"
+      },
+      {
         "Name": "ClientID",
         "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
         "DeclaringTypeName": "DotvvmControl",
@@ -233,6 +158,82 @@
         "IsCapability": false,
         "OwningCapabilityNamespace": null,
         "OwningCapabilityName": null
+      },
+      {
+        "Name": "HtmlCapability",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoEditor",
+        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+        "PropertyTypeName": "HtmlCapability",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": true,
+        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
+        "OwningCapabilityName": "AutoEditor.Props"
+      },
+      {
+        "Name": "Visible",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoEditor",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "Boolean",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": true,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": "DotVVM.Framework.Controls",
+        "OwningCapabilityName": "HtmlCapability"
+      },
+      {
+        "Name": "Enabled",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoEditor",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "Boolean",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": true,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
+        "OwningCapabilityName": "AutoEditor.Props"
+      },
+      {
+        "Name": "ID",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "DotvvmControl",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": true,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
       }
     ],
     "IsAbstract": false
@@ -240,10 +241,49 @@
   {
     "Namespace": "DotVVM.AutoUI.Controls",
     "Name": "AutoForm",
+    "PrimaryName": "Form",
     "IsContentAllowed": false,
     "DefaultContentPropertyName": null,
     "HasHtmlAttributesCollection": false,
     "Properties": [
+      {
+        "Name": "ExcludeProperties",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoFormBase",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String[]",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": [],
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
+        "OwningCapabilityName": "AutoFormBase.FieldSelectorProps"
+      },
+      {
+        "Name": "DataContext",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "DotvvmBindableObject",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "Object",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": false,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": true,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
       {
         "Name": "FieldProps",
         "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
@@ -260,6 +300,63 @@
         "DefaultValue": null,
         "IsBasicProperty": false,
         "IsCapability": true,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "IncludeInPage",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "DotvvmControl",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "Boolean",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": false,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": true,
+        "IsBasicProperty": true,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "ClientIDMode",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "DotvvmControl",
+        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+        "PropertyTypeName": "ClientIDMode",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": "Static",
+        "IsBasicProperty": true,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "EditorCellCssClass",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoForm",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
         "OwningCapabilityNamespace": null,
         "OwningCapabilityName": null
       },
@@ -283,45 +380,7 @@
         "OwningCapabilityName": null
       },
       {
-        "Name": "IncludeInPage",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "DotvvmControl",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "Boolean",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": false,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": true,
-        "IsBasicProperty": true,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "FieldSelectorProps",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoFormBase",
-        "PropertyTypeNamespace": "DotVVM.AutoUI.Controls",
-        "PropertyTypeName": "AutoFormBase+FieldSelectorProps",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": true,
-        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "FieldProps"
-      },
-      {
-        "Name": "ID",
+        "Name": "ClientID",
         "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
         "DeclaringTypeName": "DotvvmControl",
         "PropertyTypeNamespace": "System",
@@ -330,30 +389,11 @@
         "MarkupOptions": {
           "AllowBinding": true,
           "AllowHardCodedValue": true,
-          "MappingMode": 1,
+          "MappingMode": 0,
           "Required": false
         },
         "DefaultValue": null,
         "IsBasicProperty": true,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "GroupName",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoFormBase",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": null,
         "OwningCapabilityName": null
@@ -378,26 +418,64 @@
         "OwningCapabilityName": null
       },
       {
-        "Name": "ClientIDMode",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "DotvvmControl",
-        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
-        "PropertyTypeName": "ClientIDMode",
+        "Name": "GroupName",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoFormBase",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
         "IsBindingProperty": false,
         "MarkupOptions": {
-          "AllowBinding": false,
+          "AllowBinding": true,
           "AllowHardCodedValue": true,
           "MappingMode": 1,
           "Required": false
         },
-        "DefaultValue": "Static",
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "ID",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "DotvvmControl",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
         "IsBasicProperty": true,
         "IsCapability": false,
         "OwningCapabilityNamespace": null,
         "OwningCapabilityName": null
       },
       {
-        "Name": "ExcludeProperties",
+        "Name": "FieldSelectorProps",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoFormBase",
+        "PropertyTypeNamespace": "DotVVM.AutoUI.Controls",
+        "PropertyTypeName": "AutoFormBase+FieldSelectorProps",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": true,
+        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
+        "OwningCapabilityName": "AutoFormBase.FieldProps"
+      },
+      {
+        "Name": "IncludeProperties",
         "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
         "DeclaringTypeName": "AutoFormBase",
         "PropertyTypeNamespace": "System",
@@ -409,11 +487,41 @@
           "MappingMode": 1,
           "Required": false
         },
-        "DefaultValue": [],
+        "DefaultValue": null,
         "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "FieldSelectorProps"
+        "OwningCapabilityName": "AutoFormBase.FieldSelectorProps"
+      }
+    ],
+    "IsAbstract": false
+  },
+  {
+    "Namespace": "DotVVM.AutoUI.Controls",
+    "Name": "AutoGridViewColumn",
+    "PrimaryName": "GridViewColumn",
+    "IsContentAllowed": false,
+    "DefaultContentPropertyName": null,
+    "HasHtmlAttributesCollection": false,
+    "Properties": [
+      {
+        "Name": "Visible",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "Boolean",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": false,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": true,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
       },
       {
         "Name": "DataContext",
@@ -435,11 +543,87 @@
         "OwningCapabilityName": null
       },
       {
-        "Name": "IncludeProperties",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoFormBase",
+        "Name": "SortAscendingHeaderCssClass",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
         "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String[]",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": "sort-asc",
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "HeaderCssClass",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "HeaderText",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "Changed",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoGridViewColumn",
+        "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
+        "PropertyTypeName": "ICommandBinding",
+        "IsBindingProperty": true,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": false,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
+        "OwningCapabilityName": "AutoGridViewColumn.Props"
+      },
+      {
+        "Name": "Width",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
         "IsBindingProperty": false,
         "MarkupOptions": {
           "AllowBinding": false,
@@ -450,21 +634,21 @@
         "DefaultValue": null,
         "IsBasicProperty": false,
         "IsCapability": false,
-        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "FieldSelectorProps"
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
       },
       {
-        "Name": "EditorCellCssClass",
+        "Name": "Property",
         "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoForm",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
+        "DeclaringTypeName": "AutoGridViewColumn",
+        "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
+        "PropertyTypeName": "IValueBinding",
+        "IsBindingProperty": true,
         "MarkupOptions": {
           "AllowBinding": true,
-          "AllowHardCodedValue": true,
+          "AllowHardCodedValue": false,
           "MappingMode": 1,
-          "Required": false
+          "Required": true
         },
         "DefaultValue": null,
         "IsBasicProperty": false,
@@ -472,35 +656,6 @@
         "OwningCapabilityNamespace": null,
         "OwningCapabilityName": null
       },
-      {
-        "Name": "ClientID",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "DotvvmControl",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 0,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": true,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      }
-    ],
-    "IsAbstract": false
-  },
-  {
-    "Namespace": "DotVVM.AutoUI.Controls",
-    "Name": "AutoGridViewColumn",
-    "IsContentAllowed": false,
-    "DefaultContentPropertyName": null,
-    "HasHtmlAttributesCollection": false,
-    "Properties": [
       {
         "Name": "AllowSorting",
         "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
@@ -521,19 +676,19 @@
         "OwningCapabilityName": null
       },
       {
-        "Name": "EditTemplate",
+        "Name": "IsEditable",
         "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
         "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
-        "PropertyTypeName": "ITemplate",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "Boolean",
         "IsBindingProperty": false,
         "MarkupOptions": {
           "AllowBinding": false,
           "AllowHardCodedValue": true,
-          "MappingMode": 2,
+          "MappingMode": 1,
           "Required": false
         },
-        "DefaultValue": null,
+        "DefaultValue": true,
         "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": null,
@@ -548,6 +703,158 @@
         "IsBindingProperty": false,
         "MarkupOptions": {
           "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 2,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "SortExpression",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "HeaderCellDecorators",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "System.Collections.Generic",
+        "PropertyTypeName": "List<Decorator>",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
+          "AllowHardCodedValue": true,
+          "MappingMode": 2,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "SortDescendingHeaderCssClass",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": "sort-desc",
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "Props",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoGridViewColumn",
+        "PropertyTypeNamespace": "DotVVM.AutoUI.Controls",
+        "PropertyTypeName": "AutoGridViewColumn+Props",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": true,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "HeaderTemplate",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+        "PropertyTypeName": "ITemplate",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 2,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "CellDecorators",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "System.Collections.Generic",
+        "PropertyTypeName": "List<Decorator>",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
+          "AllowHardCodedValue": true,
+          "MappingMode": 2,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "CssClass",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "EditTemplate",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+        "PropertyTypeName": "ITemplate",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
           "AllowHardCodedValue": true,
           "MappingMode": 2,
           "Required": false
@@ -594,84 +901,19 @@
         "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "Props"
-      },
-      {
-        "Name": "SortExpression",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": false,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "SortDescendingHeaderCssClass",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": false,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": "sort-desc",
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "Changed",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoGridViewColumn",
-        "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
-        "PropertyTypeName": "ICommandBinding",
-        "IsBindingProperty": true,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": false,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "Props"
-      },
-      {
-        "Name": "SortAscendingHeaderCssClass",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": false,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": "sort-asc",
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
+        "OwningCapabilityName": "AutoGridViewColumn.Props"
+      }
+    ],
+    "IsAbstract": false
+  },
+  {
+    "Namespace": "DotVVM.AutoUI.Controls",
+    "Name": "AutoGridViewColumns",
+    "PrimaryName": "GridViewColumns",
+    "IsContentAllowed": false,
+    "DefaultContentPropertyName": null,
+    "HasHtmlAttributesCollection": false,
+    "Properties": [
       {
         "Name": "Visible",
         "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
@@ -686,25 +928,6 @@
           "Required": false
         },
         "DefaultValue": true,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "Property",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoGridViewColumn",
-        "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
-        "PropertyTypeName": "IValueBinding",
-        "IsBindingProperty": true,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": false,
-          "MappingMode": 1,
-          "Required": true
-        },
-        "DefaultValue": null,
         "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": null,
@@ -730,49 +953,30 @@
         "OwningCapabilityName": null
       },
       {
-        "Name": "CellDecorators",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "System.Collections.Generic",
-        "PropertyTypeName": "List<Decorator>",
+        "Name": "ViewName",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoGridViewColumns",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
         "IsBindingProperty": false,
         "MarkupOptions": {
           "AllowBinding": false,
           "AllowHardCodedValue": true,
-          "MappingMode": 2,
+          "MappingMode": 1,
           "Required": false
         },
         "DefaultValue": null,
         "IsBasicProperty": false,
         "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
+        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
+        "OwningCapabilityName": "AutoFormBase.FieldSelectorProps"
       },
       {
-        "Name": "HeaderCellDecorators",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "System.Collections.Generic",
-        "PropertyTypeName": "List<Decorator>",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": false,
-          "AllowHardCodedValue": true,
-          "MappingMode": 2,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "IsEditable",
+        "Name": "SortAscendingHeaderCssClass",
         "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
         "DeclaringTypeName": "GridViewColumn",
         "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "Boolean",
+        "PropertyTypeName": "String",
         "IsBindingProperty": false,
         "MarkupOptions": {
           "AllowBinding": false,
@@ -780,52 +984,14 @@
           "MappingMode": 1,
           "Required": false
         },
-        "DefaultValue": true,
+        "DefaultValue": "sort-asc",
         "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": null,
         "OwningCapabilityName": null
       },
       {
-        "Name": "HeaderTemplate",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
-        "PropertyTypeName": "ITemplate",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 2,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "Props",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoGridViewColumn",
-        "PropertyTypeNamespace": "DotVVM.AutoUI.Controls",
-        "PropertyTypeName": "AutoGridViewColumn+Props",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": true,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "CssClass",
+        "Name": "HeaderCssClass",
         "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
         "DeclaringTypeName": "GridViewColumn",
         "PropertyTypeNamespace": "System",
@@ -863,6 +1029,44 @@
         "OwningCapabilityName": null
       },
       {
+        "Name": "Props",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoGridViewColumns",
+        "PropertyTypeNamespace": "DotVVM.AutoUI.Controls",
+        "PropertyTypeName": "AutoGridViewColumns+Props",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": true,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "GroupName",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoGridViewColumns",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
+        "OwningCapabilityName": "AutoFormBase.FieldSelectorProps"
+      },
+      {
         "Name": "Width",
         "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
         "DeclaringTypeName": "GridViewColumn",
@@ -881,35 +1085,6 @@
         "OwningCapabilityNamespace": null,
         "OwningCapabilityName": null
       },
-      {
-        "Name": "HeaderCssClass",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      }
-    ],
-    "IsAbstract": false
-  },
-  {
-    "Namespace": "DotVVM.AutoUI.Controls",
-    "Name": "AutoGridViewColumns",
-    "IsContentAllowed": false,
-    "DefaultContentPropertyName": null,
-    "HasHtmlAttributesCollection": false,
-    "Properties": [
       {
         "Name": "AllowSorting",
         "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
@@ -930,19 +1105,19 @@
         "OwningCapabilityName": null
       },
       {
-        "Name": "EditTemplate",
+        "Name": "IsEditable",
         "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
         "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
-        "PropertyTypeName": "ITemplate",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "Boolean",
         "IsBindingProperty": false,
         "MarkupOptions": {
           "AllowBinding": false,
           "AllowHardCodedValue": true,
-          "MappingMode": 2,
+          "MappingMode": 1,
           "Required": false
         },
-        "DefaultValue": null,
+        "DefaultValue": true,
         "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": null,
@@ -957,6 +1132,139 @@
         "IsBindingProperty": false,
         "MarkupOptions": {
           "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 2,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "SortExpression",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "HeaderCellDecorators",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "System.Collections.Generic",
+        "PropertyTypeName": "List<Decorator>",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
+          "AllowHardCodedValue": true,
+          "MappingMode": 2,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "SortDescendingHeaderCssClass",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": "sort-desc",
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "HeaderTemplate",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+        "PropertyTypeName": "ITemplate",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 2,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "CellDecorators",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "System.Collections.Generic",
+        "PropertyTypeName": "List<Decorator>",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
+          "AllowHardCodedValue": true,
+          "MappingMode": 2,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "CssClass",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "EditTemplate",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "GridViewColumn",
+        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+        "PropertyTypeName": "ITemplate",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
           "AllowHardCodedValue": true,
           "MappingMode": 2,
           "Required": false
@@ -987,44 +1295,6 @@
         "OwningCapabilityName": null
       },
       {
-        "Name": "Props",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoGridViewColumns",
-        "PropertyTypeNamespace": "DotVVM.AutoUI.Controls",
-        "PropertyTypeName": "AutoGridViewColumns+Props",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": true,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "SortExpression",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": false,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
         "Name": "IncludeProperties",
         "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
         "DeclaringTypeName": "AutoGridViewColumns",
@@ -1041,26 +1311,7 @@
         "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "FieldSelectorProps"
-      },
-      {
-        "Name": "FieldSelectorProps",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoGridViewColumns",
-        "PropertyTypeNamespace": "DotVVM.AutoUI.Controls",
-        "PropertyTypeName": "AutoFormBase+FieldSelectorProps",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": true,
-        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "Props"
+        "OwningCapabilityName": "AutoFormBase.FieldSelectorProps"
       },
       {
         "Name": "ExcludeProperties",
@@ -1079,14 +1330,63 @@
         "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "FieldSelectorProps"
+        "OwningCapabilityName": "AutoFormBase.FieldSelectorProps"
       },
       {
-        "Name": "SortDescendingHeaderCssClass",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
+        "Name": "FieldSelectorProps",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoGridViewColumns",
+        "PropertyTypeNamespace": "DotVVM.AutoUI.Controls",
+        "PropertyTypeName": "AutoFormBase+FieldSelectorProps",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": true,
+        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
+        "OwningCapabilityName": "AutoGridViewColumns.Props"
+      }
+    ],
+    "IsAbstract": false
+  },
+  {
+    "Namespace": "DotVVM.AutoUI.Controls",
+    "Name": "BootstrapForm",
+    "PrimaryName": null,
+    "IsContentAllowed": false,
+    "DefaultContentPropertyName": null,
+    "HasHtmlAttributesCollection": false,
+    "Properties": [
+      {
+        "Name": "FormSelectCssClass",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "BootstrapForm",
         "PropertyTypeNamespace": "System",
         "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": "form-select",
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "ExcludeProperties",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoFormBase",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String[]",
         "IsBindingProperty": false,
         "MarkupOptions": {
           "AllowBinding": false,
@@ -1094,45 +1394,26 @@
           "MappingMode": 1,
           "Required": false
         },
-        "DefaultValue": "sort-desc",
+        "DefaultValue": [],
         "IsBasicProperty": false,
         "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
+        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
+        "OwningCapabilityName": "AutoFormBase.FieldSelectorProps"
       },
       {
-        "Name": "SortAscendingHeaderCssClass",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": false,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": "sort-asc",
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "Visible",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
+        "Name": "RequiresFormControlCssClass",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "BootstrapForm",
         "PropertyTypeNamespace": "System",
         "PropertyTypeName": "Boolean",
         "IsBindingProperty": false,
         "MarkupOptions": {
           "AllowBinding": true,
-          "AllowHardCodedValue": false,
+          "AllowHardCodedValue": true,
           "MappingMode": 1,
           "Required": false
         },
-        "DefaultValue": true,
+        "DefaultValue": false,
         "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": null,
@@ -1158,206 +1439,6 @@
         "OwningCapabilityName": null
       },
       {
-        "Name": "CellDecorators",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "System.Collections.Generic",
-        "PropertyTypeName": "List<Decorator>",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": false,
-          "AllowHardCodedValue": true,
-          "MappingMode": 2,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "ViewName",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoGridViewColumns",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": false,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "FieldSelectorProps"
-      },
-      {
-        "Name": "HeaderCellDecorators",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "System.Collections.Generic",
-        "PropertyTypeName": "List<Decorator>",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": false,
-          "AllowHardCodedValue": true,
-          "MappingMode": 2,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "IsEditable",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "Boolean",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": false,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": true,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "HeaderTemplate",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
-        "PropertyTypeName": "ITemplate",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 2,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "CssClass",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "HeaderText",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "Width",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": false,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "HeaderCssClass",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "GridViewColumn",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "GroupName",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoGridViewColumns",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": false,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "FieldSelectorProps"
-      }
-    ],
-    "IsAbstract": false
-  },
-  {
-    "Namespace": "DotVVM.AutoUI.Controls",
-    "Name": "BootstrapForm",
-    "IsContentAllowed": false,
-    "DefaultContentPropertyName": null,
-    "HasHtmlAttributesCollection": false,
-    "Properties": [
-      {
         "Name": "FieldProps",
         "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
         "DeclaringTypeName": "AutoFormBase",
@@ -1373,6 +1454,63 @@
         "DefaultValue": null,
         "IsBasicProperty": false,
         "IsCapability": true,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "IncludeInPage",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "DotvvmControl",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "Boolean",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": false,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": true,
+        "IsBasicProperty": true,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "ClientIDMode",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "DotvvmControl",
+        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+        "PropertyTypeName": "ClientIDMode",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": "Static",
+        "IsBasicProperty": true,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "RequiresFormCheckCssClass",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "BootstrapForm",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "Boolean",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": false,
+        "IsBasicProperty": false,
+        "IsCapability": false,
         "OwningCapabilityNamespace": null,
         "OwningCapabilityName": null
       },
@@ -1396,7 +1534,64 @@
         "OwningCapabilityName": null
       },
       {
-        "Name": "FormCheckLabelCssClass",
+        "Name": "ClientID",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "DotvvmControl",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 0,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": true,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "ViewName",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoFormBase",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "GroupName",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoFormBase",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "LabelCssClass",
         "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
         "DeclaringTypeName": "BootstrapForm",
         "PropertyTypeNamespace": "System",
@@ -1408,26 +1603,26 @@
           "MappingMode": 1,
           "Required": false
         },
-        "DefaultValue": "form-check-label",
+        "DefaultValue": "control-label",
         "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": null,
         "OwningCapabilityName": null
       },
       {
-        "Name": "IncludeInPage",
+        "Name": "ID",
         "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
         "DeclaringTypeName": "DotvvmControl",
         "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "Boolean",
+        "PropertyTypeName": "String",
         "IsBindingProperty": false,
         "MarkupOptions": {
           "AllowBinding": true,
-          "AllowHardCodedValue": false,
+          "AllowHardCodedValue": true,
           "MappingMode": 1,
           "Required": false
         },
-        "DefaultValue": true,
+        "DefaultValue": null,
         "IsBasicProperty": true,
         "IsCapability": false,
         "OwningCapabilityNamespace": null,
@@ -1469,31 +1664,12 @@
         "IsBasicProperty": false,
         "IsCapability": true,
         "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "FieldProps"
+        "OwningCapabilityName": "AutoFormBase.FieldProps"
       },
       {
-        "Name": "ID",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "DotvvmControl",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": true,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "GroupName",
+        "Name": "FormCheckCssClass",
         "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoFormBase",
+        "DeclaringTypeName": "BootstrapForm",
         "PropertyTypeNamespace": "System",
         "PropertyTypeName": "String",
         "IsBindingProperty": false,
@@ -1503,26 +1679,7 @@
           "MappingMode": 1,
           "Required": false
         },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "ViewName",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoFormBase",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
+        "DefaultValue": "form-check",
         "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": null,
@@ -1548,64 +1705,7 @@
         "OwningCapabilityName": null
       },
       {
-        "Name": "RequiresFormControlCssClass",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "BootstrapForm",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "Boolean",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": false,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "ClientIDMode",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "DotvvmControl",
-        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
-        "PropertyTypeName": "ClientIDMode",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": false,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": "Static",
-        "IsBasicProperty": true,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "LabelCssClass",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "BootstrapForm",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": "control-label",
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "ExcludeProperties",
+        "Name": "IncludeProperties",
         "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
         "DeclaringTypeName": "AutoFormBase",
         "PropertyTypeNamespace": "System",
@@ -1617,11 +1717,30 @@
           "MappingMode": 1,
           "Required": false
         },
-        "DefaultValue": [],
+        "DefaultValue": null,
         "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "FieldSelectorProps"
+        "OwningCapabilityName": "AutoFormBase.FieldSelectorProps"
+      },
+      {
+        "Name": "FormCheckLabelCssClass",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "BootstrapForm",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": "form-check-label",
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
       },
       {
         "Name": "FormCheckInputCssClass",
@@ -1641,6 +1760,36 @@
         "IsCapability": false,
         "OwningCapabilityNamespace": null,
         "OwningCapabilityName": null
+      }
+    ],
+    "IsAbstract": false
+  },
+  {
+    "Namespace": "DotVVM.AutoUI.Controls",
+    "Name": "BulmaForm",
+    "PrimaryName": null,
+    "IsContentAllowed": false,
+    "DefaultContentPropertyName": null,
+    "HasHtmlAttributesCollection": false,
+    "Properties": [
+      {
+        "Name": "ExcludeProperties",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoFormBase",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String[]",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": false,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": [],
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
+        "OwningCapabilityName": "AutoFormBase.FieldSelectorProps"
       },
       {
         "Name": "DataContext",
@@ -1662,111 +1811,6 @@
         "OwningCapabilityName": null
       },
       {
-        "Name": "FormCheckCssClass",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "BootstrapForm",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": "form-check",
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "IncludeProperties",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoFormBase",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String[]",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": false,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "FieldSelectorProps"
-      },
-      {
-        "Name": "FormSelectCssClass",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "BootstrapForm",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": "form-select",
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "RequiresFormCheckCssClass",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "BootstrapForm",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "Boolean",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": false,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "ClientID",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "DotvvmControl",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 0,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": true,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      }
-    ],
-    "IsAbstract": false
-  },
-  {
-    "Namespace": "DotVVM.AutoUI.Controls",
-    "Name": "BulmaForm",
-    "IsContentAllowed": false,
-    "DefaultContentPropertyName": null,
-    "HasHtmlAttributesCollection": false,
-    "Properties": [
-      {
         "Name": "FieldProps",
         "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
         "DeclaringTypeName": "AutoFormBase",
@@ -1786,7 +1830,7 @@
         "OwningCapabilityName": null
       },
       {
-        "Name": "WrapWithTextareaClass",
+        "Name": "WrapWithRadioClass",
         "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
         "DeclaringTypeName": "BulmaForm",
         "PropertyTypeNamespace": "System",
@@ -1824,26 +1868,26 @@
         "OwningCapabilityName": null
       },
       {
-        "Name": "FieldSelectorProps",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoFormBase",
-        "PropertyTypeNamespace": "DotVVM.AutoUI.Controls",
-        "PropertyTypeName": "AutoFormBase+FieldSelectorProps",
+        "Name": "ClientIDMode",
+        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+        "DeclaringTypeName": "DotvvmControl",
+        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+        "PropertyTypeName": "ClientIDMode",
         "IsBindingProperty": false,
         "MarkupOptions": {
-          "AllowBinding": true,
+          "AllowBinding": false,
           "AllowHardCodedValue": true,
           "MappingMode": 1,
           "Required": false
         },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": true,
-        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "FieldProps"
+        "DefaultValue": "Static",
+        "IsBasicProperty": true,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
       },
       {
-        "Name": "ID",
+        "Name": "ClientID",
         "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
         "DeclaringTypeName": "DotvvmControl",
         "PropertyTypeNamespace": "System",
@@ -1852,7 +1896,7 @@
         "MarkupOptions": {
           "AllowBinding": true,
           "AllowHardCodedValue": true,
-          "MappingMode": 1,
+          "MappingMode": 0,
           "Required": false
         },
         "DefaultValue": null,
@@ -1862,26 +1906,7 @@
         "OwningCapabilityName": null
       },
       {
-        "Name": "GroupName",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoFormBase",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "WrapWithSelectClass",
+        "Name": "WrapWithTextareaClass",
         "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
         "DeclaringTypeName": "BulmaForm",
         "PropertyTypeNamespace": "System",
@@ -1919,53 +1944,53 @@
         "OwningCapabilityName": null
       },
       {
-        "Name": "ClientIDMode",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "DotvvmControl",
-        "PropertyTypeNamespace": "DotVVM.Framework.Controls",
-        "PropertyTypeName": "ClientIDMode",
+        "Name": "GroupName",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoFormBase",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "String",
         "IsBindingProperty": false,
         "MarkupOptions": {
-          "AllowBinding": false,
+          "AllowBinding": true,
           "AllowHardCodedValue": true,
           "MappingMode": 1,
           "Required": false
         },
-        "DefaultValue": "Static",
-        "IsBasicProperty": true,
+        "DefaultValue": null,
+        "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": null,
         "OwningCapabilityName": null
       },
       {
-        "Name": "ExcludeProperties",
+        "Name": "WrapWithCheckboxClass",
         "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "AutoFormBase",
+        "DeclaringTypeName": "BulmaForm",
         "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String[]",
+        "PropertyTypeName": "Boolean",
         "IsBindingProperty": false,
         "MarkupOptions": {
-          "AllowBinding": false,
+          "AllowBinding": true,
           "AllowHardCodedValue": true,
           "MappingMode": 1,
           "Required": false
         },
-        "DefaultValue": [],
+        "DefaultValue": false,
         "IsBasicProperty": false,
         "IsCapability": false,
-        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "FieldSelectorProps"
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
       },
       {
-        "Name": "DataContext",
+        "Name": "ID",
         "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "DotvvmBindableObject",
+        "DeclaringTypeName": "DotvvmControl",
         "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "Object",
+        "PropertyTypeName": "String",
         "IsBindingProperty": false,
         "MarkupOptions": {
           "AllowBinding": true,
-          "AllowHardCodedValue": false,
+          "AllowHardCodedValue": true,
           "MappingMode": 1,
           "Required": false
         },
@@ -1976,7 +2001,45 @@
         "OwningCapabilityName": null
       },
       {
-        "Name": "WrapWithCheckboxClass",
+        "Name": "WrapWithSelectClass",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "BulmaForm",
+        "PropertyTypeNamespace": "System",
+        "PropertyTypeName": "Boolean",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": false,
+        "IsBasicProperty": false,
+        "IsCapability": false,
+        "OwningCapabilityNamespace": null,
+        "OwningCapabilityName": null
+      },
+      {
+        "Name": "FieldSelectorProps",
+        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
+        "DeclaringTypeName": "AutoFormBase",
+        "PropertyTypeNamespace": "DotVVM.AutoUI.Controls",
+        "PropertyTypeName": "AutoFormBase+FieldSelectorProps",
+        "IsBindingProperty": false,
+        "MarkupOptions": {
+          "AllowBinding": true,
+          "AllowHardCodedValue": true,
+          "MappingMode": 1,
+          "Required": false
+        },
+        "DefaultValue": null,
+        "IsBasicProperty": false,
+        "IsCapability": true,
+        "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
+        "OwningCapabilityName": "AutoFormBase.FieldProps"
+      },
+      {
+        "Name": "WrapWithInputClass",
         "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
         "DeclaringTypeName": "BulmaForm",
         "PropertyTypeNamespace": "System",
@@ -2011,64 +2074,7 @@
         "IsBasicProperty": false,
         "IsCapability": false,
         "OwningCapabilityNamespace": "DotVVM.AutoUI.Controls",
-        "OwningCapabilityName": "FieldSelectorProps"
-      },
-      {
-        "Name": "WrapWithRadioClass",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "BulmaForm",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "Boolean",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": false,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "ClientID",
-        "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-        "DeclaringTypeName": "DotvvmControl",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "String",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 0,
-          "Required": false
-        },
-        "DefaultValue": null,
-        "IsBasicProperty": true,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
-      },
-      {
-        "Name": "WrapWithInputClass",
-        "DeclaringTypeNamespace": "DotVVM.AutoUI.Controls",
-        "DeclaringTypeName": "BulmaForm",
-        "PropertyTypeNamespace": "System",
-        "PropertyTypeName": "Boolean",
-        "IsBindingProperty": false,
-        "MarkupOptions": {
-          "AllowBinding": true,
-          "AllowHardCodedValue": true,
-          "MappingMode": 1,
-          "Required": false
-        },
-        "DefaultValue": false,
-        "IsBasicProperty": false,
-        "IsCapability": false,
-        "OwningCapabilityNamespace": null,
-        "OwningCapabilityName": null
+        "OwningCapabilityName": "AutoFormBase.FieldSelectorProps"
       }
     ],
     "IsAbstract": false

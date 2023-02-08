@@ -9,7 +9,7 @@
         <div>
             <img src="{value: ImageUrl}" class="img-responsive" />
 
-            <dot:FileUpload UploadedFiles="{value: _root.ImageUpload}"
+            <dot:FileUpload UploadedFiles="{value: _root.ImageUpload}" 
                             UploadCompleted="{command: _root.ProcessImage()}" 
                             class="form-control" />
         </div>
