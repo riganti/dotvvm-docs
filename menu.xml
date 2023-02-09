@@ -90,6 +90,13 @@
 	  <DocPageMenuItem RouteName="server-side-viewmodel-cache" PageName="Server-side viewmodel cache" />
 	</DocPageMenuItem>
 	
+	<DocPageMenuItem RouteName="auto-ui" PageName="Auto UI">
+    <DocPageMenuItem RouteName="overview" PageName="Overview" />
+    <DocPageMenuItem RouteName="metadata" PageName="Metadata" />
+    <DocPageMenuItem RouteName="selectors" PageName="Selectors" />
+    <DocPageMenuItem RouteName="extensibility" PageName="Extensibility" />
+	</DocPageMenuItem>
+
 	<DocPageMenuItem RouteName="configuration" PageName="Configuration">
 	  <DocPageMenuItem RouteName="overview" PageName="Overview" />
 	  <DocPageMenuItem RouteName="dependency-injection" PageName="Dependency injection">
