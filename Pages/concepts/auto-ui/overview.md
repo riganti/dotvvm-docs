@@ -39,6 +39,8 @@ options.AddAutoUI(config => {
 });
 ```
 
+* Providing RESX files with field labels and error messages.
+
 * Implementing your own `IPropertyDisplayMetadataProvider` and replacing the default implementation in `IServiceCollection`.
 
 See the [Metadata](./metadata) chapter for more info.
