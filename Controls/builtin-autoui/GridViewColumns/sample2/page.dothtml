@@ -1,0 +1,9 @@
+<dot:GridView DataSource="{value: Customers}">
+  <auto:GridViewColumns GroupName="BasicInfo" />
+
+  <dot:GridViewTemplateColumn>
+    Custom column in the middle
+  </dot:GridViewTemplateColumn>
+
+  <auto:GridViewColumns GroupName="AdvancedInfo" />
+</dot:GridView>

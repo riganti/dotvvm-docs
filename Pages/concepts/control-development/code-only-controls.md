@@ -4,7 +4,7 @@ This kind of controls is useful when you need to render more complex or dynamic 
 
 Building code-only controls is more difficult, but they can do much more. All built-in DotVVM controls are implemented as code-only controls. 
 
-If you want to learn about how to write controls in DotVVM, we encourage you to look in the [DotVVM GitHub repository](https://github.com/riganti/dotvvm/tree/main/src/DotVVM.Framework/Controls), on in the [DotVVM Contrib repo](https://github.com/riganti/dotvvm-contrib) to see how the built-in controls are implemented.
+If you want to learn about how to write controls in DotVVM, we encourage you to look in the [DotVVM GitHub repository](https://github.com/riganti/dotvvm/tree/main/src/Framework/Framework/Controls), on in the [DotVVM Contrib repo](https://github.com/riganti/dotvvm-contrib) to see how the built-in controls are implemented.
 
 ## Fundamentals
 

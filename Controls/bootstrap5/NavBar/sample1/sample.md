@@ -4,5 +4,5 @@ The `NavBar` control can contain any number of child controls.
 
 The following controls are supported inside `NavBar`:
 
-* [NavText](~/controls/bootstrap5/NavText)
+* [NavBarText](~/controls/bootstrap5/NavBarText)
 * [NavBarSection](~/controls/bootstrap5/NavBarSection)

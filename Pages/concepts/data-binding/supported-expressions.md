@@ -213,6 +213,6 @@ Since we are adding a lot of methods from `System.Linq` namespace, we decided to
 * [Data-binding overview](~/pages/concepts/data-binding/overview)
 * [Respond to user actions](~/pages/concepts/respond-to-user-actions/overview)
 * [Binding context](~/pages/concepts/data-binding/binding-context)
-* [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api/bindings/overview)
+* [REST API bindings](~/pages/concepts/respond-to-user-actions/rest-api-bindings/overview)
 * [Formatting dates and numbers](~/pages/concepts/localization-and-cultures/formatting-dates-and-numbers)
 * [Custom JavaScript translators](~/pages/concepts/control-development/custom-javascript-translators)

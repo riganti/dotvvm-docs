@@ -1,0 +1,1 @@
+<auto:BulmaForm DataContext="{value: Customer}" ViewName="Edit" />

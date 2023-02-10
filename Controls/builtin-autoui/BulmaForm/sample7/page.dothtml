@@ -1,0 +1,24 @@
+<auto:BulmaForm DataContext="{value: Image}">
+    <EditorTemplate-Type>
+      <div class="select">
+        <dot:ComboBox DataSource="{value: _root.Types}" 
+                      SelectedValue="{value: Type}" />
+      </div>
+    </EditorTemplate-Type>
+    <FieldTemplate-ImageUrl>
+        <!-- Please note that you are responsible to render the structual elements produced by the BulmaForm control -->
+        <div class="field is-horizontal">
+            <div class="field-label is-normal"></div>
+            <div class="field-body">
+              <div class="field">
+                <img src="{value: ImageUrl}" class="img-responsive" />
+
+                <dot:FileUpload UploadedFiles="{value: _root.ImageUpload}" 
+                                UploadCompleted="{command: _root.ProcessImage()}" 
+                                class="form-control" />
+              </div>
+            </div>
+          </div>
+        <div>
+    </FieldTemplate-ImageUrl>
+</auto:BulmaForm>

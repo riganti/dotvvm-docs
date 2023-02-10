@@ -1,6 +1,8 @@
 # DotVVM Dynamic Data
 
-[DotVVM Dynamic Data](https://github.com/riganti/dotvvm-dynamic-data) is an extension of DotVVM which can auto-generate forms and [GridView](~/controls/builtin/GridView) controls based on the metadata and data annotation attributes in model classes.
+> From **DotVVM 4.1**, the **DotVVM Dynamic Data** package is considered obsolete. It will be published along with DotVVM, but it will not get new features and enhancements. **Please migrate to [DotVVM Auto UI](~/pages/concepts/auto-ui/overview) which provides more features and better performance**. 
+
+**DotVVM Dynamic Data** is an extension of DotVVM which can auto-generate forms and [GridView](~/controls/builtin/GridView) controls based on the metadata and data annotation attributes in model classes.
 
 For example, consider the following class:
 

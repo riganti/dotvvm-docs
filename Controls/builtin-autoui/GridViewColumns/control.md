@@ -1,0 +1,1 @@
+A special type of a column for [GridView](~/controls/builtin/GridView) control which auto-generates columns based on [DotVVM Auto UI model metadata](~/pages/concepts/auto-ui/metadata) for all properties of the row [binding context](~/pages/concepts/data-binding/binding-context).

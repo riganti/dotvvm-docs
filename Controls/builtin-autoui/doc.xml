@@ -1,0 +1,479 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotVVM.AutoUI</name>
+    </assembly>
+    <members>
+        <member name="M:DotVVM.AutoUI.AutoUIExtensions.AddAutoUI(Microsoft.Extensions.DependencyInjection.IDotvvmServiceCollection,System.Action{DotVVM.AutoUI.Configuration.AutoUIConfiguration})">
+            <summary>
+            Registers all services required by DotVVM AutoUI.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.AutoUIExtensions.AddAutoUIConfiguration(DotVVM.Framework.Configuration.DotvvmConfiguration)">
+            <summary> Registers the AutoUI controls </summary>
+        </member>
+        <member name="T:DotVVM.AutoUI.Configuration.AutoUIConfiguration">
+            <summary>
+            Represents the configuration of DotVVM AutoUI library.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Configuration.AutoUIConfiguration.FormEditorProviders">
+            <summary>
+            Gets a list of registered providers that render form fields.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Configuration.AutoUIConfiguration.GridColumnProviders">
+            <summary>
+            Gets a list of registered providers that render GridView columns.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Configuration.AutoUIConfiguration.PropertyDisplayNamesResourceFile">
+            <summary>
+            Gets or sets the RESX file class with display names of the fields.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Configuration.AutoUIConfiguration.ErrorMessagesResourceFile">
+            <summary>
+            Gets or sets the RESX file class with localized error messages.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Configuration.AutoUIConfiguration.PropertyMetadataRules">
+            <summary>
+            Gets or sets the collection of rules applied on the auto-generated fields.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Configuration.AutoUIConfiguration.AutoDiscoverFormEditorProviders(System.Reflection.Assembly)">
+            <summary>
+            Browses the specified assembly and auto-registers all form editor providers.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Configuration.AutoUIConfiguration.AutoDiscoverGridColumnProviders(System.Reflection.Assembly)">
+            <summary>
+            Browses the specified assembly and auto-registers all grid column providers.
+            </summary>
+        </member>
+        <member name="T:DotVVM.AutoUI.Controls.AutoEditor">
+            <summary>
+            Creates the editor for the specified property using the metadata information.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Controls.AutoForm.InitializeTable(DotVVM.AutoUI.AutoUIContext)">
+            <summary>
+            Creates the table element for the form.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Controls.AutoForm.InitializeTableRow(DotVVM.AutoUI.Metadata.PropertyDisplayMetadata,DotVVM.AutoUI.AutoUIContext,DotVVM.Framework.Controls.HtmlGenericControl@,DotVVM.Framework.Controls.HtmlGenericControl@)">
+            <summary>
+            Creates the table row for the specified property.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoFormBase.ViewName">
+            <summary>
+            Gets or sets the view name (e.g. Insert, Edit, ReadOnly). Some fields may have different metadata for each view.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoFormBase.GroupName">
+            <summary>
+            Gets or sets the group of fields that should be rendered. If not set, fields from all groups will be rendered.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Controls.AutoFormBase.GetPropertiesToDisplay(DotVVM.AutoUI.AutoUIContext,DotVVM.AutoUI.Controls.AutoFormBase.FieldSelectorProps)">
+            <summary>
+            Gets the list of properties that should be displayed.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Controls.AutoFormBase.InitializeControlLabel(DotVVM.AutoUI.Metadata.PropertyDisplayMetadata,DotVVM.AutoUI.AutoUIContext,DotVVM.AutoUI.Controls.AutoFormBase.FieldProps)">
+            <summary>
+            Creates the contents of the label cell for the specified property.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoFormBase.FieldSelectorProps.IncludeProperties">
+            <summary> Only the specified properties will be included in this form. Using ViewName, GroupName or ExcludedProperties at the same time as IncludedProperties does not make sense. The properties will be listed in the exact order defined in this property. </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoFormBase.FieldSelectorProps.ExcludeProperties">
+            <summary> The specified properties will not be included in this form. </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoFormBase.FieldSelectorProps.Property">
+            <summary> Adds or overrides the property binding. </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoFormBase.FieldSelectorProps.ViewName">
+            <summary> Gets or sets the view name (e.g. Insert, Edit, ReadOnly). Some fields may have different metadata for each view. </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoFormBase.FieldSelectorProps.GroupName">
+            <summary> Gets or sets the group of fields that should be rendered. If not set, fields from all groups will be rendered. </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoFormBase.FieldProps.Changed">
+            <summary> Calls the command when the user makes changes to the specified field. For example `Changed-CountryId="{staticCommand: _root.States.Items = statesDataProvider.GetSelectorItems(_root.Address).Result}"` will reload the list of states whenever CountryId is changed. </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoFormBase.FieldProps.Enabled">
+            <summary> Controls if the specified property is editable. </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoFormBase.FieldProps.Visible">
+            <summary> Controls if the specified field is visible </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoFormBase.FieldProps.Label">
+            <summary> Overrides which text is used as a field label. </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoFormBase.FieldProps.FieldTemplate">
+            <summary> Overrides how the entire form field (editor, label, ...) looks like. </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoFormBase.FieldProps.EditorTemplate">
+            <summary> Overrides which component is used as an editor. </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoGridViewColumns.Props.Changed">
+            <summary> Calls the command when the user makes changes to the specified field. For example `Changed-CountryId="{staticCommand: _root.States.Items = statesDataProvider.GetSelectorItems(_root.Address).Result}"` will reload the list of states whenever CountryId is changed. </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoGridViewColumns.Props.IsEditable">
+            <summary> Controls if the specified property is editable. </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoGridViewColumns.Props.Header">
+            <summary> Overrides which text is used as the column title. </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoGridViewColumns.Props.ContentTemplate">
+            <summary> Overrides how the field is displayed. </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoGridViewColumns.Props.EditorTemplate">
+            <summary> Overrides which component is used as an editor. </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.BootstrapForm.LabelCssClass">
+            <summary>
+            Gets or sets the CSS class that will be applied to the rendered label element.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.BootstrapForm.FormGroupCssClass">
+            <summary>
+            Gets or sets the CSS class that will be applied to the root div element. Set this to 'form-group' if you are using Bootstrap 3 and 4.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.BootstrapForm.FormControlCssClass">
+            <summary>
+            Gets or sets the CSS class that will be applied to the rendered control elements (TextBox and other input types, except for select, checkbox and radios).
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.BootstrapForm.FormSelectCssClass">
+            <summary>
+            Gets or sets the CSS class that will be applied to the rendered select elements. Set this to 'form-control' if you are using Bootstrap 3 and 4.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.BootstrapForm.FormCheckCssClass">
+            <summary>
+            Gets or sets the CSS class that will be applied to the rendered div element when the form group contains checkboxes or radio buttons.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.BootstrapForm.FormCheckLabelCssClass">
+            <summary>
+            Gets or sets the CSS class that will be applied on the label element of the CheckBox or RadioButton controls inside the form group.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.BootstrapForm.FormCheckInputCssClass">
+            <summary>
+            Gets or sets the CSS class that will be applied on the input element of the CheckBox or RadioButton controls inside the form group.
+            </summary>
+        </member>
+        <member name="F:DotVVM.AutoUI.Controls.BootstrapForm.RequiresFormSelectCssClassProperty">
+            <summary>
+            Indicates that when the AutoEditor control is used inside BootstrapForm, it should be wrapped in a div with a 'form-select' CSS class. This attached property is intended to be used when implementing custom FormEditorProviders.
+            </summary>
+        </member>
+        <member name="F:DotVVM.AutoUI.Controls.BootstrapForm.RequiresFormControlCssClassProperty">
+            <summary>
+            Indicates that when the AutoEditor control is used inside BootstrapForm, it should be wrapped in a div with a 'form-control' CSS class. This attached property is intended to be used when implementing custom FormEditorProviders.
+            </summary>
+        </member>
+        <member name="F:DotVVM.AutoUI.Controls.BootstrapForm.RequiresFormCheckCssClassProperty">
+            <summary>
+            Indicates that when the AutoEditor control is used inside BootstrapForm, it should be wrapped in a div with a 'form-check' CSS class. This attached property is intended to be used when implementing custom FormEditorProviders.
+            </summary>
+        </member>
+        <member name="T:DotVVM.AutoUI.Controls.BulmaForm">
+            <summary> Renders a bulma table-like form: https://bulma.io/documentation/form/general/#horizontal-form </summary>
+        </member>
+        <member name="F:DotVVM.AutoUI.Controls.BulmaForm.WrapWithSelectClassProperty">
+            <summary>
+            Indicates that when the AutoEditor control is used inside BulmaForm, it should be wrapped in a div with a 'select' CSS class. This attached property is intended to be used when implementing custom FormEditorProviders.
+            </summary>
+        </member>
+        <member name="F:DotVVM.AutoUI.Controls.BulmaForm.WrapWithCheckboxClassProperty">
+            <summary>
+            Indicates that when the AutoEditor control is used inside BulmaForm, it should be wrapped in a div with a 'checkbox' CSS class. This attached property is intended to be used when implementing custom FormEditorProviders.
+            </summary>
+        </member>
+        <member name="F:DotVVM.AutoUI.Controls.BulmaForm.WrapWithRadioClassProperty">
+            <summary>
+            Indicates that when the AutoEditor control is used inside BulmaForm, it should be wrapped in a div with a 'radio' CSS class. This attached property is intended to be used when implementing custom FormEditorProviders.
+            </summary>
+        </member>
+        <member name="F:DotVVM.AutoUI.Controls.BulmaForm.WrapWithTextareaClassProperty">
+            <summary>
+            Indicates that when the AutoEditor control is used inside BulmaForm, it should be wrapped in a div with a 'textarea' CSS class. This attached property is intended to be used when implementing custom FormEditorProviders.
+            </summary>
+        </member>
+        <member name="F:DotVVM.AutoUI.Controls.BulmaForm.WrapWithInputClassProperty">
+            <summary>
+            Indicates that when the AutoEditor control is used inside BulmaForm, it should be wrapped in a div with an 'input' CSS class. This attached property is intended to be used when implementing custom FormEditorProviders.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.SetSelection``1">
+            <summary>
+            Marks the property with SelectionAttribute indicating that the user will select a value from a list of TItem provided by ISelectionProvider&lt;TItem&gt;.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.SetDisplayName(System.Type,System.String)">
+            <summary>
+            Sets the DisplayAttribute.ResourceType and DisplayAttribute.Name properties to a resource type and key indicating that the display name of the property should be taken from the resource file.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.SetDisplayName(System.String)">
+            <summary>
+            Sets the DisplayAttribute.Name property to configure the display name of the property.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.SetGroupName(System.String)">
+            <summary>
+            Sets the DisplayAttribute.GroupName property to configure the group in which the property belongs. The group name is an identifier which can be used to filter properties in auto-generated forms or table using the GroupName property.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.SetOrder(System.Nullable{System.Int32})">
+            <summary>
+            Sets the DisplayAttribute.Order property to configure the order of the property in the object.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.SetFormatString(System.String)">
+            <summary>
+            Sets the DisplayFormatAttribute.DataFormatString property to configure the format string for the property values.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.SetNullDisplayText(System.String)">
+            <summary>
+            Sets the DisplayFormatAttribute.NullDisplayText property to configure the text representing the null value.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.Hide">
+            <summary>
+            Sets the DisplayAttribute.AutoGenerateField property to false indicating that the field should be hidden.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.SetAutoGenerateField(System.Boolean)">
+            <summary>
+            Sets the DisplayAttribute.AutoGenerateField property indicating whether the field should be visible or hidden.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.ShowForViews(System.String)">
+            <summary>
+            Sets the DisplayAttribute.AutoGenerateField property to true, and adds a VisibleAttribute to specify the views in which the field should be visible.
+            The view name is an identifier which can be used to filter properties in auto-generated forms or table using the ViewName property.
+            You can use ! (NOT), &amp; (AND) and | (OR) operators.
+            Examples:
+            - Insert            // visible only in the Insert view
+            - Insert | Edit     // visible in Insert or Edit views
+            - !Insert &amp; !Edit   // visible in all views except for Insert and Edit
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.ShowForRoles(System.String)">
+            <summary>
+            Sets the DisplayAttribute.AutoGenerateField property to true, and adds a VisibleAttribute to specify the user roles for which the field should be visible.
+            You can use ! (NOT), &amp; (AND) and | (OR) operators.
+            Examples:
+            - Admin                   // visible only for the Admin role
+            - Admin | Contributor     // visible for Admin or Contributor roles
+            - !Admin &amp; !Contributor   // visible for all roles except for Admin or Contributor roles
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.ShowIfAuthenticated(DotVVM.AutoUI.Annotations.AuthenticationMode)">
+            <summary>
+            Sets the DisplayAttribute.AutoGenerateField property to true, and adds a VisibleAttribute to specify that the field should be visible only for authenticated users.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.SetDataType(System.ComponentModel.DataAnnotations.DataType)">
+            <summary>
+            Sets the DataTypeAttribute.DataType property indicating the type of the value in the field.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.SetIsEditable(System.Boolean)">
+            <summary>
+            Sets the EditableAttribute.AllowEdit property indicating whether the field can be edited by the user.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.EnableForViews(System.String)">
+            <summary>
+            Sets the EditableAttribute.AllowEdit property to true, and adds a EnabledAttribute to specify the views in which the field should be editable.
+            The view name is an identifier which can be used to filter properties in auto-generated forms or table using the ViewName property.
+            You can use ! (NOT), &amp; (AND) and | (OR) operators.
+            Examples:
+            - Insert            // editable only in the Insert view
+            - Insert | Edit     // editable in Insert or Edit views
+            - !Insert &amp; !Edit   // editable in all views except for Insert and Edit
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.EnableForRoles(System.String)">
+            <summary>
+            Sets the EditableAttribute.AllowEdit property to true, and adds a EditableAttribute to specify the user roles for which the field should be visible.
+            You can use ! (NOT), &amp; (AND) and | (OR) operators.
+            Examples:
+            - Admin                   // editable only for the Admin role
+            - Admin | Contributor     // editable for Admin or Contributor roles
+            - !Admin &amp; !Contributor   // editable for all roles except for Admin or Contributor roles
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.EnableIfAuthenticated(DotVVM.AutoUI.Annotations.AuthenticationMode)">
+            <summary>
+            Sets the EditableAttribute.AllowEdit property to true, and adds a EditableAttribute to specify that the field should be visible only for authenticated users.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.DisplayLabel(System.Boolean)">
+            <summary>
+            Sets whether the label for the field should be displayed.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.AddFormControlContainerCssClass(System.String)">
+            <summary>
+            Appends to the StyleAttribute.FormControlContainerCssClass indicating that a specified CSS class should be appended to the container of the form control.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.AddFormRowCssClass(System.String)">
+            <summary>
+            Appends to the StyleAttribute.FormRowCssClass indicating that a specified CSS class should be appended to the row in the form.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.AddFormControlCssClass(System.String)">
+            <summary>
+            Appends to the StyleAttribute.FormControlCssClass indicating that a specified CSS class should be appended to the editor control in the form.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.AddGridCellCssClass(System.String)">
+            <summary>
+            Appends to the StyleAttribute.GridCellCssClass indicating that a specified CSS class should be appended to the value cell in the grid.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.AddGridHeaderCellCssClass(System.String)">
+            <summary>
+            Appends to the StyleAttribute.GridHeaderCellCssClass indicating that a specified CSS class should be appended to the header cell in the grid.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.SetUIHint(System.String[])">
+            <summary>
+            Sets a list of UI hint identifiers that help to select the best editor for the property. The first registered editor which contains at least one UI hint will be used.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier.Configure(System.Action{DotVVM.AutoUI.Metadata.PropertyDisplayMetadata})">
+            <summary>
+            Applies a custom action on PropertyDisplayMetadata object to configure the field.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyMetadataModifierCollection.For(System.Type,System.Action{DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier})">
+            <summary>
+            Registers a configuration rule for all properties of the specified type.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyMetadataModifierCollection.For(System.String,System.Action{DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier})">
+            <summary>
+            Registers a configuration rule for all properties with the specified name.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.Builder.PropertyMetadataModifierCollection.For(System.Func{System.Reflection.PropertyInfo,System.Boolean},System.Action{DotVVM.AutoUI.Metadata.Builder.PropertyDisplayMetadataModifier})">
+            <summary>
+            Registers a configuration rule for all properties matching the specified condition.
+            </summary>
+        </member>
+        <member name="T:DotVVM.AutoUI.Metadata.DataAnnotationsPropertyDisplayMetadataProvider">
+            <summary>
+            Provides information about how the property is displayed in the user interface.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.DataAnnotationsPropertyDisplayMetadataProvider.GetPropertyMetadata(System.Reflection.PropertyInfo)">
+            <summary>
+            Get the metadata about how the property is displayed.
+            </summary>
+        </member>
+        <member name="T:DotVVM.AutoUI.Metadata.DefaultEntityPropertyListProvider">
+            <summary>
+            Provides a list of properties for the specified entity.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.DefaultEntityPropertyListProvider.GetProperties(System.Type,DotVVM.AutoUI.Annotations.IViewContext)">
+            <summary>
+            Gets a list of properties for the specified entity and view name.
+            </summary>
+        </member>
+        <member name="T:DotVVM.AutoUI.Metadata.IEntityPropertyListProvider">
+            <summary>
+            Provides a list of properties for the specified entity.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.IEntityPropertyListProvider.GetProperties(System.Type,DotVVM.AutoUI.Annotations.IViewContext)">
+            <summary>
+            Gets a list of properties for the specified entity and view name.
+            </summary>
+        </member>
+        <member name="T:DotVVM.AutoUI.Metadata.IPropertyDisplayMetadataProvider">
+            <summary>
+            Provides information about how the property is displayed in the user interface.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.IPropertyDisplayMetadataProvider.GetPropertyMetadata(System.Reflection.PropertyInfo)">
+            <summary>
+            Get the metadata about how the property is displayed.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.PropertyDisplayMetadata.GetDisplayName">
+            <summary> Returns DisplayName or a default name derived from the PropertyInfo if it is not set. </summary>
+        </member>
+        <member name="T:DotVVM.AutoUI.Metadata.ResourcePropertyDisplayMetadataProvider">
+            <summary>
+            Property display metadata provider which loads missing property names from the RESX file.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Metadata.ResourcePropertyDisplayMetadataProvider.PropertyDisplayNameResourceFile">
+            <summary>
+            Gets the type of the resource file that contains the property names.
+            The resource key is in the "TypeName_PropertyName" or "PropertyName".
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.ResourcePropertyDisplayMetadataProvider.GetPropertyMetadata(System.Reflection.PropertyInfo)">
+            <summary>
+            Get the metadata about how the property is displayed.
+            </summary>
+        </member>
+        <member name="T:DotVVM.AutoUI.Metadata.ResourceViewModelValidationMetadataProvider">
+            <summary>
+            Validation metadata provider which loads missing error messages from the RESX file.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Metadata.ResourceViewModelValidationMetadataProvider.ErrorMessagesResourceFileType">
+            <summary>
+            Gets the type of the resource file that contains the default error message patterns.
+            The resource key is the name of the attribute without the trailing Attribute (e.g. Required for RequiredAttribute etc.).
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.ResourceViewModelValidationMetadataProvider.GetAttributesForProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Gets validation attributes for the specified property.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.ResourceViewModelValidationMetadataProvider.GetAttributesForPropertyCore(System.Reflection.PropertyInfo)">
+            <summary>
+            Determines validation attributes for the specified property and loads missing error messages from the resource file.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.ResourceViewModelValidationMetadataProvider.CloneAttribute(System.ComponentModel.DataAnnotations.ValidationAttribute)">
+            <summary>
+            Creates a copy of the specified validation attribute instance.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.Metadata.ResourceViewModelValidationMetadataProvider.GetErrorMessageKey(System.ComponentModel.DataAnnotations.ValidationAttribute)">
+            <summary>
+            Gets the error message for the specified attribute.
+            </summary>
+        </member>
+        <member name="T:DotVVM.AutoUI.PropertyHandlers.FormEditors.CheckBoxEditorProvider">
+            <summary>
+            Renders a CheckBox control for properties of boolean type.
+            </summary>
+        </member>
+        <member name="T:DotVVM.AutoUI.PropertyHandlers.FormEditors.TextBoxEditorProvider">
+            <summary>
+            Renders a TextBox control for properties of string, numeric or date type.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -100,7 +100,7 @@ public IEnumerable<ValidationResult> Validate(ValidationContext validationContex
 }
 ```
 
-> The format of validation paths **has changed in DotVVM 4.0** - the validation paths shall be separated by `/` - e. g. `ChildObject/InvalidProperty`. In the `IValidatableObject` implementation, the paths are relative to the currently validated object. Please see the [DotVVM 3.0](/docs/3-0/concepts/validation/overview#report-errors-for-child-objects) version of this page to see the old format of property validation paths.
+> The format of validation paths **has changed in DotVVM 4.0** - the validation paths shall be separated by `/` - e. g. `ChildObject/InvalidProperty`. In the `IValidatableObject` implementation, the paths are relative to the currently validated object. Please see the [DotVVM 3.0](/3.0/pages/concepts/validation/overview#report-errors-for-child-objects) version of this page to see the old format of property validation paths.
 
 ### ModelState
 

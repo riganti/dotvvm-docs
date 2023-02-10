@@ -1,0 +1,8 @@
+<div class="two-columns">
+    <div>
+        <auto:BulmaForm DataContext="{value: Customer}" IncludeProperties="Name,IsCompany" />
+    </div>
+    <div>
+        <auto:BulmaForm DataContext="{value: Customer}" ExcludeProperties="Name,IsCompany" />
+    </div>
+</div>

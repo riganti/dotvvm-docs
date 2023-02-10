@@ -1,0 +1,17 @@
+<auto:Form DataContext="{value: Image}">
+    <EditorTemplate-Type>
+        <dot:ComboBox DataSource="{value: _root.Types}" 
+                      SelectedValue="{value: Type}" />
+    </EditorTemplate-Type>
+    <FieldTemplate-ImageUrl>
+        <!-- Please note that you are responsible to render the structual elements produced by the Form control -->
+        <tr>
+            <td colspan="2">    
+                <img src="{value: ImageUrl}" />
+
+                <dot:FileUpload UploadedFiles="{value: _root.ImageUpload}" 
+                                UploadCompleted="{command: _root.ProcessImage()}" />
+            </td>
+        </tr>
+    </FieldTemplate-ImageUrl>
+</auto:Form>

@@ -1,0 +1,8 @@
+<div class="two-columns">
+    <div>
+        <auto:Form DataContext="{value: Customer}" GroupName="BasicInfo" />
+    </div>
+    <div>
+        <auto:Form DataContext="{value: Customer}" GroupName="ContactInfo" />
+    </div>
+</div>

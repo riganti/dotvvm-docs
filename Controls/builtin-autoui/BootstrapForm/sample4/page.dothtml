@@ -1,0 +1,1 @@
+<auto:BootstrapForm DataContext="{value: Customer}" ViewName="Edit" />

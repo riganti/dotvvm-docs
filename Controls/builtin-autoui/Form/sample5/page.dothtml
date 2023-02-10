@@ -1,0 +1,2 @@
+<auto:Form DataContext="{value: Customer}" 
+           Property-AgreeWithConditions="{value: _root.AgreeWithConditions}" />

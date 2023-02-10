@@ -1,0 +1,17 @@
+<auto:BootstrapForm DataContext="{value: Image}">
+    <EditorTemplate-Type>
+        <dot:ComboBox DataSource="{value: _root.Types}" 
+                      SelectedValue="{value: Type}" 
+                      class="form-select"/>
+    </EditorTemplate-Type>
+    <FieldTemplate-ImageUrl>
+        <!-- Please note that you are responsible to render the structual elements produced by the BootstrapForm control -->
+        <div>
+            <img src="{value: ImageUrl}" class="img-responsive" />
+
+            <dot:FileUpload UploadedFiles="{value: _root.ImageUpload}" 
+                            UploadCompleted="{command: _root.ProcessImage()}" 
+                            class="form-control" />
+        </div>
+    </FieldTemplate-ImageUrl>
+</auto:BootstrapForm>

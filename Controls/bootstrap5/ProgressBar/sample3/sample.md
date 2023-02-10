@@ -1,3 +1,3 @@
-## Sample 3: Stacked Progress Bar
+## Sample 3: ProgressBar - Bindings
 
-You can create Bootstrap stacked `ProgressBars` using [StackedProgressBar](~/controls/bootstrap5/StackedProgressBar) control.
+The `Value` and `Color` properties of `ProgressBar` are bindable.

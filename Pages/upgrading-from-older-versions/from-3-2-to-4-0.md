@@ -1,6 +1,6 @@
 # Upgrading from 3.2 to 4.0
 
-See [Release notes of DotVVM 4.0](https://github.com/riganti/dotvvm/releases/tag/v4.0) for complete list of changes.
+See [Release notes of DotVVM 4.0](https://github.com/riganti/dotvvm/releases/tag/v4.0.0) for complete list of changes.
 
 ## Breaking changes
 

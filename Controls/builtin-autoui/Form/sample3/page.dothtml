@@ -1,0 +1,8 @@
+<div class="two-columns">
+    <div>
+        <auto:Form DataContext="{value: Customer}" IncludeProperties="Name,IsCompany" />
+    </div>
+    <div>
+        <auto:Form DataContext="{value: Customer}" ExcludeProperties="Name,IsCompany" />
+    </div>
+</div>
