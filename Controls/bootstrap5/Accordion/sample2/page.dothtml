@@ -3,4 +3,4 @@
                 ItemContentText="{value: Text}"
                 ExpandedItemIndex="{value: IndexAdvanced}" />
 
-<dot:Button Click="{command: Additem()}" Text="Add" />
+<dot:Button Click="{command: AddItem()}" Text="Add" />

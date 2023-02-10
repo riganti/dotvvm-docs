@@ -9,7 +9,6 @@ public class ViewModel : DotvvmViewModelBase
     
     public ViewModel()
     {
-        Date = DateTime.Now;
     }
 
     public void ChangeSize()

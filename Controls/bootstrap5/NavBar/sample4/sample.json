@@ -1,14 +1,5 @@
 ﻿{
   "files": [
-    { "name": "page.dothtml" },
-    { 
-      "name": "ViewModel.cs",
-      "replacements": [
-        {
-          "pattern": "(https?://)",
-          "replacement": "/bootstrap4-4.0/?url=\\1"
-        }
-      ]
-    }
+    { "name": "page.dothtml" }
   ]
 }
