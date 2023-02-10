@@ -7,7 +7,7 @@ The controls in DotVVM can validate whether they are being used correctly. Simpl
 The `MarkupOptions` attribute can be applied on DotVVM control properties and has several parameters which control how the property can be used:
 
 * `Required` indicates that the property must be set in the markup.
-* `AllowBinding` indicates that the property can be bound-to on the client-side using [value binding](/pages/concepts/data-binding/value-binding).
+* `AllowBinding` indicates that the property can be bound-to on the client-side using [value binding](~/pages/concepts/data-binding/value-binding).
 * `AllowHardCodedValue` indicates that the property can specify a value directly in the markup. This option also allows the [resource binding](~/pages/concepts/data-binding/resource-binding) which is not a client-side binding and is evaluated on the server.
 
 ## ValidateUsage method

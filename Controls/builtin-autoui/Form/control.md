@@ -4,6 +4,6 @@ This control renders table-based form which works for the basic scenarios and do
 
 There are also other versions of this control which produce HTML and CSS classes expected by popular CSS frameworks: 
 
-* [BootstrapForm](../BootstrapForm) for [Bootstrap 5](https://getbootstrap.com/) 
+* [BootstrapForm](./BootstrapForm) for [Bootstrap 5](https://getbootstrap.com/) 
 
-* [BulmaForm](../BulmaForm) for [Bulma](https://bulma.io/)
+* [BulmaForm](./BulmaForm) for [Bulma](https://bulma.io/)

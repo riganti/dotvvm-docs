@@ -4,9 +4,9 @@ This control renders HTML and CSS compatible with [Bootstrap 5](https://getboots
 
 There are also other versions of this control which produce HTML and CSS classes expected by popular CSS frameworks: 
 
-* [BulmaForm](../BulmaForm) for [Bulma](https://bulma.io/)
+* [BulmaForm](./BulmaForm) for [Bulma](https://bulma.io/)
 
-* [Form](../Form) - table-based form layout without any CSS framework
+* [Form](./Form) - table-based form layout without any CSS framework
 
 ## Validation style of CheckBox in Bootstrap 5 and 4
 

@@ -65,7 +65,7 @@ The framework contains a few standard capabilities which help with frequently us
 
 The `HtmlCapability` allows the control to have `ID`, `Visible`, `class` attributes (including the `class-name={value: expression}` property groups), `style` (including the `style-name={value: expression}` property groups), and any other HTML attributes.
 
-If you declare a [composite control](composite-control) which should support setting these attributes, you can just add `HtmlCapability` as a parameter to the `GetContents` method. You can then pass it e. g. to the `HtmlGenericControl` so it is rendered:
+If you declare a [composite control](composite-controls) which should support setting these attributes, you can just add `HtmlCapability` as a parameter to the `GetContents` method. You can then pass it e. g. to the `HtmlGenericControl` so it is rendered:
 
 ```CSHARP
 public class MyControl : CompositeControl

@@ -4,6 +4,6 @@ This control renders HTML and CSS compatible with [Bulma](https://bulma.io/). Ev
 
 There are also other versions of this control which produce HTML and CSS classes expected by popular CSS frameworks: 
 
-* [BulmaForm](../BulmaForm) for [Bootstrap 5](https://getbootstrap.com/) 
+* [BulmaForm](./BulmaForm) for [Bootstrap 5](https://getbootstrap.com/) 
 
-* [Form](../Form) - table-based form layout without any CSS framework
+* [Form](./Form) - table-based form layout without any CSS framework

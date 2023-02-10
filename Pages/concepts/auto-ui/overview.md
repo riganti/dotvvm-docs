@@ -66,7 +66,7 @@ Auto UI adds a special `Selection` attribute which instructs the Auto UI that th
 
 When you use the selectors, Auto UI will automatically look for a property of type `SelectionViewModel<TSelector>` that will host the collection of options to select from. Also, you will need to provide an implementation of `ISelectionProvider<TSelector>` to be able to obtain the list of the options.
 
-See the [Selectors](./selectors.md) chapter for more info.
+See the [Selectors](./selectors) chapter for more info.
 
 ### Custom rules
 
@@ -80,7 +80,7 @@ See the [Extensibility](./extensibility) chapter for more info.
 
 Main improvements in **Auto UI**:
 
-* [Selectors](./selectors.md)
+* [Selectors](./selectors)
 * Pre-compilation of generated controls when the page is loaded for the first time
 * Multiple versions of [Form](~/controls/builtin-autoui/Form) controls for popular CSS frameworks Bootstrap and Bulma
 * Explicit listing of properties that should be generated using the `IncludeProperties` and `ExcludeProperties`

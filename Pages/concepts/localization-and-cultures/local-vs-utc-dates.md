@@ -12,7 +12,7 @@ Specifically, the `Kind` property of the `DateTime` is ignored by DotVVM - we wa
 
 That's why DotVVM represents dates in the viewmodel as strings in a static format (using the `Date` object in JavaScript would shift the date to the browsers local timezone). 
 
-If you need to work with the dates on the client-side, use the `dotvvm.serialization.parseDate` and `dotvvm.serialization.serializeDate`. See the [Read and modify viewmodel from JS](../concepts/client-side-development/read-and-modify-viewmodel-from-js#Dates) for more info.
+If you need to work with the dates on the client-side, use the `dotvvm.serialization.parseDate` and `dotvvm.serialization.serializeDate`. See the [Read and modify viewmodel from JS](~/pages/concepts/client-side-development/read-and-modify-viewmodel-from-js#dates) for more info.
 
 ## Converting UTC time to the browser timezone
 
@@ -37,7 +37,7 @@ When DotVVM translates this method to JavaScript, it can also provide a _reverse
 <dot:TextBox Text="{value: MyDate.ToBrowserLocalTime()}" FormatString="yyyy-M-d H:mm" />
 ```
 
-Please note that the method doesn't do any conversion when evaluated on the server (e. g. in the [server rendering](~/pages/concepts/server-rendering) mode or using [resource binding](~/pages/concepts/data-binding/resource-binding)).
+Please note that the method doesn't do any conversion when evaluated on the server (e. g. in the [server rendering](~/pages/concepts/server-side-rendering) mode or using [resource binding](~/pages/concepts/data-binding/resource-binding)).
 
 ## See also
 

@@ -68,7 +68,7 @@ public override JsExpression GetJsTranslation(JsExpression dataContext)
 }
 ```
 
-> If you'd like to see implementation of a few more, have a look at [the real implementation on Github](https://github.com/riganti/dotvvm/blob/main/src/DotVVM.Framework/Compilation/ControlTree/BindingExtensionParameter.cs)
+> If you'd like to see implementation of a few more, have a look at [the real implementation on Github](https://github.com/riganti/dotvvm/blob/main/src/Framework/Framework/Compilation/ControlTree/BindingExtensionParameter.cs)
 
 ### Registration
 
