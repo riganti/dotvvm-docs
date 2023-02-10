@@ -2,7 +2,7 @@
 {
     public int IndexAdvanced { get; set; } = 1;
     public List<AccordionModel> Accordions { get; set; }
-    public BasicViewModel()
+    public ViewModel()
     {
         Accordions = new List<AccordionModel>()
         {
@@ -18,11 +18,11 @@
             }
         };
     }
-    public void Additem()
+    public void AddItem()
     {
         var itemNumber = Accordions.Count + 1;
         Accordions.Add(
-            new Accordion()
+            new AccordionModel()
             {
                 Header = $"Item {itemNumber}",
                 Text = $"Text  {itemNumber}"
