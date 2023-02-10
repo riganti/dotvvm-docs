@@ -1,8 +1,9 @@
 <auto:BulmaForm DataContext="{value: Image}">
     <EditorTemplate-Type>
+      <div class="select">
         <dot:ComboBox DataSource="{value: _root.Types}" 
-                      SelectedValue="{value: Type}" 
-                      class="form-select"/>
+                      SelectedValue="{value: Type}" />
+      </div>
     </EditorTemplate-Type>
     <FieldTemplate-ImageUrl>
         <!-- Please note that you are responsible to render the structual elements produced by the BulmaForm control -->

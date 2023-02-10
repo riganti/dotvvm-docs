@@ -1,6 +1,6 @@
 # Business Pack themes overview
 
-The [DotVVM Business Pack](../overview) ships wit two built-in themes you can use in your application:
+The [DotVVM Business Pack](../getting-started) ships wit two built-in themes you can use in your application:
 
 * `Enterprise` theme is optimized for business applications with large and complicated forms where you need to utilize space efficiently. The controls don't use rounded corners and their margins are quite small so many fields can fit on the screen. You can see how the controls look like in [DotVVM Business Pack Gallery](https://www.dotvvm.com/gallery/business-pack/).
 
@@ -36,7 +36,7 @@ See the [Customize Business Pack theme](customize) section for more information.
 
 ## See also
 
-* [DotVVM Business Pack overview](../overview)
+* [DotVVM Business Pack overview](../getting-started)
 * [Exporting data](../exporting-data)
 * [Business Pack controls](~/controls/businesspack/Alert)
 * [Release notes](../release-notes)

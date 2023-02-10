@@ -1,5 +1,5 @@
 <auto:Editor Property="{value: ConfirmOrder}" />
 
-<auto:Editor Property="{value: AgreeWithConditions}"
+<auto:Editor Property="{value: AgreeWithConditions}" 
              Enabled="{value: ConfirmOrder}" 
              Changed="{command: OnAgreeChanged()}" />

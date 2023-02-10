@@ -202,7 +202,7 @@ var settings = GridViewExportExcelSettings<T>.Default
 
 ## See also
 
-* [DotVVM Business Pack overview](overview)
-* [Themes](themes/overview)
+* [DotVVM Business Pack overview](./getting-started)
+* [Themes](./themes/overview)
 * [Business Pack controls](~/controls/businesspack/Alert)
-* [Release notes](release-notes)
+* [Release notes](./release-notes)

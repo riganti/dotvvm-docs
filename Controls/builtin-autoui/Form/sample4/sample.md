@@ -8,11 +8,11 @@ You can decorate the properties with the `Visible` attribute to define in which 
 // will be shown only when ViewName == "List"
 [Visible(ViewNames = "List")]
 public string CountryName { get; set; }
-
+ 
 // will be shown only when ViewName == "Insert" || ViewName == "Edit"
 [Visible(ViewNames = "Insert | Edit")]
 public int CountryId { get; set; }
-    
+ 
 // will be shown only when ViewName != "Insert" && ViewName != "Edit"
 [Visible(ViewNames = "!Insert & !Edit")]
 public int UserId { get; set; }

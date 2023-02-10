@@ -1,8 +1,8 @@
-<div class="two-columns">
-    <div>
+<div class="row">
+    <div class="col">
         <auto:BootstrapForm DataContext="{value: Customer}" GroupName="BasicInfo" />
     </div>
-    <div>
+    <div class="col">
         <auto:BootstrapForm DataContext="{value: Customer}" GroupName="ContactInfo" />
     </div>
 </div>

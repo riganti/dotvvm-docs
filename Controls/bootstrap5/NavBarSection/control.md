@@ -1,4 +1,4 @@
-Represents an section in [NavBar](~/controls/bootstrap4/NavBar).
+Represents an section in [NavBar](~/controls/bootstrap5/NavBar).
 
 <https://getbootstrap.com/docs/5.2/components/navbar/>
 

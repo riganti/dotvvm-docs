@@ -1,17 +1,6 @@
-﻿<bs:StackedProgressBar>
-  <bs:ProgressBar Color="Success" Value="25">
-    25%
+﻿  <bs:ProgressBar Value="{value: Width}" Color="{value: Color}">
+    {{value: Width}}%
   </bs:ProgressBar>
 
-  <bs:ProgressBar Color="Info" Value="25">
-    25%
-  </bs:ProgressBar>
-
-  <bs:ProgressBar Color="Warning" Value="11">
-    11%
-  </bs:ProgressBar>
-
-  <bs:ProgressBar Color="Danger" Value="14">
-    14%
-  </bs:ProgressBar>
-</bs:StackedProgressBar>
+<dot:Button Text="Change width" Click="{command: ChangeWidth()}" />
+<dot:Button Text="Change color" Click="{command: ChangeColor()}" />

@@ -61,14 +61,14 @@ dotvvmElectron.run(__dirname, {
   
   * ```relativeWebAppPath``` String (optional) - A relative path to standalone web app **without extension** (extension will be added according to the operating system)
   * ```indexPagePath``` String (optional) - a URL path of the first loaded page
-  * ```browserWindowOptions``` [Object](https://electron.atom.io/docs/api/browser-window/#new-browserwindowoptions) (optional) - options passed to new **Browser Window**
+  * ```browserWindowOptions``` [Object](https://www.electronjs.org/docs/latest/api/browser-window#new-browserwindowoptions) (optional) - options passed to new **Browser Window**
   * ```browserWindowCreated``` Function (optional) - function called after creating a **Browser Window**
-    * ```browserWindow``` [Object](https://electron.atom.io/docs/api/browser-window/)
+    * ```browserWindow``` [Object](https://www.electronjs.org/docs/latest/api/browser-window/)
   
 
 ## Sample
 
-First, you have to resolve object **ElectronService** in ViewModel. ElectronService contains all available modules. Modules names corresponds with modules in [Electron API](https://electron.atom.io/docs/api/).
+First, you have to resolve object **ElectronService** in ViewModel. ElectronService contains all available modules. Modules names corresponds with modules in [Electron API](https://www.electronjs.org/docs/latest/api/app).
 
 ### Open message box
 

@@ -1,0 +1,1 @@
+This control is used to specify commands which can be called from [modules imported by the JS directive](~/pages/concepts/client-side-development/js-directive/call-dotvvm-from-js).
