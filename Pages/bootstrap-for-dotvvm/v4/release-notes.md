@@ -1,5 +1,17 @@
 # Release notes
 
+## 4.1.1
+### Bug fixes
+- Fixed validation behavior in `DateTimePicker` (Once an invalid value was entered in the control, the validation state kept returning the error even after a valid date was selected)
+
+## 4.1.0
+### Package updates
+- DotVVM upgraded to **4.1.0**
+
+## 4.0.0
+### Package updates
+- DotVVM upgraded to **4.0.0**
+
 ## 3.1.0
 ### Package updates
 - DotVVM upgraded to **3.1.0**
