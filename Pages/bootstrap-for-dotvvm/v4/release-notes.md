@@ -1,5 +1,9 @@
 # Release notes
 
+## 4.1.2
+### Bug fixes
+- Fixed the `FormGroupComboBox` control crashed the page when `ItemTextProperty` was set.
+
 ## 4.1.1
 ### Bug fixes
 - Fixed validation behavior in `DateTimePicker` (Once an invalid value was entered in the control, the validation state kept returning the error even after a valid date was selected)
