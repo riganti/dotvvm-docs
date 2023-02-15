@@ -1,5 +1,10 @@
 # Release notes
 
+## 4.1.?
+
+### New features
+* The CSS rules of BusinessPack are now contained within the `dotvvm-business-pack` and `dotvvm-theme` [CSS layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer).
+
 ## 4.0.10
 
 ### Bug fixes
