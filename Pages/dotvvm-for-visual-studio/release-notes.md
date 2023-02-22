@@ -1,11 +1,24 @@
 # Release notes
 
+## v4.0.556.0
+* Project templates updated to DotVVM 4.1, added support for .NET 7
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.21)
+* Version for Visual Studio 2022 (17.5.0)
+* Version for Visual Studio 2022 Preview (17.6.0 Preview 1.0)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019.4.0.556.0.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.4.0.556.0.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.556.0.vsix)
+
 ## v4.0.554.0
 * Placing `div` in a dot:Repeater no longer produces a warning
 * IntelliSense for composite controls no longer suggest `Content` property
 
 ### Compatibility
-* Version for Visual Studio 2019 (16.11.19)
+* Version for Visual Studio 2019 (16.11.21)
 * Version for Visual Studio 2022 (17.4.1)
 * Version for Visual Studio 2022 Preview (17.5.0 Preview 1.0)
 
