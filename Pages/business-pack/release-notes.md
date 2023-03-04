@@ -1,9 +1,15 @@
 # Release notes
 
+## 4.1.2
+
+### Bug fixes
+* `MultiSelect` control doesn't remove values which are not found in the `DataSource` property. This helps to use the control in cases when the data source is loaded lazily (e. g. when using [REST API bindings](https://www.dotvvm.com/docs/4.0/pages/concepts/respond-to-user-actions/rest-api-bindings/overview)).
+* `ComboBox` control works correctly when its `DataSource` contains multiple items with the same display text (provided by `ItemTextBinding`). Previously, the control changed the selected value to the first entry with matching text when it lost the focus.
+
 ## 4.1.1
 
 ### New features
-* The CSS rules of BusinessPack are now contained within the `dotvvm-business-pack` and `dotvvm-theme` [CSS layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer).
+* The CSS rules of Business Pack are now contained within the `dotvvm-business-pack` and `dotvvm-theme` [CSS layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer).
 
 ## 4.0.10
 
