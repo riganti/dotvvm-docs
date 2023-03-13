@@ -14,3 +14,5 @@ Possible operators for each type are:
     - `CollectionOperators`- `ContainsOperator`
 
 If your type supports null values you can also use `NullOperator` and `NotNullOperator`.
+
+> Please note that if there are multiple `GridView` controls with the same data source, you need to make sure that the same column has the same set of allowed filters in each `GridView`. The shared data source means that the `FilteringOptions` are shared as well. Therefore, if you activate a filter on one of the grids, the same filter should be applied to all of them.
