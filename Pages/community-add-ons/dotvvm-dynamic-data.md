@@ -45,6 +45,15 @@ public void ConfigureServices(IDotvvmServiceCollection options)
 }
 ```
 
+In case you did not provide the `dynamicDataConfig` (or it was `null`), you should call the `AddDynamicDataConfiguration` yourself. This will create a default configuration and register dynamic data controls for you. You can achieve this by adding the folowing line to the `DotvvmStartup.cs` file.
+
+```CSHARP
+private void ConfigureControls(DotvvmConfiguration config, string applicationPath)
+{
+    config.AddDynamicDataConfiguration();
+}
+```
+
 ## Add data annotations to model classes
 
 This will allow to provide UI metadata using the standard .NET Data Annotations attributes.
