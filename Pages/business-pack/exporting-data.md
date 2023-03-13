@@ -200,6 +200,87 @@ var settings = GridViewExportExcelSettings<T>.Default
     });
 ```
 
+## Implement a basic CSV export
+
+The CSV export doesn't offer so many configuration options. The `GridView` control shall have, so it can be found in the viewmodel.
+
+```DOTHTML
+<bp:GridView ... ID="MyGrid">
+```
+
+Now, you can add a button which will perform the export:
+
+```DOTHTML
+<bp:Button Text="Export CSV" Click="{command: ExportCsv()}" />
+```
+
+The `ExportCsv` method should look like this:
+
+```CSHARP
+// using DotVVM.BusinessPack.Controls;
+
+public async Task ExportCsv()
+{
+    // get grid view
+    var gridView = (GridView)Context.View.FindControlByClientId("MyGrid");
+    
+    // create the data set for export
+    var dataSet = new BusinessPackDataSet<T>();
+    dataSet.SortingOptions = Entries.SortingOptions;
+    dataSet.FilteringOptions = Entries.FilteringOptions;
+    
+    // TODO: load all data in the data set (paging is not set so all records should be loaded)
+    dataSet.LoadFromQueryable(...);
+
+    // export the data
+    var settings = new GridViewExportCsvSettings<T>() 
+    {
+        CreateHeader = true,
+        QuotedValue = QuotedValue.Always,       // specifies whether the quotes shall be generated always or only when needed
+        Separator = ","                         // you can change the separator character
+    };
+    
+    var export = new GridViewExportCsv<T>(settings);
+    using var file = export.Export(gridView, dataSet);
+
+    // return the file to the user
+    await Context.ReturnFileAsync(file, "export.csv", "text/csv");
+}
+```
+
+The exported file should contain all rows (without respect to paging) with the same columns that are specified in the `GridView` control.
+
+### Column value providers
+
+Some columns (for example the `GridViewTemplateColumn`) don't have the `Value` property, so the exporter cannot figure out which property will be displayed in the column. 
+In order to export such columns, you have to register a custom value provider:
+
+```DOTHTML
+<bp:GridViewTemplateColumn HeaderText="Hours" ColumnName="Hours">
+    <bp:Text>{{value: $"{Hours:n1} h"}}</bp:Text>
+</bp:GridViewTemplateColumn>
+```
+
+```CSHARP
+var settings = new GridViewExportExcelSettings<T>() { ... };
+
+settings.ColumnValueProviderHandlers.Register(new AnonymousColumnValueProvider<T>(
+    // this lambda specifies for which column(s) the handler will be used
+    canGetColumnValueFunc: (control, column, entry) => column.ColumnName == "Hours",
+
+    // this lambda gets the text representation of the column value from the column or entry object
+    getColumnValueFunc: (control, column, entry) => column switch
+    {
+        { ColumnName: "Hours" } => new ColumnValue() { Text = Math.Round(entry.Hours, 1).ToString("n1") },
+        _ => throw new NotSupportedException()
+    }
+));
+```
+
+Without setting the value provider, the column in the exported file will always be empty.
+
+> If you are missing any configuration option in CSV exports, please let us know - we'll be happy to add them.
+
 ## See also
 
 * [DotVVM Business Pack overview](./getting-started)
