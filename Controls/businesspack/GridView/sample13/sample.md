@@ -15,4 +15,4 @@ Possible operators for each type are:
 
 If your type supports null values you can also use `NullOperator` and `NotNullOperator`.
 
-Note that whenever having two or more `GridView`s with an identical data source, it is your responsibility to correctly define operators. Shared data source means that `FilteringOptions` are shared as well. Therefore, if you activate a filter on one of the grids, the same filter should be applied to all of them. This is generally not possible if the set of supported filters is not same on all `GridView`s and you may run into problems when a filter could not be fully applied on all `GridView`s.
+> Please note that if there are multiple `GridView` controls with the same data source, you need to make sure that the same column has the same set of allowed filters in each `GridView`. The shared data source means that the `FilteringOptions` are shared as well. Therefore, if you activate a filter on one of the grids, the same filter should be applied to all of them.
