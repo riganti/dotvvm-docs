@@ -113,13 +113,13 @@ The `@property` directive can specify the name and type of the property, its def
 @property string Title = "Panel"
 @property List<CategoryModel> Categories, MarkupOptionsAttribute.AllowHardCodedValue = false
 @property Action<CategoryModel> CategoryAdded
-@property string[] CategoryTypes = [ "defualt", "premium", "extra" ]
+@property string[] CategoryTypes = [ "default", "premium", "extra" ]
 ```
 
 * The first declaration creates a `string` property named `Title`. If the user doesn't set this property in the page where the control is used, the default value will be `"Panel"`
 * The second declaration creates a property named `Categories` of type `List<CategoryModel>`. It also applies `MarkupOptions.AllowHardCodedValue` to `false`, which means that the property will only accept a binding expression.
 * The third declaration creates a property `CategoryAdded` of type `Action<CategoryModel>`. This property can be set with a command or static command binding.
-* The fourth declaration creates a property `CategoryTypes` of type `string[]`. If this property is not set, a default value (array with `"defualt"`, `"premium"`, and `"extra"`) will be used.
+* The fourth declaration creates a property `CategoryTypes` of type `string[]`. If this property is not set, a default value (array with `"default"`, `"premium"`, and `"extra"`) will be used.
 
 ### Declare the property in the code-behind file
 
