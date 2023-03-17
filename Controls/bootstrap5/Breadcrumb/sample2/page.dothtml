@@ -6,6 +6,6 @@
   <bs:BreadcrumbItem RouteName="Breadcrumb_sample2"
                      Param-Id="{value: Test}"
                      Text="Route link"
-                     IsSelected="true" />
+                     Selected="true" />
 
 </bs:Breadcrumb>

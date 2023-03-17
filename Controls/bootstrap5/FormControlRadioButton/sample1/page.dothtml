@@ -1,4 +1,4 @@
-﻿<bs:FormControlRadioButton HelpText="text nebo test">
+﻿<bs:FormControlRadioButton HelpText="Help Text">
     <bs:RadioButton ID="r" CheckedItem="{value: Color}" CheckedValue="r" Text="R" />
     <bs:RadioButton ID="g" CheckedItem="{value: Color}" CheckedValue="g" Text="G" />
     <bs:RadioButton ID="b" CheckedItem="{value: Color}" CheckedValue="b" Text="B" />

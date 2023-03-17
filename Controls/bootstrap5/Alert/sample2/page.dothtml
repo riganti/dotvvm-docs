@@ -3,6 +3,7 @@
 </bs:Alert>
 
 <bs:Alert IsDismissed="{value: Dismissed}" 
+          IsDismissible="true"
           Dismissed="{command: AlertDismissed()}" 
           Text="Click the button" />
 

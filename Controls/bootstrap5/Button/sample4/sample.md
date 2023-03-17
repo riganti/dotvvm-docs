@@ -1,3 +1,3 @@
-## Sample 4: Block Buttons
+## Sample 5: FontType
 
-To make the button behave like a block element, use the `IsBlockButton` property.
+The `FontType` property specifies the color of the text inside of the button (using standard Bootstrap classes).

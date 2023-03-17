@@ -2,14 +2,15 @@
 
 <bs:CollapsiblePanel>
     <HeaderTemplate>
+        <bs:Icon Type="check" />
         Always displayed header
     </HeaderTemplate>
     <Content>
         <bs:CardBody>
-            Text which is hidden when collapsed.
+           Custom CardBody text which is hidden when collapsed.
         </bs:CardBody>
     </Content>
     <FooterTemplate>
-        Footer which is hidden when collapsed.
+        Custom footer which is hidden when collapsed.
     </FooterTemplate>
 </bs:CollapsiblePanel>

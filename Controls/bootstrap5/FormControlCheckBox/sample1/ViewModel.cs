@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-public class ViewModel : DotvvmViewModelBase
+public class ViewModel : DotvvmViewModelBase, IValidatableObject
 {
     public bool Value { get; set; }
 

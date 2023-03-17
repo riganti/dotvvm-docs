@@ -7,6 +7,6 @@
   </bs:ButtonGroup>
   <bs:InputGroup>
       <bs:InputGroupLiteral Text="@" />
-      <bs:InputGroupTextBox Placeholder="Input group example" Text="" />
+      <bs:TextBox Placeholder="Input group example" Text="" />
   </bs:InputGroup>
 </bs:ButtonToolbar>

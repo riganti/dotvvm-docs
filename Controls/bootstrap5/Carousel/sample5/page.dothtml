@@ -3,5 +3,5 @@
                  ItemImageUrl="{value: Url}" 
                  ItemCaption="{value: Caption}"
                  ItemIsActive="{value: IsActive}"
-                 ItemDelay="{value: Delay}" />
+                 ItemDelay="1000" />
 </div>

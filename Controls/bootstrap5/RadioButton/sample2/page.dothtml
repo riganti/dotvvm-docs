@@ -1,8 +1,8 @@
 <h2>Button type</h2>
-<bs:RadioButton CheckedValue="{value: 1}" CheckedItem="{value: CheckedInt}" Text="Primary" VisualStyle="Button" ButtonType="Primary" IsInline="true" />
-<bs:RadioButton CheckedValue="{value: 2}" CheckedItem="{value: CheckedInt}" Text="Secondary" VisualStyle="Button" ButtonType="Secondary" IsInline="true" />
-<bs:RadioButton CheckedValue="{value: 5}" CheckedItem="{value: CheckedInt}" Text="Danger" VisualStyle="Button" ButtonType="Danger" IsInline="true" />
-{{value: CheckedInt}}
+<bs:RadioButton CheckedValue="{value: true}" Checked="{value: Checked}" Text="Primary" VisualStyle="Button" ButtonType="Primary" IsInline="true" />
+<bs:RadioButton CheckedValue="{value: false}" Checked="{value: Checked}" Text="Secondary" VisualStyle="Button" ButtonType="Secondary" IsInline="true" />
+<bs:RadioButton CheckedValue="{value: false}" Checked="{value: Checked}" Text="Danger" VisualStyle="Button" ButtonType="Danger" IsInline="true" />
+{{value: Checked}}
 <hr/>
 
 <h2>Switch type</h2>

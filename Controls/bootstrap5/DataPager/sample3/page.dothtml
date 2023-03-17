@@ -6,10 +6,8 @@
 </bs:GridView>
 
 <bs:DataPager DataSet="{value: Customers}">
-    <FirstPageTemplate>
-        <bs:Icon Type="check" />
-    </FirstPageTemplate>
-    <LastPageTemplate>Last</LastPageTemplate>
-    <NextPageTemplate>Next</NextPageTemplate>
-    <PreviousPageTemplate>Previous</PreviousPageTemplate>
+  <FirstPageTemplate>First</FirstPageTemplate>
+  <LastPageTemplate>Last</LastPageTemplate>
+  <NextPageTemplate>Next</NextPageTemplate>
+  <PreviousPageTemplate>Previous</PreviousPageTemplate>
 </bs:DataPager>
