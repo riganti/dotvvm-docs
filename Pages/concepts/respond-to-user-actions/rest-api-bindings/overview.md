@@ -225,6 +225,20 @@ You can use `;` operator to combine multiple statements in the commands, so it i
 <dot:Button Text="Save" Click="{staticCommand: _myApi.SaveCompany(Company); _api.PushEvent("LoadCompanies")}" />
 ```
 
+### Detect whether the data is being loaded
+
+Often you want to inform the user when some data is being loaded from the API, for example by showing some animation or hiding parts of the UI. 
+
+To do this, you can use the `_api.IsLoading` property to detect whether there are any pending API calls:
+
+```
+<div Visible="{value: !_api.IsLoading}">
+    Loading...
+</div>
+```
+
+> This property was introduced in DotVVM 4.1.5.
+
 ## See also
 
 * [Provide API metadata](provide-api-metadata)
