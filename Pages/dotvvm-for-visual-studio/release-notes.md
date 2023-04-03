@@ -1,5 +1,18 @@
 # Release notes
 
+## v4.0.557.0
+* Fixed various compatibility issues with VS 2022 and VS 2022-Preview
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.25)
+* Version for Visual Studio 2022 (17.5.3)
+* Version for Visual Studio 2022 Preview (17.6.0 Preview 2.0)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2019.RTM.4.0.557.0.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022.RTM.4.0.557.0.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/DotVVM.Integration.VisualStudio.VS2022-Preview.4.0.557.0.vsix)
+
 ## v4.0.556.0
 * Project templates updated to DotVVM 4.1, added support for .NET 7
 
