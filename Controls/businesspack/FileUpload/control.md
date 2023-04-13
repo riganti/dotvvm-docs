@@ -36,7 +36,7 @@ public class UploadViewModel
     this.storage = storage;
   }
 
-  public void ProcessFiles()
+  public async Task ProcessFiles()
   {
     foreach (var file in UploadData.Files)
     {
@@ -47,11 +47,11 @@ public class UploadViewModel
 
         // OR you can just move the file from the temporary storage somewhere else
         var targetPath = Path.Combine(uploadPath, file.FileId + ".bin");
-        storage.SaveAs(file.FileId, targetPath);
+        await storage.SaveAsAsync(file.FileId, targetPath);
         
         // it is a good idea to delete the file from the temporary storage 
         // it is not required, the file would be deleted automatically after the timeout set in the DotvvmStartup.cs
-        storage.DeleteFile(file.FileId);
+        await storage.DeleteFileAsync(file.FileId);
       }
     }
   }
