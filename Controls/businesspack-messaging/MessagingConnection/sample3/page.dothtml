@@ -1,0 +1,6 @@
+<bp:MessagingConnection ServiceUrl="/hubs/Chat"
+                        TryReconnect="true"
+                        ReconnectAttempts="0"
+                        ReconnectTimeout="5">
+    ...
+</bp:MessagingConnection>

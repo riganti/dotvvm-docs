@@ -1,0 +1,8 @@
+<bp:MessagingConnection ServiceUrl="/hubs/Chat" 
+                        ConnectionId="Chat" />
+
+...
+
+<bp:MessageHandler MethodName="IncomingMessage"
+                   ConnectionId="Chat"
+                   Command="{staticCommand: (ChatMessageDTO o) => Messages.Add(o)}" />
