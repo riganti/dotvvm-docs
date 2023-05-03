@@ -1,0 +1,17 @@
+<bp:MessagingConnection ServiceUrl="/hubs/Chat"
+                        ConnectionId="Chat">
+    <bp:MessageHandler MethodName="IncomingMessage"
+                       Command="{staticCommand: (ChatMessageDTO o) => Messages.Add(o)}" />
+</bp:MessagingConnection>
+
+<dot:Repeater DataSource="{value: Messages}" WrapperTagName="ul">
+    <li>{{value: Author}}: {{value: Text}}</li>
+</dot:Repeater>
+
+<form>
+    <dot:TextBox Text="{value: AutorName}" />: 
+    <dot:TextBox Text="{value: NewMessage}" />
+    <dot:Button Text="Send"
+                IsSubmitButton="true"
+                Click="{staticCommand: _messaging.GetConnection("Chat").InvokeAsync("SendMessage", AuthorName, NewMessage)}" />
+</form>
