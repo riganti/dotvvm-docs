@@ -1,8 +1,8 @@
-<bp:MessagingConnection ServiceUrl="/hubs/Chat"
-                        Connected="{staticCommand: Events.Add("Connected")}"
-                        Disconnected="{staticCommand: Events.Add("Disconnected")}"
-                        Reconnecting="{staticCommand: Events.Add("Reconnecting")}"
-                        Reconnected="{staticCommand: Events.Add("Reconnected")}"
-                        Error="{staticCommand: Events.Add("Error")}">
+<bp:MessagingConnection ServiceUrl="/hubs/Chat" 
+                        Connected="{staticCommand: Events.Add("Connected")}" 
+                        Disconnected="{staticCommand: Events.Add("Disconnected")}" 
+                        Reconnecting="{staticCommand: Events.Add("Reconnecting")}" 
+                        Reconnected="{staticCommand: Events.Add("Reconnected")}" 
+                        Error="{staticCommand: Events.Add("Error")}"> 
     ...
 </bp:MessagingConnection>

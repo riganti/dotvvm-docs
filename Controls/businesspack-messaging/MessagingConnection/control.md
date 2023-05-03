@@ -1,0 +1,1 @@
+Establishes a connection to a SignalR hub and allows specifying handlers for client-side hub methods.
