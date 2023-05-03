@@ -3,6 +3,6 @@
 
 ...
 
-<bp:MessageHandler MethodName="IncomingMessage"
-                   ConnectionId="Chat"
+<bp:MessageHandler MethodName="IncomingMessage" 
+                   ConnectionId="Chat" 
                    Command="{staticCommand: (ChatMessageDTO o) => Messages.Add(o)}" />
