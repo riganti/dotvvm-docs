@@ -1,4 +1,4 @@
-<bp:MessagingConnection ServiceUrl="/hubs/Chat"
+<bp:MessagingConnection ServiceUrl="/hubs/Chat" 
                         IsConnected="{value: IsConnected}">
     ...
 </bp:MessagingConnection>
