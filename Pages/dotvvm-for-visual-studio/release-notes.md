@@ -1,5 +1,12 @@
 # Release notes
 
+## v4.0.562.0
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.27)
+* Version for Visual Studio 2022 (17.6.5)
+* Version for Visual Studio 2022 Preview (17.7.0 Preview 4.0)
+
 ## v4.0.561.0
 
 - Extract control now has more helpfull error messages
