@@ -7,6 +7,11 @@
 * Version for Visual Studio 2022 (17.6.5)
 * Version for Visual Studio 2022 Preview (17.7.0 Preview 4.0)
 
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.562.0/DotVVM.Integration.VisualStudio.VS2019.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.562.0/DotVVM.Integration.VisualStudio.VS2022.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/v4.0.562.0/public/DotVVM.Integration.VisualStudio.VS2022-Preview.vsix)
+
 ## v4.0.561.0
 
 - Extract control now has more helpfull error messages
