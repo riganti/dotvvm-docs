@@ -1,6 +1,6 @@
 # Release notes
 
-## v4.0.562.0
+## v4.0.563.0
 
 ### Compatibility
 * Version for Visual Studio 2019 (16.11.29)
