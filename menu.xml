@@ -259,6 +259,8 @@
 	<DocPageMenuItem RouteName="from-3-0-to-3-1" PageName="From 3.0 to 3.1" />
 	<DocPageMenuItem RouteName="from-3-1-to-3-2" PageName="From 3.1 to 3.2" />
 	<DocPageMenuItem RouteName="from-3-2-to-4-0" PageName="From 3.2 to 4.0" />
+	<DocPageMenuItem RouteName="from-4-0-to-4-1" PageName="From 4.0 to 4.1" />
+    <DocPageMenuItem RouteName="release-policy" PageName="Release policy" />
 	<DocPageMenuItem RouteName="compilation-status-page" PageName="Compilation status page" />
   </DocPageMenuItem>
 
