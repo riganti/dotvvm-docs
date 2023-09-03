@@ -6,7 +6,7 @@ You can use these properties on plain HTML elements too.
 
 + `DataContext` - changes the [binding context](~/pages/concepts/data-binding/binding-context) for the content of the control or element.
 + `Visible` - hides the control or element in the page (using CSS `display: none`).
-+ `IncludedInPage` - includes or removes the control or element from DOM.
++ `IncludeInPage` - includes or removes the control or element from DOM.
 + `ID` - specifies an ID of the control. 
 
 ## HTML attributes on controls
