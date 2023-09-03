@@ -1,4 +1,4 @@
-@viewModel System.Object, mscorlib
+@viewModel object
 
 <!DOCTYPE html>
 

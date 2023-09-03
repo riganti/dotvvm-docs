@@ -53,7 +53,7 @@ You can see that the control above requires a binding context of type `IAddress`
 
 > Remember that neither markup controls nor master pages create an instance of the viewmodel. Only pages have their own viewmodel instance. In master pages and markup controls, the `@viewModel` directive specifies the "contract" for the viewmodel - a base class of the viewmodel, or interface that the viewmodel must implement.  
 
-If your markup control doesn't contain any data-bindings and doesn't depend on a specific viewmodel, use `@viewModel System.Object, mscorlib`. It means that the control can be used in any binding context.
+If your markup control doesn't contain any data-bindings and doesn't depend on a specific viewmodel, use `@viewModel object`. It means that the control can be used in any binding context.
 
 ### Control wrapper tag
 
