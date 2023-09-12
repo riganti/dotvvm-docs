@@ -5,7 +5,11 @@
     public string ButtonText { get; set; } = "Copy to clipboard";
     public void ChangeIcon()
     {
-        PostbackIcon = PostbackIcon == Icons.Clipboard ? Icons.Check : Icons.Clipboard;
+        if (PostbackIcon == Icons.Clipboard)
+        {
+            PostbackIcon = Icons.Check;
+        }
+
         ButtonText = "Copied!";
     }
 }

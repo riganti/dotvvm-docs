@@ -1,5 +1,3 @@
-﻿<bs:Label Text="Selected color" />
-<bs:TextBox Text={value: Color} />
+﻿<bs:TextBox Text={value: Color} />
 
-<bs:Label Text="Pick a color" />
 <bs:ColorPicker Title="Color picker" Color="{value: Color}" />

@@ -1,6 +1,7 @@
-﻿
-<bs:ComboBox    SelectedValue="{value: SelectedValue}" 
-                DataSource="{value: ComboBoxDataSource}" 
-                ItemTextBinding="{value: Text}" 
-                ItemValueBinding="{value: Value}" 
-                ItemTitleBinding="{value: Title}" />
+﻿<bs:ComboBox SelectedValue="{value: SelectedValue}" 
+             DataSource="{value: ComboBoxDataSource}" 
+             ItemTextBinding="{value: Text}" 
+             ItemValueBinding="{value: Value}" 
+             ItemTitleBinding="{value: Title}" />
+
+Selected value: {{value:  SelectedValue}}

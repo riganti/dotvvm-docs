@@ -1,10 +1,8 @@
 <h2>Button type</h2>
-<bs:Checkbox CheckedValue="{value: 1}" CheckedItem="{value: CheckedInt}" Text="Primary" VisualStyle="Button" ButtonType="Primary" IsInline="true" />
-<bs:Checkbox CheckedValue="{value: 2}" CheckedItem="{value: CheckedInt}" Text="Secondary" VisualStyle="Button" ButtonType="Secondary" ButtonVisualStyle="Outline" IsInline="true" />
-<bs:Checkbox CheckedValue="{value: 5}" CheckedItem="{value: CheckedInt}" Text="Danger" VisualStyle="Button" ButtonType="Danger" ButtonFontType="Warning" ButtonSize="Small" IsInline="true" />
-{{value: CheckedInt}}
-<hr/>
-
+<bs:Checkbox Checked="{value: true}" Text="Primary" VisualStyle="Button" ButtonType="Primary" IsInline="true" />
+<bs:Checkbox Checked="{value: true}" Text="Secondary" VisualStyle="Button" ButtonType="Secondary" ButtonVisualStyle="Outline" IsInline="true" />
+<bs:Checkbox Checked="{value: true}" Text="Danger" VisualStyle="Button" ButtonType="Danger" ButtonFontType="Warning" ButtonSize="Small" IsInline="true" />
+<hr />
 <h2>Switch type</h2>
-<bs:RadioButton GroupName="RadioButton" VisualStyle="Switch" CheckedValue="true" Text="Switch RadioButton"/>
-<hr/>
+<bs:Checkbox Checked="{value: true}"  VisualStyle="Switch" Text="Switch RadioButton"/>
+<hr />

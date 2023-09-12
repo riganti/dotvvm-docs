@@ -1,4 +1,4 @@
 public class ViewModel : DotvvmViewModelBase
 {
-    public int CheckedIntButton { get; set; }
+    public bool Checked { get; set; }
 }

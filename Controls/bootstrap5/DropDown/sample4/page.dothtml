@@ -4,7 +4,7 @@
                    Type="Success"
                    DataSource="{value: LinksDataSet}"
                    ItemEnabled="{value: Enabled}"
-                   ItemIsSelected="{value: IsSelected}"
+                   ItemSelected="{value: IsSelected}"
                    ItemText="{value: Text}"
                    ItemNavigateUrl="{value: NavigateUrl}">
 </bs:DropDown>

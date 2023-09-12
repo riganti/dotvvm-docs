@@ -1,7 +1,7 @@
 ﻿<bs:ListGroup ItemType="Link" 
               DataSource="{value: LinksDataSet}" 
               ItemEnabled="{value: IsEnabled}" 
-              ItemIsSelected="{value: IsSelected}" 
+              ItemSelected="{value: IsSelected}" 
               ItemText="{value: Text}" 
               ItemColor="{value: Color}" 
               ItemNavigateUrl="{value: NavigateUrl}" />

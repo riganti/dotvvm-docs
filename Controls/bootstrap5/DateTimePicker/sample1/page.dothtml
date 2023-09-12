@@ -1,4 +1,4 @@
-﻿<bs:DateTimePicker Value="{value: SelectedValue}"
+﻿<bs:DateTimePicker SelectedDate="{value: SelectedValue}"
                    MinDate="{value: MinValue}"
                    MaxDate="{value: MaxValue}"
                    Size="{value: Size}"

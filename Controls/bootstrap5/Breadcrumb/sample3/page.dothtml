@@ -1,9 +1,10 @@
 ﻿<bs:Breadcrumb DataSource="{value: Links}"
-               ItemIsEnabled="{value: IsEnabled}"
-               ItemIsSelected="{value: IsSelected}"
-               ItemText="{value: Text}"
-               ItemNavigateUrl="{value: NavigateUrl}" />
+                           ItemEnabled="{value: IsEnabled}"
+                           ItemSelected="{value: IsSelected}"
+                           ItemText="{value: Text}"
+                           ItemNavigateUrl="{value: NavigateUrl}" />
 
+                           
 <bs:Breadcrumb DataSource="{value: Links}">
         <ItemTemplate>
             {{value: Text}}
