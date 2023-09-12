@@ -1,0 +1,8 @@
+<dot:HierarchyRepeater DataSource={value: Pages}
+                       ItemChildrenBinding={value: ChildPages}
+                       LevelWrapperTagName="ul"
+                       LevelClass="level"
+                       ItemWrapperTagName="li"
+                       ItemClass="item">
+    <a href={value: Link}>{{value: Title}}</a>
+</dot:HierarchyRepeater>
