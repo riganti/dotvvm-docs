@@ -16,6 +16,14 @@ All components from **Auto UI** have the `<auto:` tag prefix. Basically, there a
 
 * [GridViewColumns](~/controls/builtin-autoui/GridViewColumns) is a special type of a `GridView` column which generates the columns based on the current row [binding context](~/pages/concepts/data-binding/binding-context). 
 
+## Initialization
+To use the library, you need to register it in the **ConfigureServices** method in **DotvvmStartup.cs**:
+
+```CSHARP
+options.AddAutoUI();
+```
+After that, you can use the Auto UI controls in your DotVVM pages.
+
 ## Model metadata
 
 To provide field labels, display formats and other metadata to the Auto UI, you can use one of the several options:
