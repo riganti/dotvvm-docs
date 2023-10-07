@@ -2,9 +2,9 @@
   <bs:InputGroupCheckBox Stype="Swith" Checked="{value: true}" />
 
   <bs:InputGroupRadioButton id='1' Text='RadioButton 1' GroupName='RadioButtons'
-                            CheckedValue='RadioButton 1' CheckedItem={value: Text} />
+                            CheckedValue='RadioButton 1' CheckedItem="{value: Text}" />
   <bs:InputGroupRadioButton id='2' Text='RadioButton 2' GroupName='RadioButtons'
-                            CheckedValue='RadioButton 2' CheckedItem={value: Text} />
+                            CheckedValue='RadioButton 2' CheckedItem="{value: Text}" />
   <bs:InputGroupLiteral Text={value: Text} />
 
   <bs:ComboBox DataSource="{value: ComboBoxDataSource}"
