@@ -1,12 +1,12 @@
 ﻿<bs:FormControlTextBox LabelText="Basic" 
-                       Text="{value: "TextValue"}" 
+                       Text="{value: TextValue}" 
                        Placeholder="Basic"/>
 
 <bs:FormControlTextBox LabelText="horizontal" 
                        Layout="Horizontal" 
-                       Text="{value: "TextValue"}" 
+                       Text="{value: TextValue}" 
                        Size="small"/>
 
 <bs:FormControlTextBox LabelText="Basic" 
                        LabelType="Floating" 
-                       Text="{value: "TextValue"}" />
+                       Text="{value: TextValue}" />
