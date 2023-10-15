@@ -241,6 +241,8 @@ public static readonly DotvvmProperty LabelTextProperty
 
 See the [Control properties](control-properties#specify-markup-options) chapter for more info about the `MarkupOptions` attribute.
 
+> [Composite Controls](./composite-controls.md) offer a simpler API for controls which do not have custom rendering and rely solely on building the inner tree.
+
 ### Child controls
 
 Similarly to the viewmodels, every control has lifecycle events `OnInit`, `OnLoad` and `OnPreRender` which follow the logic of the viewmodel `Init`, `Load` and `PreRender` events.
@@ -287,6 +289,22 @@ var child = new MarkupControlContainer("cc:MyControl", c => {
 });
 this.Children.Add(child);
 ```
+
+If you know the `@baseType` of the markup control, you may use the generic version to simplify the initialization:
+
+```CSHARP
+var child = new MarkupControlContainer<MyControl>("cc:MyControl", c => {
+    c.Name = someValue;
+    ...
+});
+this.Children.Add(child);
+```
+
+* The initialized markup control is stored in the `CreatedControl` property. It is initialized in OnInit, after the MarkupControlContainer is placed into the Children collection.
+* Instead of the tagname, it is also allowed to specify the path to the dotcontrol file:
+    - If the markup file is the project: `new MarkupControlContainer("Control/MyControl.dotcontrol")`
+    - if the markup is in [an embedded resource](./markup-control-registration.md#embed-markup-control-in-a-class-library): `new MarkupControlContainer("embedded://Assembly.Name/Path.To.File.dotcontrol")`
+* If the control has [markup declared properties](./markup-controls.md#declare-the-property-using-the-property-directive), use the `c.SetProperty("MyProperty", value)` method overload to access it.
 
 ## See also
 
