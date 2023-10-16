@@ -2,7 +2,7 @@
 
 DotVVM supports the _Model validation_ mechanism known from other ASP.NET technologies, like MVC, Web API or Web Forms. 
 
-The validation is triggered by [commands](~/pages/concepts/respond-to-user-actions/static-commands). 
+The validation is triggered by [commands](~/pages/concepts/respond-to-user-actions/commands), and it can also be enabled for [staticCommands](./static-commands)
 
 To use validation in DotVVM, you need to decide three things:
 
@@ -170,8 +170,9 @@ Also, you might need this e.g. on the `Changed` event of `TextBox` when you need
 ## See also
 
 * [Validation target](target)
+* [Validation in staticCommands](./static-commands)
 * [Validation controls](controls)
-* [Validator control](~/controls/builtin/Validator)
-* [ValidationSummary control](~/controls/builtin/ValidationSummary)
+    * [Validator control](~/controls/builtin/Validator)
+    * [ValidationSummary control](~/controls/builtin/ValidationSummary)
 * [Client-side validation](client-side)
 * [Extensibility](extensibility)
