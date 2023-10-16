@@ -122,6 +122,10 @@ public class MyButton : CompositeControl
 
 When both properties are set, the capability will throw an exception as it is unclear which has priority.
 
+## RouteLinkCapability
+
+Contains the core RouteLink properties - `RouteName`, `UrlSuffix`, the `Param-` group and the `Query-` group.
+
 ## See also
 
 * [Control properties](control-properties)

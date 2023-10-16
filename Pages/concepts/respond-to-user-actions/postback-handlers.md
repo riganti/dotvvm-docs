@@ -18,6 +18,11 @@ You can attach a postback handler to any control using the `PostBack.Handlers` p
 
 The `ConfirmPostBackHandler` is a built-in handler which displays the default JavaScript confirmation box. In the example, this handler is applied to all events on the `Button` control. If the user declines the confirmation, the postback won't be initiated.
 
+## SuppressPostBackHandler
+
+`<dot:SuppressPostBackHandler Suppress={value: !CommandAllowed} />` will cancel any postback on the component if the `Suppress` condition is true.
+Note that the condition is only evaluated client-side, so this handler cannot be used as a security mechanism.
+
 ## Restrict postback handlers to specific events
 
 If the control has multiple events with command bindings and you need to apply the handler only on a specific event, you can use the `EventName` property. 
