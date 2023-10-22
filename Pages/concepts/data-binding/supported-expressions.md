@@ -141,9 +141,11 @@ DotVVM can translate several .NET methods on basic types or collections to JavaS
 * `Enumerable.All<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
 * `Enumerable.Any<T>(IEnumerable<T> collection)`
 * `Enumerable.Any<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
+* `Enumerable.AsEnumerable<T>(IEnumerable<T> collection)`
 * `Enumerable.Concat<T>(IEnumerable<T> first, IEnumerable<T> second)`
 * `Enumerable.Distinct<T>(IEnumerable<T> collection)`
    * *Note*: this method is restricted to primitive types.
+* `Enumerable.Empty<T>()`
 * `Enumerable.FirstOrDefault<T>(IEnumerable<T> collection)` and `Enumerable.FirstOrDefault<T>(IEnumerable<T> collections, Func<T,bool> predicate)`
 * `Enumerable.LastOrDefault<T>(IEnumerable<T> collection)` and `Enumerable.LastOrDefault<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
 * `Enumerable.Max<T>(IEnumerable<T> collection)` and `Enumerable.Max<T,U>(IEnumerable<T> collection, Func<T,U> selector)`
@@ -162,6 +164,14 @@ DotVVM can translate several .NET methods on basic types or collections to JavaS
 * `Enumerable.ToArray<T>(IEnumerable<T> collection)`
 * `Enumerable.ToList<T>(IEnumerable<T> collection)`
 * `Enumerable.Where<T>(IEnumerable<T> collection, Func<T, bool> predicate)`
+
+Equivalent methods are also supported on the `ImmutableArray<T>` type.
+
+#### Immutable collections methods
+
+* `ImmutableArray.ToImmutableArray(IEnumerable<T>)`
+* `ImmutableList.ImmutableList(IEnumerable<T>)`
+* The linq-like helper methods on ImmutableArrayExtensions
 
 #### DateTime methods
 * `DateTimeExtensions.ToBrowserLocalTime(DateTime value)`
