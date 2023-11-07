@@ -1,1 +1,3 @@
-﻿Renders a textbox control which lets the user either to type the date, or select it from a calendar popup.
+﻿Renders an input control which lets the user either to type the date/time value, or select it from a calendar popup.
+
+> In contrast to [Bootstrap for DotVVM](https://www.dotvvm.com/products/bootstrap-for-dotvvm) **3** and **4** where the control was a custom JavaScript-based implementation of the date/time picker experience, starting from version **5** the control is just a styled `<input type="datetime-local" />`.
