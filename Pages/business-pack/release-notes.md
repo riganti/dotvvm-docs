@@ -1,5 +1,27 @@
 # Release notes
 
+## 4.2.0
+
+### New features
+* New `DotVVM.BusinessPack.Messaging` package which provides a simple way to push notifications from the server into the page. See [MessagingConnection](https://www.dotvvm.com/docs/4.0/controls/businesspack-messaging/MessagingConnection) for more info.
+* New `DotVVM.BusinessPack.AutoUI` package which extends [Auto UI](https://www.dotvvm.com/docs/4.0/pages/concepts/auto-ui/overview) with Business Pack controls
+* Support for CSS layers (can be turned in options when calling `AddBusinessPack`)
+* Support for including a bundle with Business Pack scripts and styles instead of chunks (can be turned in options when calling `AddBusinessPack`)
+* `DropDownButton` - added `Opened` property
+* `NumericUpDown` - added `ButtonPlacement` property
+* `GridView` - support for localization in filter values
+* `GridView` - filters are supported when a simple expression is used on the column value, e. g. `SomeDate.ToBrowserLocalTime()`
+* `TreeView` - performance improvements for expanding larger trees
+* `TreeView` - added `ExpandOnChecked` property
+
+### Package updates
+- DotVVM upgraded to **4.2**
+
+## 4.1.3
+
+### Bug fixes
+* Fixed `ComboBox` provider in DotVVM Dynamic Data providers.
+
 ## 4.1.2
 
 ### Bug fixes
@@ -10,6 +32,9 @@
 
 ### New features
 * The CSS rules of Business Pack are now contained within the `dotvvm-business-pack` and `dotvvm-theme` [CSS layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer).
+
+### Package updates
+- DotVVM upgraded to **4.1**
 
 ## 4.0.10
 
@@ -70,6 +95,8 @@
 * New API for exporting data into Excel was introduced. See [exporting-data](Exporting data) for more information. 
 * There is a new `Messenger` control contained in a separate NuGet package `DotVVM.BusinessPack.Messaging`. This control allows to easily call commands in the client's page from the server. Internally, this component uses the ASP.NET Core SignalR library.
 
+### Package updates
+- DotVVM upgraded to **4.0**
 
 ## 3.0.0-preview03-final
 

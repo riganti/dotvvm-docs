@@ -1,5 +1,13 @@
 # Release notes
 
+## 4.2.0
+### Package updates
+- DotVVM upgraded to **4.2**
+
+## 4.1.3
+### Bug fixes
+- Fixed the behavior of `DateTimePicker` after entering an invalid date.
+
 ## 4.1.2
 ### Bug fixes
 - Fixed the `FormGroupComboBox` control crashed the page when `ItemTextProperty` was set.
@@ -10,15 +18,15 @@
 
 ## 4.1.0
 ### Package updates
-- DotVVM upgraded to **4.1.0**
+- DotVVM upgraded to **4.1**
 
-## 4.0.0
+## 4.0.1
 ### Package updates
-- DotVVM upgraded to **4.0.0**
+- DotVVM upgraded to **4.0**
 
 ## 3.1.0
 ### Package updates
-- DotVVM upgraded to **3.1.0**
+- DotVVM upgraded to **3.1**
 
 ## 3.0.6
 ### Package updates
