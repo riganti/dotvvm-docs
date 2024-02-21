@@ -113,6 +113,7 @@
 	  <DocPageMenuItem RouteName="controls" PageName="Validation controls" />
 	  <DocPageMenuItem RouteName="target" PageName="Validation target" />
       <DocPageMenuItem RouteName="client-side" PageName="Client-side validation" />
+      <DocPageMenuItem RouteName="static-commands" PageName="Validation in staticCommand" />
 	  <DocPageMenuItem RouteName="extensibility" PageName="Extensibility" />
 	</DocPageMenuItem>
 	
