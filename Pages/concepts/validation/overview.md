@@ -12,8 +12,6 @@ To use validation in DotVVM, you need to decide three things:
 
 * **Define validation rules**: You need to specify the validation rules for properties, or even objects in the viewmodel. How to specify the rules is described in the rest of this chapter.
 
-> Validation in [static commands](~/pages/concepts/respond-to-user-actions/static-commands) is currently not supported, but the work on this feature has already been started, and it will be available in the future releases of DotVVM.
-
 ## Define validation rules 
 
 There are three ways how you can define the validation rules. You can use __validation attributes__ to define rules for individual viewmodel properties, you can implement your own validation logic by implementing the `IValidatableObject` interface on objects in the viewmodel, and you can add errors to the `ModelState` object using the `AddModelError` extension method on the [Context](../viewmodels/request-context) object.
@@ -150,7 +148,9 @@ Since this pattern is quite common in DotVVM applications, you can use [filters]
 
 There are more overloads of the `AddModelError` method - commonly they accept the viewmodel object and a lambda expression specifying the path to the invalid property. 
 
-There is also a method `AddRawModelError` which takes the string parameter - we recommend to avoid using this method as it requires specifying the validation paths in DotVVM property path format - e. g. `/ChildObject/InvalidProperty`. The path must be absolute (from the root viewmodel of the page).
+There is also a method `AddRawModelError` which takes the string parameter - we recommend to avoid using this method as it requires specifying the validation paths in DotVVM property path format - e.g. `/ChildObject/InvalidProperty`. The path must be absolute (from the root viewmodel of the page).
+
+> Note that validation is `staticCommand` methods uses a different model state class, see [Validation in staticCommands](./static-commands) for more details.
 
 ## Disable validation
 
