@@ -22,3 +22,5 @@ TextBox
 ComboBox
 async
 LINQ
+staticCommand
+staticCommands

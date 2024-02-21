@@ -2,7 +2,7 @@
 
 You often need to validate only a part of the viewmodel. For example, if the page holds two forms, you may want to validate one of them independently on the other.
 
-In DotVVM, there is the `Validation.Target` property. Using this property you can specify the validation target (the object which gets validated) for a specific part of the page:
+In DotVVM, there is the `Validation.Target` property. Using this property you can specify the validation target (the object which gets validated) for commands in a specific part of the page:
 
 ```DOTHTML
 <form Validation.Target="{value: Customer}">
@@ -15,7 +15,7 @@ In DotVVM, there is the `Validation.Target` property. Using this property you ca
 
 You can apply the `Validation.Target` property to any HTML element, and to almost all DotVVM controls. In the example, for all postbacks made by controls in the `form` element, the validation rules will be checked only on the `Customer` property of the viewmodel. 
 
-> From DotVVM 4.0, you can use the `AddModelError` method on the context object to report errors anywhere in the viewmodel, even outside of the validation target.
+> The `AddModelError` method on the context object is used to report errors anywhere in the viewmodel, even outside of the validation target.
 
 ## ValidationSummary
 
