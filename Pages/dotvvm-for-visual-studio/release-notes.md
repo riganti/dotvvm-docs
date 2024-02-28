@@ -2,8 +2,8 @@
 
 ## v4.3.568.0-preview01
 
-![Select DotVVM Private NuGet Feed](release-notes/markup-property-completion.png)
-![Select DotVVM Private NuGet Feed](release-notes/markup-property-intellisense.png)
+![markup properties completion](release-notes/markup-property-completion.png)
+![Makrup properties intellisense](release-notes/markup-property-intellisense.png)
 
 * Markup defined properties (`@property` directive) now have full intellisense
 * Markup defined properties (`@property` directive) now have error tagging
