@@ -1,5 +1,25 @@
 # Release notes
 
+## v4.3.568.0-preview01
+
+![Select DotVVM Private NuGet Feed](release-notes/markup-property-completion.png)
+![Select DotVVM Private NuGet Feed](release-notes/markup-property-intellisense.png)
+
+* Markup defined properties (`@property` directive) now have full intellisense
+* Markup defined properties (`@property` directive) now have error tagging
+* Markup defined properties are suggested in as members of `_control` alias
+* Markup defined properties are suggested on control usages
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.34)
+* Version for Visual Studio 2022 (17.9.0)
+* Version for Visual Studio 2022 Preview (17.10.0 Preview 1.0)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.3.568.0-preview01/DotVVM.Integration.VisualStudio.VS2019.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.3.568.0-preview01/DotVVM.Integration.VisualStudio.VS2022.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.3.568.0-preview01/DotVVM.Integration.VisualStudio.VS2022-Preview.vsix)
+
 ## v4.0.567.0
 
 * Dependencies fixed
