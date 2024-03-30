@@ -40,7 +40,7 @@ public class UploadViewModel
   {
     foreach (var file in UploadData.Files)
     {
-      if (file.Allowed)
+      if (file.IsAllowed)
       {
         // get the stream of the uploaded file and do whatever you need to do
         var stream = storage.GetFile(file.FileId);
@@ -58,10 +58,11 @@ public class UploadViewModel
 }
 ```
 
-The control can check whether the file extension matches any extension specified in the `AllowedFileTypes` definition, and verify that the file size does not exceed the `MaxFileSize`. 
+The FileUpload control checks whether the file extension or MIME type matches the `AllowedFileTypes` definition, and that the file size does not exceed the `MaxFileSize`.
+You can use the `IsFileTypeAllowed` and `IsMaxSizeExceeded` properties of the file in the `UploadData` object to find out why the file was not allowed.
 
-You can use the `FileTypeAllowed` and `MaxSizeExceeded` properties of the file in the `UploadData` object to find out why the file was not allowed.
-
-But please note that these value come from client-side and can't be trusted in security critical scenarios - make sure you verify the integrity of the files yourself.
+However, please note that the validation is essentially only performed client-side and cannot be trusted for anything beyond displaying error messages.
+Any user able to press F12 can modify all unencrypted view model properties, including those in `UploadedFilesCollection`.
+Make sure to validate the file characteristics based on the data from `IUploadedFileStorage` when it is important.
 
 &nbsp;
