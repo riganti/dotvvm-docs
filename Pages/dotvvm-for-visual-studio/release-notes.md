@@ -1,5 +1,19 @@
 # Release notes
 
+## v4.0.569.0
+* New visual studio versions
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.35)
+* Version for Visual Studio 2022 (17.9.6)
+* Version for Visual Studio 2022 Preview (17.10.0 Preview 4.0)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.569.0/DotVVM.Integration.VisualStudio.VS2019.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.569.0/DotVVM.Integration.VisualStudio.VS2022.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.569.0/DotVVM.Integration.VisualStudio.VS2022-Preview.vsix)
+
+
 ## v4.3.568.0-preview01
 
 ![markup properties completion](release-notes/markup-property-completion.png)
