@@ -13,6 +13,10 @@ Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.
 Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.569.0/DotVVM.Integration.VisualStudio.VS2022.vsix) </br>
 Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.569.0/DotVVM.Integration.VisualStudio.VS2022-Preview.vsix)
 
+### Assets v4.3.569.0-preview02
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.3.569.0-preview02/DotVVM.Integration.VisualStudio.VS2019.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.3.569.0-preview02/DotVVM.Integration.VisualStudio.VS2022.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.3.569.0-preview02/DotVVM.Integration.VisualStudio.VS2022-Preview.vsix)
 
 ## v4.3.568.0-preview01
 
