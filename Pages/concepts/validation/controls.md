@@ -76,6 +76,9 @@ These properties are inherited to the child elements, so you may set them once o
 If you want to set the `Validation.InvalidCssClass` property for the entire application, you can apply it on the `<body>` element in the master page. 
 You can of course override the CSS class on any child element.
 
+> When using DotVVM Business Pack form controls, the `Validator.Value` can be automatically set to the edited property, when `BusinessPack.AllowAutoValidation` is set to true.
+> This property is inherited, and therefore it's sufficient to set it once for the form, grid or even the entire page.
+
 ## See also
 
 * [Validation overview](overview)
