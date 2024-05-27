@@ -8,8 +8,8 @@ The configuration of authentication is commonly done in `Startup.cs` file, and i
 
 Because of the differences between ASP.NET Core and OWIN, different NuGet packages are used:
 
-* In [ASP.NET Core](aspnetcore), the `Microsoft.AspNetCore.Authentication.*` NuGet packages are used.
 * In [OWIN](owin), the `Microsoft.Owin.Security.*` NuGet packages are used. 
+* In [ASP.NET Core](aspnetcore), the built-in authentication mechanism is used.
 
 See the [ASP.NET Core authentication](aspnetcore) and [OWIN authentication](owin) for more info.
 
