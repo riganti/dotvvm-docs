@@ -2,8 +2,6 @@
 
 > This section is applicable if your application uses ASP.NET Core. For OWIN, visit the [Authentication in OWIN](owin) chapter.
 
-In ASP.NET Core, the authentication and authorization mechanisms are configured using the `Microsoft.AspNetCore.Authentication.*` NuGet packages.
-
 First, you need to configure the authentication behavior in the `ConfigureServices` method in the `Startup.cs` file.
 
 Second, you need to apply the authentication and authorization middlewares in the `Configure` method in `Startup.cs`. These should be registered before the DotVVM middleware.
