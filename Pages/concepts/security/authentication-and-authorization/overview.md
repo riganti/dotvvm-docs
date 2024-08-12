@@ -85,7 +85,10 @@ namespace DotvvmDemo.ViewModels
 
 Note that the `Context.Authorize` method has several optional parameters - you can enforce the user to be a member of specific roles, or comply with specific ASP.NET Core Authorization policies, or be authenticated via specified authentication scheme.
 
-If you want the same permission check for all pages, you can place the `Authorize` method call to the [master page](~/pages/concepts/layout/master-pages) viewmodel. If you override the `Init` method in page viewmodels, make sure to properly call `await base.Init(context);` so the check is applied. 
+If you want the same permission check for all pages, you can place the `Authorize` method call to the [master page](~/pages/concepts/layout/master-pages) viewmodel. If you override the `Init` method in page viewmodels, make sure to properly call `await base.Init(context);` so the check is applied.
+
+> If you use the same base view model for the login page, you might cause an infinite redirect loop when you call `Context.Authorize` in OnInit.
+> To avoid it, you'll need to suppress the Authorize call, for instance by placing it into a protected virtual method which you can override to do nothing.
 
 ### Obtaining the context in static commands
 
