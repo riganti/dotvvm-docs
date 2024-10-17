@@ -1,5 +1,19 @@
 # Release notes
 
+## v4.0.576.0
+* Support for new Visual Studio versions
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.41)
+* Version for Visual Studio 2022 (17.11.5)
+* Version for Visual Studio 2022 Preview (17.12.0 Preview 3.0)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.576.0/DotVVM.Integration.VisualStudio.VS2019.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.576.0/DotVVM.Integration.VisualStudio.VS2022.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.576.0/DotVVM.Integration.VisualStudio.VS2022-Preview.vsix)
+
+
 ## v4.0.575.0
 * Full support of aliases and imports
 * @viewmodel @baseType @service work with usings and type aliases
