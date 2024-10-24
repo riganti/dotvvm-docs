@@ -31,6 +31,7 @@ The method can be:
 * a [REST API method](rest-api-bindings/overview)
 
 Asynchronous methods (returning `Task`) are supported, but you need to call `.Result` in the static command binding to access the result.
+The static command is executed client-side and the `.Result` property will be translated into non-blocking JavaScript code.
 
 ### Static methods
 
@@ -67,9 +68,13 @@ Also, you may want to use the method result to update some viewmodel property.
 
 If the `MyClass` is not in the same namespace as the viewmodel, use the `@import` directive.
 
-### Static command service methods
+### Dependency injection
 
-Since the static methods cannot use [dependency injection](~/pageS/concepts/configuration/dependency-injection/overview), we recommend using [static command services](static-command-services) instead of static methods. 
+For non-trivial methods, we generally recommend using [static command services](static-command-services) instead of static methods, as it enables [dependency injection](~/pageS/concepts/configuration/dependency-injection/overview) of other services.
+However, DotVVM also allows you to fill any method arguments with services imported from `@service` directives, making it possible to use DI with static methods.
+
+Note that in static commands, `IDotvvmRequestContext` is only available as an injected service.
+The `Context` property is not populated, and accessing it might trigger the transfer of the entire viewmodel.
 
 ### JavaScript methods
 
@@ -78,6 +83,9 @@ If you import a view module using the [JS directive](~/pages/concepts/client-sid
 ```DOTHTML
 <dot:Button Text="Call JS method" Click="{staticCommand: SomeProperty = _js.Invoke<string>("myMethod", SomeArg, ...)}" />
 ```
+
+Server-side methods and `_js.Invoke` may be arbitrarily combined.
+For instance, we can extract a value using JS function `m1`, send it to the server and pass the result: `_js.Invoke("m2", MyClass.MyMethod(_js.Invoke<string>("m1"))`
 
 ### REST API methods
 
