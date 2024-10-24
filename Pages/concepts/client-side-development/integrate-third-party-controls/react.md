@@ -130,7 +130,7 @@ DotVVM will take any properties set on the `JsComponent` in dothtml and transfer
 </js:TheComponent>
 ```
 
-The props includes a `setProps` function which can be used to write values back into the value binding.
+The props object includes a `setProps` function which can be used to write values back into the value binding.
 It will throw an exception if writing into a one-way binding (or into command/template property).
 For example, you can use it for writing custom interactive input components in React:
 
@@ -147,6 +147,48 @@ function FancyEditorWrapper({ text, setProps }) {
 }
 ```
 
+
+## Global registration
+
+As shown above, the JsComponent can be exported from a [view module](../js-directive/overview) which is explicitly imported in each view using the component.
+Alternatively, the component can be registered globally and used without view modules using the `dotvvm.registerGlobalComponent` function.
+This is primarily useful for code-only controls using the JsComponent, since code-only controls cannot initialize a view module.
+
+```JAVASCRIPT
+dotvvm.registerGlobalComponent("MyComponent", registerReactControl(MyComponent))
+```
+
+The component can be then used on any page.
+The JsComponent may have a Global property to clearly indicate that a global component is reference.
+
+```DOTHTML
+<js:MyComponent Global data={value: Data} />
+```
+
+A globally registered component can be used in code-only controls.
+Defining [a composite control](../../control-development/composite-controls.md) is a good way to create a strongly typed wrapper around a frequently used JavaScript component:
+
+```CSHARP
+public class MyWrapperComposite : CompositeControl
+{
+    public IEnumerable<DotvvmControl> GetContents(
+        ValueOrBinding<IEnumerable<MyDataRow>> data,
+        ValueOrBinding<bool>? enabled = null,
+        ITemplate? popupTemplate = null
+    )
+    {
+        var js = new JsComponent("MyComponent");
+        js.Props.Set("data", data);
+        js.Props.Set("enabled", enabled);
+        js.Templates.Set("popupTemplate", popupTemplate);
+        return [
+            // reference the script registering the control
+            new RequiredResource("mycomponent.js"),
+            js
+        ]
+    }
+}
+```
 
 ## See also
 
