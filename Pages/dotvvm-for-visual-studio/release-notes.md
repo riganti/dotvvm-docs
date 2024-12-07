@@ -1,5 +1,19 @@
 # Release notes
 
+## v4.0.578.0
+* Support for new Visual Studio versions
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.42)
+* Version for Visual Studio 2022 (17.12.3)
+* Version for Visual Studio 2022 Preview (17.13.0 Preview 1.0)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.578.0/DotVVM.Integration.VisualStudio.VS2019.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.578.0/DotVVM.Integration.VisualStudio.VS2022.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.578.0/DotVVM.Integration.VisualStudio.VS2022-Preview.vsix)
+
+
 ## v4.0.577.0
 * Fixed a bug which caused extension not being able to handle complex generic types in control properties
 * Support for new Visual Studio versions
