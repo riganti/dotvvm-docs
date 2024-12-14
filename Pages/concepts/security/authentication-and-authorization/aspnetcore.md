@@ -145,13 +145,51 @@ public class LoginViewModel : DotvvmViewModelBase
 }
 ```
 
-## Azure Active Directory authentication
+## Social providers authentication
 
-In order to use Azure Active Directory as the identity provider, you can use the Open ID Connect middleware using the `Microsoft.AspNetCore.Authentication.OpenIdConnect` package.
+If you want to let the users to sign in using Facebook or other third party identity provider, you need to use a different middleware. 
 
-For the details, visit the [DotVVM with Azure AD Authentication Sample](https://github.com/riganti/dotvvm-samples-azuread-auth).
+First, you need to install the appropriate NuGet package, for example `Microsoft.AspNetCore.Authentication.Google`.
+
+In order to redirect to the Google login page, you can use this code:
+
+```CSHARP
+public async Task LoginWithGoogle()
+{
+    // redirect to Google login page
+    await Context.GetAuthentication().ChallengeAsync(GoogleDefaults.AuthenticationScheme,
+        new AuthenticationProperties()
+        {
+            RedirectUri = "/myProfile"
+        });
+}
+```
+
+Please note that the `ChallengeAsync` call sets the HTTP code to 302 to redirect to the authentication provider's login page. When configuring the authentication handler, you need to use `DotvvmAuthenticationHelper.ApplyRedirectResponse` to change the HTTP response to HTTP 200 and a JSON payload that tells DotVVM to perform the redirect in the browser.
+
+To configure the Google authentication, use the following code in the `Startup.cs`:
+
+```CSHARP
+services.AddAuthentication(...)
+...
+.AddGoogle(googleOptions =>
+{
+    googleOptions.ClientId = configuration["Google:ClientId"];
+    googleOptions.ClientSecret = configuration["Google:ClientSecret"];
+    googleOptions.Events = new OAuthEvents()
+    {
+        OnRedirectToAuthorizationEndpoint = context => DotvvmAuthenticationHelper.ApplyRedirectResponse(context.HttpContext, context.RedirectUri)
+    };
+})
+```
+
+## Azure Entra ID (formerly Azure Active Directory) authentication
+
+In order to use Azure Entra ID  (formerly Azure Active Directory) as the identity provider, you can use the `Microsoft.Identity.Web` package that provides an easy-to-use API to configure the OpenID Connect handler combined with cookie authentication.
+
+For the details, visit the [DotVVM with Azure Entra ID Authentication Sample](https://github.com/riganti/dotvvm-samples-azuread-auth).
 
 ## See also
 
 * [Authentication & authorization](overview)
-* [Sample: Azure Active Directory authentication](https://github.com/riganti/dotvvm-samples-azuread-auth)
+* [Sample: Azure Entra ID authentication](https://github.com/riganti/dotvvm-samples-azuread-auth)

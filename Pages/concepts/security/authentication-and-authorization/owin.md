@@ -120,13 +120,13 @@ app.UseFacebookAuthentication(new FacebookAuthenticationOptions()
 });
 ```
 
-## Azure Active Directory authentication
+## Azure Entra ID (formerly Azure Active Directory) authentication
 
-In order to use Azure Active Directory as the identity provider, you can use the Open ID Connect middleware using the `Microsoft.Owin.Security.OpenIdConnect` package.
+In order to use Azure Entra ID (formerly Azure Active Directory) as the identity provider, you can use the Open ID Connect middleware using the `Microsoft.Owin.Security.OpenIdConnect` package.
 
-For the details, visit the [DotVVM with Azure AD Authentication Sample](https://github.com/riganti/dotvvm-samples-azuread-auth).
+For the details, visit the [DotVVM with Azure Entra ID Authentication Sample](https://github.com/riganti/dotvvm-samples-azuread-auth).
 
 ## See also
 
 * [Authentication & authorization](overview)
-* [Sample: Azure Active Directory authentication](https://github.com/riganti/dotvvm-samples-azuread-auth)
+* [Sample: Azure Entra ID authentication](https://github.com/riganti/dotvvm-samples-azuread-auth)
