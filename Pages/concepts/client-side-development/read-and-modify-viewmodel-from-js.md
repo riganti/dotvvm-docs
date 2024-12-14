@@ -15,11 +15,13 @@ DotVVM stores the page viewmodel in an immutable JS object, which can be accesse
 }
 ```
 
-**The state object is frozen**, so any direct modifications to it will be ignored.
+**The state object is frozen**, so is cannot be directly changed.
 If you want to modify the object, use the `patchState` function.
 
 ```JS
-dotvvm.state.Something = "don't do this!!";  // DON'T DO THIS - the value won't be set, and the call will be silently ignored (no warnings or errors)
+// DON'T DO THIS - the value won't be set
+// Unless in JS strict mode,  the call will be silently ignored (no warnings or errors)
+dotvvm.state.Something = "don't do this!!";
 
 dotvvm.patchState({ Something: "new value" });  // this is the correct approach
 // Knockout observables will be notified in the next animation frame
@@ -55,15 +57,17 @@ To modify data, you need to call the observable and pass the new value as an arg
 dotvvm.viewModels.root.viewModel.EventAttendees()[2]().FirstName("test");
 ```
 
-When you set the observable value, the change will be written in the `dotvvm.state`. 
+When you set the observable value, the change will be written in the `dotvvm.state` immediately.
+However, the inverse is not true — the knockout observables are updated with a delay.
+If you need up-to-date information, always use the state based API for reading: 
 
-### New API in DotVVM 3.0
+### State-based API on knockout observables
 
-The observables got a new API in DotVVM 3.0, which is a preferred way of manipulation with the observables.
+DotVVM adds API to all knockout observables, which is usually a preferred way of data manipulation.
 
 There is the `state` read-only property which returns the state. If the observable contains an object, you'll get the unwrapped object, which is frozen - you won't be able to change it directly.
 
-If you want to modify the state, you can use either `setState` or `patchState` functions:
+If you want to modify the state, you can use either `setState`, `patchState` or `updateState` functions:
 
 ```JS
 // replace state
@@ -79,11 +83,17 @@ dotvvm.viewModels.root.viewModel.EventAttendees.patchState([
     {}, // no changes to the second element
     { FirstName: "new value" }  // just patch the first name
 ]);
+
+// apply a function (added in version 4.2)
+dotvvm.viewModels.root.viewModel.EventAttendees.updateState(oldArray =>
+    [ ...oldArray, { Id: 17, FirstName: "Eugene", LastName: "Null" } ] // add new element to array
+)
 ```
 
 Since the viewmodels contain the `$type` properties which carry the information about object types, this API rejects invalid state changes - this is called __coercion__. 
 
-The coercer can perform some automatic conversions (like convert a number to string, and similar) - you'll get a warning in the dev console if automatic coercion happens. If the coercer cannot adjust the types correctly, you'll get a JavaScript error. 
+The coercer can perform some automatic conversions (like convert a number to string, and similar) - you'll get a warning in the dev console if automatic coercion happens.
+If the coercer cannot adjust the types correctly, you'll get a JavaScript exception and no change will be applied to the state. 
 
 ## Dates
 
