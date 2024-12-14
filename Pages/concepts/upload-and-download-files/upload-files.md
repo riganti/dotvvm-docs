@@ -54,7 +54,7 @@ This object contains several properties:
   * `FileId` property contains a unique id of the file on the server
   * `FileName` property contains a name of the file on the user's computer
   * `FileSize` provides info about the size of the file (number of bytes, and a human-readable value representing the file size )
-* `IsBusy` and `Progress` properties indicate whether there something being uploaded at the moment, and the progress in percents (0 to 100)
+* `IsBusy` and `Progress` properties indicate whether something is being uploaded at the moment, and the progress in percents (0 to 100)
 * `Error` property contains an error message indicating if there was a problem during the upload
 
 While files are being uploaded, DotVVM regularly updates the contents of the collection. 
