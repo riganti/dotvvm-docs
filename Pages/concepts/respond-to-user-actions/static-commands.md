@@ -70,7 +70,7 @@ If the `MyClass` is not in the same namespace as the viewmodel, use the `@import
 
 ### Dependency injection
 
-For non-trivial methods, we generally recommend using [static command services](static-command-services) instead of static methods, as it enables [dependency injection](~/pageS/concepts/configuration/dependency-injection/overview) of other services.
+For non-trivial methods, we generally recommend using [static command services](static-command-services) instead of static methods, as it enables [dependency injection](~/pages/concepts/configuration/dependency-injection/overview) of other services.
 However, DotVVM also allows you to fill any method arguments with services imported from `@service` directives, making it possible to use DI with static methods.
 
 Note that in static commands, `IDotvvmRequestContext` is only available as an injected service.
