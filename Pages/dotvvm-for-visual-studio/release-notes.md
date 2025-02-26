@@ -1,5 +1,18 @@
 # Release notes
 
+## v4.0.581.0
+* Support for new Visual Studio versions
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.44)
+* Version for Visual Studio 2022 (17.13.1)
+* Version for Visual Studio 2022 Preview (17.14.0 Preview 1.1)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.581.0/DotVVM.Integration.VisualStudio.VS2019.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.581.0/DotVVM.Integration.VisualStudio.VS2022.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.581.0/DotVVM.Integration.VisualStudio.VS2022-Preview.vsix)
+
 ## v4.0.580.0
 * Support for new Visual Studio versions
 * Fixed bug with loading DotvvmPackage
