@@ -1,5 +1,42 @@
 # Release notes
 
+## 4.3.2
+
+### Bug fixes
+
+* `Slider` and `RangeSlider` - fixed behavior when Min and Max values are equal
+* `FileUpload` - fixed bug with client-side size and file type validation
+* `ImageCrop` - image is auto-centered when the source URL is changed
+
+## 4.3.1
+
+### Bug fixes
+
+* `GridView` filter columns - fixed issue with resetting filters
+* Fixed issues with using `_parent` and `_root` in some value bindings
+* `ComboBox` server-side search issue fixed on deleting search text
+* `ComboBox` issue with null selected value fixed
+
+## 4.3.0
+
+### New features
+
+* `TextBox` has the new `MaxLength` property
+* Client-side code cleanup, removed unnecessary IE11 polyfills
+
+### Bug fixes 
+
+* Date/Time controls - minor UX improvements
+* Date/Time controls - fixes in firing `Changed` event
+* `FileUpload` state-related race condition fixed
+* `Placeholder` properties allow value bindings
+* Module-scoped functions used instead of extending JQuery prototype to prevent conflicts with other libraries
+* `GridView` filtering of `DateTime` values fixed for Entity Framework 6 query translator
+* `GridView` filtering - fixed several null-related issues
+
+### Package updates
+- DotVVM upgraded to **4.3**
+
 ## 4.2.0
 
 ### New features
