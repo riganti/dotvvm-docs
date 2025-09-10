@@ -1,0 +1,10 @@
+{
+    "$schema": "https://context7.com/schema/context7.json",
+    "projectTitle": "DotVVM",
+    "description": "MVVM framework for ASP.NET Core and ASP.NET",
+    "folders": [],
+    "excludeFolders": [],
+    "excludeFiles": ["menu.xml", "GUIDE.md"],
+    "rules": [],
+    "previousVersions": []
+  }
