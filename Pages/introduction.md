@@ -4,7 +4,7 @@
 
 DotVVM consists of a **server-side part** (which integrates in the ASP.NET infrastructure) and a **client-side part** based on [Knockout JS](https://knockoutjs.com/) which creates the MVVM experience in the web browser. 
 
-The framework includes a **set of built-in components** (also called _controls_), and offers an [extension for Visual Studio 2022 and 2019](https://www.dotvvm.com/get-dotvvm) that gives syntax highlighting, IntelliSense, refactorings and code fixes, error checking, and other functions.
+The framework includes a **set of built-in components** (also called _controls_), and offers an [extension for Visual Studio 2026, 2022 and 2019](https://www.dotvvm.com/get-dotvvm) that gives syntax highlighting, IntelliSense, refactorings and code fixes, error checking, and other functions.
 
 ## Use-cases for DotVVM
 
