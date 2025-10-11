@@ -1,5 +1,21 @@
 # Release notes
 
+## v4.0.587.0
+* Support for new Visual Studio versions **including Visual Studio 2026 Insiders**
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.51)
+* Version for Visual Studio 2022 (17.14.16)
+* Version for Visual Studio 2022 Preview (17.14.16 Preview 1.0)
+* Version for Visual Studio 2026 Insiders (18.0.0 Insiders 11109.219)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.587.0/DotVVM.Integration.VisualStudio.VS2019.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.587.0/DotVVM.Integration.VisualStudio.VS2022.vsix) </br>
+Version for Visual Studio 2022 Preview: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.587.0/DotVVM.Integration.VisualStudio.VS2022-Preview.vsix) </br>
+Version for Visual Studio 2026 Insiders: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.587.0/DotVVM.Integration.VisualStudio.VS2026.vsix)
+
+
 ## v4.0.586.0
 * Support for new Visual Studio versions **including Visual Studio 2026 Insiders**
 
