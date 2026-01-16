@@ -2,8 +2,6 @@
 
 > The JS directive feature is new in DotVVM 3.0. 
 
-> The JS directive functionality is not supported in Internet Explorer 11. 
-
 If you want to write [JS directive](overview) modules in TypeScript, there are several things to consider. Also, if the JavaScript code base is going to be larger than a single file, it may be useful to use a module bundler.
 
 ## Prerequisites

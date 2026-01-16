@@ -2,8 +2,6 @@
 
 > The JS directive feature is new in DotVVM 3.0. 
 
-> The JS directive functionality is not supported in Internet Explorer 11. 
-
 After the JS module is imported using the [JS directive](overview), you can export functions to be called from DotVVM using [static commands](~/pages/concepts/respond-to-user-actions/static-commands).
 
 ## Declare functions in module

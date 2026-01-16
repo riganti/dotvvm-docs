@@ -2,8 +2,6 @@
 
 > The JS directive feature is new in DotVVM 3.0. 
 
-> The JS directive functionality is not supported in Internet Explorer 11. 
-
 **JS directive** is a set of features which offer a rich ways to interact between DotVVM controls and JavaScript code. It allows to import a [ES6 module](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) in the page, and provides mechanisms to [invoke DotVVM commands from JS code](call-dotvvm-from-js), as well as to [call functions in the module](call-js-from-dotvvm) from the DotVVM page. 
 
 The modules may be written in plain JavaScript (using the ES6 syntax), or using [TypeScript](use-typescript-to-declare-modules).
