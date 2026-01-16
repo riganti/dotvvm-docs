@@ -2,7 +2,7 @@
 
 The pages in DotVVM are defined in files with `.dothtml` extension. 
 
-The syntax used in DotVVM is called **DotHTML**. It is a standard HTML syntax with three flavors: **directives**, **binding expressions**, and **DotVVM controls**.
+The syntax used in DotVVM is called **DotHTML**. It is a standard HTML syntax with three flavors: **directives**, **binding expressions**, and **DotVVM controls** (sometimes also referred to as components).
 
 There are also special kinds of files with the `.dotmaster` or `.dotcontrol` extensions ([master pages](~/pages/concepts/layout/master-pages) and [markup controls](~/pages/concepts/control-development/markup-controls)). The syntax used in these files is the same as in `.dothtml` files.
 

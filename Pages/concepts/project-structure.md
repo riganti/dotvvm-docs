@@ -6,7 +6,7 @@ After you [create a new DotVVM project](~/pages/quick-starts/build/create-new-pr
 
 * `ViewModels/DefaultViewModel.cs` - an example viewmodel.
 
-* `Startup.cs` - startup class which configures services and registers DotVVM and static files middlewares.
+* `Startup.cs` - startup class which configures services and registers DotVVM and static files middlewares (this file is missing in the new .NET versions; the declarations are in `Program.cs`).
 
 * `DotvvmStartup.cs` - a DotVVM configuration class (see the [Configuration](~/pages/concepts/configuration/overview) chapter).
 
@@ -35,4 +35,5 @@ You can use any convention that suits your needs, e.g. place views together with
 ## See also
 
 * [Create new DotVVM project](~/pages/quick-starts/build/create-new-project)
+* [DotHTML markup](~/pages/concepts/dothtml-markup/overview)
 * [Configuration](~/pages/concepts/configuration/overview)

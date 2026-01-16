@@ -69,7 +69,7 @@ namespace YourProjectName.ViewModels
 
 ## Step 2: Create the view
 
-By default, the `ToDoList.dothtml` page is using a [master page](~/concepts/layout/master-pages) to have a shared header and footer for all pages. 
+By default, the `ToDoList.dothtml` page is using a [master page](~/pages/concepts/layout/master-pages) to have a shared header and footer for all pages. 
 
 To keep things simple, we'll not use it for now. Remove everything in the page and use the following code (just replace `YourProjectName` with your project name):
 
@@ -184,6 +184,6 @@ The example uses Bootstrap for styling. You can customize the appearance by:
 
 ## See also
 
-* [Data-binding](~/concepts/data-binding/overview)
-* [Viewmodels](~/concepts/viewmodels/overview)
-* [Commands](~/concepts/respond-to-user-actions/overview)
+* [Data-binding](~/pages/concepts/data-binding/overview)
+* [Viewmodels](~/pages/concepts/viewmodels/overview)
+* [Commands](~/pages/concepts/respond-to-user-actions/overview)

@@ -2,7 +2,7 @@
 
 Every page in DotVVM consists of a _view_ and a _viewmodel_.
 
-When you [create a new project](create-new-project), there is already a page named `Default.dothtml` and its corresponding viewmodel `DefaultViewModel.cs`. There is also a [master page](~/concepts/layout/master-pages) which is used to define the main structure, header, and footer for all pages in the application. 
+When you [create a new project](create-new-project), there is already a page named `Default.dothtml` and its corresponding viewmodel `DefaultViewModel.cs`. There is also a [master page](~/pages/concepts/layout/master-pages) which is used to define the main structure, header, and footer for all pages in the application. 
 
 You can start by editing the default page, or choose to add a new page. To create a page in Visual Studio, right-click on the desired folder in the Solution Explorer window and choose **Add > New Item...**.
 
