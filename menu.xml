@@ -44,6 +44,7 @@
 	  <DocPageMenuItem RouteName="auto-discover-routes" PageName="Auto-discover routes" />
 	  <DocPageMenuItem RouteName="custom-presenters" PageName="Custom presenters" />
 	  <DocPageMenuItem RouteName="route-redirection" PageName="Route redirection" />
+	  <DocPageMenuItem RouteName="route-localization" PageName="Route localization" />
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="layout" PageName="Layout">
