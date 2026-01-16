@@ -135,6 +135,12 @@ If you don't want to use any wrapper tag you can add the `@noWrapperTag` directi
 
 This will render the control inside the `table` tag.
 
+## Interact with JavaScript code using `@js` directive
+
+Markup controls can seamlessly integrate with custom JavaScript code using the `@js` directive.
+It will create an instance of the view module for each instance of the markup control.
+See the [@js directive / view modules documentation](../client-side-development/js-directive/overview.md) for more information.
+
 ## See also
 
 * [Markup control registration](markup-control-registration)

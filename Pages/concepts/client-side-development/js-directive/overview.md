@@ -31,13 +31,13 @@ class MyModule {
 }
 ```
 
-For C# developers, it can be useful to use the `class` syntax, but it is not required - the function can return any object:
+For C# developers, it can be more familiar to use the `class` syntax, but it is not required - the function can return any object:
 
 ```JS
 // alternative declaration without using the class
 export default context => {
 
-    var privateThing = ...
+    let privateThing = ...
 
     function privateMethod() {
         ...
@@ -54,7 +54,7 @@ export default context => {
 
 ## Register the module
 
-The module needs to be registered in `DotvvmStartup.cs` file. Make sure you use `ScriptModuleResource` instead of plain `ScriptResource`:
+The module needs to be registered in `DotvvmStartup.cs` file as a resource. Make sure you use `ScriptModuleResource` instead of plain `ScriptResource`:
 
 ```CSHARP
 config.Resources.Register("dashboard-module", new ScriptModuleResource(new UrlResourceLocation("~/app/dashboard-module.js"))
