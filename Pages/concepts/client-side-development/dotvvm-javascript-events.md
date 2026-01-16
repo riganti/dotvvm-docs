@@ -49,6 +49,8 @@ If the postback is rejected due to the validation errors, or from a postback han
 
 Also, the `error` event is raised in case of any error.
 
+The `dotvvm.validation.events.validationErrorsChanged` event will be triggered, if the postback resulted in any validation errors.
+
 ## Static command events
 
 The sequence of events triggered for [static commands](~/pages/concepts/respond-to-user-actions/static-commands) starts like this:
