@@ -153,4 +153,4 @@ If the counter state is the same as it was before the waiting procedure, we just
 * [Adding interactivity using Knockout binding handlers](interactivity)
 * [Binding system extensibility](binding-extensibility)
 * [Binding extension parameters](binding-extension-parameters)
-* [Custom JavaScript translators](custom-javascript-translators)
+* [Custom JavaScript translators](../client-side-development/custom-javascript-translators)

@@ -204,7 +204,7 @@ Equivalent methods are also supported on the `ImmutableArray<T>` type.
 
 ### Provide custom method translators
 
-It is possible to register custom translators for any method. See [Provide custom JavaScript translators](~/pages/concepts/control-development/custom-javascript-translators) for more information.
+It is possible to register custom translators for any method. See [Provide custom JavaScript translators](~/pages/concepts/client-side-development/custom-javascript-translators) for more information.
 
 ### Use custom .NET extension methods
 
