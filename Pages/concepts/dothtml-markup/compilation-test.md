@@ -35,6 +35,7 @@ public class ViewCompilationTests
 
 ## See also
 
+* [Compilation status page](~/Pages/upgrading-from-older-versions/compilation-status-page.md)
 * [DotHTML markup](~/pages/concepts/dothtml-markup/overview)
 * [Common control properties](~/pages/concepts/dothtml-markup/common-control-properties)
 * [Data-binding](~/pages/concepts/data-binding/overview)

@@ -22,17 +22,18 @@ config.Styles.Register("input")...
 
 ### Conditional rules
 
-It is also possible to set a condition under which the styles will be applied. To do that, use `Register(Func<StyleMatchContext, bool>)`. 
+It is possible to apply a style to all controls matching a condition. To do that, use the `Register(Func<StyleMatchContext, bool>)` method.
 
 ```CSHARP
 // This will hide every control derived from ButtonBase that does not have the Click property
 config.Styles.Register<ButtonBase>(b => !b.HasProperty(ButtonBase.ClickProperty), allowDerived: true)
   .SetAttribute("style", "display:none;", StyleOverrideOptions.Overwrite);
-```    
+```
 
 ### Matching by tags
 
-For easy matching of the controls, we've introduced a new property `Styles.Tag`. It can specify a value you can use when matching the control with styles:
+We recommend using the `Styles.Tag` property for style matching.
+It is a dedicated property for this purpose, and it can contain a list of string which can be referenced in the style conditions.
 
 ```DOTHTML
 <!-- separate tags by comma -->
@@ -53,7 +54,7 @@ c.Styles.Register<Literal>(c => c.HasAncestorWithTag("literal-spans"))
 
 ### Matching by view location or data context type
 
-The styles are applied during the compilation of a view. The `StyleMatchContext` has methods for checking data contexts, ancestors, and other properties of the object. You can even check whether the view the object is included in is in a specific directory:
+The styles are applied during the compilation of a view. The `StyleMatchContext` has methods for checking data contexts, ancestors, view file location and any other properties of the control.
 
 ```CSHARP
 config.Styles.Register<GridView>(c => 
@@ -61,7 +62,7 @@ config.Styles.Register<GridView>(c =>
         c.HasDataContext<AccountInfo>() && 
         c.HasViewInDirectory("~/Views/Logs/")
     )
-    .SetDotvvmProperty(GridView.VisibleProperty, StyleOverrideOptions.Ignore);
+    .SetDotvvmProperty(GridView.VisibleProperty, ..., StyleOverrideOptions.Ignore);
 ```
 
 ## Define the style properties
@@ -90,7 +91,8 @@ config.Styles.Register<Button>()
 
 ## Work with data-binding expressions
 
-Prior to DotVVM 4.0, it was only possible to set constant values into control properties. From DotVVM 4.0, it's possible to compute the value for each control using a supplied lambda function:
+From DotVVM 4.0, it's possible to compute the value for each control by supplying a lambda function.
+Keep in mind the lambda will be evaluated during view compilation, not at runtime.
 
 ```csharp
 // this will apply a confirm postback handler to all commands and staticCommands on this control
@@ -102,7 +104,7 @@ c.Styles.RegisterAnyControl(c => c.HasTag("confirm"))
         );
 ```
 
-It is also possible to process a binding in the API. For example, this transforms every usage of the `Visible` property into a CSS class regardless whether it's a static value or a value / resource binding.
+It is also possible to process a bindings in the API. For example, this transforms every usage of the `Visible` property into a CSS class regardless whether it's a static value or a value / resource binding.
 
 ```csharp
 c.Styles.Register<HtmlGenericControl>(c => c.HasProperty(c => c.Visible))
@@ -115,7 +117,7 @@ The `.Negate()` is a extension method defined on the new `ValueOrBinding<bool>` 
 
 ## Modify content of styled controls
 
-Starting with DotVVM 4.0, it is possible to create controls in normal C# code and then put them into children, control properties, or append and prepend them to the matched control. 
+Starting with DotVVM 4.0, it is possible to create controls and place them into children, control properties, or append and prepend them to the matched control. 
 
 Use `.PrependContent`, `.AppendContent`, `.SetControlProperty`, `.Append` and `.Prepend`. You can also replace the entire control with a different one using `.ReplaceWith` which will also copy all properties onto the new control. 
 

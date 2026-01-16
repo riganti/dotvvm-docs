@@ -4,7 +4,7 @@ Sometimes, you may need to persist some value between postbacks, but you don't w
 
 If you put the value in a viewmodel property, by default it can be read and modified by the client, even if you don't display it in the view or offer a UI control that can edit the value. 
 
-If the users open the browser developer tools, they can access and manipulate with the viewmodel. Or they can use some HTTP proxy to read or modify data that the browser exchanges with the server.
+When users open the browser developer tools, they can read the entire viewmodel and make arbitrary changes.
 
 > Always validate any values that come from the client and make sure the user has a permission to modify them! 
 
@@ -45,6 +45,24 @@ DotVVM uses the URL and current user identity to derive an encryption key. It me
 If anyone captures a viewmodel with encrypted values, they won't be able to use the encrypted values to make a postback under a different user identity, or on a different URL.
 
 > To improve the security, we strongly encourage you to include primary keys of data displayed on the page (e.g. the ID of currently displayed order) in the URL. If you store such information in the viewmodel to use it as an argument in postbacks, you should sign or encrypt such value to prevent the viewmodel being used to modify another record.
+
+## Prefer reloading data to encryption
+
+While encrypted values are bound to a specific user and page URL, it is not bound to any specific time.
+This means that the user may store encrypted values and use them at later time to trick the server.
+
+Let's say we have a page which allows editing of a record, if the user has some permissions.
+Since we need to show/hide certain UI components, we need to store an `IsEditable` property in the viewmodel.
+Now it may be tempting to sign the property and then trust it when user invokes the `Save()` command
+
+```CSHARP
+/// Probably a bad idea:
+[Protect(ProtectMode.SignData)]
+public bool IsEditable { get; set; }
+```
+
+However, the user can store the encrypted values and re-use them later, even though his edit permissions may have been already revoked.
+It is always safer to mark the property as `[Bind(Direction.ServerToClient)]` and re-verify the user's access based on current data in the database.
 
 ## Notes
 

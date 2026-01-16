@@ -29,7 +29,9 @@ To remove a fragment of code from the rendered output, use the **server-side com
 You can also use server-side comments inside tags, like this:
 
 ```DOTHTML
-<dot:GridView DataSource="{value: Source}" <%-- server comment in attributes --%> class="table">
+<dot:GridView DataSource="{value: Source}"
+              <%-- server comment in attributes --%>
+              class="table">
     ...
 </dot:GridView>
 ```

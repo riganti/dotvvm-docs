@@ -7,7 +7,9 @@ You can use these properties on plain HTML elements too.
 + `DataContext` - changes the [binding context](~/pages/concepts/data-binding/binding-context) for the content of the control or element.
 + `Visible` - hides the control or element in the page (using CSS `display: none`).
 + `IncludeInPage` - includes or removes the control or element from DOM.
-+ `ID` - specifies an ID of the control. 
++ `ID` - specifies an ID of the control.
++ `Class-my-class` - toggles `my-class` CSS class on the control.
++ `Style-some-style` - sets `some-style` to the assigned value, see [Combine CSS classes and styles](~/pages/concepts/dothtml-markup/combine-css-classes-and-styles) for more details.
 
 ## HTML attributes on controls
 
@@ -29,8 +31,6 @@ This produces the following HTML:
 ```
 
 You can see that the `class` attribute has been added to the rendered `input` element, and the `placeholder` attribute was translated to Knockout JS `attr` binding.
-
-> DotVVM allows to combine multiple CSS classes or inline styles dynamically. See [Combine CSS classes and styles](~/pages/concepts/dothtml-markup/combine-css-classes-and-styles) for more information.
 
 ## Enable or disable form controls
 
