@@ -20,7 +20,7 @@ The main advantage of custom presenter over the middleware is that you can use D
 ```CSHARP
 public class RssPresenter : IDotvvmPresenter
 {
-    public Task ProcessRequest(IDotvvmRequestContext context)
+    public async Task ProcessRequest(IDotvvmRequestContext context)
     {
         context.GetAspNetCoreContext().Response.ContentType = "application/rss+xml";
 
@@ -43,11 +43,12 @@ public class RssPresenter : IDotvvmPresenter
         var feed = new SyndicationFeed("Sample RSS Feed", "DotVVM Sample", new Uri("https://www.dotvvm.com"), items);
 
         // write the XML to the output
-        var writer = XmlWriter.Create(context.GetAspNetCoreContext().Response.Body, new XmlWriterSettings() { Indent = true });
+        using var ms = new MemoryStream();
+        var writer = XmlWriter.Create(ms, new XmlWriterSettings() { Indent = true });
         feed.SaveAsRss20(writer);
         writer.Flush();
 
-        return Task.FromResult(0);
+        await ms.WriteToAsync(context.GetAspNetCoreContext().Response.Body);
     }
 }
 ```
@@ -84,7 +85,7 @@ public class RssPresenter : IDotvvmPresenter
         feed.SaveAsRss20(writer);
         writer.Flush();
 
-        return Task.FromResult(0);
+        return Task.CompletedTask;
     }
 }
 ```
@@ -96,7 +97,7 @@ public class RssPresenter : IDotvvmPresenter
 Finally, you need to register the presenter in the `DotvvmStartup.cs` file:
 
 ```CSHARP
-config.RouteTable.Add("t", "u", typeof(RssPresenter));
+config.RouteTable.Add("Rss", "rss", typeof(RssPresenter));
 ```
 
 The `RssPresenter` must be registered in the `IServiceCollection`. See [Dependency injection](~/pages/concepts/configuration/dependency-injection/overview) for more information.
@@ -104,7 +105,7 @@ The `RssPresenter` must be registered in the `IServiceCollection`. See [Dependen
 Alternatively, you can register your own factory method that will be used to create the instance of the presenter. In that case, the presented doesn't need to be registered in `IServiceCollection`:
 
 ```CSHARP
-config.RouteTable.Add("t", "u", serviceProvider => new RssPresenter());
+config.RouteTable.Add("Rss", "rss", serviceProvider => new RssPresenter());
 ```
 
 ## Action filters on presenters
