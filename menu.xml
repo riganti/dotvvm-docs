@@ -35,6 +35,7 @@
 	  <DocPageMenuItem RouteName="comments" PageName="Comments" />
 	  <DocPageMenuItem RouteName="server-side-styles" PageName="Server-side styles" />
 	  <DocPageMenuItem RouteName="compilation-test" PageName="Compilation test" />
+	  <DocPageMenuItem RouteName="hot-reload" PageName="Hot reload" />
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="routing" PageName="Routing">
