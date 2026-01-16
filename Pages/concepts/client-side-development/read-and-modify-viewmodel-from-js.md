@@ -15,16 +15,62 @@ DotVVM stores the page viewmodel in an immutable JS object, which can be accesse
 }
 ```
 
-**The state object is frozen**, so is cannot be directly changed.
+### Viewmodel modification
+
+**The state object is frozen**, and it therefore cannot be directly changed.
 If you want to modify the object, use the `patchState` function.
 
 ```JS
 // DON'T DO THIS - the value won't be set
 // Unless in JS strict mode,  the call will be silently ignored (no warnings or errors)
-dotvvm.state.Something = "don't do this!!";
+dotvvm.state.Something = "will not work!!";
 
 dotvvm.patchState({ Something: "new value" });  // this is the correct approach
 // Knockout observables will be notified in the next animation frame
+```
+
+More complex modifications can be done using the `dotvvm.updateState(oldState => newState)`, or `dotvvm.replaceState(newState)` function.
+Javascript makes it quite easy to shallow-copy the old object and return a new state with a few changed properties using the `{ ...oldState, MyProperty: newValue }`.
+The syntax is analogous to the C# with keyword (but works with any object).
+Let's say we download a new object from API, and want to append it to `MyObject.MyArray` array:
+
+```JS
+const response = await fetch(...)
+const newData = await response.json()
+dotvvm.updateState(old => {
+    return {
+        ...old,
+        MyObject: {
+            ...old.MyObject,
+            MyArray: [
+                ...old.MyObject.MyArray,
+                newData
+            ]
+        }
+    }
+})
+```
+
+More complex modification may become too tedious, so sometimes it is easier to clone part of the viewmodel using `structuredClone(dotvvm.state.MyObject)`, perform the modification on the mutable copy and set it back to the viewModel using one of the mentioned functions:
+
+```JS
+dotvvm.updateState(old => {
+    const obj = structuredClone(old.MyObject)
+    mutableFunction(obj)
+    obj.ModificationCount += 1
+    return {
+        ...old,
+        MyObject: obj
+    }
+})
+```
+
+If you are doing extensive work with the JS API, it might be worth looking at JavaScript libraries implementing lenses, for instance [`shades`](https://github.com/jamesmcnamara/shades) seems relatively simple.
+TL;DR: the library allows you to "lift" a function operating on one nested object to the full viewmodel.
+Let's say we want to call toLowercase() on `Posts[1].Comments[0].User.Name`:
+
+```JS
+dotvvm.updateState(mod('Posts', 1, 'Comments', 0, 'User', 'Name')(n => n.toLowercase()))
 ```
 
 ## Knockout observables
@@ -59,7 +105,12 @@ dotvvm.viewModels.root.viewModel.EventAttendees()[2]().FirstName("test");
 
 When you set the observable value, the change will be written in the `dotvvm.state` immediately.
 However, the inverse is not true — the knockout observables are updated with a delay.
-If you need up-to-date information, always use the state based API for reading: 
+If you need up-to-date information, always use the state based API for reading.
+You can also manually trigger the update by calling `doUpdateNow`
+
+```JS
+dotvvm.rootStateManager.doUpdateNow() // make sure you don't call this in a loop or too often
+```
 
 ### State-based API on knockout observables
 
@@ -90,7 +141,7 @@ dotvvm.viewModels.root.viewModel.EventAttendees.updateState(oldArray =>
 )
 ```
 
-Since the viewmodels contain the `$type` properties which carry the information about object types, this API rejects invalid state changes - this is called __coercion__. 
+Since the viewmodels contain the `$type` properties which carry the information about object types, the API converts or rejects other than expected data types - this is called __coercion__. 
 
 The coercer can perform some automatic conversions (like convert a number to string, and similar) - you'll get a warning in the dev console if automatic coercion happens.
 If the coercer cannot adjust the types correctly, you'll get a JavaScript exception and no change will be applied to the state. 
