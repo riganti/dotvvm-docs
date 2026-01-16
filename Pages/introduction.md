@@ -23,19 +23,17 @@ Thanks to the **Model-view-viewmodel approach**, it is **easy and convenient** t
 
 DotVVM also helps with **delivering the data from the server to the browser** without the need to build and maintain REST or gRPC APIs — the data loaded in the viewmodel are transferred to the browser transparently.
 
-There is also a community extension called [DotVVM AMP](~/pages/community-add-ons/dotvvm-amp) which can generate [AMP](https://en.wikipedia.org/wiki/Accelerated_Mobile_Pages) version of pages automatically, which can increase the site visibility in search engines and decrease the page load times.
-
 See the [Quick start: Create a new project](~/pages/quick-starts/build/create-new-project) chapter for more info.
 
-> If you are not sure whether DotVVM is a good choice for your project, ask us on our [Gitter chat](https://gitter.im/riganti/dotvvm). We will be happy to help you with the decision.
+> If you are not sure whether DotVVM is a good choice for your project, ask us on our [DotVVM Forum](https://forum.dotvvm.com). We will be happy to help you with the decision.
 
 ### Modernizing legacy ASP.NET applications
 
 DotVVM can also be used to incrementally [modernize old ASP.NET-based applications](~/pages/quick-starts/modernize/add-dotvvm-to-existing-app) and migrate them to the latest versions of .NET.
 
-DotVVM supports both ASP.NET Core and old ASP.NET (.NET 4.7.2 and newer). It **can run in the same process side-by-side with other frameworks** such as ASP.NET Web Forms. 
+DotVVM supports both ASP.NET Core and old ASP.NET (.NET 4.7.2 and newer). It **can run in the same process with other frameworks** such as ASP.NET Web Forms. 
 
-DotVVM can be installed into an existing ASP.NET Web Forms application and used to **replace ASPX pages** with their DotVVM equivalents **one by one**. During the process (which can take weeks or even months), the application will still work so the developers can fix bugs and implement new features while modernizing the code base at the same time. 
+DotVVM can be installed into an existing ASP.NET Web Forms application and used to **incrementally replace ASPX pages** with their DotVVM equivalents **one by one**. During the process (which can take weeks or even months), the application will still work so the developers can fix bugs and implement new features while modernizing the code base at the same time. 
 
 Most of the code (business logic, data access, integrations of other systems and so on) **won't need significant changes**, and after all dependencies on ASP.NET Web Forms and `System.Web` are replaced with DotVVM, the **project can be switched to the newest version** of .NET and ASP.NET Core.
 
@@ -76,7 +74,7 @@ DotHTML extends classic HTML syntax with the following constructs:
 * _Data-binding expressions_ — e.g. `{value: Number1}` or `{command: Calculate()}` in the sample above
 * _DotVVM controls_ — e.g. `<dot:Button Text="Calculate" />`
 
-When users of the web application navigate to the page, DotVVM translates the DotHTML markup to plain HTML syntax which can be displayed by the browser.
+When users navigate to the page, DotVVM translates the DotHTML markup to plain HTML syntax which can be displayed by the browser.
 
 DotHTML files usually have the `.dothtml` extension. There are special kinds of views — [Master pages](~/pages/concepts/layout/master-pages) or [Markup controls](~/pages/concepts/control-development/markup-controls) — which are using different file extensions, but they are still using DotHTML syntax.
 
