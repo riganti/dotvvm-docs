@@ -83,7 +83,7 @@ If the binding context is a collection, you can use the `_collection` binding co
 
 The `_collection` variable has the following properties:
 
-* `_collection.Index`
+* `_collection.Index` (aliased also as `_index`) 
 * `_collection.IsFirst`
 * `_collection.IsOdd`
 * `_collection.IsEven`
