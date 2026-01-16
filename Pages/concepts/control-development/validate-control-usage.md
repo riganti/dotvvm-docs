@@ -30,6 +30,23 @@ public static IEnumerable<ControlUsageError> ValidateUsage(ResolvedControl contr
 }
 ```
 
+## Warnings
+
+Since DotVVM 4.3, the ValidateUsage method may also emit warnings, which are visible on the [compilation status page](~/Pages/upgrading-from-older-versions/compilation-status-page) and using the DotVVM CLI lint command.
+Warning is emitted instead of an error if we add `DiagnosticSeverity.Warning` parameter in the constructor:
+
+```CSHARP
+[ControlUsageValidator]
+public static IEnumerable<ControlUsageError> ValidateUsage(ResolvedControl control)
+{
+    if (control.Properties.ContainsKey(LabelProperty) && control.Properties.ContainsKey(SomeTemplateProperty))
+    {
+        var propertyNode = control.GetValue(LabelProperty).DothtmlNode;
+        yield return new("Label is ignored when SomeTemplate is also specified.", DiagnosticSeverity.Warning, propertyNode);
+    }
+}
+```
+
 ## See also
 
 * [Control development overview](overview)
