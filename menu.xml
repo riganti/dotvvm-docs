@@ -171,6 +171,7 @@
 	  <DocPageMenuItem RouteName="application-insights" PageName="Application Insights" />
 	  <DocPageMenuItem RouteName="miniprofiler" PageName="MiniProfiler" />
 	  <DocPageMenuItem RouteName="custom-tracing" PageName="Custom tracing" />
+	  <DocPageMenuItem RouteName="metrics" PageName="Metrics" />
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="cli" PageName="DotVVM CLI">
