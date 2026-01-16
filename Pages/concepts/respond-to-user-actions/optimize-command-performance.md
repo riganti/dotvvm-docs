@@ -36,11 +36,6 @@ public class EmployeeService
                 CreatedDate = e.CreatedDate
             })
             .ToList();
-
-            // alternatively, you can use the AutoMapper library to generate projections instead of writing Select statements
-            // return _dbContext.Employees
-            //     .ProjectTo<EmployeeListDto>()
-            //     .ToList();
     }
 }
 ```
@@ -74,7 +69,7 @@ You can use the `;` operator to have multiple statements in static commands. You
 
 DotVVM 2.4 added a new experimental feature called [server-side viewmodel cache](~/pages/concepts/viewmodels/server-side-viewmodel-cache). This feature caches the viewmodels on the server, so the client can send only the differences between the local viewmodel and the original copy stored on the server.
 
-This can save a lot of data transferred in exchange for a bit of server memory. Many operations don't change the viewmodel at all (e. g. removing a row from a grid), so the savings made thanks to this feature can be more than 90%. 
+This can save a lot of data transferred in exchange for server memory. Many operations don't change the viewmodel at all (e. g. removing a row from a grid), so the savings made thanks to this feature can be more than 90%. 
 
 See the [server-side viewmodel cache](~/pages/concepts/viewmodels/server-side-viewmodel-cache) chapter for more info.
 
@@ -104,7 +99,7 @@ Another way of simplifying the viewmodels is to use [REST API bindings](rest-api
 
 Using this approach, you can make a page with a grid of data which will be loaded using REST API. The viewmodel can then contain only the state of the page (current page index, current order and so on), not the data displayed in the page. This can make a significant change in the size of the viewmodel.
 
-Also, if you use HTTP GET requests for obtaining the data, you can take advantage of the caching on the HTTP level. For example, loading the lists of countries or currencies into the [ComboBox](~/controls/builtin/ComboBox) can be done by a REST API calls which can be safely cached as they don't change frequently.
+Also, if you use HTTP GET requests for obtaining the data, you can take advantage of the caching on the HTTP level. For example, loading the lists of countries or currencies into the [ComboBox](~/controls/builtin/ComboBox) can be done by a REST API calls which can be safely cached as they don't change frequently. 
 
 ## See also
 

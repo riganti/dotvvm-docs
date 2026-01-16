@@ -1,8 +1,8 @@
 # Static commands
 
-Static commands are a very powerful way to manipulate with the viewmodel on the client-side. In contract to [commands](commands), static command doesn't need to send the viewmodel to the server, and in many cases it doesn't even talk to the server. 
+Static commands are a very powerful way to manipulate with the viewmodel on the client-side. In contract to [commands](commands), static command doesn't need to send the entire viewmodel to the server, and in many cases it doesn't even talk to the server. 
 
-Static command can call methods on the server. In such case, only the method arguments are sent to the server, and the return value of the method can be used to update some viewmodel properties.
+If you use static command to call methods on the server, only the method arguments are sent to the server, and the return value of the method can be used to update some viewmodel properties. This usually requires transmitting much less data than sending the entire viewmodel.
 
 ## Assign values to properties
 
@@ -21,17 +21,16 @@ See the [supported expressions](~/pages/concepts/data-binding/supported-expressi
 
 ## Call server methods
 
-Static commands can call methods which are not translated into JavaScript. 
+Static commands can also call methods without requiring them to be translated into JavaScript. 
 
-The method can be:
+These methods can be:
 
-* a static method marked with `[AllowStaticCommand]` attribute
-* a method declared in a [static command services](static-command-services) which is imported using the `@service` directive
-* a JavaScript method imported by a [JS directive](~/pages/concepts/client-side-development/js-directive/overview)
-* a [REST API method](rest-api-bindings/overview)
+* static methods marked with `[AllowStaticCommand]` attribute
+* methods declared in a [static command services](static-command-services) which is imported using the `@service` directive
+* JavaScript methods imported by a [JS directive](~/pages/concepts/client-side-development/js-directive/overview)
+* [REST API methods](rest-api-bindings/overview)
 
-Asynchronous methods (returning `Task`) are supported, but you need to call `.Result` in the static command binding to access the result.
-The static command is executed client-side and the `.Result` property will be translated into non-blocking JavaScript code.
+Asynchronous methods (returning `Task`) are supported, but you need to call `.Result` in the static command binding to access the result. The static command is executed on the client-side, and the `.Result` property will be translated into non-blocking JavaScript code.
 
 ### Static methods
 
@@ -71,10 +70,10 @@ If the `MyClass` is not in the same namespace as the viewmodel, use the `@import
 ### Dependency injection
 
 For non-trivial methods, we generally recommend using [static command services](static-command-services) instead of static methods, as it enables [dependency injection](~/pages/concepts/configuration/dependency-injection/overview) of other services.
-However, DotVVM also allows you to fill any method arguments with services imported from `@service` directives, making it possible to use DI with static methods.
 
-Note that in static commands, `IDotvvmRequestContext` is only available as an injected service.
-The `Context` property is not populated, and accessing it might trigger the transfer of the entire viewmodel.
+However, DotVVM also allows passing services imported from `@service` directives as arguments, making it possible to use DI with static methods.
+
+Note that in static commands, `IDotvvmRequestContext` is only available as an injected service. If you declare the target method in your viewmodel, the viewmodel's `Context` property would not be populated.
 
 ### JavaScript methods
 
@@ -89,7 +88,7 @@ For instance, we can extract a value using JS function `m1`, send it to the serv
 
 ### REST API methods
 
-See [REST API bindings](rest-api-bindings/overview) for more information.
+You can directly call REST APIs endpoints using **static commands**. See [REST API bindings](rest-api-bindings/overview) for more information.
 
 ## See also
 

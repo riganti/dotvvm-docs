@@ -56,7 +56,7 @@ public class MyViewModel {
 
 ## Supported expressions
 
-The following items are examples of what can be used in the command binding.
+The following items are examples of what can be used in the command binding. Since the action is executed on the server, you can call any .NET method - the only limitation is the syntax supported in binding expressions.
 
 * `MyFunction()`
 * `MyFunction(Argument)`
@@ -64,7 +64,7 @@ The following items are examples of what can be used in the command binding.
 * `Property.MyFunction(42, "test")`
 * `Collection[3].Property.MyFunction(Argument)`
 
-Refer to the [value binding](~/pages/concepts/data-binding/value-binding) chapter to see what kind of expressions are supported.
+> Although you can use more complicated expressions in **command binding** (such as `{command: Method1(); Method2(); ...}`), we recommend to call only one method from each binding expression. This makes the code easier to read, and the viewmodel method can be covered by tests.
 
 ## See also
 
