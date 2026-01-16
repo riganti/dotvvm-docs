@@ -10,7 +10,38 @@ The `DotvvmTestHelper` class has static methods `CreateConfiguration` and `Creat
 
 The `ControlTestHelper` class is useful for testing custom controls. There is a `RunPage(typeof(MyViewModel), "your dothtml code")` which executes the DotVVM page and returns the HTML output parsed using the `AngleSharp` library.
 
-See the [CompositeControlTests.cs](https://github.com/riganti/dotvvm/blob/main/src/Tests/ControlTests/CompositeControlTests.cs#L32) class in the DotVVM framework codebase - it shows how the control tests look like. 
+```
+static readonly ControlTestHelper cth = new ControlTestHelper(config: config => {
+    config.Markup.AddCodeControls("cc", exampleControl: typeof(MyControl));
+});
+
+[TestMethod]
+public async Task BasicWrappedHtmlControl()
+{
+    var r = await cth.RunPage(typeof(BasicTestViewModel), """
+            <cc:MyControl MyProperty="my-class" />
+        """
+    );
+    Assert.IsNotNull(r.Html.QuerySelector("a.my-class"));
+}
+```
+
+We can also trigger commands using the test helper `RunCommand` method. It will automatically store the viewmodel changes in `r.ViewModelJson`, allowing us to verify the command executed successfully.
+
+```
+[TestMethod]
+public async Task BasicWrappedHtmlControl()
+{
+    var r = await cth.RunPage(typeof(BasicTestViewModel), """
+            <cc:MyControl MyCommand={command: TestMethod()} />
+        """
+    );
+    r.RunCommand("TestMethod()"); // note there must be just one command with this string
+    Assert.AreEqual(321, (int)r.ViewModelJson["MyProperty"]);
+}
+```
+
+For more detailed example, see the [CompositeControlTests.cs](https://github.com/riganti/dotvvm/blob/main/src/Tests/ControlTests/CompositeControlTests.cs#L32) class in the DotVVM framework codebase - it shows how the control tests look like.
 
 `BindingTestHelper` is useful for testing custom method translations - there are methods to create various bindings and compile them to JS.
 

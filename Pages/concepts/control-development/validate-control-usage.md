@@ -2,6 +2,8 @@
 
 The controls in DotVVM can validate whether they are being used correctly. Simple checks can be done by using the `MarkupOptions` attribute, more complex validation logic is implemented in the `ValidateUsage` static method in the control code.
 
+If control validation fails, the page will not compile, which is immediately visible in the [compilation status page](~/Pages/upgrading-from-older-versions/compilation-status-page) without the need to visit the page.
+
 ## MarkupOptions attribute
 
 The `MarkupOptions` attribute can be applied on DotVVM control properties and has several parameters which control how the property can be used:
