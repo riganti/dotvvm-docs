@@ -105,5 +105,5 @@ Also, this repo can be used as a learning material or inspiration for creating y
 * [Custom postback handlers](custom-postback-handlers)
 * [Binding system extensibility](binding-extensibility)
 * [Binding extension parameters](binding-extension-parameters)
-* [Custom JavaScript translators](custom-javascript-translators)
+* [Custom JavaScript translators](../client-side-development/custom-javascript-translators)
 * [Testing controls](testing-controls)

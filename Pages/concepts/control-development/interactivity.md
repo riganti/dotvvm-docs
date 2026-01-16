@@ -144,7 +144,7 @@ Check out our [DotVVM Contrib](https://github.com/riganti/dotvvm-contrib) repo f
 * [Code-only controls](code-only-controls)
 * [Binding system extensibility](binding-extensibility)
 * [Binding extension parameters](binding-extension-parameters)
-* [Custom JavaScript translators](custom-javascript-translators)
+* [Custom JavaScript translators](../client-side-development/custom-javascript-translators)
 
 
 

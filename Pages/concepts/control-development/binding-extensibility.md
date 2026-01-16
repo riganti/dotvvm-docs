@@ -146,4 +146,4 @@ ControlResolverBase.BindingTypes.Add(ParserConstants.ResourceBinding, BindingPar
 * [Adding interactivity using Knockout binding handlers](interactivity)
 * [Custom postback handlers](custom-postback-handlers)
 * [Binding extension parameters](binding-extension-parameters)
-* [Custom JavaScript translators](custom-javascript-translators)
+* [Custom JavaScript translators](../client-side-development/custom-javascript-translators)

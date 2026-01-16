@@ -153,6 +153,7 @@
 		<DocPageMenuItem RouteName="react" PageName="React" />
 	  </DocPageMenuItem>
 	  <DocPageMenuItem RouteName="access-validation-errors-from-js" PageName="Access validation errors from JS" />
+	  <DocPageMenuItem RouteName="custom-javascript-translators" PageName="Custom JavaScript translators" />
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="server-side-rendering" PageName="Server-side rendering" />  
@@ -196,7 +197,6 @@
       <DocPageMenuItem RouteName="custom-postback-handlers" PageName="Custom postback handlers" />
       <DocPageMenuItem RouteName="binding-extensibility" PageName="Binding system extensibility" />
       <DocPageMenuItem RouteName="binding-extension-parameters" PageName="Custom binding extension parameters" />
-	  <DocPageMenuItem RouteName="custom-javascript-translators" PageName="Custom JavaScript translators" />
 	  <DocPageMenuItem RouteName="testing-controls" PageName="Testing controls" />
     </DocPageMenuItem>
 	
