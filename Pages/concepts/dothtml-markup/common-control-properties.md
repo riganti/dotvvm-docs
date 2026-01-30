@@ -7,12 +7,15 @@ You can use these properties on plain HTML elements too.
 + `DataContext` - changes the [binding context](~/pages/concepts/data-binding/binding-context) for the content of the control or element.
 + `Visible` - hides the control or element in the page (using CSS `display: none`).
 + `IncludeInPage` - includes or removes the control or element from DOM.
-+ `ID` - specifies an ID of the control. 
++ `ID` - specifies an ID of the control (which is used to build element unique ID, see the [Control IDs](#control-ids) section).
++ `Class-my-class` - toggles `my-class` CSS classes on the control based on a value of a binding expression.
++ `Style-some-style` - sets `some-style` to the assigned value or binding, see [Combine CSS classes and styles](~/pages/concepts/dothtml-markup/combine-css-classes-and-styles) for more details.
 
 ## HTML attributes on controls
 
-You can add any HTML attributes to (almost) all controls. You can even use [binding expressions](~/pages/concepts/data-binding/overview) in the HTML attributes.
-All additional attributes used on the DotVVM control will be added to the main HTML element rendered by the control.
+You can add any HTML attributes to (almost) all DotVVM controls. You can even use [binding expressions](~/pages/concepts/data-binding/overview) in the HTML attributes.
+
+All additional attributes used on the DotVVM control will be added to the root HTML element rendered by the control.
 
 ```DOTHTML
 <dot:TextBox Text="{value: FirstName}" 
@@ -30,7 +33,13 @@ This produces the following HTML:
 
 You can see that the `class` attribute has been added to the rendered `input` element, and the `placeholder` attribute was translated to Knockout JS `attr` binding.
 
-> DotVVM allows to combine multiple CSS classes or inline styles dynamically. See [Combine CSS classes and styles](~/pages/concepts/dothtml-markup/combine-css-classes-and-styles) for more information.
+If you want to conditionally include or exclude some HTML attribute, you can bind it to a `boolean` expression:
+
+```DOTHTML
+<dialog open="{value: IsOpen}">
+    ...
+</dialog>
+```
 
 ## Enable or disable form controls
 
@@ -60,10 +69,13 @@ Each control can override this property by setting its own `Enabled` property.
 
 ## Control IDs
 
-Because the control can appear in the page multiple times (e.g. when it is inside the `Repeater` control), the real `id` of the HTML element might be different. Typically, DotVVM will add some prefix to it to make sure it is unique in the page.
+Because a control can appear in the page multiple times (e.g. when it is inside the `Repeater` control), the real `id` of the HTML element might be different. Typically, DotVVM will add some prefix to the `ID` property of the control  it to make sure it is truly unique in the page.
+
 Sometimes, the ID is even calculated on the client side dynamically - DotVVM generates a data-binding expression which will calculate the ID. 
 
-You can set the ID of the control or element explicitly by setting the `ClientIDMode` property to `Static`. In such case, you are responsible for making sure that the ID is unique.
+> Be careful when you interact with HTML elements from JavaScript code using their IDs, because the IDs might change dynamically.
+
+You can set the final ID of the control or element explicitly by setting the `ClientIDMode` property to `Static`. In such case, you are responsible for making sure that the ID is unique.
 
 ## See also
 

@@ -24,8 +24,9 @@ The [resource](resource-binding) and [command](~/pages/concepts/respond-to-user-
    * `SomeProperty >= 0`
    * `SomeProperty + 1`
    * `SomeProperty != OtherProperty`
-* Ternary conditional operator
+* Ternary conditional operator and if-null operator
    * `SomeProperty ? "some string" : "other string"`
+   * `SomeProperty ?? "default"`
 * Method invocation (only supported methods)
    * Regular methods: `SomeMethod(argument)`
    * Extension methods: `argument.SomeExtensionMethod()` (**new in version 3.0**)
@@ -129,8 +130,8 @@ DotVVM can translate several .NET methods on basic types or collections to JavaS
 * `Convert.ToSingle(object value)`
 * `Convert.ToDouble(object value)`
 * `Convert.ToDecimal(object value)`
-* `DateTime.ToString()`
-* `DateTime.ToString(format)`
+* `DateTime.ToString()`, `DateOnly.ToString()`, `TimeOnly.ToString()`
+* `DateTime.ToString(format)`, `DateOnly.ToString(format)`, `TimeOnly.ToString(format)`
 * <code><em>numericType</em>.ToString()</code> and <code><em>numericType</em>.ToString(format)</code>
 
 #### Nullable types
@@ -146,7 +147,9 @@ DotVVM can translate several .NET methods on basic types or collections to JavaS
 * `Enumerable.Distinct<T>(IEnumerable<T> collection)`
    * *Note*: this method is restricted to primitive types.
 * `Enumerable.Empty<T>()`
+* `Enumerable.First<T>(IEnumerable<T> collection)` and `Enumerable.First<T>(IEnumerable<T> collections, Func<T,bool> predicate)` (does not throw exception, behaves as `FirstOrDefault`)
 * `Enumerable.FirstOrDefault<T>(IEnumerable<T> collection)` and `Enumerable.FirstOrDefault<T>(IEnumerable<T> collections, Func<T,bool> predicate)`
+* `Enumerable.Last<T>(IEnumerable<T> collection)` and `Enumerable.Last<T>(IEnumerable<T> collection, Func<T,bool> predicate)` (does not throw exception, behaves as `LastOrDefault`)
 * `Enumerable.LastOrDefault<T>(IEnumerable<T> collection)` and `Enumerable.LastOrDefault<T>(IEnumerable<T> collection, Func<T,bool> predicate)`
 * `Enumerable.Max<T>(IEnumerable<T> collection)` and `Enumerable.Max<T,U>(IEnumerable<T> collection, Func<T,U> selector)`
    * *Note*: these methods are restricted to numeric types
@@ -170,17 +173,11 @@ Equivalent methods are also supported on the `ImmutableArray<T>` type.
 #### Immutable collections methods
 
 * `ImmutableArray.ToImmutableArray(IEnumerable<T>)`
+* `ImmutableArray.ToArray(ImmutableArray<T>)`
 * `ImmutableList.ImmutableList(IEnumerable<T>)`
-* The linq-like helper methods on ImmutableArrayExtensions
+* The linq-like helper methods on `ImmutableArrayExtensions`
 
-#### DateTime methods
-* `DateTimeExtensions.ToBrowserLocalTime(DateTime value)`
-   * *Note*: this method is meant to be called only from client-side (server does not know browser's timezone)
-* `DateTimeExtensions.ToBrowserLocalTime(DateTime? value)`
-   * *Note*: this method is meant to be called only from client-side (server does not know browser's timezone)
-> See [Local vs UTC dates](~/pages/concepts/localization-and-cultures/local-vs-utc-dates) for more info
-
-#### DateTime property getters
+#### DateTime methods and properties
 * `DateTime.Year`
 * `DateTime.Month`
 * `DateTime.Day`
@@ -188,6 +185,24 @@ Equivalent methods are also supported on the `ImmutableArray<T>` type.
 * `DateTime.Minute`
 * `DateTime.Second`
 * `DateTime.Millisecond`
+* `DateTimeExtensions.ToBrowserLocalTime(DateTime value)`
+   * *Note*: this method is meant to be called only from client-side (server does not know browser's timezone)
+* `DateTimeExtensions.ToBrowserLocalTime(DateTime? value)`
+   * *Note*: this method is meant to be called only from client-side (server does not know browser's timezone)
+> See [Local vs UTC dates](~/pages/concepts/localization-and-cultures/local-vs-utc-dates) for more info
+
+#### DateOnly methods and properties
+* `DateOnly.Year`
+* `DateOnly.Month`
+* `DateOnly.Day`
+* `DateOnly.FromDateTime(DateTime date)`
+
+#### TimeOnly methods and properties
+* `TimeOnly.Hour`
+* `TimeOnly.Minute`
+* `TimeOnly.Second`
+* `DateTime.Millisecond`
+* `TimeOnly.FromDateTime(DateTime date)`
 
 #### Math methods
 * Basic: `Math.Abs`, `Math.Exp`, `Math.Max`, `Math.Min`, `Math.Pow` `Math.Sign`, `Math.Sqrt`
@@ -204,7 +219,7 @@ Equivalent methods are also supported on the `ImmutableArray<T>` type.
 
 ### Provide custom method translators
 
-It is possible to register custom translators for any method. See [Provide custom JavaScript translators](~/pages/concepts/control-development/custom-javascript-translators) for more information.
+It is possible to register custom translators for any method. See [Provide custom JavaScript translators](~/pages/concepts/client-side-development/custom-javascript-translators) for more information.
 
 ### Use custom .NET extension methods
 

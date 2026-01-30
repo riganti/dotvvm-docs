@@ -2,7 +2,9 @@
 
 Every page in DotVVM consists of a _view_ and a _viewmodel_.
 
-To create a page in Visual Studio, right-click on the desired folder in the Solution Explorer window and choose **Add > New Item...**.
+When you [create a new project](create-new-project), there is already a page named `Default.dothtml` and its corresponding viewmodel `DefaultViewModel.cs`. There is also a [master page](~/pages/concepts/layout/master-pages) which is used to define the main structure, header, and footer for all pages in the application. 
+
+You can start by editing the default page, or choose to add a new page. To create a page in Visual Studio, right-click on the desired folder in the Solution Explorer window and choose **Add > New Item...**.
 
 In the dialog, navigate to the **Web / DotVVM** section and choose the **DotVVM Page** template.
 
@@ -16,9 +18,15 @@ After you proceed, the view and viewmodel files will be added to the project.
 
 ## Routing and naming conventions
 
-By default, all pages in the `Views` folder are registered in the route table by their path using [Route auto-discovery](../../concepts/routing/auto-discover-routes). You should be able to access the page by navigating to `/Path/To/The/Page` in the browser.
+DotVVM pages need to be registered in the route table to be mapped on a particular URL. If you add a new page, you need to add the following registration into the `ConfigureRoutes` method in `DotvvmStartup.cs` file.
 
-See the [Routing](../../concepts/routing/overview) for more info about configuring the page route.
+```csharp
+config.RouteTable.Add("Page", "my/page/url", "Views/page.dothtml", new { });
+```
+
+After doing so, you should be able to access the page by navigating to `/Path/To/The/Page` in the browser.See the [Routing](../../concepts/routing/overview) for more info about configuring page routes.
+
+Alternatively, you can configure [Route auto-discovery](../../concepts/routing/auto-discover-routes) to discover all pages in a particular folder and define a convention to register them automatically. 
 
 > If the view is placed in the `Views` folder, the viewmodel will be automatically placed in the `ViewModels` folder. You don't have to follow this convention - some developers prefer to have the views together with viewmodels in the same folder. Feel free to use a different folder structure.
 

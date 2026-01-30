@@ -6,9 +6,8 @@ In DotVVM, there are three types of controls - **markup controls**, **code-only 
 
 > Composite controls were added in DotVVM 4.0 and they provide an easy way of composing new controls from the existing ones.
 
-## Types of controls
 
-### Markup controls
+## Markup controls
 
 [Markup controls](markup-controls) are just a piece of DOTHTML markup which you can put in its own file and use it from multiple places.
 
@@ -16,21 +15,72 @@ For example, if you write a shopping site, you need the user to enter a billing 
 
 Moreover, you can take this ready-made control, and use it in another project because in almost all apps you need the user to give you an address. The control can maintain its own state and have its own internal logic, e.g. guess the city name from the ZIP code. This is commonly done by shipping a control viewmodel together with the control. This viewmodel is then embedded as a child in the viewmodel of the page.
 
-### Code-only controls
+```DOTHTML
+@viewmodel object
+@property string Text
 
-[Code-only controls](code-only-controls) are used whenever you need to render a precise piece of HTML and incorporate bindings with it.
-
-Imagine you want to use some jQuery plugin which makes a color picker out of an `input` tag. Normally, you would just place the `input` tag into the page, and then call a piece of JavaScript code which would take the input and create the color picker widget. 
-
-However, you would need to do all of this on every page where you need to use such control. In order to make the control universal, you want it to support the data-binding. When the user selects a color in the color picker, you need to update the underlying property in the viewmodel. And whenever the property value in the viewmodel changes, you need to update the color in the color picker. 
-
-The control may need to bring some scripts or even CSS styles with it, or may provide special behavior when it comes to validation, and so on. You can  pack such control into a NuGet package and reuse it in many projects.
+<dot:RouteLink RouteName="MyRoute" Text={value: _control.Text}
+```
 
 ## Composite controls
 
-Composite controls are a new type of declaring controls that tries to make the entire process simpler. The composite control is defined by a _function_ which returns the control tree - a hierarchy of HTML elements or other DotVVM components, and provides an easy way to declare control properties and pass them to its children.
+Composite controls are written in C# without any DotHTML markup, but still mainly compose their logic from other components.
+The primary entrypoint of a composite control is the GetContents method, which take properties as parameters and returns a new control tree - a hierarchy of HTML elements or other DotVVM components.
+The method can do any processing, and is therefore much more flexible than DotHTML, at the cost of giving up the HTML syntax.
+Controls written in C# are also easier to distribute as NuGet packages.
+
+
+```CSHARP
+/// Simple CompositeControl example
+/// * creates a link to MyRoute with the given text
+public class MyLink : CompositeControl
+{
+    public DotvvmControl GetContents(
+        ValueOrBinding<string> text,
+    )
+    {
+        return new RouteLink()
+            .SetProperty(r => r.RouteName, "MyRoute")
+            .SetProperty(r => r.Text, text);
+    }
+}
+```
 
 See the [Composite controls](composite-controls) chapter for more info. 
+
+> Composite controls are relative new DotVVM feature, and we recommend it as the default way of writing code-only controls.
+> However, DotVVM itself and most of our commercial components are not written this way mainly for legacy reasons.
+
+
+## Code-only controls
+
+[Code-only controls](code-only-controls) are the most flexible type of control, but usually require more knowledge of DotVVM framework to use right.
+They are primarily used whenever you need to render a precise piece of HTML and incorporate bindings with it, for example to wrap a Knockout.js binding handler for DotVVM.
+
+If your use case is to write out precise HTML without having to support DotVVM value bindings, it is quite easy.
+For instance, you may want to invoke a shared method which outputs HTML, be it a Markdown transpiler, or a legacy T4 HTML template.
+See the [Code-only controls](./code-only-controls.md) chapter for details about more advanced uses.
+
+
+```CSHARP
+public class MarkdownLiteral : DotvvmControl
+{
+    [MarkupOptions(AllowBinding = false)]
+    public string Text
+    {
+        get { return (string)GetValue(TextProperty)!; }
+        set { SetValue(TextProperty, value); }
+    }
+    public static readonly DotvvmProperty TextProperty =
+        DotvvmProperty.Register<string, MarkdownLiteral>(nameof(Text), "");
+
+    protected override void RenderContents(IHtmlWriter writer, IDotvvmRequestContext context)
+    {
+        var html = MarkdownTranspiler.Transpile(Text);
+        writer.WriteUnencodedText(html);
+    }
+}
+```
 
 ## Commercial controls
 
@@ -41,7 +91,7 @@ You don't need to write all controls yourself. We have created several packs of 
 
 ## DotVVM contrib
 
-If you author some DotVVM controls and think they may be useful to the community, check out our [DotVVM Contrib](https://github.com/riganti/dotvvm-contrib) repository - it contains dozens of community-contributed components which are shipped as separate NuGet packages. We'd be happy for any contributions.
+If you author some DotVVM controls and think they may be useful to the community, check out our [DotVVM Contrib](https://github.com/riganti/dotvvm-contrib) repository - it contains dozens of community-contributed components which are shipped as separate NuGet packages. We'd be happy for your contributions.
 
 Also, this repo can be used as a learning material or inspiration for creating your own controls - many control development concepts are covered there.
 
@@ -55,5 +105,5 @@ Also, this repo can be used as a learning material or inspiration for creating y
 * [Custom postback handlers](custom-postback-handlers)
 * [Binding system extensibility](binding-extensibility)
 * [Binding extension parameters](binding-extension-parameters)
-* [Custom JavaScript translators](custom-javascript-translators)
+* [Custom JavaScript translators](../client-side-development/custom-javascript-translators)
 * [Testing controls](testing-controls)

@@ -17,15 +17,15 @@ The binding expression will be evaluated when the button is rendered into HTML. 
 
 This is different than the [value binding](~/pages/concepts/data-binding/value-binding) where the expression is translated to a Knockout JS expression and responds to the changes of the viewmodel property.
 
-In case of the resource binding, the value is "baked" in the HTML of the page so it is not possible to change it while the page is loaded.
+In case of the resource binding, the value is "baked" in the HTML of the page so it is not possible to change it while the page is loaded (unless you use [PostBack.Update](~/pages/concepts/server-side-rendering#re-render-control-html-on-postbacks) property to re-render a part of the page on postback).
 
-The `value` binding will produce Knockout JS expression:
+The `value` binding would produce a Knockout JS expression:
 
 ```DOTHTML
 <!-- ko text: Constant --><!-- /ko -->
 ```
 
-The `resource` binding renders just the pure value like it is hard-coded in the rendered HTML:
+The `resource` binding renders just the pure value like it was hard-coded in the markup:
 
 ```
 My constant value
@@ -38,19 +38,6 @@ Resource binding may be helpful in combination with [server-side rendering and S
 The primary scenario for this binding is to access .NET resource files (RESX) which are used for localization. 
 
 See the [RESX files](~/pages/concepts/localization-and-cultures/resx-files) chapter for more info.
-
-## The @import directive
-
-The syntax with the full namespace is quite long, so you can use the `@import` directive to import namespaces.
-
-For example, in a project with the `Resources\Web\Strings1.resx` and `Resources\Web\Strings2.`resx* files, the markup can look like this:
-
-```DOTHTML
-@import MyWebApp.Resources.Web
-
-{{resource: Strings1.SomeResource}}
-{{resource: Strings2.SomeResource}}
-```
 
 ## Call static methods or evaluate expressions on the server
 

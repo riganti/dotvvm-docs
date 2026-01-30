@@ -4,7 +4,7 @@ The easiest and most convenient way to work with DotVVM is to use **Visual Studi
 
 If you are using a different IDE or code editor (for example, Visual Studio Code), you can create a new DotVVM application from the command line.
 
-## Create a DotVVM project using Visual Studio 2026 / 2022
+## Create a DotVVM project using Visual Studio 2026 / 2022 / 2019
 
 ### Prerequisites
 
@@ -14,7 +14,7 @@ First, **make sure you have the [DotVVM for Visual Studio](https://www.dotvvm.co
 * Click on the **Install** button. 
 * Restart Visual Studio so the extension can be installed.
 
-> If you cannot find the extension, make sure you have the latest updates of Visual Studio installed. The extension always supports the latest version. If you want to use the preview versions of Visual Studio, refer to the [Release notes](~/pages/dotvvm-for-visual-studio/release-notes) page to download a specific version of extension.
+> If you cannot find the extension or if the extension reports errors when Visual Studio is started, make sure you have **the latest updates of Visual Studio installed**. The extension is sensitive to exact version of some Visual Studio assemblies, and it may not work properly with older releases. We recommend to check out the [Release notes](~/pages/dotvvm-for-visual-studio/release-notes) page to see which version of the extension is compatible with which build of Visual Studio. If you use preview versions of Visual Studio, always download the extension from the [Release notes](~/pages/dotvvm-for-visual-studio/release-notes) page. 
 
 ### Create a new project
 

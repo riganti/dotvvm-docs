@@ -2,8 +2,6 @@
 
 > The JS directive feature is new in DotVVM 3.0. 
 
-> The JS directive functionality is not supported in Internet Explorer 11. 
-
 **JS directive** is a set of features which offer a rich ways to interact between DotVVM controls and JavaScript code. It allows to import a [ES6 module](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) in the page, and provides mechanisms to [invoke DotVVM commands from JS code](call-dotvvm-from-js), as well as to [call functions in the module](call-js-from-dotvvm) from the DotVVM page. 
 
 The modules may be written in plain JavaScript (using the ES6 syntax), or using [TypeScript](use-typescript-to-declare-modules).
@@ -33,13 +31,13 @@ class MyModule {
 }
 ```
 
-For C# developers, it can be useful to use the `class` syntax, but it is not required - the function can return any object:
+For C# developers, it can be more familiar to use the `class` syntax, but it is not required - the function can return any object:
 
 ```JS
 // alternative declaration without using the class
 export default context => {
 
-    var privateThing = ...
+    let privateThing = ...
 
     function privateMethod() {
         ...
@@ -56,7 +54,7 @@ export default context => {
 
 ## Register the module
 
-The module needs to be registered in `DotvvmStartup.cs` file. Make sure you use `ScriptModuleResource` instead of plain `ScriptResource`:
+The module needs to be registered in `DotvvmStartup.cs` file as a resource. Make sure you use `ScriptModuleResource` instead of plain `ScriptResource`:
 
 ```CSHARP
 config.Resources.Register("dashboard-module", new ScriptModuleResource(new UrlResourceLocation("~/app/dashboard-module.js"))

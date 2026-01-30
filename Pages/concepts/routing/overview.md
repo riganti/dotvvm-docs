@@ -16,17 +16,29 @@ config.RouteTable.Add("Page", "my/page/url", "Views/page.dothtml", new { });
 
 + The first argument is the **name of the route**. You'll need it when you do redirects, or generate a hyperlink that navigates the user to this page (e. g. using the [RouteLink](~/controls/builtin/RouteLink) control). This name is not displayed to the user, it is only a string which identifies the route in the application code.
 
-+ The second argument is the **route URL**. It can contain route parameters (e.g. `"product-detail/{ProductId}"`) which you can retrieve in the viewmodel when the page is loaded. For the default page, you can use `""` as the route URL. 
++ The second argument is the **route URL**. It can contain route parameters (e.g. `"product-detail/{ProductId}"`) which you can retrieve in the viewmodel when the page is loaded. For the default page, you can use `""` as the route URL. The parameters can specify [constraints](~/pages/concepts/routing/parameters#route-constraints).
 
 + The third argument is **the location of the `.dothtml` file** which will be used to handle the request.
-Because the file doesn't have to be in the **Views** folder, you need to pass an application relative path including the `Views` folder name: `Views/page.dothtml`.
+Because the file doesn't have to be in the **Views** folder, you need to pass an application relative path including the `Views` folder name: `Views/page.dothtml`. DotVVM also supports loading markup files from .NET assembly embedded resources - this is done by a special format of the path (`embedded://AssemblyName/EmbeddedResourceName`).
 
 + The fourth argument (optional) specifies **default values for [route parameters](parameters)**. If the parameter value is not specified in the URL, the value from this object will be used.
 You can pass an anonymous object with property names that correspond with the route parameter names, or `IDictionary<string, object>`. 
 
+### Localized routes
+
+In some scenarios, you may want to use a different route URL for each website language. This can be done by using the overload with the `localizedUrls` parameter. See [Route localization](~/pages/concepts/routing/route-localization) chapter for more details.
+
+### Presenter routes
+
+If you need to register a route which should not be treated as `.dothtml` file, e.g. if you need a handler that serves files, generates RSS feeds or anything like that, you can declare a [custom presenter](~/pages/concepts/routing/custom-presenters) and specify a method, that creates an instance of it, as the fifth parameter.
+
+### Redirection routes
+
+If you change the URLs in your app, you can use [redirection routes](~/pages/concepts/routing/route-redirection) to preserve the old URLs.
+
 ## Route groups
 
-If you have several similar routes, you can register them as a group:
+If you have multiple routes with the same URL prefixes, you can register them as a  group:
 
 ```CSHARP
 config.RouteTable.AddGroup("Admin", "admin", "Views/Admin", table =>
@@ -44,14 +56,6 @@ Route name | Route URL | Location
 `Admin_Customer` | `admin/customer/{id}` | `Views/Admin/Customer.dothtml`
 
 As you can see, the route name, route URL, and `dothtml` file location are composed from the `AddGroup` method parameters and the parameters of the particular route. Notice that the `_` character is added between the group name and route name. Route URL and file location are treated like paths and joined by `/`.
-
-## Other route types
-
-If you need to register a route which should not be treated as `.dothtml` file, e.g. if you need a handler that serves files, generates RSS feeds or anything like that, you can declare a [custom presenter](~/pages/concepts/routing/custom-presenters) and specify a method, that creates an instance of it, as the fifth parameter.
-
-If you change the URLs in your app, you can use [redirection routes](~/pages/concepts/routing/route-redirection) to preserve the old URLs.
-
-> If you have a larger project, you may want to use conventions to [auto-discover routes](~/pages/concepts/routing/auto-discover-routes) instead of registering them one by one.
 
 ## Using RouteLink to create links between pages
 
@@ -71,9 +75,15 @@ If the current page doesn't have this parameter, the default value from the rout
 
 If you want to redirect the user to another page from the viewmodel code, you can call `Context.RedirectToRoute("routeName", new { Param1 = param... })`.
 
+## Route auto-discovery
+
+If you have a larger project, you may want to use conventions to [auto-discover routes](~/pages/concepts/routing/auto-discover-routes) instead of registering them one by one.
+
+
 ## See also
 
 * [Parameters](~/pages/concepts/routing/parameters)
 * [Route redirection](~/pages/concepts/routing/route-redirection)
+* [Route localization](~/pages/concepts/routing/route-localization)
 * [Auto-discover routes](~/pages/concepts/routing/auto-discover-routes)
 * [Custom presenter](~/pages/concepts/routing/custom-presenters)

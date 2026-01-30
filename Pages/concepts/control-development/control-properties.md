@@ -24,24 +24,11 @@ public static readonly DotvvmProperty TitleProperty
     = DotvvmProperty.Register<string, AddressEditor>(c => c.Title, "Address");
 ```
 
-> Until DotVVM 3.0, the declaration of static `DotvvmProperty` field was optional - DotVVM inferred the field automatically. However, this behavior had many limitations and we decided to drop this feature. From DotVVM 4.0, the declaration of `DotvvmProperty` is **required**.
+The property getter and setter are technically optional, DotVVM only needs the `TitleProperty` field.
+In controls, we recommend having the helper property for usage convenience and consistency.
+On the other hand, attached properties do not have the helper getter and setter, since they are defined on a static class.
 
-## Declare the property in composite controls
-
-Because declaring properties like this is uncomfortable and the code is hard to maintain, DotVVM 4.0 introduced the [composite controls](composite-controls) which declare the properties as parameters of the `GetContents` method:
-
-```CSHARP
-public class MyControl : CompositeControl 
-{
-    public static DotvvmControl GetContents(
-        ValueOrBinding<string> title,
-        ...
-    )
-    {
-        ...
-    }
-}
-```
+> Until DotVVM 3.0, the declaration of static `DotvvmProperty` field was optional - DotVVM inferred the field automatically from the property. However, this behavior had many limitations and we decided to drop this feature. From DotVVM 4.0, the declaration of `DotvvmProperty` is **required**.
 
 ## Specify markup options
 
@@ -79,18 +66,59 @@ Use the properties of the attribute to specify the behavior:
 
 * `AllowBinding` (default `true`) - specifies whether the value binding is allowed for this property.
 * `AllowHardCodedValue` (default `true`) - specifies whether the hard-coded value or resource binding is allowed for this property.
-* `Required` (default `false`) - specifies whether the property must be set in the markup
+* `AllowResourceBinding` (default same as `AllowHardCodedValue`) – specifies the resource binding is allowed.
+* `Required` (default `false`) - specifies whether the property must be set in the markup.
 * `MappingMode` (default `MappingMode.Attribute`) - specifies whether the property value is set as an attribute or inner element (e. g. `ItemTemplate` property of the [Repeater](~/controls/builtin/Repeater) control). 
 
-The attribute is commonly used in [markup controls with code-behind](markup-controls-with-code) and [code-only controls](code-only-controls). 
+The attribute is commonly used in [markup controls](markup-controls) and [code-only controls](code-only-controls). 
+The [composite controls](composite-controls) specify the support for binding or hard-coded values by using special property types described in the following section, but still allow the attribute for more fine grained control.
 
-The [composite controls](composite-controls) specify the support for binding or hard-coded values by using special property types described in the following section. 
+## Declare the property in composite controls
+
+Because declaring properties like this is uncomfortable, DotVVM 4.0 introduced the [composite controls](composite-controls) which declare the properties as parameters of the `GetContents` method:
+
+```CSHARP
+public class MyControl : CompositeControl 
+{
+    public static DotvvmControl GetContents(
+        ValueOrBinding<string> title,
+        ...
+    )
+    {
+        ...
+    }
+}
+```
+
+## Declare properties using capabilities
+
+Together with CompositeControl, DotVVM 4.0 introduced the [Capability Property](./control-capabilities), which essentially allows you to register entire set of properties at once.
+Capabilities can also serve as a common interface for multiple controls, where you can easily copy the values from one control to a different type of control which has the same capability.
+
+Capabilities are plain C# classes or records, and can be used both in composite controls and the classic code-only controls:
+
+```
+[DotvvmControlCapability]
+public sealed record ExampleCapability
+{
+    public string? MyProperty { get; init; }
+}
+```
+
+Register capability in a code-only control.
+
+```CSHARP
+public static readonly DotvvmProperty ExampleCapabilityProperty =
+    DotvvmCapabilityProperty.RegisterCapability<ExampleCapability, MyControl>();
+```
 
 ## Special property types
 
-If the property accepts only the value binding, you can use the `IValueBinding` type to represent its value. The same applies to `ICommandBinding` for command (or static command) properties.
+If the property accepts only the value binding, you can use the `IValueBinding` type to represent its value.
+The same applies to `ICommandBinding` for command or static command properties.
+The type may be generic to specify the requires binding return type (i.e. `IValueBinding<string>` is a binding which returns string)
 
-In [composite controls](composite-controls), the type `ValueOrBinding<T>` is often use it indicates that the property can contain both value binding or a value, and it allows to work with binding expressions in a more elegant way.
+In [composite controls](composite-controls), the type `ValueOrBinding<T>` is often use it indicates that the property can contain either value binding or a value, and it allows to work with binding expressions in a more elegant way.
 
 To represent templates, the `ITemplate` type is commonly used. 
 
@@ -98,7 +126,7 @@ The control can also have properties of collection types. For example, a collect
 
 ## Control markup options
 
-By default, all DotVVM controls can contain child elements. If you put something inside your control element, it will be placed in the control's `Children` collection.
+By default, code-only controls can contain child elements. If you put something inside your control element, it will be placed in the control's `Children` collection.
 
 Some controls may not support inner content, or want to redirect this content to another property. For example, the `Repeater` control doesn't support content (its inner content specified in the markup is not placed in the `Children` collection) - instead, it is using the `ItemTemplate` property to hold the inner content. Also, the property is marked as default, so it is not necessary to write the `<ItemTemplate>` element inside the `<dot:Repeater>` control.
 
@@ -118,11 +146,9 @@ public class Repeater : DotvvmControl
 </dot:Repeater>
 ```
 
-## Control capabilities
-
-Often, a group of control properties is used together and represent a common behavior. DotVVM 4.0 introduced a concept of **capabilities** which are an alternative way to declare properties.
-
-See [Control capabilities](control-capabilities) for more information.
+Markup controls do not support child element at all.
+Composite controls can have child element, if it has a `content` or `contentTemplate` property/parameter.
+Alternatively, the `DefaultContentProperty` markup option can be applied to composite controls.
 
 ## See also
 

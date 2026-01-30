@@ -1,6 +1,6 @@
 # Compilation status page
 
-**Compilation status page** is diagnostic tool for DotVVM which allows to easily check all [DotHTML pages](~/pages/concepts/dothtml-markup/overview), [master pages](~/pages/concepts/layout/master-pages), and [markup controls](~/pages/concepts/control-development/markup-controls), and detect compilation errors in them. It can help while upgrading DotVVM packages, you can quickly ensure that all markup files are valid.
+**Compilation status page** is diagnostic tool for DotVVM which allows to easily check all [DotHTML pages](~/pages/concepts/dothtml-markup/overview), [master pages](~/pages/concepts/layout/master-pages), and [markup controls](~/pages/concepts/control-development/markup-controls), and detect compilation errors in them. It can help while upgrading DotVVM packages, you can quickly ensure that all markup files are valid and free of warnings.
 
 > Prior to DotVVM 4.0, the Compilation status page was distributed as a separate NuGet package. From DotVVM 4.0, it is included in the main `DotVVM` NuGet package. **The package `DotVVM.Diagnostics.StatusPage` should be uninstalled.**
 
@@ -8,14 +8,14 @@
 
 Visit `_dotvvm/diagnostics/compilation` to see the list of all `.dothtml` pages, controls and master pages.
 
-DotVVM views are compiled on demand when the page requests a DotHTML file, so you probably won't see any status for most pages initially. Press the **Compile All** button to initiate compilation of all pages and controls, so see all errors in the application.
+In Debug environment, DotVVM views are compiled on demand when the page requests a DotHTML file, so you probably won't see any status for most pages initially. Press the **Compile All** button to initiate compilation of all pages and controls, so see all errors in the application.
 
-![Compilation status page](https://raw.githubusercontent.com/riganti/dotvvm-samples-compilation-status-page/42184142d7905be3d2e23661dbb1905c3ed4ba80/docs/sample.PNG)
+![Compilation status page showing a warning and an error](./compilation-status-page.png)
 
 
 ## Enable the Compilation status page
 
-By default, compilation page is enabled only in Debug environment. Note that the page is only accessible from localhost. You can however enable the page even in production environment, or enable the page 
+By default, compilation page is enabled only in Debug environment and the page is only accessible from localhost. You can however enable the page even in production environment:
 
 1. To enable the status page, register it in your `DotvvmStartup.cs` file:
 
@@ -36,11 +36,11 @@ Due to this concern, there is an option to specify an authorization function whi
 
 The authorization function can be specified during status page registration. Examples of such, the authorization function can check the source IP address, or check whether the user identity contains some specific claim.
 
-This example only checks if the user has a specific name:
+This example only checks if the user has the `admin` role:
 
 ```CSHARP
 config.Diagnostics.CompilationPage.AuthorizationPredicate =
-    async context => context.HttpContext.User.Identity.Name == "Honza";
+    async context => context.HttpContext.User.IsInRole("admin");
 ```
 
 

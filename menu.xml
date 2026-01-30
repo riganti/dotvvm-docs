@@ -35,6 +35,7 @@
 	  <DocPageMenuItem RouteName="comments" PageName="Comments" />
 	  <DocPageMenuItem RouteName="server-side-styles" PageName="Server-side styles" />
 	  <DocPageMenuItem RouteName="compilation-test" PageName="Compilation test" />
+	  <DocPageMenuItem RouteName="hot-reload" PageName="Hot reload" />
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="routing" PageName="Routing">
@@ -43,6 +44,7 @@
 	  <DocPageMenuItem RouteName="auto-discover-routes" PageName="Auto-discover routes" />
 	  <DocPageMenuItem RouteName="custom-presenters" PageName="Custom presenters" />
 	  <DocPageMenuItem RouteName="route-redirection" PageName="Route redirection" />
+	  <DocPageMenuItem RouteName="route-localization" PageName="Route localization" />
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="layout" PageName="Layout">
@@ -151,6 +153,7 @@
 		<DocPageMenuItem RouteName="react" PageName="React" />
 	  </DocPageMenuItem>
 	  <DocPageMenuItem RouteName="access-validation-errors-from-js" PageName="Access validation errors from JS" />
+	  <DocPageMenuItem RouteName="custom-javascript-translators" PageName="Custom JavaScript translators" />
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="server-side-rendering" PageName="Server-side rendering" />  
@@ -170,6 +173,7 @@
 	  <DocPageMenuItem RouteName="application-insights" PageName="Application Insights" />
 	  <DocPageMenuItem RouteName="miniprofiler" PageName="MiniProfiler" />
 	  <DocPageMenuItem RouteName="custom-tracing" PageName="Custom tracing" />
+	  <DocPageMenuItem RouteName="metrics" PageName="Metrics" />
 	</DocPageMenuItem>
 	
 	<DocPageMenuItem RouteName="cli" PageName="DotVVM CLI">
@@ -193,7 +197,6 @@
       <DocPageMenuItem RouteName="custom-postback-handlers" PageName="Custom postback handlers" />
       <DocPageMenuItem RouteName="binding-extensibility" PageName="Binding system extensibility" />
       <DocPageMenuItem RouteName="binding-extension-parameters" PageName="Custom binding extension parameters" />
-	  <DocPageMenuItem RouteName="custom-javascript-translators" PageName="Custom JavaScript translators" />
 	  <DocPageMenuItem RouteName="testing-controls" PageName="Testing controls" />
     </DocPageMenuItem>
 	

@@ -2,6 +2,8 @@
 
 The controls in DotVVM can validate whether they are being used correctly. Simple checks can be done by using the `MarkupOptions` attribute, more complex validation logic is implemented in the `ValidateUsage` static method in the control code.
 
+If control validation fails, the page will not compile, which is immediately visible in the [compilation status page](~/Pages/upgrading-from-older-versions/compilation-status-page) without the need to visit the page.
+
 ## MarkupOptions attribute
 
 The `MarkupOptions` attribute can be applied on DotVVM control properties and has several parameters which control how the property can be used:
@@ -24,6 +26,23 @@ public static IEnumerable<ControlUsageError> ValidateUsage(ResolvedControl contr
     if (!control.HasProperty(IconProperty) && !control.HasProperty(TextProperty))
     {
         yield return new ControlUsageError("Button requires Icon, Text or both properties set.", control.DothtmlNode);
+    }
+}
+```
+
+## Warnings
+
+Since DotVVM 4.3, the ValidateUsage method may also emit warnings, which are visible on the [compilation status page](~/Pages/upgrading-from-older-versions/compilation-status-page) and using the DotVVM CLI lint command.
+Warning is emitted instead of an error if we add `DiagnosticSeverity.Warning` parameter in the constructor:
+
+```CSHARP
+[ControlUsageValidator]
+public static IEnumerable<ControlUsageError> ValidateUsage(ResolvedControl control)
+{
+    if (control.Properties.ContainsKey(LabelProperty) && control.Properties.ContainsKey(SomeTemplateProperty))
+    {
+        var propertyNode = control.GetValue(LabelProperty).DothtmlNode;
+        yield return new("Label is ignored when SomeTemplate is also specified.", DiagnosticSeverity.Warning, propertyNode);
     }
 }
 ```

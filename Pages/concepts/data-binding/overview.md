@@ -58,6 +58,80 @@ However, you can use [expressions](supported-expressions) inside the binding, so
 
 > If you want to build complex `class` attributes, DotVVM has a special feature that allows to [combine multiple CSS classes](~/pages/concepts/dothtml-markup/combine-css-classes-and-styles).
 
+## Null handling
+
+You don't have to worry about `null` values in binding expressions. If some part of the expression evaluates to `null`, the whole expression will return `null`. 
+
+Internally, DotVVM treats every `.` as `.?` in C# 6.
+
+> In previous versions of DotVVM, when you tried to call a method in a value binding and any of its arguments evaluated to `null`, the method wasn't invoked and the result of the expression was `null`. From DotVVM 3.0, this behavior was changed - the method will be invoked and `null` value will be passed as an argument.
+
+## Double and single quotes
+
+Because the bindings in HTML attributes are often wrapped in double quotes, DotVVM allows to use single quotes (apostrophes) for strings as well. 
+
+This is different from the C# syntax where double quotes are used for `string` values while single quotes are used for `char` values.
+In DotVVM, the single and double quotes can be used interchangeably.
+
+```DOTHTML
+<a class="{value: Active ? 'active' : 'not-active' }"></a>
+```
+
+## The @import directive
+
+You can use the `@import` directive in a similar way how you use `using` statement in C# to import namespaces.
+
+For example, in a project with the `Resources\Web\Strings1.resx` and `Resources\Web\Strings2.`resx* files, the markup can look like this:
+
+```DOTHTML
+@import MyWebApp.Resources.Web
+
+{{resource: Strings1.SomeResource}}
+{{resource: Strings2.SomeResource}}
+```
+
+## Enums
+
+If you have a property of an enum type in your viewmodel, you may need to work with that value in the binding. 
+
+```CSHARP
+public class MyViewModel {
+    ...
+    public MyApp.Enums.ButtonColor Color { get; set; }    // ButtonColor is enum
+    ...
+}
+```
+
+You can use the `@import` directive to import the namespace in which the enum is declared. Then, you can use the `ButtonColor.Red` to reference the enum member.
+
+```DOTHTML
+@viewModel ...
+@import MyApp.Enums
+
+<div class-red="{value: Color == ButtonColor.Red}"></div>
+```
+
+On the client-side, the enum values are converted to strings on the client side, so you can compare the value with strings. The following expression will also work - this is different from C# where enums cannot be compared with `string` values directly.
+
+```DOTHTML
+<a class="{value: Color == 'Red' ? 'button-red' : 'button-normal'}">button</a>
+```
+
+You can use `[EnumMember(Value = "abc")]` to provide a different string representation of the enum value:
+
+```CSHARP
+public enum ButtonColor
+{
+    [EnumMember(Value = "button-red")]
+    Red,
+    [EnumMember(Value = "button-green")]
+    Green,
+    [EnumMember(Value = "button-blue")]
+    Blue
+}
+```
+
+
 ## See also
 
 * [Value binding](~/pages/concepts/data-binding/value-binding)

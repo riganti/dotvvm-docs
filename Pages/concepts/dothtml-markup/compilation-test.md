@@ -1,8 +1,10 @@
 # Compilation test
 
-In case you want to be sure that all your DotHTML files compile before you publish them to your live website, you can write a test that will check the compilation of your pages using `IDotvvmViewCompilationService`. 
+During development or upgrading from previous versions of DotVVM, it is useful to ensure that files with DotHTML markup do not have any compile errors. 
 
-To make this even easier, you can use `WebApplicationFactory<TStartup>` from the `Microsoft.AspNetCore.Mvc.Testing` NuGet package as seen below: 
+To look at the issues in markup files, you can use the [Compilation Status Page](~/Pages/upgrading-from-older-versions/compilation-status-page)
+
+We also recommend to add a test that runs markup compilation on all pages and fails if there are any errors. To make this even easier, you can use `WebApplicationFactory<TStartup>` from the `Microsoft.AspNetCore.Mvc.Testing` NuGet package as seen below: 
 
 ```CSHARP
 using DotVVM.Framework.Compilation;
@@ -35,6 +37,7 @@ public class ViewCompilationTests
 
 ## See also
 
+* [Compilation status page](~/Pages/upgrading-from-older-versions/compilation-status-page)
 * [DotHTML markup](~/pages/concepts/dothtml-markup/overview)
 * [Common control properties](~/pages/concepts/dothtml-markup/common-control-properties)
 * [Data-binding](~/pages/concepts/data-binding/overview)

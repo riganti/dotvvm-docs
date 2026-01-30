@@ -4,7 +4,7 @@ DotVVM implements an extensible binding translations mechanism, which is an API 
 
 ## Register custom translator
 
-Every translator must implement the `IJavascriptMethodTranslator` interface. However, it is a bit simpler to utilize a general-purpose implementation called `GenericMethodCompiler` exposed by DotVVM.
+Every translator must implement the `IJavascriptMethodTranslator` interface. However, usually it is simpler to implement it with a lambda function wrapped in `GenericMethodCompiler`.
 
 ### Example 1: translator for `Enumerable.Where` method
 
@@ -23,6 +23,17 @@ var whereMethodInfo = /* obtain method info using reflection */;
 config.Markup.JavascriptTranslator.MethodCollection.AddMethodTranslator(whereMethodInfo, translator);
 ```
 
+Since DotVVM 4.3, instead of obtaining MethodInfo, we can supply a System.Linq.Expressions lambda, which uses the method we want to translate.
+We need to supply a type argument for C# to compile the code, but we want to register the translation for all types `T` in `IEnumerable<T>`.
+DotVVM defines a special `Generic.T` type to instruct the method registry, that this the translation works for any type.
+
+```CSHARP
+config.Markup.JavascriptTranslator.MethodCollection.AddMethodTranslator(
+    () => Enumerable.Empty<Generic.T>().Where(_ => true),
+    translator
+)
+```
+
 ### Example 2: Translator for `Array.Length` property getter method
 
 In the following code snippet, we will create a custom translation for the `Length` property getter method on the type `System.Array`. In this case, we need to work with a single arguments that represents the array. Since the `Length` property is bound to a specific instance, the array argument is passed as the `this` pointer, which corresponds to the `args[0]` expression. An example translation can be seen in the code snippet below.
@@ -34,7 +45,10 @@ var translator = new GenericMethodCompiler(a => a[0].Member("length"));
 When used, the translator above will yield the following JavaScript expression: `args[0].length`. Now, the only thing left is registering this translation. We can perform the registration using the following code snippet.
 
 ```CSHARP
-AddPropertyGetterTranslator(typeof(Array), nameof(Array.Length), translator);
+config.Markup.JavascriptTranslator.MethodCollection.AddPropertyTranslator(
+    () => default(Generic.T[]).Length,
+    translator
+);
 ```
 
 ## See also

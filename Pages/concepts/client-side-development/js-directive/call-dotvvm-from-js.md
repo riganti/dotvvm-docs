@@ -2,8 +2,6 @@
 
 > The JS directive feature is new in DotVVM 3.0. 
 
-> The JS directive functionality is not supported in Internet Explorer 11. 
-
 The JS module imported by the [JS directive](overview) often needs to call [commands](~/pages/concepts/respond-to-user-actions/commands) or [static commands](~/pages/concepts/respond-to-user-actions/static-commands) declared in the markup file.
 
 In previous versions of DotVVM, this has often been done by clicking on a hidden button, which had many disadvantages. It was not possible to wait for the action to be completed, or to detect whether the action succeeded or failed, and so on. 

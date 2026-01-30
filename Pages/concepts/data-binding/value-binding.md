@@ -30,53 +30,11 @@ If you run the page and view the page source code, you'll see that DotVVM transl
 
 ## Supported expressions in value binding
 
-See the [supported expressions](supported-expressions) page for more details.
+You can use more complex expressions in **value bindings** - the only requirement is that they need to be translatable to JavaScript. 
 
-## Null handling
+See the [supported expressions](supported-expressions) page for a list of methods and APIs that are supported. 
 
-You don't have to worry about `null` values in binding expressions. If some part of the expression evaluates to `null`, the whole expression will return `null`. 
-
-Internally, DotVVM treats every `.` as `.?` in C# 6.
-
-> In previous versions of DotVVM, when you tried to call a method in a value binding and any of its arguments evaluated to `null`, the method wasn't invoked and the result of the expression was `null`. From DotVVM 3.0, this behavior was changed - the method will be invoked and `null` value will be passed as an argument.
-
-## Double and single quotes
-
-Because the bindings in HTML attributes are often wrapped in double quotes, DotVVM allows to use single quotes (apostrophes) for strings as well. 
-
-This is different from the C# syntax where double quotes are used for `string` values while single quotes are used for `char` values.
-In DotVVM, the single and double quotes can be used interchangeably.
-
-```DOTHTML
-<a class="{value: Active ? 'active' : 'not-active' }"></a>
-```
-
-## Enums
-
-If you have a property of an enum type in your viewmodel, you may need to work with that value in the binding. 
-
-```CSHARP
-public class MyViewModel {
-    ...
-    public MyApp.Enums.ButtonColor Color { get; set; }    // ButtonColor is enum
-    ...
-}
-```
-
-You can use the `@import` directive to import the namespace in which the enum is declared. Then, you can use the `ButtonColor.Red` to reference the enum member.
-
-```DOTHTML
-@viewModel ...
-@import MyApp.Enums
-
-<div class-red="{value: Color == ButtonColor.Red}"></div>
-```
-
-On the client-side, the enum values are converted to strings on the client side, so you can compare the value with strings. The following expression will also work - this is different from C# where enums cannot be compared with `string` values directly.
-
-```DOTHTML
-<a class="{value: Color == 'Red' ? 'button-red' : 'button-normal'}">button</a>
-```
+If you need to use a method that DotVVM cannot translate, you can define your own [JavaScript translator](~/pages/concepts/client-side-development/custom-javascript-translators).
 
 ## See also
 

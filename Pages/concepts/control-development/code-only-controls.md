@@ -2,22 +2,27 @@
 
 This kind of controls is useful when you need to render more complex or dynamic HTML, or when you need to support complex data-binding scenarios, or manipulate the viewmodel on the client-side.
 
-Building code-only controls is more difficult, but they can do much more. All built-in DotVVM controls are implemented as code-only controls. 
+Building code-only controls is more difficult, but it is the most flexible way of writing components.
+All built-in DotVVM controls are implemented as code-only controls, but our commercial components are often built as ComposeControls.
 
 If you want to learn about how to write controls in DotVVM, we encourage you to look in the [DotVVM GitHub repository](https://github.com/riganti/dotvvm/tree/main/src/Framework/Framework/Controls), on in the [DotVVM Contrib repo](https://github.com/riganti/dotvvm-contrib) to see how the built-in controls are implemented.
 
+> Before writing a custom control, we recommend reading about [composite controls](./composite-controls), as that API usually offers a simpler way to define a custom control.
+> Composite controls cannot do certain things (i.e. directly use IHtmlWriter), but you can often split your control into the "high-level" composite control and few "low-level" code-only controls which perform some specific simple function (i.e. converting IValueBinding to data-bind attribute).
+
 ## Fundamentals
 
-In general, all controls in `DotVVM` inherit from the `DotvvmControl` class. This base class provides only basic functionality and _it is not a good base class to inherit directly_ for most purposes. 
+In general, all controls in `DotVVM` inherit from the `DotvvmControl` class. This base class provides only basic functionality and _it is usually not a good base class to inherit directly_.
 
-**The most useful class to be derived from is `HtmlGenericControl`** (which inherits from `DotvvmControl`). It is prepared to render one HTML element, and can contain child elements or controls. Most built-in controls in DotVVM derive from the `HtmlGenericControl` class. 
+**The most useful class to be derived from is `HtmlGenericControl`** (which inherits from `DotvvmControl`), if your control will render one HTML element (possibly with children).
+Most built-in controls in DotVVM derive from the `HtmlGenericControl` class. 
 
 ## Register controls
 
 First, you need to register the code-only control in the `DotvvmStartup.cs` file. 
 
 ```CSHARP
-config.Markup.AddCodeControls("cc", typeof(DotvvmDemo.Controls.Control));
+config.Markup.AddCodeControls("cc", exampleControl: typeof(DotvvmDemo.Controls.Control));
 ```
 
 Using this code snippet, if you use the `<cc:` tag prefix, DotVVM will search for the control in the specified namespace and assembly.
@@ -121,7 +126,7 @@ to the `HtmlWriter`.
 
 > Remember that `HtmlWriter` requires to add all attributes before we call `RenderBeginTag`. After you render a tag, you cannot go back and add any attributes to it.
 
-The custom attributes even support data-bindings, so you don't have to care about this. You just need to take care of the control properties.
+The custom attributes even support data-bindings, we just need to take care of the control properties.
 
 ```DOTHTML
 <cc:SimpleTextBox Text="{value: FirstName}" style="border: none" class="txb1" placeholder="Enter first name" />
@@ -153,8 +158,7 @@ We can solve this like this:
 ```CSHARP
 protected override void AddAttributesToRender(IHtmlWriter writer, IDotvvmRequestContext context)
 {
-    var textBinding = GetValueBinding(TextProperty);
-    if (textBinding != null) 
+    if (GetValueBinding(TextProperty) is {} textBinding) 
     {
         // the property contains binding - this will render data-bind="value: expression"
         writer.AddKnockoutDataBind("value", this, TextProperty);
@@ -166,7 +170,7 @@ protected override void AddAttributesToRender(IHtmlWriter writer, IDotvvmRequest
     }
 
     writer.AddAttribute("type", "text");
-    
+
     base.AddAttributesToRender(writer, context);
 }
 ```
@@ -193,6 +197,10 @@ protected override void AddAttributesToRender(IHtmlWriter writer, IDotvvmRequest
 Thanks to this, the syntax is much shorter.
 
 ## Build the inner control tree
+
+> This section describes a legacy technique.
+> Today we recommend using [composite controls](./composite-controls) in cases where you want to create a inner control tree.
+> This technique might still be useful in some niche scenarios or when maintaining older codebase.
 
 Rendering HTML using the `HtmlWriter` class is good for simple controls. If the control is more complicated or can contain controls which invoke postbacks, you need to build a control tree inside the control.
 
@@ -241,7 +249,6 @@ public static readonly DotvvmProperty LabelTextProperty
 
 See the [Control properties](control-properties#specify-markup-options) chapter for more info about the `MarkupOptions` attribute.
 
-> [Composite Controls](./composite-controls.md) offer a simpler API for controls which do not have custom rendering and rely solely on building the inner tree.
 
 ### Child controls
 
