@@ -1,5 +1,22 @@
 # Release notes
 
+## v4.0.594.0
+* Greatly improved IntelliSense of Composite controls
+* Support for new Visual Studio versions
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.55)
+* Version for Visual Studio 2022 (17.14.30)
+* Version for Visual Studio 2026 (18.5.0 April 2026 Feature Update)
+* Version for Visual Studio 2026 Insiders (11709.129)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.594.0/DotVVM.Integration.VisualStudio.VS2019.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.594.0/DotVVM.Integration.VisualStudio.VS2022.vsix) </br>
+Version for Visual Studio 2026: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.594.0/DotVVM.Integration.VisualStudio.VS2026.vsix) </br>
+Version for Visual Studio 2026 Insiders: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.594.0/DotVVM.Integration.VisualStudio.VS2026-Insider.vsix)
+
+
 ## v4.0.593.0
 * Support for new Visual Studio versions
 
