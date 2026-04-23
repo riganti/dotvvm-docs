@@ -1,0 +1,4 @@
+<t:Spinner />
+<t:Spinner Visible="{value: IsLoading}" />
+<p Visible="{value: IsLoading}">Loading data...</p>
+<t:Button Type="Primary" Text="Toggle Loading" Click="{command: ToggleLoading()}" />

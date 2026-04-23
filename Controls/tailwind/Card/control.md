@@ -1,0 +1,1 @@
+Renders a card container with optional image, header, content, and footer sections.

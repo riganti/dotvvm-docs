@@ -1,0 +1,22 @@
+<t:TabControl SelectedTabIndex="{value: SelectedTabIndex}">
+    <t:TabItem Title="Profile">
+        <ContentTemplate>
+            <p>Profile tab content here.</p>
+        </ContentTemplate>
+    </t:TabItem>
+    <t:TabItem Title="Settings">
+        <ContentTemplate>
+            <p>Settings tab content here.</p>
+        </ContentTemplate>
+    </t:TabItem>
+    <t:TabItem Title="Messages">
+        <ContentTemplate>
+            <p>Messages tab content here.</p>
+        </ContentTemplate>
+    </t:TabItem>
+</t:TabControl>
+
+<p>Selected tab index: {{value: SelectedTabIndex}}</p>
+<t:Button Type="Primary" Text="Select Tab 0" Click="{command: SelectTab(0)}" />
+<t:Button Type="Secondary" Text="Select Tab 1" Click="{command: SelectTab(1)}" />
+<t:Button Type="Success" Text="Select Tab 2" Click="{command: SelectTab(2)}" />

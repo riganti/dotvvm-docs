@@ -1,0 +1,1 @@
+Renders a breadcrumb navigation trail with support for static items and data-bound collections.

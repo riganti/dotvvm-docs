@@ -1,0 +1,1 @@
+Renders a responsive horizontal navigation header with Start, Middle, and End content zones. `MenuItem` supports both plain `Text="..."` and custom template content placed directly inside the element.

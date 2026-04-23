@@ -1,0 +1,1 @@
+Renders a dismissible alert message with configurable type and optional title.

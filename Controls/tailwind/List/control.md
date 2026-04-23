@@ -1,0 +1,1 @@
+Renders a styled card-based list of items with optional icon, primary text, secondary text, and badge.

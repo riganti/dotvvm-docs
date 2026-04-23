@@ -1,0 +1,1 @@
+Renders a styled custom checkbox with a hidden native input and optional label text.

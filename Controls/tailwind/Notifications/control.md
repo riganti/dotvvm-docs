@@ -1,0 +1,1 @@
+Renders a toast notification container that displays and auto-dismisses items from a bound collection.

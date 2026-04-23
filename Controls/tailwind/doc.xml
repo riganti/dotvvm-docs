@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotVVM.Controls.Tailwind</name>
+    </assembly>
+    <members>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.Accordion">
+            <summary>Renders an accordion with collapsible sections.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.AccordionItem">
+            <summary>Represents a single collapsible item within an Accordion.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.Alert">
+            <summary>Displays contextual feedback messages for users.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.Avatar">
+            <summary>Displays a user avatar with image or initials.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.Badge">
+            <summary>Displays a small badge with colored background.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.BreadcrumbItem">
+            <summary>Renders a single breadcrumb item.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.Breadcrumb">
+            <summary>Renders a breadcrumb navigation.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.ButtonGroup">
+            <summary>
+            Renders a group of buttons displayed side-by-side with shared borders and no gaps.
+            Supports hardcoded children (place &lt;t:Button&gt; elements inside) or DataSource mode.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.Button">
+            <summary>Renders a styled button.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.Card">
+            <summary>Renders a card component.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.CheckBox">
+            <summary>Renders a custom checkbox with a hidden native input and custom visual box.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.DataPager">
+            <summary>Styled DataPager control.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.DropDownButton">
+            <summary>
+            A button that shows a dropdown list of items when clicked.
+            Supports hardcoded children (<see cref="T:DotVVM.Controls.Tailwind.Controls.DropDownItem"/> and <see cref="T:DotVVM.Controls.Tailwind.Controls.DropDownItemSeparator"/>) or DataSource mode.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.DropDownItem">
+            <summary>Represents a single item inside a <see cref="T:DotVVM.Controls.Tailwind.Controls.DropDownButton"/> (hardcoded mode).</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.DropDownItemSeparator">
+            <summary>A visual separator line for use inside a DropDownButton. Renders as a horizontal rule with the dropdown-divider style.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.IDropDownMenuItem">
+            <summary>Marker interface for controls that may appear inside <see cref="T:DotVVM.Controls.Tailwind.Controls.DropDownButton"/>.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.CheckBoxFormField">
+            <summary>Renders a form field with a checkbox — uses the styled CheckBox control.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.ComboBoxFormField">
+            <summary>Renders a form field with a styled combo box (drop-down selector).</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.Form">
+            <summary>Renders a form with header and footer.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.FormField">
+            <summary>Renders a form field with label and validation.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.Row">
+            <summary>Renders a row for form fields.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.TextBoxFormField">
+            <summary>Renders a form field with a text box.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.GridView">
+            <summary>Styled GridView control.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.HeroIcons.GetSvgString(DotVVM.Controls.Tailwind.Controls.HeroIcon,DotVVM.Controls.Tailwind.IconType)">
+            <summary>Returns the full SVG string for the given icon and type. Returns empty string if not found.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.Icon">
+            <summary>Renders a HeroIcon SVG icon.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.DockLayout">
+            <summary>Renders a dock layout with start, center, and end sections.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.StackLayout">
+            <summary>Renders a stack layout (flex container).</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.ListControl">
+            <summary>
+            Renders a styled list of items in a white card with a bottom-bordered row layout.
+            Supports hardcoded children (place &lt;t:ListItem&gt; elements inside) or DataSource mode.
+            Each item can have an optional icon, primary text, optional secondary text, and an optional badge.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.ListItem">
+            <summary>Represents a single item in a <see cref="T:DotVVM.Controls.Tailwind.Controls.ListControl"/> when using hardcoded children.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.IMenuItem">
+            <summary>Marker interface for controls that may appear inside menu controls (<see cref="T:DotVVM.Controls.Tailwind.Controls.MenuDropDownItem"/>).</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.MenuDropDownItem">
+            <summary>
+            An expandable navigation item that works inside <see cref="T:DotVVM.Controls.Tailwind.Controls.SideMenu"/> (via <see cref="T:DotVVM.Controls.Tailwind.Controls.SideMenuSection"/>)
+            or inside <see cref="T:DotVVM.Controls.Tailwind.Controls.TopMenu"/> templates.
+            Renders a trigger button with a chevron and a collapsible sub-items panel.
+            Supports hardcoded <see cref="T:DotVVM.Controls.Tailwind.Controls.MenuItem"/> children OR DataSource mode.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.MenuItem">
+            <summary>
+            A leaf navigation item that works inside <see cref="T:DotVVM.Controls.Tailwind.Controls.SideMenu"/> (via <see cref="T:DotVVM.Controls.Tailwind.Controls.SideMenuSection"/>)
+            or inside <see cref="T:DotVVM.Controls.Tailwind.Controls.TopMenu"/> templates.
+            Renders as an anchor link styled contextually via CSS.
+            Supports <see cref="T:DotVVM.Controls.Tailwind.Capabilities.RouteLinkCapability"/> for DotVVM route navigation.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.MenuItemSeparator">
+            <summary>A visual separator line for use inside menu controls. Renders as a horizontal rule styled by CSS context.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.ModalDialog">
+            <summary>Renders a modal dialog using the native HTML &lt;dialog&gt; element for keyboard accessibility (Escape closes the dialog).</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.NotificationData">
+            <summary>Represents a single toast notification to be displayed.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.Notifications">
+            <summary>
+            Renders a toast notification container. Watches the Items collection via Knockout;
+            when items appear, displays toast notifications and removes them from the collection.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.ProcessTimeline">
+            <summary>Renders a horizontal step-progress indicator for multi-step wizards.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.ProcessTimelineStep">
+            <summary>Represents a single step in a <see cref="T:DotVVM.Controls.Tailwind.Controls.ProcessTimeline"/>.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.ProcessTimelineStepCapability.Text">
+            <summary>The label text for this step.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.ProcessTimelineStepCapability.Template">
+            <summary>A custom template for the step label (alternative to Text).</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.ProcessTimelineStepCapability.Step">
+            <summary>The step number (1-based). Used to compare against the parent's CurrentStep.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.ProgressBar">
+            <summary>Displays a progress bar.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.RadioButton">
+            <summary>Renders a custom radio button with a hidden native input and custom visual circle.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.RouteLink">
+            <summary>Renders a styled anchor link that navigates to a route, with the same visual design as <see cref="T:DotVVM.Controls.Tailwind.Controls.Button"/>.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.SideMenu">
+            <summary>
+            A dark sidebar navigation container.
+            On large screens the sidebar is always visible; on small screens it can be toggled
+            via a hamburger button (class <c>hamburger-button</c>) placed outside this control.
+            Add <see cref="T:DotVVM.Controls.Tailwind.Controls.SideMenuSection"/> children; each section may contain <see cref="T:DotVVM.Controls.Tailwind.Controls.MenuItem"/> and/or <see cref="T:DotVVM.Controls.Tailwind.Controls.MenuDropDownItem"/> items.
+            </summary>
+            <remarks>
+            Use <c>collapseBreakpoint</c> to control at which Tailwind breakpoint the sidebar
+            switches between mobile (hamburger + overlay) and always-visible fixed layout.
+            Supported values: <c>sm</c>, <c>md</c>, <c>lg</c> (default), <c>xl</c>, <c>2xl</c>.
+            The JavaScript binding automatically adds <c>side-menu-collapse-{bp}</c> to <c>document.body</c>
+            so your layout CSS can reference it, and closes any open overlay when the viewport reaches the breakpoint.
+            </remarks>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.SideMenuSection">
+            <summary>
+            A labeled section/group within a <see cref="T:DotVVM.Controls.Tailwind.Controls.SideMenu"/>.
+            Renders a small uppercase label followed by its menu items.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.SideMenuToggleButton">
+            <summary>
+            A hamburger button that toggles the <see cref="T:DotVVM.Controls.Tailwind.Controls.SideMenu"/> panel.
+            Automatically hidden on large screens (lg+). Typically placed inside
+            <see cref="T:DotVVM.Controls.Tailwind.Controls.TopMenu"/>'s StartTemplate or a mobile top bar.
+            The <c>data-sidemenu-toggle</c> attribute is used by sidemenu.ts to wire up the click handler.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.Spinner">
+            <summary>Displays a loading spinner.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.TabControl">
+            <summary>Renders a tab control with multiple tab items.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.TabItem">
+            <summary>Represents a single tab item within a TabControl.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.TopMenu">
+            <summary>Renders a horizontal navigation bar with Start, Middle, and End layout zones.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.DropDownAlignment">
+            <summary>
+            Controls whether the dropdown menu aligns to the start (left) or end (right) of the trigger button.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.HamburgerPosition">
+            <summary>Specifies where the mobile hamburger button appears in the <see cref="T:DotVVM.Controls.Tailwind.Controls.TopMenu"/>.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.HamburgerPosition.Start">
+            <summary>The hamburger appears after the start zone (between start and middle). Default.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.HamburgerPosition.End">
+            <summary>The hamburger appears after the end zone (rightmost position in the nav bar).</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.IconPosition">
+            <summary>Specifies whether an icon appears before or after the button text.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.IconPosition.Start">
+            <summary>The icon appears before the text (default).</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.IconPosition.End">
+            <summary>The icon appears after the text.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.ModalConfirmPostBackHandler">
+            <summary>A postback handler that shows a styled modal confirmation dialog before executing the postback.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.ModalSize">
+            <summary>Size variants for modal dialogs.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.ModalSize.Small">
+            <summary>Small modal (max-width: sm).</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.ModalSize.Default">
+            <summary>Default modal (max-width: lg).</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.ModalSize.Large">
+            <summary>Large modal (max-width: 2xl).</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.ModalSize.ExtraLarge">
+            <summary>Extra large modal (max-width: 4xl).</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.ModalSize.FullScreen">
+            <summary>Full screen modal (covers entire viewport).</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.NotificationType">
+            <summary>Specifies the visual style of a toast notification.</summary>
+        </member>
+    </members>
+</doc>

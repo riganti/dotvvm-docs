@@ -1,0 +1,2 @@
+<t:ComboBox DataSource="{value: Options}" SelectedValue="{value: SelectedOption}" ItemTextBinding="{value: Text}" ItemValueBinding="{value: Value}" />
+<p>Selected: {{value: SelectedOption}}</p>

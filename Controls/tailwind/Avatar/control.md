@@ -1,0 +1,1 @@
+Displays a user avatar with an image, initials, or a placeholder icon at configurable sizes.

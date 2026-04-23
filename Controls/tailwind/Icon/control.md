@@ -1,0 +1,1 @@
+Renders a HeroIcon SVG icon in outline or solid style.

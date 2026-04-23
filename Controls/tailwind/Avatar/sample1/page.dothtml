@@ -1,0 +1,5 @@
+<t:Avatar Initials="AB" Size="Small" />
+<t:Avatar Initials="CD" Size="Default" />
+<t:Avatar Initials="EF" Size="Large" />
+<t:Avatar ImageUrl="https://i.pravatar.cc/150?img=1" AltText="User avatar" />
+<t:Avatar Initials="{value: Initials}" Size="{value: SelectedSize}" />

@@ -1,0 +1,1 @@
+Renders a styled custom radio button with a hidden native input and optional label text.

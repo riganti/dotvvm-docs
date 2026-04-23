@@ -1,0 +1,5 @@
+<t:RadioButton Text="Option 1" CheckedValue="1" CheckedItem="{value: RadioValue}" />
+<t:RadioButton Text="Option 2" CheckedValue="2" CheckedItem="{value: RadioValue}" />
+<t:RadioButton Text="Option 3" CheckedValue="3" CheckedItem="{value: RadioValue}" />
+<t:RadioButton Text="Disabled" CheckedValue="4" CheckedItem="{value: RadioValue}" Enabled="false" />
+<p>Selected: {{value: RadioValue}}</p>

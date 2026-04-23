@@ -1,0 +1,1 @@
+Renders a styled form container with an optional header, content area, and footer for actions.

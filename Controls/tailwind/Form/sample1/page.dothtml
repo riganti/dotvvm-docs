@@ -1,0 +1,14 @@
+<t:Form HeaderText="Customer Details">
+    <ContentTemplate>
+        <t:Row>
+            <t:TextBoxFormField LabelText="First name" Text="{value: FirstName}" />
+            <t:TextBoxFormField LabelText="Last name" Text="{value: LastName}" />
+        </t:Row>
+        <t:TextBoxFormField LabelText="Email address" Text="{value: Email}" Type="Email" />
+        <t:TextBoxFormField LabelText="Password" Text="{value: Password}" Type="Password" />
+    </ContentTemplate>
+    <FooterTemplate>
+        <t:Button Type="Primary" Text="Save" IsSubmitButton="true" Click="{command: Save()}" />
+        <t:Button Type="Default" Text="Cancel" Click="{command: Reset()}" />
+    </FooterTemplate>
+</t:Form>

@@ -1,0 +1,1 @@
+Renders a styled data table with sortable columns and template column support.

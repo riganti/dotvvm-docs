@@ -1,0 +1,6 @@
+<t:Button Type="Success" Text="Show Success" Click="{command: ShowSuccess()}" />
+<t:Button Type="Danger"  Text="Show Error"   Click="{command: ShowError()}" />
+<t:Button Type="Info"    Text="Show Info"    Click="{command: ShowInfo()}" />
+<t:Button Type="Warning" Text="Show Warning" Click="{command: ShowWarning()}" />
+
+<t:Notifications Items="{value: Notifications}" CloseTimeout="4000" Alignment="BottomRight" />

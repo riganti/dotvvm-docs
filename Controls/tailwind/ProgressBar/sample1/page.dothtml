@@ -1,0 +1,6 @@
+<t:ProgressBar Value="25" />
+<t:ProgressBar Value="60" Color="Success" ShowLabel="true" />
+<t:ProgressBar Value="60" Color="Warning" ShowLabel="true" />
+<t:ProgressBar Value="60" Color="Danger" ShowLabel="true" />
+<t:ProgressBar Value="{value: Progress}" Color="Primary" ShowLabel="true" />
+<t:Button Type="Primary" Text="Increase" Click="{command: IncreaseProgress()}" />

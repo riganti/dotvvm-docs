@@ -1,0 +1,1 @@
+Renders a dark sidebar navigation with labeled sections, menu items, and collapsible dropdown groups. `MenuItem` supports both plain `Text="..."` and custom template content placed directly inside the element.

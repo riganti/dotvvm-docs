@@ -1,0 +1,1 @@
+Displays a small inline badge with a colored background for labels, counts, and statuses.

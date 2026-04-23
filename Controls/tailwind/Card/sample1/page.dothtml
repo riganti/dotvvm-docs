@@ -1,0 +1,28 @@
+<t:Card HeaderText="Card Title">
+    <ContentTemplate>
+        <p>This is the card content. It can contain any HTML or controls.</p>
+    </ContentTemplate>
+    <FooterTemplate>
+        <t:Button Type="Primary" Text="Action" />
+    </FooterTemplate>
+</t:Card>
+
+<t:Card HeaderText="With Image" ImageUrl="https://picsum.photos/400/200" ImageAlt="Sample image">
+    <ContentTemplate>
+        <p>This card has an image at the top.</p>
+    </ContentTemplate>
+</t:Card>
+
+<t:Card Horizontal="true" ImageUrl="https://picsum.photos/200/300" ImageAlt="Horizontal" HeaderText="Horizontal Card">
+    <ContentTemplate>
+        <p>Image on the left, content on the right.</p>
+    </ContentTemplate>
+</t:Card>
+
+<t:Card HeaderText="Primary Card" Color="Primary">
+    <ContentTemplate><p>Uses the primary semantic color.</p></ContentTemplate>
+</t:Card>
+
+<t:Card HeaderText="Danger Card" Color="Danger">
+    <ContentTemplate><p>Uses the danger semantic color.</p></ContentTemplate>
+</t:Card>

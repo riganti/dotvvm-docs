@@ -1,0 +1,1 @@
+Displays a horizontal progress bar with configurable value, color, and optional percentage label.

@@ -1,0 +1,11 @@
+<t:Button Type="Primary" Text="Open Modal" Click="{command: ToggleModal()}" />
+
+<t:ModalDialog IsOpen="{value: IsModalOpen}" Title="Confirmation">
+    <ContentTemplate>
+        <p>Are you sure you want to proceed with this action?</p>
+    </ContentTemplate>
+    <FooterTemplate>
+        <t:Button Type="Primary" Text="Confirm" Click="{command: ToggleModal()}" />
+        <t:Button Type="Default" Text="Cancel" Click="{command: ToggleModal()}" />
+    </FooterTemplate>
+</t:ModalDialog>

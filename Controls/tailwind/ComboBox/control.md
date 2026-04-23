@@ -1,0 +1,1 @@
+Renders a styled dropdown select box bound to a data source with configurable text and value bindings.

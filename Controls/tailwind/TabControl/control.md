@@ -1,0 +1,1 @@
+Renders a tab control with clickable tab headers and corresponding content panels.

@@ -1,0 +1,1 @@
+Renders a styled button with configurable type, size, icon, and click command.

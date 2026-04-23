@@ -1,0 +1,14 @@
+<t:ButtonGroup>
+    <t:Button Type="Default" Text="Left" />
+    <t:Button Type="Default" Text="Center" />
+    <t:Button Type="Default" Text="Right" />
+</t:ButtonGroup>
+
+<t:ButtonGroup>
+    <t:Button Type="Primary" Text="Save" Icon="Check" />
+    <t:Button Type="Warning" Text="Edit" Icon="PencilSquare" />
+    <t:Button Type="Danger" Text="Delete" Icon="Trash" />
+</t:ButtonGroup>
+
+<t:ButtonGroup DataSource="{value: Actions}" ItemText="{value: _this}" ItemClick="{command: _parent.ItemClicked(_this)}" />
+<p>Last clicked: {{value: LastClicked}}</p>

@@ -1,0 +1,1 @@
+Renders a styled single-line text input bound to a string property.

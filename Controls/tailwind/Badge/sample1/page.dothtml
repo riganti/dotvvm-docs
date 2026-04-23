@@ -1,0 +1,7 @@
+<t:Badge Color="Default" Text="Default" />
+<t:Badge Color="Primary" Text="Primary" />
+<t:Badge Color="Success" Text="Success" />
+<t:Badge Color="Danger" Text="Danger" />
+<t:Badge Color="Warning" Text="Warning" />
+<t:Badge Color="Info" Text="Info" />
+<span>Notifications <t:Badge Color="{value: BadgeColor}" Text="{value: Count}" /></span>

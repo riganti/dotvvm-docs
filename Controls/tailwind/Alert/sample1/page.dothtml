@@ -1,0 +1,7 @@
+<t:Alert Type="Success" Text="This is a success alert — check it out!" />
+<t:Alert Type="Warning" Text="This is a warning alert — check it out!" />
+<t:Alert Type="Danger" Text="This is a danger alert — check it out!" />
+<t:Alert Type="Info" Text="This is an info alert — check it out!" />
+<t:Alert Type="Primary" HeaderText="Well done!" Text="You successfully read this important alert message." />
+<t:Alert Type="Info" Text="Click the × to dismiss this alert." IsDismissible="true" IsDismissed="{value: AlertDismissed}" Dismissed="{command: DismissAlert()}" />
+<t:Button Text="Reset" Click="{command: ResetAlert()}" />

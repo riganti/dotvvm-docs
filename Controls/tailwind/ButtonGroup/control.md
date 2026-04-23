@@ -1,0 +1,1 @@
+Renders a group of buttons side-by-side with shared borders, supporting both hardcoded children and data-bound mode.

@@ -1,0 +1,12 @@
+<t:DropDownButton Text="Actions" Type="Primary">
+    <t:DropDownItem Text="Edit" Click="{command: ActionClicked()}" />
+    <t:DropDownItem Text="Duplicate" Click="{command: ActionClicked()}" />
+    <t:DropDownItem Text="Archive" Click="{command: ActionClicked()}" />
+    <t:DropDownItem Text="Delete" NavigateUrl="/delete" />
+</t:DropDownButton>
+
+<t:DropDownButton Text="Menu" Type="Secondary"
+    DataSource="{value: MenuItems}"
+    ItemText="{value: _this}"
+    ItemClick="{command: _parent.ActionClicked()}" />
+<p>Last action: {{value: LastAction}}</p>

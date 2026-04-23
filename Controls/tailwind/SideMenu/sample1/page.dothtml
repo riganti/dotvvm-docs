@@ -1,0 +1,15 @@
+<t:SideMenu>
+    <t:SideMenuSection Title="Main Menu">
+        <t:MenuItem Text="Dashboard" NavigateUrl="#dashboard" Icon="Home" IsActive="true" />
+        <t:MenuItem Text="Calendar" NavigateUrl="#calendar" Icon="Calendar" />
+        <t:MenuItem Text="Messages" NavigateUrl="#messages" Icon="Envelope" />
+    </t:SideMenuSection>
+
+    <t:SideMenuSection Title="Analytics">
+        <t:MenuDropDownItem Text="Dashboard" Icon="TableCells">
+            <t:MenuItem Text="Overview" NavigateUrl="#overview" />
+            <t:MenuItem Text="Traffic" NavigateUrl="#traffic" />
+        </t:MenuDropDownItem>
+        <t:MenuItem Text="Reports" NavigateUrl="#reports" Icon="DocumentText" />
+    </t:SideMenuSection>
+</t:SideMenu>

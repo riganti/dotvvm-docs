@@ -1,0 +1,1 @@
+Renders a native HTML dialog-based modal with title, content, and footer template zones.
