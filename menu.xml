@@ -244,6 +244,12 @@
 	
   </DocPageMenuItem>
   
+  <DocPageMenuItem RouteName="tailwind-for-dotvvm" PageName="Tailwind for DotVVM" CssClass="icon tailwind-for-dotvvm">
+    <DocPageMenuItem RouteName="getting-started" PageName="Getting started" />
+    <DocControlCategory Category="tailwind" />
+    <DocPageMenuItem RouteName="release-notes" PageName="Release notes" />
+  </DocPageMenuItem>
+  
   <DocPageMenuItem RouteName="dotvvm-for-visual-studio" PageName="DotVVM for Visual Studio" CssClass="icon dotvvm-for-visual-studio separator-bottom">
     <DocPageMenuItem RouteName="overview" PageName="Overview" />
     <DocPageMenuItem RouteName="dotvvm-private-nuget-feed" PageName="Using DotVVM private NuGet feed" />
