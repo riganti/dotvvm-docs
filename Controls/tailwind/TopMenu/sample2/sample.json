@@ -1,3 +1,4 @@
 {
-  "title": "MenuItem with Custom Template Content"
+  "title": "MenuItem with Custom Template Content",
+  "files":[{"name":"page.dothtml"},{"name":"ViewModel.cs"}]
 }
