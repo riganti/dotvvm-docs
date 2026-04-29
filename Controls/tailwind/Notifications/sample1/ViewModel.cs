@@ -1,8 +1,9 @@
+using DotVVM.Framework.ViewModel;
 using DotVVM.Controls.Tailwind;
 using DotVVM.Controls.Tailwind.Controls;
 using System.Collections.Generic;
 
-public class NotificationsViewModel
+public class  ViewModel : DotvvmViewModelBase
 {
     public List<NotificationData> Notifications { get; set; } = new();
 

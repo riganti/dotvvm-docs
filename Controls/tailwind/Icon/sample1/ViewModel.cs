@@ -1,3 +1,5 @@
-public class IconsViewModel
+using DotVVM.Framework.ViewModel;
+
+public class  ViewModel : DotvvmViewModelBase
 {
 }

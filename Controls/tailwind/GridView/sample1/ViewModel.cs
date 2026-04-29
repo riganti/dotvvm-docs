@@ -1,4 +1,6 @@
-public class TablesViewModel
+using DotVVM.Framework.ViewModel;
+
+public class  ViewModel : DotvvmViewModelBase
 {
     public List<Customer> Customers { get; set; } = new()
     {

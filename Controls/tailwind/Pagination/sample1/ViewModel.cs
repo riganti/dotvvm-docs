@@ -1,4 +1,6 @@
-public class PaginationViewModel : DotvvmViewModelBase
+using DotVVM.Framework.ViewModel;
+
+public class  ViewModel : DotvvmViewModelBase
 {
     public GridViewDataSet<Person> People { get; set; } = new()
     {

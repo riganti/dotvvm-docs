@@ -1,4 +1,6 @@
-public class AlertsViewModel
+using DotVVM.Framework.ViewModel;
+
+public class  ViewModel : DotvvmViewModelBase
 {
     public bool AlertDismissed { get; set; } = false;
 

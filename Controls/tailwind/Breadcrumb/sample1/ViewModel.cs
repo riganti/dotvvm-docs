@@ -1,4 +1,6 @@
-public class BreadcrumbsViewModel
+using DotVVM.Framework.ViewModel;
+
+public class  ViewModel : DotvvmViewModelBase
 {
     public List<BreadcrumbItemData> BreadcrumbItems { get; set; } = new()
     {

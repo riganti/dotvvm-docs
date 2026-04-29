@@ -1,4 +1,6 @@
-public class FormsViewModel
+using DotVVM.Framework.ViewModel;
+
+public class  ViewModel : DotvvmViewModelBase
 {
     public string FirstName { get; set; } = "";
     public string LastName { get; set; } = "";

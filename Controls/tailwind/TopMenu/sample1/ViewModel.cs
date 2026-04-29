@@ -1,3 +1,5 @@
-public class TopMenusViewModel
+using DotVVM.Framework.ViewModel;
+
+public class  ViewModel : DotvvmViewModelBase
 {
 }

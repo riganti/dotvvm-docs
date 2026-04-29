@@ -1,4 +1,6 @@
-public class ListsViewModel
+using DotVVM.Framework.ViewModel;
+
+public class  ViewModel : DotvvmViewModelBase
 {
     public List<ListItemData> Items { get; set; } = new()
     {
