@@ -1,0 +1,9 @@
+﻿
+<div class="flex gap-2 flex-wrap">
+    <t:Button Type="Primary" Text="Add" Icon="Plus" />
+    <t:Button Type="Danger" Text="Delete" Icon="Trash" />
+    <t:Button Type="Default" Text="Filter" Icon="Funnel" />
+    <t:Button Type="Success" Text="Save" Icon="Check" />
+    <t:Button Type="Warning" Text="Download" Icon="ArrowDownTray" IconPosition="End" />
+</div>
+

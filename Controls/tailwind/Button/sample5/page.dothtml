@@ -1,0 +1,8 @@
+﻿
+<div class="flex flex-col gap-4">
+    <div class="flex items-center gap-4">
+        <t:TextBoxFormField LabelText="Button text" Text="{value: ButtonText}" />
+        <t:Button Type="Primary" Text="{value: ButtonText}" />
+    </div>
+</div>
+

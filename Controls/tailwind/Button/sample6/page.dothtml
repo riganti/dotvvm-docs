@@ -1,0 +1,8 @@
+﻿
+<div class="flex gap-2 flex-wrap">
+    <t:Button Type="Primary" Text="Enabled" />
+    <t:Button Type="Primary" Text="Disabled" Enabled="false" />
+    <t:Button Type="Danger" Text="Also Disabled" Enabled="false" />
+    <t:Button Type="Success" Text="Enabled" />
+</div>
+

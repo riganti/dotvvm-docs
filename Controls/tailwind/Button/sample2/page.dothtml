@@ -1,0 +1,8 @@
+﻿
+<div class="flex flex-col gap-4">
+    <div class="flex items-center gap-4">
+        <t:Button Type="Primary" Text="Click me" Click="{command: IncrementClick()}" Size="Large" />
+        <span class="text-lg font-semibold">Clicked: {{value: ClickCount}} times</span>
+    </div>
+</div>
+

@@ -1,0 +1,5 @@
+﻿<div class="flex flex-col gap-4">
+    <t:Alert Type="Info" Text="Click the × to dismiss this alert." IsDismissible="true" IsDismissed="{value: AlertDismissed}" Dismissed="{command: DismissAlert()}" />
+    <t:Button Text="Reset" Click="{command: ResetAlert()}" Size="Small" />
+</div>
+

@@ -1,0 +1,12 @@
+﻿<div class="flex flex-col gap-4">
+    <t:Alert Type="{value: SelectedAlertType}" Text="This alert type is bound to a property." />
+    <div class="flex gap-2 flex-wrap">
+        <t:Button Text="Default" Click="{command: SetAlertType(0)}" Size="Small" />
+        <t:Button Text="Primary" Click="{command: SetAlertType(5)}" Size="Small" />
+        <t:Button Text="Success" Click="{command: SetAlertType(1)}" Size="Small" />
+        <t:Button Text="Info" Click="{command: SetAlertType(4)}" Size="Small" />
+        <t:Button Text="Warning" Click="{command: SetAlertType(2)}" Size="Small" />
+        <t:Button Text="Danger" Click="{command: SetAlertType(3)}" Size="Small" />
+    </div>
+</div>
+

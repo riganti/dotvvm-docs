@@ -1,0 +1,8 @@
+﻿<div class="flex items-center gap-4">
+    <div>
+        <label class="text-sm font-semibold">Color:</label>
+        <t:ComboBox DataSource="{value: AllBadgeColors}" SelectedValue="{value: SelectedBadgeColor}" class="mt-1" />
+    </div>
+    <t:Badge Color="{value: SelectedBadgeColor}" Text="Dynamic Color" />
+</div>
+

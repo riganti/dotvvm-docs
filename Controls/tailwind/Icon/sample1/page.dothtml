@@ -1,7 +1,17 @@
-<t:Icon Icon="Home" Type="Outline" />
-<t:Icon Icon="User" Type="Outline" />
-<t:Icon Icon="Bell" Type="Outline" />
-<t:Icon Icon="Cog6Tooth" Type="Outline" />
-<t:Icon Icon="Home" Type="Solid" />
-<t:Icon Icon="User" Type="Solid" />
-<t:Icon Icon="Bell" Type="Solid" />
+<div class="flex flex-col gap-6">
+    <div class="flex items-center gap-4">
+        <h3 class="text-sm font-semibold">Outline Icons:</h3>
+        <t:Icon Icon="Home" Type="Outline" Size="Default" />
+        <t:Icon Icon="User" Type="Outline" Size="Default" />
+        <t:Icon Icon="Bell" Type="Outline" Size="Default" />
+        <t:Icon Icon="Cog6Tooth" Type="Outline" Size="Default" />
+    </div>
+    
+    <div class="flex items-center gap-4">
+        <h3 class="text-sm font-semibold">Solid Icons:</h3>
+        <t:Icon Icon="Home" Type="Solid" Size="Default" />
+        <t:Icon Icon="User" Type="Solid" Size="Default" />
+        <t:Icon Icon="Bell" Type="Solid" Size="Default" />
+        <t:Icon Icon="Cog6Tooth" Type="Solid" Size="Default" />
+    </div>
+</div>
