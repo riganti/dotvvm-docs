@@ -1,14 +1,8 @@
-<t:Form HeaderText="Customer Details">
+<t:Form HeaderText="Basic">
     <ContentTemplate>
-        <t:Row>
-            <t:TextBoxFormField LabelText="First name" Text="{value: FirstName}" />
-            <t:TextBoxFormField LabelText="Last name" Text="{value: LastName}" />
-        </t:Row>
-        <t:TextBoxFormField LabelText="Email address" Text="{value: Email}" Type="Email" />
-        <t:TextBoxFormField LabelText="Password" Text="{value: Password}" Type="Password" />
+        <t:TextBoxFormField LabelText="Name" Text="{value: Name}" />
     </ContentTemplate>
     <FooterTemplate>
-        <t:Button Type="Primary" Text="Save" IsSubmitButton="true" Click="{command: Save()}" />
-        <t:Button Type="Default" Text="Cancel" Click="{command: Reset()}" />
+        <t:Button Type="Primary" Text="Save" IsSubmitButton="true" Click="{command: SaveBasic()}" />
     </FooterTemplate>
 </t:Form>

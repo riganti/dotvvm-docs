@@ -1,0 +1,15 @@
+﻿<div class="grid items-end gap-4 grid-cols-1 xs:grid-cols-2 md:grid-cols-4">
+    <div class="w-full">
+        <t:ComboBoxFormField LabelText="Small" DataSource="{value: Options}" SelectedValue="{value: SelectedOptionSmall}" ItemTextBinding="{value: Text}" ItemValueBinding="{value: Value}" InputSize="Small" />
+    </div>
+    <div class="w-full">
+        <t:ComboBoxFormField LabelText="Default" DataSource="{value: Options}" SelectedValue="{value: SelectedOptionDefault}" ItemTextBinding="{value: Text}" ItemValueBinding="{value: Value}" />
+    </div>
+    <div class="w-full">
+        <t:ComboBoxFormField LabelText="Large" DataSource="{value: Options}" SelectedValue="{value: SelectedOptionLarge}" ItemTextBinding="{value: Text}" ItemValueBinding="{value: Value}" InputSize="Large" />
+    </div>
+    <div class="w-full">
+        <t:ComboBoxFormField LabelText="Extra Large" DataSource="{value: Options}" SelectedValue="{value: SelectedOptionExtraLarge}" ItemTextBinding="{value: Text}" ItemValueBinding="{value: Value}" InputSize="ExtraLarge" />
+    </div>
+</div>
+

@@ -1,3 +1,3 @@
-## Sample 2: ComboBoxFormField
+# Customer Details Form
 
-A drop-down field with label, data source binding, empty item, and validation.
+This sample demonstrates a full `Form` with `HeaderTemplate`, validation (`ValidationSummary`), grouped fields in `Row`, and footer actions for `Save` and `Cancel`.

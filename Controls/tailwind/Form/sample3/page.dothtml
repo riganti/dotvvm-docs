@@ -1,0 +1,7 @@
+﻿<t:Form HeaderText="{value: FormHeaderText}">
+    <ContentTemplate>
+        <t:TextBoxFormField LabelText="Edit Header" Text="{value: FormHeaderText}" />
+        <t:TextBoxFormField LabelText="Sample Field" Text="{value: SampleField}" />
+    </ContentTemplate>
+</t:Form>
+

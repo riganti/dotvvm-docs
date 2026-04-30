@@ -1,20 +1,32 @@
-<t:Form HeaderText="Registration">
-    <ContentTemplate>
-        <t:TextBoxFormField LabelText="Full Name" Text="{value: FullName}" />
+<div class="space-y-4">
+    <t:Form>
+        <HeaderTemplate>
+            <h2 class="mb-0 text-lg font-semibold">Customer Details</h2>
+        </HeaderTemplate>
+        <ContentTemplate>
+            <dot:ValidationSummary IncludeErrorsFromChildren="true" />
+            <t:Row>
+                <t:TextBoxFormField LabelText="First name" Text="{value: FirstName}" />
+                <t:TextBoxFormField LabelText="Last name" Text="{value: LastName}" />
+            </t:Row>
+            <t:TextBoxFormField LabelText="Email address" Text="{value: Email}" />
+            <t:Row>
+                <t:TextBoxFormField LabelText="Street" Text="{value: Street}" />
+                <t:TextBoxFormField LabelText="ZIP / Postal code" Text="{value: Zip}" />
+            </t:Row>
+            <t:Row>
+                <t:CheckBoxFormField Text="Subscribe to newsletter" Checked="{value: Subscribe}" />
+                <t:CheckBoxFormField Text="Agree to terms" Checked="{value: AgreeToTerms}" />
+                <t:CheckBoxFormField Text="Disabled checkbox" Checked="{value: Subscribe}" Enabled="false" />
+            </t:Row>
+        </ContentTemplate>
+        <FooterTemplate>
+            <t:Button Type="Primary" Text="Save" IsSubmitButton="true" Click="{command: Save()}" Validation.Target="{value: _root}" />
+            <t:Button Type="Default" Text="Cancel" Click="{command: Reset()}" Validation.Enabled="false" />
+        </FooterTemplate>
+    </t:Form>
 
-        <t:ComboBoxFormField LabelText="Country"
-            DataSource="{value: Countries}"
-            SelectedValue="{value: SelectedCountry}"
-            ItemTextBinding="{value: Name}"
-            ItemValueBinding="{value: Code}"
-            EmptyItemText="-- Select a country --" />
-
-        <t:ComboBoxFormField LabelText="Role (simple list)"
-            DataSource="{value: Roles}"
-            SelectedValue="{value: SelectedRole}"
-            EmptyItemText="-- Select a role --" />
-    </ContentTemplate>
-    <FooterTemplate>
-        <t:Button Type="Primary" Text="Register" Click="{command: Register()}" />
-    </FooterTemplate>
-</t:Form>
+    <div Visible="{value: Saved}">
+        <t:Alert Type="Success" Text="Form saved successfully!" />
+    </div>
+</div>

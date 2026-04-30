@@ -1,3 +1,3 @@
-## Sample 1: Radio Button Group
+# Radio Button Group
 
-Shows a group of radio buttons sharing the same CheckedItem binding, plus a disabled option.
+Radio buttons that share `CheckedItem` form one selection group. A disabled option is included for state demonstration.

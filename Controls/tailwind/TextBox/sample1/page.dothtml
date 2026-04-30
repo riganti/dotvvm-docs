@@ -1,2 +1,4 @@
-<t:TextBox Text="{value: TextValue}" Placeholder="Enter text..." />
-<p>You typed: {{value: TextValue}}</p>
+<div class="space-y-3">
+    <t:TextBox Text="{value: TextValueBasic}" Placeholder="Enter text..." />
+    <p>You typed: {{value: _root.TextValueBasic}}</p>
+</div>

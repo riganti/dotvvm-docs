@@ -1,3 +1,3 @@
-## Sample 1: CheckBox with Binding and Disabled State
+# Basic CheckBox
 
-Shows a bound checkbox, a disabled unchecked checkbox, and a disabled checked checkbox.
+This sample demonstrates a bound `CheckBox` and disabled states with both unchecked and checked values.

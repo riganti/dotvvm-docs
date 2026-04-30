@@ -1,9 +1,12 @@
-using DotVVM.Framework.ViewModel;
+﻿using DotVVM.Framework.ViewModel;
 using System.Collections.Generic;
 
 public class ViewModel : DotvvmViewModelBase
 {
-    public string SelectedOption { get; set; } = "";
+    public string SelectedOptionSmall { get; set; } = "";
+    public string SelectedOptionDefault { get; set; } = "";
+    public string SelectedOptionLarge { get; set; } = "";
+    public string SelectedOptionExtraLarge { get; set; } = "";
 
     public List<OptionDto> Options { get; set; } = new()
     {
@@ -18,3 +21,4 @@ public class OptionDto
     public string Text { get; set; } = "";
     public string Value { get; set; } = "";
 }
+

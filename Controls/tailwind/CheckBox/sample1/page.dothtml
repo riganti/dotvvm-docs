@@ -1,10 +1,5 @@
-<t:CheckBox Text="I agree to the terms" Checked="{value: Agreed}" />
-<t:CheckBox Text="Disabled (unchecked)" Enabled="false" />
-<t:CheckBox Text="Disabled (checked)" Enabled="false" Checked="true" />
-<p>Agreed: {{value: Agreed}}</p>
-
-<!-- CheckedItems: bind multiple checkboxes to a shared list -->
-<t:CheckBox Text="Apple"  CheckedItems="{value: SelectedFruits}" CheckedValue="apple" />
-<t:CheckBox Text="Banana" CheckedItems="{value: SelectedFruits}" CheckedValue="banana" />
-<t:CheckBox Text="Cherry" CheckedItems="{value: SelectedFruits}" CheckedValue="cherry" />
-<p>Selected: {{value: string.Join(", ", SelectedFruits)}}</p>
+<div class="flex flex-col gap-2">
+    <t:CheckBox Text="I agree to the terms" Checked="{value: CheckboxValue}" />
+    <t:CheckBox Text="Disabled (unchecked)" Enabled="false" Checked="{value: DisabledCheckboxUnchecked}" />
+    <t:CheckBox Text="Disabled (checked)" Enabled="false" Checked="{value: DisabledCheckboxChecked}" />
+</div>

@@ -1,7 +1,8 @@
 using DotVVM.Framework.ViewModel;
 
-public class  ViewModel : DotvvmViewModelBase
+public class ViewModel : DotvvmViewModelBase
 {
-    public bool Agreed { get; set; } = false;
-    public List<string> SelectedFruits { get; set; } = new() { "apple" };
+    public bool CheckboxValue { get; set; }
+    public bool DisabledCheckboxUnchecked { get; set; } = false;
+    public bool DisabledCheckboxChecked { get; set; } = true;
 }

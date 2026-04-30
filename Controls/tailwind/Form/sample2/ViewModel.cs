@@ -1,25 +1,32 @@
 using DotVVM.Framework.ViewModel;
+using System.ComponentModel.DataAnnotations;
 
 public class ViewModel : DotvvmViewModelBase
 {
-    public string FullName { get; set; } = "";
-    public string SelectedCountry { get; set; } = "";
-    public string SelectedRole { get; set; } = "";
+    [Required(ErrorMessage = "First name is required")]
+    public string FirstName { get; set; } = "";
 
-    public List<CountryDto> Countries { get; set; } = new()
+    [Required(ErrorMessage = "Last name is required")]
+    public string LastName { get; set; } = "";
+
+    [Required(ErrorMessage = "Email address is required")]
+    [EmailAddress(ErrorMessage = "Please enter a valid email address")]
+    public string Email { get; set; } = "";
+
+    public string Street { get; set; } = "";
+    public string Zip { get; set; } = "";
+    public bool Subscribe { get; set; }
+    public bool AgreeToTerms { get; set; }
+    public bool Saved { get; set; }
+
+    public void Save()
     {
-        new() { Code = "us", Name = "United States" },
-        new() { Code = "uk", Name = "United Kingdom" },
-        new() { Code = "de", Name = "Germany" },
-    };
+        Saved = true;
+    }
 
-    public List<string> Roles { get; set; } = new() { "Admin", "Editor", "Viewer" };
-
-    public void Register() { }
-}
-
-public class CountryDto
-{
-    public string Code { get; set; } = "";
-    public string Name { get; set; } = "";
+    public void Reset()
+    {
+        FirstName = LastName = Email = Street = Zip = "";
+        Subscribe = AgreeToTerms = Saved = false;
+    }
 }

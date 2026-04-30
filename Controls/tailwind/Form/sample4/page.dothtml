@@ -1,0 +1,13 @@
+﻿<t:Form>
+    <HeaderTemplate>
+        <div class="flex items-center gap-2">
+            <t:Icon Icon="User" Size="Medium" />
+            <span class="font-semibold">Custom Header with Icon</span>
+        </div>
+    </HeaderTemplate>
+    <ContentTemplate>
+        <t:TextBoxFormField LabelText="Username" Text="{value: Username}" />
+        <t:TextBoxFormField LabelText="Password" Text="{value: Password}" Type="Password" />
+    </ContentTemplate>
+</t:Form>
+

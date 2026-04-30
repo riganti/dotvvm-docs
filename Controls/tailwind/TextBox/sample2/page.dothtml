@@ -1,0 +1,15 @@
+﻿<div class="grid items-end gap-4 grid-cols-1 xs:grid-cols-2 md:grid-cols-4">
+    <div class="w-full">
+        <t:TextBoxFormField LabelText="Small" Text="{value: TextValueSmall}" InputSize="Small" />
+    </div>
+    <div class="w-full">
+        <t:TextBoxFormField LabelText="Default" Text="{value: TextValueBasic}" />
+    </div>
+    <div class="w-full">
+        <t:TextBoxFormField LabelText="Large" Text="{value: TextValueLarge}" InputSize="Large" />
+    </div>
+    <div class="w-full">
+        <t:TextBoxFormField LabelText="Extra Large" Text="{value: TextValueExtraLarge}" InputSize="ExtraLarge" />
+    </div>
+</div>
+

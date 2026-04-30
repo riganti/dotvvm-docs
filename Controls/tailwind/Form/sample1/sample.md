@@ -1,3 +1,3 @@
-## Sample 1: Form with Fields and Footer Actions
+# Basic Form
 
-Demonstrates a form with header, text fields arranged in rows, and Save/Cancel footer buttons.
+This sample shows a `Form` with `HeaderText`, a `ContentTemplate` containing one `TextBoxFormField`, and a footer action button.
