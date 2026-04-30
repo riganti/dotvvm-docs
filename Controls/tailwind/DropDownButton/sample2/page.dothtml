@@ -1,0 +1,19 @@
+﻿<div class="flex gap-4 flex-wrap items-start">
+    <t:DropDownButton Text="Default" Type="Default">
+        <t:DropDownItem Text="Option 1" />
+        <t:DropDownItem Text="Option 2" />
+    </t:DropDownButton>
+    <t:DropDownButton Text="Primary" Type="Primary">
+        <t:DropDownItem Text="Option 1" />
+        <t:DropDownItem Text="Option 2" />
+    </t:DropDownButton>
+    <t:DropDownButton Text="Success" Type="Success">
+        <t:DropDownItem Text="Option 1" />
+        <t:DropDownItem Text="Option 2" />
+    </t:DropDownButton>
+    <t:DropDownButton Text="Danger" Type="Danger">
+        <t:DropDownItem Text="Option 1" />
+        <t:DropDownItem Text="Option 2" />
+    </t:DropDownButton>
+</div>
+

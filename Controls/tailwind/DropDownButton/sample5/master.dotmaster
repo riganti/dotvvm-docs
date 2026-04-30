@@ -1,0 +1,8 @@
+<dot:ContentPlaceHolder ID="Main" />
+
+<div class="flex gap-2">
+    <t:DropDownButton Text="Links" Type="Default">
+        <t:DropDownItem Text="Sample A" RouteName="SampleA" />
+        <t:DropDownItem Text="Sample B" RouteName="SampleB" />
+    </t:DropDownButton>
+</div>

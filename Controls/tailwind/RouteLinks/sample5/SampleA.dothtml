@@ -1,0 +1,5 @@
+@masterPage master.dotmaster
+
+<dot:Content ContentPlaceHolderID="Main">
+  Content from page SampleA.
+</dot:Content>

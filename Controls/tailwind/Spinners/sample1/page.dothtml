@@ -1,0 +1,5 @@
+﻿<div class="flex items-center gap-4">
+    <t:Spinner />
+    <span class="text-sm text-gray-600">Loading...</span>
+</div>
+

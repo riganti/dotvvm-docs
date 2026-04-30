@@ -1,0 +1,19 @@
+﻿<div class="flex flex-col gap-4">
+    <div>
+        <p class="text-sm mb-2">Success</p>
+        <t:ProgressBar Value="60" Color="Success" />
+    </div>
+    <div>
+        <p class="text-sm mb-2">Warning</p>
+        <t:ProgressBar Value="60" Color="Warning" />
+    </div>
+    <div>
+        <p class="text-sm mb-2">Danger</p>
+        <t:ProgressBar Value="60" Color="Danger" />
+    </div>
+    <div>
+        <p class="text-sm mb-2">Info</p>
+        <t:ProgressBar Value="60" Color="Info" />
+    </div>
+</div>
+

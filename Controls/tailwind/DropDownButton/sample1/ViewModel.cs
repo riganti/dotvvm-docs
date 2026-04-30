@@ -3,10 +3,10 @@ using DotVVM.Framework.ViewModel;
 public class  ViewModel : DotvvmViewModelBase
 {
     public List<string> MenuItems { get; set; } = new() { "Profile", "Settings", "Sign Out" };
-    public string LastAction { get; set; } = "";
+    public string LastClicked { get; set; } = "(none)";
 
-    public void ActionClicked()
+    public void ItemClicked(string item)
     {
-        LastAction = "Clicked";
+        LastClicked = $"{item} clicked at {DateTime.Now:HH:mm:ss}";
     }
 }

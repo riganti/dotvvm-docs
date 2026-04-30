@@ -1,3 +1,4 @@
-## Sample 1: Progress Bar Colors and Label
+﻿## Sample 1: Different Values
 
-Demonstrates progress bars in different colors, with and without the percentage label, and a dynamic bound value.
+Demonstrates progress bars with various completion percentages (0%, 25%, 50%, 75%, 100%).
+

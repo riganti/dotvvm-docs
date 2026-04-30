@@ -1,0 +1,8 @@
+﻿<div class="flex gap-2">
+    <t:ButtonGroup>
+        <t:Button Type="Primary" Text="Save" Icon="Check" />
+        <t:Button Type="Warning" Text="Edit" Icon="PencilSquare" />
+        <t:Button Type="Danger" Text="Delete" Icon="Trash" />
+    </t:ButtonGroup>
+</div>
+

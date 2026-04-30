@@ -1,6 +1,23 @@
-<t:ProgressBar Value="25" />
-<t:ProgressBar Value="60" Color="Success" ShowLabel="true" />
-<t:ProgressBar Value="60" Color="Warning" ShowLabel="true" />
-<t:ProgressBar Value="60" Color="Danger" ShowLabel="true" />
-<t:ProgressBar Value="{value: Progress}" Color="Primary" ShowLabel="true" />
-<t:Button Type="Primary" Text="Increase" Click="{command: IncreaseProgress()}" />
+﻿<div class="flex flex-col gap-4">
+    <div>
+        <p class="text-sm mb-2">0%</p>
+        <t:ProgressBar Value="0" />
+    </div>
+    <div>
+        <p class="text-sm mb-2">25%</p>
+        <t:ProgressBar Value="25" />
+    </div>
+    <div>
+        <p class="text-sm mb-2">50%</p>
+        <t:ProgressBar Value="50" />
+    </div>
+    <div>
+        <p class="text-sm mb-2">75%</p>
+        <t:ProgressBar Value="75" />
+    </div>
+    <div>
+        <p class="text-sm mb-2">100%</p>
+        <t:ProgressBar Value="100" />
+    </div>
+</div>
+

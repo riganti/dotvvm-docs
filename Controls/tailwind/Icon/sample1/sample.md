@@ -1,3 +1,3 @@
-## Sample 1: Outline and Solid Icon Types
+## Sample 1: Outline Icons
 
-Shows icons rendered in the default Outline style and the Solid style.
+Displays a collection of HeroIcons in outline style, ideal for smaller interfaces and icon-only buttons.

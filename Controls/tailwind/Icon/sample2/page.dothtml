@@ -1,0 +1,9 @@
+﻿<div class="flex items-center gap-4">
+    <t:Icon Icon="Home" Type="Solid" Size="Default" />
+    <t:Icon Icon="User" Type="Solid" Size="Default" />
+    <t:Icon Icon="Bell" Type="Solid" Size="Default" />
+    <t:Icon Icon="Cog6Tooth" Type="Solid" Size="Default" />
+    <t:Icon Icon="EnvelopeOpen" Type="Solid" Size="Default" />
+    <t:Icon Icon="Trash" Type="Solid" Size="Default" />
+</div>
+

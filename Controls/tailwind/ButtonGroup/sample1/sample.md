@@ -1,3 +1,4 @@
-## Sample 1: Hardcoded and DataSource Button Groups
+﻿## Sample 2: Basic Hardcoded Button Group
 
-Shows a hardcoded group with mixed button types and a data-bound group.
+Demonstrates a simple button group with three basic buttons placed directly inside the ButtonGroup control.
+

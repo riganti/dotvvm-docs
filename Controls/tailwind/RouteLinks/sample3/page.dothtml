@@ -1,0 +1,16 @@
+﻿<div class="flex flex-col gap-4">
+    <div class="flex flex-wrap gap-2 items-center">
+        <t:RouteLink Type="Primary" Text="Small" Size="Small" RouteName="Default" />
+        <t:RouteLink Type="Primary" Text="Default" Size="Default" RouteName="Default" />
+        <t:RouteLink Type="Primary" Text="Large" Size="Large" RouteName="Default" />
+        <t:RouteLink Type="Primary" Text="Extra Large" Size="ExtraLarge" RouteName="Default" />
+    </div>
+    
+    <div class="flex flex-wrap gap-2 items-center">
+        <t:RouteLink Type="Primary" Text="Small" Size="Small" Icon="Home" RouteName="Default" />
+        <t:RouteLink Type="Primary" Text="Default" Size="Default" Icon="Home" RouteName="Default" />
+        <t:RouteLink Type="Primary" Text="Large" Size="Large" Icon="Home" RouteName="Default" />
+        <t:RouteLink Type="Primary" Text="Extra Large" Size="ExtraLarge" Icon="Home" RouteName="Default" />
+    </div>
+</div>
+

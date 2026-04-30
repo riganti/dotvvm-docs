@@ -1,0 +1,10 @@
+﻿<div class="flex flex-col gap-4 items-start">
+    <t:ProgressBar Value="{value: Progress}" />
+    <div class="flex gap-2">
+        <t:Button Type="Primary" Text="Increase" Click="{command: IncreaseProgress()}" Size="Small" />
+        <t:Button Type="Secondary" Text="Decrease" Click="{command: DecreaseProgress()}" Size="Small" />
+        <t:Button Type="Danger" Text="Reset" Click="{command: ResetProgress()}" Size="Small" />
+    </div>
+    <p class="text-sm">Progress: <strong>{{value: Progress}}%</strong></p>
+</div>
+

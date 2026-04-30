@@ -1,0 +1,11 @@
+﻿<div class="flex gap-2">
+    <t:DropDownButton Text="Actions" Type="Primary">
+        <t:DropDownItem Text="Edit" />
+        <t:DropDownItem Text="Duplicate" />
+        <t:DropDownItemSeparator />
+        <t:DropDownItem Text="Archive" />
+        <t:DropDownItemSeparator />
+        <t:DropDownItem Text="Delete" />
+    </t:DropDownButton>
+</div>
+

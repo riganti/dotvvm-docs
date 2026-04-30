@@ -1,3 +1,3 @@
-## Sample 1: Hardcoded Items and DataSource Mode
+## Sample 1: Basic Dropdown Button
 
-Shows a dropdown button with hardcoded DropDownItem children and one with a DataSource binding.
+Place `<t:DropDownItem>` children directly inside `<t:DropDownButton>`
