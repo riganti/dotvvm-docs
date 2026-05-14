@@ -1,0 +1,11 @@
+﻿<div class="w-[300px] bg-[#1e2a3b] rounded-md p-4">
+    <t:SideMenu>
+        <t:SideMenuSection Title="Navigation">
+            <t:MenuItem Text="Top Menus" RouteName="TopMenus" Icon="Bars3" />
+            <t:MenuItem Text="Side Menus" RouteName="SideMenus" Icon="Bars3BottomLeft" IsActive="true" />
+            <t:MenuItem Text="Buttons" RouteName="Buttons" Icon="CursorArrowRays" />
+            <t:MenuItem Text="Forms" RouteName="Forms" Icon="DocumentText" />
+        </t:SideMenuSection>
+    </t:SideMenu>
+</div>
+

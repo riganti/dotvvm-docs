@@ -1,12 +1,12 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DotVVM.Framework.ViewModel;
 
 public class ViewModel : DotvvmViewModelBase
 {
     public List<BreadcrumbItemData> BreadcrumbItems { get; set; } = new()
     {
-        new() { Text = "Home", Url = "/", IsActive = false },
-        new() { Text = "Products", Url = "/products", IsActive = false },
+        new() { Text = "Home", Url = "/" },
+        new() { Text = "Products", Url = "/products" },
         new() { Text = "Details", Url = "", IsActive = true }
     };
 
@@ -17,3 +17,4 @@ public class ViewModel : DotvvmViewModelBase
         public bool IsActive { get; set; }
     }
 }
+

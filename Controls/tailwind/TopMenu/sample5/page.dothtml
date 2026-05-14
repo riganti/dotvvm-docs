@@ -1,0 +1,13 @@
+﻿<t:TopMenu>
+    <StartTemplate>
+        <a href="#" class="text-lg font-bold text-blue-600 no-underline">MyApp</a>
+    </StartTemplate>
+    <MiddleTemplate>
+        <t:MenuItem Text="Home" NavigateUrl="#" IsActive="true" />
+        <t:MenuItemSeparator />
+        <t:MenuItem Text="About" NavigateUrl="#" />
+        <t:MenuItemSeparator />
+        <t:MenuItem Text="Contact" NavigateUrl="#" />
+    </MiddleTemplate>
+</t:TopMenu>
+

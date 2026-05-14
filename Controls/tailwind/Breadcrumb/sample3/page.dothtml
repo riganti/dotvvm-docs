@@ -1,0 +1,5 @@
+﻿<t:Breadcrumb DataSource="{value: BreadcrumbItems}"
+              ItemText="{value: Text}"
+              ItemNavigateUrl="{value: Url}"
+              ItemIsActive="{value: IsActive}" />
+

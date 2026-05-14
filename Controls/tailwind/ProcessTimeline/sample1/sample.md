@@ -1,3 +1,3 @@
-## Sample: ProcessTimeline
+## Sample 1: Interactive Steps
 
-A 4-step wizard progress indicator with Previous/Next controls.
+Shows a 4-step timeline with Previous/Next buttons.

@@ -2,6 +2,7 @@
     <t:SideMenuSection Title="Main Menu">
         <t:MenuItem Text="Dashboard" NavigateUrl="#dashboard" Icon="Home" IsActive="true" />
         <t:MenuItem Text="Calendar" NavigateUrl="#calendar" Icon="Calendar" />
+        <t:MenuItemSeparator />
         <t:MenuItem Text="Messages" NavigateUrl="#messages" Icon="Envelope" />
     </t:SideMenuSection>
 
@@ -9,7 +10,21 @@
         <t:MenuDropDownItem Text="Dashboard" Icon="TableCells">
             <t:MenuItem Text="Overview" NavigateUrl="#overview" />
             <t:MenuItem Text="Traffic" NavigateUrl="#traffic" />
+            <t:MenuItem Text="Conversions" NavigateUrl="#conversions" />
         </t:MenuDropDownItem>
         <t:MenuItem Text="Reports" NavigateUrl="#reports" Icon="DocumentText" />
+    </t:SideMenuSection>
+
+    <t:SideMenuSection Title="Settings">
+        <t:MenuDropDownItem Text="Account Settings" Icon="Cog6Tooth"
+            DataSource="{value: SettingsLinks}"
+            ItemText="{value: Text}"
+            ItemNavigateUrl="{value: Url}" />
+    </t:SideMenuSection>
+
+    <t:SideMenuSection Title="Quick Links">
+        <dot:Repeater DataSource="{value: DashboardLinks}" RenderWrapperTag="false">
+            <t:MenuItem Text="{value: _this}" NavigateUrl="#" />
+        </dot:Repeater>
     </t:SideMenuSection>
 </t:SideMenu>

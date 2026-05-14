@@ -1,0 +1,9 @@
+﻿<t:TopMenu>
+    <StartTemplate>
+        <a href="#" class="text-lg font-bold text-blue-600 no-underline">BrandLogo</a>
+    </StartTemplate>
+    <EndTemplate>
+        <t:Button Type="Primary" Text="Sign In" />
+    </EndTemplate>
+</t:TopMenu>
+

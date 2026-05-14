@@ -1,0 +1,10 @@
+<dot:ContentPlaceHolder ID="Main" />
+
+<div class="flex gap-2">
+    <t:Breadcrumb>
+        <t:BreadcrumbItem Text="Home" RouteName="Default" />
+        <t:BreadcrumbItem Text="Buttons" RouteName="SampleA" />
+        <t:BreadcrumbItem Text="Breadcrumbs" RouteName="Breadcrumbs" IsActive="true" />
+    </t:Breadcrumb>
+
+</div>

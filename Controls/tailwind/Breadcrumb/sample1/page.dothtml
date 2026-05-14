@@ -1,10 +1,7 @@
 <t:Breadcrumb>
     <t:BreadcrumbItem Text="Home" NavigateUrl="/" />
-    <t:BreadcrumbItem Text="Library" NavigateUrl="/library" />
+    <t:BreadcrumbItem Text="Controls" NavigateUrl="/controls" />
+    <t:BreadcrumbItem Text="Tailwind" NavigateUrl="/tailwind" />
     <t:BreadcrumbItem Text="Data" IsActive="true" />
 </t:Breadcrumb>
 
-<t:Breadcrumb DataSource="{value: BreadcrumbItems}"
-              ItemText="{value: Text}"
-              ItemNavigateUrl="{value: Url}"
-              ItemIsActive="{value: IsActive}" />

@@ -1,14 +1,11 @@
 <t:SideMenu>
     <t:SideMenuSection Title="Template Demo">
-        {{-- Plain text item --}}
         <t:MenuItem Text="Dashboard" NavigateUrl="#dashboard" Icon="Home" IsActive="true" />
 
-        {{-- Template item: any HTML content placed directly inside <t:MenuItem> becomes the label --}}
         <t:MenuItem NavigateUrl="#featured">
             <span style="font-weight: 700; color: #f59e0b;">★ Featured</span>
         </t:MenuItem>
 
-        {{-- Template item with inline badge --}}
         <t:MenuItem NavigateUrl="#new">
             <span>New <span style="display: inline-block; background: #ef4444; color: white; font-size: 0.625rem; padding: 0 0.25rem; border-radius: 9999px;">NEW</span></span>
         </t:MenuItem>
