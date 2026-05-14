@@ -1,5 +1,3 @@
-<dot:ContentPlaceHolder ID="Main" />
-
 <div class="flex gap-2">
     <t:Breadcrumb>
         <t:BreadcrumbItem Text="Home" RouteName="Default" />
@@ -8,3 +6,5 @@
     </t:Breadcrumb>
 
 </div>
+
+<dot:ContentPlaceHolder ID="Main" />

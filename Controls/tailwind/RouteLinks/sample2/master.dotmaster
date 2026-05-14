@@ -1,6 +1,6 @@
-<dot:ContentPlaceHolder ID="Main" />
-
 <div class="flex flex-wrap gap-2 items-center">
     <t:RouteLink Type="Primary" RouteName="SampleA" Text="Sample A" />
     <t:RouteLink Type="Default" RouteName="SampleB" Text="Sample B" />
 </div>
+
+<dot:ContentPlaceHolder ID="Main" />
