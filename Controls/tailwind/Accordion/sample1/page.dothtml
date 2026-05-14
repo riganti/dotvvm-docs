@@ -1,0 +1,20 @@
+﻿<div class="max-w-xl">
+    <t:Accordion>
+        <t:AccordionItem HeaderText="What is DotVVM?">
+            <ContentTemplate>
+                <p>DotVVM is an MVVM framework for ASP.NET that lets you build rich web apps without writing JavaScript by hand.</p>
+            </ContentTemplate>
+        </t:AccordionItem>
+        <t:AccordionItem HeaderText="What is Tailwind CSS?">
+            <ContentTemplate>
+                <p>Tailwind CSS is a utility-first framework for quickly building custom interfaces in markup.</p>
+            </ContentTemplate>
+        </t:AccordionItem>
+        <t:AccordionItem HeaderText="Can I use them together?">
+            <ContentTemplate>
+                <p>Yes. This library combines DotVVM controls with Tailwind styling.</p>
+            </ContentTemplate>
+        </t:AccordionItem>
+    </t:Accordion>
+</div>
+

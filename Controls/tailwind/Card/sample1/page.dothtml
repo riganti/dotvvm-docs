@@ -1,34 +1,10 @@
-<div class="grid gap-4 grid-cols-1 md:grid-cols-2">
-    <t:Card HeaderText="Basic Card">
+<div class="max-w-sm">
+    <t:Card HeaderText="Card Title">
         <ContentTemplate>
-            <p>This is a basic card with content and an action button.</p>
+            <p>This is the card content. It can contain any HTML or controls.</p>
         </ContentTemplate>
         <FooterTemplate>
             <t:Button Type="Primary" Text="Action" />
         </FooterTemplate>
-    </t:Card>
-
-    <t:Card HeaderText="With Image" ImageUrl="https://picsum.photos/400/200" ImageAlt="Sample image">
-        <ContentTemplate>
-            <p>This card displays an image at the top.</p>
-        </ContentTemplate>
-    </t:Card>
-
-    <t:Card HeaderText="Primary Color" Color="Primary">
-        <ContentTemplate>
-            <p>Uses the primary semantic color variant.</p>
-        </ContentTemplate>
-    </t:Card>
-
-    <t:Card HeaderText="Success Color" Color="Success">
-        <ContentTemplate>
-            <p>Uses the success semantic color variant.</p>
-        </ContentTemplate>
-    </t:Card>
-    
-    <t:Card HeaderText="Horizontal Card" Horizontal="true" ImageUrl="https://picsum.photos/200/300" ImageAlt="Horizontal image">
-        <ContentTemplate>
-            <p>Image on the left, content on the right side of the card.</p>
-        </ContentTemplate>
     </t:Card>
 </div>

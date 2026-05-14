@@ -1,0 +1,12 @@
+﻿<t:DockLayout Orientation="Vertical">
+    <StartContent>
+        <div class="bg-gray-200 p-4 rounded">Top Section</div>
+    </StartContent>
+    <Content>
+        <div class="bg-gray-300 p-4 rounded">Middle Content</div>
+    </Content>
+    <EndContent>
+        <div class="bg-gray-200 p-4 rounded">Bottom Section</div>
+    </EndContent>
+</t:DockLayout>
+

@@ -1,0 +1,14 @@
+﻿<div class="max-w-sm">
+    <t:Card>
+        <HeaderTemplate>
+            <div class="flex items-center gap-2">
+                <strong>Settings</strong>
+                <t:Badge Text="New" Color="Primary" />
+            </div>
+        </HeaderTemplate>
+        <ContentTemplate>
+            <p>This card uses HeaderTemplate for custom header content.</p>
+        </ContentTemplate>
+    </t:Card>
+</div>
+

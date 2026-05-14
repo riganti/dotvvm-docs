@@ -1,27 +1,12 @@
-<t:StackLayout>
-    <t:Button Type="Primary" Text="Button 1" />
-    <t:Button Type="Secondary" Text="Button 2" />
-    <t:Button Type="Success" Text="Button 3" />
-</t:StackLayout>
+<div class="flex flex-col gap-4">
+    <t:StackLayout>
+        <t:Button Type="Primary" Text="Button 1" />
+        <t:Button Type="Secondary" Text="Button 2" />
+        <t:Button Type="Success" Text="Button 3" />
+    </t:StackLayout>
 
-<t:StackLayout Orientation="Horizontal" Gap="Small">
-    <t:Button Type="Primary" Text="Button 1" />
-    <t:Button Type="Secondary" Text="Button 2" />
-</t:StackLayout>
-
-<t:StackLayout Orientation="Horizontal" Gap="Large">
-    <t:Button Type="Primary" Text="Button 1" />
-    <t:Button Type="Secondary" Text="Button 2" />
-</t:StackLayout>
-
-<t:DockLayout Gap="Small">
-    <StartContent>
-        <div>Start Section</div>
-    </StartContent>
-    <Content>
-        <div>Center Content</div>
-    </Content>
-    <EndContent>
-        <div>End Section</div>
-    </EndContent>
-</t:DockLayout>
+    <t:StackLayout Orientation="Horizontal" Gap="Default">
+        <t:Button Type="Primary" Text="Left" />
+        <t:Button Type="Secondary" Text="Right" />
+    </t:StackLayout>
+</div>

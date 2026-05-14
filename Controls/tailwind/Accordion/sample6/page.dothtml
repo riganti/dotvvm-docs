@@ -1,0 +1,28 @@
+﻿<div class="max-w-xl">
+    <t:Accordion>
+        <t:AccordionItem>
+            <HeaderTemplate>
+                <span class="flex items-center gap-2">
+                    <span>⚙️</span>
+                    <strong>Settings</strong>
+                    <t:Badge Text="New" Color="Primary" />
+                </span>
+            </HeaderTemplate>
+            <ContentTemplate>
+                <p>Use HeaderTemplate for rich header content.</p>
+            </ContentTemplate>
+        </t:AccordionItem>
+        <t:AccordionItem>
+            <HeaderTemplate>
+                <span class="flex items-center gap-2">
+                    <span>📋</span>
+                    <strong>Details</strong>
+                </span>
+            </HeaderTemplate>
+            <ContentTemplate>
+                <p>This item shows another custom header layout.</p>
+            </ContentTemplate>
+        </t:AccordionItem>
+    </t:Accordion>
+</div>
+

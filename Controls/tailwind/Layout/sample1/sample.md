@@ -1,3 +1,3 @@
-## Sample 1: StackLayout and DockLayout
+## Sample 1: StackLayout Basics
 
-Demonstrates a vertical stack, horizontal stack, and a three-zone dock layout.
+Shows vertical and horizontal StackLayout examples.

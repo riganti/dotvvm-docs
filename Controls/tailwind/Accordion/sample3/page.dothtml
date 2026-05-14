@@ -1,0 +1,20 @@
+﻿<div class="max-w-xl">
+    <t:Accordion AllowMultiple="true">
+        <t:AccordionItem HeaderText="Section A" IsExpanded="true">
+            <ContentTemplate>
+                <p>Content for section A. Other sections can also be open at the same time.</p>
+            </ContentTemplate>
+        </t:AccordionItem>
+        <t:AccordionItem HeaderText="Section B" IsExpanded="true">
+            <ContentTemplate>
+                <p>Content for section B. Both A and B start expanded here.</p>
+            </ContentTemplate>
+        </t:AccordionItem>
+        <t:AccordionItem HeaderText="Section C">
+            <ContentTemplate>
+                <p>Content for section C.</p>
+            </ContentTemplate>
+        </t:AccordionItem>
+    </t:Accordion>
+</div>
+

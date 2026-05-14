@@ -1,0 +1,23 @@
+﻿<div class="flex flex-col gap-2">
+    <t:StackLayout Gap="None" Orientation="Horizontal">
+        <t:Button Type="Primary" Text="None" />
+        <t:Button Type="Primary" Text="Gap" />
+    </t:StackLayout>
+    <t:StackLayout Gap="Small" Orientation="Horizontal">
+        <t:Button Type="Secondary" Text="Small" />
+        <t:Button Type="Secondary" Text="Gap" />
+    </t:StackLayout>
+    <t:StackLayout Gap="Default" Orientation="Horizontal">
+        <t:Button Type="Success" Text="Default" />
+        <t:Button Type="Success" Text="Gap" />
+    </t:StackLayout>
+    <t:StackLayout Gap="Large" Orientation="Horizontal">
+        <t:Button Type="Warning" Text="Large" />
+        <t:Button Type="Warning" Text="Gap" />
+    </t:StackLayout>
+    <t:StackLayout Gap="ExtraLarge" Orientation="Horizontal">
+        <t:Button Type="Danger" Text="Extra Large" />
+        <t:Button Type="Danger" Text="Gap" />
+    </t:StackLayout>
+</div>
+

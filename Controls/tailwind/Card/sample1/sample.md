@@ -1,3 +1,3 @@
-## Sample 1: Card Variants
+## Sample 1: Basic Card
 
-Demonstrates a basic card with header/content/footer, a card with image, and a horizontal layout card.
+Shows a basic card with header, content, and a footer action.
