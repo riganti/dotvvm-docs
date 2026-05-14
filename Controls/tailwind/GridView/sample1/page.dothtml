@@ -3,7 +3,7 @@
         <Columns>
             <dot:GridViewTextColumn HeaderText="ID" ValueBinding="{value: Id}" AllowSorting="true" SortExpression="Id" />
             <dot:GridViewTextColumn HeaderText="Name" ValueBinding="{value: Name}" AllowSorting="true" SortExpression="Name" />
-            <dot:GridViewTextColumn HeaderText="Email" ValueBinding="{value: Email}" />
+            <dot:GridViewTextColumn HeaderText="Email" ValueBinding="{value: Email}" AllowSorting="true" SortExpression="Email" />
             <dot:GridViewTemplateColumn HeaderText="Actions">
                 <ContentTemplate>
                     <t:Button Type="Primary" Text="Edit" Click="{command: _parent.Edit(_this)}" />

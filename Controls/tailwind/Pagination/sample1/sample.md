@@ -1,3 +1,3 @@
-## Sample 1: GridView with Pagination
+## Sample 1: GridView with DataPager
 
-Demonstrates a GridView and Pagination control both bound to the same paged data set.
+Demonstrates a GridView and DataPager bound to the same paged data set.

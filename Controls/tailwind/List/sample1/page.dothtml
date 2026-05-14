@@ -1,11 +1,6 @@
 <t:ListControl>
-    <t:ListItem Icon="User" Title="Alice Johnson" Text="Engineering Lead" BadgeText="Active" BadgeColor="Success" />
+    <t:ListItem Icon="User" Title="Alice Johnson" Text="Engineering Lead" BadgeText="Active" BadgeColor="Success" Href="/profile/alice" LinkMode="Row" />
     <t:ListItem Icon="Envelope" Title="New message" Text="2 minutes ago" BadgeText="New" BadgeColor="Info" />
     <t:ListItem Icon="Bell" Title="Deployment failed" Text="1 hour ago" BadgeText="Error" BadgeColor="Danger" />
+    <t:ListItem Icon="CheckCircle" Title="Build succeeded" Text="15 minutes ago" BadgeText="Done" BadgeColor="Success" />
 </t:ListControl>
-
-<t:ListControl DataSource="{value: Items}"
-               ItemTitle="{value: Title}"
-               ItemText="{value: Text}"
-               ItemBadgeText="{value: BadgeText}"
-               ItemBadgeColor="{value: BadgeColor}" />

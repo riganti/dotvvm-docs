@@ -1,6 +1,8 @@
+using System.Collections.Generic;
+using DotVVM.Controls.Tailwind.Controls;
 using DotVVM.Framework.ViewModel;
 
-public class  ViewModel : DotvvmViewModelBase
+public class ViewModel : DotvvmViewModelBase
 {
     public List<ListItemData> Items { get; set; } = new()
     {

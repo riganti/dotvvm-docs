@@ -5,4 +5,4 @@
     </Columns>
 </t:GridView>
 
-<t:Pagination DataSet="{value: People}" />
+<t:DataPager DataSet="{value: People}" />

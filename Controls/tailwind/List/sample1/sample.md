@@ -1,3 +1,3 @@
-## Sample 1: Hardcoded Items and DataSource Mode
+## Sample 1: Hardcoded Items with Icons
 
-Shows a list with hardcoded ListItem children (with icons and badges) and a data-bound list.
+Shows a list with icons, subtext, and badges.

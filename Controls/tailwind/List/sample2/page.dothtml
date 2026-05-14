@@ -1,0 +1,8 @@
+﻿<t:ListControl DataSource="{value: TeamMembers}"
+               ItemTitleBinding="{value: Title}"
+               ItemTextBinding="{value: Text}"
+               ItemHrefBinding="{value: Href}"
+               ItemLinkModeBinding="{value: LinkMode}"
+               ItemBadgeText="{value: BadgeText}"
+               ItemBadgeColor="{value: BadgeColor}" />
+

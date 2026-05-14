@@ -1,0 +1,18 @@
+﻿<t:ListControl>
+    <t:ListItem Icon="User">
+        <span class="list-row-title">Alice Johnson</span>
+        <span class="list-row-text">Engineering Lead · <a href="/profile/alice" class="text-primary-600 hover:underline">View profile</a></span>
+    </t:ListItem>
+    <t:ListItem Icon="Envelope">
+        <span class="list-row-title">New message</span>
+        <span class="list-row-text">You have <strong>3 unread</strong> messages.</span>
+    </t:ListItem>
+    <t:ListItem>
+        <div class="list-row-title">Custom layout</div>
+        <div class="flex gap-2 mt-1">
+            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">Tag A</span>
+            <span class="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded">Tag B</span>
+        </div>
+    </t:ListItem>
+</t:ListControl>
+
