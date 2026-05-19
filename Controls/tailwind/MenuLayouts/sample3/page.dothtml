@@ -1,0 +1,44 @@
+﻿<div class="app-layout">
+    <header class="mobile-topbar" data-ui="mobile-topbar">
+        <t:SideMenuToggleButton />
+        <span class="mobile-topbar-brand">MyApp</span>
+    </header>
+
+    <div class="app-layout-body">
+        <div class="side-menu-mobile-overlay"></div>
+
+        <div class="side-menu-panel" data-ui="side-menu-panel">
+            <t:SideMenu>
+                <t:SideMenuSection Title="Main Menu">
+                    <t:MenuItem Text="Dashboard" NavigateUrl="#" Icon="Home" IsActive="true" />
+                    <t:MenuItem Text="Calendar" NavigateUrl="#" Icon="Calendar" />
+                    <t:MenuItem Text="Messages" NavigateUrl="#" Icon="Envelope" />
+                    <t:MenuItem Text="Tasks" NavigateUrl="#" Icon="CheckCircle" />
+                </t:SideMenuSection>
+                <t:MenuItemSeparator />
+                <t:SideMenuSection Title="Analytics">
+                    <t:MenuDropDownItem Text="Reports" Icon="DocumentText">
+                        <t:MenuItem Text="Weekly" NavigateUrl="#weekly" />
+                        <t:MenuItem Text="Monthly" NavigateUrl="#monthly" />
+                        <t:MenuItem Text="Annual" NavigateUrl="#annual" />
+                    </t:MenuDropDownItem>
+                    <t:MenuItem Text="Traffic" NavigateUrl="#" Icon="ChartBar" />
+                </t:SideMenuSection>
+                <t:MenuItemSeparator />
+                <t:SideMenuSection Title="Settings">
+                    <t:MenuItem Text="Profile" NavigateUrl="#" Icon="UserCircle" />
+                    <t:MenuItem Text="Preferences" NavigateUrl="#" Icon="Cog6Tooth" />
+                    <t:MenuItem Text="Sign Out" NavigateUrl="#" Icon="ArrowRightOnRectangle" />
+                </t:SideMenuSection>
+            </t:SideMenu>
+        </div>
+
+        <main class="app-layout-content typography" data-ui="main-content">
+            <h2>SideMenu Only Layout</h2>
+            <p class="mb-4">
+                Standalone sidebar layout with a mobile top bar and overlay panel.
+            </p>
+        </main>
+    </div>
+</div>
+

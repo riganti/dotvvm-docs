@@ -1,0 +1,43 @@
+﻿<div class="app-layout">
+    <t:TopMenu HamburgerPosition="End" data-ui="top-menu">
+        <StartTemplate>
+            <a href="/" class="text-xl font-bold text-blue-600 no-underline">MyApp</a>
+        </StartTemplate>
+        <MiddleTemplate>
+            <t:MenuItem Text="Home" NavigateUrl="#" IsActive="true" />
+            <t:MenuItem Text="About" NavigateUrl="#" />
+            <t:MenuItemSeparator />
+            <t:MenuItem Text="Services" NavigateUrl="#" />
+            <t:MenuDropDownItem Text="Resources" Icon="Cog8Tooth">
+                <t:MenuItem Text="Blog" NavigateUrl="#blog" Icon="BookOpen" />
+                <t:MenuItem Text="Documentation" NavigateUrl="#docs" Icon="DocumentText" />
+                <t:MenuItemSeparator />
+                <t:MenuItem Text="Support" NavigateUrl="#support" Icon="Phone" />
+            </t:MenuDropDownItem>
+            <t:MenuItem Text="Contact" NavigateUrl="#" />
+        </MiddleTemplate>
+        <MobileTemplate>
+            <t:MenuItem Text="Home" NavigateUrl="#" IsActive="true" />
+            <t:MenuItem Text="About" NavigateUrl="#" />
+            <t:MenuItem Text="Services" NavigateUrl="#" />
+            <t:MenuDropDownItem Text="Resources" Icon="Cog8Tooth">
+                <t:MenuItem Text="Blog" NavigateUrl="#blog" Icon="BookOpen" />
+                <t:MenuItem Text="Documentation" NavigateUrl="#docs" Icon="DocumentText" />
+                <t:MenuItemSeparator />
+                <t:MenuItem Text="Support" NavigateUrl="#support" Icon="Phone" />
+            </t:MenuDropDownItem>
+            <t:MenuItem Text="Contact" NavigateUrl="#" />
+        </MobileTemplate>
+        <EndTemplate>
+            <t:Button Type="Primary" Text="Sign In" />
+        </EndTemplate>
+    </t:TopMenu>
+
+    <main class="app-layout-content typography" data-ui="main-content">
+        <h2>TopMenu Only Layout</h2>
+        <p class="mb-4">
+            Responsive TopMenu with a right-aligned hamburger on small screens.
+        </p>
+    </main>
+</div>
+
