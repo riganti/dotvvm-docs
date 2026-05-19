@@ -1,3 +1,3 @@
-## Sample 1: Basic Modal and Custom Header Modal
+## Sample 1: Basic Modal with Title
 
-Demonstrates a modal with a title and confirmation buttons, and one with a custom header template.
+Shows a modal dialog controlled by a boolean `IsOpen` binding.

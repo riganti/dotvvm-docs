@@ -1,0 +1,11 @@
+﻿<t:Button Type="Default" Text="Open Large Modal" Click="{command: ToggleLargeModal()}" />
+
+<t:ModalDialog IsOpen="{value: IsLargeModalOpen}" Title="Large Modal" Size="Large">
+    <ContentTemplate>
+        <p>This is a large modal dialog with more space for content.</p>
+    </ContentTemplate>
+    <FooterTemplate>
+        <t:Button Type="Default" Text="Close" Click="{command: ToggleLargeModal()}" />
+    </FooterTemplate>
+</t:ModalDialog>
+

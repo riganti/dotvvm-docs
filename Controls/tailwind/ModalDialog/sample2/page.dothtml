@@ -1,0 +1,21 @@
+﻿<t:Button Type="Default" Text="Open Custom Modal" Click="{command: ToggleCustomModal()}" />
+
+<t:ModalDialog IsOpen="{value: IsCustomModalOpen}">
+    <HeaderTemplate>
+        <div class="flex items-center gap-2">
+            <span class="text-xl">⚙️</span>
+            <h1>Settings</h1>
+        </div>
+    </HeaderTemplate>
+    <ContentTemplate>
+        <p class="mb-3">Customize your preferences below.</p>
+        <p>Current user: <strong>{{value: UserName}}</strong></p>
+    </ContentTemplate>
+    <FooterTemplate>
+        <div class="flex gap-3 justify-end">
+            <t:Button Type="Default" Text="Close" Click="{command: ToggleCustomModal()}" />
+            <t:Button Type="Primary" Text="Save" Click="{command: ToggleCustomModal()}" />
+        </div>
+    </FooterTemplate>
+</t:ModalDialog>
+

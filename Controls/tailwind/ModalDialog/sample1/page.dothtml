@@ -5,7 +5,9 @@
         <p>Are you sure you want to proceed with this action?</p>
     </ContentTemplate>
     <FooterTemplate>
-        <t:Button Type="Primary" Text="Confirm" Click="{command: ToggleModal()}" />
-        <t:Button Type="Default" Text="Cancel" Click="{command: ToggleModal()}" />
+        <div class="flex gap-3 justify-end">
+            <t:Button Type="Default" Text="Cancel" Click="{command: ToggleModal()}" />
+            <t:Button Type="Primary" Text="Confirm" Click="{command: ToggleModal()}" />
+        </div>
     </FooterTemplate>
 </t:ModalDialog>
