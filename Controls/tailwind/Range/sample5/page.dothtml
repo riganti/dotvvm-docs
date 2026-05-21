@@ -1,0 +1,11 @@
+<div class="mb-4 max-w-sm mx-auto stack-layout">
+    <t:Range SelectedValue="{value: BindableColorValue}" Color="{value: SelectedColor}" ShowValue="true" ValueSuffix=" %" />
+</div>
+<div class="flex gap-2 flex-wrap justify-center mb-8">
+    <t:Button Text="Primary" Type="Primary" Click="{command: SetColor(1)}" Size="Small" />
+    <t:Button Text="Secondary" Type="Secondary" Click="{command: SetColor(2)}" Size="Small" />
+    <t:Button Text="Success" Type="Success" Click="{command: SetColor(3)}" Size="Small" />
+    <t:Button Text="Warning" Type="Warning" Click="{command: SetColor(4)}" Size="Small" />
+    <t:Button Text="Danger" Type="Danger" Click="{command: SetColor(5)}" Size="Small" />
+    <t:Button Text="Info" Type="Info" Click="{command: SetColor(6)}" Size="Small" />
+</div>

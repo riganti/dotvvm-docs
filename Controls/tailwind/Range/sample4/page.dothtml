@@ -1,0 +1,18 @@
+<div class="mb-8 max-w-sm mx-auto stack-layout">
+    <div>
+        <p>Small</p>
+        <t:Range SelectedValue="{value: SizeValue}" Size="Small" ShowValue="true" ValueSuffix=" %" />
+    </div>
+    <div>
+        <p>Default</p>
+        <t:Range SelectedValue="{value: SizeValue}" Size="Default" ShowValue="true" ValueSuffix=" %" />
+    </div>
+    <div>
+        <p>Large</p>
+        <t:Range SelectedValue="{value: SizeValue}" Size="Large" ShowValue="true" ValueSuffix=" %" />
+    </div>
+    <div>
+        <p>ExtraLarge</p>
+        <t:Range SelectedValue="{value: SizeValue}" Size="ExtraLarge" ShowValue="true" ValueSuffix=" %" />
+    </div>
+</div>

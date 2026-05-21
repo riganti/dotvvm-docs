@@ -1,0 +1,8 @@
+<div class="mb-8 max-w-sm mx-auto stack-layout">
+    <t:RangeInterval SelectedMinValue="{value: ColorMin}" SelectedMaxValue="{value: ColorMax}" Color="Primary" ValueSuffix=" %" />
+    <t:RangeInterval SelectedMinValue="{value: ColorMin}" SelectedMaxValue="{value: ColorMax}" Color="Secondary" ValueSuffix=" %" />
+    <t:RangeInterval SelectedMinValue="{value: ColorMin}" SelectedMaxValue="{value: ColorMax}" Color="Success" ValueSuffix=" %" />
+    <t:RangeInterval SelectedMinValue="{value: ColorMin}" SelectedMaxValue="{value: ColorMax}" Color="Warning" ValueSuffix=" %" />
+    <t:RangeInterval SelectedMinValue="{value: ColorMin}" SelectedMaxValue="{value: ColorMax}" Color="Danger" ValueSuffix=" %" />
+    <t:RangeInterval SelectedMinValue="{value: ColorMin}" SelectedMaxValue="{value: ColorMax}" Color="Info" ValueSuffix=" %" />
+</div>

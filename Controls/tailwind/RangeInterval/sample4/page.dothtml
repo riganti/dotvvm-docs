@@ -1,0 +1,4 @@
+<div class="mb-8 max-w-sm mx-auto">
+    <p class="mb-2 text-sm text-gray-600">Price filter: 0 - 1 000 CZK, step 10</p>
+    <t:RangeInterval SelectedMinValue="{value: PriceMin}" SelectedMaxValue="{value: PriceMax}" MinValue="0" MaxValue="1000" Step="10" ValueSuffix=" CZK" />
+</div>

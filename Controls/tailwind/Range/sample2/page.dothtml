@@ -1,0 +1,4 @@
+<div class="mb-8 max-w-sm mx-auto stack-layout">
+    <t:Range SelectedValue="{value: VolumeValue}" ShowValue="true" ValueSuffix=" %" />
+    <t:Range SelectedValue="{value: LabelBelowValue}" ShowValue="true" LabelBelow="true" ValueSuffix=" %" />
+</div>

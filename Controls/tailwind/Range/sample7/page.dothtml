@@ -1,0 +1,4 @@
+<div class="mb-8 max-w-sm mx-auto stack-layout">
+    <t:Range SelectedValue="{value: DisabledValue}" Enabled="{value: Enabled}" ShowValue="true" ValueSuffix=" %" />
+    <t:CheckBox Text="Enabled" Checked="{value: Enabled}" />
+</div>

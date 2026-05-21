@@ -1,0 +1,4 @@
+<div class="mb-8 max-w-sm mx-auto stack-layout">
+    <t:Range SelectedValue="{value: BasicValue}" />
+    <p>Value: <strong>{{value: BasicValue}}</strong></p>
+</div>
