@@ -1,0 +1,6 @@
+<div class="max-w-xs mb-4">
+    <t:DatePickerFormField LabelText="Birth date" SelectedDate="{value: BirthDate}" Type="Date"
+        MinDate="2025-01-01" MaxDate="today" Placeholder="Pick your birth date..." />
+</div>
+<p class="mb-4">Selected: <strong>{{value: BirthDate ?? "(none)"}}</strong></p>
+

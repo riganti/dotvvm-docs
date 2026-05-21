@@ -1,0 +1,5 @@
+<div class="max-w-xs mb-4">
+    <t:DatePickerFormField LabelText="Meeting time (12h)" SelectedDate="{value: SelectedTime12h}" Type="Time" TimeFormat="hh:mm AA" Placeholder="Pick a time..." />
+</div>
+<p class="mb-4">Selected: <strong>{{value: SelectedTime12h ?? "(none)"}}</strong></p>
+

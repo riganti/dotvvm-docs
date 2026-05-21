@@ -1,0 +1,15 @@
+<div class="max-w-md mb-4">
+    <t:Form>
+        <ContentTemplate>
+            <t:Row>
+                <t:DatePickerFormField LabelText="From" SelectedDate="{value: RangeFrom}" Type="Date" Size="Half" Placeholder="Start date..." />
+                <t:DatePickerFormField LabelText="To" SelectedDate="{value: RangeTo}" Type="Date" Size="Half" Placeholder="End date..." />
+            </t:Row>
+        </ContentTemplate>
+    </t:Form>
+</div>
+<p class="mb-4">
+    From: <strong>{{value: RangeFrom ?? "(none)"}}</strong> &nbsp;–&nbsp;
+    To: <strong>{{value: RangeTo ?? "(none)"}}</strong>
+</p>
+

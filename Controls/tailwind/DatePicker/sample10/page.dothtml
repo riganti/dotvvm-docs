@@ -1,0 +1,14 @@
+<div class="max-w-md mb-4">
+    <t:Form HeaderText="Book appointment">
+        <ContentTemplate>
+            <t:DatePickerFormField LabelText="Date and time" SelectedDate="{value: AppointmentDate}" Type="DateTime" Placeholder="Choose date and time..." />
+        </ContentTemplate>
+        <FooterTemplate>
+            <t:Button Type="Primary" Text="Save" IsSubmitButton="true" Click="{command: SaveAppointment()}" />
+        </FooterTemplate>
+    </t:Form>
+</div>
+<div Visible="{value: AppointmentSaved}" class="mt-2 mb-4">
+    <t:Alert Type="Success" Text="{value: "Appointment saved: " + AppointmentDate.Replace('T', ' ')}" />
+</div>
+

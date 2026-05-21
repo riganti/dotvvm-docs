@@ -1,0 +1,21 @@
+<t:Carousel UseAspectRatio="true">
+    <t:CarouselItem ImageUrl="https://picsum.photos/id/1018/1200/800">
+        <ContentTemplate>
+            <h3 class="text-xl font-semibold mb-1 line-clamp-1">Scenic Mountain</h3>
+            <p class="text-base text-white/80 line-clamp-1">Breathtaking views from the Alpine peaks at golden hour.</p>
+        </ContentTemplate>
+    </t:CarouselItem>
+    <t:CarouselItem ImageUrl="https://picsum.photos/id/1025/1200/800">
+        <ContentTemplate>
+            <h3 class="text-xl font-semibold mb-1 line-clamp-1">Wild Nature</h3>
+            <p class="text-base text-white/80 line-clamp-1">A young bear cub exploring its natural forest habitat.</p>
+        </ContentTemplate>
+    </t:CarouselItem>
+    <t:CarouselItem ImageUrl="https://picsum.photos/id/1037/1200/800">
+        <ContentTemplate>
+            <h3 class="text-xl font-semibold mb-1 line-clamp-1">Misty Forest</h3>
+            <p class="text-base text-white/80 line-clamp-1">Ancient trees wrapped in morning fog deep in the wilderness.</p>
+        </ContentTemplate>
+    </t:CarouselItem>
+</t:Carousel>
+

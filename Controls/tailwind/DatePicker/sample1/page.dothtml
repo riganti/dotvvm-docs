@@ -1,0 +1,5 @@
+<div class="max-w-xs mb-4">
+    <t:DatePickerFormField LabelText="Appointment date" SelectedDate="{value: SelectedDate}" Type="Date" Placeholder="Pick a date..." />
+</div>
+<p class="mb-4">Selected: <strong>{{value: SelectedDate ?? "(none)"}}</strong></p>
+

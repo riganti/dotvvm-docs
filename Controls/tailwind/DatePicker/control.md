@@ -1,0 +1,1 @@
+Provides date, time, and datetime inputs via [Air Datepicker](https://air-datepicker.com). Bind to `string?` properties and expect ISO values: Date `YYYY-MM-DD`, Time `HH:MM`, DateTime `YYYY-MM-DDTHH:MM`.
