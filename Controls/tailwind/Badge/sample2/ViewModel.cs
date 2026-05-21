@@ -1,4 +1,5 @@
-﻿using DotVVM.Framework.ViewModel;
+using DotVVM.Controls.Tailwind.Controls;
+using DotVVM.Framework.ViewModel;
 
 public class ViewModel : DotvvmViewModelBase
 {

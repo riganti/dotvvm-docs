@@ -6,13 +6,13 @@
         <ContentTemplate>
             <dot:ValidationSummary IncludeErrorsFromChildren="true" />
             <t:Row>
-                <t:TextBoxFormField LabelText="First name" Text="{value: FirstName}" />
-                <t:TextBoxFormField LabelText="Last name" Text="{value: LastName}" />
+                <t:TextBoxFormField LabelText="First name" Text="{value: FirstName}" Size="Half" />
+                <t:TextBoxFormField LabelText="Last name" Text="{value: LastName}" Size="Half" />
             </t:Row>
             <t:TextBoxFormField LabelText="Email address" Text="{value: Email}" />
             <t:Row>
-                <t:TextBoxFormField LabelText="Street" Text="{value: Street}" />
-                <t:TextBoxFormField LabelText="ZIP / Postal code" Text="{value: Zip}" />
+                <t:TextBoxFormField LabelText="Street" Text="{value: Street}" Size="Half" />
+                <t:TextBoxFormField LabelText="ZIP / Postal code" Text="{value: Zip}" Size="Half" />
             </t:Row>
             <t:Row>
                 <t:CheckBoxFormField Text="Subscribe to newsletter" Checked="{value: Subscribe}" />

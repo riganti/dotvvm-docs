@@ -1,19 +1,23 @@
 ﻿<div class="flex flex-col gap-2">
-    <t:DockLayout Alignment="Start" class="h-20 bg-gray-300 p-2">
-        <StartContent><div class="bg-gray-200 p-2">Start</div></StartContent>
-        <EndContent><div class="bg-gray-200 p-2">End (Start)</div></EndContent>
+    <t:DockLayout Alignment="Start" class="h-20 bg-gray-200 p-2">
+        <StartContent><div class="bg-gray-700 text-white p-2 rounded">Start</div></StartContent>
+        <Content><div class="bg-info-700 text-white p-2 rounded">Content</div></Content>
+        <EndContent><div class="bg-gray-700 text-white p-2 rounded">End (Align Start)</div></EndContent>
     </t:DockLayout>
-    <t:DockLayout Alignment="Center" class="h-20 bg-gray-300 p-2">
-        <StartContent><div class="bg-gray-200 p-2">Start</div></StartContent>
-        <EndContent><div class="bg-gray-200 p-2">End (Center)</div></EndContent>
+    <t:DockLayout Alignment="Center" class="h-20 bg-gray-200 p-2">
+        <StartContent><div class="bg-gray-700 text-white p-2 rounded">Start</div></StartContent>
+        <Content><div class="bg-info-700 text-white p-2 rounded">Content</div></Content>
+        <EndContent><div class="bg-gray-700 text-white p-2 rounded">End (Align Center)</div></EndContent>
     </t:DockLayout>
-    <t:DockLayout Alignment="End" class="h-20 bg-gray-300 p-2">
-        <StartContent><div class="bg-gray-200 p-2">Start</div></StartContent>
-        <EndContent><div class="bg-gray-200 p-2">End (End)</div></EndContent>
+    <t:DockLayout Alignment="End" class="h-20 bg-gray-200 p-2">
+        <StartContent><div class="bg-gray-700 text-white p-2 rounded">Start</div></StartContent>
+        <Content><div class="bg-info-700 text-white p-2 rounded">Content</div></Content>
+        <EndContent><div class="bg-gray-700 text-white p-2 rounded">End (Align End)</div></EndContent>
     </t:DockLayout>
-    <t:DockLayout Alignment="Stretch" class="h-20 bg-gray-300 p-2">
-        <StartContent><div class="bg-gray-200 p-2 h-full">Start (Stretch)</div></StartContent>
-        <EndContent><div class="bg-gray-200 p-2 h-full">End (Stretch)</div></EndContent>
+    <t:DockLayout Alignment="Stretch" class="h-20 bg-gray-200 p-2">
+        <StartContent><div class="bg-gray-700 text-white p-2 rounded h-full">Start (Stretch)</div></StartContent>
+        <Content><div class="bg-info-700 text-white p-2 rounded h-full">Content</div></Content>
+        <EndContent><div class="bg-gray-700 text-white p-2 rounded h-full">End (Stretch)</div></EndContent>
     </t:DockLayout>
 </div>
 

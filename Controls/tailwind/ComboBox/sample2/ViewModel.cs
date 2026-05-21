@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class ViewModel : DotvvmViewModelBase
 {
-    public string SelectedOption { get; set; } = "";
+    public string SelectedOptionForm { get; set; } = "";
 
     public List<OptionDto> Options { get; set; } = new()
     {

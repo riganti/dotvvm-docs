@@ -1,3 +1,3 @@
 ## Sample 1: StackLayout Basics
 
-Shows vertical and horizontal StackLayout examples.
+Shows horizontal and vertical StackLayout examples.
