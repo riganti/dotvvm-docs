@@ -1,21 +1,27 @@
-<t:TopMenu>
-    <StartTemplate>
-        <a href="#" style="font-size: 1.25rem; font-weight: 700; color: #2563eb; text-decoration: none;">MyApp</a>
-    </StartTemplate>
-    <MiddleTemplate>
-        <t:MenuItem Text="Dashboard" NavigateUrl="#" IsActive="true" />
-        <t:MenuItem Text="Projects" NavigateUrl="#" />
-        <t:MenuDropDownItem Text="Reports">
-            <t:MenuItem Text="Weekly Report" NavigateUrl="#weekly" />
-            <t:MenuItem Text="Monthly Report" NavigateUrl="#monthly" />
-        </t:MenuDropDownItem>
-    </MiddleTemplate>
-    <EndTemplate>
-        <t:DropDownButton Icon="UserCircle" Type="Default">
-            <Items>
-                <t:DropDownItem Text="My Profile" NavigateUrl="#profile" />
-                <t:DropDownItem Text="Sign Out" NavigateUrl="#signout" />
-            </Items>
-        </t:DropDownButton>
-    </EndTemplate>
-</t:TopMenu>
+<div class="border border-gray-200 rounded-xl">
+    <t:TopMenu>
+        <StartTemplate>
+            <a href="#" style="font-size: 1.25rem; font-weight: 700; color: #2563eb; text-decoration: none;">MyApp</a>
+        </StartTemplate>
+        <MiddleTemplate>
+            <t:MenuItem Text="Dashboard" NavigateUrl="#" IsActive="true" />
+            <t:MenuItem Text="Projects" NavigateUrl="#" />
+            <t:MenuDropDownItem Text="Reports">
+                <t:MenuItem Text="Weekly Report" NavigateUrl="#weekly" />
+                <t:MenuItem Text="Monthly Report" NavigateUrl="#monthly" />
+            </t:MenuDropDownItem>
+        </MiddleTemplate>
+        <EndTemplate>
+            <t:DropDownButton Icon="UserCircle" Type="Default">
+                <Items>
+                    <t:DropDownItem Text="My Profile" NavigateUrl="#profile" />
+                    <t:DropDownItem Text="Sign Out" NavigateUrl="#signout" />
+                </Items>
+            </t:DropDownButton>
+        </EndTemplate>
+    </t:TopMenu>
+
+    <div class="p-6 bg-gray-50 min-h-[13rem]">
+        <p>Page content below the top menu.</p>
+    </div>
+</div>

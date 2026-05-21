@@ -1,4 +1,4 @@
-﻿<div class="w-[300px] bg-[#1e2a3b] rounded-md p-4">
+<div class="flex h-[18rem] border border-gray-200 rounded-md overflow-hidden">
     <t:SideMenu>
         <t:SideMenuSection Title="Navigation">
             <t:MenuItem Text="Top Menus" RouteName="TopMenus" Icon="Bars3" />
@@ -7,5 +7,12 @@
             <t:MenuItem Text="Forms" RouteName="Forms" Icon="DocumentText" />
         </t:SideMenuSection>
     </t:SideMenu>
-</div>
 
+    <div class="flex-1 p-6 bg-gray-50 overflow-y-auto no-chapter">
+        <h3>Main Content Area</h3>
+        <p class="text-sm text-gray-500">
+            This area represents the page content next to the sidebar.
+            The sidebar on the left demonstrates all SideMenu variants.
+        </p>
+    </div>
+</div>

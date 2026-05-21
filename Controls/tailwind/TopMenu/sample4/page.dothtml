@@ -1,12 +1,17 @@
-﻿<t:TopMenu>
-    <StartTemplate>
-        <a href="#" class="text-lg font-bold text-blue-600 no-underline">MyApp</a>
-    </StartTemplate>
-    <MiddleTemplate>
-        <t:MenuItem Text="Top Menus" RouteName="TopMenus" IsActive="true" />
-        <t:MenuItem Text="Side Menus" RouteName="SideMenus" />
-        <t:MenuItem Text="Buttons" RouteName="Buttons" />
-        <t:MenuItem Text="Forms" RouteName="Forms" />
-    </MiddleTemplate>
-</t:TopMenu>
+<div style="border: 1px solid #e5e7eb; border-radius: 0.75rem;">
+    <t:TopMenu>
+        <StartTemplate>
+            <a href="#" class="text-lg font-bold text-blue-600 no-underline">MyApp</a>
+        </StartTemplate>
+        <MiddleTemplate>
+            <t:MenuItem Text="Top Menus" RouteName="TopMenus" IsActive="true" />
+            <t:MenuItem Text="Side Menus" RouteName="SideMenus" />
+            <t:MenuItem Text="Buttons" RouteName="Buttons" />
+            <t:MenuItem Text="Forms" RouteName="Forms" />
+        </MiddleTemplate>
+    </t:TopMenu>
 
+    <div style="padding: 1rem; background: #f9fafb; min-height: 80px;">
+        <p>Click the menu items to navigate to different pages using DotVVM routing.</p>
+    </div>
+</div>

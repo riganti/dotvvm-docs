@@ -1,30 +1,40 @@
-<t:SideMenu>
-    <t:SideMenuSection Title="Main Menu">
-        <t:MenuItem Text="Dashboard" NavigateUrl="#dashboard" Icon="Home" IsActive="true" />
-        <t:MenuItem Text="Calendar" NavigateUrl="#calendar" Icon="Calendar" />
-        <t:MenuItemSeparator />
-        <t:MenuItem Text="Messages" NavigateUrl="#messages" Icon="Envelope" />
-    </t:SideMenuSection>
+<div class="flex h-[30rem] border border-gray-200 rounded-md overflow-hidden">
+    <t:SideMenu>
+        <t:SideMenuSection Title="Main Menu">
+            <t:MenuItem Text="Dashboard" NavigateUrl="#dashboard" Icon="Home" IsActive="true" />
+            <t:MenuItem Text="Calendar" NavigateUrl="#calendar" Icon="Calendar" />
+            <t:MenuItemSeparator />
+            <t:MenuItem Text="Messages" NavigateUrl="#messages" Icon="Envelope" />
+        </t:SideMenuSection>
 
-    <t:SideMenuSection Title="Analytics">
-        <t:MenuDropDownItem Text="Dashboard" Icon="TableCells">
-            <t:MenuItem Text="Overview" NavigateUrl="#overview" />
-            <t:MenuItem Text="Traffic" NavigateUrl="#traffic" />
-            <t:MenuItem Text="Conversions" NavigateUrl="#conversions" />
-        </t:MenuDropDownItem>
-        <t:MenuItem Text="Reports" NavigateUrl="#reports" Icon="DocumentText" />
-    </t:SideMenuSection>
+        <t:SideMenuSection Title="Analytics">
+            <t:MenuDropDownItem Text="Dashboard" Icon="TableCells">
+                <t:MenuItem Text="Overview" NavigateUrl="#overview" />
+                <t:MenuItem Text="Traffic" NavigateUrl="#traffic" />
+                <t:MenuItem Text="Conversions" NavigateUrl="#conversions" />
+            </t:MenuDropDownItem>
+            <t:MenuItem Text="Reports" NavigateUrl="#reports" Icon="DocumentText" />
+        </t:SideMenuSection>
 
-    <t:SideMenuSection Title="Settings">
-        <t:MenuDropDownItem Text="Account Settings" Icon="Cog6Tooth"
-            DataSource="{value: SettingsLinks}"
-            ItemText="{value: Text}"
-            ItemNavigateUrl="{value: Url}" />
-    </t:SideMenuSection>
+        <t:SideMenuSection Title="Settings">
+            <t:MenuDropDownItem Text="Account Settings" Icon="Cog6Tooth"
+                DataSource="{value: SettingsLinks}"
+                ItemText="{value: Text}"
+                ItemNavigateUrl="{value: Url}" />
+        </t:SideMenuSection>
 
-    <t:SideMenuSection Title="Quick Links">
-        <dot:Repeater DataSource="{value: DashboardLinks}" RenderWrapperTag="false">
-            <t:MenuItem Text="{value: _this}" NavigateUrl="#" />
-        </dot:Repeater>
-    </t:SideMenuSection>
-</t:SideMenu>
+        <t:SideMenuSection Title="Quick Links">
+            <dot:Repeater DataSource="{value: DashboardLinks}" RenderWrapperTag="false">
+                <t:MenuItem Text="{value: _this}" NavigateUrl="#" />
+            </dot:Repeater>
+        </t:SideMenuSection>
+    </t:SideMenu>
+
+    <div class="flex-1 p-6 bg-gray-50 overflow-y-auto no-chapter">
+        <h3>Main Content Area</h3>
+        <p class="text-sm text-gray-500">
+            This area represents the page content next to the sidebar.
+            The sidebar on the left demonstrates all SideMenu variants.
+        </p>
+    </div>
+</div>

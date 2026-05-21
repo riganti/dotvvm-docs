@@ -1,9 +1,14 @@
-﻿<t:TopMenu>
-    <StartTemplate>
-        <a href="#" class="text-lg font-bold text-blue-600 no-underline">BrandLogo</a>
-    </StartTemplate>
-    <EndTemplate>
-        <t:Button Type="Primary" Text="Sign In" />
-    </EndTemplate>
-</t:TopMenu>
+<div class="border border-gray-200 rounded-xl">
+    <t:TopMenu>
+        <StartTemplate>
+            <a href="#" class="text-lg font-bold text-blue-600 no-underline">BrandLogo</a>
+        </StartTemplate>
+        <EndTemplate>
+            <t:Button Type="Primary" Text="Sign In" />
+        </EndTemplate>
+    </t:TopMenu>
 
+    <div class="p-6 bg-gray-50 min-h-24">
+        <p>Page content.</p>
+    </div>
+</div>
