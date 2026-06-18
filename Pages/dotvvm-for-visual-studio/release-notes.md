@@ -1,7 +1,26 @@
 # Release notes
 
+## v4.0.597.0
+* Support for new Visual Studio versions
+* Fixed publishing issue in 4.0.596.0 with missing project and item templates
+
+### Compatibility
+* Version for Visual Studio 2019 (16.11.57)
+* Version for Visual Studio 2022 (17.14.35 June 2026)
+* Version for Visual Studio 2026 (18.7.1 June 2026 Feature Update)
+* Version for Visual Studio 2026 Insiders (11912.234)
+
+### Assets
+Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.597.0/DotVVM.Integration.VisualStudio.VS2019.vsix) </br>
+Version for Visual Studio 2022: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.597.0/DotVVM.Integration.VisualStudio.VS2022.vsix) </br>
+Version for Visual Studio 2026: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.597.0/DotVVM.Integration.VisualStudio.VS2026.vsix) </br>
+Version for Visual Studio 2026 Insiders: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.597.0/DotVVM.Integration.VisualStudio.VS2026-Insider.vsix)
+
 ## v4.0.596.0
 * Support for new Visual Studio versions
+
+### Known issues
+* Due to a packaging issue, the extension doesn't have DotVVM project and item templates. Upgrade to 4.0.597.0.
 
 ### Compatibility
 * Version for Visual Studio 2019 (16.11.57)
