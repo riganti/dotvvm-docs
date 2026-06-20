@@ -4,14 +4,148 @@
         <name>DotVVM.Controls.Tailwind</name>
     </assembly>
     <members>
+        <member name="T:DotVVM.Controls.Tailwind.Capabilities.ButtonBaseCapability">
+            <summary>Defines content and behavior for buttons and links.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Capabilities.ButtonBaseCapability.TextOrTemplate">
+            <summary>Gets or sets the text or template content of generated buttons.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Capabilities.ButtonBaseCapability.Icon">
+            <summary>Specifies the optional icon displayed inside the button.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Capabilities.ButtonBaseCapability.IconPosition">
+            <summary>Specifies the position of the icon inside the button.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Capabilities.ButtonBaseCapability.Type">
+            <summary>Specifies the type of the button.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Capabilities.ButtonBaseCapability.Size">
+            <summary>Specifies the size of the button.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Capabilities.ButtonBaseCapability.Enabled">
+            <summary>Specifies whether the button is enabled.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Capabilities.ButtonCapability">
+            <summary>Defines content and behavior for buttons.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Capabilities.ButtonCapability.Click">
+            <summary>Gets or sets the command executed when a generated button is clicked.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Capabilities.ButtonCapability.IsSubmitButton">
+            <summary>Specifies whether the button is rendered as a submit button.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Capabilities.ButtonCapability.BaseCapability">
+            <summary>Gets or sets the base capability for the button.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Capabilities.RouteLinkCapabilityExtensions">
+            <summary>Extension methods for the DotVVM framework <see cref="T:DotVVM.Framework.Controls.RouteLinkCapability"/>.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Capabilities.RouteLinkCapabilityExtensions.ToControls(DotVVM.Framework.Controls.RouteLinkCapability)">
+            <summary>Creates the underlying DotVVM <see cref="T:DotVVM.Framework.Controls.RouteLink"/> control from the capability.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Capabilities.RouteLinkCapabilityExtensions.IsNotDefault(DotVVM.Framework.Controls.RouteLinkCapability)">
+            <summary>Returns <c>true</c> when any route-link setting is configured.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Capabilities.RouteLinkCapabilityExtensions.IsDefault(DotVVM.Framework.Controls.RouteLinkCapability)">
+            <summary>Returns <c>true</c> when no route-link setting is configured.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Capabilities.TextOrTemplateCapability">
+            <summary>Capability that accepts either a plain-text string or a rich content template, but not both simultaneously.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Capabilities.TextOrTemplateCapability.Text">
+            <summary>Plain-text value to render. Mutually exclusive with <see cref="P:DotVVM.Controls.Tailwind.Capabilities.TextOrTemplateCapability.Template"/>.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Capabilities.TextOrTemplateCapability.Template">
+            <summary>Rich content template to render. Mutually exclusive with <see cref="P:DotVVM.Controls.Tailwind.Capabilities.TextOrTemplateCapability.Text"/>.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Capabilities.TextOrTemplateCapability.ToControls">
+            <summary>Creates a control representation of the configured text or template.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Capabilities.TextOrTemplateCapability.ToTextOrContent">
+            <summary>Converts the capability to a <see cref="T:DotVVM.Framework.Controls.TextOrContentCapability"/> instance.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Capabilities.TextOrTemplateCapability.ToControls(System.String,System.String)">
+            <summary>Creates a wrapped control representation using the specified placement CSS class.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Capabilities.TextOrTemplateCapability.IsNotDefault">
+            <summary>Determines whether either <see cref="P:DotVVM.Controls.Tailwind.Capabilities.TextOrTemplateCapability.Text"/> or <see cref="P:DotVVM.Controls.Tailwind.Capabilities.TextOrTemplateCapability.Template"/> is set.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Capabilities.TextOrContentCapabilityExtensions">
+            <summary>Helper methods for <see cref="T:DotVVM.Framework.Controls.TextOrContentCapability"/>.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Capabilities.TextOrContentCapabilityExtensions.IsNotDefault(DotVVM.Framework.Controls.TextOrContentCapability)">
+            <summary>Determines whether either text or child content is configured.</summary>
+        </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.Accordion">
             <summary>Renders an accordion with collapsible sections.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.Accordion.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Controls.AccordionItemCapability,ItemsOrDataSourceCapability{DotVVM.Controls.Tailwind.Controls.AccordionItem},System.Boolean,DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Controls.Tailwind.Controls.AccordionHeaderType})">
+            <param name="htmlCapability">Adds standard HTML attributes to the accordion wrapper element.</param>
+            <param name="itemCapability">Defines how items are rendered when <paramref name="itemsOrDataSource"/> uses <c>DataSource</c>.</param>
+            <param name="itemsOrDataSource">Provides either hard-coded <see cref="T:DotVVM.Controls.Tailwind.Controls.AccordionItem"/> children or a data source for repeated items.</param>
+            <param name="allowMultiple">When <c>true</c>, multiple accordion items can stay expanded at the same time.</param>
+            <param name="headerType">Controls the visual style of accordion headers.</param>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.AccordionHeaderType">
+            <summary>Specifies the visual style used for accordion headers.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.AccordionHeaderType.Default">
+            <summary>Renders standard accordion headers without numbering.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.AccordionHeaderType.Numbered">
+            <summary>Renders accordion headers with CSS-based numbering.</summary>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.AccordionItem">
             <summary>Represents a single collapsible item within an Accordion.</summary>
         </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.AccordionItem.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Controls.AccordionItemCapability)">
+            <param name="htmlCapability">Adds standard HTML attributes to the descriptor node before the parent accordion renders the final markup.</param>
+            <param name="accordionItemCapability">Defines the header, body template, and expanded state used by the parent <see cref="T:DotVVM.Controls.Tailwind.Controls.Accordion"/>.</param>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.AccordionItemCapability">
+            <summary>Defines the header, content, and expanded state for an accordion item.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.AccordionItemCapability.Header">
+            <summary>Configures the header text or header template rendered inside the accordion trigger.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.AccordionItemCapability.ContentTemplate">
+            <summary>Defines the body content rendered inside the expandable accordion panel.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.AccordionItemCapability.IsExpanded">
+            <summary>Controls whether the accordion item starts expanded or is bound to the expanded state.</summary>
+        </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.Alert">
             <summary>Displays contextual feedback messages for users.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.Alert.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Controls.TextOrContentCapability,DotVVM.Controls.Tailwind.Capabilities.TextOrTemplateCapability,DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Controls.Tailwind.Controls.AlertType},System.Boolean,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},DotVVM.Framework.Binding.Expressions.ICommandBinding)">
+            <param name="htmlCapability">Provides common HTML attributes, CSS classes, and visibility for the alert root element.</param>
+            <param name="textOrContentCapability">Provides the alert body text or custom child content.</param>
+            <param name="header">Provides header text or a custom header template.</param>
+            <param name="type">Selects the visual style of the alert.</param>
+            <param name="isDismissible">Determines whether the alert renders a close button.</param>
+            <param name="isDismissed">Controls whether a dismissible alert is currently hidden.</param>
+            <param name="dismissed">Command invoked when the close button is clicked.</param>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.AlertType">
+            <summary>Defines the supported visual variants of the <see cref="T:DotVVM.Controls.Tailwind.Controls.Alert"/> control.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.AlertType.Default">
+            <summary>A neutral alert style for general messages.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.AlertType.Success">
+            <summary>A positive alert style for successful actions.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.AlertType.Warning">
+            <summary>A cautionary alert style for warnings.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.AlertType.Danger">
+            <summary>An alert style for errors or destructive states.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.AlertType.Info">
+            <summary>An informational alert style for guidance and status messages.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.AlertType.Primary">
+            <summary>A brand-accented alert style for primary emphasis.</summary>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.Avatar">
             <summary>Displays a user avatar with image or initials.</summary>
@@ -19,11 +153,27 @@
         <member name="T:DotVVM.Controls.Tailwind.Controls.Badge">
             <summary>Displays a small badge with colored background.</summary>
         </member>
-        <member name="T:DotVVM.Controls.Tailwind.Controls.BreadcrumbItem">
-            <summary>Renders a single breadcrumb item.</summary>
-        </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.Breadcrumb">
-            <summary>Renders a breadcrumb navigation.</summary>
+            <summary>Renders a breadcrumb navigation built from <see cref="T:DotVVM.Controls.Tailwind.Controls.MenuItem"/> definitions.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.Breadcrumb.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Controls.MenuItemCapability,ItemsOrDataSourceCapability{DotVVM.Controls.Tailwind.Controls.MenuItem})">
+            <summary>Builds the breadcrumb navigation markup.</summary>
+            <param name="htmlCapability">Applies HTML attributes to the root <c>nav</c> element.</param>
+            <param name="itemCapability">Provides the <c>Item*</c> menu-item mappings used in data-bound mode.</param>
+            <param name="itemRouteLink">Provides the <c>ItemRoute*</c> mappings used in data-bound mode.</param>
+            <param name="itemsOrDataSource">Supplies either hardcoded <see cref="T:DotVVM.Controls.Tailwind.Controls.MenuItem"/> children or a data source.</param>
+            <capability-param name="items">Gets or sets hardcoded <see cref="T:DotVVM.Controls.Tailwind.Controls.MenuItem"/> children.</capability-param>
+            <capability-param name="dataSource">Gets or sets the collection used to generate breadcrumb items.</capability-param>
+            <capability-param name="itemText">Gets or sets the text displayed for each generated breadcrumb item.</capability-param>
+            <capability-param name="itemTemplate">Gets or sets a custom label template for each generated breadcrumb item.</capability-param>
+            <capability-param name="itemNavigateUrl">Gets or sets the target URL for each generated breadcrumb item.</capability-param>
+            <capability-param name="itemIcon">Gets or sets the icon displayed before each generated breadcrumb item label.</capability-param>
+            <capability-param name="itemIsActive">Gets or sets whether each generated breadcrumb item represents the current page.</capability-param>
+            <capability-param name="itemClick">Gets or sets the command invoked when a generated breadcrumb item is clicked.</capability-param>
+            <capability-param name="itemRouteName">Gets or sets the DotVVM route name for each generated breadcrumb item.</capability-param>
+            <capability-param name="itemUrlSuffix">Gets or sets the URL suffix appended to each generated route link.</capability-param>
+            <capability-param name="itemParam-*">Gets or sets route parameters for each generated route link.</capability-param>
+            <capability-param name="itemQuery-*">Gets or sets query-string parameters for each generated route link.</capability-param>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.ButtonGroup">
             <summary>
@@ -31,17 +181,197 @@
             Supports hardcoded children (place &lt;t:Button&gt; elements inside) or DataSource mode.
             </summary>
         </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.ButtonGroup.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Capabilities.ButtonCapability,ItemsOrDataSourceCapability{DotVVM.Controls.Tailwind.Controls.Button})">
+            <summary>Builds the inner content of the button group.</summary>
+            <param name="htmlCapability">Gets or sets HTML attributes applied to the wrapper element.</param>
+            <param name="itemCapability">Gets or sets the capability describing generated button content and behavior.</param>
+            <param name="itemsOrDataSource">Gets or sets either hardcoded buttons or a data source used to generate them.</param>
+            <capability-param name="items">Gets or sets the buttons rendered inside the group.</capability-param>
+            <capability-param name="dataSource">Gets or sets the collection used to generate buttons when data-binding is used.</capability-param>
+            <capability-param name="itemText">Gets or sets the text of generated buttons when <c>DataSource</c> is used.</capability-param>
+            <capability-param name="itemTemplate">Gets or sets the template of generated buttons when <c>DataSource</c> is used.</capability-param>
+            <capability-param name="itemIcon">Gets or sets the icon displayed in each generated button when <c>DataSource</c> is used.</capability-param>
+            <capability-param name="itemIconPosition">Gets or sets whether the icon is rendered before or after the generated button text.</capability-param>
+            <capability-param name="itemType">Gets or sets the visual style applied to each generated button.</capability-param>
+            <capability-param name="itemSize">Gets or sets the size applied to each generated button.</capability-param>
+            <capability-param name="itemEnabled">Gets or sets whether each generated button is enabled.</capability-param>
+            <capability-param name="itemClick">Gets or sets the command executed when a generated button is clicked.</capability-param>
+            <returns>The rendered button group wrapper.</returns>
+        </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.Button">
             <summary>Renders a styled button.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.Button.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Capabilities.ButtonCapability)">
+            <summary>Builds the rendered button element.</summary>
+            <param name="htmlCapability">Adds standard HTML attributes to the rendered <c>button</c> element.</param>
+            <param name="textOrContent">Provides the button label as plain text or custom content. Content cannot be combined with <paramref name="icon"/>.</param>
+            <param name="icon">Specifies the optional icon displayed inside the button.</param>
+            <param name="iconPosition">Controls whether the icon is rendered before or after the text.</param>
+            <param name="type">Specifies the visual style variant of the button.</param>
+            <param name="size">Specifies the size variant of the button.</param>
+            <param name="enabled">Controls whether the button is interactive.</param>
+            <param name="isSubmitButton">When <c>true</c>, renders the button with <c>type="submit"</c>.</param>
+            <param name="click">Specifies the command executed when the button is clicked.</param>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.Card">
             <summary>Renders a card component.</summary>
         </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.Card.GetContents(DotVVM.Framework.Controls.HtmlCapability,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},DotVVM.Framework.Binding.ValueOrBinding{System.Boolean},DotVVM.Controls.Tailwind.Capabilities.TextOrTemplateCapability,DotVVM.Framework.Controls.ITemplate,DotVVM.Framework.Controls.ITemplate,DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Controls.Tailwind.Orientation},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Controls.Tailwind.TailwindColor})">
+            <summary>Builds a card container with optional image, header, content, footer, link, and semantic type styling.</summary>
+            <param name="htmlCapability">HTML attributes and behavior applied to the root card element.</param>
+            <param name="imageUrl">Optional image URL rendered at the top of the card.</param>
+            <param name="imageAlt">Alternative text for the card image.</param>
+            <param name="navigateUrl">Optional URL that turns the whole card into a link.</param>
+            <param name="newTab">When true, opens <paramref name="navigateUrl"/> in a new tab.</param>
+            <param name="header">Header content rendered in the card header area.</param>
+            <param name="contentTemplate">Main content template rendered inside the card body.</param>
+            <param name="footerTemplate">Footer template rendered at the bottom of the card body.</param>
+            <param name="orientation">Determines whether the card uses vertical or horizontal layout.</param>
+            <param name="type">Semantic card styling variant.</param>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.Carousel">
+            <summary>Renders a carousel with navigation arrows, indicators, autoplay, and optional caption content.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.Carousel.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Controls.CarouselItemCapability,ItemsOrDataSourceCapability{DotVVM.Controls.Tailwind.Controls.CarouselItem},System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}})">
+            <summary>Builds the carousel contents.</summary>
+            <param name="htmlCapability">Gets or sets standard HTML attributes for the carousel wrapper.</param>
+            <param name="itemCapability">Gets or sets the item capability used when <c>DataSource</c> generates slides.</param>
+            <param name="itemsOrDataSource">Gets or sets either hardcoded slides or the data source that produces them.</param>
+            <capability-param name="items">Gets or sets the hardcoded carousel items.</capability-param>
+            <capability-param name="dataSource">Gets or sets the data source used to generate carousel items.</capability-param>
+            <capability-param name="itemImageUrl">Gets or sets the slide image URL when <c>DataSource</c> is used.</capability-param>
+            <capability-param name="itemText">Gets or sets the slide caption text when <c>DataSource</c> is used.</capability-param>
+            <capability-param name="itemContent">Gets or sets the slide caption content when <c>DataSource</c> is used.</capability-param>
+            <param name="hideNavigation">Gets or sets whether the previous and next buttons are hidden.</param>
+            <param name="hideIndicators">Gets or sets whether the indicator buttons below the carousel are hidden.</param>
+            <param name="hideTextOrContent">Gets or sets whether slide text or content is hidden.</param>
+            <param name="autoCycleInterval">Gets or sets the autoplay interval in milliseconds. Set to <c>0</c> to disable autoplay.</param>
+            <param name="useAspectRatio">Gets or sets the CSS <c>aspect-ratio</c> value applied to each slide.</param>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.CarouselItem">
+            <summary>Represents a single carousel slide.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.CarouselItem.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Controls.CarouselItemCapability)">
+            <summary>Builds the carousel slide markup.</summary>
+            <param name="htmlCapability">Gets or sets standard HTML attributes for the slide container.</param>
+            <param name="capability">Gets or sets the slide image and caption content.</param>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.CarouselItemCapability">
+            <summary>Represents the content and presentation settings for a single carousel slide.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.CarouselItemCapability.ImageUrl">
+            <summary>Gets or sets the background image URL for the slide.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.CarouselItemCapability.TextOrContent">
+            <summary>Gets or sets the slide text or rich content rendered in the caption overlay.</summary>
+        </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.CheckBox">
             <summary>Renders a custom checkbox with a hidden native input and custom visual box.</summary>
         </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.CheckBox.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Controls.TextOrContentCapability,DotVVM.Framework.Binding.Expressions.IValueBinding{System.Boolean},DotVVM.Framework.Binding.Expressions.IValueBinding{System.Collections.IEnumerable},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Object}},DotVVM.Framework.Binding.ValueOrBinding{System.Boolean},DotVVM.Framework.Binding.Expressions.ICommandBinding)">
+            <param name="htmlCapability">Adds HTML attributes to the outer label element.</param>
+            <param name="checked">Binds whether the checkbox is selected in single-value mode.</param>
+            <param name="checkedItems">Binds the collection used in multi-select checkbox scenarios.</param>
+            <param name="checkedValue">Specifies the value added to or removed from <paramref name="checkedItems"/>.</param>
+            <param name="textOrContent">Provides the label text or custom content rendered next to the checkbox.</param>
+            <param name="enabled">Controls whether the checkbox can be interacted with.</param>
+            <param name="changed">Runs after the checked state changes.</param>
+        </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.DataPager">
             <summary>Styled DataPager control.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.DataPager.#ctor(DotVVM.Framework.Controls.GridViewDataSetBindingProvider,DotVVM.Framework.Binding.BindingCompilationService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DotVVM.Controls.Tailwind.Controls.DataPager"/> class.
+            </summary>
+            <param name="gridViewDataSetBindingProvider">Provides dataset bindings used by the base pager implementation.</param>
+            <param name="bindingService">Provides binding compilation services.</param>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.DateTimePicker">
+            <summary>
+            A standalone date/time picker control backed by AIR Datepicker.
+            Binds to a nullable <see cref="T:System.DateTime"/> property using DotVVM serialization.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.DateTimePicker.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability)">
+            <summary>Builds the standalone DateTimePicker input.</summary>
+            <param name="htmlCapability">The standard HTML capability applied to the rendered input element.</param>
+            <param name="selectedValue">The selected date and time value bound to the control.</param>
+            <param name="type">Determines whether the control displays a date picker, time picker, or both.</param>
+            <param name="minDate">The minimum selectable date and time.</param>
+            <param name="maxDate">The maximum selectable date and time.</param>
+            <param name="minHours">The minimum selectable hour when time selection is enabled.</param>
+            <param name="maxHours">The maximum selectable hour when time selection is enabled.</param>
+            <param name="hoursStep">The hour step used by the time picker.</param>
+            <param name="minutesStep">The minute step used by the time picker.</param>
+            <param name="dateFormat">The .NET date format string used for display. Supported tokens: d, M, y.</param>
+            <param name="timeFormat">The .NET time format string used for display. Accepted tokens are limited to h, H, m, s, and t. Seconds currently throw because AIR Datepicker does not support them.</param>
+            <param name="placeholder">The placeholder text shown when no value is selected.</param>
+            <param name="culture">The culture name used for localization. When omitted, <see cref="P:System.Globalization.CultureInfo.CurrentUICulture"/> is used.</param>
+            <param name="inputSize">Controls the visual input size.</param>
+            <param name="enabled">Determines whether the input is enabled.</param>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.DateTimePickerType">
+            <summary>Specifies whether the picker renders date, time, or combined date and time selection.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability">
+            <summary>Shared DateTimePicker configuration used by both standalone and form-field variants.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability.SelectedValue">
+            <summary>The selected date and time value bound to the control.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability.Type">
+            <summary>Determines whether the control displays a date picker, time picker, or both.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability.MinDate">
+            <summary>The minimum selectable date and time.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability.MaxDate">
+            <summary>The maximum selectable date and time.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability.MinHours">
+            <summary>The minimum selectable hour when time selection is enabled.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability.MaxHours">
+            <summary>The maximum selectable hour when time selection is enabled.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability.HoursStep">
+            <summary>The hour step used by the time picker.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability.MinutesStep">
+            <summary>The minute step used by the time picker.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability.DateFormat">
+            <summary>The .NET date format string used for display. Supported tokens: d, M, y.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability.TimeFormat">
+            <summary>The .NET time format string used for display. Accepted tokens are limited to h, H, m, s, and t. Seconds currently throw because AIR Datepicker does not support them.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability.Placeholder">
+            <summary>The placeholder text shown when no value is selected.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability.Culture">
+            <summary>The culture name used for localization. When omitted, <see cref="P:System.Globalization.CultureInfo.CurrentUICulture"/> is used.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability.InputSize">
+            <summary>Controls the visual input size.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability.Enabled">
+            <summary>Determines whether the input is enabled.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.DateTimePickerFormField">
+            <summary>
+            A form field that wraps <see cref="T:DotVVM.Controls.Tailwind.Controls.DateTimePicker"/> with a label, size variants,
+            and integrated validation message. Binds to a nullable <see cref="T:System.DateTime"/> property.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.DateTimePickerFormField.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Capabilities.TextOrTemplateCapability,DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability,DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Controls.Tailwind.FormFieldSize},DotVVM.Framework.Binding.Expressions.IValueBinding)">
+            <summary>Builds a form field that hosts a <see cref="T:DotVVM.Controls.Tailwind.Controls.DateTimePicker"/>.</summary>
+            <param name="htmlCapability">The standard HTML capability applied to the outer form-field wrapper.</param>
+            <param name="label">The label configuration rendered above the input.</param>
+            <param name="capability">The shared DateTimePicker configuration forwarded to the inner picker.</param>
+            <param name="size">The width behavior of the form field inside a form row.</param>
+            <param name="validatorProperty">An optional property used for validation message lookup instead of <see cref="P:DotVVM.Controls.Tailwind.Controls.DateTimePickerCapability.SelectedValue"/>.</param>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.DropDownButton">
             <summary>
@@ -49,8 +379,52 @@
             Supports hardcoded children (<see cref="T:DotVVM.Controls.Tailwind.Controls.DropDownItem"/> and <see cref="T:DotVVM.Controls.Tailwind.Controls.DropDownItemSeparator"/>) or DataSource mode.
             </summary>
         </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.DropDownButton.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Controls.DropDownItemCapability,DotVVM.Framework.Controls.TextOrContentCapability,System.Nullable{DotVVM.Controls.Tailwind.Controls.HeroIcon},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Controls.Tailwind.Controls.ButtonType},ItemsOrDataSourceCapability{DotVVM.Controls.Tailwind.Controls.IDropDownMenuItem},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Controls.Tailwind.Controls.DropDownAlignment})">
+            <summary>
+            Builds the dropdown trigger button and menu panel.
+            </summary>
+            <param name="htmlCapability">Gets or sets common HTML attributes applied to the outer dropdown wrapper.</param>
+            <param name="itemCapability">Provides per-item settings used when dropdown items are generated from <paramref name="itemsOrDataSource"/>.</param>
+            <capability-param name="ItemText">Gets or sets the plain text rendered for each generated dropdown item when <c>DataSource</c> is used. Mutually exclusive with <c>ItemTemplate</c>.</capability-param>
+            <capability-param name="ItemTemplate">Gets or sets a rich content template rendered for each generated dropdown item when <c>DataSource</c> is used. Mutually exclusive with <c>ItemText</c>.</capability-param>
+            <capability-param name="ItemIcon">Gets or sets the icon displayed before each generated item label when <c>DataSource</c> is used. Cannot be combined with <c>ItemTemplate</c>.</capability-param>
+            <capability-param name="ItemNavigateUrl">Gets or sets the URL assigned to each generated dropdown item when <c>DataSource</c> is used.</capability-param>
+            <capability-param name="ItemClick">Gets or sets the command invoked for each generated dropdown item when <c>DataSource</c> is used.</capability-param>
+            <capability-param name="ItemRouteName">Gets or sets the DotVVM route name each generated dropdown item navigates to when <c>DataSource</c> is used.</capability-param>
+            <param name="textOrContent">Provides the trigger label as plain text or custom content.</param>
+            <capability-param name="Text">Gets or sets plain text rendered inside the dropdown trigger button.</capability-param>
+            <capability-param name="Content">Gets or sets custom content rendered inside the dropdown trigger button.</capability-param>
+            <param name="icon">Gets or sets an optional icon rendered before the trigger text or content.</param>
+            <param name="type">Gets or sets the visual style of the trigger button.</param>
+            <param name="itemsOrDataSource">Gets or sets hardcoded dropdown items or a data source used to generate them.</param>
+            <param name="alignment">Gets or sets whether the dropdown menu aligns to the start or end edge of the trigger.</param>
+            <returns>The composed dropdown control.</returns>
+        </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.DropDownItem">
             <summary>Represents a single item inside a <see cref="T:DotVVM.Controls.Tailwind.Controls.DropDownButton"/> (hardcoded mode).</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.DropDownItemCapability">
+            <summary>
+            Provides per-item settings for dropdown items in <see cref="T:DotVVM.Controls.Tailwind.Controls.DropDownButton"/>.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DropDownItemCapability.TextOrTemplate">
+            <summary>Gets or sets the text or template content rendered as the item label.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DropDownItemCapability.NavigateUrl">
+            <summary>Gets or sets the URL to navigate to when the item is clicked. Mutually exclusive with <see cref="P:DotVVM.Controls.Tailwind.Controls.DropDownItemCapability.Click"/> and <see cref="P:DotVVM.Controls.Tailwind.Controls.DropDownItemCapability.RouteLink"/>.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DropDownItemCapability.Icon">
+            <summary>Gets or sets the icon displayed before the item label. Cannot be combined with a template set via inner content.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DropDownItemCapability.Click">
+            <summary>Gets or sets the command invoked when the item is clicked. Mutually exclusive with <see cref="P:DotVVM.Controls.Tailwind.Controls.DropDownItemCapability.NavigateUrl"/> and <see cref="P:DotVVM.Controls.Tailwind.Controls.DropDownItemCapability.RouteLink"/>.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.DropDownItemCapability.RouteLink">
+            <summary>Gets or sets the DotVVM route navigation parameters. Mutually exclusive with <see cref="P:DotVVM.Controls.Tailwind.Controls.DropDownItemCapability.NavigateUrl"/> and <see cref="P:DotVVM.Controls.Tailwind.Controls.DropDownItemCapability.Click"/>.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.DropDownItemCapability.Validate">
+            <summary>Throws <see cref="T:DotVVM.Framework.Controls.DotvvmControlException"/> when both <see cref="P:DotVVM.Controls.Tailwind.Controls.DropDownItemCapability.Icon"/> and a template are specified.</summary>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.DropDownItemSeparator">
             <summary>A visual separator line for use inside a DropDownButton. Renders as a horizontal rule with the dropdown-divider style.</summary>
@@ -70,8 +444,8 @@
         <member name="T:DotVVM.Controls.Tailwind.Controls.FormField">
             <summary>Renders a form field with label and validation.</summary>
         </member>
-        <member name="T:DotVVM.Controls.Tailwind.Controls.Row">
-            <summary>Renders a row for form fields.</summary>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.FormRow">
+            <summary>Renders a row for form fields. Children are distributed proportionally based on their Size property and wrap on small screens.</summary>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.TextBoxFormField">
             <summary>Renders a form field with a text box.</summary>
@@ -83,7 +457,36 @@
             <summary>Returns the full SVG string for the given icon and type. Returns empty string if not found.</summary>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.Icon">
-            <summary>Renders a HeroIcon SVG icon.</summary>
+            <summary>Renders a HeroIcon SVG icon. Supports both static and data-bound icon names.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.Icon.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Hosting.IDotvvmRequestContext,DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Controls.Tailwind.Controls.HeroIcon},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Controls.Tailwind.IconType})">
+            <summary>
+            Builds the icon control content.
+            When <paramref name="icon"/> is a static value, an inline SVG is embedded in the page.
+            When <paramref name="icon"/> uses a value binding, the SVG is fetched from the server at runtime via a Knockout binding handler.
+            </summary>
+            <param name="htmlCapability">HTML attributes and other standard properties (class, style, etc.) applied to the icon wrapper element.</param>
+            <param name="context">The current DotVVM request context, used to resolve the icon service URL.</param>
+            <param name="icon">The icon to render. Accepts both static values and value bindings (<c>{value: ...}</c>).</param>
+            <param name="type">The visual style of the icon: <see cref="F:DotVVM.Controls.Tailwind.IconType.Outline"/> (default) or <see cref="F:DotVVM.Controls.Tailwind.IconType.Solid"/>.</param>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.Icon.CreateInlineSpan(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Controls.HeroIcon,DotVVM.Controls.Tailwind.IconType)">
+            <summary>
+            Creates a span element with an inline SVG for the specified icon.
+            Use this when the icon is known at compile time (no data-binding needed).
+            </summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.IconPresenter">
+            <summary>
+            Serves HeroIcon SVG content at <c>_dotvvm/tailwind/icons?icon=IconName&amp;type=outline|solid</c>.
+            Client caching is enabled via <c>Cache-Control</c> headers so the server is not flooded with requests.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.AppLayout">
+            <summary>
+            Renders the full-page app shell layout. Supports a top menu, a side menu, or both.
+            At least one of <see cref="!:TopMenuTemplate"/> or <see cref="!:SideMenuTemplate"/> must be set.
+            </summary>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.DockLayout">
             <summary>Renders a dock layout with start, center, and end sections.</summary>
@@ -91,15 +494,40 @@
         <member name="T:DotVVM.Controls.Tailwind.Controls.StackLayout">
             <summary>Renders a stack layout (flex container).</summary>
         </member>
-        <member name="T:DotVVM.Controls.Tailwind.Controls.ListControl">
+        <member name="T:DotVVM.Controls.Tailwind.Controls.ListGroup">
             <summary>
             Renders a styled list of items in a white card with a bottom-bordered row layout.
             Supports hardcoded children (place &lt;t:ListItem&gt; elements inside) or DataSource mode.
-            Each item can have an optional icon, primary text, optional secondary text, and an optional badge.
+            Each item can have an optional icon, primary text or custom content, an optional badge,
+            and a navigation target or click handler that makes the entire row clickable.
             </summary>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.ListItem">
-            <summary>Represents a single item in a <see cref="T:DotVVM.Controls.Tailwind.Controls.ListControl"/> when using hardcoded children.</summary>
+            <summary>Represents a single item in a <see cref="T:DotVVM.Controls.Tailwind.Controls.ListGroup"/> when using hardcoded children.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.ListItemCapability">
+            <summary>Defines the properties of a single item in a <see cref="T:DotVVM.Controls.Tailwind.Controls.ListGroup"/>.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.ListItemCapability.TextOrTemplate">
+            <summary>The primary text or custom content of the list item.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.ListItemCapability.Icon">
+            <summary>An optional icon displayed on the left side of the item.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.ListItemCapability.BadgeText">
+            <summary>An optional badge label shown on the right side of the item.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.ListItemCapability.BadgeColor">
+            <summary>The color of the optional badge. Defaults to <see cref="F:DotVVM.Controls.Tailwind.TailwindColor.Default"/>.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.ListItemCapability.NavigateUrl">
+            <summary>A URL that the entire list item links to. Use either this, <see cref="P:DotVVM.Controls.Tailwind.Controls.ListItemCapability.RouteLinkCapability"/> properties, or <see cref="P:DotVVM.Controls.Tailwind.Controls.ListItemCapability.Click"/>.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.ListItemCapability.RouteLinkCapability">
+            <summary>Route-based navigation properties. Use either this, <see cref="P:DotVVM.Controls.Tailwind.Controls.ListItemCapability.NavigateUrl"/>, or <see cref="P:DotVVM.Controls.Tailwind.Controls.ListItemCapability.Click"/>.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.ListItemCapability.Click">
+            <summary>A command invoked when the list item is clicked. Use either this, <see cref="P:DotVVM.Controls.Tailwind.Controls.ListItemCapability.NavigateUrl"/>, or <see cref="P:DotVVM.Controls.Tailwind.Controls.ListItemCapability.RouteLinkCapability"/> properties.</summary>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.IMenuItem">
             <summary>Marker interface for controls that may appear inside menu controls (<see cref="T:DotVVM.Controls.Tailwind.Controls.MenuDropDownItem"/>).</summary>
@@ -112,13 +540,60 @@
             Supports hardcoded <see cref="T:DotVVM.Controls.Tailwind.Controls.MenuItem"/> children OR DataSource mode.
             </summary>
         </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.MenuDropDownItem.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Controls.MenuItemCapability,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.Nullable{DotVVM.Controls.Tailwind.Controls.HeroIcon},ItemsOrDataSourceCapability{DotVVM.Controls.Tailwind.Controls.IMenuItem})">
+            <summary>Builds the inner content of the control.</summary>
+            <param name="text">Gets or sets the plain text label of the dropdown trigger button.</param>
+            <param name="icon">Gets or sets the icon displayed on the dropdown trigger button.</param>
+            <param name="itemsOrDataSource">Gets or sets the child <see cref="T:DotVVM.Controls.Tailwind.Controls.MenuItem"/> items or a data source for generating them.</param>
+            <capability-param name="itemText">Gets or sets the text of each item when <c>DataSource</c> is set.</capability-param>
+            <capability-param name="itemTemplate">Gets or sets the template for each item when <c>DataSource</c> is set. Cannot be combined with <c>ItemIcon</c>.</capability-param>
+            <capability-param name="itemNavigateUrl">Gets or sets the URL each item links to when <c>DataSource</c> is set.</capability-param>
+            <capability-param name="itemIcon">Gets or sets the icon for each item when <c>DataSource</c> is set. Cannot be combined with a template.</capability-param>
+            <capability-param name="itemIsActive">Gets or sets whether each item is active when <c>DataSource</c> is set.</capability-param>
+            <capability-param name="itemClick">Gets or sets the command invoked when an item is clicked when <c>DataSource</c> is set.</capability-param>
+            <capability-param name="itemRouteName">Gets or sets the DotVVM route name each item navigates to when <c>DataSource</c> is set.</capability-param>
+        </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.MenuItem">
             <summary>
             A leaf navigation item that works inside <see cref="T:DotVVM.Controls.Tailwind.Controls.SideMenu"/> (via <see cref="T:DotVVM.Controls.Tailwind.Controls.SideMenuSection"/>)
             or inside <see cref="T:DotVVM.Controls.Tailwind.Controls.TopMenu"/> templates.
             Renders as an anchor link styled contextually via CSS.
-            Supports <see cref="T:DotVVM.Controls.Tailwind.Capabilities.RouteLinkCapability"/> for DotVVM route navigation.
+            Supports <see cref="!:Capabilities.RouteLinkCapability"/> for DotVVM route navigation.
             </summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.MenuItem.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Controls.MenuItemCapability)">
+            <summary>Builds the inner content of the control.</summary>
+            <capability-param name="text">Gets or sets the plain text label of the item.</capability-param>
+            <capability-param name="template">Gets or sets a custom template used as the item label. Cannot be combined with <c>Icon</c>.</capability-param>
+            <capability-param name="navigateUrl">Gets or sets the URL the item links to.</capability-param>
+            <capability-param name="icon">Gets or sets the icon displayed before the item label. Cannot be combined with a template.</capability-param>
+            <capability-param name="isActive">Gets or sets whether the item is rendered with the <c>active</c> CSS class.</capability-param>
+            <capability-param name="click">Gets or sets the command invoked when the item is clicked.</capability-param>
+            <capability-param name="routeName">Gets or sets the DotVVM route name the item navigates to.</capability-param>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.MenuItemCapability">
+            <summary>Properties shared by all <see cref="T:DotVVM.Controls.Tailwind.Controls.MenuItem"/> and data-bound <see cref="T:DotVVM.Controls.Tailwind.Controls.MenuDropDownItem"/> item slots.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.MenuItemCapability.TextOrTemplate">
+            <summary>Gets or sets the text or template content rendered as the item label.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.MenuItemCapability.NavigateUrl">
+            <summary>Gets or sets the URL to navigate to when the item is clicked. Mutually exclusive with <see cref="P:DotVVM.Controls.Tailwind.Controls.MenuItemCapability.Click"/> and <see cref="T:DotVVM.Framework.Controls.RouteLinkCapability"/>.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.MenuItemCapability.Icon">
+            <summary>Gets or sets the icon displayed before the item label. Cannot be combined with a template set via inner content.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.MenuItemCapability.IsActive">
+            <summary>Gets or sets whether the item should be rendered with the <c>active</c> CSS class.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.MenuItemCapability.Click">
+            <summary>Gets or sets the command invoked when the item is clicked. Mutually exclusive with <see cref="P:DotVVM.Controls.Tailwind.Controls.MenuItemCapability.NavigateUrl"/> and <see cref="T:DotVVM.Framework.Controls.RouteLinkCapability"/>.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.MenuItemCapability.RouteLink">
+            <summary>Gets or sets the DotVVM route navigation parameters. Mutually exclusive with <see cref="P:DotVVM.Controls.Tailwind.Controls.MenuItemCapability.NavigateUrl"/> and <see cref="P:DotVVM.Controls.Tailwind.Controls.MenuItemCapability.Click"/>.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.MenuItemCapability.Validate">
+            <summary>Throws <see cref="T:DotVVM.Framework.Controls.DotvvmControlException"/> when both <see cref="P:DotVVM.Controls.Tailwind.Controls.MenuItemCapability.Icon"/> and a template are specified.</summary>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.MenuItemSeparator">
             <summary>A visual separator line for use inside menu controls. Renders as a horizontal rule styled by CSS context.</summary>
@@ -126,26 +601,48 @@
         <member name="T:DotVVM.Controls.Tailwind.Controls.ModalDialog">
             <summary>Renders a modal dialog using the native HTML &lt;dialog&gt; element for keyboard accessibility (Escape closes the dialog).</summary>
         </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.ModalDialog.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.ValueOrBinding{System.Boolean},DotVVM.Controls.Tailwind.Capabilities.TextOrTemplateCapability,DotVVM.Controls.Tailwind.Capabilities.TextOrTemplateCapability,DotVVM.Framework.Controls.ITemplate,DotVVM.Controls.Tailwind.ModalSize)">
+            <summary>Builds the inner content of the ModalDialog control.</summary>
+            <param name="htmlCapability">Standard HTML attributes and CSS classes applied to the root &lt;dialog&gt; element.</param>
+            <param name="isOpen">Controls whether the dialog is currently open. Bind to a boolean property on the view model.</param>
+            <capability-param name="HeaderText">Plain-text string displayed as the dialog heading.</capability-param>
+            <capability-param name="HeaderTemplate">Custom header content template; use instead of HeaderText for rich markup.</capability-param>
+            <capability-param name="FooterText">Plain-text string displayed in the dialog footer.</capability-param>
+            <capability-param name="FooterTemplate">Custom footer content template; use instead of FooterText for rich markup (e.g. action buttons).</capability-param>
+            <param name="contentTemplate">Required template for the main body of the dialog.</param>
+            <param name="size">Controls the width of the dialog. Defaults to <see cref="F:DotVVM.Controls.Tailwind.ModalSize.Default"/>.</param>
+        </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.NotificationData">
             <summary>Represents a single toast notification to be displayed.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.NotificationData.Type">
+            <summary>The visual style of the notification.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.NotificationData.Text">
+            <summary>The message text shown inside the notification.</summary>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.Notifications">
             <summary>
             Renders a toast notification container. Watches the Items collection via Knockout;
             when items appear, displays toast notifications and removes them from the collection.
+            The container uses <c>aria-live="polite"</c> so screen readers announce new notifications
+            without interrupting the user's current activity.
             </summary>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.ProcessTimeline">
             <summary>Renders a horizontal step-progress indicator for multi-step wizards.</summary>
         </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.ProcessTimeline.GetContents(DotVVM.Framework.Controls.HtmlCapability,System.Collections.Generic.List{DotVVM.Controls.Tailwind.Controls.ProcessTimelineStep},DotVVM.Framework.Binding.ValueOrBinding{System.Int32})">
+            <summary>Builds the step-progress indicator.</summary>
+            <param name="htmlCapability">Standard HTML attributes applied to the timeline container.</param>
+            <param name="steps">The list of <see cref="T:DotVVM.Controls.Tailwind.Controls.ProcessTimelineStep"/> child controls defining each step.</param>
+            <param name="currentStep">The 1-based index of the currently active step. Steps up to and including this value are highlighted.</param>
+        </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.ProcessTimelineStep">
             <summary>Represents a single step in a <see cref="T:DotVVM.Controls.Tailwind.Controls.ProcessTimeline"/>.</summary>
         </member>
-        <member name="P:DotVVM.Controls.Tailwind.Controls.ProcessTimelineStepCapability.Text">
-            <summary>The label text for this step.</summary>
-        </member>
-        <member name="P:DotVVM.Controls.Tailwind.Controls.ProcessTimelineStepCapability.Template">
-            <summary>A custom template for the step label (alternative to Text).</summary>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.ProcessTimelineStepCapability.TextOrTemplate">
+            <summary>The label text or custom template for this step.</summary>
         </member>
         <member name="P:DotVVM.Controls.Tailwind.Controls.ProcessTimelineStepCapability.Step">
             <summary>The step number (1-based). Used to compare against the parent's CurrentStep.</summary>
@@ -153,11 +650,81 @@
         <member name="T:DotVVM.Controls.Tailwind.Controls.ProgressBar">
             <summary>Displays a progress bar.</summary>
         </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.ProgressBar.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.ValueOrBinding{System.Double},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Controls.Tailwind.TailwindColor},DotVVM.Framework.Binding.ValueOrBinding{System.Boolean})">
+            <summary>Builds the inner content of the progress bar control.</summary>
+            <param name="htmlCapability">Standard HTML attributes applied to the wrapper element.</param>
+            <param name="value">Progress percentage (0–100).</param>
+            <param name="type">Visual color variant of the progress bar.</param>
+            <param name="showLabel">When true, renders a percentage label inside the bar.</param>
+        </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.RadioButton">
             <summary>Renders a custom radio button with a hidden native input and custom visual circle.</summary>
         </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.RadioButton.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Controls.TextOrContentCapability,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Object}},DotVVM.Framework.Binding.Expressions.IValueBinding,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},DotVVM.Framework.Binding.ValueOrBinding{System.Boolean},DotVVM.Framework.Binding.Expressions.ICommandBinding)">
+            <param name="htmlCapability">Adds HTML attributes to the outer label element.</param>
+            <param name="textOrContent">Provides the label text or custom content rendered next to the radio button.</param>
+            <param name="checkedValue">Specifies the value represented by this radio button.</param>
+            <param name="checkedItem">Binds the selected value for the radio group.</param>
+            <param name="groupName">Specifies the name attribute of the radio input, used to group radio buttons together.</param>
+            <param name="enabled">Controls whether the radio button can be interacted with.</param>
+            <param name="changed">Runs after the selected value changes.</param>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.RangeSlider">
+            <summary>Dual-thumb range slider for selecting a min/max interval.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.RangeSlider.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Controls.RangeCapability,DotVVM.Framework.Binding.Expressions.IValueBinding{System.Double},DotVVM.Framework.Binding.Expressions.IValueBinding{System.Double},DotVVM.Framework.Binding.ValueOrBinding{System.Boolean},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Controls.Tailwind.Controls.LabelPosition},System.String)">
+            <param name="htmlCapability">Standard HTML attributes forwarded to the wrapper element.</param>
+            <param name="rangeCapability">Shared range properties: MinValue, MaxValue, Step, Enabled, Type, Size.</param>
+            <param name="selectedMinValue">Two-way bound lower bound of the selected interval.</param>
+            <param name="selectedMaxValue">Two-way bound upper bound of the selected interval.</param>
+            <param name="showValue">Show the current min/max numeric values next to the slider.</param>
+            <param name="labelPosition">Position of the value labels when <paramref name="showValue"/> is enabled.</param>
+            <param name="formatString">Format specifier applied to each displayed value label, e.g. <c>n0</c> or <c>F1</c>. Passed directly to <c>double.ToString(format)</c>.</param>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.Range">
+            <summary>Single-thumb range slider with two-way value binding.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.Range.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Controls.RangeCapability,DotVVM.Framework.Binding.Expressions.IValueBinding{System.Double},DotVVM.Framework.Binding.ValueOrBinding{System.Boolean},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Controls.Tailwind.Controls.LabelPosition},System.String)">
+            <param name="htmlCapability">Standard HTML attributes forwarded to the wrapper element.</param>
+            <param name="rangeCapability">Shared range properties: MinValue, MaxValue, Step, Enabled, Type, Size.</param>
+            <param name="selectedValue">Two-way bound current value of the slider.</param>
+            <param name="showValue">Show the current numeric value next to the slider.</param>
+            <param name="labelPosition">Position of the value label when <paramref name="showValue"/> is enabled.</param>
+            <param name="formatString">Format specifier applied to the displayed value, e.g. <c>n0</c> or <c>F1</c>. Passed directly to <c>double.ToString(format)</c>.</param>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.RangeCapability">
+            <summary>Shared properties for range-based slider controls.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.RangeCapability.MinValue">
+            <summary>Minimum selectable value.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.RangeCapability.MaxValue">
+            <summary>Maximum selectable value.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.RangeCapability.Step">
+            <summary>Increment between selectable values.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.RangeCapability.Enabled">
+            <summary>When <c>false</c>, the slider is disabled and cannot be interacted with.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.RangeCapability.Type">
+            <summary>Accent color applied to the filled track and thumb(s).</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.RangeCapability.Size">
+            <summary>Visual size of the slider: Small, Default, Large, or ExtraLarge.</summary>
+        </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.RouteLink">
             <summary>Renders a styled anchor link that navigates to a route, with the same visual design as <see cref="T:DotVVM.Controls.Tailwind.Controls.Button"/>.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.RouteLink.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Capabilities.ButtonBaseCapability,DotVVM.Framework.Controls.RouteLinkCapability)">
+            <summary>Builds the rendered route link element.</summary>
+            <param name="htmlCapability">Adds standard HTML attributes to the rendered anchor element.</param>
+            <param name="textOrContent">Provides the link label as plain text or custom content. Content cannot be combined with <paramref name="icon"/>.</param>
+            <param name="icon">Specifies the optional icon displayed inside the link.</param>
+            <param name="iconPosition">Controls whether the icon is rendered before or after the text.</param>
+            <param name="type">Specifies the visual style variant of the link.</param>
+            <param name="size">Specifies the size variant of the link.</param>
+            <param name="routeLink">Defines the DotVVM route target and route parameters.</param>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.SideMenu">
             <summary>
@@ -189,13 +756,41 @@
             </summary>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.Spinner">
-            <summary>Displays a loading spinner.</summary>
+            <summary>Displays an animated loading spinner with an accessible sr-only label.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.Spinner.GetContents(DotVVM.Framework.Controls.HtmlCapability,System.String)">
+            <summary>
+            Builds the spinner element.
+            </summary>
+            <param name="htmlCapability">Standard HTML attributes applied to the spinner container.</param>
+            <param name="ariaLabelText">The text rendered inside the sr-only span for screen readers. Defaults to <c>"Loading..."</c>.</param>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.TabControl">
             <summary>Renders a tab control with multiple tab items.</summary>
         </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.TabControl.GetContents(DotVVM.Framework.Controls.HtmlCapability,System.Collections.Generic.List{DotVVM.Controls.Tailwind.Controls.TabItem},DotVVM.Framework.Binding.ValueOrBinding{System.Int32})">
+            <summary>Builds the inner content of the control.</summary>
+            <param name="htmlCapability">Gets or sets HTML attributes applied to the root element.</param>
+            <param name="content">Gets or sets the tab items inside the control.</param>
+            <param name="selectedTabIndex">Gets or sets the index of the currently selected tab (0-based).</param>
+        </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.TabItem">
             <summary>Represents a single tab item within a TabControl.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Controls.TabItem.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Controls.TabItemCapability)">
+            <summary>Builds the inner content of the control.</summary>
+            <capability-param name="headerText">Gets or sets the plain text for the tab header. Cannot be combined with <c>HeaderTemplate</c>.</capability-param>
+            <capability-param name="headerTemplate">Gets or sets a custom template for the tab header. Cannot be combined with <c>HeaderText</c>.</capability-param>
+            <capability-param name="contentTemplate">Gets or sets the content template rendered inside the tab panel.</capability-param>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.TabItemCapability">
+            <summary>Defines the properties of a single tab item within a TabControl.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.TabItemCapability.Header">
+            <summary>Gets or sets the tab header text or template.</summary>
+        </member>
+        <member name="P:DotVVM.Controls.Tailwind.Controls.TabItemCapability.ContentTemplate">
+            <summary>Gets or sets the content template rendered inside the tab panel.</summary>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.TopMenu">
             <summary>Renders a horizontal navigation bar with Start, Middle, and End layout zones.</summary>
@@ -223,8 +818,20 @@
         <member name="F:DotVVM.Controls.Tailwind.Controls.IconPosition.End">
             <summary>The icon appears after the text.</summary>
         </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.LabelPosition">
+            <summary>Specifies where the value label is placed relative to the slider when <c>ShowValue</c> is enabled.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.LabelPosition.Above">
+            <summary>The label appears above the slider.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.LabelPosition.Below">
+            <summary>The label appears below the slider.</summary>
+        </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.ModalConfirmPostBackHandler">
             <summary>A postback handler that shows a styled modal confirmation dialog before executing the postback.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.DotvvmConfigurationExtensions.IconRouteVirtualPath">
+            <summary>The virtual path used to serve icon SVG content.</summary>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.ModalSize">
             <summary>Size variants for modal dialogs.</summary>
@@ -244,8 +851,73 @@
         <member name="F:DotVVM.Controls.Tailwind.ModalSize.FullScreen">
             <summary>Full screen modal (covers entire viewport).</summary>
         </member>
+        <member name="T:DotVVM.Controls.Tailwind.NotificationAlignment">
+            <summary>Specifies the screen position of the toast notification container.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.NotificationAlignment.BottomRight">
+            <summary>Bottom-right corner of the viewport.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.NotificationAlignment.BottomLeft">
+            <summary>Bottom-left corner of the viewport.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.NotificationAlignment.TopRight">
+            <summary>Top-right corner of the viewport.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.NotificationAlignment.TopLeft">
+            <summary>Top-left corner of the viewport.</summary>
+        </member>
         <member name="T:DotVVM.Controls.Tailwind.NotificationType">
             <summary>Specifies the visual style of a toast notification.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.NotificationType.Info">
+            <summary>Informational notification (neutral guidance).</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.NotificationType.Success">
+            <summary>Indicates a successful or positive action.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.NotificationType.Warning">
+            <summary>Indicates a warning that might need attention.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.NotificationType.Danger">
+            <summary>Indicates an error or potentially negative action.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Orientation">
+            <summary>Specifies whether content is arranged horizontally or vertically.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Orientation.Horizontal">
+            <summary>Arranges content side by side.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Orientation.Vertical">
+            <summary>Arranges content in a vertical stack.</summary>
+        </member>
+        <member name="M:DotVVM.Controls.Tailwind.Utils.GetIdBinding(DotVVM.Framework.Controls.DotvvmControl,System.String,System.String)">
+            <summary>
+            Gets a client ID of the control if it is specified by the ID property,
+            or gets the unique ID of the control generated by the framework.
+            </summary>
+        </member>
+        <member name="T:ItemsOrDataSourceCapability`1">
+            <summary>
+            Represents a capability that accepts either hardcoded child items or a data source for generated items.
+            </summary>
+        </member>
+        <member name="P:ItemsOrDataSourceCapability`1.Items">
+            <summary>
+            Gets or sets the hardcoded child items rendered by the control.
+            </summary>
+        </member>
+        <member name="P:ItemsOrDataSourceCapability`1.DataSource">
+            <summary>
+            Gets or sets the data source used to generate child items.
+            </summary>
+        </member>
+        <member name="T:ItemsOrDataSourceCapabilityExtensions">
+            <summary>
+            Provides helper methods for rendering controls that support hardcoded items or data-source-generated items.
+            </summary>
+        </member>
+        <member name="M:ItemsOrDataSourceCapabilityExtensions.BuildItemsOrRepeater``2(ItemsOrDataSourceCapability{``0},DotVVM.Framework.Controls.HtmlGenericControl,System.Func{``0,DotVVM.Framework.Controls.DotvvmControl},System.Func{``0,DotVVM.Framework.Controls.DotvvmControl},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}})">
+            <summary>Builds a wrapper control that renders existing item controls or instantiates a control per data-source item.</summary>
         </member>
     </members>
 </doc>
