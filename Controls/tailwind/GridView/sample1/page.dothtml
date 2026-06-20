@@ -1,14 +1,17 @@
-<div class="grid-table-wrapper">
-    <t:GridView DataSource="{value: Customers}">
-        <Columns>
-            <dot:GridViewTextColumn HeaderText="ID" ValueBinding="{value: Id}" AllowSorting="true" SortExpression="Id" />
-            <dot:GridViewTextColumn HeaderText="Name" ValueBinding="{value: Name}" AllowSorting="true" SortExpression="Name" />
-            <dot:GridViewTextColumn HeaderText="Email" ValueBinding="{value: Email}" AllowSorting="true" SortExpression="Email" />
-            <dot:GridViewTemplateColumn HeaderText="Actions">
-                <ContentTemplate>
-                    <t:Button Type="Primary" Text="Edit" Click="{command: _parent.Edit(_this)}" />
-                </ContentTemplate>
-            </dot:GridViewTemplateColumn>
-        </Columns>
-    </t:GridView>
-</div>
+<t:GridView DataSource="{value: Customers}">
+    <Columns>
+        <dot:GridViewTextColumn HeaderText="ID" ValueBinding="{value: Id}" AllowSorting="true" SortExpression="Id" />
+        <dot:GridViewTextColumn HeaderText="Name" ValueBinding="{value: Name}" AllowSorting="true" SortExpression="Name" />
+        <dot:GridViewTextColumn HeaderText="Department" ValueBinding="{value: Department}" AllowSorting="true" SortExpression="Department" />
+        <dot:GridViewTemplateColumn HeaderText="Actions">
+            <ContentTemplate>
+                <t:Button Type="Primary" Text="Select" Click="{command: _root.SelectCustomer(_this)}" />
+            </ContentTemplate>
+        </dot:GridViewTemplateColumn>
+    </Columns>
+    <EmptyDataTemplate>
+        <p>No customers are available.</p>
+    </EmptyDataTemplate>
+</t:GridView>
+
+<p>Selected customer: {{value: SelectedCustomerName}}</p>

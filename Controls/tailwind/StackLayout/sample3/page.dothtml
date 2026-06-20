@@ -1,0 +1,22 @@
+<div class="space-y-3">
+    <t:StackLayout Orientation="Horizontal" Justify="Start" class="bg-gray-100 p-2">
+        <t:Button Type="Primary" Text="Start" />
+        <t:Button Type="Secondary" Text="Layout" />
+    </t:StackLayout>
+
+    <t:StackLayout Orientation="Horizontal" Justify="Center" class="bg-gray-100 p-2">
+        <t:Button Type="Primary" Text="Center" />
+        <t:Button Type="Secondary" Text="Layout" />
+    </t:StackLayout>
+
+    <t:StackLayout Orientation="Horizontal" Justify="SpaceBetween" class="bg-gray-100 p-2">
+        <t:Button Type="Primary" Text="Space" />
+        <t:Button Type="Secondary" Text="Between" />
+        <t:Button Type="Success" Text="Items" />
+    </t:StackLayout>
+    
+    <t:StackLayout Orientation="Horizontal" Justify="SpaceEvenly" class="bg-gray-100 p-2">
+        <t:Button Type="Primary" Text="Space" />
+        <t:Button Type="Secondary" Text="Evenly" />
+    </t:StackLayout>
+</div>

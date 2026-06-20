@@ -1,9 +1,25 @@
 using DotVVM.Framework.ViewModel;
 
-public class ViewModel : DotvvmViewModelBase
+namespace DotvvmWeb.Views.Docs.Controls.tailwind.ProcessTimeline.sample1
 {
-    public int CurrentStep { get; set; } = 1;
+    public class ViewModel : DotvvmViewModelBase
+    {
+        public int CurrentStep { get; set; } = 2;
 
-    public void Next() { if (CurrentStep < 4) CurrentStep++; }
-    public void Prev() { if (CurrentStep > 1) CurrentStep--; }
+        public void Previous()
+        {
+            if (CurrentStep > 1)
+            {
+                CurrentStep--;
+            }
+        }
+
+        public void Next()
+        {
+            if (CurrentStep < 4)
+            {
+                CurrentStep++;
+            }
+        }
+    }
 }

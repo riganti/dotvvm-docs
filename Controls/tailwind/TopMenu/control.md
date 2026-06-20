@@ -1,1 +1,1 @@
-Renders a responsive horizontal navigation header with Start, Middle, and End content zones. `MenuItem` supports both plain `Text="..."` and custom template content placed directly inside the element.
+Renders a Tailwind top navigation bar with `StartTemplate`, `MiddleTemplate`, `EndTemplate`, and optional `MobileTemplate`. Set `HamburgerPosition` when the mobile toggle should appear at the end of the bar.

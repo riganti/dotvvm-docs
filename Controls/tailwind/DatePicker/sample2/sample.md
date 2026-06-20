@@ -1,4 +1,3 @@
-## Sample 2: Min and max constraints
+## Sample 2: Constraints, Steps, and Enabled State
 
-Use `MinDate` and `MaxDate` to restrict the selectable range.
-
+The standalone picker also supports `MinDate`, `MaxDate`, `MinHours`, `MaxHours`, `HoursStep`, `MinutesStep`, `InputSize`, and `Enabled`.

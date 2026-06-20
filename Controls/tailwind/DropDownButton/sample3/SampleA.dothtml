@@ -1,0 +1,22 @@
+@masterPage master.dotmaster
+
+<dot:Content ContentPlaceHolderID="Main">
+    <t:DropDownButton Text="Route items" Type="Primary">
+        <t:DropDownItem Text="Overview" RouteName="SampleA" />
+        <t:DropDownItem Text="Details" RouteName="SampleB" />
+    </t:DropDownButton>
+
+    <t:DropDownButton Text="Template items"
+                      Type="Default"
+                      DataSource="{value: RouteOptions}"
+                      ItemRouteName="SampleB">
+        <ItemTemplate>
+            <span>
+                <strong>{{value: Title}}</strong>
+                <span> - {{value: Description}}</span>
+            </span>
+        </ItemTemplate>
+    </t:DropDownButton>
+
+    <p>Current page: Sample A</p>
+</dot:Content>

@@ -1,4 +1,3 @@
-﻿## Sample 2: Custom Step Templates
+## Sample 2: Custom step content
 
-Uses `Template` to render rich content for each step.
-
+Places rich markup directly inside `ProcessTimelineStep`, which fills the step template region.

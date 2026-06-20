@@ -1,1 +1,1 @@
-Displays a small inline badge with a colored background for labels, counts, and statuses.
+Displays a small highlighted label with semantic colors. The badge can render plain text or custom child content.

@@ -1,12 +1,14 @@
 using DotVVM.Framework.ViewModel;
 
-public class  ViewModel : DotvvmViewModelBase
+namespace DotvvmWeb.Views.Docs.Controls.tailwind.DropDownButton.sample1
 {
-    public List<string> MenuItems { get; set; } = new() { "Profile", "Settings", "Sign Out" };
-    public string LastClicked { get; set; } = "(none)";
-
-    public void ItemClicked(string item)
+    public class ViewModel : DotvvmViewModelBase
     {
-        LastClicked = $"{item} clicked at {DateTime.Now:HH:mm:ss}";
+        public string LastAction { get; set; } = "(none)";
+
+        public void RecordAction(string action)
+        {
+            LastAction = action;
+        }
     }
 }

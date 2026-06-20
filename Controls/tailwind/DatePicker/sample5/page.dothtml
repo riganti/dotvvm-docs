@@ -1,4 +1,0 @@
-cumentation example<div class="max-w-xs mb-4">
-    <t:DatePickerFormField LabelText="Meeting time (hours/minutes)" SelectedDate="{value: SelectedTimeWidgetHoursMinutes}" Type="Time" MinHours="8" MaxHours="19" HoursStep="2" MinutesStep="5" Placeholder="Pick a time..." />
-</div>
-<p class="mb-4">Selected: <strong>{{value: SelectedTimeWidgetHoursMinutes ?? "(none)"}}</strong></p>

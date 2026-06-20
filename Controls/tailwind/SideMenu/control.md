@@ -1,1 +1,1 @@
-Renders a dark sidebar navigation with labeled sections, menu items, and collapsible dropdown groups. `MenuItem` supports both plain `Text="..."` and custom template content placed directly inside the element.
+Renders a Tailwind sidebar navigation panel composed of `SideMenuSection`, `MenuItem`, and `MenuDropDownItem`. Use `collapseBreakpoint` to control when the menu switches to its mobile overlay behavior.

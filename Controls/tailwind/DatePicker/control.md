@@ -1,1 +1,1 @@
-Provides date, time, and datetime inputs via [Air Datepicker](https://air-datepicker.com). Bind to `string?` properties and expect ISO values: Date `YYYY-MM-DD`, Time `HH:MM`, DateTime `YYYY-MM-DDTHH:MM`.
+The DatePicker documentation covers the current `DateTimePicker` and `DateTimePickerFormField` controls. They render Tailwind-styled date, time, and date-time pickers with nullable `DateTime` bindings.

@@ -1,10 +1,7 @@
-﻿<div class="flex flex-col gap-4 items-start">
-    <t:ProgressBar Value="{value: Progress}" />
-    <div class="flex gap-2">
-        <t:Button Type="Primary" Text="Increase" Click="{command: IncreaseProgress()}" Size="Small" />
-        <t:Button Type="Secondary" Text="Decrease" Click="{command: DecreaseProgress()}" Size="Small" />
-        <t:Button Type="Danger" Text="Reset" Click="{command: ResetProgress()}" Size="Small" />
-    </div>
-    <p class="text-sm">Progress: <strong>{{value: Progress}}%</strong></p>
-</div>
+<div class="space-y-4">
+    <t:ProgressBar Value="65" Type="Success" ShowLabel="true" />
 
+    <t:ProgressBar Value="80" Type="Primary" ShowLabel="{value: ShowLabel}" />
+
+    <t:CheckBox Text="Show label" Checked="{value: ShowLabel}" />
+</div>

@@ -1,4 +1,3 @@
 ﻿## Sample 2: Data-bound Breadcrumb (ItemTemplate)
 
-Generates items from a data source using an `ItemTemplate`.
-
+Generates breadcrumb items from a collection and formats each label with `ItemTemplate`. In data-bound mode, the template replaces `ItemText`.

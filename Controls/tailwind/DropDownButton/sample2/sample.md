@@ -1,4 +1,3 @@
-﻿## Sample 2: Button Type Variants
+## Sample 2: DataSource, Content, Alignment, and Item Bindings
 
-Demonstrates the different Type variants available for DropDownButton (Default, Primary, Success, Danger).
-
+When the menu is generated from `DataSource`, use the `Item*` properties to map fields from each collection item. This sample shows trigger `Content`, `Alignment`, `ItemText`, `ItemIcon`, `ItemClick`, and `ItemNavigateUrl`.

@@ -1,4 +1,0 @@
-<div class="mb-8 max-w-sm mx-auto">
-    <p class="mb-2 text-sm text-gray-600">Temperature: -20 to 40 C, step 0.5</p>
-    <t:Range SelectedValue="{value: Temperature}" MinValue="-20" MaxValue="40" Step="0.5" ShowValue="true" ValueSuffix=" C" />
-</div>

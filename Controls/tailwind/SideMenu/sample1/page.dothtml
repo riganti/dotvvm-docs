@@ -1,40 +1,33 @@
-<div class="flex h-[30rem] border border-gray-200 rounded-md overflow-hidden">
+<div style="display:flex;min-height:20rem;border:1px solid #e5e7eb;">
     <t:SideMenu>
-        <t:SideMenuSection Title="Main Menu">
-            <t:MenuItem Text="Dashboard" NavigateUrl="#dashboard" Icon="Home" IsActive="true" />
-            <t:MenuItem Text="Calendar" NavigateUrl="#calendar" Icon="Calendar" />
-            <t:MenuItemSeparator />
+        <t:SideMenuSection Title="Main">
+            <t:MenuItem Text="Overview" NavigateUrl="#overview" Icon="Home" IsActive="true" />
             <t:MenuItem Text="Messages" NavigateUrl="#messages" Icon="Envelope" />
+            <t:MenuItemSeparator />
+            <t:MenuItem Text="Tasks" NavigateUrl="#tasks" Icon="CheckCircle" />
         </t:SideMenuSection>
-
-        <t:SideMenuSection Title="Analytics">
-            <t:MenuDropDownItem Text="Dashboard" Icon="TableCells">
-                <t:MenuItem Text="Overview" NavigateUrl="#overview" />
+        <t:SideMenuSection Title="Reports">
+            <t:MenuDropDownItem Text="Analytics" Icon="ChartBar">
                 <t:MenuItem Text="Traffic" NavigateUrl="#traffic" />
                 <t:MenuItem Text="Conversions" NavigateUrl="#conversions" />
             </t:MenuDropDownItem>
-            <t:MenuItem Text="Reports" NavigateUrl="#reports" Icon="DocumentText" />
-        </t:SideMenuSection>
-
-        <t:SideMenuSection Title="Settings">
-            <t:MenuDropDownItem Text="Account Settings" Icon="Cog6Tooth"
-                DataSource="{value: SettingsLinks}"
-                ItemText="{value: Text}"
-                ItemNavigateUrl="{value: Url}" />
-        </t:SideMenuSection>
-
-        <t:SideMenuSection Title="Quick Links">
-            <dot:Repeater DataSource="{value: DashboardLinks}" RenderWrapperTag="false">
-                <t:MenuItem Text="{value: _this}" NavigateUrl="#" />
-            </dot:Repeater>
         </t:SideMenuSection>
     </t:SideMenu>
 
-    <div class="flex-1 p-6 bg-gray-50 overflow-y-auto no-chapter">
-        <h3>Main Content Area</h3>
-        <p class="text-sm text-gray-500">
-            This area represents the page content next to the sidebar.
-            The sidebar on the left demonstrates all SideMenu variants.
-        </p>
+    <div style="padding:1rem;flex:1;">
+        <h3 id="overview">Overview</h3>
+        <p>The menu can mix plain items and dropdown sections.</p>
+
+        <h3 id="messages">Messages</h3>
+        <p>`MenuItem` can navigate to anchors inside the same page.</p>
+
+        <h3 id="tasks">Tasks</h3>
+        <p>Use `MenuItemSeparator` to break larger groups.</p>
+
+        <h3 id="traffic">Traffic</h3>
+        <p>The dropdown opens nested links.</p>
+
+        <h3 id="conversions">Conversions</h3>
+        <p>All links stay inside the generated sample app.</p>
     </div>
 </div>

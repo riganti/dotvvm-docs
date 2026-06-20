@@ -1,0 +1,41 @@
+{
+  "files": [
+    {
+      "name": "SampleA.dothtml",
+      "registerRoute": true,
+      "routeName": "SampleA",
+      "routeUrl": "",
+      "replacements": [
+        {
+          "pattern": "RouteName=\"(SampleA)\"",
+          "replacement": "%SampleUniqueName%_SampleA"
+        },
+        {
+          "pattern": "RouteName=\"(SampleB)\"",
+          "replacement": "%SampleUniqueName%_SampleB"
+        }
+      ]
+    },
+    {
+      "name": "SampleB.dothtml",
+      "registerRoute": true,
+      "routeName": "SampleB",
+      "routeUrl": "target",
+      "replacements": [
+        {
+          "pattern": "RouteName=\"(SampleA)\"",
+          "replacement": "%SampleUniqueName%_SampleA"
+        },
+        {
+          "pattern": "RouteName=\"(SampleB)\"",
+          "replacement": "%SampleUniqueName%_SampleB"
+        }
+      ]
+    },
+    { "name": "master.dotmaster" },
+    {
+      "name": "DotvvmStartup.cs",
+      "doNotExport": true
+    }
+  ]
+}

@@ -1,22 +1,24 @@
-<div class="border border-gray-200 rounded-xl">
-    <t:TopMenu>
-        <StartTemplate>
-            <a href="#" style="font-size: 1.1rem; font-weight: 700; color: #2563eb; text-decoration: none;">MyApp</a>
-        </StartTemplate>
-        <MiddleTemplate>
-            <t:MenuItem Text="Dashboard" NavigateUrl="#" IsActive="true" />
+<t:TopMenu>
+    <StartTemplate>
+        <span class="text-lg font-bold text-blue-600">Workspace</span>
+    </StartTemplate>
+    <MiddleTemplate>
+        <t:MenuItem Text="Overview" NavigateUrl="#overview" IsActive="true" />
+        <t:MenuDropDownItem Text="Actions"
+                            DataSource="{value: ActionItems}"
+                            ItemText="{value: Text}"
+                            ItemClick="{command: _parent.RecordClick(Text)}" />
+        <t:MenuDropDownItem Text="Sections"
+                            DataSource="{value: SectionItems}"
+                            ItemText="{value: Text}"
+                            ItemNavigateUrl="{value: Url}" />
+    </MiddleTemplate>
+</t:TopMenu>
 
-            <t:MenuItem NavigateUrl="#featured">
-                <span style="font-weight: 700; color: #f59e0b;">* Featured</span>
-            </t:MenuItem>
+<p>Last clicked action: {{value: LastClicked}}</p>
 
-            <t:MenuItem NavigateUrl="#new">
-                <span>New <span style="display: inline-block; background: #ef4444; color: white; font-size: 0.625rem; padding: 0 0.25rem; border-radius: 9999px;">NEW</span></span>
-            </t:MenuItem>
-        </MiddleTemplate>
-    </t:TopMenu>
+<h3 id="overview">Overview</h3>
+<p>The first dropdown posts back using `ItemClick`.</p>
 
-    <div class="p-4 bg-gray-50">
-        <p>The middle nav shows a plain item, a "Featured" item with a star icon, and an item with a badge.</p>
-    </div>
-</div>
+<h3 id="release">Release notes</h3>
+<p>The second dropdown uses `ItemNavigateUrl` for in-page navigation.</p>

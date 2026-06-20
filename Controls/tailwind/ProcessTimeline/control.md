@@ -1,1 +1,1 @@
-Renders a horizontal step-progress indicator for multi-step wizards. Highlights completed and current steps with the primary color; future steps are dimmed.
+Displays a step-by-step progress indicator. Use `CurrentStep` on `ProcessTimeline` and define each step with `ProcessTimelineStep`.

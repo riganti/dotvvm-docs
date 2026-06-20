@@ -1,0 +1,11 @@
+<div class="space-y-4 max-w-md">
+    <t:RangeSlider SelectedMinValue="{value: PriceFrom}"
+                   SelectedMaxValue="{value: PriceTo}" />
+
+    <t:RangeSlider SelectedMinValue="{value: BudgetFrom}"
+                   SelectedMaxValue="{value: BudgetTo}"
+                   LabelPosition="Above" />
+</div>
+
+<p>Price range: <strong>{{value: PriceFrom}}</strong> – <strong>{{value: PriceTo}}</strong></p>
+<p>Budget range: <strong>{{value: BudgetFrom}}</strong> – <strong>{{value: BudgetTo}}</strong></p>

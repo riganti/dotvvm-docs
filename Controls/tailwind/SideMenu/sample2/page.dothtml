@@ -1,23 +1,26 @@
-<div class="flex h-[18rem] border border-gray-200 rounded-md overflow-hidden">
+<div style="display:flex;min-height:20rem;border:1px solid #e5e7eb;">
     <t:SideMenu>
-        <t:SideMenuSection Title="Template Demo">
-            <t:MenuItem Text="Dashboard" NavigateUrl="#dashboard" Icon="Home" IsActive="true" />
-
-            <t:MenuItem NavigateUrl="#featured">
-                <span style="font-weight: 700; color: #f59e0b;">* Featured</span>
-            </t:MenuItem>
-
-            <t:MenuItem NavigateUrl="#new">
-                <span>New <span style="display: inline-block; background: #ef4444; color: white; font-size: 0.625rem; padding: 0 0.25rem; border-radius: 9999px;">NEW</span></span>
-            </t:MenuItem>
+        <t:SideMenuSection Title="Settings">
+            <t:MenuDropDownItem Text="Account" Icon="Cog6Tooth"
+                                DataSource="{value: SettingsLinks}"
+                                ItemText="{value: Text}"
+                                ItemNavigateUrl="{value: Url}" />
+        </t:SideMenuSection>
+        <t:SideMenuSection Title="Quick Links">
+            <dot:Repeater DataSource="{value: QuickLinks}" RenderWrapperTag="false">
+                <t:MenuItem Text="{value: Text}" NavigateUrl="{value: Url}" />
+            </dot:Repeater>
         </t:SideMenuSection>
     </t:SideMenu>
 
-    <div class="flex-1 p-6 bg-gray-50 overflow-y-auto no-chapter">
-        <h3>Main Content Area</h3>
-        <p class="text-sm text-gray-500">
-            This area represents the page content next to the sidebar.
-            The sidebar on the left demonstrates all SideMenu variants.
-        </p>
+    <div style="padding:1rem;flex:1;">
+        <h3 id="profile">Profile</h3>
+        <p>The dropdown items were generated from `SettingsLinks`.</p>
+
+        <h3 id="security">Security</h3>
+        <p>`ItemText` and `ItemNavigateUrl` map the current item fields.</p>
+
+        <h3 id="help">Help</h3>
+        <p>The repeater generates a flat list of `MenuItem` controls.</p>
     </div>
 </div>

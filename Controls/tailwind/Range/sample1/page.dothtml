@@ -1,4 +1,10 @@
-<div class="mb-8 max-w-sm mx-auto stack-layout">
-    <t:Range SelectedValue="{value: BasicValue}" />
-    <p>Value: <strong>{{value: BasicValue}}</strong></p>
+<div class="space-y-4 max-w-md">
+    <t:Range SelectedValue="{value: Satisfaction}" />
+
+    <t:Range SelectedValue="{value: Volume}"
+             ShowValue="true"
+             LabelPosition="Above" />
 </div>
+
+<p>Satisfaction: <strong>{{value: Satisfaction}}</strong></p>
+<p>Volume: <strong>{{value: Volume}}</strong></p>

@@ -1,8 +1,7 @@
 ﻿<div class="max-w-sm">
-    <t:Card HeaderText="External Link" ImageUrl="https://picsum.photos/400/200" ImageAlt="Sample image" Href="https://www.google.com" NewTab="true">
+    <t:Card HeaderText="Linked Card" ImageUrl="https://picsum.photos/400/200" ImageAlt="Sample image" NavigateUrl="?card=linked" NewTab="true">
         <ContentTemplate>
-            <p>This card links to an external site using the Href property.</p>
+            <p>This card uses NavigateUrl so the whole surface works as a link inside the sample app.</p>
         </ContentTemplate>
     </t:Card>
 </div>
-

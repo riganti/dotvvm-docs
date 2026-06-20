@@ -1,32 +1,50 @@
-<div class="space-y-4">
-    <t:Form>
-        <HeaderTemplate>
-            <h2 class="mb-0 text-lg font-semibold">Customer Details</h2>
-        </HeaderTemplate>
-        <ContentTemplate>
-            <dot:ValidationSummary IncludeErrorsFromChildren="true" />
-            <t:Row>
-                <t:TextBoxFormField LabelText="First name" Text="{value: FirstName}" Size="Half" />
-                <t:TextBoxFormField LabelText="Last name" Text="{value: LastName}" Size="Half" />
-            </t:Row>
-            <t:TextBoxFormField LabelText="Email address" Text="{value: Email}" />
-            <t:Row>
-                <t:TextBoxFormField LabelText="Street" Text="{value: Street}" Size="Half" />
-                <t:TextBoxFormField LabelText="ZIP / Postal code" Text="{value: Zip}" Size="Half" />
-            </t:Row>
-            <t:Row>
-                <t:CheckBoxFormField Text="Subscribe to newsletter" Checked="{value: Subscribe}" />
-                <t:CheckBoxFormField Text="Agree to terms" Checked="{value: AgreeToTerms}" />
-                <t:CheckBoxFormField Text="Disabled checkbox" Checked="{value: Subscribe}" Enabled="false" />
-            </t:Row>
-        </ContentTemplate>
-        <FooterTemplate>
-            <t:Button Type="Primary" Text="Save" IsSubmitButton="true" Click="{command: Save()}" Validation.Target="{value: _root}" />
-            <t:Button Type="Default" Text="Cancel" Click="{command: Reset()}" Validation.Enabled="false" />
-        </FooterTemplate>
-    </t:Form>
+<t:Form>
+    <HeaderTemplate>
+        <div class="flex items-center gap-2">
+            <t:Icon Icon="User" class="w-5 h-5" />
+            <span class="font-semibold">Travel preferences</span>
+        </div>
+    </HeaderTemplate>
+    <ContentTemplate>
+        <t:FormRow Wrap="false">
+            <t:TextBoxFormField LabelText="Full name"
+                                Text="{value: FullName}"
+                                Size="Half"
+                                InputSize="Large"
+                                Changed="{command: IncrementChanges()}" />
 
-    <div Visible="{value: Saved}">
-        <t:Alert Type="Success" Text="Form saved successfully!" />
-    </div>
-</div>
+            <t:ComboBoxFormField LabelText="Country"
+                                 DataSource="{value: Countries}"
+                                 SelectedValue="{value: SelectedCountry}"
+                                 ItemTextBinding="{value: Name}"
+                                 ItemValueBinding="{value: Code}"
+                                 EmptyItemText="-- select country --"
+                                 Size="Half"
+                                 InputSize="Large"
+                                 SelectionChanged="{command: IncrementChanges()}" />
+        </t:FormRow>
+
+        <t:DateTimePickerFormField LabelText="Arrival"
+                                   SelectedValue="{value: Arrival}"
+                                   Type="Date"
+                                   Placeholder="Choose arrival date..."
+                                   InputSize="Small" />
+
+        <t:CheckBoxFormField Checked="{value: Subscribe}"
+                             Changed="{command: IncrementChanges()}">
+            <span>Send me product updates</span>
+        </t:CheckBoxFormField>
+
+        <t:FormField LabelText="Preferred contact" ValidatorProperty="{value: ContactMethod}">
+            <div class="flex gap-4 flex-wrap">
+                <t:RadioButton Text="Email" CheckedValue="email" CheckedItem="{value: ContactMethod}" GroupName="contact" />
+                <t:RadioButton Text="Phone" CheckedValue="phone" CheckedItem="{value: ContactMethod}" GroupName="contact" />
+                <t:RadioButton Text="Chat" CheckedValue="chat" CheckedItem="{value: ContactMethod}" GroupName="contact" />
+            </div>
+        </t:FormField>
+    </ContentTemplate>
+</t:Form>
+
+<p class="mt-3">Changes: <strong>{{value: ChangeCount}}</strong></p>
+<p>Country: <strong>{{value: SelectedCountry ?? "(none)"}}</strong></p>
+<p>Contact method: <strong>{{value: ContactMethod}}</strong></p>

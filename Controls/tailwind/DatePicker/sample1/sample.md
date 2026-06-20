@@ -1,4 +1,3 @@
-## Sample 1: Date picker
+## Sample 1: Standalone Date, Time, and DateTime Pickers
 
-Bind `SelectedDate` to a date input with `Type="Date"`.
-
+Use `DateTimePicker` when you need the picker widget without a form-field wrapper. The `SelectedValue` property is always a nullable `DateTime`.

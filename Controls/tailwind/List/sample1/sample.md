@@ -1,3 +1,3 @@
-## Sample 1: Hardcoded Items with Icons
+## Sample 1: Hardcoded Items
 
-Shows a list with icons, subtext, and badges.
+Use `<t:ListGroup>` with hardcoded `<t:ListItem>` children for a fixed list. This sample shows `Text`, `Icon`, `BadgeText`, `BadgeColor`, and `NavigateUrl`.

@@ -1,8 +1,15 @@
-<div class="flex items-center gap-4">
-    <t:Icon Icon="Home" Type="Outline" Size="Default" />
-    <t:Icon Icon="User" Type="Outline" Size="Default" />
-    <t:Icon Icon="Bell" Type="Outline" Size="Default" />
-    <t:Icon Icon="Cog6Tooth" Type="Outline" Size="Default" />
-    <t:Icon Icon="EnvelopeOpen" Type="Outline" Size="Default" />
-    <t:Icon Icon="Trash" Type="Outline" Size="Default" />
+<div class="space-y-4">
+    <div class="flex items-center gap-4 text-primary-600">
+        <t:Icon Icon="Home" Type="Outline" class="w-6 h-6" />
+        <t:Icon Icon="Bell" Type="Outline" class="w-6 h-6" />
+        <t:Icon Icon="EnvelopeOpen" Type="Outline" class="w-6 h-6" />
+        <t:Icon Icon="Cog6Tooth" Type="Outline" class="w-6 h-6" />
+    </div>
+
+    <div class="flex items-center gap-4 text-primary-600">
+        <t:Icon Icon="Home" Type="Solid" class="w-6 h-6" />
+        <t:Icon Icon="Bell" Type="Solid" class="w-6 h-6" />
+        <t:Icon Icon="EnvelopeOpen" Type="Solid" class="w-6 h-6" />
+        <t:Icon Icon="Cog6Tooth" Type="Solid" class="w-6 h-6" />
+    </div>
 </div>

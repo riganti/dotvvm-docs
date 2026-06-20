@@ -1,4 +1,3 @@
-﻿## Sample 2: Solid Icons
+## Sample 2: Bindable icon and icon type
 
-Displays a collection of HeroIcons in solid style, useful for navigation and UI elements with more prominent visual appearance.
-
+Binds both `Icon` and `Type`, which is useful when the icon name or style is selected dynamically at runtime.

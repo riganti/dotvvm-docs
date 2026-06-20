@@ -1,8 +1,10 @@
-﻿using DotVVM.Framework.ViewModel;
+using DotVVM.Framework.ViewModel;
 using System.Collections.Generic;
 
-public class ViewModel : DotvvmViewModelBase
+namespace DotvvmWeb.Views.Docs.Controls.tailwind.CheckBox.sample2
 {
-    public List<string> SelectedFruits { get; set; } = new() { "apple" };
+    public class ViewModel : DotvvmViewModelBase
+    {
+        public List<string> SelectedFruits { get; set; } = new() { "banana" };
+    }
 }
-

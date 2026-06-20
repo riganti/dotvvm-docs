@@ -1,6 +1,11 @@
 using DotVVM.Framework.ViewModel;
 
-public class ViewModel : DotvvmViewModelBase
+namespace DotvvmWeb.Views.Docs.Controls.tailwind.Range.sample3
 {
-    public double ColorValue { get; set; } = 60;
+    public class ViewModel : DotvvmViewModelBase
+    {
+        public bool IsEnabled { get; set; } = true;
+
+        public double Temperature { get; set; } = 21.5;
+    }
 }

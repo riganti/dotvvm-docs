@@ -1,1 +1,0 @@
-Renders a styled anchor link that navigates to a DotVVM route, with the same visual design as Button. Supports all button types, sizes, and icons.

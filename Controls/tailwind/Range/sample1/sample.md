@@ -1,3 +1,3 @@
-## Sample 1: Basic Range
+## Sample 1: Basic Usage
 
-Shows a slider bound two-way to a viewmodel property. The value updates as the user drags the thumb.
+Bind the slider with `SelectedValue`. Use `ShowValue` to render the numeric label and `LabelPosition` to place it above or below the slider.

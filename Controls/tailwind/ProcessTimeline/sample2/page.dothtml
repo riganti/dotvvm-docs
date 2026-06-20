@@ -1,18 +1,11 @@
-﻿<t:ProcessTimeline CurrentStep="2">
+<t:ProcessTimeline CurrentStep="2">
     <t:ProcessTimelineStep Step="1">
-        <Template>
-            <span><strong>Step 1</strong><br /><small>Completed</small></span>
-        </Template>
+        <span><strong>Import</strong><br /><small>Finished</small></span>
     </t:ProcessTimelineStep>
     <t:ProcessTimelineStep Step="2">
-        <Template>
-            <span><strong>Step 2</strong><br /><small>In Progress</small></span>
-        </Template>
+        <span><strong>Validate</strong><br /><small>In progress</small></span>
     </t:ProcessTimelineStep>
     <t:ProcessTimelineStep Step="3">
-        <Template>
-            <span><strong>Step 3</strong><br /><small>Pending</small></span>
-        </Template>
+        <span><strong>Publish</strong><br /><small>Pending</small></span>
     </t:ProcessTimelineStep>
 </t:ProcessTimeline>
-

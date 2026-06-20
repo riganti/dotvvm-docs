@@ -1,3 +1,3 @@
-## Sample 1: Data Table with Sorting and Actions
+## Sample 1: Sorting and Template Columns
 
-Demonstrates a GridView bound to a collection with text columns, sorting, and a template column for row actions.
+The Tailwind `GridView` uses the same API as the built-in [GridView](~/controls/builtin/GridView). This sample shows sortable text columns, a template column, and an empty-data template.

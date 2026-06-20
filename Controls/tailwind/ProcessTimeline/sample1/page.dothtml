@@ -1,11 +1,11 @@
 <t:ProcessTimeline CurrentStep="{value: CurrentStep}">
-    <t:ProcessTimelineStep Text="Repositories &amp; Areas" Step="1" />
-    <t:ProcessTimelineStep Text="Pipeline &amp; MCP" Step="2" />
-    <t:ProcessTimelineStep Text="Confirmation" Step="3" />
+    <t:ProcessTimelineStep Text="Choose source" Step="1" />
+    <t:ProcessTimelineStep Text="Review details" Step="2" />
+    <t:ProcessTimelineStep Text="Confirm changes" Step="3" />
     <t:ProcessTimelineStep Text="Complete" Step="4" />
 </t:ProcessTimeline>
 
-<div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-    <t:Button Type="Default" Text="← Previous" Click="{command: Prev()}" />
-    <t:Button Type="Primary" Text="Next →" Click="{command: Next()}" />
+<div class="flex gap-2 mt-4">
+    <t:Button Type="Default" Text="Previous" Click="{command: Previous()}" />
+    <t:Button Type="Primary" Text="Next" Click="{command: Next()}" />
 </div>

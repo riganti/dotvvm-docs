@@ -1,1 +1,1 @@
-Renders a styled custom radio button with a hidden native input and optional label text.
+The `RadioButton` control renders a Tailwind-styled radio input. Bind the selected value with `CheckedItem` and specify the option value with `CheckedValue`.

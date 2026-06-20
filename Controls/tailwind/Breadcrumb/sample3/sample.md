@@ -1,4 +1,3 @@
-﻿## Sample 3: Data-bound Breadcrumb (Shorthand)
+﻿## Sample 3: Data-bound Breadcrumb (command links)
 
-Binds the breadcrumb items using `ItemText`, `ItemNavigateUrl`, and `ItemIsActive`.
-
+Uses `ItemText` and `ItemClick` to generate breadcrumb items that invoke a command instead of navigating away. This is useful when the breadcrumb should change viewmodel state inside the current page.

@@ -1,0 +1,13 @@
+<div class="space-y-4">
+    <t:DockLayout Gap="Large" Alignment="Center" class="h-20 bg-gray-100 p-2">
+        <StartContent><div class="bg-gray-700 text-white p-2 rounded">Start</div></StartContent>
+        <Content><div class="bg-info-700 text-white p-2 rounded">Centered items</div></Content>
+        <EndContent><div class="bg-gray-700 text-white p-2 rounded">End</div></EndContent>
+    </t:DockLayout>
+
+    <t:DockLayout Orientation="Vertical" Gap="Small" Alignment="Stretch">
+        <StartContent><div class="bg-gray-700 text-white p-3 rounded">Header</div></StartContent>
+        <Content><div class="bg-info-700 text-white p-3 rounded">Body</div></Content>
+        <EndContent><div class="bg-gray-700 text-white p-3 rounded">Footer</div></EndContent>
+    </t:DockLayout>
+</div>

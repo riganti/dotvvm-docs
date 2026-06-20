@@ -1,1 +1,0 @@
-Provides StackLayout (flex container) and DockLayout (start/center/end zones) for page composition.

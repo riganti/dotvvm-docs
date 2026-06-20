@@ -1,4 +1,3 @@
-﻿## Sample 2: DataSource Team Members
+## Sample 2: DataSource, ItemTemplate, Click, and NavigateUrl
 
-Binds items from a data source using `ItemTitleBinding` and related mapping properties.
-
+In `DataSource` mode, map row properties with `Item*` attributes. This sample shows `ItemText`, `ItemBadgeText`, `ItemBadgeColor`, `ItemIcon`, `ItemClick`, `ItemTemplate`, and `ItemNavigateUrl`.

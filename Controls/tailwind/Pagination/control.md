@@ -1,1 +1,0 @@
-Renders a styled pagination control bound to a DotVVM GridViewDataSet.

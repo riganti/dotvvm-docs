@@ -1,4 +1,3 @@
-## Sample 4: No navigation arrows
+## Sample 4: Hidden navigation UI
 
-Set `HideNavigation="true"` to hide the previous and next arrow buttons.
-
+Hides both the previous/next buttons and the indicator dots using `HideNavigation="true"` and `HideIndicators="true"`.

@@ -1,4 +1,3 @@
 ﻿## Sample 4: Horizontal Card
 
-Shows the horizontal layout with the image on the left and content on the right.
-
+Shows the horizontal layout using `Orientation="Horizontal"`. The card still uses the same `Header*`, `ContentTemplate`, `FooterTemplate`, and image properties.

@@ -1,5 +1,6 @@
-﻿<t:Breadcrumb DataSource="{value: BreadcrumbItems}"
-              ItemText="{value: Text}"
-              ItemNavigateUrl="{value: Url}"
-              ItemIsActive="{value: IsActive}" />
-
+﻿<div class="flex flex-col gap-3">
+    <t:Breadcrumb DataSource="{value: Actions}"
+                  ItemText="{value: Text}"
+                  ItemClick="{command: _parent.Select(Text)}" />
+    <p>Last clicked item: <strong>{{value: LastSelected}}</strong></p>
+</div>

@@ -1,4 +1,15 @@
-<div class="mb-8 max-w-sm mx-auto stack-layout">
-    <t:Range SelectedValue="{value: VolumeValue}" ShowValue="true" ValueSuffix=" %" />
-    <t:Range SelectedValue="{value: LabelBelowValue}" ShowValue="true" LabelBelow="true" ValueSuffix=" %" />
+<div class="space-y-4 max-w-md">
+    <div class="space-y-2">
+        <t:Range SelectedValue="{value: AccentValue}" Type="Default" ShowValue="true" />
+        <t:Range SelectedValue="{value: AccentValue}" Type="Primary" ShowValue="true" />
+        <t:Range SelectedValue="{value: AccentValue}" Type="Success" ShowValue="true" />
+        <t:Range SelectedValue="{value: AccentValue}" Type="Danger" ShowValue="true" />
+        <t:Range SelectedValue="{value: AccentValue}" Type="Dark" ShowValue="true" />
+    </div>
+
+    <div class="space-y-2">
+        <t:Range SelectedValue="{value: AccentValue}" Size="Small" ShowValue="true" />
+        <t:Range SelectedValue="{value: AccentValue}" Size="Large" ShowValue="true" />
+        <t:Range SelectedValue="{value: AccentValue}" Size="ExtraLarge" ShowValue="true" />
+    </div>
 </div>

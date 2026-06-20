@@ -1,0 +1,7 @@
+@masterPage master.dotmaster
+
+<dot:Content ContentPlaceHolderID="Main">
+    <p>Current route parameter: {{value: RouteId}}</p>
+
+    <t:RouteLink Type="Primary" Text="Back to Sample A" RouteName="SampleA" />
+</dot:Content>

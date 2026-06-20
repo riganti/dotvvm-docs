@@ -1,0 +1,6 @@
+<div class="flex gap-2">
+    <t:Button Type="Info" Text="Show reminder" Click="{command: ShowReminder()}" />
+    <t:Button Type="Warning" Text="Show warning" Click="{command: ShowPersistentWarning()}" />
+</div>
+
+<t:Notifications Items="{value: PersistentNotifications}" Alignment="TopLeft" />

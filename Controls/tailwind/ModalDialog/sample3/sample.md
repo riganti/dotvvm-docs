@@ -1,4 +1,3 @@
-﻿## Sample 3: Large Modal
+## Sample 3: Full-screen dialog with footer text
 
-Uses `Size="Large"` for a wider dialog.
-
+Uses `FooterText` for static footer copy and `Size="FullScreen"` for a dialog that needs more space.

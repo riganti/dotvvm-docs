@@ -1,1 +1,1 @@
-Renders a dismissible alert message with configurable type and optional title.
+Renders contextual alert messages with semantic styles, optional headers, and dismiss support. The alert body can use plain text or custom child content.

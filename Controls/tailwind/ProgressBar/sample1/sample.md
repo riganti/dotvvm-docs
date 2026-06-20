@@ -1,4 +1,3 @@
-﻿## Sample 1: Different Values
+## Sample 1: Values and color types
 
-Demonstrates progress bars with various completion percentages (0%, 25%, 50%, 75%, 100%).
-
+Shows several `Value` settings and a few `Type` variants.

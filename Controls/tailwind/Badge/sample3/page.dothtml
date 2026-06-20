@@ -2,6 +2,9 @@
     <div class="flex items-center gap-4">
         <span>Messages <t:Badge Color="Primary" Text="4" /></span>
         <span>Notifications <t:Badge Color="Danger" Text="{value: NotificationCount}" /></span>
+        <t:Badge Color="Info">
+            <strong>Beta</strong> preview
+        </t:Badge>
     </div>
     <div class="flex gap-2">
         <t:Button Text="+" Click="{command: IncrementNotifications()}" Size="Small" />
@@ -9,4 +12,3 @@
         <t:Button Text="Reset" Click="{command: ResetNotifications()}" Size="Small" />
     </div>
 </div>
-

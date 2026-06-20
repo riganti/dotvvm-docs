@@ -1,3 +1,3 @@
 ## Sample 1: Basic Breadcrumb
 
-Shows a simple breadcrumb trail with a current (active) item.
+Shows hard-coded breadcrumb items using `MenuItem` children. The sample uses `NavigateUrl`, `Icon`, and `IsActive` with URLs that stay inside the sample app.

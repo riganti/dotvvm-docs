@@ -1,0 +1,3 @@
+<t:DataPager DataSet="{value: People}" RenderLinkForCurrentPage="true" Enabled="{value: Enabled}" />
+
+<t:CheckBox Text="Enabled" Checked="{value: Enabled}" />

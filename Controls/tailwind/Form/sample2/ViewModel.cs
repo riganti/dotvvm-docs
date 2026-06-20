@@ -1,32 +1,40 @@
 using DotVVM.Framework.ViewModel;
-using System.ComponentModel.DataAnnotations;
+using System;
+using System.Collections.Generic;
 
-public class ViewModel : DotvvmViewModelBase
+namespace DotvvmWeb.Views.Docs.Controls.tailwind.Form.sample2
 {
-    [Required(ErrorMessage = "First name is required")]
-    public string FirstName { get; set; } = "";
-
-    [Required(ErrorMessage = "Last name is required")]
-    public string LastName { get; set; } = "";
-
-    [Required(ErrorMessage = "Email address is required")]
-    [EmailAddress(ErrorMessage = "Please enter a valid email address")]
-    public string Email { get; set; } = "";
-
-    public string Street { get; set; } = "";
-    public string Zip { get; set; } = "";
-    public bool Subscribe { get; set; }
-    public bool AgreeToTerms { get; set; }
-    public bool Saved { get; set; }
-
-    public void Save()
+    public class ViewModel : DotvvmViewModelBase
     {
-        Saved = true;
+        public string FullName { get; set; } = "Thomas Smith";
+
+        public List<Country> Countries { get; set; } =
+        [
+            new() { Code = "cz", Name = "Czech Republic" },
+            new() { Code = "fr", Name = "France" },
+            new() { Code = "uk", Name = "United Kingdom" }
+        ];
+
+        public string? SelectedCountry { get; set; } = "cz";
+
+        public DateTime? Arrival { get; set; } = new DateTime(2026, 10, 5);
+
+        public bool Subscribe { get; set; } = true;
+
+        public string ContactMethod { get; set; } = "email";
+
+        public int ChangeCount { get; set; }
+
+        public void IncrementChanges()
+        {
+            ChangeCount++;
+        }
     }
 
-    public void Reset()
+    public class Country
     {
-        FirstName = LastName = Email = Street = Zip = "";
-        Subscribe = AgreeToTerms = Saved = false;
+        public string Code { get; set; }
+
+        public string Name { get; set; }
     }
 }

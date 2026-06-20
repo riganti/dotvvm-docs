@@ -1,6 +1,16 @@
 using DotVVM.Framework.ViewModel;
 
-public class ViewModel : DotvvmViewModelBase
+namespace DotvvmWeb.Views.Docs.Controls.tailwind.RadioButton.sample1
 {
-    public string RadioValue { get; set; } = "1";
+    public class ViewModel : DotvvmViewModelBase
+    {
+        public string ContactMethod { get; set; } = "email";
+
+        public int ChangeCount { get; set; }
+
+        public void IncrementChanges()
+        {
+            ChangeCount++;
+        }
+    }
 }

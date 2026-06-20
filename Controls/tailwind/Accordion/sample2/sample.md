@@ -1,4 +1,3 @@
-﻿## Sample 2: Pre-expanded Item
+﻿## Sample 2: Data-bound items
 
-Demonstrates setting `IsExpanded="true"` to open an item by default.
-
+Binds the accordion to a collection with `DataSource`, `ItemHeaderText`, `ItemContentTemplate`, and `ItemIsExpanded`. This is the current API for generating accordion items from viewmodel data.

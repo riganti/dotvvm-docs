@@ -1,19 +1,24 @@
-﻿<div class="flex gap-4 flex-wrap items-start">
-    <t:DropDownButton Text="Default" Type="Default">
-        <t:DropDownItem Text="Option 1" />
-        <t:DropDownItem Text="Option 2" />
-    </t:DropDownButton>
-    <t:DropDownButton Text="Primary" Type="Primary">
-        <t:DropDownItem Text="Option 1" />
-        <t:DropDownItem Text="Option 2" />
-    </t:DropDownButton>
-    <t:DropDownButton Text="Success" Type="Success">
-        <t:DropDownItem Text="Option 1" />
-        <t:DropDownItem Text="Option 2" />
-    </t:DropDownButton>
-    <t:DropDownButton Text="Danger" Type="Danger">
-        <t:DropDownItem Text="Option 1" />
-        <t:DropDownItem Text="Option 2" />
-    </t:DropDownButton>
-</div>
+<t:DropDownButton Type="Secondary"
+                  DataSource="{value: ActionItems}"
+                  ItemText="{value: Text}"
+                  ItemIcon="Bolt"
+                  ItemClick="{command: _parent.RecordAction(Text)}">
+    <Content>
+        <span>Quick actions</span>
+    </Content>
+</t:DropDownButton>
 
+<t:DropDownButton Text="Jump to section"
+                  Type="Default"
+                  Alignment="End"
+                  DataSource="{value: SectionItems}"
+                  ItemText="{value: Text}"
+                  ItemNavigateUrl="{value: Url}" />
+
+<p>Last action: {{value: LastAction}}</p>
+
+<h3 id="drafts">Drafts</h3>
+<p>The second dropdown uses `ItemNavigateUrl` to jump to anchors inside the sample.</p>
+
+<h3 id="reports">Reports</h3>
+<p>Use `Alignment="End"` when the menu is near the right edge.</p>

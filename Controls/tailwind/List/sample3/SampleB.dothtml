@@ -1,0 +1,12 @@
+@masterPage master.dotmaster
+
+<dot:Content ContentPlaceHolderID="Main">
+    <t:ListGroup>
+        <t:ListItem Icon="ArrowLeft" RouteName="SampleA">
+            <span class="list-row-title">Back to overview</span>
+            <span class="list-row-text">Route-based navigation works on the whole list row.</span>
+        </t:ListItem>
+    </t:ListGroup>
+
+    <p>Current page: Sample B</p>
+</dot:Content>

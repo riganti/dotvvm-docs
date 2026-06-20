@@ -1,4 +1,3 @@
-﻿## Sample 3: Clickable Row
+## Sample 3: Custom Item Content and RouteName
 
-Uses `LinkMode="Row"` to make the entire row clickable.
-
+Use the paired `<t:ListItem>` form when you need custom row markup. The sample also uses `RouteName` so the list navigates between pages inside the generated sample app.

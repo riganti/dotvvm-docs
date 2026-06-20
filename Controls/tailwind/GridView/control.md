@@ -1,1 +1,1 @@
-Renders a styled data table with sortable columns and template column support.
+Inherits the built-in [GridView](~/controls/builtin/GridView) and applies the Tailwind table styling. All columns, sorting, paging, templates, and empty-state features work the same as on the built-in control.

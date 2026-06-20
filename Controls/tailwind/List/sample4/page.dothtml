@@ -1,6 +1,0 @@
-﻿<t:ListControl>
-    <t:ListItem Icon="User" Title="Alice Johnson" Text="Engineering Lead" BadgeText="Active" BadgeColor="Success" Href="/profile/alice" />
-    <t:ListItem Icon="Envelope" Title="New message" Text="2 minutes ago" BadgeText="New" BadgeColor="Info" Href="/notifications/123" />
-    <t:ListItem Icon="Bell" Title="Deployment failed" Text="1 hour ago" BadgeText="Error" BadgeColor="Danger" Href="/builds/456" />
-</t:ListControl>
-

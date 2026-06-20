@@ -1,2 +1,1 @@
-﻿Renders collapsible sections with optional numbering, multiple open panels, and custom header templates.
-
+﻿Renders collapsible sections using hard-coded `AccordionItem` children or a bound `DataSource`. Use `HeaderType`, `AllowMultiple`, and `IsExpanded` to control the presentation and expanded state.

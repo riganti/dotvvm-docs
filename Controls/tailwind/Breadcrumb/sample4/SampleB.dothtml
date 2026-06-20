@@ -1,5 +1,6 @@
-@masterPage master.dotmaster
+<t:Breadcrumb>
+    <t:MenuItem Text="Overview" RouteName="SampleA" />
+    <t:MenuItem Text="Details" RouteName="SampleB" IsActive="true" />
+</t:Breadcrumb>
 
-<dot:Content ContentPlaceHolderID="Main">
-  Content from page Sample B.
-</dot:Content>
+<p>Details page in the sample app. The breadcrumb stays inside the generated sample application.</p>

@@ -1,4 +1,3 @@
-## Sample 2: Aspect ratio
+## Sample 2: Data-bound slides
 
-Set `UseAspectRatio="true"` to keep a 16:9 height based on the carousel width.
-
+Binds the carousel to a collection using `DataSource`, `ItemImageUrl`, and `ItemText`. This is the current API for generating slides from the viewmodel.

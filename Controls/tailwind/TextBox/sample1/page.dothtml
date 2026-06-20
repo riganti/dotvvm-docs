@@ -1,4 +1,16 @@
-<div class="space-y-3">
-    <t:TextBox Text="{value: TextValueBasic}" Placeholder="Enter text..." />
-    <p>You typed: {{value: _root.TextValueBasic}}</p>
+<div class="space-y-3 max-w-md">
+    <t:TextBox Text="{value: SearchText}"
+               placeholder="Search the documentation"
+               Changed="{command: IncrementChanges()}" />
+
+    <t:TextBox Text="{value: Password}"
+               Type="Password"
+               placeholder="Password"
+               Enabled="{value: PasswordEnabled}" />
+
+    <t:CheckBox Text="Enable password field" Checked="{value: PasswordEnabled}" />
 </div>
+
+<p>Search text: <strong>{{value: SearchText}}</strong></p>
+<p>Password length: <strong>{{value: Password.Length}}</strong></p>
+<p><code>Changed</code> command count: <strong>{{value: ChangeCount}}</strong></p>

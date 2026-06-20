@@ -1,3 +1,3 @@
-## Sample 1: Basic Modal with Title
+## Sample 1: Header text with footer actions
 
-Shows a modal dialog controlled by a boolean `IsOpen` binding.
+Uses `HeaderText`, `ContentTemplate`, `FooterTemplate`, and `Size` for a confirmation dialog with interactive buttons.

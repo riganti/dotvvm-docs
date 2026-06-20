@@ -1,8 +1,0 @@
-﻿<div class="space-y-3">
-    <t:ComboBoxFormField LabelText="Country"
-        DataSource="{value: Options}"
-        SelectedValue="{value: SelectedOptionForm}"
-        ItemTextBinding="{value: Text}"
-        ItemValueBinding="{value: Value}" />
-    <p>Selected: {{value: SelectedOptionForm}}</p>
-</div>

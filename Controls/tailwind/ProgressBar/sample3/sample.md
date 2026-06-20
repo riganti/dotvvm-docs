@@ -1,4 +1,3 @@
-﻿## Sample 3: Dynamic Value
+## Sample 3: Percentage label
 
-Shows a progress bar bound to a property that can be updated with buttons (Increase, Decrease, Reset).
-
+Shows `ShowLabel` as a static value and as a bindable property.

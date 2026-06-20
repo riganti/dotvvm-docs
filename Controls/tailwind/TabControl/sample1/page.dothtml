@@ -1,22 +1,17 @@
-<t:TabControl SelectedTabIndex="{value: SelectedTabIndex}">
-    <t:TabItem Title="Profile">
+<t:TabControl>
+    <t:TabItem HeaderText="Profile">
         <ContentTemplate>
-            <p>Profile tab content here.</p>
+            <p>Profile information is displayed in this panel.</p>
         </ContentTemplate>
     </t:TabItem>
-    <t:TabItem Title="Settings">
+    <t:TabItem HeaderText="Settings">
         <ContentTemplate>
-            <p>Settings tab content here.</p>
+            <p>Settings are rendered in a separate panel.</p>
         </ContentTemplate>
     </t:TabItem>
-    <t:TabItem Title="Messages">
+    <t:TabItem HeaderText="Activity">
         <ContentTemplate>
-            <p>Messages tab content here.</p>
+            <p>Use more tabs when you need to split related content.</p>
         </ContentTemplate>
     </t:TabItem>
 </t:TabControl>
-
-<p>Selected tab index: {{value: SelectedTabIndex}}</p>
-<t:Button Type="Primary" Text="Select Tab 0" Click="{command: SelectTab(0)}" />
-<t:Button Type="Secondary" Text="Select Tab 1" Click="{command: SelectTab(1)}" />
-<t:Button Type="Success" Text="Select Tab 2" Click="{command: SelectTab(2)}" />

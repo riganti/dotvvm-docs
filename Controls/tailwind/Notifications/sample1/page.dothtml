@@ -1,8 +1,8 @@
-<div class="stack-layout stack-layout-horizontal">
-    <t:Button Type="Success" Text="Show Success" Click="{command: ShowSuccess()}" />
-    <t:Button Type="Danger" Text="Show Error" Click="{command: ShowError()}" />
-    <t:Button Type="Info" Text="Show Info" Click="{command: ShowInfo()}" />
-    <t:Button Type="Warning" Text="Show Warning" Click="{command: ShowWarning()}" />
+<div class="flex flex-wrap gap-2">
+    <t:Button Type="Success" Text="Show success" Click="{command: ShowSuccess()}" />
+    <t:Button Type="Danger" Text="Show error" Click="{command: ShowError()}" />
+    <t:Button Type="Info" Text="Show info" Click="{command: ShowInfo()}" />
+    <t:Button Type="Warning" Text="Show warning" Click="{command: ShowWarning()}" />
 </div>
 
 <t:Notifications Items="{value: Notifications}" CloseTimeout="4000" Alignment="BottomRight" />

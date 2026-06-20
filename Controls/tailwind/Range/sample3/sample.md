@@ -1,3 +1,3 @@
-## Sample 3: Colors
+## Sample 3: Numeric Range and Enabled State
 
-Shows the available `Color` values for the slider accent color.
+Use `MinValue`, `MaxValue`, `Step`, and `FormatString` to control the numeric scale. The `Enabled` property can be bound dynamically.

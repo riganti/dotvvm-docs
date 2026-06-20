@@ -1,8 +1,0 @@
-<t:GridView DataSource="{value: People}">
-    <Columns>
-        <dot:GridViewTextColumn HeaderText="ID" ValueBinding="{value: Id}" />
-        <dot:GridViewTextColumn HeaderText="Name" ValueBinding="{value: Name}" />
-    </Columns>
-</t:GridView>
-
-<t:DataPager DataSet="{value: People}" />

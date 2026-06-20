@@ -1,5 +1,0 @@
-<div class="max-w-xs mb-4">
-    <t:DatePickerFormField LabelText="Event start" SelectedDate="{value: SelectedDateTime}" Type="DateTime" Placeholder="Pick date and time..." />
-</div>
-<p class="mb-4">Selected: <strong>{{value: SelectedDateTime ?? "(none)"}}</strong></p>
-

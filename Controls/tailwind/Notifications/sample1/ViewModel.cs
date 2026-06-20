@@ -1,14 +1,32 @@
-using DotVVM.Framework.ViewModel;
+using System.Collections.Generic;
 using DotVVM.Controls.Tailwind;
 using DotVVM.Controls.Tailwind.Controls;
-using System.Collections.Generic;
+using DotVVM.Framework.ViewModel;
 
-public class ViewModel : DotvvmViewModelBase
+namespace DotvvmWeb.Views.Docs.Controls.tailwind.Notifications.sample1
 {
-    public List<NotificationData> Notifications { get; set; } = new();
+    public class ViewModel : DotvvmViewModelBase
+    {
+        public List<NotificationData> Notifications { get; set; } = new();
 
-    public void ShowSuccess() => Notifications.Add(new() { Type = NotificationType.Success, Text = "Operation completed successfully!" });
-    public void ShowError() => Notifications.Add(new() { Type = NotificationType.Danger, Text = "An error occurred. Please try again." });
-    public void ShowInfo() => Notifications.Add(new() { Type = NotificationType.Info, Text = "This is an informational message." });
-    public void ShowWarning() => Notifications.Add(new() { Type = NotificationType.Warning, Text = "This is a warning notification." });
+        public void ShowSuccess()
+        {
+            Notifications.Add(new NotificationData { Type = NotificationType.Success, Text = "The record was saved." });
+        }
+
+        public void ShowError()
+        {
+            Notifications.Add(new NotificationData { Type = NotificationType.Danger, Text = "The record could not be saved." });
+        }
+
+        public void ShowInfo()
+        {
+            Notifications.Add(new NotificationData { Type = NotificationType.Info, Text = "Background synchronization has started." });
+        }
+
+        public void ShowWarning()
+        {
+            Notifications.Add(new NotificationData { Type = NotificationType.Warning, Text = "Your session will expire soon." });
+        }
+    }
 }

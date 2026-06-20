@@ -1,1 +1,1 @@
-Renders a styled form container with an optional header, content area, and footer for actions.
+The Tailwind form controls include `Form`, `FormRow`, `FormField`, and the specialized `TextBoxFormField`, `ComboBoxFormField`, `CheckBoxFormField`, and `DateTimePickerFormField`. Use them to build labeled forms with consistent spacing and validation messages.

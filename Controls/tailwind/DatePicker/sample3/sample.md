@@ -1,4 +1,3 @@
-## Sample 3: Date range
+## Sample 3: DateTimePickerFormField
 
-Combine two `DatePickerFormField` controls to capture a date range.
-
+`DateTimePickerFormField` wraps the picker in the Tailwind form shell. It adds `LabelText` or `LabelTemplate`, `Size`, and `ValidatorProperty`.

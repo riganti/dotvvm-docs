@@ -1,4 +1,3 @@
-﻿## Sample 3: Minimal TopMenu
+## Sample 3: Minimal Start and End Templates
 
-Omit `MiddleTemplate` for a simple brand + actions header.
-
+`TopMenu` does not require a middle area. Omitting `MiddleTemplate` produces a simple brand-and-actions bar.

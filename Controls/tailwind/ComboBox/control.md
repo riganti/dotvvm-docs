@@ -1,1 +1,1 @@
-Renders a styled dropdown select box bound to a data source with configurable text and value bindings.
+The Tailwind `ComboBox` uses the same API as the built-in [ComboBox](~/controls/builtin/ComboBox) and only adds Tailwind styling. Use `ComboBoxFormField` for labeled form layouts.

@@ -1,0 +1,19 @@
+<div class="space-y-3">
+    <t:DockLayout Justify="Start" class="bg-gray-100 p-2">
+        <StartContent><div class="bg-gray-700 text-white p-2 rounded">Start</div></StartContent>
+        <Content><div class="bg-info-700 text-white p-2 rounded">Content</div></Content>
+        <EndContent><div class="bg-gray-700 text-white p-2 rounded">End</div></EndContent>
+    </t:DockLayout>
+
+    <t:DockLayout Justify="Center" class="bg-gray-100 p-2">
+        <StartContent><div class="bg-gray-700 text-white p-2 rounded">Start</div></StartContent>
+        <Content><div class="bg-info-700 text-white p-2 rounded">Content</div></Content>
+        <EndContent><div class="bg-gray-700 text-white p-2 rounded">End</div></EndContent>
+    </t:DockLayout>
+
+    <t:DockLayout Justify="SpaceBetween" class="bg-gray-100 p-2">
+        <StartContent><div class="bg-gray-700 text-white p-2 rounded">Start</div></StartContent>
+        <Content><div class="bg-info-700 text-white p-2 rounded">Content</div></Content>
+        <EndContent><div class="bg-gray-700 text-white p-2 rounded">End</div></EndContent>
+    </t:DockLayout>
+</div>

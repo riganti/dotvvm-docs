@@ -1,8 +1,0 @@
-﻿<div class="space-y-4">
-    <div class="space-y-2">
-        <t:Spinner Visible="{value: IsLoading}" />
-        <p Visible="{value: IsLoading}" class="text-sm text-gray-500">Loading data...</p>
-    </div>
-    <t:Button Type="Primary" Text="Toggle Loading" Click="{command: ToggleLoading()}" />
-</div>
-

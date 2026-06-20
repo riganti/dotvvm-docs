@@ -1,4 +1,3 @@
-﻿## Sample 2: Different Colors
+## Sample 2: Bindable value and type
 
-Shows progress bars with different color variants (Success, Warning, Danger, Info) for semantic meaning.
-
+Updates `Value` and `Type` through viewmodel bindings.

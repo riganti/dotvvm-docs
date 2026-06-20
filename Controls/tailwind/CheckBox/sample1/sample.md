@@ -1,3 +1,3 @@
-# Basic CheckBox
+## Sample 1: Boolean Binding
 
-This sample demonstrates a bound `CheckBox` and disabled states with both unchecked and checked values.
+Use the `Checked` property for a single boolean value. The control also supports `Text`, custom inner content, `Enabled`, and the `Changed` command.

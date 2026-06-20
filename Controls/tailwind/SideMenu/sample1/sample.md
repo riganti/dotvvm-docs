@@ -1,3 +1,3 @@
-## Sample 1: SideMenu with Sections and Dropdowns
+## Sample 1: Sections, Items, and Dropdown Items
 
-Shows a sidebar with multiple sections, leaf menu items with icons, and a collapsible dropdown group.
+This sample shows the main `SideMenu` building blocks: section titles, flat menu items, separators, and nested `MenuDropDownItem` navigation. All links stay inside the sample by using page anchors.

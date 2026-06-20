@@ -1,3 +1,3 @@
-## Sample 1: Outline Icons
+## Sample 1: Static outline and solid icons
 
-Displays a collection of HeroIcons in outline style, ideal for smaller interfaces and icon-only buttons.
+Shows several static icon names and both `Outline` and `Solid` icon styles.

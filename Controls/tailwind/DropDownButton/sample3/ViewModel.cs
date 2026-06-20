@@ -1,13 +1,21 @@
-﻿using DotVVM.Framework.ViewModel;
-using System;
+using System.Collections.Generic;
+using DotVVM.Framework.ViewModel;
 
-public class ViewModel : DotvvmViewModelBase
+namespace DotvvmWeb.Views.Docs.Controls.tailwind.DropDownButton.sample3
 {
-    public string LastAction { get; set; } = "(none)";
-    
-    public void ActionClicked()
+    public class ViewModel : DotvvmViewModelBase
     {
-        LastAction = "Action clicked at " + DateTime.Now.ToString("HH:mm:ss");
+        public List<RouteOption> RouteOptions { get; set; } = new List<RouteOption>
+        {
+            new RouteOption { Title = "Orders", Description = "Open the details page." },
+            new RouteOption { Title = "Invoices", Description = "This item uses the same route target." }
+        };
+    }
+
+    public class RouteOption
+    {
+        public string Title { get; set; }
+
+        public string Description { get; set; }
     }
 }
-

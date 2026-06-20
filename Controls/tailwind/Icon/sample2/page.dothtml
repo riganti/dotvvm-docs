@@ -1,9 +1,11 @@
-﻿<div class="flex items-center gap-4">
-    <t:Icon Icon="Home" Type="Solid" Size="Default" />
-    <t:Icon Icon="User" Type="Solid" Size="Default" />
-    <t:Icon Icon="Bell" Type="Solid" Size="Default" />
-    <t:Icon Icon="Cog6Tooth" Type="Solid" Size="Default" />
-    <t:Icon Icon="EnvelopeOpen" Type="Solid" Size="Default" />
-    <t:Icon Icon="Trash" Type="Solid" Size="Default" />
-</div>
+<div class="max-w-md space-y-4">
+    <div class="flex gap-3">
+        <dot:ComboBox DataSource="{value: Icons}" SelectedValue="{value: SelectedIcon}" />
+        <dot:ComboBox DataSource="{value: IconTypes}" SelectedValue="{value: SelectedIconType}" />
+    </div>
 
+    <div class="flex items-center gap-3 text-primary-600">
+        <t:Icon Icon="{value: SelectedIcon}" Type="{value: SelectedIconType}" class="w-8 h-8" />
+        <span>{{value: SelectedIcon}} ({{value: SelectedIconType}})</span>
+    </div>
+</div>

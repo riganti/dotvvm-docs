@@ -1,1 +1,0 @@
-Displays an animated loading spinner with an accessible sr-only label.

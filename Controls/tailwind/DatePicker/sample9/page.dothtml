@@ -1,8 +1,0 @@
-<div class="form-field form-field-auto max-w-xs mb-4">
-    <t:DatePickerFormField LabelText="Static title" Type="Date" SelectedDate="{value: SelectedDate}"
-        NavTitleDays="yyyy MMMM" NavTitleMonths="Select month of yyyy" />
-</div>
-<div class="form-field form-field-auto max-w-xs mb-4">
-    <t:DatePickerFormField LabelText="Dynamic title" Type="Date" SelectedDate="{value: SelectedDateDynamic}" NavTitleDaysCallback="true" />
-</div>
-

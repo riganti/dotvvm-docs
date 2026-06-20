@@ -1,9 +1,9 @@
-﻿<div class="space-y-3">
-    <p>Selected: {{value: string.Join(", ", SelectedFruits)}}</p>
-    <div class="flex flex-col gap-2">
-        <t:CheckBox Text="Apple" CheckedItems="{value: SelectedFruits}" CheckedValue="apple" />
-        <t:CheckBox Text="Banana" CheckedItems="{value: SelectedFruits}" CheckedValue="banana" />
-        <t:CheckBox Text="Cherry" CheckedItems="{value: SelectedFruits}" CheckedValue="cherry" />
-    </div>
+<div class="space-y-2">
+    <t:CheckBox Text="Apple" CheckedItems="{value: SelectedFruits}" CheckedValue="apple" />
+    <t:CheckBox Text="Banana" CheckedItems="{value: SelectedFruits}" CheckedValue="banana" />
+    <t:CheckBox Text="Cherry" CheckedItems="{value: SelectedFruits}" CheckedValue="cherry" />
 </div>
 
+<p>Selected fruits:
+    <strong>{{value: SelectedFruits.Count == 0 ? "(none)" : string.Join(", ", SelectedFruits)}}</strong>
+</p>

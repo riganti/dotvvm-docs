@@ -1,4 +1,0 @@
-<div class="mb-8 max-w-sm mx-auto stack-layout">
-    <t:RangeInterval SelectedMinValue="{value: BasicMin}" SelectedMaxValue="{value: BasicMax}" ValueSuffix=" %" />
-    <p>Min: <strong>{{value: BasicMin}}</strong> &nbsp; Max: <strong>{{value: BasicMax}}</strong></p>
-</div>

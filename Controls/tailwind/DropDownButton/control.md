@@ -1,1 +1,1 @@
-Renders a button that reveals a dropdown menu of action items or navigation links on click.
+Renders a Tailwind-styled button that opens a dropdown menu. Use hardcoded `DropDownItem` children or bind `DataSource` with `Item*` properties to generate the menu from data.

@@ -1,14 +1,24 @@
-﻿using DotVVM.Framework.ViewModel;
+using DotVVM.Framework.ViewModel;
 
-public class ViewModel : DotvvmViewModelBase
+namespace DotvvmWeb.Views.Docs.Controls.tailwind.ModalDialog.sample2
 {
-    public bool IsCustomModalOpen { get; set; }
-
-    public string UserName { get; set; } = "John Doe";
-
-    public void ToggleCustomModal()
+    public class ViewModel : DotvvmViewModelBase
     {
-        IsCustomModalOpen = !IsCustomModalOpen;
+        public bool IsSettingsOpen { get; set; }
+
+        public string UserName { get; set; } = "Jane Doe";
+
+        public string SaveStatus { get; set; } = "No changes saved.";
+
+        public void ToggleSettings()
+        {
+            IsSettingsOpen = !IsSettingsOpen;
+        }
+
+        public void SaveSettings()
+        {
+            IsSettingsOpen = false;
+            SaveStatus = "Settings saved.";
+        }
     }
 }
-

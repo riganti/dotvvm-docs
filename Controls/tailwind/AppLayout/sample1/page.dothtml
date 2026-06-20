@@ -1,0 +1,28 @@
+<t:AppLayout>
+    <TopMenuTemplate>
+        <t:TopMenu HamburgerPosition="End">
+            <StartTemplate>
+                <a href="?view=home" class="text-xl font-bold text-blue-600 no-underline">Tailwind Docs</a>
+            </StartTemplate>
+            <MiddleTemplate>
+                <t:MenuItem Text="Overview" NavigateUrl="?view=overview" IsActive="true" />
+                <t:MenuItem Text="Pricing" NavigateUrl="?view=pricing" />
+                <t:MenuItem Text="Contact" NavigateUrl="?view=contact" />
+            </MiddleTemplate>
+            <MobileTemplate>
+                <t:MenuItem Text="Overview" NavigateUrl="?view=overview" IsActive="true" />
+                <t:MenuItem Text="Pricing" NavigateUrl="?view=pricing" />
+                <t:MenuItem Text="Contact" NavigateUrl="?view=contact" />
+            </MobileTemplate>
+            <EndTemplate>
+                <t:Button Type="Primary" Text="Sign in" />
+            </EndTemplate>
+        </t:TopMenu>
+    </TopMenuTemplate>
+    <Content>
+        <div class="p-4">
+            <h2>Top menu only</h2>
+            <p>The main content stays below the navigation bar.</p>
+        </div>
+    </Content>
+</t:AppLayout>

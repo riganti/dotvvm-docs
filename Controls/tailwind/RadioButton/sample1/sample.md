@@ -1,3 +1,3 @@
-# Radio Button Group
+## Sample 1: Radio Group
 
-Radio buttons that share `CheckedItem` form one selection group. A disabled option is included for state demonstration.
+Group radio buttons by binding them to the same `CheckedItem`. This sample also shows `GroupName`, custom content, `Enabled`, and the `Changed` command.

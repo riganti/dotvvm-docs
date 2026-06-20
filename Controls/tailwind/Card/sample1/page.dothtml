@@ -4,7 +4,7 @@
             <p>This is the card content. It can contain any HTML or controls.</p>
         </ContentTemplate>
         <FooterTemplate>
-            <t:Button Type="Primary" Text="Action" />
+            <a class="button button-primary" href="?card=basic">Action</a>
         </FooterTemplate>
     </t:Card>
 </div>

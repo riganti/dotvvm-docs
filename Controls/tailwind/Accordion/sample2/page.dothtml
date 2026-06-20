@@ -1,14 +1,7 @@
-﻿<div class="max-w-xl">
-    <t:Accordion>
-        <t:AccordionItem HeaderText="I am open by default" IsExpanded="true">
-            <ContentTemplate>
-                <p>This item starts expanded because IsExpanded="true" is set.</p>
-            </ContentTemplate>
-        </t:AccordionItem>
-        <t:AccordionItem HeaderText="I am closed by default">
-            <ContentTemplate>
-                <p>This item starts collapsed.</p>
-            </ContentTemplate>
-        </t:AccordionItem>
-    </t:Accordion>
-</div>
+﻿<t:Accordion DataSource="{value: FaqItems}" 
+             ItemHeaderText="{value: Question}" 
+             ItemIsExpanded="{value: IsInitiallyExpanded}">
+    <ItemContentTemplate>
+        <p>{{value: Answer}}</p>
+    </ItemContentTemplate>
+</t:Accordion>

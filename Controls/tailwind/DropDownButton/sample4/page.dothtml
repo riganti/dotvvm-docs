@@ -1,8 +1,0 @@
-﻿<div class="flex gap-2">
-    <t:DropDownButton Text="Links" Type="Default">
-        <t:DropDownItem Text="Products" NavigateUrl="/products" />
-        <t:DropDownItem Text="Docs" NavigateUrl="/docs" />
-        <t:DropDownItem Text="Samples" NavigateUrl="/samples" />
-    </t:DropDownButton>
-</div>
-

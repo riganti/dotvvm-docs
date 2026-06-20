@@ -1,3 +1,3 @@
-## Sample 1: Interactive Steps
+## Sample 1: Bindable current step
 
-Shows a 4-step timeline with Previous/Next buttons.
+Shows `CurrentStep` bound to the viewmodel and step labels provided through the `Text` property.

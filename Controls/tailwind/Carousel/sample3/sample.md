@@ -1,4 +1,3 @@
-## Sample 3: No indicators
+## Sample 3: Custom aspect ratio
 
-Set `HideIndicators="true"` to remove the dot indicators.
-
+Sets `UseAspectRatio` to a CSS `aspect-ratio` value. The current API expects a string such as `4 / 3` or `16 / 9`, not a boolean flag.

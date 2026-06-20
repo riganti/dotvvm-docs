@@ -1,3 +1,3 @@
-## Sample 2: MenuItem with Custom Template Content
+## Sample 2: DataSource-Driven Dropdown Items
 
-Shows how to place arbitrary HTML content directly inside `t:MenuItem` as a label template in a TopMenu navigation bar.
+`MenuDropDownItem` can render data-driven items inside the `MiddleTemplate`. This sample shows both `ItemClick` and `ItemNavigateUrl`.

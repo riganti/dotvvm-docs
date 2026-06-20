@@ -1,3 +1,3 @@
-# Basic Form
+## Sample 1: Basic Form Layout
 
-This sample shows a `Form` with `HeaderText`, a `ContentTemplate` containing one `TextBoxFormField`, and a footer action button.
+Use `Form` with `HeaderText`, `ContentTemplate`, and `FooterTemplate`. `FormRow` and `TextBoxFormField` help build simple two-column layouts.

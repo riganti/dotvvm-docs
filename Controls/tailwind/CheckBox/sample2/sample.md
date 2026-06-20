@@ -1,4 +1,3 @@
-﻿# CheckBox with CheckedItems
+## Sample 2: CheckedItems Collection
 
-Bind multiple checkboxes to one collection using `CheckedItems` and `CheckedValue`.
-
+Use `CheckedItems` together with `CheckedValue` when multiple checkboxes should add and remove values in a collection.

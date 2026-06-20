@@ -1,8 +1,22 @@
-﻿<t:ListControl DataSource="{value: TeamMembers}"
-               ItemTitleBinding="{value: Title}"
-               ItemTextBinding="{value: Text}"
-               ItemHrefBinding="{value: Href}"
-               ItemLinkModeBinding="{value: LinkMode}"
-               ItemBadgeText="{value: BadgeText}"
-               ItemBadgeColor="{value: BadgeColor}" />
+<t:ListGroup DataSource="{value: Tasks}"
+             ItemText="{value: Title}"
+             ItemBadgeText="{value: StatusText}"
+             ItemBadgeColor="{value: StatusColor}"
+             ItemIcon="CheckCircle"
+             ItemClick="{command: _parent.SelectTask(Title)}" />
 
+<p>Selected task: {{value: SelectedTask}}</p>
+
+<t:ListGroup DataSource="{value: Sections}"
+             ItemNavigateUrl="{value: Url}">
+    <ItemTemplate>
+        <span class="list-row-title">{{value: Title}}</span>
+        <span class="list-row-text">{{value: Description}}</span>
+    </ItemTemplate>
+</t:ListGroup>
+
+<h3 id="backlog">Backlog</h3>
+<p>This section is linked from the templated list.</p>
+
+<h3 id="release">Release</h3>
+<p>`ItemTemplate` is useful when one text field is not enough.</p>

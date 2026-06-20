@@ -1,3 +1,3 @@
-## Sample 1: Tabs with Bound Selected Index
+## Sample 1: HeaderText and ContentTemplate
 
-Demonstrates a three-tab control with content panels and programmatic tab selection via buttons.
+Each `TabItem` needs content inside `ContentTemplate`. `HeaderText` is the simplest way to define the tab caption.

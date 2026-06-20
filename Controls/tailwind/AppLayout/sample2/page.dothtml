@@ -1,0 +1,21 @@
+<t:AppLayout>
+    <SideMenuTemplate>
+        <t:SideMenu>
+            <t:SideMenuSection Title="Workspace">
+                <t:MenuItem Text="Dashboard" NavigateUrl="?section=dashboard" Icon="Home" IsActive="true" />
+                <t:MenuItem Text="Messages" NavigateUrl="?section=messages" Icon="Envelope" />
+                <t:MenuItem Text="Tasks" NavigateUrl="?section=tasks" Icon="CheckCircle" />
+            </t:SideMenuSection>
+            <t:SideMenuSection Title="Settings">
+                <t:MenuItem Text="Profile" NavigateUrl="?section=profile" Icon="UserCircle" />
+                <t:MenuItem Text="Billing" NavigateUrl="?section=billing" Icon="CreditCard" />
+            </t:SideMenuSection>
+        </t:SideMenu>
+    </SideMenuTemplate>
+    <Content>
+        <div class="p-4">
+            <h2>Side menu only</h2>
+            <p>On small screens, the sidebar opens from the automatic mobile top bar.</p>
+        </div>
+    </Content>
+</t:AppLayout>

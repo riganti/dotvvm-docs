@@ -1,4 +1,3 @@
-﻿# Bindable HeaderText
+## Sample 3: Validation, LabelTemplate, and Dynamic Enabled State
 
-This sample binds `HeaderText` to a viewmodel property so the form title can be changed dynamically by editing a field inside the form.
-
+Use `ValidatorProperty` when the validation message should follow a specific binding. This sample also shows `LabelTemplate`, `Type="Password"`, and a dynamically enabled combo box.

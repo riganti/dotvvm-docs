@@ -1,3 +1,3 @@
-## Sample 2: Show Value
+## Sample 2: Types and Sizes
 
-Uses `ShowValue` to display the current slider value and `LabelBelow` to place the value label under the slider.
+Use the `Type` property to change the accent color and `Size` to scale the slider to match the rest of the form controls.

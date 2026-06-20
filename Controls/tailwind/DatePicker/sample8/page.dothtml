@@ -1,6 +1,0 @@
-<div class="max-w-sm mb-4 flex gap-4">
-    <t:DatePickerFormField LabelText="English (default)" SelectedDate="{value: LocaleDate}" Type="Date" Placeholder="Pick a date..." />
-    <t:DatePickerFormField LabelText="Czech (cs)" SelectedDate="{value: LocaleDate}" Type="Date" Locale="cs" Placeholder="Vyberte datum..." />
-</div>
-<p class="mb-4">ISO value (shared): <strong>{{value: LocaleDate ?? "(none)"}}</strong></p>
-

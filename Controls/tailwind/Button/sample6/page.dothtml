@@ -1,8 +1,7 @@
 ﻿
-<div class="flex gap-2 flex-wrap">
-    <t:Button Type="Primary" Text="Enabled" />
-    <t:Button Type="Primary" Text="Disabled" Enabled="false" />
-    <t:Button Type="Danger" Text="Also Disabled" Enabled="false" />
-    <t:Button Type="Success" Text="Enabled" />
+<div class="flex gap-2 flex-wrap items-center">
+    <t:Button Type="Primary" Text="Submit" IsSubmitButton="true" />
+    <t:Button Type="Default" Text="Regular button" />
+    <t:Button Type="Primary" Text="Disabled submit" IsSubmitButton="true" Enabled="false" />
+    <t:Button Type="Danger" Text="Disabled action" Enabled="false" />
 </div>
-

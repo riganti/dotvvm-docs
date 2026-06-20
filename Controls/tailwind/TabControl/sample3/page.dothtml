@@ -1,0 +1,23 @@
+<p>Selected tab index: {{value: SelectedTabIndex}}</p>
+
+<t:Button Type="Primary" Text="Select tab 0" Click="{command: SelectTab(0)}" />
+<t:Button Type="Secondary" Text="Select tab 1" Click="{command: SelectTab(1)}" />
+<t:Button Type="Success" Text="Select tab 2" Click="{command: SelectTab(2)}" />
+
+<t:TabControl SelectedTabIndex="{value: SelectedTabIndex}">
+    <t:TabItem HeaderText="Overview">
+        <ContentTemplate>
+            <p>Overview tab content.</p>
+        </ContentTemplate>
+    </t:TabItem>
+    <t:TabItem HeaderText="Details">
+        <ContentTemplate>
+            <p>Details tab content.</p>
+        </ContentTemplate>
+    </t:TabItem>
+    <t:TabItem HeaderText="History">
+        <ContentTemplate>
+            <p>History tab content.</p>
+        </ContentTemplate>
+    </t:TabItem>
+</t:TabControl>

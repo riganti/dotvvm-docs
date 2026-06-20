@@ -1,21 +1,21 @@
-﻿<t:Button Type="Default" Text="Open Custom Modal" Click="{command: ToggleCustomModal()}" />
+<t:Button Type="Default" Text="Open settings" Click="{command: ToggleSettings()}" />
+<p class="mt-3 text-sm">{{value: SaveStatus}}</p>
 
-<t:ModalDialog IsOpen="{value: IsCustomModalOpen}">
+<t:ModalDialog IsOpen="{value: IsSettingsOpen}">
     <HeaderTemplate>
         <div class="flex items-center gap-2">
-            <span class="text-xl">⚙️</span>
-            <h1>Settings</h1>
+            <t:Icon Icon="Cog6Tooth" Type="Outline" class="w-6 h-6 text-primary-600" />
+            <h2>Workspace settings</h2>
         </div>
     </HeaderTemplate>
     <ContentTemplate>
-        <p class="mb-3">Customize your preferences below.</p>
-        <p>Current user: <strong>{{value: UserName}}</strong></p>
+        <p class="mb-3">Current owner: <strong>{{value: UserName}}</strong></p>
+        <p>Template regions let you combine icons, headings, and custom action layouts.</p>
     </ContentTemplate>
     <FooterTemplate>
         <div class="flex gap-3 justify-end">
-            <t:Button Type="Default" Text="Close" Click="{command: ToggleCustomModal()}" />
-            <t:Button Type="Primary" Text="Save" Click="{command: ToggleCustomModal()}" />
+            <t:Button Type="Default" Text="Close" Click="{command: ToggleSettings()}" />
+            <t:Button Type="Primary" Text="Save" Click="{command: SaveSettings()}" />
         </div>
     </FooterTemplate>
 </t:ModalDialog>
-

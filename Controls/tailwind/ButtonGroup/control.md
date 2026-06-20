@@ -1,1 +1,1 @@
-Renders a group of buttons side-by-side with shared borders, supporting both hardcoded children and data-bound mode.
+Renders multiple Tailwind `Button` controls as a connected group. You can place buttons manually or generate them from `DataSource` with the `Item*` mappings.

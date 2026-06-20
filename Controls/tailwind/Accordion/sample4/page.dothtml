@@ -1,5 +1,5 @@
 ﻿<div class="max-w-xl">
-    <t:Accordion IsNumbered="true">
+    <t:Accordion HeaderType="Numbered">
         <t:AccordionItem HeaderText="First item">
             <ContentTemplate>
                 <p>First item's body content.</p>
@@ -17,4 +17,3 @@
         </t:AccordionItem>
     </t:Accordion>
 </div>
-

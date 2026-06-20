@@ -1,2 +1,1 @@
-Displays a set of slides with captions, navigation arrows, indicators, and optional auto-cycling.
-
+Displays a carousel from hard-coded slides or a bound `DataSource`. Use `HideNavigation`, `HideIndicators`, `HideTextOrContent`, `AutoCycleInterval`, and `UseAspectRatio` to adjust the current Tailwind carousel behavior.

@@ -1,3 +1,3 @@
-# Customer Details Form
+## Sample 2: All Supported Tailwind Form Field Types
 
-This sample demonstrates a full `Form` with `HeaderTemplate`, validation (`ValidationSummary`), grouped fields in `Row`, and footer actions for `Save` and `Cancel`.
+This sample combines `TextBoxFormField`, `ComboBoxFormField`, `CheckBoxFormField`, `DateTimePickerFormField`, the generic `FormField`, and `FormRow` in one form.

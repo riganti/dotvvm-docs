@@ -1,4 +1,0 @@
-<div class="mb-8 max-w-sm mx-auto stack-layout">
-    <t:RangeInterval SelectedMinValue="{value: DisabledMin}" SelectedMaxValue="{value: DisabledMax}" Enabled="{value: Enabled}" ValueSuffix=" %" />
-    <t:CheckBox Text="Enabled" Checked="{value: Enabled}" />
-</div>

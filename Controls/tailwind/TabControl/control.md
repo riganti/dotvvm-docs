@@ -1,1 +1,1 @@
-Renders a tab control with clickable tab headers and corresponding content panels.
+Renders a Tailwind tab strip composed of `TabItem` children. Use `HeaderText` or `HeaderTemplate` for the tab label, `ContentTemplate` for each panel, and `SelectedTabIndex` to control the active tab.

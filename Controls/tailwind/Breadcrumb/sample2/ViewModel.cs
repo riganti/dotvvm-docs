@@ -5,9 +5,9 @@ public class ViewModel : DotvvmViewModelBase
 {
     public List<BreadcrumbItemData> BreadcrumbItems { get; set; } = new()
     {
-        new() { Text = "Home", Url = "/" },
-        new() { Text = "Products", Url = "/products" },
-        new() { Text = "Details", Url = "", IsActive = true }
+        new() { Text = "Home", Url = "?step=home" },
+        new() { Text = "Products", Url = "?step=products" },
+        new() { Text = "Details", Url = "?step=details", IsActive = true }
     };
 
     public class BreadcrumbItemData
@@ -17,4 +17,3 @@ public class ViewModel : DotvvmViewModelBase
         public bool IsActive { get; set; }
     }
 }
-

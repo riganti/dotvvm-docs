@@ -1,4 +1,3 @@
-﻿## Sample 2: Custom Header Template
+## Sample 2: Custom header and footer templates
 
-Uses `HeaderTemplate` for custom header content and binds text in the dialog body.
-
+Uses `HeaderTemplate` and `FooterTemplate` when the dialog needs richer markup than plain text.

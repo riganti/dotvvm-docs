@@ -1,7 +1,9 @@
 using DotVVM.Framework.ViewModel;
 
-public class ViewModel : DotvvmViewModelBase
+namespace DotvvmWeb.Views.Docs.Controls.tailwind.Range.sample2
 {
-    public double VolumeValue { get; set; } = 75;
-    public double LabelBelowValue { get; set; } = 60;
+    public class ViewModel : DotvvmViewModelBase
+    {
+        public double AccentValue { get; set; } = 55;
+    }
 }

@@ -1,6 +1,20 @@
 using DotVVM.Framework.ViewModel;
 
-public class ViewModel : DotvvmViewModelBase
+namespace DotvvmWeb.Views.Docs.Controls.tailwind.TextBox.sample1
 {
-    public string TextValueBasic { get; set; } = "";
+    public class ViewModel : DotvvmViewModelBase
+    {
+        public string SearchText { get; set; } = "Tailwind";
+
+        public string Password { get; set; } = "secret";
+
+        public bool PasswordEnabled { get; set; } = true;
+
+        public int ChangeCount { get; set; }
+
+        public void IncrementChanges()
+        {
+            ChangeCount++;
+        }
+    }
 }

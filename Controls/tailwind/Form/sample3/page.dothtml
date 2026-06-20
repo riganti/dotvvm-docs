@@ -1,7 +1,46 @@
-﻿<t:Form HeaderText="{value: FormHeaderText}">
+<t:Form HeaderText="Validation sample">
     <ContentTemplate>
-        <t:TextBoxFormField LabelText="Edit Header" Text="{value: FormHeaderText}" />
-        <t:TextBoxFormField LabelText="Sample Field" Text="{value: SampleField}" />
+        <dot:ValidationSummary IncludeErrorsFromChildren="true" />
+
+        <t:TextBoxFormField LabelText="User name"
+                            Text="{value: UserName}"
+                            ValidatorProperty="{value: UserName}" />
+
+        <t:TextBoxFormField LabelText="Password"
+                            Text="{value: Password}"
+                            Type="Password" />
+
+        <t:ComboBoxFormField LabelText="Role"
+                             DataSource="{value: Roles}"
+                             SelectedValue="{value: SelectedRole}"
+                             ItemTextBinding="{value: Name}"
+                             ItemValueBinding="{value: Id}"
+                             EmptyItemText="-- select role --"
+                             Enabled="{value: RoleEnabled}"
+                             ValidatorProperty="{value: SelectedRole}" />
+
+        <t:CheckBoxFormField Text="Enable role selection"
+                             Checked="{value: RoleEnabled}" />
+
+        <t:FormRow>
+            <t:DateTimePickerFormField SelectedValue="{value: ReminderTime}"
+                                       Type="Time"
+                                       ValidatorProperty="{value: ReminderTime}"
+                                       Size="Half">
+                <LabelTemplate>
+                    <span>Reminder time <strong>(required)</strong></span>
+                </LabelTemplate>
+            </t:DateTimePickerFormField>
+        </t:FormRow>
     </ContentTemplate>
+    <FooterTemplate>
+        <t:Button Text="Submit"
+                  Type="Primary"
+                  Click="{command: Submit()}"
+                  Validation.Target="{value: _root}" />
+    </FooterTemplate>
 </t:Form>
 
+<div Visible="{value: Submitted}" class="mt-3">
+    <t:Alert Type="Success" Text="The form has been submitted." />
+</div>

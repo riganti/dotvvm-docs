@@ -1,1 +1,1 @@
-Renders a styled card-based list of items with optional icon, primary text, secondary text, and badge.
+Documents the Tailwind list built with `<t:ListGroup>` and `<t:ListItem>`. The control supports hardcoded items or `DataSource` mode, and each row can use text, a template, a badge, and click or navigation behavior.

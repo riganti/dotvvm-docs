@@ -1,0 +1,1 @@
+Renders a Tailwind-styled route link that shares the same visual API as the Tailwind `Button`. Use the built-in route properties such as `RouteName` and `Param-*`, together with Tailwind-specific `Type`, `Size`, `Icon`, and `IconPosition`.

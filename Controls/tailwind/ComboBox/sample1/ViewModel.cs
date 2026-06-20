@@ -1,20 +1,33 @@
 using DotVVM.Framework.ViewModel;
 using System.Collections.Generic;
 
-public class ViewModel : DotvvmViewModelBase
+namespace DotvvmWeb.Views.Docs.Controls.tailwind.ComboBox.sample1
 {
-    public string SelectedOption { get; set; } = "";
-
-    public List<OptionDto> Options { get; set; } = new()
+    public class ViewModel : DotvvmViewModelBase
     {
-        new() { Text = "Option A", Value = "a" },
-        new() { Text = "Option B", Value = "b" },
-        new() { Text = "Option C", Value = "c" }
-    };
-}
+        public List<Country> Countries { get; set; } =
+        [
+            new() { Code = "cz", Name = "Czech Republic" },
+            new() { Code = "de", Name = "Germany" },
+            new() { Code = "us", Name = "United States" }
+        ];
 
-public class OptionDto
-{
-    public string Text { get; set; } = "";
-    public string Value { get; set; } = "";
+        public string? SelectedCountry { get; set; } = "cz";
+
+        public bool IsEnabled { get; set; } = true;
+
+        public int ChangeCount { get; set; }
+
+        public void IncrementChanges()
+        {
+            ChangeCount++;
+        }
+    }
+
+    public class Country
+    {
+        public string Code { get; set; }
+
+        public string Name { get; set; }
+    }
 }

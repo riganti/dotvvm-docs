@@ -1,6 +1,11 @@
 using DotVVM.Framework.ViewModel;
 
-public class ViewModel : DotvvmViewModelBase
+namespace DotvvmWeb.Views.Docs.Controls.tailwind.Range.sample1
 {
-    public double BasicValue { get; set; } = 50;
+    public class ViewModel : DotvvmViewModelBase
+    {
+        public double Satisfaction { get; set; } = 70;
+
+        public double Volume { get; set; } = 45;
+    }
 }

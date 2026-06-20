@@ -1,8 +1,13 @@
-<div class="mb-8 max-w-sm mx-auto stack-layout">
-    <t:Range SelectedValue="{value: ColorValue}" Color="Primary" ShowValue="true" ValueSuffix=" %" />
-    <t:Range SelectedValue="{value: ColorValue}" Color="Secondary" ShowValue="true" ValueSuffix=" %" />
-    <t:Range SelectedValue="{value: ColorValue}" Color="Success" ShowValue="true" ValueSuffix=" %" />
-    <t:Range SelectedValue="{value: ColorValue}" Color="Warning" ShowValue="true" ValueSuffix=" %" />
-    <t:Range SelectedValue="{value: ColorValue}" Color="Danger" ShowValue="true" ValueSuffix=" %" />
-    <t:Range SelectedValue="{value: ColorValue}" Color="Info" ShowValue="true" ValueSuffix=" %" />
+<div class="space-y-3 max-w-md">
+    <t:CheckBox Text="Enable slider" Checked="{value: IsEnabled}" />
+
+    <t:Range SelectedValue="{value: Temperature}"
+             MinValue="-20"
+             MaxValue="40"
+             Step="0.5"
+             ShowValue="true"
+             FormatString="n1"
+             Enabled="{value: IsEnabled}" />
 </div>
+
+<p>Temperature: <strong>{{value: Temperature}}</strong> °C</p>

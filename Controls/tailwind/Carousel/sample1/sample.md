@@ -1,4 +1,3 @@
 ## Sample 1: Basic carousel
 
-A basic `t:Carousel` with three slides and a caption template.
-
+A basic `Carousel` with hard-coded `CarouselItem` children. The first slide uses the plain `Text` property, while the others use inner content for richer captions.

@@ -1,12 +1,14 @@
-﻿using DotVVM.Framework.ViewModel;
+using DotVVM.Framework.ViewModel;
 
-public class ViewModel : DotvvmViewModelBase
+namespace DotvvmWeb.Views.Docs.Controls.tailwind.ModalDialog.sample3
 {
-    public bool IsLargeModalOpen { get; set; }
-
-    public void ToggleLargeModal()
+    public class ViewModel : DotvvmViewModelBase
     {
-        IsLargeModalOpen = !IsLargeModalOpen;
+        public bool IsReleaseNotesOpen { get; set; }
+
+        public void ToggleReleaseNotes()
+        {
+            IsReleaseNotesOpen = !IsReleaseNotesOpen;
+        }
     }
 }
-

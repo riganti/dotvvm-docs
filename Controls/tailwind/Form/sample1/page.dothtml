@@ -1,8 +1,19 @@
-<t:Form HeaderText="Basic">
+<t:Form HeaderText="Customer details">
     <ContentTemplate>
-        <t:TextBoxFormField LabelText="Name" Text="{value: Name}" />
+        <t:FormRow>
+            <t:TextBoxFormField LabelText="First name" Text="{value: FirstName}" Size="Half" />
+            <t:TextBoxFormField LabelText="Last name" Text="{value: LastName}" Size="Half" />
+        </t:FormRow>
+
+        <t:TextBoxFormField LabelText="Email" Text="{value: Email}" />
     </ContentTemplate>
     <FooterTemplate>
-        <t:Button Type="Primary" Text="Save" IsSubmitButton="true" Click="{command: SaveBasic()}" />
+        <t:Button Text="Save"
+                  Type="Primary"
+                  Click="{command: Save()}" />
     </FooterTemplate>
 </t:Form>
+
+<div Visible="{value: Saved}" class="mt-3">
+    <t:Alert Type="Success" Text="Customer saved." />
+</div>

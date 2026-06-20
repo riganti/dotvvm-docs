@@ -1,8 +1,11 @@
-<t:DropDownButton Text="Actions" Type="Primary">
-    <t:DropDownItem Text="Edit" Click="{command: _root.ItemClicked("Edit")}"  />
-    <t:DropDownItem Text="Duplicate" Click="{command: _root.ItemClicked("Duplicate")}" />
-    <t:DropDownItem Text="Archive" Click="{command: _root.ItemClicked("Archive")}" />
-    <t:DropDownItem Text="Delete" Click="{command: _root.ItemClicked("Delete")}" />
+<t:DropDownButton Text="Actions" Icon="Bolt" Type="Primary">
+    <t:DropDownItem Text="Edit" Click="{command: RecordAction("Edit")}" />
+    <t:DropDownItem Text="Duplicate" Icon="DocumentDuplicate" Click="{command: RecordAction("Duplicate")}" />
+    <t:DropDownItemSeparator />
+    <t:DropDownItem Text="Jump to summary" NavigateUrl="#summary" />
 </t:DropDownButton>
 
-<p>Last action: {{value: LastClicked}}</p>
+<p>Last action: {{value: LastAction}}</p>
+
+<h3 id="summary">Summary target</h3>
+<p>The navigate item stays inside the sample and scrolls to this section.</p>

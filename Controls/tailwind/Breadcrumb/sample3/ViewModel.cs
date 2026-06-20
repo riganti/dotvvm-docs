@@ -3,18 +3,22 @@ using DotVVM.Framework.ViewModel;
 
 public class ViewModel : DotvvmViewModelBase
 {
-    public List<BreadcrumbItemData> BreadcrumbItems { get; set; } = new()
+    public List<BreadcrumbActionData> Actions { get; set; } = new()
     {
-        new() { Text = "Home", Url = "/" },
-        new() { Text = "Products", Url = "/products" },
-        new() { Text = "Details", Url = "", IsActive = true }
+        new() { Text = "Catalog" },
+        new() { Text = "Details" },
+        new() { Text = "Review" }
     };
 
-    public class BreadcrumbItemData
+    public string LastSelected { get; set; } = "Catalog";
+
+    public void Select(string text)
+    {
+        LastSelected = text;
+    }
+
+    public class BreadcrumbActionData
     {
         public string Text { get; set; } = "";
-        public string Url { get; set; } = "";
-        public bool IsActive { get; set; }
     }
 }
-

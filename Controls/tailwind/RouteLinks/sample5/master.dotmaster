@@ -1,6 +1,0 @@
-<div class="flex flex-col gap-4">
-    <t:RouteLink RouteName="SampleA" Text="Start (default)" Icon="Plus" IconPosition="Start" Type="Primary" />
-    <t:RouteLink RouteName="SampleB" Text="End" Icon="ArrowRight" IconPosition="End" Type="Primary" />
-</div>
-
-<dot:ContentPlaceHolder ID="Main" />

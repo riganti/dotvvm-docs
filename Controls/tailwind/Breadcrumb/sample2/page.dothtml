@@ -1,6 +1,7 @@
-﻿<t:Breadcrumb DataSource="{value: BreadcrumbItems}">
+﻿<t:Breadcrumb DataSource="{value: BreadcrumbItems}"
+              ItemNavigateUrl="{value: Url}"
+              ItemIsActive="{value: IsActive}">
     <ItemTemplate>
-        <t:BreadcrumbItem Text="{value: Text}" NavigateUrl="{value: Url}" IsActive="{value: IsActive}" />
+        <span class="font-medium">{{value: Text}}</span>
     </ItemTemplate>
 </t:Breadcrumb>
-
