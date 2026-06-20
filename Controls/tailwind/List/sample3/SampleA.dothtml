@@ -1,0 +1,16 @@
+@masterPage master.dotmaster
+
+<dot:Content ContentPlaceHolderID="Main">
+    <t:ListGroup>
+        <t:ListItem Icon="BookOpen" RouteName="SampleA">
+            <span class="list-row-title">Overview</span>
+            <span class="list-row-text">Stay on the overview page.</span>
+        </t:ListItem>
+        <t:ListItem Icon="DocumentText" RouteName="SampleB" BadgeText="New" BadgeColor="Info">
+            <span class="list-row-title">Details</span>
+            <span class="list-row-text">Open another page inside the sample.</span>
+        </t:ListItem>
+    </t:ListGroup>
+
+    <p>Current page: Sample A</p>
+</dot:Content>

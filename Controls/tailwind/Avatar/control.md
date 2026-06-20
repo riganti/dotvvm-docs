@@ -1,0 +1,1 @@
+Displays a user avatar using an image or initials. Use `Size` to switch between the built-in avatar sizes.

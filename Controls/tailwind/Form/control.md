@@ -1,0 +1,1 @@
+The Tailwind form controls include `Form`, `FormRow`, `FormField`, and the specialized `TextBoxFormField`, `ComboBoxFormField`, `CheckBoxFormField`, and `DateTimePickerFormField`. Use them to build labeled forms with consistent spacing and validation messages.

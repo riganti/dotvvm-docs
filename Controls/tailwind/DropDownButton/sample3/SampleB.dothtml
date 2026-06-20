@@ -1,0 +1,9 @@
+@masterPage master.dotmaster
+
+<dot:Content ContentPlaceHolderID="Main">
+    <t:DropDownButton Text="Back to overview" Type="Primary">
+        <t:DropDownItem Text="Open Sample A" RouteName="SampleA" />
+    </t:DropDownButton>
+
+    <p>Current page: Sample B</p>
+</dot:Content>

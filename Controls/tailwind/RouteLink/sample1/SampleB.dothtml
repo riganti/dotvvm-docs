@@ -1,0 +1,7 @@
+@masterPage master.dotmaster
+
+<dot:Content ContentPlaceHolderID="Main">
+    <t:RouteLink Type="Primary" Text="Back to Sample A" RouteName="SampleA" Icon="ArrowLeft" />
+
+    <p>Current page: Sample B</p>
+</dot:Content>

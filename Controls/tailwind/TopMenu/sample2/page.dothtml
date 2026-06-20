@@ -1,0 +1,24 @@
+<t:TopMenu>
+    <StartTemplate>
+        <span class="text-lg font-bold text-blue-600">Workspace</span>
+    </StartTemplate>
+    <MiddleTemplate>
+        <t:MenuItem Text="Overview" NavigateUrl="#overview" IsActive="true" />
+        <t:MenuDropDownItem Text="Actions"
+                            DataSource="{value: ActionItems}"
+                            ItemText="{value: Text}"
+                            ItemClick="{command: _parent.RecordClick(Text)}" />
+        <t:MenuDropDownItem Text="Sections"
+                            DataSource="{value: SectionItems}"
+                            ItemText="{value: Text}"
+                            ItemNavigateUrl="{value: Url}" />
+    </MiddleTemplate>
+</t:TopMenu>
+
+<p>Last clicked action: {{value: LastClicked}}</p>
+
+<h3 id="overview">Overview</h3>
+<p>The first dropdown posts back using `ItemClick`.</p>
+
+<h3 id="release">Release notes</h3>
+<p>The second dropdown uses `ItemNavigateUrl` for in-page navigation.</p>

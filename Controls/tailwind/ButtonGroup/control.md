@@ -1,0 +1,1 @@
+Renders multiple Tailwind `Button` controls as a connected group. You can place buttons manually or generate them from `DataSource` with the `Item*` mappings.

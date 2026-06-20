@@ -1,0 +1,23 @@
+<div class="space-y-3 max-w-md">
+    <t:CheckBox Text="Enable pickers" Checked="{value: PickerEnabled}" />
+
+    <t:DateTimePicker SelectedValue="{value: VacationDate}"
+                      Type="Date"
+                      MinDate="{value: MinDate}"
+                      MaxDate="{value: MaxDate}"
+                      Placeholder="Vacation start"
+                      Enabled="{value: PickerEnabled}" />
+
+    <t:DateTimePicker SelectedValue="{value: OfficeHours}"
+                      Type="Time"
+                      MinHours="{value: MinHours}"
+                      MaxHours="{value: MaxHours}"
+                      HoursStep="2"
+                      MinutesStep="15"
+                      InputSize="Large"
+                      Placeholder="Office hours"
+                      Enabled="{value: PickerEnabled}" />
+</div>
+
+<p>Allowed date window: <strong>{{value: MinDate}}</strong> – <strong>{{value: MaxDate}}</strong></p>
+<p>Selected office time: <strong>{{value: OfficeHours}}</strong></p>

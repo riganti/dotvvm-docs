@@ -1,0 +1,6 @@
+<div class="space-y-4">
+    <t:ProgressBar Value="25" />
+    <t:ProgressBar Value="50" Type="Success" />
+    <t:ProgressBar Value="75" Type="Warning" />
+    <t:ProgressBar Value="90" Type="Danger" />
+</div>

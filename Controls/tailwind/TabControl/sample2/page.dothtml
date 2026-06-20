@@ -1,0 +1,18 @@
+<t:TabControl>
+    <t:TabItem>
+        <HeaderTemplate>
+            <span>Inbox <span class="ml-1 rounded-full bg-blue-600 px-2 py-0.5 text-xs text-white">3</span></span>
+        </HeaderTemplate>
+        <ContentTemplate>
+            <p>The header can contain custom HTML content.</p>
+        </ContentTemplate>
+    </t:TabItem>
+    <t:TabItem>
+        <HeaderTemplate>
+            <span class="font-semibold">Starred</span>
+        </HeaderTemplate>
+        <ContentTemplate>
+            <p>Template headers are useful for icons, badges, or formatted labels.</p>
+        </ContentTemplate>
+    </t:TabItem>
+</t:TabControl>

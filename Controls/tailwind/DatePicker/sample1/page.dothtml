@@ -1,0 +1,21 @@
+<div class="space-y-3 max-w-md">
+    <t:DateTimePicker SelectedValue="{value: MeetingDate}"
+                      Type="Date"
+                      Placeholder="Choose a date..." />
+
+    <t:DateTimePicker SelectedValue="{value: MeetingTime}"
+                      Type="Time"
+                      TimeFormat="HH:mm"
+                      Placeholder="Choose a time..." />
+
+    <t:DateTimePicker SelectedValue="{value: PublishedAt}"
+                      Type="DateTime"
+                      DateFormat="dd.MM.yyyy"
+                      TimeFormat="hh:mm tt"
+                      Culture="cs-CZ"
+                      Placeholder="Choose date and time..." />
+</div>
+
+<p>Date: <strong>{{value: MeetingDate}}</strong></p>
+<p>Time: <strong>{{value: MeetingTime}}</strong></p>
+<p>Date and time: <strong>{{value: PublishedAt}}</strong></p>

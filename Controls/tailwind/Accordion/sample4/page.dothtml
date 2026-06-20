@@ -1,0 +1,19 @@
+﻿<div class="max-w-xl">
+    <t:Accordion HeaderType="Numbered">
+        <t:AccordionItem HeaderText="First item">
+            <ContentTemplate>
+                <p>First item's body content.</p>
+            </ContentTemplate>
+        </t:AccordionItem>
+        <t:AccordionItem HeaderText="Second item">
+            <ContentTemplate>
+                <p>Second item's body content.</p>
+            </ContentTemplate>
+        </t:AccordionItem>
+        <t:AccordionItem HeaderText="Third item">
+            <ContentTemplate>
+                <p>Third item's body content.</p>
+            </ContentTemplate>
+        </t:AccordionItem>
+    </t:Accordion>
+</div>

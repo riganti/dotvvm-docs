@@ -1,0 +1,1 @@
+Renders a Tailwind sidebar navigation panel composed of `SideMenuSection`, `MenuItem`, and `MenuDropDownItem`. Use `collapseBreakpoint` to control when the menu switches to its mobile overlay behavior.

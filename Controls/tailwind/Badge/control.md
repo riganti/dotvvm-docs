@@ -1,0 +1,1 @@
+Displays a small highlighted label with semantic colors. The badge can render plain text or custom child content.

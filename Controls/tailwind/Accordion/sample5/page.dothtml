@@ -1,0 +1,20 @@
+﻿<div class="max-w-xl">
+    <t:Accordion AllowMultiple="true">
+        <t:AccordionItem HeaderText="Bound to IsFirstOpen" IsExpanded="{value: IsFirstOpen}">
+            <ContentTemplate>
+                <p>Current state: <dot:Literal Text="{value: IsFirstOpen}" /></p>
+            </ContentTemplate>
+        </t:AccordionItem>
+        <t:AccordionItem HeaderText="Bound to IsSecondOpen" IsExpanded="{value: IsSecondOpen}">
+            <ContentTemplate>
+                <p>Current state: <dot:Literal Text="{value: IsSecondOpen}" /></p>
+            </ContentTemplate>
+        </t:AccordionItem>
+    </t:Accordion>
+</div>
+
+<div class="flex gap-2 mt-3">
+    <t:Button Type="Secondary" Text="Toggle First" Click="{command: IsFirstOpen = !IsFirstOpen}" />
+    <t:Button Type="Secondary" Text="Toggle Second" Click="{command: IsSecondOpen = !IsSecondOpen}" />
+</div>
+

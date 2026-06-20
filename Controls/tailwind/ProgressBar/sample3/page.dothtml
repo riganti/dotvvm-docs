@@ -1,0 +1,7 @@
+<div class="space-y-4">
+    <t:ProgressBar Value="65" Type="Success" ShowLabel="true" />
+
+    <t:ProgressBar Value="80" Type="Primary" ShowLabel="{value: ShowLabel}" />
+
+    <t:CheckBox Text="Show label" Checked="{value: ShowLabel}" />
+</div>

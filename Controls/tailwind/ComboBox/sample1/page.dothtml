@@ -1,0 +1,14 @@
+<div class="space-y-3 max-w-md">
+    <t:CheckBox Text="Enable ComboBox" Checked="{value: IsEnabled}" />
+
+    <t:ComboBox DataSource="{value: Countries}"
+                SelectedValue="{value: SelectedCountry}"
+                ItemTextBinding="{value: Name}"
+                ItemValueBinding="{value: Code}"
+                EmptyItemText="-- choose a country --"
+                Enabled="{value: IsEnabled}"
+                SelectionChanged="{command: IncrementChanges()}" />
+</div>
+
+<p>Selected country: <strong>{{value: SelectedCountry ?? "(none)"}}</strong></p>
+<p><code>SelectionChanged</code> command count: <strong>{{value: ChangeCount}}</strong></p>

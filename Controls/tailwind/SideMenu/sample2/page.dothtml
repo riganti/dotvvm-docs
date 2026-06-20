@@ -1,0 +1,26 @@
+<div style="display:flex;min-height:20rem;border:1px solid #e5e7eb;">
+    <t:SideMenu>
+        <t:SideMenuSection Title="Settings">
+            <t:MenuDropDownItem Text="Account" Icon="Cog6Tooth"
+                                DataSource="{value: SettingsLinks}"
+                                ItemText="{value: Text}"
+                                ItemNavigateUrl="{value: Url}" />
+        </t:SideMenuSection>
+        <t:SideMenuSection Title="Quick Links">
+            <dot:Repeater DataSource="{value: QuickLinks}" RenderWrapperTag="false">
+                <t:MenuItem Text="{value: Text}" NavigateUrl="{value: Url}" />
+            </dot:Repeater>
+        </t:SideMenuSection>
+    </t:SideMenu>
+
+    <div style="padding:1rem;flex:1;">
+        <h3 id="profile">Profile</h3>
+        <p>The dropdown items were generated from `SettingsLinks`.</p>
+
+        <h3 id="security">Security</h3>
+        <p>`ItemText` and `ItemNavigateUrl` map the current item fields.</p>
+
+        <h3 id="help">Help</h3>
+        <p>The repeater generates a flat list of `MenuItem` controls.</p>
+    </div>
+</div>

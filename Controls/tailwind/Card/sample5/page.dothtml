@@ -1,0 +1,26 @@
+﻿<div class="grid gap-4" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+    <t:Card HeaderText="Primary" Type="Primary">
+        <ContentTemplate><p>Primary color card.</p></ContentTemplate>
+    </t:Card>
+    <t:Card HeaderText="Success" Type="Success">
+        <ContentTemplate><p>Success color card.</p></ContentTemplate>
+    </t:Card>
+    <t:Card HeaderText="Warning" Type="Warning">
+        <ContentTemplate><p>Warning color card.</p></ContentTemplate>
+    </t:Card>
+    <t:Card HeaderText="Danger" Type="Danger">
+        <ContentTemplate><p>Danger color card.</p></ContentTemplate>
+    </t:Card>
+    <t:Card HeaderText="Info" Type="Info">
+        <ContentTemplate><p>Info color card.</p></ContentTemplate>
+    </t:Card>
+    <t:Card HeaderText="Secondary" Type="Secondary">
+        <ContentTemplate><p>Secondary color card.</p></ContentTemplate>
+    </t:Card>
+    <t:Card HeaderText="Dark" Type="Dark">
+        <ContentTemplate><p>Dark color card.</p></ContentTemplate>
+    </t:Card>
+    <t:Card HeaderText="Light" Type="Light">
+        <ContentTemplate><p>Light color card.</p></ContentTemplate>
+    </t:Card>
+</div>

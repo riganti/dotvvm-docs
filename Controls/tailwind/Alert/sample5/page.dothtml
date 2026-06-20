@@ -1,0 +1,5 @@
+﻿<div class="flex flex-col gap-4">
+    <t:Alert Type="Info" Text="{value: AlertMessage}" />
+    <dot:TextBox Text="{value: AlertMessage}" placeholder="Type a message..." class="p-2 border border-gray-300 rounded-md" />
+</div>
+

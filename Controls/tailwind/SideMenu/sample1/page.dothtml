@@ -1,0 +1,33 @@
+<div style="display:flex;min-height:20rem;border:1px solid #e5e7eb;">
+    <t:SideMenu>
+        <t:SideMenuSection Title="Main">
+            <t:MenuItem Text="Overview" NavigateUrl="#overview" Icon="Home" IsActive="true" />
+            <t:MenuItem Text="Messages" NavigateUrl="#messages" Icon="Envelope" />
+            <t:MenuItemSeparator />
+            <t:MenuItem Text="Tasks" NavigateUrl="#tasks" Icon="CheckCircle" />
+        </t:SideMenuSection>
+        <t:SideMenuSection Title="Reports">
+            <t:MenuDropDownItem Text="Analytics" Icon="ChartBar">
+                <t:MenuItem Text="Traffic" NavigateUrl="#traffic" />
+                <t:MenuItem Text="Conversions" NavigateUrl="#conversions" />
+            </t:MenuDropDownItem>
+        </t:SideMenuSection>
+    </t:SideMenu>
+
+    <div style="padding:1rem;flex:1;">
+        <h3 id="overview">Overview</h3>
+        <p>The menu can mix plain items and dropdown sections.</p>
+
+        <h3 id="messages">Messages</h3>
+        <p>`MenuItem` can navigate to anchors inside the same page.</p>
+
+        <h3 id="tasks">Tasks</h3>
+        <p>Use `MenuItemSeparator` to break larger groups.</p>
+
+        <h3 id="traffic">Traffic</h3>
+        <p>The dropdown opens nested links.</p>
+
+        <h3 id="conversions">Conversions</h3>
+        <p>All links stay inside the generated sample app.</p>
+    </div>
+</div>

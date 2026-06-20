@@ -1,0 +1,1 @@
+Renders a styled button with semantic variants, sizes, icons, enabled state, commands, and optional submit behavior. Use inner content instead of `Text` when you need richer markup.

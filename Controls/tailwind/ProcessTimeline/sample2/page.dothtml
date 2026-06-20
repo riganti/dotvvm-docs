@@ -1,0 +1,11 @@
+<t:ProcessTimeline CurrentStep="2">
+    <t:ProcessTimelineStep Step="1">
+        <span><strong>Import</strong><br /><small>Finished</small></span>
+    </t:ProcessTimelineStep>
+    <t:ProcessTimelineStep Step="2">
+        <span><strong>Validate</strong><br /><small>In progress</small></span>
+    </t:ProcessTimelineStep>
+    <t:ProcessTimelineStep Step="3">
+        <span><strong>Publish</strong><br /><small>Pending</small></span>
+    </t:ProcessTimelineStep>
+</t:ProcessTimeline>

@@ -1,0 +1,14 @@
+<t:ListGroup>
+    <t:ListItem Icon="User" Text="Team overview" BadgeText="Open" BadgeColor="Info" NavigateUrl="#team" />
+    <t:ListItem Icon="Bell" Text="Notifications" BadgeText="3" BadgeColor="Warning" NavigateUrl="#notifications" />
+    <t:ListItem Icon="CheckCircle" Text="Finished tasks" BadgeText="12" BadgeColor="Success" NavigateUrl="#tasks" />
+</t:ListGroup>
+
+<h3 id="team">Team</h3>
+<p>This section is reached using `NavigateUrl`.</p>
+
+<h3 id="notifications">Notifications</h3>
+<p>Use anchor links when you want to stay on the same page.</p>
+
+<h3 id="tasks">Tasks</h3>
+<p>The entire list row is clickable.</p>

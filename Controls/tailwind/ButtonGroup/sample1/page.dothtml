@@ -1,0 +1,8 @@
+﻿<div class="flex gap-2">
+    <t:ButtonGroup>
+        <t:Button Type="Default" Text="Left" />
+        <t:Button Type="Default" Text="Center" />
+        <t:Button Type="Default" Text="Right" />
+    </t:ButtonGroup>
+</div>
+

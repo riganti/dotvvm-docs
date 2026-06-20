@@ -1,0 +1,17 @@
+<div class="space-y-3">
+    <t:CheckBox Text="Receive product updates"
+                Checked="{value: ReceiveUpdates}"
+                Changed="{command: IncrementChanges()}" />
+
+    <t:CheckBox Checked="{value: AcceptTerms}">
+        <span>I accept the <strong>terms and conditions</strong>.</span>
+    </t:CheckBox>
+
+    <t:CheckBox Text="Locked option"
+                Checked="{value: LockedOption}"
+                Enabled="false" />
+</div>
+
+<p>Receive updates: <strong>{{value: ReceiveUpdates}}</strong></p>
+<p>Terms accepted: <strong>{{value: AcceptTerms}}</strong></p>
+<p><code>Changed</code> command count: <strong>{{value: ChangeCount}}</strong></p>

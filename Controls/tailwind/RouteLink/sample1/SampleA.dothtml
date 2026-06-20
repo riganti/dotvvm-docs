@@ -1,0 +1,17 @@
+@masterPage master.dotmaster
+
+<dot:Content ContentPlaceHolderID="Main">
+    <div class="flex flex-wrap gap-2 items-center">
+        <t:RouteLink Type="Default" Text="Default" RouteName="SampleB" />
+        <t:RouteLink Type="Primary" Text="Primary" RouteName="SampleB" />
+        <t:RouteLink Type="Success" Text="Icon + text" Icon="Check" RouteName="SampleB" />
+        <t:RouteLink Type="Secondary" Icon="Plus" RouteName="SampleB" />
+        <t:RouteLink Type="Primary" Text="Large" Size="Large" RouteName="SampleB" />
+        <t:RouteLink Type="Primary" Text="Next" Icon="ArrowRight" IconPosition="End" RouteName="SampleB" />
+        <t:RouteLink Type="Ghost" RouteName="SampleA">
+            <strong>Content only</strong>
+        </t:RouteLink>
+    </div>
+
+    <p>Current page: Sample A</p>
+</dot:Content>

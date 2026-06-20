@@ -1,0 +1,17 @@
+<div class="space-y-3">
+    <t:StackLayout Orientation="Horizontal" Gap="Large" class="bg-gray-100 p-2">
+        <t:Button Type="Primary" Text="Large" />
+        <t:Button Type="Primary" Text="Gap" />
+        <t:Button Type="Primary" Text="Example" />
+    </t:StackLayout>
+
+    <t:StackLayout Orientation="Horizontal" Alignment="Center" class="h-20 bg-gray-100 p-2">
+        <t:Button Type="Success" Text="Center" />
+        <t:Button Type="Secondary" Text="Aligned" />
+    </t:StackLayout>
+
+    <t:StackLayout Orientation="Horizontal" Alignment="Stretch" Gap="Small" class="h-20 bg-gray-100 p-2">
+        <t:Button Type="Warning" Text="Stretch" class="h-full" />
+        <t:Button Type="Danger" Text="Items" class="h-full" />
+    </t:StackLayout>
+</div>

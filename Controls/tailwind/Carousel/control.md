@@ -1,0 +1,1 @@
+Displays a carousel from hard-coded slides or a bound `DataSource`. Use `HideNavigation`, `HideIndicators`, `HideTextOrContent`, `AutoCycleInterval`, and `UseAspectRatio` to adjust the current Tailwind carousel behavior.

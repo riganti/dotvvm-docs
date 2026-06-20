@@ -1,0 +1,1 @@
+Renders a styled card with optional header, image, footer, semantic variant, and linked-card behavior. Use `Orientation`, `Type`, and `NavigateUrl` to switch between the main presentation modes.

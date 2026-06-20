@@ -1,0 +1,1 @@
+The Tailwind `TextBox` uses the same API as the built-in [TextBox](~/controls/builtin/TextBox) and only adds Tailwind styling. Use `TextBoxFormField` when you need a label and validation message inside a Tailwind form.

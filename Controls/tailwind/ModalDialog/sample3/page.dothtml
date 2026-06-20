@@ -1,0 +1,15 @@
+<t:Button Type="Default" Text="Open release notes" Click="{command: ToggleReleaseNotes()}" />
+
+<t:ModalDialog IsOpen="{value: IsReleaseNotesOpen}" HeaderText="Release notes" FooterText="Press Esc or use the buttons in the body to close this dialog." Size="FullScreen">
+    <ContentTemplate>
+        <div class="space-y-3">
+            <p>This sample uses the full-screen size for long-form content.</p>
+            <ul class="list-disc pl-6">
+                <li>New app layout shell</li>
+                <li>Updated icon binding support</li>
+                <li>Improved timeline responsiveness</li>
+            </ul>
+            <t:Button Type="Primary" Text="Close" Click="{command: ToggleReleaseNotes()}" />
+        </div>
+    </ContentTemplate>
+</t:ModalDialog>

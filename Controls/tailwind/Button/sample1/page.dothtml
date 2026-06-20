@@ -1,0 +1,23 @@
+
+<div class="flex flex-col gap-6">
+    <div class="flex gap-2 flex-wrap">
+        <t:Button Type="Default" Text="Default" />
+        <t:Button Type="Primary" Text="Primary" />
+        <t:Button Type="Secondary" Text="Secondary" />
+        <t:Button Type="Success" Text="Success" />
+        <t:Button Type="Warning" Text="Warning" />
+        <t:Button Type="Danger" Text="Danger" />
+        <t:Button Type="Info" Text="Info" />
+        <t:Button Type="Ghost" Text="Ghost" />
+        <t:Button Type="Link" Text="Link" />
+    </div>
+    
+    <div class="flex gap-2 flex-wrap items-center">
+        <span class="text-sm font-semibold">Sizes:</span>
+        <t:Button Type="Primary" Text="Small" Size="Small" />
+        <t:Button Type="Primary" Text="Default" Size="Default" />
+        <t:Button Type="Primary" Text="Large" Size="Large" />
+        <t:Button Type="Primary" Text="Extra Large" Size="ExtraLarge" />
+    </div>
+</div>
+

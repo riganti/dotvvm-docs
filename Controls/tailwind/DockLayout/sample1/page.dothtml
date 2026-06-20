@@ -1,0 +1,22 @@
+<div class="space-y-4">
+    <t:DockLayout>
+        <StartContent>
+            <div class="bg-gray-700 text-white p-2 rounded">Filters</div>
+        </StartContent>
+        <Content>
+            <div class="bg-info-700 text-white p-2 rounded">Flexible center content</div>
+        </Content>
+        <EndContent>
+            <div class="bg-gray-700 text-white p-2 rounded">Actions</div>
+        </EndContent>
+    </t:DockLayout>
+
+    <t:DockLayout>
+        <StartContent>
+            <div class="bg-gray-700 text-white p-2 rounded">Previous</div>
+        </StartContent>
+        <EndContent>
+            <div class="bg-gray-700 text-white p-2 rounded">Next</div>
+        </EndContent>
+    </t:DockLayout>
+</div>

@@ -1,0 +1,7 @@
+﻿<t:Accordion DataSource="{value: FaqItems}" 
+             ItemHeaderText="{value: Question}" 
+             ItemIsExpanded="{value: IsInitiallyExpanded}">
+    <ItemContentTemplate>
+        <p>{{value: Answer}}</p>
+    </ItemContentTemplate>
+</t:Accordion>

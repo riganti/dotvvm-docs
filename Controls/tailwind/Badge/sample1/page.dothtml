@@ -1,0 +1,12 @@
+<div class="flex gap-3 flex-wrap items-center">
+    <t:Badge Color="Default" Text="Default" />
+    <t:Badge Color="Primary" Text="Primary" />
+    <t:Badge Color="Secondary" Text="Secondary" />
+    <t:Badge Color="Success" Text="Success" />
+    <t:Badge Color="Danger" Text="Danger" />
+    <t:Badge Color="Warning" Text="Warning" />
+    <t:Badge Color="Info" Text="Info" />
+    <t:Badge Color="Dark" Text="Dark" />
+    <t:Badge Color="Light" Text="Light" />
+</div>
+

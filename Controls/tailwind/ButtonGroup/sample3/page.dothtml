@@ -1,0 +1,5 @@
+﻿<div class="flex flex-col gap-4 items-start">
+    <t:ButtonGroup DataSource="{value: Actions}" ItemText="{value: _this}" ItemClick="{command: _parent.ItemClicked(_this)}" />
+    <p class="text-sm">Last clicked: <strong>{{value: LastClicked}}</strong></p>
+</div>
+

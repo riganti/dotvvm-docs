@@ -1,0 +1,17 @@
+<div class="flex flex-col gap-6">
+    <div class="flex items-center gap-4">
+        <h3 class="text-sm font-semibold">Avatar Types:</h3>
+        <t:Avatar ImageUrl="https://i.pravatar.cc/150?img=3" AltText="User photo" />
+        <t:Avatar Initials="JS" />
+        <t:Avatar />
+    </div>
+    
+    <div class="flex items-center gap-4">
+        <h3 class="text-sm font-semibold">Avatar Sizes:</h3>
+        <t:Avatar Initials="AB" Size="Small" />
+        <t:Avatar Initials="CD" Size="Default" />
+        <t:Avatar Initials="EF" Size="Large" />
+        <t:Avatar Initials="XL" Size="ExtraLarge" />
+    </div>
+</div>
+

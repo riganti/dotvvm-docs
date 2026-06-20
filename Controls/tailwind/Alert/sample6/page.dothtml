@@ -1,0 +1,9 @@
+﻿<div class="flex flex-col gap-4">
+    <t:Alert Type="Success">
+        <strong>Great success!</strong> This content is placed inside the alert tags instead of using the Text property.
+    </t:Alert>
+    <t:Alert Type="Warning">
+        You can use <em>any HTML</em> or <strong>DotVVM controls</strong> inside the alert body.
+    </t:Alert>
+</div>
+

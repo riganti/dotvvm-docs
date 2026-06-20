@@ -1,0 +1,27 @@
+<div class="space-y-2">
+    <t:RadioButton Text="Email"
+                   CheckedValue="email"
+                   CheckedItem="{value: ContactMethod}"
+                   GroupName="contact-method"
+                   Changed="{command: IncrementChanges()}" />
+
+    <t:RadioButton Text="Phone"
+                   CheckedValue="phone"
+                   CheckedItem="{value: ContactMethod}"
+                   GroupName="contact-method" />
+
+    <t:RadioButton CheckedValue="chat"
+                   CheckedItem="{value: ContactMethod}"
+                   GroupName="contact-method">
+        <span>Team chat <strong>(recommended)</strong></span>
+    </t:RadioButton>
+
+    <t:RadioButton Text="Disabled option"
+                   CheckedValue="mail"
+                   CheckedItem="{value: ContactMethod}"
+                   GroupName="contact-method"
+                   Enabled="false" />
+</div>
+
+<p>Selected contact method: <strong>{{value: ContactMethod}}</strong></p>
+<p><code>Changed</code> command count: <strong>{{value: ChangeCount}}</strong></p>

@@ -1,0 +1,6 @@
+<t:Breadcrumb>
+    <t:MenuItem Text="Home" Icon="Home" NavigateUrl="?section=home" />
+    <t:MenuItem Text="Controls" NavigateUrl="?section=controls" />
+    <t:MenuItem Text="Breadcrumbs" NavigateUrl="?section=breadcrumbs" />
+    <t:MenuItem Text="Current page" IsActive="true" />
+</t:Breadcrumb>

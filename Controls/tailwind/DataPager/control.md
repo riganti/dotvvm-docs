@@ -1,0 +1,1 @@
+Inherits the built-in [DataPager](~/controls/builtin/DataPager) and applies the Tailwind pager styling. Use it with the same `GridViewDataSet` paging features as the built-in control.

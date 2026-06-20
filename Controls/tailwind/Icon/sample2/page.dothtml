@@ -1,0 +1,11 @@
+<div class="max-w-md space-y-4">
+    <div class="flex gap-3">
+        <dot:ComboBox DataSource="{value: Icons}" SelectedValue="{value: SelectedIcon}" />
+        <dot:ComboBox DataSource="{value: IconTypes}" SelectedValue="{value: SelectedIconType}" />
+    </div>
+
+    <div class="flex items-center gap-3 text-primary-600">
+        <t:Icon Icon="{value: SelectedIcon}" Type="{value: SelectedIconType}" class="w-8 h-8" />
+        <span>{{value: SelectedIcon}} ({{value: SelectedIconType}})</span>
+    </div>
+</div>

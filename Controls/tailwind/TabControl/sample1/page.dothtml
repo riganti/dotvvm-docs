@@ -1,0 +1,17 @@
+<t:TabControl>
+    <t:TabItem HeaderText="Profile">
+        <ContentTemplate>
+            <p>Profile information is displayed in this panel.</p>
+        </ContentTemplate>
+    </t:TabItem>
+    <t:TabItem HeaderText="Settings">
+        <ContentTemplate>
+            <p>Settings are rendered in a separate panel.</p>
+        </ContentTemplate>
+    </t:TabItem>
+    <t:TabItem HeaderText="Activity">
+        <ContentTemplate>
+            <p>Use more tabs when you need to split related content.</p>
+        </ContentTemplate>
+    </t:TabItem>
+</t:TabControl>

@@ -1,0 +1,1 @@
+The `RangeSlider` control renders a Tailwind-styled dual-thumb slider for selecting an interval. Bind the range with `SelectedMinValue` and `SelectedMaxValue`, then customize the track with `Type`, `Size`, `ShowValue`, and numeric range settings.

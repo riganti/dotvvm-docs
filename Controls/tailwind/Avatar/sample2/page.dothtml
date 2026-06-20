@@ -1,0 +1,18 @@
+﻿<div class="flex flex-col gap-6">
+    <div class="flex items-center gap-4">
+        <div>
+            <label class="text-sm font-semibold">Initials:</label>
+            <t:TextBox Text="{value: InitialsText}" class="mt-1 p-2 border border-gray-300 rounded-md" />
+        </div>
+        <t:Avatar Initials="{value: InitialsText}" />
+    </div>
+    
+    <div class="flex items-center gap-4">
+        <div>
+            <label class="text-sm font-semibold">Size:</label>
+            <t:ComboBox DataSource="{value: AllSizes}" SelectedValue="{value: SelectedSize}" class="mt-1" />
+        </div>
+        <t:Avatar Initials="JS" Size="{value: SelectedSize}" />
+    </div>
+</div>
+

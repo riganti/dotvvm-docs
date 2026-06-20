@@ -1,0 +1,11 @@
+<div class="space-y-4">
+    <div class="flex items-center gap-3">
+        <t:Spinner />
+        <span>Loading data...</span>
+    </div>
+
+    <div class="flex items-center gap-3">
+        <t:Spinner AriaLabelText="Synchronizing dashboard widgets..." />
+        <span>Custom accessible label</span>
+    </div>
+</div>

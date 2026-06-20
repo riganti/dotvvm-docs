@@ -1,0 +1,6 @@
+<t:Breadcrumb>
+    <t:MenuItem Text="Overview" RouteName="SampleA" />
+    <t:MenuItem Text="Details" RouteName="SampleB" IsActive="true" />
+</t:Breadcrumb>
+
+<p>Details page in the sample app. The breadcrumb stays inside the generated sample application.</p>

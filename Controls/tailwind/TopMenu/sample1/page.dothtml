@@ -1,0 +1,44 @@
+<t:TopMenu HamburgerPosition="End">
+    <StartTemplate>
+        <span class="text-lg font-bold text-blue-600">DocsApp</span>
+    </StartTemplate>
+    <MiddleTemplate>
+        <t:MenuItem Text="Dashboard" NavigateUrl="#dashboard" IsActive="true" />
+        <t:MenuItem Text="Projects" NavigateUrl="#projects" />
+        <t:MenuDropDownItem Text="Reports">
+            <t:MenuItem Text="Weekly" NavigateUrl="#weekly" />
+            <t:MenuItem Text="Monthly" NavigateUrl="#monthly" />
+        </t:MenuDropDownItem>
+    </MiddleTemplate>
+    <EndTemplate>
+        <t:Button Type="Ghost" Icon="Bell" />
+        <t:DropDownButton Text="Profile" Alignment="End">
+            <t:DropDownItem Text="Settings" NavigateUrl="#settings" />
+            <t:DropDownItem Text="Sign out" NavigateUrl="#signout" />
+        </t:DropDownButton>
+    </EndTemplate>
+    <MobileTemplate>
+        <t:MenuItem Text="Dashboard" NavigateUrl="#dashboard" IsActive="true" />
+        <t:MenuItem Text="Projects" NavigateUrl="#projects" />
+        <t:MenuItem Text="Weekly" NavigateUrl="#weekly" />
+        <t:MenuItem Text="Monthly" NavigateUrl="#monthly" />
+    </MobileTemplate>
+</t:TopMenu>
+
+<h3 id="dashboard">Dashboard</h3>
+<p>The top menu can host menu items, dropdowns, and arbitrary controls.</p>
+
+<h3 id="projects">Projects</h3>
+<p>These links stay inside the sample by using anchor navigation.</p>
+
+<h3 id="weekly">Weekly report</h3>
+<p>The nested dropdown items use the same menu styling.</p>
+
+<h3 id="monthly">Monthly report</h3>
+<p>The end dropdown aligns to the right edge.</p>
+
+<h3 id="settings">Settings</h3>
+<p>End-template actions can also navigate inside the sample.</p>
+
+<h3 id="signout">Sign out</h3>
+<p>`DropDownButton` works well inside the `EndTemplate` area.</p>

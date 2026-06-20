@@ -1,0 +1,10 @@
+﻿<div class="max-w-xl">
+    <t:Card Orientation="Horizontal" ImageUrl="https://picsum.photos/200/300" ImageAlt="Sample horizontal image" HeaderText="Horizontal Card">
+        <ContentTemplate>
+            <p>Image on the left, content on the right side of the card.</p>
+        </ContentTemplate>
+        <FooterTemplate>
+            <a class="button button-primary" href="?layout=horizontal">Learn more</a>
+        </FooterTemplate>
+    </t:Card>
+</div>

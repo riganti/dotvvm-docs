@@ -1,0 +1,37 @@
+<t:AppLayout>
+    <TopMenuTemplate>
+        <t:TopMenu HamburgerPosition="End">
+            <StartTemplate>
+                <t:SideMenuToggleButton />
+                <a href="?view=dashboard" class="text-xl font-bold text-blue-600 no-underline">Admin</a>
+            </StartTemplate>
+            <EndTemplate>
+                <t:MenuItem Icon="Bell" NavigateUrl="?panel=notifications" />
+                <t:MenuDropDownItem Icon="UserCircle">
+                    <Items>
+                        <t:MenuItem Text="Profile" NavigateUrl="?panel=profile" />
+                        <t:MenuItem Text="Sign out" NavigateUrl="?panel=signout" />
+                    </Items>
+                </t:MenuDropDownItem>
+            </EndTemplate>
+            <MobileTemplate>
+                <t:MenuItem Text="Profile" NavigateUrl="?panel=profile" />
+                <t:MenuItem Text="Sign out" NavigateUrl="?panel=signout" />
+            </MobileTemplate>
+        </t:TopMenu>
+    </TopMenuTemplate>
+    <SideMenuTemplate>
+        <t:SideMenu>
+            <t:SideMenuSection Title="Reports">
+                <t:MenuItem Text="Overview" NavigateUrl="?report=overview" Icon="ChartBar" IsActive="true" />
+                <t:MenuItem Text="Revenue" NavigateUrl="?report=revenue" Icon="PresentationChartLine" />
+            </t:SideMenuSection>
+        </t:SideMenu>
+    </SideMenuTemplate>
+    <Content>
+        <div class="p-4">
+            <h2>Dashboard shell</h2>
+            <p>The top bar stays visible while the side menu provides section navigation.</p>
+        </div>
+    </Content>
+</t:AppLayout>

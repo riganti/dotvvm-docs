@@ -1,0 +1,24 @@
+<div class="space-y-4">
+    <t:StackLayout>
+        <t:Button Type="Primary" Text="Overview" />
+        <t:Button Type="Secondary" Text="Reports" />
+        <t:Button Type="Success" Text="Settings" />
+    </t:StackLayout>
+
+    <div class="w-64 border rounded p-2">
+        <t:StackLayout Orientation="Horizontal">
+            <t:Button Type="Primary" Text="Alpha" />
+            <t:Button Type="Secondary" Text="Beta" />
+            <t:Button Type="Success" Text="Gamma" />
+            <t:Button Type="Warning" Text="Delta" />
+        </t:StackLayout>
+    </div>
+
+    <div class="w-64 border rounded p-2 overflow-x-auto">
+        <t:StackLayout Orientation="Horizontal" Wrap="false">
+            <t:Button Type="Primary" Text="No wrap" />
+            <t:Button Type="Secondary" Text="Keeps items" />
+            <t:Button Type="Success" Text="On one line" />
+        </t:StackLayout>
+    </div>
+</div>

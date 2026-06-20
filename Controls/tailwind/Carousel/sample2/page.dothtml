@@ -1,0 +1,3 @@
+<t:Carousel DataSource="{value: Slides}"
+            ItemImageUrl="{value: ImageUrl}"
+            ItemText="{value: Title}" />

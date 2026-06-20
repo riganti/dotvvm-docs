@@ -1,0 +1,9 @@
+﻿<div class="flex flex-col gap-4">
+    <t:Alert Type="Default" Text="Default alert" />
+    <t:Alert Type="Primary" Text="This is a primary alert — check it out!" />
+    <t:Alert Type="Info" Text="This is an info alert — check it out!" />
+    <t:Alert Type="Success" Text="This is a success alert — check it out!" />
+    <t:Alert Type="Warning" Text="This is a warning alert — check it out!" />
+    <t:Alert Type="Danger" Text="This is a danger alert — check it out!" />
+</div>
+

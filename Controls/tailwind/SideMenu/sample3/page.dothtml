@@ -1,0 +1,28 @@
+<div style="position:relative;min-height:18rem;border:1px solid #e5e7eb;overflow:hidden;">
+    <button class="hamburger-button"
+            data-sidemenu-toggle="docs-mobile-menu"
+            style="position:absolute;top:0.75rem;left:0.75rem;z-index:20;display:flex;">
+        <svg xmlns="http://www.w3.org/2000/svg" style="width:1.5rem;height:1.5rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+
+    <div class="side-menu-mobile-overlay"></div>
+
+    <div class="side-menu-mobile" id="docs-mobile-menu">
+        <t:SideMenu collapseBreakpoint="md">
+            <t:SideMenuSection Title="Navigation">
+                <t:MenuItem Text="Overview" NavigateUrl="#overview-mobile" Icon="Home" IsActive="true" />
+                <t:MenuItem Text="Team" NavigateUrl="#team-mobile" Icon="Users" />
+            </t:SideMenuSection>
+        </t:SideMenu>
+    </div>
+
+    <div style="padding:3.5rem 1rem 1rem 1rem;">
+        <h3 id="overview-mobile">Overview</h3>
+        <p>Resize the sample below the `md` breakpoint and use the hamburger button to open the menu.</p>
+
+        <h3 id="team-mobile">Team</h3>
+        <p>The sidebar closes automatically when the screen reaches the configured breakpoint again.</p>
+    </div>
+</div>

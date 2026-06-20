@@ -1,0 +1,11 @@
+<t:ProcessTimeline CurrentStep="{value: CurrentStep}">
+    <t:ProcessTimelineStep Text="Choose source" Step="1" />
+    <t:ProcessTimelineStep Text="Review details" Step="2" />
+    <t:ProcessTimelineStep Text="Confirm changes" Step="3" />
+    <t:ProcessTimelineStep Text="Complete" Step="4" />
+</t:ProcessTimeline>
+
+<div class="flex gap-2 mt-4">
+    <t:Button Type="Default" Text="Previous" Click="{command: Previous()}" />
+    <t:Button Type="Primary" Text="Next" Click="{command: Next()}" />
+</div>

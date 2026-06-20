@@ -1,0 +1,18 @@
+﻿<div class="grid gap-4" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+    <t:Card HeaderText="Card 1">
+        <ContentTemplate>
+            <p>First card content.</p>
+        </ContentTemplate>
+    </t:Card>
+    <t:Card HeaderText="Card 2">
+        <ContentTemplate>
+            <p>Second card content.</p>
+        </ContentTemplate>
+    </t:Card>
+    <t:Card HeaderText="Card 3">
+        <ContentTemplate>
+            <p>Third card content.</p>
+        </ContentTemplate>
+    </t:Card>
+</div>
+

@@ -1,0 +1,10 @@
+@masterPage master.dotmaster
+
+<dot:Content ContentPlaceHolderID="Main">
+    <div class="flex flex-wrap gap-2 items-center">
+        <t:RouteLink Type="Primary" Text="Open detail 42" RouteName="SampleB" Param-Id="42" />
+        <t:RouteLink Type="Secondary" Text="Open detail 99" RouteName="SampleB" Param-Id="99" Icon="DocumentText" />
+    </div>
+
+    <p>Current page: Sample A</p>
+</dot:Content>

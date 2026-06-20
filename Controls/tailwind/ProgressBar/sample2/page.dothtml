@@ -1,0 +1,15 @@
+<div class="space-y-4">
+    <t:ProgressBar Value="{value: Progress}" Type="{value: SelectedType}" />
+
+    <div class="flex gap-2">
+        <t:Button Type="Primary" Text="Increase" Click="{command: Increase()}" Size="Small" />
+        <t:Button Type="Secondary" Text="Reset" Click="{command: Reset()}" Size="Small" />
+    </div>
+
+    <div class="flex gap-2 flex-wrap">
+        <t:Button Text="Primary" Click="{command: SetType(1)}" Size="Small" />
+        <t:Button Text="Success" Click="{command: SetType(3)}" Size="Small" />
+        <t:Button Text="Warning" Click="{command: SetType(4)}" Size="Small" />
+        <t:Button Text="Danger" Click="{command: SetType(5)}" Size="Small" />
+    </div>
+</div>

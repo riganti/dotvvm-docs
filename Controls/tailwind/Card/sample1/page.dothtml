@@ -1,0 +1,10 @@
+<div class="max-w-sm">
+    <t:Card HeaderText="Card Title">
+        <ContentTemplate>
+            <p>This is the card content. It can contain any HTML or controls.</p>
+        </ContentTemplate>
+        <FooterTemplate>
+            <a class="button button-primary" href="?card=basic">Action</a>
+        </FooterTemplate>
+    </t:Card>
+</div>

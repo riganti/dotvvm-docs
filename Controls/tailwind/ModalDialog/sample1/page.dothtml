@@ -1,0 +1,14 @@
+<t:Button Type="Primary" Text="Open confirmation" Click="{command: OpenDialog()}" />
+<p class="mt-3 text-sm">Last action: {{value: Result}}</p>
+
+<t:ModalDialog IsOpen="{value: IsDialogOpen}" HeaderText="Delete report" Size="Large">
+    <ContentTemplate>
+        <p>This action removes the selected report from the dashboard.</p>
+    </ContentTemplate>
+    <FooterTemplate>
+        <div class="flex gap-3 justify-end">
+            <t:Button Type="Default" Text="Cancel" Click="{command: CloseDialog()}" />
+            <t:Button Type="Danger" Text="Delete" Click="{command: ConfirmDelete()}" />
+        </div>
+    </FooterTemplate>
+</t:ModalDialog>

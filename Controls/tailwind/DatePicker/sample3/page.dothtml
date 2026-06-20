@@ -1,0 +1,35 @@
+<t:Form HeaderText="Book a session">
+    <ContentTemplate>
+        <dot:ValidationSummary IncludeErrorsFromChildren="true" />
+
+        <t:FormRow>
+            <t:DateTimePickerFormField LabelText="Start"
+                                       SelectedValue="{value: StartDate}"
+                                       Type="DateTime"
+                                       DateFormat="dd.MM.yyyy"
+                                       TimeFormat="HH:mm"
+                                       Placeholder="Choose date and time..."
+                                       Size="Half" />
+
+            <t:DateTimePickerFormField SelectedValue="{value: ReminderTime}"
+                                       Type="Time"
+                                       InputSize="Small"
+                                       ValidatorProperty="{value: ReminderTime}"
+                                       Size="Half">
+                <LabelTemplate>
+                    <span>Reminder time <strong>(required)</strong></span>
+                </LabelTemplate>
+            </t:DateTimePickerFormField>
+        </t:FormRow>
+    </ContentTemplate>
+    <FooterTemplate>
+        <t:Button Text="Save"
+                  Type="Primary"
+                  Click="{command: Save()}"
+                  Validation.Target="{value: _root}" />
+    </FooterTemplate>
+</t:Form>
+
+<div Visible="{value: Saved}" class="mt-3">
+    <t:Alert Type="Success" Text="Session saved." />
+</div>

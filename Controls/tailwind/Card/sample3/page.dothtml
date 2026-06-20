@@ -1,0 +1,13 @@
+﻿<div class="grid gap-4" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+    <t:Card HeaderText="Static Image" ImageUrl="https://picsum.photos/400/200" ImageAlt="Sample image">
+        <ContentTemplate>
+            <p>This card has a hard-coded image URL.</p>
+        </ContentTemplate>
+    </t:Card>
+    <t:Card HeaderText="Dynamic Image" ImageUrl="{value: DynamicImageUrl}" ImageAlt="{value: DynamicImageAlt}">
+        <ContentTemplate>
+            <p>This card binds ImageUrl and ImageAlt from the viewmodel.</p>
+        </ContentTemplate>
+    </t:Card>
+</div>
+

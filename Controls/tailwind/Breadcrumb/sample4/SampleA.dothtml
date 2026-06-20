@@ -1,0 +1,6 @@
+<t:Breadcrumb>
+    <t:MenuItem Text="Overview" RouteName="SampleA" IsActive="true" />
+    <t:MenuItem Text="Details" RouteName="SampleB" />
+</t:Breadcrumb>
+
+<p>Overview page in the sample app. Use the breadcrumb to navigate to the details page.</p>

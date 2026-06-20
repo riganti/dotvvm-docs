@@ -1,0 +1,1 @@
+Renders breadcrumb navigation from hard-coded `MenuItem` children or a bound `DataSource`. In data-bound mode, use the `Item*` mappings to configure text, templates, commands, URLs, icons, and route navigation.

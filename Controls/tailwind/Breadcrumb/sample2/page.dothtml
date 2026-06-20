@@ -1,0 +1,7 @@
+﻿<t:Breadcrumb DataSource="{value: BreadcrumbItems}"
+              ItemNavigateUrl="{value: Url}"
+              ItemIsActive="{value: IsActive}">
+    <ItemTemplate>
+        <span class="font-medium">{{value: Text}}</span>
+    </ItemTemplate>
+</t:Breadcrumb>

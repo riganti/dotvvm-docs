@@ -1,0 +1,1 @@
+Renders a Tailwind top navigation bar with `StartTemplate`, `MiddleTemplate`, `EndTemplate`, and optional `MobileTemplate`. Set `HamburgerPosition` when the mobile toggle should appear at the end of the bar.
