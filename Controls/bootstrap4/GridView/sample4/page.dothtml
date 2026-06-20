@@ -1,4 +1,4 @@
-﻿<bs:GridView DataSource="{value: Customers}" SortChanged="{command: SortCustomers}" 
+﻿<bs:GridView DataSource="{value: Customers}" 
              MaximumScreenSizeBeforeScrollBarShows="Medium">
   <Columns>
     <dot:GridViewTextColumn HeaderText="Id" ValueBinding="{value: CustomerId}" AllowSorting="True" />

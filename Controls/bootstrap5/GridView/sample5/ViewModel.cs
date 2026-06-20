@@ -36,11 +36,6 @@ public class ViewModel : DotvvmViewModelBase
 		return base.PreRender();
 	}
 
-    public void SortCustomers(string column)
-    {
-        Customers.SetSortExpression(column);
-    }
-
 }
 
 public class CustomerData

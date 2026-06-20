@@ -1,4 +1,4 @@
-﻿<bs:GridView DataSource="{value: Customers}" SortChanged="{command: SortCustomers}" Type="Default">
+﻿<bs:GridView DataSource="{value: Customers}" Type="Default">
   <RowDecorators>
     <bs:ColorDecorator Color="{value: Color}"></bs:ColorDecorator>
   </RowDecorators>

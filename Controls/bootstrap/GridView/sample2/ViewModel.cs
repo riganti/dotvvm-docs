@@ -46,12 +46,6 @@ namespace DotvvmWeb.Views.Docs.Controls.bootstrap.BootstrapGridView.sample2
             }
             return base.PreRender();
         }
-
-        public void SortCustomers(string column)
-        {
-            Customers.SetSortExpression(column);
-        }
-
     }
 
     public class CustomerData

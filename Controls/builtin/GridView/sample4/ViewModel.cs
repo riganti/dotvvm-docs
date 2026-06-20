@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using DotVVM.Framework.Controls;
 using DotVVM.Framework.ViewModel;
-using Newtonsoft.Json;
+
 
 namespace DotvvmWeb.Views.Docs.Controls.builtin.GridView.sample4
 {
@@ -31,20 +31,9 @@ namespace DotvvmWeb.Views.Docs.Controls.builtin.GridView.sample4
 
         public void Sort(string column)
         {
-            Customers.SetSortExpression(column);
+            Customers.SortingOptions.SetSortExpression(column);
         }
     }
 
-    public class Customer
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-
-        [JsonConstructor]
-        public Customer(int id, string name)
-        {
-            Id = id;
-            Name = name;
-        }
-    }
+    public record Customer(int Id, string Name);
 }

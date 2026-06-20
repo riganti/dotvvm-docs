@@ -1,4 +1,4 @@
-﻿<bs:GridView DataSource="{value: Customers}" SortChanged="{command: SortCustomers}" Type="Bordered">
+﻿<bs:GridView DataSource="{value: Customers}" Type="Bordered">
   <Columns>
     <dot:GridViewTextColumn HeaderText="Id" ValueBinding="{value: CustomerId}" AllowSorting="True" />
     <dot:GridViewTextColumn HeaderText="Name" ValueBinding="{value: Name}" AllowSorting="True" />
