@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DotVVM.Framework.Controls;
 using DotVVM.Framework.ViewModel;
-using Newtonsoft.Json;
+
 
 namespace DotvvmWeb.Views.Docs.Controls.builtin.GridView.sample2
 {
@@ -35,18 +35,5 @@ namespace DotvvmWeb.Views.Docs.Controls.builtin.GridView.sample2
         }
     }
     
-    public class Customer
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public DateTime Date { get; set; }
-
-        [JsonConstructor]
-        public Customer(int id, string name)
-        {
-            Id = id;
-            Name = name;
-            Date = new DateTime(2000, 1, 1).AddDays(id);
-        }
-    }
+    public record Customer(int Id, string Name);
 }
