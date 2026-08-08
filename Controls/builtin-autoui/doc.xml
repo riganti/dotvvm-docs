@@ -57,6 +57,36 @@
             Creates the editor for the specified property using the metadata information.
             </summary>
         </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoEditor.Props.Property">
+            <summary>
+            Gets or sets the viewmodel property for which the editor should be generated.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoEditor.Props.Changed">
+            <summary>
+            Gets or sets the command that will be triggered when the value in the editor is changed.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoEditor.Props.Enabled">
+            <summary>
+            Gets or sets whether the editor is enabled or not.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoEditor.Props.OverrideTemplate">
+            <summary>
+            Gets or sets the template that will be used for the editor control. This property is primarily intended to be used when the control is used within another control.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoForm.LabelCellCssClass">
+            <summary>
+            Gets or sets the CSS class that will be used for the table cell with field labels.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.AutoForm.EditorCellCssClass">
+            <summary>
+            Gets or sets the CSS class that will be used for the table cell with editor control.
+            </summary>
+        </member>
         <member name="M:DotVVM.AutoUI.Controls.AutoForm.InitializeTable(DotVVM.AutoUI.AutoUIContext)">
             <summary>
             Creates the table element for the form.
@@ -168,6 +198,11 @@
         <member name="P:DotVVM.AutoUI.Controls.BootstrapForm.FormCheckInputCssClass">
             <summary>
             Gets or sets the CSS class that will be applied on the input element of the CheckBox or RadioButton controls inside the form group.
+            </summary>
+        </member>
+        <member name="P:DotVVM.AutoUI.Controls.BootstrapForm.WrapControlInDiv">
+            <summary>
+            Gets or sets whether the generated control shall be wrapped in the div element. Set this to true for Bootstrap 3.
             </summary>
         </member>
         <member name="F:DotVVM.AutoUI.Controls.BootstrapForm.RequiresFormSelectCssClassProperty">
@@ -445,12 +480,12 @@
             The resource key is the name of the attribute without the trailing Attribute (e.g. Required for RequiredAttribute etc.).
             </summary>
         </member>
-        <member name="M:DotVVM.AutoUI.Metadata.ResourceViewModelValidationMetadataProvider.GetAttributesForProperty(System.Reflection.PropertyInfo)">
+        <member name="M:DotVVM.AutoUI.Metadata.ResourceViewModelValidationMetadataProvider.GetAttributesForProperty(System.Reflection.MemberInfo)">
             <summary>
             Gets validation attributes for the specified property.
             </summary>
         </member>
-        <member name="M:DotVVM.AutoUI.Metadata.ResourceViewModelValidationMetadataProvider.GetAttributesForPropertyCore(System.Reflection.PropertyInfo)">
+        <member name="M:DotVVM.AutoUI.Metadata.ResourceViewModelValidationMetadataProvider.GetAttributesForPropertyCore(System.Reflection.MemberInfo)">
             <summary>
             Determines validation attributes for the specified property and loads missing error messages from the resource file.
             </summary>
@@ -473,6 +508,11 @@
         <member name="T:DotVVM.AutoUI.PropertyHandlers.FormEditors.TextBoxEditorProvider">
             <summary>
             Renders a TextBox control for properties of string, numeric or date type.
+            </summary>
+        </member>
+        <member name="M:DotVVM.AutoUI.PropertyHandlers.FormEditors.TextBoxEditorProvider.ResolveDataType(DotVVM.AutoUI.Metadata.PropertyDisplayMetadata)">
+            <summary>
+            Resolves the TextBoxType for a specified DataType annotation.
             </summary>
         </member>
     </members>

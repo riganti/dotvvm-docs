@@ -1637,6 +1637,11 @@
             Gets or sets a value indicating whether the button is enabled and can be clicked on.
             </summary>
         </member>
+        <member name="P:DotVVM.BusinessPack.Controls.DropDownButton.IsExpanded">
+            <summary>
+            Gets or sets a value indicating whether the dropdown is open or not.
+            </summary>
+        </member>
         <member name="P:DotVVM.BusinessPack.Controls.DropDownButton.ToggleIcon">
             <summary>
             Gets or sets the toggle icon.
@@ -1801,6 +1806,16 @@
         <member name="P:DotVVM.BusinessPack.Controls.FileUpload.GenericErrorText">
             <summary>
             Gets or sets the text displayed when a generic / unknown error occurs. The default value is "Upload has failed.".
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Controls.FileUpload.MaxFileSizeErrorText">
+            <summary>
+            Gets or sets the text displayed when a file exceeds its maximum size limit. The default value is "The file {0} is larger than the maximum allowed size."
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Controls.FileUpload.AllowedFileTypeErrorText">
+            <summary>
+            Gets or sets the text displayed when a file is not of an allowed type. The default value is "The file {0} is not of an allowed type."
             </summary>
         </member>
         <member name="P:DotVVM.BusinessPack.Controls.FileUpload.DeleteFileIcon">
@@ -1968,18 +1983,6 @@
             <summary>
             Converts <see cref="T:DotVVM.BusinessPack.Controls.FilterBuilderFields.FieldBase" /> implementation to it's JSON representation.
             </summary>
-        </member>
-        <member name="P:DotVVM.BusinessPack.Controls.FilterBuilderFields.FieldBaseJsonConverter.CanRead">
-            <inheritdoc />
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.FilterBuilderFields.FieldBaseJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)">
-            <inheritdoc />
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.FilterBuilderFields.FieldBaseJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)">
-            <inheritdoc />
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.FilterBuilderFields.FieldBaseJsonConverter.CanConvert(System.Type)">
-            <inheritdoc />
         </member>
         <member name="T:DotVVM.BusinessPack.Controls.FilterBuilderFields.NumberCollectionField">
             <summary>
@@ -2328,6 +2331,11 @@
             Gets whether the operators dropdown list should be rendered.
             </summary>
         </member>
+        <member name="P:DotVVM.BusinessPack.Controls.FilterEditorBase.ValueBinding">
+            <summary>
+            Gets or sets the modified data binding of the Value property for the filter control.
+            </summary>
+        </member>
         <member name="M:DotVVM.BusinessPack.Controls.FilterEditorBase.ConnectTo(DotVVM.BusinessPack.Controls.FilterBuilder)">
             <summary>
             Connects the filter editor to the given <see cref="T:DotVVM.BusinessPack.Controls.FilterBuilder" /> control.
@@ -2416,7 +2424,7 @@
         </member>
         <member name="T:DotVVM.BusinessPack.Controls.NumberFilterEditorBase`1">
             <summary>
-            The base class for number <see cref="!:FilterCondition" /> editors.
+            The base class for number <see cref="T:DotVVM.BusinessPack.Filters.FilterCondition" /> editors.
             </summary>
         </member>
         <member name="P:DotVVM.BusinessPack.Controls.NumberFilterEditorBase`1.Step">
@@ -2921,11 +2929,6 @@
             Returns a list of all <see cref="T:DotVVM.BusinessPack.Controls.FilterOperators.IDateTimeOperator"/> operators which should apply in date only mode.
             </summary>
         </member>
-        <member name="T:DotVVM.BusinessPack.Controls.FilterOperators.OperatorBaseJsonConverter">
-            <summary>
-            Converts <see cref="T:DotVVM.BusinessPack.Controls.FilterOperators.OperatorBase" /> implementation to it's JSON representation.
-            </summary>
-        </member>
         <member name="T:DotVVM.BusinessPack.Controls.FilterOperators.StartsWithOperator">
             <summary>
             The filter operator comparing whether one value starts with another value.
@@ -3202,6 +3205,12 @@
             Gets or sets the icon rendered inside the button used to change sorting from descending to ascending.
             </summary>
         </member>
+        <member name="P:DotVVM.BusinessPack.Controls.GridView.LoadData">
+            <summary>
+            Gets or sets the command that will be triggered when the GridView needs to load data (e.g. when the sort order has changed).
+            The command accepts one argument of type GridViewDataSetOptions&lt;TFilteringOptions, TSortingOptions, TPagingOptions&gt; and should return the new GridViewDataSet.
+            </summary>
+        </member>
         <member name="P:DotVVM.BusinessPack.Controls.GridView.IsDataSourceEmpty">
             <summary>
             Gets whether the data source is empty.
@@ -3281,7 +3290,7 @@
             Returns a <c>&lt;tr&gt;</c> element containing column headers.
             </summary>
         </member>
-        <member name="M:DotVVM.BusinessPack.Controls.GridView.CreateColumnHeaderCell(DotVVM.BusinessPack.Controls.GridViewColumn)">
+        <member name="M:DotVVM.BusinessPack.Controls.GridView.CreateColumnHeaderCell(DotVVM.BusinessPack.Controls.GridViewColumn,DotVVM.Framework.Controls.GridViewBindings)">
             <summary>
             Returns a <c>&lt;th&gt;</c> element representing the <paramref name="column" />'s header.
             </summary>
@@ -3359,6 +3368,11 @@
         <member name="M:DotVVM.BusinessPack.Controls.GridView.BuildClientItemTemplate(DotVVM.Framework.Controls.DataItemContainer)">
             <summary>
             Builds template used to render items in the <see cref="T:DotVVM.Framework.Controls.Repeater" /> on client-side.
+            </summary>
+        </member>
+        <member name="M:DotVVM.BusinessPack.Controls.GridView.CreateRowDetailRow">
+            <summary>
+            Creates the row for hosting the row template
             </summary>
         </member>
         <member name="M:DotVVM.BusinessPack.Controls.GridView.CreateEmptyBody">
@@ -3715,7 +3729,7 @@
             </summary>
             <param name="col">A <c>&lt;col&gt;</c> element representing the column.</param>
         </member>
-        <member name="M:DotVVM.BusinessPack.Controls.GridViewColumn.BuildHeader(DotVVM.Framework.Controls.HtmlGenericControl)">
+        <member name="M:DotVVM.BusinessPack.Controls.GridViewColumn.BuildHeader(DotVVM.Framework.Controls.HtmlGenericControl,DotVVM.Framework.Controls.GridViewBindings)">
             <summary>
             Builds the column's header. By default appends either the <see cref="P:DotVVM.BusinessPack.Controls.GridViewColumn.HeaderTemplate" />
             or the <see cref="P:DotVVM.BusinessPack.Controls.GridViewColumn.HeaderText" /> to the <paramref name="header" /> element.
@@ -3769,25 +3783,25 @@
             the <see cref="P:DotVVM.BusinessPack.Controls.GridViewColumn.HeaderTemplate" /> is not set and sorting is disabled.
             </summary>
         </member>
-        <member name="M:DotVVM.BusinessPack.Controls.GridViewColumn.CreateHeaderButton">
+        <member name="M:DotVVM.BusinessPack.Controls.GridViewColumn.CreateHeaderButton(System.String,DotVVM.Framework.Controls.GridViewBindings)">
             <summary>
             Returns a <see cref="T:DotVVM.Framework.Controls.LinkButton" /> rendered in the column's header when
             the <see cref="P:DotVVM.BusinessPack.Controls.GridViewColumn.HeaderTemplate" /> is not set and sorting is enabled.
             </summary>
         </member>
-        <member name="M:DotVVM.BusinessPack.Controls.GridViewColumn.CreateSortAscButton">
+        <member name="M:DotVVM.BusinessPack.Controls.GridViewColumn.CreateSortAscButton(System.String,DotVVM.Framework.Controls.GridViewBindings)">
             <summary>
             Returns a <see cref="T:DotVVM.Framework.Controls.LinkButton" /> rendered in the column's header
             and its used to change sorting from ascending to descending.
             </summary>
         </member>
-        <member name="M:DotVVM.BusinessPack.Controls.GridViewColumn.CreateSortDescButton">
+        <member name="M:DotVVM.BusinessPack.Controls.GridViewColumn.CreateSortDescButton(System.String,DotVVM.Framework.Controls.GridViewBindings)">
             <summary>
             Returns a <see cref="T:DotVVM.Framework.Controls.LinkButton" /> rendered in the column's header
             and its used to change sorting from descending to ascending.
             </summary>
         </member>
-        <member name="M:DotVVM.BusinessPack.Controls.GridViewColumn.CreateSortCommandBinding">
+        <member name="M:DotVVM.BusinessPack.Controls.GridViewColumn.CreateSortCommandBinding(DotVVM.Framework.Controls.GridViewBindings)">
             <summary>
             Returns a command binding changing the sort expression and order when executed.
             </summary>
@@ -5109,6 +5123,11 @@
             Gets or sets the command triggered when the selected values are changed.
             </summary>
         </member>
+        <member name="P:DotVVM.BusinessPack.Controls.ListView.WarnWhenValueNotInDataSource">
+            <summary>
+            Gets or sets whether the control should produce a warning when any of the selected values is not present in the data source.
+            </summary>
+        </member>
         <member name="M:DotVVM.BusinessPack.Controls.ListView.OnInit(DotVVM.Framework.Hosting.IDotvvmRequestContext)">
             <inheritdoc />
         </member>
@@ -5404,6 +5423,11 @@
             Gets or sets the command that should be called after new item is being added when <see cref="P:DotVVM.BusinessPack.Controls.MultiSelect.AllowNewItems"/> is true.
             </summary>
         </member>
+        <member name="P:DotVVM.BusinessPack.Controls.MultiSelect.WarnWhenValueNotInDataSource">
+            <summary>
+            Gets or sets whether the control should produce a warning when any of the selected values is not present in the data source.
+            </summary>
+        </member>
         <member name="M:DotVVM.BusinessPack.Controls.MultiSelect.CreateSearchResultsView">
             <inheritdoc />
         </member>
@@ -5475,6 +5499,11 @@
             Gets or sets whether the control is enabled and can be modified.
             </summary>
         </member>
+        <member name="P:DotVVM.BusinessPack.Controls.NumericUpDown.ButtonPlacement">
+            <summary>
+            Gets or sets position of component buttons.
+            </summary>
+        </member>
         <member name="P:DotVVM.BusinessPack.Controls.NumericUpDown.Changed">
             <summary>
             Gets or sets the command triggered when the value is changed.
@@ -5544,6 +5573,11 @@
             <summary>
             Gets or sets whether the control should have focus when page loads or when a dialog is opened.
             The default value is <c>false</c>.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Controls.Primitives.TextBoxPrimitive.MaxLength">
+            <summary>
+            Gets or sets the maximum number of characters allowed in the element.
             </summary>
         </member>
         <member name="M:DotVVM.BusinessPack.Controls.Primitives.TextBoxPrimitive.GetFocusableControl">
@@ -6246,11 +6280,6 @@
             Gets or sets the HTML contents of the editor.
             </summary>
         </member>
-        <member name="P:DotVVM.BusinessPack.Controls.RichTextBox.Placeholder">
-            <summary>
-            Gets or sets the text displayed when the editor has no contents.
-            </summary>
-        </member>
         <member name="P:DotVVM.BusinessPack.Controls.RichTextBox.Toolbar">
             <summary>
             Gets or sets a collection of available commands organized in groups.
@@ -6504,18 +6533,6 @@
             Converts <see cref="T:DotVVM.BusinessPack.Controls.TabItem" /> to it's JSON representation.
             </summary>
         </member>
-        <member name="P:DotVVM.BusinessPack.Controls.TabItemJsonConverter.CanRead">
-            <inheritdoc />
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.TabItemJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)">
-            <inheritdoc />
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.TabItemJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)">
-            <inheritdoc />
-        </member>
-        <member name="M:DotVVM.BusinessPack.Controls.TabItemJsonConverter.CanConvert(System.Type)">
-            <inheritdoc />
-        </member>
         <member name="T:DotVVM.BusinessPack.Controls.TextBoxBase">
             <summary>
             The base class for controls allowing users to enter text.
@@ -6608,11 +6625,6 @@
             By default, the viewmodel is updated after the control loses its focus.
             </summary>
         </member>
-        <member name="P:DotVVM.BusinessPack.Controls.TextBox.ControlName">
-            <summary>
-            Gets the name used to find the client-side control instance.
-            </summary>
-        </member>
         <member name="P:DotVVM.BusinessPack.Controls.TextBox.Placeholder">
             <summary>
             Gets or sets the text displayed when the <see cref="P:DotVVM.BusinessPack.Controls.TextBox.Text" /> is empty.
@@ -6628,6 +6640,11 @@
             <summary>
             Gets or sets whether the control should have focus when page loads or when a dialog is opened.
             The default value is <c>false</c>.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Controls.TextBox.MaxLength">
+            <summary>
+            Gets or sets the maximum number of characters allowed in the element.
             </summary>
         </member>
         <member name="M:DotVVM.BusinessPack.Controls.TextBox.GetFocusableControl">
@@ -7260,6 +7277,12 @@
             The default value is <c>true</c>.
             </summary>
         </member>
+        <member name="P:DotVVM.BusinessPack.Controls.TreeView.ExpandOnChecked">
+            <summary>
+            Gets or sets whether to expand children when the item is checked.
+            The default value is <c>true</c>.
+            </summary>
+        </member>
         <member name="P:DotVVM.BusinessPack.Controls.TreeView.LoadChildren">
             <summary>
             Gets or sets a function used to load descendants of an item being expanded.
@@ -7455,6 +7478,11 @@
               Looks up a localized string similar to ☐.
             </summary>
         </member>
+        <member name="P:DotVVM.BusinessPack.Localization.FileUpload_AllowedFileTypeErrorText">
+            <summary>
+              Looks up a localized string similar to The file {0} is not of an allowed type..
+            </summary>
+        </member>
         <member name="P:DotVVM.BusinessPack.Localization.FileUpload_DragFilesHereText">
             <summary>
               Looks up a localized string similar to or drag them here..
@@ -7463,6 +7491,11 @@
         <member name="P:DotVVM.BusinessPack.Localization.FileUpload_GenericErrorText">
             <summary>
               Looks up a localized string similar to Upload has failed..
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Localization.FileUpload_MaxFileSizeErrorText">
+            <summary>
+              Looks up a localized string similar to The file {0} is larger than the maximum allowed size..
             </summary>
         </member>
         <member name="P:DotVVM.BusinessPack.Localization.FileUpload_UploadButtonText">
@@ -7785,16 +7818,12 @@
             Reference to a file containing SVG icons used in BusinessPack.
             </summary>
         </member>
-        <member name="P:DotVVM.BusinessPack.ResourceManagement.SvgSpriteResource.Location">
-            <inheritdoc />
-        </member>
-        <member name="P:DotVVM.BusinessPack.ResourceManagement.SvgSpriteResource.MimeType">
-            <inheritdoc />
-        </member>
-        <member name="M:DotVVM.BusinessPack.ResourceManagement.SvgSpriteResource.GetLocations(System.String)">
-            <inheritdoc />
-        </member>
         <member name="M:Microsoft.Extensions.DependencyInjection.DotvvmServiceCollectionExtensions.AddBusinessPack(Microsoft.Extensions.DependencyInjection.IDotvvmServiceCollection,DotVVM.BusinessPack.BusinessPackTheme)">
+            <summary>
+            Extends the DotVVM with BusinessPack controls and features.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.DotvvmServiceCollectionExtensions.AddBusinessPack(Microsoft.Extensions.DependencyInjection.IDotvvmServiceCollection,DotVVM.BusinessPack.BusinessPackOptions)">
             <summary>
             Extends the DotVVM with BusinessPack controls and features.
             </summary>

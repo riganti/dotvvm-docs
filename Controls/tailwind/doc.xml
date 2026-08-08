@@ -851,12 +851,14 @@
             <remarks>
             Use <c>collapseBreakpoint</c> to control at which Tailwind breakpoint the sidebar
             switches between mobile (hamburger + overlay) and always-visible fixed layout.
-            Supported values: <c>sm</c>, <c>md</c>, <c>lg</c> (default), <c>xl</c>, <c>2xl</c>.
-            The JavaScript binding automatically adds <c>side-menu-collapse-{bp}</c> to <c>document.body</c>
-            so your layout CSS can reference it, and closes any open overlay when the viewport reaches the breakpoint.
+            Supported values: <see cref="F:DotVVM.Controls.Tailwind.Controls.TailwindBreakpoint.Small"/>, <see cref="F:DotVVM.Controls.Tailwind.Controls.TailwindBreakpoint.Medium"/>,
+            <see cref="F:DotVVM.Controls.Tailwind.Controls.TailwindBreakpoint.Large"/> (default), <see cref="F:DotVVM.Controls.Tailwind.Controls.TailwindBreakpoint.ExtraLarge"/>,
+            and <see cref="F:DotVVM.Controls.Tailwind.Controls.TailwindBreakpoint.ExtraExtraLarge"/>.
+            The rendered <c>data-collapse-breakpoint</c> attribute is used by the CSS and JavaScript behavior
+            to close any open overlay when the viewport reaches the breakpoint.
             </remarks>
         </member>
-        <member name="M:DotVVM.Controls.Tailwind.Controls.SideMenu.GetContents(DotVVM.Framework.Controls.HtmlCapability,System.String,System.Collections.Generic.List{DotVVM.Framework.Controls.DotvvmControl})">
+        <member name="M:DotVVM.Controls.Tailwind.Controls.SideMenu.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Controls.Tailwind.Controls.TailwindBreakpoint,System.Collections.Generic.List{DotVVM.Framework.Controls.DotvvmControl})">
             <summary>Builds the sidebar navigation container.</summary>
             <param name="htmlCapability">Applies standard HTML attributes to the rendered <c>nav</c> element.</param>
             <param name="collapseBreakpoint">Gets or sets the Tailwind breakpoint where the side menu switches from the mobile overlay mode to the always-visible desktop layout.</param>
@@ -956,6 +958,24 @@
         </member>
         <member name="F:DotVVM.Controls.Tailwind.Controls.LabelPosition.Below">
             <summary>The label appears below the slider.</summary>
+        </member>
+        <member name="T:DotVVM.Controls.Tailwind.Controls.TailwindBreakpoint">
+            <summary>Specifies a standard Tailwind responsive breakpoint.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.TailwindBreakpoint.Small">
+            <summary>Applies from the small breakpoint (<c>sm</c>).</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.TailwindBreakpoint.Medium">
+            <summary>Applies from the medium breakpoint (<c>md</c>).</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.TailwindBreakpoint.Large">
+            <summary>Applies from the large breakpoint (<c>lg</c>). Default.</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.TailwindBreakpoint.ExtraLarge">
+            <summary>Applies from the extra-large breakpoint (<c>xl</c>).</summary>
+        </member>
+        <member name="F:DotVVM.Controls.Tailwind.Controls.TailwindBreakpoint.ExtraExtraLarge">
+            <summary>Applies from the 2xl breakpoint (<c>2xl</c>).</summary>
         </member>
         <member name="T:DotVVM.Controls.Tailwind.Controls.ModalConfirmPostBackHandler">
             <summary>A postback handler that shows a styled modal confirmation dialog before executing the postback.</summary>

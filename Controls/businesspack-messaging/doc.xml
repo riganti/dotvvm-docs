@@ -9,5 +9,89 @@
             Marks MessagingHub implementations
             </summary>
         </member>
+        <member name="T:DotVVM.BusinessPack.Messaging.MessageHandler">
+            <summary>
+            Defines a command which will be triggered when a specified hub method is called on the server.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Messaging.MessageHandler.MethodName">
+            <summary>
+            Gets or sets the name of the hub method.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Messaging.MessageHandler.ConnectionId">
+            <summary>
+            Gets or sets the ConnectionId of MessagingConnection to which this handler will be bound.
+            Use this method only if the MessageHandler is not placed in the MessagingConnection element.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Messaging.MessageHandler.Command">
+            <summary>
+            Gets or sets the command that will be triggered when a hub method is called.
+            To access the parameters, please define the command as a lambda method - for example: (int number) =&gt; Value = Value + number
+            </summary>
+        </member>
+        <member name="T:DotVVM.BusinessPack.Messaging.MessagingConnection">
+            <summary>
+            Maintains a SignalR connection to a hub with a specified URL.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Messaging.MessagingConnection.ServiceUrl">
+            <summary>
+            Gets or sets the URL of the SignalR hub.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Messaging.MessagingConnection.ReconnectAttempts">
+            <summary>
+            Gets or sets the maximum number of attempts to reconnect to the hub.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Messaging.MessagingConnection.ReconnectTimeout">
+            <summary>
+            Gets or sets the timeout in seconds for establishing the connection to the hub.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Messaging.MessagingConnection.TryReconnect">
+            <summary>
+            Gets or sets whether the control should try to reconnect when the connection is lost.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Messaging.MessagingConnection.ConnectionId">
+            <summary>
+            Gets or sets a unique ID of the connection. You can use this ID in _messaging.GetConnection() method in static commands, or to assign stand-alone MessageHandlers to this connection.
+            Make sure that the connection ID is unique in the page.
+            If the property value is not specified, the ID will be generated automatically.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Messaging.MessagingConnection.IsConnected">
+            <summary>
+            Gets or sets whether the hub is connected.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Messaging.MessagingConnection.Connected">
+            <summary>
+            Gets or sets a command that will be triggered when the connection is established.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Messaging.MessagingConnection.Reconnecting">
+            <summary>
+            Gets or sets a command that will be triggered when the hub connection is lost and will be retried.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Messaging.MessagingConnection.Disconnected">
+            <summary>
+            Gets or sets a command that will be triggered when the hub connection is lost and will not be retried (when TryReconnect is false or when the number of attempts reached the value of the ReconnectAttempts property).
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Messaging.MessagingConnection.Error">
+            <summary>
+            Gets or sets a command that will be triggered when a communication error occurs.
+            </summary>
+        </member>
+        <member name="P:DotVVM.BusinessPack.Messaging.MessagingConnection.MessageHandlers">
+            <summary>
+            Gets or sets a collection of message handlers. Use this collection to specify handlers for various hub methods.
+            </summary>
+        </member>
     </members>
 </doc>
