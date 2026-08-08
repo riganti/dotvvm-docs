@@ -389,7 +389,7 @@
             Renders a collapsible Card.
             </summary>
         </member>
-        <member name="M:DotVVM.Bootstrap5.Controls.CollapsiblePanel.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.CardCapability,DotVVM.Framework.Binding.Expressions.IValueBinding{System.Boolean})">
+        <member name="M:DotVVM.Bootstrap5.Controls.CollapsiblePanel.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.CardCapability,DotVVM.Framework.Binding.ValueOrBinding{System.Boolean},DotVVM.Framework.Binding.Expressions.ICommandBinding)">
             <summary>
             Builds the inner content of the control.
             </summary>
@@ -398,6 +398,7 @@
             <capability-param name="HeaderTemplate">Gets or sets a custom template for panel header.</capability-param>
             <capability-param name="HeaderText">Gets or sets a plain text for panel header.</capability-param>
             <param name="isExpanded">Gets or sets whether the panel content is collapsed or not.</param>
+            <param name="collapsedOrExpanded">Triggers when the CollapsiblePanel is collapsed or expanded.</param>
             <returns></returns>
         </member>
         <member name="T:DotVVM.Bootstrap5.Controls.Collapsible">
@@ -473,32 +474,22 @@
             Extends the built-in DataPager control with Bootstrap CSS classes. 
             </summary>
         </member>
-        <member name="M:DotVVM.Bootstrap5.Controls.DataPager.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.Expressions.IValueBinding{DotVVM.Framework.Controls.IPageableGridViewDataSet},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},ResponsiveValueCapability{DotVVM.Bootstrap5.BootstrapJustifyContent},DotVVM.Framework.Controls.ITemplate,DotVVM.Framework.Controls.ITemplate,DotVVM.Framework.Controls.ITemplate,DotVVM.Framework.Controls.ITemplate,System.Boolean,DotVVM.Bootstrap5.Controls.Size)">
+        <member name="P:DotVVM.Bootstrap5.Controls.DataPager.Size">
             <summary>
-            Builds the inner content of the control.
+            Gets or sets the size of the data pager.
             </summary>
-            <capability-param name="JustifyContentAll">Gets or sets the flexbox utility CSS class for all screens.</capability-param>
-            <capability-param name="JustifyContentLarge">Gets or sets the flexbox utility CSS class for a large screen.</capability-param>
-            <capability-param name="JustifyContentMedium">Gets or sets the flexbox utility CSS class for a medium screen.</capability-param>
-            <capability-param name="JustifyContentSmall">Gets or sets the flexbox utility CSS class for a small screen.</capability-param>
-            <capability-param name="JustifyContentXLarge">Gets or sets the flexbox utility CSS class for a very large screen.</capability-param>
-            <capability-param name="JustifyContentXXLarge">Gets or sets the flexbox utility CSS class for the largest screen.</capability-param>
-            <param name="dataSet">Gets or sets the GridViewDataSet object in the viewmodel. </param>
-            <param name="enabled">Gets or sets whether data pager is enabled.</param>
-            <param name="firstPageTemplate">Gets or sets the template of the button which moves the user to the first page. </param>
-            <param name="lastPageTemplate">Gets or sets the template of the button which moves the user to the last page.</param>
-            <param name="nextPageTemplate">Gets or sets the template of the button which moves the user to the next page.</param>
-            <param name="previousPageTemplate">Gets or sets the template of the button which moves the user to the previous page.</param>
-            <param name="hideWhenOnlyOnePage">Gets or sets whether the pager should hide automatically when there is only one page of results. Must not be set to true when using the Visible property.</param>
-            <param name="size">Gets or sets the size of the data pager.</param>
-            <returns></returns>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.DataPager.JustifyContent">
+            <summary>
+            Gets or sets the flexbox utility CSS class.
+            </summary>
         </member>
         <member name="T:DotVVM.Bootstrap5.Controls.DateTimePicker">
             <summary>
             Renders a DateTimePicker control which lets the user either to type the date, or select it from a calendar pop-up. 
             </summary>
         </member>
-        <member name="M:DotVVM.Bootstrap5.Controls.DateTimePicker.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.ValueOrBinding{System.DateTime},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.DateTime}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.DateTime}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.Size}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},DotVVM.Framework.Binding.Expressions.ICommandBinding,DotVVM.Framework.Binding.Expressions.ICommandBinding)">
+        <member name="M:DotVVM.Bootstrap5.Controls.DateTimePicker.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.ValueOrBinding{System.Nullable{System.DateTime}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.DateTime}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.DateTime}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.Size}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},DotVVM.Bootstrap5.Controls.DateTimePickerType,DotVVM.Framework.Binding.Expressions.ICommandBinding,DotVVM.Framework.Binding.Expressions.ICommandBinding)">
             <summary>
             Builds the inner content of the control.
             </summary>
@@ -508,6 +499,7 @@
             <param name="maxDate">Gets or sets a maximal date that can be selected.</param>
             <param name="size">Gets or sets the size of the calendar input.</param>
             <param name="enabled">Gets or sets whether the control is enabled.</param>
+            <param name="type">Gets or sets the value type used in the picker.</param>
             <param name="changed">Gets or sets the command that will be triggered when the control text is changed.</param>
             <param name="textInput">Gets or sets the command that will be triggered when the user is typing in the field. Be careful when using this event - triggering frequent postbacks can make bad user experience. Consider using static commands or a throttling postback handler.</param>
             <returns></returns>
@@ -526,6 +518,7 @@
             <capability-param name="closeBehavior">Gets or sets the dropdown closing behavior. Possible values are `Default`, `Inside`, `Outside` and `Manual`.</capability-param>
             <capability-param name="dataSource">Gets or sets the data source for the items in the dropdown menu.</capability-param>
             <capability-param name="dropDirection">Gets or sets the direction in which the dropdown menu should open.</capability-param>
+            <capability-param name="alignment">Gets or sets to which side the dropdown items should be aligned.</capability-param>
             <capability-param name="enabled">Gets or sets a button disabled state.</capability-param>
             <capability-param name="fontType">Gets or sets the font color for button toggle.</capability-param>
             <capability-param name="isCollapsed">Gets or sets whether the dropdown menu is collapsed or expanded.</capability-param>
@@ -776,7 +769,7 @@
             Extends the TextBox control for usage in Form.
             </summary>
         </member>
-        <member name="M:DotVVM.Bootstrap5.Controls.FormControlTextBox.GetContents(FormControlCapability,DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.Expressions.IValueBinding{System.String},DotVVM.Framework.Controls.TextBoxType,DotVVM.Framework.Binding.Expressions.ICommandBinding,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.String,DotVVM.Framework.Binding.Expressions.ICommandBinding,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},System.Boolean)">
+        <member name="M:DotVVM.Bootstrap5.Controls.FormControlTextBox.GetContents(FormControlCapability,DotVVM.Framework.Controls.HtmlCapability,DotVVM.Framework.Binding.Expressions.IValueBinding,DotVVM.Framework.Controls.TextBoxType,DotVVM.Framework.Binding.Expressions.ICommandBinding,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.String}},System.String,DotVVM.Framework.Binding.Expressions.ICommandBinding,System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Boolean}},System.Boolean)">
             <summary>
             Builds the inner content of the control.
             </summary>
@@ -1037,6 +1030,11 @@
             Gets or sets the size of the button.
             </summary>
         </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.ListBox">
+            <summary>
+            Renders a Bootstrap select control.
+            </summary>
+        </member>
         <member name="T:DotVVM.Bootstrap5.Controls.ListGroup">
             <summary>
             Renders a Bootstrap list group of items, links or buttons. 
@@ -1178,6 +1176,16 @@
             <param name="enableAnimation">Gets or sets whether modal dialog should use fade animation.</param>
             <returns></returns>
         </member>
+        <member name="T:DotVVM.Bootstrap5.Controls.MultiSelect">
+            <summary>
+            Renders a Bootstrap select control.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.MultiSelect.Size">
+            <summary>
+            Gets or sets the size of the ComboBox.
+            </summary>
+        </member>
         <member name="T:DotVVM.Bootstrap5.Controls.NavBar">
             <summary>
             Renders a Bootstrap NavBar widget. 
@@ -1207,7 +1215,7 @@
             Represents a dropdown button in the navigation control. 
             </summary>
         </member>
-        <member name="M:DotVVM.Bootstrap5.Controls.NavBarDropDown.GetContents(ListItemCapability,ItemsOrDataSourceCapability{DotVVM.Bootstrap5.Controls.IDropDownItem},TextOrTemplateCapability,DotVVM.Framework.Binding.ValueOrBinding{System.Boolean})">
+        <member name="M:DotVVM.Bootstrap5.Controls.NavBarDropDown.GetContents(ListItemCapability,DotVVM.Bootstrap5.Controls.DropAlignment,ItemsOrDataSourceCapability{DotVVM.Bootstrap5.Controls.IDropDownItem},TextOrTemplateCapability,DotVVM.Framework.Binding.ValueOrBinding{System.Boolean})">
             <summary>
             Builds the inner content of the control.
             </summary>
@@ -1215,7 +1223,7 @@
             <capability-param name="items">Gets or sets the items inside the control.</capability-param>
             <capability-param name="headerTemplate">Gets or sets a custom template for the dropdown button.</capability-param>
             <capability-param name="headerText">Gets or sets a plain text for the dropdown button.</capability-param>
-            
+            <param name="alignment">Gets or sets how the dropdown items should be aligned.</param>
             <capability-param name="enabled">Gets or sets whether the toggle button is enabled or disabled.</capability-param>
             <capability-param name="text">Gets or sets the text to display on the dropdown button.</capability-param>
             <capability-param name="itemEnabled">Gets or sets whether the individual items in the dropdown menu should be enabled or disabled when DataSource is set.</capability-param>
@@ -1453,7 +1461,7 @@
             Renders Bootstrap tab control.
             </summary>
         </member>
-        <member name="M:DotVVM.Bootstrap5.Controls.TabControl.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.TabItemCapability,ItemsOrDataSourceCapability{DotVVM.Bootstrap5.Controls.ITabItem},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.TabControlBarHorizontalAlignment},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.TabControlVerticalAlignment}},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.Justify},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Int32}},DotVVM.Bootstrap5.Controls.NavigationBarVisualStyle,DotVVM.Bootstrap5.Controls.TabControlAnimation)">
+        <member name="M:DotVVM.Bootstrap5.Controls.TabControl.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.Controls.TabItemCapability,ItemsOrDataSourceCapability{DotVVM.Bootstrap5.Controls.ITabItem},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.TabControlBarHorizontalAlignment},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.TabControlVerticalAlignment}},DotVVM.Framework.Binding.ValueOrBinding{DotVVM.Bootstrap5.Controls.Justify},System.Nullable{DotVVM.Framework.Binding.ValueOrBinding{System.Int32}},DotVVM.Framework.Binding.Expressions.ICommandBinding,DotVVM.Bootstrap5.Controls.NavigationBarVisualStyle,DotVVM.Bootstrap5.Controls.TabControlAnimation)">
             <summary>
             Builds the inner content of the control.
             </summary>
