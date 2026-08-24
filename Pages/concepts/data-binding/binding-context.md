@@ -104,6 +104,22 @@ After a non-`null` value is set to the `DataContext` property, the element will 
 
 This can be used to create optional sections in the page which are available only when corresponding objects are loaded.
 
+## Resource binding contexts
+
+Since DotVVM 5.0, `DataContext` and `DataSource` can also use [resource binding](~/pages/concepts/data-binding/resource-binding).
+All bindings referencing a the resource-binding data context must also be resource bindings or use `_page.Resource(...)`.
+
+```DOTHTML
+<div DataContext="{resource: CurrentCustomer}">
+    <h2>{{resource: Name}}</h2>
+    <dot:RouteLink RouteName="CustomerDetail"
+                   Param-Id="{resource: Id}"
+                   Text="Open detail" />
+</div>
+```
+
+Use resource contexts when the data should be rendered by the server and does not need to be updated by Knockout on the client. Use value contexts when the data must remain reactive in the browser.
+
 ## Access markup control properties
 
 The `_control` binding context variable can be used in user control files (`*.dotcontrol`) to access properties of the user control. 

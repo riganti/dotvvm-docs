@@ -15,11 +15,13 @@ If DotVVM causes the application to fail on startup because of invalid assembly 
 Place the following code in the `Configure` method in `DotvvmStartup.cs`:
 
 ```CSHARP
-config.ExperimentalFeatures.ExplicitAssemblyLoading.Enable();
+config.Runtime.ExplicitAssemblyLoading.Enable();
 
 // add all assemblies that are needed in markup
 config.Markup.AddAssembly("MyAssembly");
 ```
+
+> In DotVVM 4.x and older, this option was located under `config.ExperimentalFeatures`. Since DotVVM 5.0, use `config.Runtime.ExplicitAssemblyLoading`.
 
 ## White-list the assemblies
 

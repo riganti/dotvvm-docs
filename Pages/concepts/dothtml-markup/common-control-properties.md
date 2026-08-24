@@ -5,8 +5,8 @@ All DotVVM controls derive from the `DotvvmControl` base class, which gives them
 You can use these properties on plain HTML elements too.
 
 + `DataContext` - changes the [binding context](~/pages/concepts/data-binding/binding-context) for the content of the control or element.
-+ `Visible` - hides the control or element in the page (using CSS `display: none`).
-+ `IncludeInPage` - includes or removes the control or element from DOM.
++ `Visible` - hides the control or element in the page using CSS `display: none`.
++ `IncludeInPage` - includes or removes the control or element from the DOM.
 + `ID` - specifies an ID of the control (which is used to build element unique ID, see the [Control IDs](#control-ids) section).
 + `Class-my-class` - toggles `my-class` CSS classes on the control based on a value of a binding expression.
 + `Style-some-style` - sets `some-style` to the assigned value or binding, see [Combine CSS classes and styles](~/pages/concepts/dothtml-markup/combine-css-classes-and-styles) for more details.
@@ -66,6 +66,21 @@ Each control can override this property by setting its own `Enabled` property.
     </div>
 </form>
 ```
+
+## Include controls conditionally
+
+The `IncludeInPage` property controls whether DotVVM renders the control into the page.
+If the value is `false`, the control is not present in the DOM.
+Since DotVVM 5.0, `IncludeInPage="{value: ...}"` will render the excluded markup as a Knockout template; older DotVVM version will keep the excluded element in the DOM before client-side initialization.
+
+```DOTHTML
+<dot:Literal Text="{value: Label}"
+             IncludeInPage="{value: IsVisible}"
+             RenderSpanElement="false" />
+```
+
+Use `Visible` when the element should stay in the DOM and only be hidden.
+Use `IncludeInPage` when the element should be created only while the condition is true.
 
 ## Control IDs
 

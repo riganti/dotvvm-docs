@@ -56,7 +56,19 @@ Therefore, the viewmodel can contain properties of the following types:
     * Lists: `List<T>`
     * Dictionaries: `Dictionary<K,V>` (**new in version 3.1**)
 
-> Please note that the `TimeSpan` and `DateTimeOffset` are not supported in the current version. 
+DotVVM 5.0 and newer use `System.Text.Json` for viewmodel serialization. Use `System.Text.Json.Serialization` attributes and converters when you need custom JSON behavior. Newtonsoft.Json converters are not used by DotVVM viewmodel serialization.
+
+`System.Text.Json` serializes properties according to their static type. DotVVM follows this behavior, but keeps dynamic dispatch for interface and abstract properties. You can also control this explicitly with `[Bind(AllowDynamicDispatch = true)]`.
+
+```CSHARP
+public class MyViewModel
+{
+    [Bind(AllowDynamicDispatch = true)]
+    public Animal SelectedAnimal { get; set; } = new Dog();
+}
+```
+
+Use `[DotvvmSerialization(DisableDotvvmConverter = true)]` on a type when you want native `System.Text.Json` behavior instead of the DotVVM viewmodel converter.
 
 ## Base class
 
@@ -73,7 +85,7 @@ If you cannot use the `DotvvmViewModelBase` base class, you can implement the `I
 
 In the following diagram, you can see the lifecycle of the HTTP request in DotVVM. 
 
-The left side shows what's going on when the client access the page first time (the HTTP GET request). The right side shows what happens when a [command](~/pages/concepts/respond-to-user-actions/commands) is invoked (e.g. when the user clicks a button to call a method in the viewmodel).
+The left side shows what happens when the client accesses the page for the first time (the HTTP GET request). The right side shows what happens when a [command](~/pages/concepts/respond-to-user-actions/commands) is invoked (e.g. when the user clicks a button to call a method in the viewmodel).
 
 ![Viewmodel lifecycle](viewmodels-img1.png)
 
@@ -105,9 +117,9 @@ Since version DotVVM 4.0, DotVVM ships with Roslyn Analyzers that help with quic
 
 The analyzers are packaged within the main DotVVM NuGet package and therefore should be automatically registered by your IDE when referencing the new framework version. 
 
-These analyzers will notify you about potential problems problems in your code-base by issuing warnings.
+These analyzers will notify you about potential problems in your codebase by issuing warnings.
 
-The analyzers implement several checks that evaluate whether viewmodels are serializable of not.
+The analyzers implement several checks that evaluate whether viewmodels are serializable or not.
 * **DotVVM02** - Use only serializable properties in viewmodels
    * Guard analyzing the properties and their types to determine whether they are JSON-serializable by DotVVM. This will notify you when you try to use an unsupported type in the viewmodel.
 * **DotVVM03** - Do not use public fields in viewmodels

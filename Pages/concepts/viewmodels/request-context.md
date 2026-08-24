@@ -27,10 +27,11 @@ The request execution is interrupted by this call.
 ## Returning files
 
 + `ReturnFileAsync` function is used when you need to [return a file](~/pages/concepts/upload-and-download-files/return-file-from-viewmodel) which will be downloaded by the user.
++ `IncludeReturnedFileAsync` function stores a file for download without interrupting the current command or static command. The current request can still finish normally and update the viewmodel.
 
 ## Asynchronous operations
 
-+ `GetCancellationToken` returns a cancellation token for the current request. You can pass this token to a long-running operations so they can be canceled if the user leaves the page before it is loaded.
++ Use `RequestAborted` as the cancellation token for all asynchronous operations. `GetCancellationToken()` is obsolete, it served the same purpose in older versions.
 
 ## URL manipulation
 

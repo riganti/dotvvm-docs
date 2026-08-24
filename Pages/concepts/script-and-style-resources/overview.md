@@ -64,7 +64,7 @@ Most resources have the `Location` property of type `IResourceLocation` which de
 
 * `FileResourceLocation` expects the app-relative filesystem path to the script or stylesheet file. This path should not start with `/` - it would point to the root of the filesystem. DotVVM will render the `<script>` or `<link>` element which points to a DotVVM resource handler (`~/dotvvmResource/{checksum}/{resourceName}`) that will serve the resource. 
 
-> Since the script contains the checksum of the file, this type of resource provides works well with browser or proxy caches since whenever the resource changes, it will get a unique URL. In the debug mode, the checksum is not a part of the URL in order to allow for easy debugging experience in the browser Developer tools (the URL remains the same even if the content changes so you won't lose your breakpoints and other settings). 
+> Since the URL contains the checksum of the file, this type of resource works well with browser or proxy caches. Whenever the resource changes, it gets a unique URL. In debug mode, the checksum is not a part of the URL in order to allow for an easier debugging experience in browser Developer Tools.
 
 * `UrlResourceLocation` specifies just the URL where the resource can be found. You can use either absolute URL (e.g. to point to some CDN), a relative URL to your server, or even a data URI. DotVVM will render the `<script>` or `<link>` element with the exact URL you have specified.
 
@@ -100,15 +100,28 @@ Because the syntax shown in the previous section is quite long, DotVVM 4.0 intro
 * `config.RegisterStylesheet` - registers `StylesheetResource` with any given location
 * `config.RegisterStylesheetFile` - registers `StylesheetResource` with `FileResourceLocation`
 * `config.RegisterStylesheetUrl` - registers `StylesheetResource` with `UrlResourceLocation`
-* `config.RegisterScript` - registers `StylesheetResource` with any given location
-* `config.RegisterScriptFile` - registers `StylesheetResource` with `FileResourceLocation`
-* `config.RegisterScriptUrl` - registers `StylesheetResource` with `UrlResourceLocation`
-* `config.RegisterScriptModuleUrl` - registers `ScriptModuleResource` with `FileResourceLocation`
-* `config.RegisterScriptModuleFile` - registers `ScriptModuleResource` with `UrlResourceLocation`
+* `config.RegisterScript` - registers `ScriptResource` with any given location
+* `config.RegisterScriptFile` - registers `ScriptResource` with `FileResourceLocation`
+* `config.RegisterScriptUrl` - registers `ScriptResource` with `UrlResourceLocation`
+* `config.RegisterScriptModuleFile` - registers `ScriptModuleResource` with `FileResourceLocation`
+* `config.RegisterScriptModuleUrl` - registers `ScriptModuleResource` with `UrlResourceLocation`
+
+The helper methods also accept `ResourceFetchPriority`, which renders the `fetchpriority` attribute on link resources when applicable.
+
+### ASP.NET Core static assets
+
+On supported ASP.NET Core versions, DotVVM can reference static web assets by label. Scripts and styles can be requested as resources named `asset:{relativePath}`.
+
+```DOTHTML
+<dot:RequiredResource Name="asset:Scripts/app.js" />
+<img src="~/Content/logo.svg" alt="Logo" />
+```
+
+DotVVM rewrites common `href` and `src` attributes to the resolved hashed static asset URL when static asset resolution is available.
 
 ## Registering jQuery
 
-If you application uses jQuery and if it is not included with another library (like [Bootstrap for DotVVM](~/pages/bootstrap-for-dotvvm/v4/getting-started) or [DotVVM Business Pack](~/pages/business-pack/getting-started)), add the following code into `ConfigureResources` method in `DotvvmStartup.cs`:
+If your application uses jQuery and if it is not included with another library (like [Bootstrap for DotVVM](~/pages/bootstrap-for-dotvvm/v4/getting-started) or [DotVVM Business Pack](~/pages/business-pack/getting-started)), add the following code into `ConfigureResources` method in `DotvvmStartup.cs`:
 
 ```CSHARP
 config.Resources.Register("jquery", new ScriptResource()

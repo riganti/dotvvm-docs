@@ -55,6 +55,45 @@ await Context.ReturnFileAsync(file, "export.pdf", "application/pdf");
 
 The method accepts a byte array or a stream, the file name, the MIME type and a dictionary with additional response headers.
 
+`ReturnFileAsync` interrupts the current command response. Use it when the primary result of the action is the file download.
+
+## Context.IncludeReturnedFileAsync
+
+Since DotVVM 5.0, you can use `IncludeReturnedFileAsync` to trigger a download while the command or static command still finishes normally.
+This is useful when the button should download a file and also update the page state, return more than one file, or initiate a redirect afterwards.
+
+```CSHARP
+public async Task ExportAndContinue()
+{
+    await Context.IncludeReturnedFileAsync(
+        "export"u8.ToArray,
+        "export.txt",
+        "text/plain");
+
+    Status = "Datasheet exported";
+}
+```
+
+Both `IncludeReturnedFileAsync` and `ReturnFileAsync` can also be used from static commands when the `IDotvvmRequestContext` is injected or passed through a `@service` directive.
+
+```DOTHTML
+@service context = DotVVM.Framework.Hosting.IDotvvmRequestContext
+
+<dot:Button Text="Export"
+            Click="{staticCommand: ExportViewModel.Export(context, Filter)}" />
+```
+
+```CSHARP
+[AllowStaticCommand]
+public static async Task Export(IDotvvmRequestContext context, string filter)
+{
+    await context.IncludeReturnedFileAsync(
+        Encoding.UTF8.GetBytes(filter),
+        "export.txt",
+        "text/plain");
+}
+```
+
 ## See also
 
 * [Upload files](upload-files)

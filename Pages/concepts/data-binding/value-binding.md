@@ -36,6 +36,24 @@ See the [supported expressions](supported-expressions) page for a list of method
 
 If you need to use a method that DotVVM cannot translate, you can define your own [JavaScript translator](~/pages/concepts/client-side-development/custom-javascript-translators).
 
+## Use server values in value bindings
+
+Since DotVVM 5.0, value bindings can include server-evaluated fragments using `_page.Resource(...)`.
+
+The resource fragment is evaluated during initial page render.
+It is not reactive and is not re-evaluated by commands unless the containing markup is re-rendered, for example by using [PostBack.Update](~/pages/concepts/server-side-rendering#re-render-control-html-on-postbacks).
+The resource fragment can be used to access properties not sent to the client, call methods which DotVVM cannot translate to JavaScript or access localization resources.
+
+```DOTHTML
+<dot:Literal Text={value: 'Hello ' + _page.Resource(UserDisplayName) + ', ' + CurrentName} />
+
+<dot:Button Text="Open"
+            Click={staticCommand: OpenedId = _page.Resource(System.Guid.NewGuid())} />
+```
+
+Static members and .NET resource properties used inside value bindings are wrapped as server resources automatically.
+This makes RESX values usable in expressions that otherwise run on the client.
+
 ## See also
 
 * [Data-binding overview](~/pages/concepts/data-binding/overview)

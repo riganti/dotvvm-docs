@@ -22,6 +22,34 @@ When a page is about to be rendered, the resource manager will put all required 
 
 If you are [building custom controls](~/pages/concepts/control-development/overview), you can use `context.ResourceManager.AddRequiredResource` to request any resource.
 
+## Use ASP.NET Core static assets
+
+On ASP.NET Core version 9.0 or newer, DotVVM can use [static assets as resources](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/static-files).
+Use the `asset:` resource name prefix to require a script or stylesheet by its static asset path.
+The asset path is always relative from the wwwroot, not the from the current page (the resources are registered globally).
+
+```DOTHTML
+<dot:RequiredResource Name="asset:Scripts/app.js" />
+```
+
+DotVVM can also rewrite common local `href` and `src` attributes to resolved static asset URLs.
+For example, `<img src="~/Content/logo.svg" />` will be rendered with the content hash as `<img src="Content/logo.bithee1b.svg`, if `Content/logo.svg` is a static asset.
+
+Static assets must be explicitly enabled in the ASP.NET Core app configuration:
+
+```CSHARP
+StaticWebAssetsLoader.UseStaticWebAssets(env, configuration);
+
+// ...
+
+app.UseEndpoints(endpoints => {
+    endpoints.MapStaticAssets();
+    // ...
+})
+
+
+```
+
 ## See also
 
 * [Resources overview](overview)
