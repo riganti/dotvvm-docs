@@ -108,6 +108,10 @@ Finally, write your HTML code. On all places where you need to embed something f
 
 Most master pages need only one or two placeholders. However, you can use as many `ContentPlaceHolder`s as you need.
 
+Since DotVVM 5.0, `ContentPlaceHolder` can be used in template-generated control trees, including composite controls and selected template scenarios.
+DotVVM will initialize this content after the template is created.
+Templates with `ContentPlaceHolder`s cannot be instantiated multiple times, i.e. defining `ContentPlaceHolder` in a `dot:Repeater` is invalid.
+
 > The commercial version of [DotVVM for Visual Studio](https://www.dotvvm.com/products/visual-studio-extensions) can show the IntelliSense for the `ContentPlaceHolderID` 
 property, and much more. 
 

@@ -33,6 +33,44 @@ My constant value
 
 Resource binding may be helpful in combination with [server-side rendering and SEO](~/pages/concepts/server-side-rendering).
 
+## Use resources inside value bindings
+
+If only part of an expression needs to be evaluated on the server, we can use a `_page.Resource(...)` fragment inside a [value binding](~/pages/concepts/data-binding/value-binding).
+
+```DOTHTML
+<dot:Literal Text={value: 'Hello ' + _page.Resource(UserDisplayName) + ', ' + CurrentName} />
+```
+
+The value passed to `_page.Resource(...)` is evaluated during page rendering.
+The rest of the value binding remains a client-side Knockout expression.
+
+## Use resource binding as a data context
+
+Since DotVVM 5.0, `resource` bindings can be used in `DataContext` and `DataSource` properties.
+This is useful for read-heavy or SEO-sensitive lists where the initial HTML should contain all items, and the data does not need to be reactive on the client.
+
+Using `resource` binding in a data-context controlling property implies that all bindings using this context must also be resource or command bindings.
+Usually, it means that `value` and `staticCommand` bindings are not used inside controls with resource data-context.
+However, we can use `value` bindings if they do not reference `_this` or reference it only in the `_page.Resource(...)` subexpression.
+
+```DOTHTML
+<dot:Repeater DataSource={resource: Customers.Items}>
+    <div data-id={resource: Id}>
+        {{resource: Name}}
+        <dot:Button Text="Select" Click={command: _root.SelectCustomer(Id)} />
+
+        <!-- we can use a value binding if it doesn't use _this -->
+        <span IncludeInPage={value: _parent.SelectedName == _page.Resource(_this.Name)}>
+            This name is selected
+        </span>
+    </div>
+</dot:Repeater>
+```
+
+Resource data sources are supported by built-in item controls such as `Repeater`, `HierarchyRepeater`, `GridView`, `EmptyData`, Auto UI controls, and command bindings in server-rendered templates where applicable.
+Support in BusinessPack `GridView` and `TreeView` components is not available, since these components are more focused on interactivity.
+
+
 ## Access the RESX file entries
 
 The primary scenario for this binding is to access .NET resource files (RESX) which are used for localization. 

@@ -51,6 +51,9 @@ public static string MyMethod(string name)
 }
 ```
 
+> Since DotVVM 5.0, static command arguments use the same DotVVM serialization rules as viewmodels.
+> If a specific argument type should use native `System.Text.Json` behavior, wrap it in a type marked with `[DotvvmSerialization(DisableDotvvmConverter = true)]`.
+
 > Be careful. There is no way for DotVVM to determine whether the arguments passed to the command weren't tampered with. Always validate that the values are correct and that the user has appropriate permissions to perform the operation.
 
 The binding expression in the page looks like this:
