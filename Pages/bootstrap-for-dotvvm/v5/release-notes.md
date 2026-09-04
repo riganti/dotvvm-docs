@@ -1,9 +1,30 @@
 # Release notes
 
+## 5.0.0
+### Package updates
+- DotVVM upgraded to **5.0**
+
+## 4.3.3
+### New features
+- Added `CollapsedOrExpanded` event to `CollapsiblePanel` 
+
+## 4.3.2
+### New features
+- Added `ListBox` and `MultiSelect` controls
+- New subpackage for `Select2` wrappers with `Select2ComboBox` and `Select2MultiSelect`
+- Added `ActiveTabChanged` event and `UrlFragment` property to `TabControl`
+
+### Bug fixes
+- Various fixed of `CollapsiblePanel` - e.g. collapsed by default
+- Fixed bug for nested `TabControl`, fixed auto-selecting of first item
+- `NavBarDropDown` - added `ItemTarget` property
+- `DateTimePicker` - fixed issue with nullable date binding
+
 ## 4.3.1
 ### New features
 - Added `Type` property to the `DateTimePicker` control
 - Added `Alignment` property to the `DropDown` control
+- Added `ModalConfirmPostBackHandler`
 
 ### Bug fixes
 - Fixed `SelectedTabIndex` property in `TabControl`

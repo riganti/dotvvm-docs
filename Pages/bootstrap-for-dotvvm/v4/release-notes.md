@@ -1,5 +1,21 @@
 # Release notes
 
+## 5.0.1
+### Bug fixes
+- Fixed `CheckBox` and `RadioButton` that uses `IncludeInPage`
+
+## 5.0.0
+### Package updates
+- DotVVM upgraded to **5.0**
+
+## 4.3.1
+### Bug fixes
+- Fixed using the `Icon` inside `Repeater`
+
+## 4.3.0
+### Package updates
+- DotVVM upgraded to **4.3**
+
 ## 4.2.0
 ### Package updates
 - DotVVM upgraded to **4.2**
