@@ -2,18 +2,17 @@
 
 ## v4.0.601.0
 * Support for new Visual Studio versions
+* Project templates bumped to **DotVVM 5.0.0**.
+* Removed diagnostics “Dereference of a possibly null reference.” for projects with `<Nullable>enable</Nullable>`.
+* Fixed error “The control could not be resolved. TypedConstant is an array. Use Values property.” when using controls with `ControlMarkupOptions.AlternativeNames`.
+* Fixed missing DotVVM logo in all dialog windows.
+* Fixed extraction of markup control in VS 2022 version.
 
 ### Compatibility
 * Version for Visual Studio 2019 (16.11.59)
 * Version for Visual Studio 2022 (17.14.38)
 * Version for Visual Studio 2026 (18.9.0 August 2026 Feature Update)
 * Version for Visual Studio 2026 Insiders (12106.202)
-
-### Fixes
-* Removed diagnostics “Dereference of a possibly null reference.” for projects with `<Nullable>enable</Nullable>`.
-* Fixed error “The control could not be resolved. TypedConstant is an array. Use Values property.” when using controls with `ControlMarkupOptions.AlternativeNames`.
-* Fixed missing DotVVM logo in all dialog windows.
-* Fixed extraction of markup control in VS 2022 version.
 
 ### Assets
 Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.601.0/DotVVM.Integration.VisualStudio.VS2019.vsix) </br>
