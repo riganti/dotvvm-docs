@@ -1,0 +1,6 @@
+<bs:Select2ComboBox SelectedValue="{value: SelectedCountry}"
+                    DataSource="{value: Countries}"
+                    ItemTextBinding="{value: Name}"
+                    ItemValueBinding="{value: Code}" />
+
+<p>Selected country: <strong>{{value: SelectedCountry}}</strong></p>

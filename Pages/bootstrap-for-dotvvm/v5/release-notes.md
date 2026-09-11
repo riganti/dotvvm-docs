@@ -1,5 +1,10 @@
 # Release notes
 
+## 5.0.1
+### New features
+- New subpackage `DotVVM.Bootstrap5.AirDatePicker` wrappers with `AirDatePicker` control
+- New subpackage for `DotVVM.Bootstrap5.Select2` wrappers with `Select2ComboBox` and `Select2MultiSelect` controls
+
 ## 5.0.0
 ### Package updates
 - DotVVM upgraded to **5.0**

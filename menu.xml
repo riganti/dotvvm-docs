@@ -203,13 +203,13 @@
   </DocPageMenuItem>
     
   <DocControlCategory Category="builtin" CssClass="icon controls">
-    <DocControlCategory Category="builtin-autoui" PageName="Auto UI" />
+    <DocControlCategory Category="builtin-autoui" PageName="📦 Auto UI" />
   </DocControlCategory>
     
   <DocPageMenuItem RouteName="business-pack" PageName="DotVVM Business Pack" CssClass="icon dotvvm-business-pack separator-top">
     <DocPageMenuItem RouteName="getting-started" PageName="Getting started" />
     <DocControlCategory RouteName="controls" Category="businesspack">
-      <DocControlCategory Category="businesspack-messaging" PageName="Messaging" />
+      <DocControlCategory Category="businesspack-messaging" PageName="📦 Messaging" />
     </DocControlCategory>
     <DocPageMenuItem RouteName="themes" PageName="Themes">
 	  <DocPageMenuItem RouteName="overview" PageName="Overview" />
@@ -225,7 +225,10 @@
       <DocPageMenuItem RouteName="getting-started" PageName="Getting started" />
       <DocPageMenuItem RouteName="changing-theme" PageName="Using Dark Theme" />
       <DocPageMenuItem RouteName="flex" PageName="Flex Utilities" />
-      <DocControlCategory Category="bootstrap5" />
+			<DocControlCategory Category="bootstrap5">
+				<DocControlCategory Category="bootstrap5-select2" PageName="📦 Select2" />
+				<DocControlCategory Category="bootstrap5-airdatepicker" PageName="📦 AirDatePicker" />
+			</DocControlCategory>
       <DocPageMenuItem RouteName="release-notes" PageName="Release notes" />
     </DocPageMenuItem>
   

@@ -2152,8 +2152,15 @@
         </member>
         <member name="M:DotVVM.Framework.Compilation.Javascript.ParametrizedCode.ToString(System.Func{DotVVM.Framework.Compilation.Javascript.CodeSymbolicParameter,DotVVM.Framework.Compilation.Javascript.CodeParameterAssignment})">
             <summary>
-            Converts this to string and assigns all parameters using `parameterAssignment`. If there is any missing, exception is thrown.
+            Converts this to string and assigns all parameters using `parameterAssignment`.
             </summary>
+            <exception cref="T:DotVVM.Framework.Compilation.Javascript.ParametrizedCode.MissingAssignmentException">Thrown when some parameter is not assigned and has no default value.</exception>
+        </member>
+        <member name="M:DotVVM.Framework.Compilation.Javascript.ParametrizedCode.ToString(System.Func{DotVVM.Framework.Compilation.Javascript.CodeSymbolicParameter,DotVVM.Framework.Compilation.Javascript.CodeParameterAssignment},System.Boolean@)">
+            <summary>
+            Converts this to string and assigns all parameters using `parameterAssignment`.
+            </summary>
+            <exception cref="T:DotVVM.Framework.Compilation.Javascript.ParametrizedCode.MissingAssignmentException">Thrown when some parameter is not assigned and has no default value.</exception>
         </member>
         <member name="M:DotVVM.Framework.Compilation.Javascript.ParametrizedCode.AssignParameters(System.Func{DotVVM.Framework.Compilation.Javascript.CodeSymbolicParameter,DotVVM.Framework.Compilation.Javascript.CodeParameterAssignment})">
             <summary>
@@ -3089,6 +3096,12 @@
         </member>
         <member name="P:DotVVM.Framework.Configuration.DotvvmRuntimeConfiguration.AllowResourceVersionHash">
             <summary> Whether DotVVM should add version hash to the resource URL and use immutable caching. Since v5.0, this is enabled by default in all configurations, the v4 behavior can be reverted by setting <c>AllowResourceVersionHash.Enable = null</c>. </summary>
+        </member>
+        <member name="P:DotVVM.Framework.Configuration.DotvvmRuntimeConfiguration.DebugResources">
+            <summary>
+            When enabled, resource locations with a debug variant use that variant even in Production mode.
+            By default, debug resources are used when <see cref="P:DotVVM.Framework.Configuration.DotvvmConfiguration.Debug"/> is enabled.
+            </summary>
         </member>
         <member name="P:DotVVM.Framework.Configuration.DotvvmRuntimeConfiguration.ExplicitAssemblyLoading">
             <summary>
@@ -5136,10 +5149,13 @@
             <summary> Adds the JS <paramref name="expression"/> to the group. </summary>
         </member>
         <member name="M:DotVVM.Framework.Controls.KnockoutBindingGroup.Add(System.String,DotVVM.Framework.Controls.KnockoutBindingGroup)">
-            <summary> Adds another nested group. If the nested group is empty, nothing is added (undefined will be in the field). </summary>
+            <summary> Adds another nested group. If the nested group is empty, the field is omitted. </summary>
         </member>
         <member name="M:DotVVM.Framework.Controls.KnockoutBindingGroup.Add(System.String,DotVVM.Framework.Controls.DotvvmBindableObject,DotVVM.Framework.Binding.Expressions.IValueBinding)">
             <summary> Adds a knockout binding expression of the specified value binding. </summary>
+        </member>
+        <member name="M:DotVVM.Framework.Controls.KnockoutBindingGroup.Add``1(System.String,DotVVM.Framework.Controls.DotvvmBindableObject,DotVVM.Framework.Binding.ValueOrBinding{``0})">
+            <summary> Adds the specified value or knockout binding expression to the group. </summary>
         </member>
         <member name="M:DotVVM.Framework.Controls.KnockoutBindingGroup.AddValue(System.String,System.Object)">
             <summary> Adds the specified value as a JSON serialized constant expression. </summary>
@@ -9037,11 +9053,15 @@
         <member name="P:Microsoft.Extensions.DependencyInjection.DotvvmServiceCollection.Services">
             <inheritdoc />
         </member>
-        <member name="M:Microsoft.Extensions.DependencyInjection.DotvvmServiceCollection.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+        <member name="P:Microsoft.Extensions.DependencyInjection.DotvvmServiceCollection.IsDotvvmCompiler">
+            <inheritdoc/>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.DotvvmServiceCollection.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:Microsoft.Extensions.DependencyInjection.DotvvmServiceCollection" /> class.
             </summary>
             <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> to add services to.</param>
+            <param name="isDotvvmCompiler">Indicates whether the service collection is for the DotVVM compiler.</param>
         </member>
         <member name="M:Microsoft.Extensions.DependencyInjection.DotvvmServiceCollectionExtensions.RegisterDotVVMServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
@@ -9052,6 +9072,18 @@
         <member name="T:Microsoft.Extensions.DependencyInjection.IDotvvmServiceCollection">
             <summary>
             An interface for configuring DotVVM services.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Extensions.DependencyInjection.IDotvvmServiceCollection.Services">
+            <summary>
+            Gets the underlying <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> that is being configured.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Extensions.DependencyInjection.IDotvvmServiceCollection.IsDotvvmCompiler">
+            <summary>
+            Indicates whether DotvvmStartup was invoked by the DotVVM compiler.
+            DotVVM compiler doesn't run Program.cs or Startup.cs, so some services may not be available.
+            This property can be used to conditionally register services that are only needed for runtime.
             </summary>
         </member>
         <member name="P:Microsoft.AspNet.WebUtilities.MultipartReader.HeaderLengthLimit">
@@ -9162,20 +9194,34 @@
             <summary>
             Redirects the client to the specified file.
             </summary>
+            <remarks> Note that this function terminates the postback with <see cref="T:DotVVM.Framework.Hosting.DotvvmInterruptRequestExecutionException" />. See the IncludeReturnedFileAsync variant if you also want to update the viewmodel. </remarks>
         </member>
         <member name="M:DotvvmRequestContextExtensions.ReturnFile(DotVVM.Framework.Hosting.IDotvvmRequestContext,System.IO.Stream,System.String,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.String)">
             <summary>
             Redirects the client to the specified file.
             </summary>
+            <remarks> Note that this function terminates the postback with <see cref="T:DotVVM.Framework.Hosting.DotvvmInterruptRequestExecutionException" />. See the IncludeReturnedFileAsync variant if you also want to update the viewmodel. </remarks>
         </member>
         <member name="M:DotvvmRequestContextExtensions.ReturnFileAsync(DotVVM.Framework.Hosting.IDotvvmRequestContext,System.Byte[],System.String,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.String)">
             <summary>
             Redirects the client to the specified file.
             </summary>
+            <remarks> Note that this function terminates the postback with <see cref="T:DotVVM.Framework.Hosting.DotvvmInterruptRequestExecutionException" />. See the IncludeReturnedFileAsync variant if you also want to update the viewmodel. </remarks>
         </member>
         <member name="M:DotvvmRequestContextExtensions.ReturnFileAsync(DotVVM.Framework.Hosting.IDotvvmRequestContext,System.IO.Stream,System.String,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.String)">
             <summary>
             Redirects the client to the specified file.
+            </summary>
+            <remarks> Note that this function terminates the postback with <see cref="T:DotVVM.Framework.Hosting.DotvvmInterruptRequestExecutionException" />. See the IncludeReturnedFileAsync variant if you also want to update the viewmodel. </remarks>
+        </member>
+        <member name="M:DotvvmRequestContextExtensions.IncludeReturnedFileAsync(DotVVM.Framework.Hosting.IDotvvmRequestContext,System.Byte[],System.String,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.String)">
+            <summary>
+            Starts a client-side download of the specified file without interrupting request execution.
+            </summary>
+        </member>
+        <member name="M:DotvvmRequestContextExtensions.IncludeReturnedFileAsync(DotVVM.Framework.Hosting.IDotvvmRequestContext,System.IO.Stream,System.String,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.String)">
+            <summary>
+            Starts a client-side download of the specified file without interrupting request execution.
             </summary>
         </member>
     </members>
