@@ -1,0 +1,23 @@
+<div class="d-grid gap-3" style="max-width: 28rem">
+    <bs:AirDatePicker SelectedValue="{value: MeetingDate}"
+                      Placeholder="Choose a date" />
+
+    <bs:AirDatePicker SelectedValue="{value: MeetingTime}"
+                      Type="Time"
+                      TimeFormat="HH:mm"
+                      MinHours="8"
+                      MaxHours="18"
+                      MinutesStep="15"
+                      Placeholder="Choose a time" />
+
+    <bs:AirDatePicker SelectedValue="{value: PublishedAt}"
+                      Type="DateTime"
+                      DateFormat="dd.MM.yyyy"
+                      TimeFormat="HH:mm"
+                      Culture="cs-CZ"
+                      Placeholder="Choose date and time" />
+</div>
+
+<p>Date: <strong>{{value: MeetingDate}}</strong></p>
+<p>Time: <strong>{{value: MeetingTime}}</strong></p>
+<p>Date and time: <strong>{{value: PublishedAt}}</strong></p>

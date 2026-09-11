@@ -459,6 +459,11 @@
             Gets or sets the size of the ComboBox.
             </summary>
         </member>
+        <member name="P:DotVVM.Bootstrap5.Controls.ComboBox.SelectMenuSize">
+            <summary>
+            Gets or sets the number of visible options in the select menu. If set to 1, the select menu will be rendered as a dropdown.
+            </summary>
+        </member>
         <member name="T:DotVVM.Bootstrap5.Controls.Container">
             <summary>
             Renders a Boostrap container.

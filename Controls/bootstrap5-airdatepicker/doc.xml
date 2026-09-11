@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotVVM.Bootstrap5.AirDatePicker</name>
+    </assembly>
+    <members>
+        <member name="T:DotVVM.Bootstrap5.AirDatePicker.Controls.AirDatePicker">
+            <summary>
+            A Bootstrap 5-styled date/time picker backed by AIR Datepicker.
+            </summary>
+        </member>
+        <member name="M:DotVVM.Bootstrap5.AirDatePicker.Controls.AirDatePicker.GetContents(DotVVM.Framework.Controls.HtmlCapability,DotVVM.Bootstrap5.AirDatePicker.Controls.AirDatePickerCapability)">
+            <summary>Builds the AIR Datepicker input.</summary>
+            <capability-param name="SelectedValue">Gets or sets the selected date and time value bound to the control.</capability-param>
+            <capability-param name="Type">Gets or sets whether the control displays a date picker, time picker, or both.</capability-param>
+            <capability-param name="MinDate">Gets or sets the minimum selectable date and time.</capability-param>
+            <capability-param name="MaxDate">Gets or sets the maximum selectable date and time.</capability-param>
+            <capability-param name="MinHours">Gets or sets the minimum selectable hour when time selection is enabled.</capability-param>
+            <capability-param name="MaxHours">Gets or sets the maximum selectable hour when time selection is enabled.</capability-param>
+            <capability-param name="HoursStep">Gets or sets the hour step used by the time picker.</capability-param>
+            <capability-param name="MinutesStep">Gets or sets the minute step used by the time picker.</capability-param>
+            <capability-param name="DateFormat">Gets or sets the .NET date format string used for display. Supported tokens: <c>d</c>, <c>M</c>, and <c>y</c>.</capability-param>
+            <capability-param name="TimeFormat">Gets or sets the .NET time format string used for display. Accepted tokens are limited to <c>h</c>, <c>H</c>, <c>m</c>, <c>s</c>, and <c>t</c>.</capability-param>
+            <capability-param name="Placeholder">Gets or sets the placeholder text shown when no value is selected.</capability-param>
+            <capability-param name="Culture">Gets or sets the culture name used for localization. When omitted, <see cref="P:System.Globalization.CultureInfo.CurrentUICulture"/> is used.</capability-param>
+            <capability-param name="InputSize">Gets or sets the visual input size.</capability-param>
+            <capability-param name="Enabled">Gets or sets whether the input is enabled.</capability-param>   
+            <capability-param name="Size">Gets or sets the size of the input.</capability-param>   
+        </member>
+        <member name="T:DotVVM.Bootstrap5.AirDatePicker.Controls.AirDatePickerType">
+            <summary>Specifies whether the picker renders date, time, or combined date and time selection.</summary>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.AirDatePicker.Controls.AirDatePickerCapability">
+            <summary>Shared AIR Datepicker configuration.</summary>
+        </member>
+    </members>
+</doc>

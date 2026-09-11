@@ -1,0 +1,6 @@
+<bs:Select2MultiSelect SelectedValues="{value: SelectedTechnologies}"
+                        DataSource="{value: Technologies}"
+                        ItemTextBinding="{value: Name}"
+                        ItemValueBinding="{value: Id}" />
+
+<p>Selected technologies: <strong>{{value: SelectedTechnologies}}</strong></p>

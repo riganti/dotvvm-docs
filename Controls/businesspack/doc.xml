@@ -1757,7 +1757,7 @@
         </member>
         <member name="T:DotVVM.BusinessPack.Controls.FileUpload">
             <summary>
-            Renders a FileUpload control supporting HTML 5 upload features (drag &amp; drop, directory upload, 
+            Renders a FileUpload control supporting HTML 5 upload features (drag &amp; drop, directory upload,
             image previews, etc.).
             </summary>
         </member>
@@ -1799,7 +1799,7 @@
         </member>
         <member name="P:DotVVM.BusinessPack.Controls.FileUpload.DragFilesHereText">
             <summary>
-            Gets or sets the text informing about drag&amp;drop upload; usually displayed next to the upload button. 
+            Gets or sets the text informing about drag&amp;drop upload; usually displayed next to the upload button.
             The default value is "or drag them here.".
             </summary>
         </member>

@@ -1,0 +1,508 @@
+﻿{
+  "Version": 2,
+  "Controls": [
+    {
+      "Namespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+      "Name": "AirDatePicker",
+      "PrimaryName": null,
+      "IsContentAllowed": false,
+      "DefaultContentPropertyName": null,
+      "HasHtmlAttributesCollection": false,
+      "Properties": [
+        {
+          "Name": "IncludeInPage",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "DotvvmControl",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Boolean",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": true,
+          "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "ClientIDMode",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "DotvvmControl",
+          "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+          "PropertyTypeName": "ClientIDMode",
+          "IsEnum": true,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": false,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": "Static",
+          "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "ClientID",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "DotvvmControl",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "String",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 0,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "MinHours",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Int32",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "OwningCapabilityName": "AirDatePickerCapability"
+        },
+        {
+          "Name": "DataContext",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "DotvvmBindableObject",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Object",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": false,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "Enabled",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Boolean",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "OwningCapabilityName": "AirDatePickerCapability"
+        },
+        {
+          "Name": "SelectedValue",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
+          "PropertyTypeName": "IValueBinding<DateTime?>",
+          "IsEnum": false,
+          "IsBindingProperty": true,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": false,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "OwningCapabilityName": "AirDatePickerCapability"
+        },
+        {
+          "Name": "ID",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "DotvvmControl",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "String",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "MaxDate",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "DateTime?",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "OwningCapabilityName": "AirDatePickerCapability"
+        },
+        {
+          "Name": "MinDate",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "DateTime?",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "OwningCapabilityName": "AirDatePickerCapability"
+        },
+        {
+          "Name": "HtmlCapability",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+          "PropertyTypeName": "HtmlCapability",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": true,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "MinutesStep",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Int32?",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": false,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "OwningCapabilityName": "AirDatePickerCapability"
+        },
+        {
+          "Name": "Visible",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Boolean",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": true,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": "DotVVM.Framework.Controls",
+          "OwningCapabilityName": "HtmlCapability"
+        },
+        {
+          "Name": "Culture",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "String",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "OwningCapabilityName": "AirDatePickerCapability"
+        },
+        {
+          "Name": "TimeFormat",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "String",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": false,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "OwningCapabilityName": "AirDatePickerCapability"
+        },
+        {
+          "Name": "Size",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "DotVVM.Bootstrap5.Controls",
+          "PropertyTypeName": "Size",
+          "IsEnum": true,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": "Default",
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "OwningCapabilityName": "AirDatePickerCapability"
+        },
+        {
+          "Name": "HoursStep",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Int32?",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": false,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "OwningCapabilityName": "AirDatePickerCapability"
+        },
+        {
+          "Name": "DateFormat",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "String",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": false,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "OwningCapabilityName": "AirDatePickerCapability"
+        },
+        {
+          "Name": "Placeholder",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "String",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "OwningCapabilityName": "AirDatePickerCapability"
+        },
+        {
+          "Name": "AirDatePickerCapability",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "PropertyTypeName": "AirDatePickerCapability",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": true,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "Type",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "PropertyTypeName": "AirDatePickerType",
+          "IsEnum": true,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": false,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": "Date",
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "OwningCapabilityName": "AirDatePickerCapability"
+        },
+        {
+          "Name": "MaxHours",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "DeclaringTypeName": "AirDatePicker",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Int32",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+          "OwningCapabilityName": "AirDatePickerCapability"
+        }
+      ],
+      "IsAbstract": false
+    }
+  ],
+  "Enums": [
+    {
+      "Namespace": "DotVVM.Bootstrap5.AirDatePicker.Controls",
+      "Name": "AirDatePickerType",
+      "Values": [
+        {
+          "Name": "Date",
+          "Value": "0"
+        },
+        {
+          "Name": "Time",
+          "Value": "1"
+        },
+        {
+          "Name": "DateTime",
+          "Value": "2"
+        }
+      ]
+    },
+    {
+      "Namespace": "DotVVM.Bootstrap5.Controls",
+      "Name": "Size",
+      "Values": [
+        {
+          "Name": "Default",
+          "Value": "0"
+        },
+        {
+          "Name": "Large",
+          "Value": "1"
+        },
+        {
+          "Name": "Small",
+          "Value": "2"
+        }
+      ]
+    },
+    {
+      "Namespace": "DotVVM.Framework.Controls",
+      "Name": "ClientIDMode",
+      "Values": [
+        {
+          "Name": "AutoGenerated",
+          "Value": "0"
+        },
+        {
+          "Name": "Static",
+          "Value": "1"
+        }
+      ]
+    }
+  ]
+}
