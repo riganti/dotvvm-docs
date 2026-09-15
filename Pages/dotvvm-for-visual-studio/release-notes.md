@@ -9,10 +9,10 @@
 * Fixed extraction of markup control in VS 2022 version.
 
 ### Compatibility
-* Version for Visual Studio 2019 (16.11.59)
-* Version for Visual Studio 2022 (17.14.38)
-* Version for Visual Studio 2026 (18.9.0 August 2026 Feature Update)
-* Version for Visual Studio 2026 Insiders (12106.202)
+* Version for Visual Studio 2019 (16.11.60)
+* Version for Visual Studio 2022 (17.14.40)
+* Version for Visual Studio 2026 (18.10.0 September 2026 Feature Update)
+* Version for Visual Studio 2026 Insiders (12202.211)
 
 ### Assets
 Version for Visual Studio 2019: [download link](https://dotvvmstorage.blob.core.windows.net/public/v4.0.601.0/DotVVM.Integration.VisualStudio.VS2019.vsix) </br>
