@@ -1,5 +1,9 @@
 # Release notes
 
+## 5.0.2
+### Bug fixes
+- Fixed usage of complex expressions in the `Enabled` property on `DateTimePicker`
+
 ## 5.0.1
 ### Bug fixes
 - Fixed `CheckBox` and `RadioButton` that uses `IncludeInPage`
@@ -11,6 +15,7 @@
 ## 4.3.1
 ### Bug fixes
 - Fixed using the `Icon` inside `Repeater`
+- Fixed usage of complex expressions in the `Enabled` property on `DateTimePicker`
 
 ## 4.3.0
 ### Package updates
