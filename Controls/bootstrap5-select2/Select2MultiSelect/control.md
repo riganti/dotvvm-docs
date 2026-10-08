@@ -8,3 +8,5 @@ config.AddBootstrap5Select2Configuration();
 ```
 
 The control uses the `bs` prefix and supports all properties of `MultiSelect`.
+
+Set `AllowCreateItems="true"` to let users create new items while searching. This feature is disabled by default and requires `DataSource` and `SelectedValues` to be collections of strings. New items are added to `DataSource` and remain available after they are deselected.

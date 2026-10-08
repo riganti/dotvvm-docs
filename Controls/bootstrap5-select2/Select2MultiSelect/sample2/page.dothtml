@@ -1,0 +1,10 @@
+<p>Search for a technology or type a new name and press Enter to add it.</p>
+
+<bs:Select2MultiSelect DataSource="{value: Technologies}"
+                      SelectedValues="{value: SelectedTechnologies}"
+                      AllowCreateItems="true"
+                      SelectionChanged="{command: OnSelectionChanged()}" />
+
+<p>Available technologies: <strong>{{value: string.Join(", ", Technologies)}}</strong></p>
+<p>Selected technologies: <strong>{{value: string.Join(", ", SelectedTechnologies)}}</strong></p>
+<p>Items received by the server: <strong>{{value: TechnologiesOnServer}}</strong></p>
