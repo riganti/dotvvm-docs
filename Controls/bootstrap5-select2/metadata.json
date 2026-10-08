@@ -10,49 +10,9 @@
       "HasHtmlAttributesCollection": true,
       "Properties": [
         {
-          "Name": "SelectMenuSize",
-          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.Controls",
-          "DeclaringTypeName": "ComboBox",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "Int32",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": 1,
-          "IsBasicProperty": false,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "InnerText",
+          "Name": "DataSource",
           "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "HtmlGenericControl",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "String",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": null,
-          "IsBasicProperty": true,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "DataContext",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "DotvvmBindableObject",
+          "DeclaringTypeName": "ItemsControl",
           "PropertyTypeNamespace": "System",
           "PropertyTypeName": "Object",
           "IsEnum": false,
@@ -64,7 +24,27 @@
             "Required": false
           },
           "DefaultValue": null,
-          "IsBasicProperty": true,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "ItemValueBinding",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "SelectorBase",
+          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
+          "PropertyTypeName": "IValueBinding",
+          "IsEnum": false,
+          "IsBindingProperty": true,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": false,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
           "IsCapability": false,
           "OwningCapabilityNamespace": null,
           "OwningCapabilityName": null
@@ -90,46 +70,6 @@
           "OwningCapabilityName": null
         },
         {
-          "Name": "Visible",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "HtmlGenericControl",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "Boolean",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": true,
-          "IsBasicProperty": true,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "IncludeInPage",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "DotvvmControl",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "Boolean",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": true,
-          "IsBasicProperty": true,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
           "Name": "EmptyItemText",
           "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
           "DeclaringTypeName": "ComboBox",
@@ -150,109 +90,9 @@
           "OwningCapabilityName": null
         },
         {
-          "Name": "ID",
+          "Name": "DataContext",
           "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "DotvvmControl",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "String",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": null,
-          "IsBasicProperty": true,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "SelectionChanged",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "SelectorBase",
-          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
-          "PropertyTypeName": "Command",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": null,
-          "IsBasicProperty": false,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "ClientID",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "DotvvmControl",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "String",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 0,
-            "Required": false
-          },
-          "DefaultValue": null,
-          "IsBasicProperty": true,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "HtmlCapability",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "HtmlGenericControl",
-          "PropertyTypeNamespace": "DotVVM.Framework.Controls",
-          "PropertyTypeName": "HtmlCapability",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": null,
-          "IsBasicProperty": true,
-          "IsCapability": true,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "ItemValueBinding",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "SelectorBase",
-          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
-          "PropertyTypeName": "IValueBinding",
-          "IsEnum": false,
-          "IsBindingProperty": true,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": false,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": null,
-          "IsBasicProperty": false,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "SelectedValue",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "Selector",
+          "DeclaringTypeName": "DotvvmBindableObject",
           "PropertyTypeNamespace": "System",
           "PropertyTypeName": "Object",
           "IsEnum": false,
@@ -261,29 +101,9 @@
             "AllowBinding": true,
             "AllowHardCodedValue": false,
             "MappingMode": 1,
-            "Required": true
-          },
-          "DefaultValue": null,
-          "IsBasicProperty": false,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "ClientIDMode",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "DotvvmControl",
-          "PropertyTypeNamespace": "DotVVM.Framework.Controls",
-          "PropertyTypeName": "ClientIDMode",
-          "IsEnum": true,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": false,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
             "Required": false
           },
-          "DefaultValue": "Static",
+          "DefaultValue": null,
           "IsBasicProperty": true,
           "IsCapability": false,
           "OwningCapabilityNamespace": null,
@@ -310,29 +130,49 @@
           "OwningCapabilityName": null
         },
         {
-          "Name": "ItemTitleBinding",
+          "Name": "ClientIDMode",
           "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "SelectorBase",
-          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
-          "PropertyTypeName": "IValueBinding",
-          "IsEnum": false,
-          "IsBindingProperty": true,
+          "DeclaringTypeName": "DotvvmControl",
+          "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+          "PropertyTypeName": "ClientIDMode",
+          "IsEnum": true,
+          "IsBindingProperty": false,
           "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": false,
+            "AllowBinding": false,
+            "AllowHardCodedValue": true,
             "MappingMode": 1,
             "Required": false
           },
-          "DefaultValue": null,
-          "IsBasicProperty": false,
+          "DefaultValue": "Static",
+          "IsBasicProperty": true,
           "IsCapability": false,
           "OwningCapabilityNamespace": null,
           "OwningCapabilityName": null
         },
         {
-          "Name": "DataSource",
+          "Name": "ClientID",
           "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "ItemsControl",
+          "DeclaringTypeName": "DotvvmControl",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "String",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 0,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "SelectedValue",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "Selector",
           "PropertyTypeNamespace": "System",
           "PropertyTypeName": "Object",
           "IsEnum": false,
@@ -341,7 +181,7 @@
             "AllowBinding": true,
             "AllowHardCodedValue": false,
             "MappingMode": 1,
-            "Required": false
+            "Required": true
           },
           "DefaultValue": null,
           "IsBasicProperty": false,
@@ -368,6 +208,166 @@
           "IsCapability": false,
           "OwningCapabilityNamespace": null,
           "OwningCapabilityName": null
+        },
+        {
+          "Name": "IncludeInPage",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "DotvvmControl",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Boolean",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": true,
+          "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "HtmlCapability",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "HtmlGenericControl",
+          "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+          "PropertyTypeName": "HtmlCapability",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": true,
+          "IsCapability": true,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "InnerText",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "HtmlGenericControl",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "String",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "Visible",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "HtmlGenericControl",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Boolean",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": true,
+          "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "ID",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "DotvvmControl",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "String",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "ItemTitleBinding",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "SelectorBase",
+          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
+          "PropertyTypeName": "IValueBinding",
+          "IsEnum": false,
+          "IsBindingProperty": true,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": false,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "SelectionChanged",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "SelectorBase",
+          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
+          "PropertyTypeName": "Command",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "SelectMenuSize",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.Controls",
+          "DeclaringTypeName": "ComboBox",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Int32",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": 1,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
         }
       ],
       "IsAbstract": false
@@ -381,9 +381,109 @@
       "HasHtmlAttributesCollection": true,
       "Properties": [
         {
-          "Name": "InnerText",
+          "Name": "DataSource",
           "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "HtmlGenericControl",
+          "DeclaringTypeName": "ItemsControl",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Object",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": false,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "ItemValueBinding",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "SelectorBase",
+          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
+          "PropertyTypeName": "IValueBinding",
+          "IsEnum": false,
+          "IsBindingProperty": true,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": false,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "DataContext",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "DotvvmBindableObject",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Object",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": false,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "Enabled",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "SelectorBase",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Boolean",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": true,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "ClientIDMode",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "DotvvmControl",
+          "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+          "PropertyTypeName": "ClientIDMode",
+          "IsEnum": true,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": false,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": "Static",
+          "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "ClientID",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "DotvvmControl",
           "PropertyTypeNamespace": "System",
           "PropertyTypeName": "String",
           "IsEnum": false,
@@ -391,7 +491,7 @@
           "MarkupOptions": {
             "AllowBinding": true,
             "AllowHardCodedValue": true,
-            "MappingMode": 1,
+            "MappingMode": 0,
             "Required": false
           },
           "DefaultValue": null,
@@ -421,13 +521,13 @@
           "OwningCapabilityName": null
         },
         {
-          "Name": "DataContext",
+          "Name": "ItemTextBinding",
           "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "DotvvmBindableObject",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "Object",
+          "DeclaringTypeName": "SelectorBase",
+          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
+          "PropertyTypeName": "IValueBinding<String>",
           "IsEnum": false,
-          "IsBindingProperty": false,
+          "IsBindingProperty": true,
           "MarkupOptions": {
             "AllowBinding": true,
             "AllowHardCodedValue": false,
@@ -435,15 +535,15 @@
             "Required": false
           },
           "DefaultValue": null,
-          "IsBasicProperty": true,
+          "IsBasicProperty": false,
           "IsCapability": false,
           "OwningCapabilityNamespace": null,
           "OwningCapabilityName": null
         },
         {
-          "Name": "Visible",
+          "Name": "IncludeInPage",
           "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "HtmlGenericControl",
+          "DeclaringTypeName": "DotvvmControl",
           "PropertyTypeNamespace": "System",
           "PropertyTypeName": "Boolean",
           "IsEnum": false,
@@ -461,9 +561,49 @@
           "OwningCapabilityName": null
         },
         {
-          "Name": "IncludeInPage",
+          "Name": "HtmlCapability",
           "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "DotvvmControl",
+          "DeclaringTypeName": "HtmlGenericControl",
+          "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+          "PropertyTypeName": "HtmlCapability",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": true,
+          "IsCapability": true,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "InnerText",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "HtmlGenericControl",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "String",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "Visible",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "HtmlGenericControl",
           "PropertyTypeNamespace": "System",
           "PropertyTypeName": "Boolean",
           "IsEnum": false,
@@ -501,126 +641,6 @@
           "OwningCapabilityName": null
         },
         {
-          "Name": "SelectionChanged",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "SelectorBase",
-          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
-          "PropertyTypeName": "Command",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": null,
-          "IsBasicProperty": false,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "ClientID",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "DotvvmControl",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "String",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 0,
-            "Required": false
-          },
-          "DefaultValue": null,
-          "IsBasicProperty": true,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "HtmlCapability",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "HtmlGenericControl",
-          "PropertyTypeNamespace": "DotVVM.Framework.Controls",
-          "PropertyTypeName": "HtmlCapability",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": null,
-          "IsBasicProperty": true,
-          "IsCapability": true,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "ItemValueBinding",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "SelectorBase",
-          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
-          "PropertyTypeName": "IValueBinding",
-          "IsEnum": false,
-          "IsBindingProperty": true,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": false,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": null,
-          "IsBasicProperty": false,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "ClientIDMode",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "DotvvmControl",
-          "PropertyTypeNamespace": "DotVVM.Framework.Controls",
-          "PropertyTypeName": "ClientIDMode",
-          "IsEnum": true,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": false,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": "Static",
-          "IsBasicProperty": true,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "Enabled",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "SelectorBase",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "Boolean",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": true,
-          "IsBasicProperty": false,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
           "Name": "ItemTitleBinding",
           "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
           "DeclaringTypeName": "SelectorBase",
@@ -641,16 +661,16 @@
           "OwningCapabilityName": null
         },
         {
-          "Name": "DataSource",
+          "Name": "SelectionChanged",
           "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "ItemsControl",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "Object",
+          "DeclaringTypeName": "SelectorBase",
+          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
+          "PropertyTypeName": "Command",
           "IsEnum": false,
           "IsBindingProperty": false,
           "MarkupOptions": {
             "AllowBinding": true,
-            "AllowHardCodedValue": false,
+            "AllowHardCodedValue": true,
             "MappingMode": 1,
             "Required": false
           },
@@ -661,20 +681,20 @@
           "OwningCapabilityName": null
         },
         {
-          "Name": "ItemTextBinding",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "SelectorBase",
-          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
-          "PropertyTypeName": "IValueBinding<String>",
+          "Name": "AllowCreateItems",
+          "DeclaringTypeNamespace": "DotVVM.Bootstrap5.Select2.Controls",
+          "DeclaringTypeName": "Select2MultiSelect",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Boolean",
           "IsEnum": false,
-          "IsBindingProperty": true,
+          "IsBindingProperty": false,
           "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": false,
+            "AllowBinding": false,
+            "AllowHardCodedValue": true,
             "MappingMode": 1,
             "Required": false
           },
-          "DefaultValue": null,
+          "DefaultValue": false,
           "IsBasicProperty": false,
           "IsCapability": false,
           "OwningCapabilityNamespace": null,

@@ -4,5 +4,20 @@
         <name>DotVVM.Bootstrap5.Select2</name>
     </assembly>
     <members>
+        <member name="T:DotVVM.Bootstrap5.Select2.Controls.Select2ComboBox">
+            <summary>
+            A Bootstrap 5-styled ComboBox powered by Select2 library.
+            </summary>
+        </member>
+        <member name="T:DotVVM.Bootstrap5.Select2.Controls.Select2MultiSelect">
+            <summary>
+            A Bootstrap 5-styled MultiSelect powered by Select2 library.
+            </summary>
+        </member>
+        <member name="P:DotVVM.Bootstrap5.Select2.Controls.Select2MultiSelect.AllowCreateItems">
+            <summary>
+            Gets or sets whether users can create items. When used, the DataSource and SelectedValues must be collections of strings.
+            </summary>
+        </member>
     </members>
 </doc>

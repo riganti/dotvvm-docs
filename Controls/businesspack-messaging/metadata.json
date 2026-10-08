@@ -10,66 +10,6 @@
       "HasHtmlAttributesCollection": false,
       "Properties": [
         {
-          "Name": "ClientID",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "DotvvmControl",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "String",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 0,
-            "Required": false
-          },
-          "DefaultValue": null,
-          "IsBasicProperty": true,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "ConnectionId",
-          "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
-          "DeclaringTypeName": "MessageHandler",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "String",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": null,
-          "IsBasicProperty": false,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "IncludeInPage",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "DotvvmControl",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "Boolean",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": true,
-          "IsBasicProperty": true,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
           "Name": "Command",
           "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
           "DeclaringTypeName": "MessageHandler",
@@ -85,46 +25,6 @@
           },
           "DefaultValue": null,
           "IsBasicProperty": false,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "DataContext",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "DotvvmBindableObject",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "Object",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": false,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": null,
-          "IsBasicProperty": true,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "ID",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "DotvvmControl",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "String",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": null,
-          "IsBasicProperty": true,
           "IsCapability": false,
           "OwningCapabilityNamespace": null,
           "OwningCapabilityName": null
@@ -150,92 +50,41 @@
           "OwningCapabilityName": null
         },
         {
-          "Name": "ClientIDMode",
+          "Name": "ID",
           "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
           "DeclaringTypeName": "DotvvmControl",
-          "PropertyTypeNamespace": "DotVVM.Framework.Controls",
-          "PropertyTypeName": "ClientIDMode",
-          "IsEnum": true,
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "String",
+          "IsEnum": false,
           "IsBindingProperty": false,
           "MarkupOptions": {
-            "AllowBinding": false,
+            "AllowBinding": true,
             "AllowHardCodedValue": true,
             "MappingMode": 1,
             "Required": false
           },
-          "DefaultValue": "Static",
+          "DefaultValue": null,
           "IsBasicProperty": true,
           "IsCapability": false,
           "OwningCapabilityNamespace": null,
           "OwningCapabilityName": null
-        }
-      ],
-      "IsAbstract": false
-    },
-    {
-      "Namespace": "DotVVM.BusinessPack.Messaging",
-      "Name": "MessagingConnection",
-      "PrimaryName": null,
-      "IsContentAllowed": false,
-      "DefaultContentPropertyName": "MessageHandlers",
-      "HasHtmlAttributesCollection": false,
-      "Properties": [
+        },
         {
-          "Name": "ConnectionId",
-          "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
-          "DeclaringTypeName": "MessagingConnection",
+          "Name": "DataContext",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "DotvvmBindableObject",
           "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "String",
+          "PropertyTypeName": "Object",
           "IsEnum": false,
           "IsBindingProperty": false,
           "MarkupOptions": {
             "AllowBinding": true,
-            "AllowHardCodedValue": true,
+            "AllowHardCodedValue": false,
             "MappingMode": 1,
             "Required": false
           },
           "DefaultValue": null,
-          "IsBasicProperty": false,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "ReconnectTimeout",
-          "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
-          "DeclaringTypeName": "MessagingConnection",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "Int32",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": false,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": 30,
-          "IsBasicProperty": false,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "ServiceUrl",
-          "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
-          "DeclaringTypeName": "MessagingConnection",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "String",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": true
-          },
-          "DefaultValue": null,
-          "IsBasicProperty": false,
+          "IsBasicProperty": true,
           "IsCapability": false,
           "OwningCapabilityNamespace": null,
           "OwningCapabilityName": null
@@ -261,56 +110,36 @@
           "OwningCapabilityName": null
         },
         {
-          "Name": "Reconnecting",
-          "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
-          "DeclaringTypeName": "MessagingConnection",
-          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
-          "PropertyTypeName": "ICommandBinding",
-          "IsEnum": false,
-          "IsBindingProperty": true,
+          "Name": "ClientIDMode",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "DotvvmControl",
+          "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+          "PropertyTypeName": "ClientIDMode",
+          "IsEnum": true,
+          "IsBindingProperty": false,
           "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": false,
+            "AllowBinding": false,
+            "AllowHardCodedValue": true,
             "MappingMode": 1,
             "Required": false
           },
-          "DefaultValue": null,
-          "IsBasicProperty": false,
+          "DefaultValue": "Static",
+          "IsBasicProperty": true,
           "IsCapability": false,
           "OwningCapabilityNamespace": null,
           "OwningCapabilityName": null
         },
         {
-          "Name": "IsConnected",
+          "Name": "ConnectionId",
           "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
-          "DeclaringTypeName": "MessagingConnection",
+          "DeclaringTypeName": "MessageHandler",
           "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "Boolean",
+          "PropertyTypeName": "String",
           "IsEnum": false,
           "IsBindingProperty": false,
           "MarkupOptions": {
             "AllowBinding": true,
-            "AllowHardCodedValue": false,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": false,
-          "IsBasicProperty": false,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "Error",
-          "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
-          "DeclaringTypeName": "MessagingConnection",
-          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
-          "PropertyTypeName": "ICommandBinding",
-          "IsEnum": false,
-          "IsBindingProperty": true,
-          "MarkupOptions": {
-            "AllowBinding": true,
-            "AllowHardCodedValue": false,
+            "AllowHardCodedValue": true,
             "MappingMode": 1,
             "Required": false
           },
@@ -336,6 +165,77 @@
           },
           "DefaultValue": true,
           "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        }
+      ],
+      "IsAbstract": false
+    },
+    {
+      "Namespace": "DotVVM.BusinessPack.Messaging",
+      "Name": "MessagingConnection",
+      "PrimaryName": null,
+      "IsContentAllowed": false,
+      "DefaultContentPropertyName": "MessageHandlers",
+      "HasHtmlAttributesCollection": false,
+      "Properties": [
+        {
+          "Name": "ID",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "DotvvmControl",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "String",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "ServiceUrl",
+          "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
+          "DeclaringTypeName": "MessagingConnection",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "String",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": true
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "MessageHandlers",
+          "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
+          "DeclaringTypeName": "MessagingConnection",
+          "PropertyTypeNamespace": "System.Collections.Generic",
+          "PropertyTypeName": "List<MessageHandler>",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 2,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
           "IsCapability": false,
           "OwningCapabilityNamespace": null,
           "OwningCapabilityName": null
@@ -381,27 +281,7 @@
           "OwningCapabilityName": null
         },
         {
-          "Name": "TryReconnect",
-          "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
-          "DeclaringTypeName": "MessagingConnection",
-          "PropertyTypeNamespace": "System",
-          "PropertyTypeName": "Boolean",
-          "IsEnum": false,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": false,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": true,
-          "IsBasicProperty": false,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "ID",
+          "Name": "ClientID",
           "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
           "DeclaringTypeName": "DotvvmControl",
           "PropertyTypeNamespace": "System",
@@ -411,30 +291,10 @@
           "MarkupOptions": {
             "AllowBinding": true,
             "AllowHardCodedValue": true,
-            "MappingMode": 1,
+            "MappingMode": 0,
             "Required": false
           },
           "DefaultValue": null,
-          "IsBasicProperty": true,
-          "IsCapability": false,
-          "OwningCapabilityNamespace": null,
-          "OwningCapabilityName": null
-        },
-        {
-          "Name": "ClientIDMode",
-          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
-          "DeclaringTypeName": "DotvvmControl",
-          "PropertyTypeNamespace": "DotVVM.Framework.Controls",
-          "PropertyTypeName": "ClientIDMode",
-          "IsEnum": true,
-          "IsBindingProperty": false,
-          "MarkupOptions": {
-            "AllowBinding": false,
-            "AllowHardCodedValue": true,
-            "MappingMode": 1,
-            "Required": false
-          },
-          "DefaultValue": "Static",
           "IsBasicProperty": true,
           "IsCapability": false,
           "OwningCapabilityNamespace": null,
@@ -461,7 +321,7 @@
           "OwningCapabilityName": null
         },
         {
-          "Name": "Connected",
+          "Name": "Error",
           "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
           "DeclaringTypeName": "MessagingConnection",
           "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
@@ -481,17 +341,157 @@
           "OwningCapabilityName": null
         },
         {
-          "Name": "MessageHandlers",
-          "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
-          "DeclaringTypeName": "MessagingConnection",
-          "PropertyTypeNamespace": "System.Collections.Generic",
-          "PropertyTypeName": "List<MessageHandler>",
+          "Name": "ClientIDMode",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "DotvvmControl",
+          "PropertyTypeNamespace": "DotVVM.Framework.Controls",
+          "PropertyTypeName": "ClientIDMode",
+          "IsEnum": true,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": false,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": "Static",
+          "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "IncludeInPage",
+          "DeclaringTypeNamespace": "DotVVM.Framework.Controls",
+          "DeclaringTypeName": "DotvvmControl",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Boolean",
           "IsEnum": false,
           "IsBindingProperty": false,
           "MarkupOptions": {
             "AllowBinding": true,
             "AllowHardCodedValue": true,
-            "MappingMode": 2,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": true,
+          "IsBasicProperty": true,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "ReconnectTimeout",
+          "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
+          "DeclaringTypeName": "MessagingConnection",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Int32",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": false,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": 30,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "Reconnecting",
+          "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
+          "DeclaringTypeName": "MessagingConnection",
+          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
+          "PropertyTypeName": "ICommandBinding",
+          "IsEnum": false,
+          "IsBindingProperty": true,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": false,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "IsConnected",
+          "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
+          "DeclaringTypeName": "MessagingConnection",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Boolean",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": false,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": false,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "TryReconnect",
+          "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
+          "DeclaringTypeName": "MessagingConnection",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "Boolean",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": false,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": true,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "ConnectionId",
+          "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
+          "DeclaringTypeName": "MessagingConnection",
+          "PropertyTypeNamespace": "System",
+          "PropertyTypeName": "String",
+          "IsEnum": false,
+          "IsBindingProperty": false,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": true,
+            "MappingMode": 1,
+            "Required": false
+          },
+          "DefaultValue": null,
+          "IsBasicProperty": false,
+          "IsCapability": false,
+          "OwningCapabilityNamespace": null,
+          "OwningCapabilityName": null
+        },
+        {
+          "Name": "Connected",
+          "DeclaringTypeNamespace": "DotVVM.BusinessPack.Messaging",
+          "DeclaringTypeName": "MessagingConnection",
+          "PropertyTypeNamespace": "DotVVM.Framework.Binding.Expressions",
+          "PropertyTypeName": "ICommandBinding",
+          "IsEnum": false,
+          "IsBindingProperty": true,
+          "MarkupOptions": {
+            "AllowBinding": true,
+            "AllowHardCodedValue": false,
+            "MappingMode": 1,
             "Required": false
           },
           "DefaultValue": null,
