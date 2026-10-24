@@ -1,5 +1,40 @@
 # Release notes
 
+## 5.0.1
+
+### Bug fixes
+
+* `TextBox` doesn't crop text on scrolling when `Enabled=false`
+
+## 5.0.0
+
+### Package updates
+- DotVVM upgraded to **5.0**
+
+## 4.3.5
+
+### Bug fixes
+
+* `FileUpload` - fixed compatibility with file upload tokens change introduced in `DotVVM 4.3.15`
+
+### Package updates
+- DotVVM upgraded to **4.3.16**
+
+## 4.3.4
+
+### Bug fixes
+
+* `SelectorBase` - primitive type validation in `DataSource` collections was stricter than necessary
+* `GridView` - fixed binding generation when `DataSource` contains complex expression
+* `DropDownButton` - fixed issue with keyboard focus
+* Excel export - fixed issue with swapped Row/Column indexing
+
+## 4.3.3
+
+### Bug fixes
+
+* `ComboBox` - fixed behavior of `SelectedValue` when `DataSource` is changed
+
 ## 4.3.2
 
 ### Bug fixes
