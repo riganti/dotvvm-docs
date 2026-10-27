@@ -1,0 +1,6 @@
+<t:PolarAreaChart DataSource="{value: Channels}" ItemLabel="{value: Name}" ItemValue="{value: Leads}"
+                 ItemColor="{value: Color}" ValueName="Leads" Title="Lead sources" ValueFormatString="N0"
+                 ValueAxisTitle="Leads" ValueAxisMin="0" ValueAxisMax="50" ValueAxisStepSize="10"
+                 ShowGrid="true" ShowLegend="false">
+    <EmptyDataTemplate>No lead sources are available.</EmptyDataTemplate>
+</t:PolarAreaChart>

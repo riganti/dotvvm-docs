@@ -1,0 +1,8 @@
+<t:BarChart DataSource="{value: Sales}" ItemLabel="{value: Month}" SeriesDataSource="{value: Metrics}"
+            SeriesName="{value: Name}" SeriesColor="{value: Color}"
+            SeriesValue="{value: _parent.IsRevenue ? Revenue : Cost}" Stacked="{value: IsStacked}"
+            Horizontal="{value: IsHorizontal}" ShowGrid="false" Animate="false" Caption="Sales by month">
+    <EmptyDataTemplate>No sales are available.</EmptyDataTemplate>
+</t:BarChart>
+<t:CheckBox Text="Stack bars" Checked="{value: IsStacked}" />
+<t:CheckBox Text="Show horizontally" Checked="{value: IsHorizontal}" />

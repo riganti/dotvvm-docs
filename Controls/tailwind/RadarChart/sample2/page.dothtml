@@ -1,0 +1,3 @@
+<t:RadarChart DataSource="{value: Skills}" ItemLabel="{value: Name}" SeriesDataSource="{value: People}"
+              SeriesName="{value: Name}" SeriesColor="{value: Color}"
+              SeriesValue="{value: _parent.IsAlice ? Alice : Bob}" />

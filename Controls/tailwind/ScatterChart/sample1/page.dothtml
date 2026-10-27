@@ -1,0 +1,9 @@
+<t:ScatterChart Title="Height and weight" XAxisTitle="Height (cm)" YAxisTitle="Weight (kg)"
+                XAxisMin="150" XAxisMax="190" YAxisMin="50" YAxisMax="100" ShowGrid="true">
+    <t:PointSeries Name="Group A" DataSource="{value: GroupA}" X="{value: Height}" Y="{value: Weight}"
+                   ItemLabel="{value: Name}" ItemClick="{command: _root.Select(Name)}" Color="Primary"
+                   ShowLine="true" LineStyle="Dashed" PointStyle="Circle" PointSize="6" />
+    <t:PointSeries Name="Group B" DataSource="{value: GroupB}" X="{value: Height}" Y="{value: Weight}"
+                   ItemLabel="{value: Name}" Color="Success" PointStyle="Triangle" PointSize="7" />
+</t:ScatterChart>
+<p>Selected point: {{value: SelectedPoint}}</p>
