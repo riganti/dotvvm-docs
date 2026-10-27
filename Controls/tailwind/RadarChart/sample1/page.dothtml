@@ -1,0 +1,6 @@
+<t:RadarChart DataSource="{value: Skills}" ItemLabel="{value: Name}" Title="Team skills"
+              ValueAxisMin="0" ValueAxisMax="100" ValueAxisStepSize="20" Fill="true"
+              Smooth="true" ShowPoints="true" ShowGrid="true">
+    <t:ChartSeries Name="Alice" Value="{value: Alice}" Color="Primary" />
+    <t:ChartSeries Name="Bob" Value="{value: Bob}" Color="Success" LineStyle="Dashed" />
+</t:RadarChart>
