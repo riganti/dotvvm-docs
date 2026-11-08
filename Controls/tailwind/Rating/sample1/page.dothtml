@@ -1,0 +1,4 @@
+<t:Rating Value="4.5" Legend="Value" />
+<t:Rating Value="3" MaxStars="10" Legend="Percentage" Size="Small" />
+<t:Rating Value="2.5" Color="Danger" Icon="Heart" Size="Large" />
+<t:Rating Value="4" Color="Primary" ColorShade="300" IconType="Outline" Size="ExtraLarge" />

@@ -15,7 +15,7 @@
                              SelectedValue="{value: SelectedRole}"
                              ItemTextBinding="{value: Name}"
                              ItemValueBinding="{value: Id}"
-                             EmptyItemText="-- select role --"
+                             Placeholder="-- select role --"
                              Enabled="{value: RoleEnabled}"
                              ValidatorProperty="{value: SelectedRole}" />
 

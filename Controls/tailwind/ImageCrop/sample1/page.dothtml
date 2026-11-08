@@ -1,0 +1,7 @@
+<t:ImageCrop ImageData="{value: SourceImage}" CroppedValue="{value: Avatar}"
+             Shape="Circle" OutputFormat="Png" OutputWidth="256" OutputHeight="256"
+             MaxFileSizeMb="5" MaxImageWidth="4000" MaxImageHeight="4000"
+             Changed="{command: OnChanged()}" />
+
+<p>{{value: Status}}</p>
+<img src="{value: Avatar}" Visible="{value: Avatar != null}" width="64" height="64" />

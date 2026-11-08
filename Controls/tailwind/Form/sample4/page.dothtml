@@ -1,0 +1,18 @@
+<t:Form HeaderText="New issue">
+    <ContentTemplate>
+        <t:TextBoxFormField LabelText="Title" Text="{value: Title}"
+                            Placeholder="Short summary of the issue"
+                            HelpText="Keep it under 80 characters."
+                            Control-maxlength="80" />
+
+        <t:MultiSelectFormField LabelText="Labels" DataSource="{value: Labels}"
+                                SelectedValues="{value: SelectedLabels}"
+                                Placeholder="Choose labels">
+            <HelpTemplate>
+                Labels help us <strong>triage</strong> the issue.
+            </HelpTemplate>
+        </t:MultiSelectFormField>
+    </ContentTemplate>
+</t:Form>
+
+<p>Labels: {{value: string.Join(", ", SelectedLabels)}}</p>

@@ -1,0 +1,14 @@
+<t:Popover TriggerText="Click me" ContentText="This is a simple popover." ShowArrow="true" />
+
+<t:Popover Placement="RightStart" IsOpen="{value: IsOpen}" CloseOnOutsideClick="false"
+           AriaLabel="Account settings">
+    <TriggerTemplate>
+        <t:Button Text="Settings" Icon="Cog6Tooth" />
+    </TriggerTemplate>
+    <ContentTemplate>
+        <p>This popover stays open when you click outside.</p>
+        <t:Button Text="Close" Type="Primary" Click="{staticCommand: IsOpen = false}" />
+    </ContentTemplate>
+</t:Popover>
+
+<p>Settings popover is open: {{value: IsOpen}}</p>

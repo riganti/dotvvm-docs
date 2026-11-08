@@ -1,0 +1,20 @@
+<t:TextBoxGroup Text="{value: Prompt}" TextBoxType="MultiLine" Placeholder="Ask anything...">
+    <StartTemplate>
+        <t:Badge Text="{value: 'Mode: ' + Mode}" Color="Info" />
+    </StartTemplate>
+    <EndTemplate>
+        <div class="flex items-center justify-between gap-2 p-2 w-full">
+            <t:TextBoxGroupDropDownButton Icon="Plus" Text="Mode">
+                <t:DropDownItem Text="Chat" Click="{command: Mode = 'Chat'}" />
+                <t:DropDownItem Text="Research" Click="{command: Mode = 'Research'}" />
+            </t:TextBoxGroupDropDownButton>
+            <div class="flex items-center gap-1">
+                <t:TextBoxGroupLiteral Text="Model:" />
+                <t:TextBoxGroupComboBox DataSource="{value: Models}" SelectedValue="{value: SelectedModel}" />
+            </div>
+            <t:TextBoxGroupButton Icon="PaperAirplane" Text="Send" Click="{command: Send()}" />
+        </div>
+    </EndTemplate>
+</t:TextBoxGroup>
+
+<p>{{value: Result}}</p>

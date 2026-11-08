@@ -1,0 +1,12 @@
+<t:Collapse HeaderText="What is DotVVM?"
+            ContentText="DotVVM is an open-source MVVM framework for ASP.NET Core."
+            IsExpanded="true" />
+
+<t:Collapse HeaderText="Shipping details"
+            ContentText="Orders are shipped within 2 business days."
+            IsExpanded="{value: IsShippingExpanded}"
+            Enabled="{value: IsEnabled}" />
+
+<t:Button Text="Toggle from viewmodel" Click="{staticCommand: IsShippingExpanded = !IsShippingExpanded}" />
+<t:CheckBox Checked="{value: IsEnabled}" Text="Enable toggling" />
+<p>Shipping details expanded: {{value: IsShippingExpanded}}</p>

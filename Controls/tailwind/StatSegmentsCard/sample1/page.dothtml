@@ -1,0 +1,9 @@
+<t:StatSegmentsCard Label="Traffic sources" Value="{resource: 345765}" FormatString="N0"
+                    Diff="+18 %" DiffDirection="Up" Description="Compared to previous month">
+    <t:StatSegmentsItem Label="Mobile" Value="{resource: 204127}" FormatString="N0"
+                        Progress="{value: MobileShare}" Color="Primary" />
+    <t:StatSegmentsItem Label="Desktop" Value="{resource: 107187}" FormatString="N0"
+                        Progress="31" Color="Success" />
+    <t:StatSegmentsItem Label="Other" Value="{resource: 34451}" FormatString="N0"
+                        Progress="10" Color="Warning" />
+</t:StatSegmentsCard>

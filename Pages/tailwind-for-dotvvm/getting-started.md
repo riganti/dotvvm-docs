@@ -48,6 +48,38 @@ public void Configure(DotvvmConfiguration config, string applicationPath)
 
 This will register all Tailwind controls under the `<t:*` tag prefix, and it also registers the required Tailwind resources and server-side styles. 
 
+## Localization
+
+> Localization of the built-in texts is available since DotVVM Tailwind UI 5.1.
+
+The controls contain several built-in texts - labels for screen readers, button texts in dialogs, messages of the file upload, texts of the grid filters, and so on. The package includes English and Czech translations. The texts are selected using `CultureInfo.CurrentUICulture`, so make sure the [request localization](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/localization) is configured before `UseDotVVM` in your application.
+
+Values like dates and numbers (for example in the `DateTimePicker` or in the `GridView` filters) are formatted using `CultureInfo.CurrentCulture`.
+
+To add more languages, or to change some of the built-in texts, implement the `ITailwindTextProvider` interface and register it in the service collection. Return `null` for the texts you don't want to change - the control will use the default English or Czech text.
+
+```CSHARP
+public class MyTailwindTextProvider : ITailwindTextProvider
+{
+    public string? GetText(string key, CultureInfo uiCulture)
+    {
+        if (uiCulture.TwoLetterISOLanguageName == "de")
+        {
+            return MyTailwindTexts.ResourceManager.GetString(key, uiCulture);
+        }
+        return null;
+    }
+}
+```
+
+```CSHARP
+builder.Services.AddSingleton<ITailwindTextProvider, MyTailwindTextProvider>();
+```
+
+The keys of the texts use the `Component_Message` format, for example `Spinner_Loading` or `GridFilter_SearchPlaceholder`. Some texts contain placeholders (for example `{index}` and `{count}` in the `Carousel` texts) which must be preserved in the translations.
+
+Texts specified explicitly on the controls (for example `AriaLabelText` of the `Spinner` control, or the button texts of `ModalConfirmPostBackHandler`) always take precedence over the localized defaults.
+
 ## See also
 
 * [Tailwind UI controls](~/controls/tailwind/Accordion)
