@@ -1,0 +1,5 @@
+<t:BubbleChart Title="Cities" XAxisTitle="Population (millions)" YAxisTitle="GDP per capita (k€)"
+               XAxisMin="0" YAxisMin="0" ShowLegend="false" ValueFormatString="N1">
+    <t:PointSeries Name="Cities" DataSource="{value: Cities}" X="{value: Population}" Y="{value: Gdp}"
+                   Radius="{value: Size}" ItemLabel="{value: Name}" Color="Info" />
+</t:BubbleChart>

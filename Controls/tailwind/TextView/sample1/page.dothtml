@@ -1,0 +1,4 @@
+<t:TextView Text="{value: Note}" />
+
+<t:TextView Format="Markdown" HyperlinkTarget="Self" WrapperTagName="section"
+            Text="{resource: ReleaseNotes}" />

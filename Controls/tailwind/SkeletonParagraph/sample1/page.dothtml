@@ -1,0 +1,3 @@
+<t:SkeletonParagraph />
+
+<t:SkeletonParagraph Lines="5" AriaLabel="Loading the article" />

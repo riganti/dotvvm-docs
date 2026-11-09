@@ -1,0 +1,12 @@
+<t:Button Text="Load articles" Click="{command: Load()}" />
+
+<t:GridLayout Columns="1" ColumnsSM="2" Gap="Large">
+    <t:SkeletonCard Visible="{value: !IsLoaded}" AriaLabel="Loading articles" />
+    <t:SkeletonCard Visible="{value: !IsLoaded}" AriaLabel="Loading articles" />
+    <t:Card HeaderText="Getting started" Visible="{value: IsLoaded}">
+        <ContentTemplate>Learn the basics of DotVVM.</ContentTemplate>
+    </t:Card>
+    <t:Card HeaderText="Tailwind UI" Visible="{value: IsLoaded}">
+        <ContentTemplate>Build modern apps quickly.</ContentTemplate>
+    </t:Card>
+</t:GridLayout>

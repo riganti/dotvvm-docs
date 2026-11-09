@@ -1,0 +1,11 @@
+<t:GridLayout Columns="1" ColumnsSM="3">
+    <t:StatCard Label="Revenue" Value="{value: Revenue}" FormatString="N0" Unit="EUR"
+                Icon="Banknotes" Diff="34%" DiffDirection="Up"
+                Description="Compared to previous month" />
+    <t:StatCard Label="Profit" Value="{resource: 4145}" FormatString="N0"
+                Icon="CurrencyDollar" Diff="13%" DiffDirection="Down"
+                Description="Compared to previous month" />
+    <t:StatCard Label="Status" Value="Operational" Icon="Cog6Tooth" Diff="0%" />
+</t:GridLayout>
+
+<t:Button Text="Add a sale" Click="{staticCommand: Revenue = Revenue + 1250}" />

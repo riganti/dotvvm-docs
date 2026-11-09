@@ -1,0 +1,14 @@
+<t:StatGroupedCard>
+    <t:StatCard Label="Page views" Value="{resource: 456133}" FormatString="N0"
+                Diff="24%" DiffDirection="Up" Description="Compared to last year" />
+    <t:StatCard Label="New users" Value="{resource: 2175}" FormatString="N0"
+                Diff="13%" DiffDirection="Down" Description="Compared to last month" />
+    <t:StatCard Label="Completed orders" Value="{resource: 1994}" FormatString="N0"
+                Description="97% satisfaction rate" BackgroundColor="Success" />
+</t:StatGroupedCard>
+
+<t:StatGroupedCard BackgroundColor="Info">
+    <t:StatCard Layout="Ring" Label="Storage" Value="{resource: 62}" Unit="GB" Progress="62" />
+    <t:StatCard Layout="Ring" Label="Build minutes" Value="{resource: 2850}" FormatString="N0"
+                Progress="95" AccentColor="Danger" />
+</t:StatGroupedCard>

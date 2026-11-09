@@ -1,0 +1,12 @@
+<div class="max-w-md space-y-4">
+    <t:ListGroup DataSource="{value: Notifications}"
+                 ItemText="{value: Title}"
+                 ItemBadgeText="{value: Badge}" />
+
+    <t:ListGroup DataSource="{value: Notifications}">
+        <ItemTemplate>
+            <strong>{{value: Title}}</strong>
+            <span>{{value: Text}}</span>
+        </ItemTemplate>
+    </t:ListGroup>
+</div>

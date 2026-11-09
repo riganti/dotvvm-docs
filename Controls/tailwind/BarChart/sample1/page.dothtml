@@ -1,0 +1,11 @@
+<t:BarChart DataSource="{value: Sales}" ItemLabel="{value: Month}" Title="Revenue and margin"
+            Subtitle="First quarter" Height="280" LegendPosition="Top" ValueFormatString="N0"
+            ValueAxisTitle="Amount" SecondaryAxisTitle="Margin" SecondaryAxisFormatString="P0"
+            SecondaryAxisMin="0" SecondaryAxisMax="0.5" ItemClick="{command: _root.Select(Month)}"
+            InteractionMode="Nearest" Option-plugins-legend-align="start">
+    <t:ChartSeries Name="Revenue" Value="{value: Revenue}" Color="Primary" BarThickness="28" Option-borderRadius="8" />
+    <t:ChartSeries Name="Cost" Value="{value: Cost}" Color="Warning" Stack="costs" />
+    <t:ChartSeries Name="Margin" Value="{value: (Revenue - Cost) / Revenue}" Type="Line" Axis="Secondary"
+                   Color="Success" Smooth="true" PointStyle="Circle" PointSize="5" LineWidth="3" />
+</t:BarChart>
+<p>Selected month: {{value: SelectedMonth}}</p>

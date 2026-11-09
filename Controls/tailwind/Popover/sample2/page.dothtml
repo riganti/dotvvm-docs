@@ -1,0 +1,15 @@
+<t:Popover TriggerType="Hover" Delay="200" Placement="Top" ShowArrow="true" Color="Dark"
+           TriggerText="Hover over me" ContentText="Dark popover opened on hover." />
+
+<t:Popover TriggerType="Hover" Placement="BottomStart" MaxWidth="24rem" Offset="16"
+           Enabled="{value: IsEnabled}">
+    <TriggerTemplate>
+        <t:Avatar Initials="JD" />
+    </TriggerTemplate>
+    <ContentTemplate>
+        <strong>John Doe</strong>
+        <p>Software engineer. This panel can be wider than the default 20rem.</p>
+    </ContentTemplate>
+</t:Popover>
+
+<t:CheckBox Checked="{value: IsEnabled}" Text="Enable the profile popover" />

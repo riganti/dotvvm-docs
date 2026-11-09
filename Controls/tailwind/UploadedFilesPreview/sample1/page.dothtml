@@ -1,0 +1,4 @@
+<t:FileUpload UploadedFiles="{value: Files}" Multiple="true" Compact="true" MaxFileSizeMb="0.5" />
+
+<t:UploadedFilesPreview Files="{value: Files}" AllowRemove="true"
+                        FileUrl="{value: _parent.ImageUrls.ContainsKey(FileId) ? _parent.ImageUrls[FileId] : null}" />

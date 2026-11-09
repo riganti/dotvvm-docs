@@ -1,0 +1,5 @@
+<t:FileUpload UploadedFiles="{value: Files}" Multiple="true" MaxFiles="3"
+              AllowedFileTypes=".pdf,.png,.jpg" MaxFileSizeMb="0.5"
+              Changed="{command: OnChanged()}" />
+
+<p>Uploaded files: {{value: FileCount}}</p>
