@@ -1,0 +1,20 @@
+<t:GridLayout Columns="2">
+    <div>
+        <h3>Backlog</h3>
+        <t:DraggableList DataSource="{value: Backlog}" AllowTransfer="true" GroupName="tasks"
+                         OnDrop="{command: UpdateSummary()}">
+            <ItemTemplate>{{value: _this}}</ItemTemplate>
+            <EmptyTemplate>Drop a task here.</EmptyTemplate>
+        </t:DraggableList>
+    </div>
+    <div>
+        <h3>Done</h3>
+        <t:DraggableList DataSource="{value: Done}" AllowTransfer="true" GroupName="tasks"
+                         OnDrop="{command: UpdateSummary()}">
+            <ItemTemplate>{{value: _this}}</ItemTemplate>
+            <EmptyTemplate>Drop a task here.</EmptyTemplate>
+        </t:DraggableList>
+    </div>
+</t:GridLayout>
+
+<p>{{value: Summary}}</p>

@@ -1,0 +1,8 @@
+<t:GridLayout Columns="1" ColumnsSM="2">
+    <t:StatCard Label="Distance" Value="{resource: 20}" Unit=" km / 36 km" Icon="Star"
+                Progress="{value: Progress}" ProgressLabel="Weekly goal"
+                ProgressDescription="16 km to go" BadgeText="4 days left" />
+    <t:StatCard Layout="Ring" Label="Storage" Value="{resource: 62}" Unit="GB"
+                Progress="62" ProgressDescription="62 of 100 GB used"
+                BadgeText="Pro plan" AccentColor="Warning" />
+</t:GridLayout>

@@ -1,0 +1,10 @@
+<t:MultiSelect DataSource="{value: Tags}" SelectedValues="{value: SelectedTags}"
+               Placeholder="Choose tags" Enabled="{value: IsEnabled}"
+               Changed="{command: OnChanged()}" />
+
+<t:MultiSelect DataSource="{value: Countries}" SelectedValues="{value: SelectedCountryIds}"
+               ItemTextBinding="{value: Name}" ItemValueBinding="{value: Id}" Size="Small" />
+
+<t:CheckBox Checked="{value: IsEnabled}" Text="Enable tag selection" />
+<p>Tags: {{value: string.Join(", ", SelectedTags)}} (changed {{value: ChangeCount}} times)</p>
+<p>Selected countries: {{value: SelectedCountryIds.Count}}</p>

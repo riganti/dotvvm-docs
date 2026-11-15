@@ -1,0 +1,4 @@
+<div class="flex gap-4">
+    <t:FilePreview FileName="logo.png" Url="https://avatars.githubusercontent.com/u/9575026?v=4" />
+    <t:FilePreview FileName="{value: DocumentName}" />
+</div>

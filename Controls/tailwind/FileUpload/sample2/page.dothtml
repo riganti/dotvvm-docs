@@ -1,0 +1,10 @@
+<t:FileUpload UploadedFiles="{value: Files}" Compact="true" Multiple="true"
+              Enabled="{value: IsEnabled}" MaxFileSizeMb="0.5"
+              Placeholder="Attach documents" HintText="Up to 500 kB per file"
+              BrowseButtonText="Browse for documents" RemoveButtonText="Delete"
+              FileTooLargeText="This file is over {0} MB."
+              FileTypeNotAllowedText="This file type is not supported."
+              UploadErrorText="The upload has failed."
+              FilesSelectedText="Documents: {0}" />
+
+<t:CheckBox Checked="{value: IsEnabled}" Text="Enable uploads" />

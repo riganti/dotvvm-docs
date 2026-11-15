@@ -1,0 +1,7 @@
+<t:LineChart DataSource="{value: Visits}" ItemLabel="{value: Date}" Title="Monthly visits"
+             CategoryAxisType="Time" CategoryAxisTimeUnit="Month" CategoryAxisFormatString="MMM"
+             ValueAxisMin="0" ValueAxisStepSize="100" Fill="true" Smooth="true"
+             ShowPoints="false" ShowGrid="true" SpanGaps="true" ShowTooltips="true">
+    <t:ChartSeries Name="Visits" Value="{value: Count}" Color="Info" />
+    <t:ChartSeries Name="Target" Value="{value: 700}" Type="Bar" Color="Success" Order="2" />
+</t:LineChart>

@@ -1,0 +1,14 @@
+<t:GridLayout Columns="1" ColumnsSM="2" ColumnsLG="4" Gap="Large">
+    <t:Card HeaderText="Card 1">
+        <ContentTemplate>Resize the window to see the layout change.</ContentTemplate>
+    </t:Card>
+    <t:Card HeaderText="Card 2">
+        <ContentTemplate>Two columns from the SM breakpoint.</ContentTemplate>
+    </t:Card>
+    <t:Card HeaderText="Card 3">
+        <ContentTemplate>Four columns from the LG breakpoint.</ContentTemplate>
+    </t:Card>
+    <t:Card HeaderText="Card 4">
+        <ContentTemplate>One column on small screens.</ContentTemplate>
+    </t:Card>
+</t:GridLayout>

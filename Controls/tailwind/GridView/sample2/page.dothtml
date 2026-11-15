@@ -1,0 +1,13 @@
+<t:GridView DataSource="{value: Orders}">
+    <Columns>
+        <t:GridViewTextColumn HeaderText="Customer" ValueBinding="{value: Customer}"
+                              AllowFiltering="true" Searchable="true" AllowSorting="true" />
+        <t:GridViewTextColumn HeaderText="Total" ValueBinding="{value: Total}" FormatString="N2"
+                              AllowFiltering="true" AllowSorting="true" />
+        <t:GridViewDateColumn HeaderText="Created" ValueBinding="{value: CreatedDate}"
+                              AllowFiltering="true" />
+        <t:GridViewCheckBoxColumn HeaderText="Paid" ValueBinding="{value: IsPaid}"
+                                  AllowFiltering="true" />
+    </Columns>
+</t:GridView>
+<t:DataPager DataSet="{value: Orders}" />

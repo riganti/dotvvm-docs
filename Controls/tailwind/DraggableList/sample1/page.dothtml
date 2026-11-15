@@ -1,0 +1,13 @@
+<t:DraggableList DataSource="{value: Tasks}" Enabled="{value: IsEnabled}"
+                 OnDrop="{command: OnDrop()}">
+    <ItemTemplate>
+        <span>{{value: Title}}</span>
+        <t:Badge Text="{value: Priority}" Color="Info" />
+    </ItemTemplate>
+    <EmptyTemplate>
+        There are no tasks.
+    </EmptyTemplate>
+</t:DraggableList>
+
+<t:CheckBox Checked="{value: IsEnabled}" Text="Enable reordering" />
+<p>Order: {{value: Order}}</p>

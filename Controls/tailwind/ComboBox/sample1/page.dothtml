@@ -5,10 +5,13 @@
                 SelectedValue="{value: SelectedCountry}"
                 ItemTextBinding="{value: Name}"
                 ItemValueBinding="{value: Code}"
-                EmptyItemText="-- choose a country --"
+                Placeholder="Choose a country"
                 Enabled="{value: IsEnabled}"
-                SelectionChanged="{command: IncrementChanges()}" />
+                Changed="{command: IncrementChanges()}" />
+
+    <t:ComboBox DataSource="{value: Sizes}" SelectedValue="{value: SelectedSize}" Size="Small" />
 </div>
 
 <p>Selected country: <strong>{{value: SelectedCountry ?? "(none)"}}</strong></p>
-<p><code>SelectionChanged</code> command count: <strong>{{value: ChangeCount}}</strong></p>
+<p><code>Changed</code> command count: <strong>{{value: ChangeCount}}</strong></p>
+<p>Selected size: <strong>{{value: SelectedSize}}</strong></p>

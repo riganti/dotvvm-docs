@@ -1,0 +1,16 @@
+<t:GridView DataSource="{value: Tasks}" InlineEditing="true">
+    <Columns>
+        <t:GridViewTextColumn HeaderText="Task" ValueBinding="{value: Title}" />
+        <t:GridViewDateTimeColumn HeaderText="Due" ValueBinding="{value: DueAt}" />
+        <t:GridViewCheckBoxColumn HeaderText="Done" ValueBinding="{value: IsDone}" />
+        <t:GridViewMultiSelectColumn HeaderText="Tags" ValueBinding="{value: Tags}" />
+        <t:GridViewTemplateColumn>
+            <ContentTemplate>
+                <t:Button Text="Edit" Click="{command: _root.Tasks.RowEditOptions.EditRowId = Id}" />
+            </ContentTemplate>
+            <EditTemplate>
+                <t:Button Text="Save" Type="Primary" Click="{command: _root.Tasks.RowEditOptions.EditRowId = null}" />
+            </EditTemplate>
+        </t:GridViewTemplateColumn>
+    </Columns>
+</t:GridView>

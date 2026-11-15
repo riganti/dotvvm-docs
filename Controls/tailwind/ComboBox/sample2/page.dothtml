@@ -1,0 +1,7 @@
+<t:ComboBox DataSource="{value: Products}" SelectedValue="{value: SelectedProduct}"
+            ItemTextBinding="{value: Name}" ItemKeyBinding="{value: Id}"
+            ItemTitleBinding="{value: Description}"
+            Search="{staticCommand: (string query) => ViewModel.SearchProducts(query).Result}"
+            Placeholder="Search products" />
+
+<p>Selected: {{value: SelectedProduct == null ? "(none)" : SelectedProduct.Name + " - " + SelectedProduct.Description}}</p>

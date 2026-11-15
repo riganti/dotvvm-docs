@@ -1,0 +1,8 @@
+<t:Rating Value="{value: Score}" Legend="Value" Enabled="{value: IsEnabled}"
+          Changed="{command: OnChanged()}" />
+
+<t:Rating Value="{value: WholeScore}" AllowHalfPoints="false" Legend="Value" />
+
+<t:CheckBox Checked="{value: IsEnabled}" Text="Enable rating" />
+<p>Score: {{value: Score}}, changed {{value: ChangeCount}} times</p>
+<p>Whole score: {{value: WholeScore}}</p>

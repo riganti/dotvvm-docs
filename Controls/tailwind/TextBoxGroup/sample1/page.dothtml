@@ -1,0 +1,6 @@
+<t:TextBoxGroup Text="{value: Message}" Placeholder="Type something..."
+                Changed="{command: OnChanged()}" />
+
+<t:TextBoxGroup Text="{value: Message}" TextBoxType="MultiLine" Enabled="false" />
+
+<p>Changed {{value: ChangeCount}} times</p>

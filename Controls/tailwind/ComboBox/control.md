@@ -1,1 +1,5 @@
-The Tailwind `ComboBox` uses the same API as the built-in [ComboBox](~/controls/builtin/ComboBox) and only adds Tailwind styling. Use `ComboBoxFormField` for labeled form layouts.
+A searchable selector which lets the user pick a single value. The user can type to filter the suggestions, and navigate them using the keyboard: Alt+Down opens the suggestions, arrow keys move between them, Enter selects the active item, and Delete clears the selection. When the suggestions are closed, the Up and Down keys select the previous or next item.
+
+The selected value keeps its original type (number, enum, string, or object). The suggestions are rendered at the end of the page, so they are not clipped by containers with hidden overflow. Use [ComboBoxFormField](~/controls/tailwind/Form) when you need a label and a validation message.
+
+> **Changed in DotVVM 5.1:** The `ComboBox` was rewritten. It does not inherit from the built-in `ComboBox` anymore - it is a searchable selector with the same binding conventions as the [MultiSelect](~/controls/tailwind/MultiSelect) control. New properties `Placeholder`, `Changed`, `ItemKeyBinding`, `ItemTitleBinding`, `Search`, and `Size` were added. The `EmptyItemText` and `SelectionChanged` properties are still supported as aliases of `Placeholder` and `Changed`.

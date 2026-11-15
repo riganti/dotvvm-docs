@@ -1,0 +1,24 @@
+<t:Collapse Type="Flush" HeaderText="Flush item 1" ContentText="Adjacent flush items share their borders." />
+<t:Collapse Type="Flush" HeaderText="Flush item 2" ContentText="Together, they look like a single group." />
+
+<t:Collapse Type="Tree" Size="Small" ExpandIcon="Plus" CollapseIcon="Minus"
+            HeaderText="src" AriaLabel="Toggle the src folder" IsExpanded="true">
+    <ContentTemplate>
+        <t:Collapse Type="Tree" Size="Small" ExpandIcon="Folder" CollapseIcon="FolderOpen" HeaderText="Controls">
+            <ContentTemplate>
+                <p>Button.cs</p>
+                <p>Collapse.cs</p>
+            </ContentTemplate>
+        </t:Collapse>
+        <p>Program.cs</p>
+    </ContentTemplate>
+</t:Collapse>
+
+<t:Collapse HeaderMode="Sticky" Type="Borderless">
+    <HeaderTemplate>
+        <strong>Header with a template</strong> <t:Badge Text="New" Color="Success" />
+    </HeaderTemplate>
+    <ContentTemplate>
+        <p>The body can contain any controls.</p>
+    </ContentTemplate>
+</t:Collapse>

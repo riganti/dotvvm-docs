@@ -1,0 +1,9 @@
+<t:Button Text="2 columns" Click="{staticCommand: ColumnCount = 2}" />
+<t:Button Text="3 columns" Click="{staticCommand: ColumnCount = 3}" />
+<t:Button Text="6 columns" Click="{staticCommand: ColumnCount = 6}" />
+
+<t:GridLayout Columns="{value: ColumnCount}" Gap="Small">
+    <dot:Repeater DataSource="{value: Items}" RenderWrapperTag="false">
+        <t:Badge Text="{value: _this}" Color="Primary" />
+    </dot:Repeater>
+</t:GridLayout>

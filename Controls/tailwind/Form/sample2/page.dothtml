@@ -6,7 +6,7 @@
         </div>
     </HeaderTemplate>
     <ContentTemplate>
-        <t:FormRow Wrap="false">
+        <t:FormRow IsWrappingEnabled="false">
             <t:TextBoxFormField LabelText="Full name"
                                 Text="{value: FullName}"
                                 Size="Half"
@@ -18,10 +18,10 @@
                                  SelectedValue="{value: SelectedCountry}"
                                  ItemTextBinding="{value: Name}"
                                  ItemValueBinding="{value: Code}"
-                                 EmptyItemText="-- select country --"
+                                 Placeholder="-- select country --"
                                  Size="Half"
                                  InputSize="Large"
-                                 SelectionChanged="{command: IncrementChanges()}" />
+                                 Changed="{command: IncrementChanges()}" />
         </t:FormRow>
 
         <t:DateTimePickerFormField LabelText="Arrival"

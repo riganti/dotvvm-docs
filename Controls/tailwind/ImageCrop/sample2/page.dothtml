@@ -1,0 +1,8 @@
+<t:ImageCrop ImageData="{value: SourceImage}" CroppedValue="{value: Banner}"
+             AllowLocalFile="false" AspectRatio="1.7777777778" Size="Small" ZoomStep="0.25"
+             OutputFormat="Jpeg" OutputQuality="0.8" Enabled="{value: IsEnabled}" />
+
+<t:ImageCrop CroppedValue="{value: Photo}" CameraCapture="Environment"
+             AcceptedFileTypes="image/png,image/jpeg" Size="Small" />
+
+<t:CheckBox Checked="{value: IsEnabled}" Text="Enable the banner editor" />

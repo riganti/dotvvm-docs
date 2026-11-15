@@ -1,0 +1,8 @@
+<t:GridLayout Columns="1" ColumnsSM="3">
+    <t:StatCard Layout="DiffIcon" Label="Orders" Value="{resource: 812}" FormatString="N0"
+                DiffDirection="Up" Description="12% more than last month" />
+    <t:StatCard Layout="TopIcon" Label="New customers" Value="{resource: 188}" Icon="UserPlus"
+                Diff="30%" DiffDirection="Up" AccentColor="Success" />
+    <t:StatCard Label="Visitors" Value="{resource: 9310}" FormatString="N0" Icon="Users"
+                Diff="5%" DiffDirection="Down" BackgroundColor="Primary" />
+</t:GridLayout>

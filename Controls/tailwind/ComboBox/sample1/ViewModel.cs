@@ -12,7 +12,11 @@ namespace DotvvmWeb.Views.Docs.Controls.tailwind.ComboBox.sample1
             new() { Code = "us", Name = "United States" }
         ];
 
-        public string? SelectedCountry { get; set; } = "cz";
+        public string SelectedCountry { get; set; } = "cz";
+
+        public List<int> Sizes { get; set; } = [36, 38, 40, 42, 44];
+
+        public int SelectedSize { get; set; } = 40;
 
         public bool IsEnabled { get; set; } = true;
 

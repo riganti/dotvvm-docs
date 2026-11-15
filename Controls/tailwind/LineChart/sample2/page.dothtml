@@ -1,0 +1,5 @@
+<t:LineChart DataSource="{value: Sales}" ItemLabel="{value: Month}" SeriesDataSource="{value: Metrics}"
+             SeriesName="{value: Name}" SeriesColor="{value: Color}" SeriesVisible="{value: Visible}"
+             SeriesLineStyle="Dashed" SeriesValue="{value: _parent.IsRevenue ? Revenue : Cost}" Stacked="false">
+    <EmptyDataTemplate>There is no data to display.</EmptyDataTemplate>
+</t:LineChart>

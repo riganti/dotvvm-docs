@@ -1,0 +1,5 @@
+<t:DonutChart DataSource="{value: Channels}" ItemLabel="{value: Name}" ItemValue="{value: Visits}"
+              ItemColor="{value: Color}" ValueName="Visits" Title="Traffic sources" Height="260"
+              Cutout="60" Circumference="180" Rotation="-90" LegendPosition="Right"
+              ItemClick="{command: _root.Select(Name)}" Caption="Traffic source visits" />
+<p>Selected source: {{value: SelectedChannel}}</p>

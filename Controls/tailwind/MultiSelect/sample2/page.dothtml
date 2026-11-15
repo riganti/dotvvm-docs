@@ -1,0 +1,6 @@
+<t:MultiSelect DataSource="{value: Countries}" SelectedValues="{value: SelectedCountries}"
+               ItemTextBinding="{value: Name}" ItemKeyBinding="{value: Code}"
+               Search="{staticCommand: (string query) => ViewModel.SearchCountries(query).Result}"
+               Placeholder="Search countries" />
+
+<p>Selected: {{value: string.Join(", ", SelectedCountries.Select(c => c.Name))}}</p>
